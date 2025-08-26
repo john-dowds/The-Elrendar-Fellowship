@@ -469,3 +469,9 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
     margin: 0 auto .75rem auto;
   }
 }
+.era .subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: .25rem 0 .25rem;
+  color: #fce5cd; 
+}
