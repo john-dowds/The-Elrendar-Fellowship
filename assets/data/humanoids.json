@@ -36,8 +36,9 @@
       "class": "Druid / Hybrid",
       "category": "Humanoids",
       "subcategory": "Kaldorei",
-      "alsoAppearsIn": "Worgen",
-      "hp": 20,
+      "alsoAppearsIn": [
+        { "category": "Humanoids", "subcategory": "Worgen" }
+      ],      "hp": 20,
       "traits": [
       { "name": "Goldrinn’s Boon", "effect": "Nearby allies fight harder briefly." },
       { "name": "Cursed Claw", "effect": "Strike has a chance to inflict Bleeding." }
@@ -57,7 +58,7 @@
       { "name": "Deep Authority", "effect": "Enemies lose morale when nearby." }
     ],
       "description": "Respected generals who lead Ankoan warbands against naga incursions.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "ankoan_deepseer",
@@ -71,7 +72,7 @@
       { "name": "Tidal Hex", "effect": "Weakens enemy’s next action." }
     ],
       "description": "Mystics and tidecallers who read the depths and call on ocean magics.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "ankoan_scout",
@@ -85,7 +86,7 @@
       { "name": "Ambush Spear", "effect": "First strike from concealment hits harder." }
     ],
       "description": "Stealthy scouts who range the depths of Nazjatar.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "ankoan_warrior",
@@ -99,7 +100,7 @@
       { "name": "Enduring Depths", "effect": "Takes reduced damage in aquatic terrain." }
     ],
       "description": "Frontline fighters hardened by war with naga and deep-sea threats.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "ankoan_tideblade",
@@ -113,7 +114,7 @@
       { "name": "Water Veil", "effect": "Harder to target briefly after striking." }
     ],
       "description": "Elite Ankoan melee fighters, wielding twin blades with aquatic grace.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "arakkoa_outcast_alchemist",
@@ -253,7 +254,7 @@
       { "name": "Crimson Bulk", "effect": "Blood magic hardens muscles unnaturally." }
     ],
       "description": "Grotesque warriors steeped in rituals, their bodies swollen with blood magic.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_blood_deathspeaker",
@@ -267,7 +268,7 @@
       { "name": "Unholy Benediction", "effect": "Blesses allies with crimson resilience." }
     ],
       "description": "Zealous preachers who spread terror through their sermons and rites.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_blood_hexer",
@@ -281,7 +282,7 @@
       { "name": "Crimson Fetish", "effect": "Blood-soaked charms dull incoming harm." }
     ],
       "description": "Cursing specialists who weaponize crimson rites.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_blood_ritualist",
@@ -295,7 +296,7 @@
       { "name": "Sacrificial Focus", "effect": "Harms themselves to empower an ally." }
     ],
       "description": "Fanatics of Nazmir who fuel their magic with blood sacrifices.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "bloodhoof_brave",
@@ -420,7 +421,7 @@
       { "name": "Commanding Presence", "effect": "Enemies lose morale in their presence." }
     ],
       "description": "Cartel leaders orchestrating vast trade empires across realms.",
-      "campaignLinks": [ "shadowlands" ]
+      "campaignLinks": [ "shadowlands","tww" ]
     },
     {
       "id": "broker_enforcer",
@@ -434,7 +435,7 @@
       { "name": "Phase Guard", "effect": "Reduces incoming damage when defending others." }
     ],
       "description": "Brokers’ hired muscle, enforcing contracts in the markets of Oribos.",
-      "campaignLinks": [ "shadowlands" ]
+      "campaignLinks": [ "shadowlands","tww" ]
     },
     {
       "id": "broker_scholar",
@@ -448,7 +449,7 @@
       { "name": "Knowledge Leech", "effect": "Target suffers -1 to next action as knowledge is drained." }
     ],
       "description": "Loremasters and archivists dealing in forbidden secrets and bargains.",
-      "campaignLinks": [ "shadowlands" ]
+      "campaignLinks": [ "shadowlands","tww" ]
     },
     {
       "id": "broker_trader",
@@ -462,7 +463,7 @@
       { "name": "Escape Portal", "effect": "Phase out of danger once per encounter." }
     ],
       "description": "Dealmakers and artifact peddlers of the Shadowlands, endlessly trading knowledge and souls.",
-      "campaignLinks": [ "shadowlands" ]
+      "campaignLinks": [ "shadowlands","tww" ]
     },
     {
       "id": "dwarf_commander",
@@ -714,7 +715,7 @@
       { "name": "Protective Oath", "effect": "Takes reduced damage while guarding merchants." }
     ],
       "description": "Mercenary bodyguards who enforce Consortium business.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "consortium_trader",
@@ -728,7 +729,7 @@
       { "name": "Phase Step", "effect": "Briefly shift out of reality to avoid harm." }
     ],
       "description": "Shrewd merchants and smugglers dealing in artifacts, relics, and illegal trade.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "quilboar_necromancer",
@@ -816,7 +817,7 @@
     },
     {
       "id": "darkiron_fireguard",
-      "name": "Dwarves Fireguard",
+      "name": "Dwarven Fireguard",
       "class": "Elite Guard",
       "category": "Humanoids",
       "subcategory": "Dwarves",
@@ -830,7 +831,7 @@
     },
     {
       "id": "darkiron_sorcerer",
-      "name": "Dwarves Sorcerer",
+      "name": "Dwarven Sorcerer",
       "class": "Fire Caster",
       "category": "Humanoids",
       "subcategory": "Dwarves",
@@ -844,7 +845,7 @@
     },
     {
       "id": "darkiron_weaponsmith",
-      "name": "Dwarves Weaponsmith",
+      "name": "Dwarven Weaponsmith",
       "class": "Forgefighter",
       "category": "Humanoids",
       "subcategory": "Dwarves",
@@ -1203,7 +1204,7 @@
       { "name": "Necrotic Endurance", "effect": "Undead flesh resists fatigue and pain." }
     ],
       "description": "Massive undead Drust, hulking remnants of a cursed people.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "drust_construct",
@@ -1217,7 +1218,7 @@
       { "name": "Crushing Grip", "effect": "Immobilizes target in massive hands." }
     ],
       "description": "Horrid constructs made of wood, stone, and bone — animated by Drust magic.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "drust_harrower",
@@ -1231,7 +1232,7 @@
       { "name": "Shadow Bind", "effect": "Immobilizes a foe in deathly grasp." }
     ],
       "description": "Necromantic casters who spread fear and decay throughout the land.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "drust_lord",
@@ -1245,7 +1246,7 @@
       { "name": "Thros Binding", "effect": "Allies under their control resist banishment effects." }
     ],
       "description": "Leaders of the Drust, tyrants who harness death magic to dominate their foes.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "drust_runecarver",
@@ -1259,7 +1260,7 @@
       { "name": "Soul Ward", "effect": "Protective rune dulls spell damage." }
     ],
       "description": "Dark shamans who carve runes into bone and wood to channel Thros’ power.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "drust_warrior",
@@ -1273,7 +1274,7 @@
       { "name": "Bone Charm", "effect": "Wards blunt some incoming blows." }
     ],
       "description": "Undying soldiers of the Drustvar woods, steeped in necromantic rites.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "ethereal_assassin",
@@ -1287,7 +1288,7 @@
       { "name": "Void Dagger", "effect": "On hit, silences spellcasting briefly." }
     ],
       "description": "Silent killers trained in phase-shifting assassinations.",
-      "campaignLinks": [ "tbc", "legion" ]
+      "campaignLinks": [ "tbc","tww","voidelf","legion" ]
     },
     {
       "id": "ethereal_commander",
@@ -1301,7 +1302,7 @@
       { "name": "Void Authority", "effect": "Enemies nearby lose morale quickly." }
     ],
       "description": "Leaders and princes of ethereal factions, guiding their people with cunning or tyranny.",
-      "campaignLinks": [ "tbc", "legion" ]
+      "campaignLinks": [ "tbc","tww","voidelf","legion" ]
     },
     {
       "id": "ethereum_magus",
@@ -1315,7 +1316,7 @@
       { "name": "Mana Burn", "effect": "Target suffers -1 to next magical action." }
     ],
       "description": "Arcanists blending void and mana, enforcing Ethereum’s fanatic creed.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "ethereum_shadow_sage",
@@ -1329,7 +1330,7 @@
       { "name": "Umbral Mantle", "effect": "Harder to target while cloaked in void." }
     ],
       "description": "High-ranking Ethereum leaders steeped in destructive void power.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "ethereum_shocktrooper",
@@ -1343,7 +1344,7 @@
       { "name": "Phase Barrier", "effect": "First hit each round reduced by 2." }
     ],
       "description": "Void-mad fanatics consumed by conquest and shadow worship.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "faithful_champion",
@@ -1357,7 +1358,7 @@
       { "name": "Protective Zeal", "effect": "Takes reduced damage while allies stand nearby." }
     ],
       "description": "Elite guardians chosen to embody Sethraliss’ storm and light.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithful_commander",
@@ -1371,7 +1372,7 @@
       { "name": "Unshaken Devotion", "effect": "Immune to morale loss." }
     ],
       "description": "Faithful leaders who rally Sethrak clans to holy war against the Faithless.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithful_seer",
@@ -1385,7 +1386,7 @@
       { "name": "Sacred Chant", "effect": "Allies resist fear briefly." }
     ],
       "description": "Priests who guide the Sethrak faithful through devotion to Sethraliss.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithful_stormcaster",
@@ -1399,7 +1400,7 @@
       { "name": "Storm Ward", "effect": "Protects an ally from ranged attacks briefly." }
     ],
       "description": "Sethrak mages who channel the storms of Vol’dun in Sethraliss’ name.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithful_warrior",
@@ -1413,7 +1414,7 @@
       { "name": "Shield of Sethraliss", "effect": "Resists first hit each round by 1." }
     ],
       "description": "Warriors loyal to Sethraliss, defending her shrines and her faithful.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithless_captain",
@@ -1427,7 +1428,7 @@
       { "name": "Domineering Presence", "effect": "Nearby enemies lose morale quickly." }
     ],
       "description": "War leaders of the Faithless, merciless commanders bent on conquest.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithless_shadowbinder",
@@ -1441,7 +1442,7 @@
       { "name": "Necrotic Channel", "effect": "Saps morale and health from nearby foes." }
     ],
       "description": "Dark priests of the Faithless who wield necrotic shadow magics.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithless_spearthrower",
@@ -1455,7 +1456,7 @@
       { "name": "Hunter’s Cruelty", "effect": "Deals more morale damage when enemies flee." }
     ],
       "description": "Faithless hunters who harass enemies from the dunes with spear volleys.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithless_stormcaller",
@@ -1469,7 +1470,7 @@
       { "name": "Static Field", "effect": "Creates a storm zone that hinders enemy movement." }
     ],
       "description": "Storm mages who bend lightning to crush their rivals.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faithless_warrior",
@@ -1483,7 +1484,7 @@
       { "name": "Blood Zeal", "effect": "Strikes harder at low HP." }
     ],
       "description": "Savage fighters of the Faithless Sethrak, driven by conquest.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "faldorei_ambusher",
@@ -2000,7 +2001,7 @@
       { "name": "Wave Shield", "effect": "Summons a wall of water to block harm briefly." }
     ],
       "description": "Leaders of gilgoblin tribes, often warped beyond recognition by deep magic.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "gilgoblin_hunter",
@@ -2014,7 +2015,7 @@
       { "name": "Amphibious", "effect": "Fights equally well on land or in water." }
     ],
       "description": "Gilgoblin skirmishers armed with harpoons and crossbows, adept in shoreline ambushes.",
-      "campaignLinks": [ "cata", "bfa" ]
+      "campaignLinks": [ "cata"  ]
     },
     {
       "id": "gilgoblin_sorcerer",
@@ -2028,7 +2029,7 @@
       { "name": "Abyssal Hex", "effect": "Afflicts target with murky visions and fear." }
     ],
       "description": "Twisted spellcasters who wield dark sea magic and naga curses.",
-      "campaignLinks": [ "cata", "bfa" ]
+      "campaignLinks": [ "cata"  ]
     },
     {
       "id": "gilgoblin_tidecaller",
@@ -2042,7 +2043,7 @@
       { "name": "Undertow", "effect": "Pulls enemies down with crushing water currents." }
     ],
       "description": "Mystics who entreat the tides, healing allies or dragging foes beneath the waves.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "worgen_gilnean_druid",
@@ -2532,7 +2533,7 @@
       { "name": "Thick Hide", "effect": "Resistant to blunt force trauma." }
     ],
       "description": "Huge, brutish goblin-kin used as muscle by cartels and warbands.",
-      "campaignLinks": [ "cata", "bfa" ]
+      "campaignLinks": [ "cata"  ]
     },
     {
       "id": "hobgoblin_overseer",
@@ -2546,7 +2547,7 @@
       { "name": "Whip Strike", "effect": "Keeps peons and goblins in line, or lashes enemies." }
     ],
       "description": "Cartel taskmasters who direct labor and battle with brute strength.",
-      "campaignLinks": [ "cata", "bfa" ]
+      "campaignLinks": [ "cata"  ]
     },
     {
       "id": "hobgoblin_sapper",
@@ -2574,7 +2575,7 @@
       { "name": "Hyena Pack", "effect": "Summons or commands desert hyenas for support." }
     ],
       "description": "Beastmasters who lead packs of desert beasts alongside the Horde.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_cutthroat",
@@ -2588,7 +2589,7 @@
       { "name": "Cunning Dodge", "effect": "First hit each round against them is reduced by 1." }
     ],
       "description": "Rogues who joined the Horde, striking with ruthless efficiency.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_fire_slinger",
@@ -2602,7 +2603,7 @@
       { "name": "Explosive Vial", "effect": "Deals AoE damage once per encounter." }
     ],
       "description": "Pyromaniacal raiders who throw burning oils and explosives in battle.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "hozen_chieftain",
@@ -3497,7 +3498,7 @@
       { "name": "Shadow Veil", "effect": "Fades into half-light to foil a clean hit." }
     ],
       "description": "Loa-bound elites who blend blades, bows, and voodoo.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_jungle_berserker",
@@ -3511,7 +3512,7 @@
       { "name": "Savage Lunge", "effect": "Ferocious leap that rattles a defender’s guard." }
     ],
       "description": "Fighters who surrender to battle-trance and raw instinct.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_jungle_brute",
@@ -3833,7 +3834,7 @@
       { "name": "Ocean’s Curse", "effect": "Enemies nearby suffer reduced morale." }
     ],
       "description": "Leaders of sea clans who embody the Kvaldir’s cursed vengeance.",
-      "campaignLinks": [ "wotlk", "bfa" ]
+      "campaignLinks": [ "wotlk"  ]
     },
     {
       "id": "kvaldir_harpooner",
@@ -3847,7 +3848,7 @@
       { "name": "Sea Hunter", "effect": "Expert at striking foes in naval battles." }
     ],
       "description": "Kvaldir fighters armed with massive harpoons, infamous for dragging sailors into the deep.",
-      "campaignLinks": [ "wotlk", "bfa" ]
+      "campaignLinks": [ "wotlk"  ]
     },
     {
       "id": "kvaldir_raider",
@@ -3861,7 +3862,7 @@
       { "name": "Salt-Hardened", "effect": "Resistant to poison and corrosion." }
     ],
       "description": "Cursed sea-faring Vrykul revenants who raid coasts from the mists.",
-      "campaignLinks": [ "wotlk", "bfa" ]
+      "campaignLinks": [ "wotlk"  ]
     },
     {
       "id": "kvaldir_tidecaller",
@@ -3875,7 +3876,7 @@
       { "name": "Wave Shield", "effect": "Summons water to blunt incoming damage." }
     ],
       "description": "Mystics who call on sea magic to drown their foes.",
-      "campaignLinks": [ "wotlk", "bfa" ]
+      "campaignLinks": [ "wotlk"  ]
     },
     {
       "id": "leper_gnome_engineer",
@@ -4183,7 +4184,7 @@
       { "name": "Bristled Crest", "effect": "Reduces incoming damage briefly." }
     ],
       "description": "Tribal heads whose cries whip the shoal into a frenzy.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "murloc_coastrunner",
@@ -4421,7 +4422,7 @@
       { "name": "Scale Ward", "effect": "Tough scales lessen incoming blows briefly." }
     ],
       "description": "Frontline serpentine infantry wielding long polearms and shields.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "naga_priest",
@@ -4463,7 +4464,7 @@
       { "name": "Guardian’s Interpose", "effect": "Can intercept blows aimed at an ally." }
     ],
       "description": "Elite protectors of naga royalty and matriarchs.",
-      "campaignLinks": [ "bfa", "legion" ]
+      "campaignLinks": ["legion" ]
     },
     {
       "id": "naga_shadowcaster",
@@ -4491,7 +4492,7 @@
       { "name": "Tidal Shield", "effect": "Wraps an ally in protective waters." }
     ],
       "description": "Weavers of magic songs that bind foes and bolster allies.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "naga_mage",
@@ -4547,7 +4548,7 @@
       { "name": "Riptide", "effect": "Pushes back enemies with rushing water." }
     ],
       "description": "Matriarchal sorceresses who wield devastating stormcraft.",
-      "campaignLinks": [ "bfa", "ancients" ]
+      "campaignLinks": ["ancients" ]
     },
     {
       "id": "orc_blademaster",
@@ -5106,7 +5107,7 @@
       { "name": "Void Touched", "effect": "Resistant to shadow damage." }
     ],
       "description": "Former high elves reshaped by the void’s touch, many still adapting.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "rendorei_riftbinder",
@@ -5120,7 +5121,7 @@
       { "name": "Void Ward", "effect": "Protects allies with void barrier." }
     ],
       "description": "Specialists who manipulate the raw tears between worlds.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "rendorei_riftblade",
@@ -5134,7 +5135,7 @@
       { "name": "Rift Slash", "effect": "Blade wounds linger with void corruption." }
     ],
       "description": "Warriors wielding blades infused with the void.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "rendorei_riftwalker",
@@ -5148,7 +5149,7 @@
       { "name": "Void Sense", "effect": "Detects illusions and hidden foes." }
     ],
       "description": "Scouts who cross the void to observe and report.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "rendorei_assassin",
@@ -5162,7 +5163,7 @@
       { "name": "Whispered Command", "effect": "Sows doubt among enemies." }
     ],
       "description": "Spies and operatives serving the void elf cause.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "rendorei_voidcaster",
@@ -5176,7 +5177,7 @@
       { "name": "Entropic Shield", "effect": "Wraps in void energies to resist harm." }
     ],
       "description": "Void elf magi channeling unstable but devastating spells.",
-      "campaignLinks": [ "telogrus" ]
+      "campaignLinks": [ "voidelf" ]
     },
     {
       "id": "troll_sandfury_brute",
@@ -5344,7 +5345,7 @@
       { "name": "Ascendant’s Resilience", "effect": "Reduces incoming damage while empowered." }
     ],
       "description": "Chosen few infused with storm power, serving as semi-divine warriors.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "sethrak_scout",
@@ -5358,7 +5359,7 @@
       { "name": "Signal Horn", "effect": "Alerts nearby Sethrak allies immediately." }
     ],
       "description": "Scouts and outriders who monitor the deserts of Vol’dun.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "shadopan_assassin",
@@ -5400,7 +5401,7 @@
       { "name": "Phase Step", "effect": "Briefly shift out of reality to avoid harm." }
     ],
       "description": "Assassins of the highest calliber who appear and disappear before one even realizes they're dead.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "shadowguard_voidcaster",
@@ -5414,7 +5415,7 @@
       { "name": "Entropic Malignance", "effect": "While afflicted, all damage dealt is reduced by half." }
     ],
       "description": "Sinister casters loyal to the void, who seek only the unraveling of the world in service to their master.",
-      "campaignLinks": [ "tbc" ]
+      "campaignLinks": [ "tbc","tww","voidelf" ]
     },
     {
       "id": "shadowmoon_pale_orc",
@@ -6280,7 +6281,7 @@
       { "name": "Drain Essence", "effect": "Weakens foe and restores morale." }
     ],
       "description": "Corrupted ethereals who surrendered entirely to the Void.",
-      "campaignLinks": [ "legion", "bfa" ]
+      "campaignLinks": [ "legion"  ]
     },
     {
       "id": "vrykul_berserker",
@@ -6364,7 +6365,7 @@
       { "name": "Smoke Bomb", "effect": "Creates concealment for retreat or ambush." }
     ],
       "description": "Inventive tricksters who throw volatile brews at their enemies.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_chieftain",
@@ -6378,7 +6379,7 @@
       { "name": "Desert Authority", "effect": "Enemies suffer morale loss when outnumbered by Vulpera." }
     ],
       "description": "Leaders of caravans and nomadic packs, skilled in survival and command.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_citizen",
@@ -6391,7 +6392,7 @@
       { "name": "Resourceful", "effect": "Can improvise simple tools or weapons from scavenged goods." }
     ],
       "description": "Everyday Vulpera desert dwellers, traders, and caravan keepers.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_hunter",
@@ -6405,7 +6406,7 @@
       { "name": "Sand Camouflage", "effect": "Advantage on first attack when concealed in desert terrain." }
     ],
       "description": "Desert hunters and tamers of hyenas and krolusks.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_mystic",
@@ -6419,7 +6420,7 @@
       { "name": "Desert Blessing", "effect": "Heals or shields an ally with spiritual power." }
     ],
       "description": "Desert mystics and shamans who commune with the dunes and spirits of Vol’dun.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_raider",
@@ -6433,7 +6434,7 @@
       { "name": "Hit-and-Run", "effect": "Can move after attacking without provoking." }
     ],
       "description": "Pack raiders who excel at ambushes, striking from the desert shadows.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "vulpera_scout",
@@ -6447,7 +6448,7 @@
       { "name": "Quick Escape", "effect": "May disengage once per encounter without penalty." }
     ],
       "description": "Lookouts who warn caravans of danger, quick to vanish into the dunes.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "warsong_chieftain",
@@ -6699,7 +6700,7 @@
       { "name": "Loa’s Roar", "effect": "Allied beasts fight with ferocious advantage this round." }
     ],
       "description": "Beast-masters who ride or summon Zuldazar’s primal fauna.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_zandalari_brute",
@@ -6713,7 +6714,7 @@
       { "name": "Loa’s Endurance", "effect": "Blessing grants them unusual resilience." }
     ],
       "description": "Towering warriors who enforce order in Zuldazar’s streets and temples.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_zandalari_dinomancer",
@@ -6727,7 +6728,7 @@
       { "name": "Primal Roar", "effect": "Nearby beasts gain courage and ferocity." }
     ],
       "description": "Mystics who channel Loa power through dinosaurs and primal beasts.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_zandalari_priest",
@@ -6741,7 +6742,7 @@
       { "name": "Sacred Fetish", "effect": "Protective charm reduces harm received." }
     ],
       "description": "Priests who entreat the Loa directly, bridging gods and mortals.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_zandalari_prelete",
@@ -6755,7 +6756,7 @@
       { "name": "Sacred Strike", "effect": "A holy-empowered blow harms unclean foes." }
     ],
       "description": "Paladin-like champions who channel Loa blessings into martial might.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "troll_zandalari_warlord",
@@ -6769,7 +6770,7 @@
       { "name": "Loa’s Mantle", "effect": "Sacred aura bolsters allies’ defense." }
     ],
       "description": "Generals of the Zandalari who command armies and broker with the Loa.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "loa_bwonsamdi",
@@ -6783,7 +6784,7 @@
       { "name": "Laughing Shade", "effect": "Weakens morale of enemies who see him." }
     ],
       "description": "The Loa of Death, master of souls and bargains, feared and revered by all trolls.",
-      "campaignLinks": [ "bfa", "shadowlands" ]
+      "campaignLinks": [ "shadowlands" ]
     },
     {
       "id": "loa_gonk",
@@ -6797,7 +6798,7 @@
       { "name": "Hunting Cry", "effect": "Boosts allies’ speed and morale." }
     ],
       "description": "Raptor loa who gifts trolls with shapeshifting and primal ferocity.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "loa_hakkar",
@@ -6811,7 +6812,7 @@
       { "name": "Soul Flay", "effect": "Inflicts heavy morale loss." }
     ],
       "description": "The infamous blood loa, a parasitic deity feared across Azeroth.",
-      "campaignLinks": [ "sl" ]
+      "campaignLinks": [ "shadowlands" ]
     },
     {
       "id": "loa_kimbul",
@@ -6825,7 +6826,7 @@
       { "name": "Predator’s Zeal", "effect": "Allies deal more damage this round." }
     ],
       "description": "Tiger loa embodying ferocity, cunning, and the predator’s strike.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "loa_paku",
@@ -6839,7 +6840,7 @@
       { "name": "Wind’s Wrath", "effect": "Knocks back enemies with gale force." }
     ],
       "description": "Pterrordax loa, revered by the Zandalari as mistress of the skies.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "loa_rezan",
@@ -6853,7 +6854,7 @@
       { "name": "Golden Hide", "effect": "Immune to morale damage." }
     ],
       "description": "The great devilsaur Loa of Kings, patron of Zandalar’s rulers.",
-      "campaignLinks": [ "bfa" ]
+      "campaignLinks": [  ]
     },
     {
       "id": "loa_shadra",
@@ -6867,7 +6868,7 @@
       { "name": "Shadow Skitter", "effect": "Harder to target in dim terrain." }
     ],
       "description": "Spider loa, feared and worshipped by troll shadow-priests.",
-      "campaignLinks": [ "cata", "bfa" ]
+      "campaignLinks": [ "cata"  ]
     },
     {
       "id": "wildgod_aviana",

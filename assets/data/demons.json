@@ -29,7 +29,7 @@
           { "name": "Blink Trick", "effect": "Short hop that dodges retaliation." }
         ],
         "description": "Legion-bred imps with hotter flame and nastier pranks.",
-        "campaignLinks": ["legion"],
+        "campaignLinks": ["legion","campaign1"],
         "image": "assets/art/monsters/imp.png"
       },
   
@@ -56,35 +56,41 @@
         "subcategory": "Commanders",
         "hp": 24,
         "traits": [
-          { "name": "Shadow Disguise", "effect": "Adopts a flawless mortal guise." },
+          { "name": "Skin Walking", "effect": "Adopts a flawless mortal guise." },
           { "name": "Subvert", "effect": "Seeds panic and dissent among enemies." }
         ],
         "description": "Agents who wear stolen faces and undo kingdoms from within.",
-        "campaignLinks": ["legion"],
+        "campaignLinks": ["legion","campaign1"],
         "image": "assets/art/monsters/dreadlord.png"
       },
   
       {
         "id": "demon_eredar_warlock",
-        "name": "Man'ari Eredar Warlock",
+        "name": "Man'ari Warlock",
         "class": "Fel Caster",
         "category": "Demons",
         "subcategory": "Eredar",
+        "alsoAppearsIn": [
+          { "category": "NPCs", "subcategory": "Infantry" }
+        ],
         "hp": 26,
         "traits": [
           { "name": "Fel Bolt", "effect": "Cracks a foe with concentrated fel fire." },
           { "name": "Infernal Pact", "effect": "Calls a lesser infernal servant." }
         ],
         "description": "High demon sorcerers who command fel and servants alike.",
-        "campaignLinks": ["tbc","legion"],
+        "campaignLinks": ["tbc","legion","campaign1"],
         "image": "assets/art/monsters/eredar.png"
       },
       {
         "id": "demon_eredar_sorcerer",
-        "name": "Man'ari Eredar Sorcerer",
+        "name": "Man'ari Sorcerer",
         "class": "Arcane/Fel Magus",
         "category": "Demons",
         "subcategory": "Eredar",
+        "alsoAppearsIn": [
+            { "category": "NPCs", "subcategory": "Infantry" }
+          ],
         "hp": 24,
         "traits": [
           { "name": "Entropy Surge", "effect": "Unleashes unstable arcane-fel burst." },
@@ -97,7 +103,7 @@
   
       {
         "id": "demon_sayaad_succubus",
-        "name": "Succubus",
+        "name": "Sayaad Succubus",
         "class": "Temptress",
         "category": "Demons",
         "subcategory": "Infantry",
@@ -112,7 +118,7 @@
       },
       {
         "id": "demon_sayaad_incubus",
-        "name": "Incubus",
+        "name": "Sayaad Incubus",
         "class": "Tempter",
         "category": "Demons",
         "subcategory": "Infantry",
@@ -131,7 +137,7 @@
         "name": "Shivarra Priestess",
         "class": "Blade-Dancer",
         "category": "Demons",
-        "subcategory": "Shivarra",
+        "subcategory": "Infantry",
         "hp": 24,
         "traits": [
           { "name": "Whirl of Blades", "effect": "A six-armed dance that slashes several foes." },
@@ -144,7 +150,7 @@
   
       {
         "id": "demon_felguard",
-        "name": "Felguard",
+        "name": "Mo'arg Felguard",
         "class": "Shock Trooper",
         "category": "Demons",
         "subcategory": "Infantry",
@@ -158,23 +164,8 @@
         "image": "assets/art/monsters/felguard.png"
       },
       {
-        "id": "demon_wrathguard",
-        "name": "Wrathguard",
-        "class": "Elite Enforcer",
-        "category": "Demons",
-        "subcategory": "Infantry",
-        "hp": 26,
-        "traits": [
-          { "name": "Twin Glaives", "effect": "Carves two nearby targets in fluid motion." },
-          { "name": "Dread Warding", "effect": "Stubborn resilience against mortal steel." }
-        ],
-        "description": "Twin-bladed elites who guard greater commanders.",
-        "campaignLinks": ["legion"],
-        "image": "assets/art/monsters/wrathguard.png"
-      },
-      {
         "id": "demon_fel_lord",
-        "name": "Fel Lord",
+        "name": "Mo'arg Fel Lord",
         "class": "Commander",
         "category": "Demons",
         "subcategory": "Infantry",
@@ -187,10 +178,54 @@
         "campaignLinks": ["legion"],
         "image": "assets/art/monsters/fellord.png"
       },
-  
+      {
+        "id": "demon_moarg_engineer",
+        "name": "Mo'arg Engineer",
+        "class": "War-Smith",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 20,
+        "traits": [
+          { "name": "Graft", "effect": "Deploys cruel devices or limb-blades." },
+          { "name": "Reinforced Frame", "effect": "Augmented body resists sundering." }
+        ],
+        "description": "Tinker-butchers who fuse metal, meat, and misery.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/moarg.png"
+      },
+      {
+        "id": "demon_ganarg_servitor",
+        "name": "Gan'arg Servitor",
+        "class": "Mechanic",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 12,
+        "traits": [
+          { "name": "Wrench Toss", "effect": "Hurls sparking scrap to distract." },
+          { "name": "Scrapshield", "effect": "Improvised plating blunts glancing blows." }
+        ],
+        "description": "Fidgeting underlings who maintain the Legion’s engines.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/moarg.png"
+      },
+      {
+        "id": "demon_doomlord",
+        "name": "Ered'ruin Doomlord",
+        "class": "Commander",
+        "category": "Demons",
+        "subcategory": "Commanders",
+        "hp": 28,
+        "traits": [
+          { "name": "Devastating Ruin", "effect": "A furious onslaught of fire raining from the sky." },
+          { "name": "Doom Curse", "effect": "Curses victim to explode in a crushing inferno if not cured." }
+        ],
+        "description": "Winged commanders who lead whole armies of the Legion to invade and break worlds.",
+        "campaignLinks": ["tbc"],
+        "image": "assets/art/monsters/doomlord.png"
+      },  
       {
         "id": "demon_doomguard",
-        "name": "Doomguard",
+        "name": "Ered'ruin Doomguard",
         "class": "Brutal Enforcer",
         "category": "Demons",
         "subcategory": "Infantry",
@@ -202,6 +237,21 @@
         "description": "Winged brutes who patrol skies and break lines.",
         "campaignLinks": ["tbc"],
         "image": "assets/art/monsters/doomguard.png"
+      },
+      {
+        "id": "demon_terrorguard",
+        "name": "Ered'ruin Terrorguard",
+        "class": "Winged Elite",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 32,
+        "traits": [
+          { "name": "Fear Aura", "effect": "Nearby foes are weakened by oppressive dread." },
+          { "name": "Fel Strike", "effect": "Overwhelms defenses with empowered claws." }
+        ],
+        "description": "An ascended variant of the doomguard, towering winged demons radiating pure fear to break mortals before combat even begins.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/terrorguard.png"
       },
   
       {
@@ -247,7 +297,7 @@
           { "name": "Hexsense", "effect": "Sniffs out magical workings." }
         ],
         "description": "Spell-eating hounds unleashed against mages and wards.",
-        "campaignLinks": ["tbc","legion"],
+        "campaignLinks": ["tbc","legion","campaign1"],
         "image": "assets/art/monsters/felhunter.png"
       },
       {
@@ -265,36 +315,20 @@
         "campaignLinks": ["legion"],
         "image": "assets/art/monsters/felstalker.png"
       },
-  
       {
-        "id": "demon_moarg_engineer",
-        "name": "Mo'arg Engineer",
-        "class": "War-Smith",
+        "id": "demon_wrathguard",
+        "name": "Man'ari Wrathguard",
+        "class": "Elite Enforcer",
         "category": "Demons",
-        "subcategory": "Infantry",
-        "hp": 20,
+        "subcategory": "Eredar",
+        "hp": 26,
         "traits": [
-          { "name": "Graft", "effect": "Deploys cruel devices or limb-blades." },
-          { "name": "Reinforced Frame", "effect": "Augmented body resists sundering." }
+          { "name": "Twin Glaives", "effect": "Carves two nearby targets in fluid motion." },
+          { "name": "Dread Warding", "effect": "Stubborn resilience against mortal steel." }
         ],
-        "description": "Tinker-butchers who fuse metal, meat, and misery.",
+        "description": "Twin-bladed elites who guard greater commanders.",
         "campaignLinks": ["legion"],
-        "image": "assets/art/monsters/moarg.png"
-      },
-      {
-        "id": "demon_ganarg_servitor",
-        "name": "Gan'arg Servitor",
-        "class": "Mechanic",
-        "category": "Demons",
-        "subcategory": "Infantry",
-        "hp": 12,
-        "traits": [
-          { "name": "Wrench Toss", "effect": "Hurls sparking scrap to distract." },
-          { "name": "Scrapshield", "effect": "Improvised plating blunts glancing blows." }
-        ],
-        "description": "Fidgeting underlings who maintain the Legion’s engines.",
-        "campaignLinks": ["tbc","legion"],
-        "image": "assets/art/monsters/moarg.png"
+        "image": "assets/art/monsters/wrathguard.png"
       },
   
       {
@@ -315,7 +349,7 @@
   
       {
         "id": "demon_pit_lord",
-        "name": "Pit Lord (Annihilan)",
+        "name": "Annihilan Pit Lord",
         "class": "Overlord",
         "category": "Demons",
         "subcategory": "Commanders",
@@ -480,21 +514,6 @@
         "description": "Chain-wielding demons tasked with binding prisoners and tormenting souls within Legion fortresses.",
         "campaignLinks": ["legion"],
         "image": "assets/art/monsters/jailer.png"
-      },
-      {
-        "id": "demon_terrorguard",
-        "name": "Terrorguard",
-        "class": "Winged Elite",
-        "category": "Demons",
-        "subcategory": "Infantry",
-        "hp": 32,
-        "traits": [
-          { "name": "Fear Aura", "effect": "Nearby foes are weakened by oppressive dread." },
-          { "name": "Fel Strike", "effect": "Overwhelms defenses with empowered claws." }
-        ],
-        "description": "An ascended variant of the doomguard, towering winged demons radiating pure fear to break mortals before combat even begins.",
-        "campaignLinks": ["legion"],
-        "image": "assets/art/monsters/terrorguard.png"
       }
       
     ]

@@ -6,10 +6,18 @@
   },
   "sections": [
     {
+      "id": "campaign1",
+      "title": "What Lurks in the Shadows",
+      "subtitle": "== Fellowship Campaign 1 ==",
+      "date": "c. 42",
+      "summary_html": "\n The Fellowship is called upon by the Magister Zaedana of Silvermoon to pursue leads on a dire, growing threat: the presence of fel taint within two arcane sanctums across Quel'Thalas. Though the Magisters of Quel'Thalas are well capable themselves of investigating such a task, the greater threat is revealed to be the suspect of a traitor within the ranks of the Magistry itself. <br><br> Tasked with getting to the bottom of the matter swiftly, the Elrendar Fellowship faces a daunting task of investigating the very officials who mandate the practice of magic throughout the High Home, and pursuing leads on somethingi that could prove terribly lethal to all.\n            ",
+      "order": 21
+    },
+    {
       "id": "tww",
       "title": "Fall of Dalaran & the Void War",
       "date": "c. 41-42",
-      "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand igniting a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors counted amongst their numbers join the defenders of Azeroth in driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard, under the leadership of a resurrected Nexus-King Salhadaar,\nthe Ethereals are working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. Despite their success, Xal'atath is able to escape to\nplaces unknown, now with a fraction of the decimated void lord's essence for her own consumption and use. \n            ",
+      "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand igniting a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors counted amongst their numbers join the defenders of Azeroth in driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. \n            ",
       "order": 20
     },
     {
@@ -20,7 +28,7 @@
       "order": 19
     },
     {
-      "id": "windrunner",
+      "id": "shadowlands",
       "title": "Windrunner Legacy",
       "date": "c. Year 35",
       "summary_html": "\n The pursuit of Sylvanas Windrunner by both factions leads in her capture, and, if rumor is said to be true, the return of her soul to her body-with the fragments of it having been severed years prior by the blade of the Lich King. It is unclear what the fate of the Banshee Queen is, but legacy of the Windrunners persists in both Vereesa and Alleria Windrunner, though both remain in exile from Quel'Thalas. \n      ",
@@ -48,7 +56,7 @@
       "order": 15
     },
     {
-      "id": "cataclysm-hyjal",
+      "id": "cataclysm-mop",
       "title": "Purge of Dalaran",
       "date": "c. Years 27-31",
       "summary_html": "\n All out war between the Horde and Alliance engulfs the world, even admist the ongoing crisis of the reemergence of the once-warder of the earth, the black dragon aspect now known as Deathwing. <br> <br> Chaos and destruction rage across the world, and the elven tribes are thrust against one another in open conflict. After two years of bloody fighting, Deathwing is slain, but the conflict between the Horde and Alliance only deepens. During the third year of the conflict, the Kirin Tor enact a purge of the Sin'dorei from the city under the command of Lady Jaina Proudmoore and Silver Covenant Ranger-General Vereesa Windrunner following the Sunreaver's use of then-neutral Dalaran to infiltrate an Alliance city and steal a powerful artifact known as the Divine Bell. The purge is a watershed moment for the elven people, shattering any hope of reconcillation between the tribes and sparking a deep running blood feud that persists even to this day. <br><br> After four long years of war, the Horde splinters under the pressure of civil strife, and both the Sunreavers and Silver Covenant form a rare, unified front to overthrow the Horde Warchief Garrosh Hellscream. Despite the show of unity, animosity lingers. The Horde and Alliance secure a tenuous armistice, but no lasting peace. Throughout the entirety of the conflict, the Elrendar Fellowship officially maintains a neutral stance, though some of its individual members are drawn into the fighting, fueling a tense atmosphere within the cohort's ranks. <br><br> Despite this, open bloodshed amongst members is avoided, and the surviving leadership begin to face serious doubts about the viability of the Fellowship's longevity given the seemingly insurmountable tension. \n      ",
@@ -65,19 +73,19 @@
     {
       "id": "wotlk",
       "title": "The Sunreavers, the Lich King & the Nexus War",
-      "date": "c.Year 27",
+      "date": "c. Year 27",
       "summary_html": "\n The azure dragons of Azeroth launch a war against magic users the world over after the crazed blue aspect Malygos declares mortals unfit to wield the magics his flight was given dominion over. This dire conflict leads the Magistry of Silvermoon to seek amends with the Kirin Tor which imprisoned and persecuted the elves years prior. Magister Aethas Sunreaver, once an archmage of the Kirin Tor, advocates and secures the admission of the Sin'dorei into Dalaran as a new order-the <em>Sunreavers</em>-which is starkly opposed by the surviving Quel'dorei of Dalaran who promptly assemble a new order in opposition, the <em>Silver Covenant</em>. Despite the tension between the Horde and Alliance forces, the Kirin Tor manages to establish itself as a neutral force able to mediate their contributions. <br> <br> Soon after the outbreak of the Nexus War, the Lich King launches an assault upon the mortal cities across the globe, seeking to snuff out the living once and for all. Both the Horde, Alliance, and Kirin Tor launch a full on invasion of Northrend to confront the Lich King, aided by the Argent Crusade-formed of the Argent Dawn and Order of the Silver Hand-and the recently liberated death knights who form a new cohort called the Ebon Blade. <br><br> The war in Northrend exacts a bloody toll from the defenders of Azeroth, and though both Malygos and the Lich King are slain, it comes at the cost of renewed conflict between the Alliance and Horde as internal betrayals spiral and a brutal massacre claims the lives of scores of valiant heroes from both sides. The conflict between the Horde and Alliance persists even after the death of Prince Arthas-the despoiler of Quel'Thalas. A new Lich King is seated to control the remaining undead and prevent further calamity.  \n      ",
       "order": 12
     },
     {
-      "id": "kael",
+      "id": "tbc",
       "title": "Fall of the Prince",
       "date": "c. Years 25-26",
       "summary_html": "\n Following Illidan Stormrage's ever expanding occupation of the Outlands, the Burning Legion lures the defenders of Azeroth into storming through the Dark Portal and confronting Illidan, casting the Sin'dorei into a state of chaos as their ranks-now in service to the Horde through a pact secured by Regent Lord Lor'themar Theron-are pitted against the increasingly volatile and unstable forces of Prince Kael'thas' Sunfury armies. <br><br> Civil war breaks throughout the surviving elven diaspora, leading to an ultimate confrontation in the Netherstorm, and then the Isle of Quel'Danas, where Prince Kael'thas-now driven to madness through consumption of fel magic-is confronted and finally slain after he tries to summon a demon lord through the Sunwell. <br><br> The final confrontation on the Isle of Quel'Danas marks the second time in a decade that an outside force has stormed the Sunwell Plateau and assaulted the well, though this time the corrupted, broken well is reborn through the willing sacrifice of a naaru. \n ",
       "order": 11
     },
     {
-      "id": "tbc",
+      "id": "classic",
       "title": "Descent into Madness",
       "date": "c. Years 22-26",
       "summary_html": "\n Prince Kael’thas sworn loyalty to Illidan Stormrage opens new avenues for the elven recovery; Silvermoon City is rebuilt through a show of tremendous magical might, and the elves begin to claw back control over the Kingdom inch by inch; the Sin’dorei Sunfury forces subdivisions (Sunfury, Sunhawks, Eclipsion, Firewing, Illidari, etc.) proliferate; fel magic becomes a substitute for lost Sunwell energies for many, while others refuse it. <br><br> In this time, Prince Kael'thas leads the Sunfury forces in following Illidan Stormrage back to Azeroth to confront the growing power of the Scourge in Northrend, only to fail. Numerous elves are slain, including Lana'thel-wielder of the legendary blade Quel'delar-who is raised into undeath by the Lich King to serve as Blood Queen of the San'layn, vampiric undead elves. <br><br> Following their defeat, Illidan and Kael's Sunfury army retreats to the Outlands where they work to secure their control over the shattered world. At some point during these years, Prince Kael'thas Sunstrider begins to fall deeper into a madness that would eventually lead him to accept a bargain with the demon lord Kil'Jaeden, the Deceiver.\n      ",
@@ -133,7 +141,7 @@
       "order": 3
     },
     {
-      "id": "ancients",
+      "id": "wota",
       "title": "War of the Ancients",
       "date": "c. Year -10,000",
       "summary_html": "\n Queen Azshara’s Highborne open Azeroth to the Burning Legion through the Well of Eternity, a pact made in exchange for untold power. The Kaldorei Resistance—druids, sentinels, Moon Guard magi, allies, and the Dragonflights—shatter the portal after a costly war; the Well collapses, sundering Kalimdor into continents. The elven city of Suramar seals itself beneath the power of the Nightwell. Queen Azshara's nobles are drowned alongside the common folk, with many being transformed into the insideous <em>Naga</em> through yet another pact made by the Queen, this time with the imprisoned Old God, N'zoth. Other surviving Highborne are later exiled for continuing to use magic; they sail east and proclaim themselves <em>Quel’dorei</em>. The world survives, but its peoples and cities are forever divided.\n              ",

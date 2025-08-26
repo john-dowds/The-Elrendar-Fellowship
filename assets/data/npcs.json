@@ -17,7 +17,7 @@
           { "name": "Farstrider’s Poise", "effect": "Calm precision; resists forced movement and distractions." }
         ],
         "description": "Regent Lord of Quel'Thalas. A measured statesman and veteran ranger, balancing Silvermoon's politics with the realm’s defense.",
-        "campaignLinks": []
+        "campaignLinks": ["bfa"]
       },
       {
         "id": "aethas_sunreaver",
@@ -35,7 +35,7 @@
           { "name": "Council Leverage", "effect": "Sways neutral factions with political pressure." }
         ],
         "description": "Figurehead of the Sunreavers and a canny political actor. Equally at home in a war council or a mage conclave.",
-        "campaignLinks": ["wotlk", "tww"]
+        "campaignLinks": ["wotlk", "tww", "bfa"]
       },
       {
         "id": "lady_liadrin",
@@ -123,7 +123,7 @@
           { "name": "Rift Step", "effect": "Short blink through the Veil to reposition." }
         ],
         "description": "Legendary ranger, tempered by the Void but unbroken by it. A bridge between high elven traditions and new shadowed arts.",
-        "campaignLinks": ["tww", "Legion"]
+        "campaignLinks": ["tww", "Legion","shadowlands"]
       },
       {
         "id": "vereesa_windrunner",
@@ -142,7 +142,7 @@
           { "name": "Spellbane Arrow", "effect": "Shots disrupt enemy spellcasting briefly." }
         ],
         "description": "Leader of the Silver Covenant. Defends high elven dignity with a commander’s clarity and a mother’s ferocity.",
-        "campaignLinks": ["wotlk", "mop"]
+        "campaignLinks": ["wotlk", "mop","shadowlands"]
       },
       {
         "id": "astalor_bloodsworn",
@@ -381,6 +381,23 @@
         "campaignLinks": []
       },
       {
+        "id": "zaedana",
+        "name": "Magister Zaedana",
+        "class": "Silvermoon Magister",
+        "category": "NPCs",
+        "subcategory": "Sin'dorei",
+        "alsoAppearsIn": [
+            { "category": "NPCs", "subcategory": "Magisters" }
+          ],
+        "hp": 18,
+        "traits": [
+          { "name": "Arcane Aegis", "effect": "Wards dampen magical assaults for a short time." },
+          { "name": "Vault Enchantment", "effect": "Able to quickly enchant or disenchant vault doors within arcane sanctums, either sealing or unsealing them for access." }
+        ],
+        "description": "Now a magister of Silvermoon, Zaedana was dispatched to the ruins of Theramore during the Fourth War where she battled Alliance forces, but has since returned to Quel'Thalas to continue her work for the Magistry. Most recently, she's taken it upon herself to initiate an investigation of a suspected traitor within the ranks of the Magistry.",
+        "campaignLinks": ["campaign1"]
+      },
+      {
         "id": "taeshara_bloodwatcher",
         "name": "Examiner Tae'shara Bloodwatcher",
         "class": "Reliquary Examiner",
@@ -396,7 +413,26 @@
         ],
         "description": "A meticulous field examiner of the Reliquary with a talent for turning rubble into revelation.",
         "campaignLinks": []
+      },
+      {
+        "id": "esara_verrinde",
+        "name": "Magister Esara Verrinde",
+        "class": "Magister / Tirisgarde Champion",
+        "category": "NPCs",
+        "subcategory": "Sin'dorei",
+        "alsoAppearsIn": [
+          { "category": "NPCs", "subcategory": "Magistry" },
+          { "category": "NPCs", "subcategory": "Kirin Tor" }
+        ],
+        "hp": 20,
+        "traits": [
+          { "name": "Spellweave", "effect": "Chain minor effects together for a combined payoff." },
+          { "name": "Glyph Anchor", "effect": "Stabilizes allied spellcasting in a small area." }
+        ],
+        "description": "An elven member of the Kirin Tor seen in both Azsuna and Hall of the Guardian.",
+        "campaignLinks": [ "legion" ]
       }
+
     ]
   }
   

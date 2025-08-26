@@ -471,7 +471,7 @@
           { "name": "Grease the Wheels", "effect": "Crew improvises quick repairs mid-battle." }
         ],
         "description": "Merchant vessels laden with goods, explosives, and dubious goblin ‘safety’ measures.",
-        "campaignLinks": ["cata","bfa"]
+        "campaignLinks": ["cata"]
       },
       {
         "id": "mech_sindorei_destroyer",

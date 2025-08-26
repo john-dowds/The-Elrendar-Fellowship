@@ -578,7 +578,7 @@
         { "name": "Shadow Soar", "effect": "Takes reduced shadow damage." }
       ],
       "description": "Ravens empowered by void or shadow, common in Draenor and the Shadowlands.",
-      "campaignLinks": ["wod","shadowlands"]
+      "campaignLinks": []
     },
     {
       "id": "bird_roc",
@@ -719,7 +719,7 @@
         { "name": "Beacon Cry", "effect": "Heals allies’ morale when it calls." }
       ],
       "description": "Celestial feathermanes dwelling in the highest reaches of the Shadowlands’ skies.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": []
     },
 
     {
@@ -1086,7 +1086,7 @@
         { "name": "Fey Bond", "effect": "Nearby allies restore 1 morale each turn." }
       ],
       "description": "Mystical fox-like creatures of Ardenweald, tied to the Night Fae and anima streams.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": []
     },
     {
       "id": "hound_darkhound",
@@ -2187,7 +2187,7 @@
         { "name": "Shatter Stomp", "effect": "On critical, fragments strike nearby enemies." }
       ],
       "description": "Crystalline lizard-beasts of Maldraxxus, hardened by necrotic magic and anima-infused stone.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": []
     },
 
     {
@@ -2413,7 +2413,7 @@
         { "name": "Umbral Coil", "effect": "Immobilizes target briefly." }
       ],
       "description": "Serpentine void creatures slithering in Legion’s corrupted realms.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": []
     },
     {
       "id": "exotic_soul_eater",
