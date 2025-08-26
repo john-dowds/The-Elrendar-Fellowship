@@ -1,0 +1,502 @@
+{
+    "version": "1.0",
+    "name": "Demons",
+    "entries": [
+      {
+        "id": "demon_imp",
+        "name": "Imp",
+        "class": "Lesser Demon",
+        "category": "Demons",
+        "subcategory": "Imps",
+        "hp": 8,
+        "traits": [
+          { "name": "Fel Spark", "effect": "Flickers a small fel burst that singes and distracts." },
+          { "name": "Cackle", "effect": "Rattles foes; next attack against the imp is less precise." }
+        ],
+        "description": "Petty fel minions that swarm, jeer, and ignite small chaos.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/imp.png"
+      },
+      {
+        "id": "demon_fel_imp",
+        "name": "Fel Imp",
+        "class": "Lesser Demon",
+        "category": "Demons",
+        "subcategory": "Imps",
+        "hp": 9,
+        "traits": [
+          { "name": "Fel Lash", "effect": "Whips a target with searing green flame." },
+          { "name": "Blink Trick", "effect": "Short hop that dodges retaliation." }
+        ],
+        "description": "Legion-bred imps with hotter flame and nastier pranks.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/imp.png"
+      },
+  
+      {
+        "id": "demon_nathrezim_dreadlord",
+        "name": "Nathrezim Dreadlord",
+        "class": "Manipulator",
+        "category": "Demons",
+        "subcategory": "Commanders",
+        "hp": 32,
+        "traits": [
+          { "name": "Vampiric Touch", "effect": "Siphons life when their strikes land." },
+          { "name": "Nightmare Miasma", "effect": "Shrouds foes in terror, sapping resolve." }
+        ],
+        "description": "Master schemers who conquer worlds by subversion and fear.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/dreadlord.png"
+      },
+      {
+        "id": "demon_nathrezim_infiltrator",
+        "name": "Nathrezim Infiltrator",
+        "class": "Spy",
+        "category": "Demons",
+        "subcategory": "Commanders",
+        "hp": 24,
+        "traits": [
+          { "name": "Shadow Disguise", "effect": "Adopts a flawless mortal guise." },
+          { "name": "Subvert", "effect": "Seeds panic and dissent among enemies." }
+        ],
+        "description": "Agents who wear stolen faces and undo kingdoms from within.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/dreadlord.png"
+      },
+  
+      {
+        "id": "demon_eredar_warlock",
+        "name": "Man'ari Eredar Warlock",
+        "class": "Fel Caster",
+        "category": "Demons",
+        "subcategory": "Eredar",
+        "hp": 26,
+        "traits": [
+          { "name": "Fel Bolt", "effect": "Cracks a foe with concentrated fel fire." },
+          { "name": "Infernal Pact", "effect": "Calls a lesser infernal servant." }
+        ],
+        "description": "High demon sorcerers who command fel and servants alike.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/eredar.png"
+      },
+      {
+        "id": "demon_eredar_sorcerer",
+        "name": "Man'ari Eredar Sorcerer",
+        "class": "Arcane/Fel Magus",
+        "category": "Demons",
+        "subcategory": "Eredar",
+        "hp": 24,
+        "traits": [
+          { "name": "Entropy Surge", "effect": "Unleashes unstable arcane-fel burst." },
+          { "name": "Void Ward", "effect": "Shrouds self in dampening shadow." }
+        ],
+        "description": "Once peerless magi, now rewritten by the Legion’s will.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/eredar.png"
+      },
+  
+      {
+        "id": "demon_sayaad_succubus",
+        "name": "Succubus",
+        "class": "Temptress",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 16,
+        "traits": [
+          { "name": "Charm Lash", "effect": "Clouds judgment; target falters or hesitates." },
+          { "name": "Enthrall", "effect": "Briefly compels a simple, self-harming choice." }
+        ],
+        "description": "Seductive tormentors who bind victims with will and whip.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/succubus.png"
+      },
+      {
+        "id": "demon_sayaad_incubus",
+        "name": "Incubus",
+        "class": "Tempter",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 16,
+        "traits": [
+          { "name": "Gaze of Desire", "effect": "Unnerves a foe, weakening their next action." },
+          { "name": "Chains of Pleasure", "effect": "Snares a target in binding fetters." }
+        ],
+        "description": "Male sayaad who twist longing into chains.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/incubus.png"
+      },
+  
+      {
+        "id": "demon_shivarra_priestess",
+        "name": "Shivarra Priestess",
+        "class": "Blade-Dancer",
+        "category": "Demons",
+        "subcategory": "Shivarra",
+        "hp": 24,
+        "traits": [
+          { "name": "Whirl of Blades", "effect": "A six-armed dance that slashes several foes." },
+          { "name": "Blasphemous Ward", "effect": "Twisted sanctity dulls incoming harm." }
+        ],
+        "description": "Six-armed zealots who sermonize with the sword.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/shivarra.png"
+      },
+  
+      {
+        "id": "demon_felguard",
+        "name": "Felguard",
+        "class": "Shock Trooper",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 22,
+        "traits": [
+          { "name": "Fel Cleave", "effect": "Hews through clustered foes in a single swing." },
+          { "name": "Hellplate", "effect": "Hardened armor blunts weapon blows." }
+        ],
+        "description": "Axe-bearing enforcers who anchor frontline assaults.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/felguard.png"
+      },
+      {
+        "id": "demon_wrathguard",
+        "name": "Wrathguard",
+        "class": "Elite Enforcer",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 26,
+        "traits": [
+          { "name": "Twin Glaives", "effect": "Carves two nearby targets in fluid motion." },
+          { "name": "Dread Warding", "effect": "Stubborn resilience against mortal steel." }
+        ],
+        "description": "Twin-bladed elites who guard greater commanders.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/wrathguard.png"
+      },
+      {
+        "id": "demon_fel_lord",
+        "name": "Fel Lord",
+        "class": "Commander",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 30,
+        "traits": [
+          { "name": "Felbrand", "effect": "Enchants weapons with scorching fel fire." },
+          { "name": "Tyrant’s Aegis", "effect": "Projecting aura hardens allied ranks." }
+        ],
+        "description": "Overseers who lead demonic cohorts with iron cruelty.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/fellord.png"
+      },
+  
+      {
+        "id": "demon_doomguard",
+        "name": "Doomguard",
+        "class": "Brutal Enforcer",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 28,
+        "traits": [
+          { "name": "Crushing Infernal", "effect": "Slam that rattles bones and focus." },
+          { "name": "Hex of Weakness", "effect": "Curses victim to strike feebly next." }
+        ],
+        "description": "Winged brutes who patrol skies and break lines.",
+        "campaignLinks": ["tbc"],
+        "image": "assets/art/monsters/doomguard.png"
+      },
+  
+      {
+        "id": "demon_infernal",
+        "name": "Infernal",
+        "class": "Felfire Construct",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 30,
+        "traits": [
+          { "name": "Meteor Impact", "effect": "Arrival stuns and scatters those nearby." },
+          { "name": "Cinder Core", "effect": "Melee attackers are scorched on contact." }
+        ],
+        "description": "Runed boulders animated by fel into living meteors.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/infernal.png"
+      },
+      {
+        "id": "demon_abyssal",
+        "name": "Abyssal",
+        "class": "Felfire Construct",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 32,
+        "traits": [
+          { "name": "Hellstorm", "effect": "Sheds burning shards that pelt the field." },
+          { "name": "Boulderhide", "effect": "Monolithic shell shrugs off blows." }
+        ],
+        "description": "Greater infernals whose cores burn like furnaces.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/abyssal.png"
+      },
+  
+      {
+        "id": "demon_felhunter",
+        "name": "Felhunter",
+        "class": "Anti-Caster Hound",
+        "category": "Demons",
+        "subcategory": "Fel Beasts",
+        "hp": 16,
+        "traits": [
+          { "name": "Mana Siphon", "effect": "Silences and drains the learned." },
+          { "name": "Hexsense", "effect": "Sniffs out magical workings." }
+        ],
+        "description": "Spell-eating hounds unleashed against mages and wards.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/felhunter.png"
+      },
+      {
+        "id": "demon_felstalker",
+        "name": "Felstalker",
+        "class": "Hound",
+        "category": "Demons",
+        "subcategory": "Fel Beasts",
+        "hp": 18,
+        "traits": [
+          { "name": "Rend and Worry", "effect": "Savages a target, leaving lingering wounds." },
+          { "name": "Unnerving Howl", "effect": "Shakes resolve of nearby foes." }
+        ],
+        "description": "Bulkier kin bred for the brute chase and tear.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/felstalker.png"
+      },
+  
+      {
+        "id": "demon_moarg_engineer",
+        "name": "Mo'arg Engineer",
+        "class": "War-Smith",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 20,
+        "traits": [
+          { "name": "Graft", "effect": "Deploys cruel devices or limb-blades." },
+          { "name": "Reinforced Frame", "effect": "Augmented body resists sundering." }
+        ],
+        "description": "Tinker-butchers who fuse metal, meat, and misery.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/moarg.png"
+      },
+      {
+        "id": "demon_ganarg_servitor",
+        "name": "Gan'arg Servitor",
+        "class": "Mechanic",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 12,
+        "traits": [
+          { "name": "Wrench Toss", "effect": "Hurls sparking scrap to distract." },
+          { "name": "Scrapshield", "effect": "Improvised plating blunts glancing blows." }
+        ],
+        "description": "Fidgeting underlings who maintain the Legion’s engines.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/moarg.png"
+      },
+  
+      {
+        "id": "demon_observer",
+        "name": "Observer",
+        "class": "Eye Demon",
+        "category": "Demons",
+        "subcategory": "Inquisition",
+        "hp": 22,
+        "traits": [
+          { "name": "Disintegrating Gaze", "effect": "Beams that unravel flesh and focus." },
+          { "name": "All-Seeing", "effect": "Hard to ambush; senses through illusions." }
+        ],
+        "description": "Floating eyes bristling with alien rays and laughter.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/observer.png"
+      },
+  
+      {
+        "id": "demon_pit_lord",
+        "name": "Pit Lord (Annihilan)",
+        "class": "Overlord",
+        "category": "Demons",
+        "subcategory": "Commanders",
+        "hp": 38,
+        "traits": [
+          { "name": "Fel Smash", "effect": "A titanic blow that scatters ranks." },
+          { "name": "Demonic Hide", "effect": "Thick, burning armor dulls damage." }
+        ],
+        "description": "Colossal demon generals who break armies in a single charge.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/pitlord.png"
+      },
+  
+      {
+        "id": "demon_satyr_trickster",
+        "name": "Satyr Trickster",
+        "class": "Rogue Warlock",
+        "category": "Demons",
+        "subcategory": "Satyr",
+        "hp": 16,
+        "traits": [
+          { "name": "Shadowstep", "effect": "Slips through shade to strike." },
+          { "name": "Corrupting Touch", "effect": "Leaves a taint that weakens resolve." }
+        ],
+        "description": "Once-elves, now demonic sneaks steeped in shadowcraft.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/satyr.png"
+      },
+      {
+        "id": "demon_satyr_corrupter",
+        "name": "Satyr Corrupter",
+        "class": "Dark Caster",
+        "category": "Demons",
+        "subcategory": "Satyr",
+        "hp": 18,
+        "traits": [
+          { "name": "Seed of Corruption", "effect": "Curses a foe with festering fel." },
+          { "name": "Wicked Pact", "effect": "Empowers nearby satyrs to strike harder." }
+        ],
+        "description": "Fel priests who spread ruin in Elune’s forests.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/satyr.png"
+      },
+  
+      {
+        "id": "demon_felbat",
+        "name": "Felbat",
+        "class": "Flying Demon",
+        "category": "Demons",
+        "subcategory": "Fel Beasts",
+        "hp": 14,
+        "traits": [
+          { "name": "Shriek", "effect": "Startles and disorients prey." },
+          { "name": "Fel Drip", "effect": "Oozing fel burns those it grazes." }
+        ],
+        "description": "Legion sky-hunters that roost on warships and spires.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/felbat.png"
+      },
+  
+      {
+        "id": "demon_inquisitor",
+        "name": "Eredar Inquisitor",
+        "class": "Interrogator",
+        "category": "Demons",
+        "subcategory": "Inquisition",
+        "hp": 24,
+        "traits": [
+          { "name": "Eye of the Legion", "effect": "Reveals secrets; ignores simple glamours." },
+          { "name": "Agonize", "effect": "Afflicts a foe with withering pain." }
+        ],
+        "description": "Truth-bleeders who scour minds for treachery.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/inquisitor.png"
+      },
+      {
+        "id": "demon_antean",
+        "name": "Antean",
+        "class": "Colossus",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 34,
+        "traits": [
+          { "name": "Crushing Stomp", "effect": "Shakes the ground; enemies hesitate or stumble." },
+          { "name": "Unyielding Bulk", "effect": "Ignores the first forced-movement effect each round." }
+        ],
+        "description": "Massive, ancient titan-sized demons that embody brute strength, used by the Legion as living siege weapons.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/antean.png"
+      },
+      {
+        "id": "demon_aranasi",
+        "name": "Aranasi",
+        "class": "Spider-Demon",
+        "category": "Demons",
+        "subcategory": "Commanders",
+        "hp": 22,
+        "traits": [
+          { "name": "Web Snare", "effect": "Immobilizes a foe in fel-laced webs." },
+          { "name": "Venomous Bite", "effect": "Leaves the target Poisoned (damage over time)." }
+        ],
+        "description": "Half-demonic arachnids who serve the Legion as assassins and ambushers, weaving felweb traps in caverns and fortresses.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/aranasi.png"
+      },
+      {
+        "id": "demon_felbeast",
+        "name": "Felbeast",
+        "class": "Feral Demon",
+        "category": "Demons",
+        "subcategory": "Fel Beasts",
+        "hp": 20,
+        "traits": [
+          { "name": "Savage Rend", "effect": "Leaves gashes that continue to bleed." },
+          { "name": "Fel Howl", "effect": "Terrifies weaker foes into retreat." }
+        ],
+        "description": "Twisted warhounds and bestial horrors, infused with fel to hunt and maul the Legion’s enemies.",
+        "campaignLinks": ["tbc","legion"],
+        "image": "assets/art/monsters/felbeast.png"
+      },
+      {
+        "id": "demon_imp_mother",
+        "name": "Imp Mother",
+        "class": "Brood Caster",
+        "category": "Demons",
+        "subcategory": "Imps",
+        "hp": 26,
+        "traits": [
+          { "name": "Spawn Imps", "effect": "Each round, summons 1–2 lesser imps." },
+          { "name": "Fel Barrage", "effect": "Unleashes a cone of green flame." }
+        ],
+        "description": "Grotesque matriarchs who endlessly spawn lesser imps and lead swarms of cackling minions.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/impmother.png"
+      },
+      {
+        "id": "demon_inquisitor",
+        "name": "Legion Inquisitor",
+        "class": "Interrogator",
+        "category": "Demons",
+        "subcategory": "Inquisition",
+        "hp": 24,
+        "traits": [
+          { "name": "Eye Beam", "effect": "Scours a foe with fel sight, ignoring concealment." },
+          { "name": "Torment", "effect": "Afflicts the mind with crippling pain." }
+        ],
+        "description": "Floating ocular demons that interrogate and torment with unblinking fel gazes.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/inquisitor.png"
+      },
+      {
+        "id": "demon_jailer",
+        "name": "Legion Jailer",
+        "class": "Enforcer",
+        "category": "Demons",
+        "subcategory": "Inquisition",
+        "hp": 25,
+        "traits": [
+          { "name": "Soul Shackles", "effect": "Binds a target; they cannot disengage until freed." },
+          { "name": "Brutal Strike", "effect": "A heavy chain blow that staggers the victim." }
+        ],
+        "description": "Chain-wielding demons tasked with binding prisoners and tormenting souls within Legion fortresses.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/jailer.png"
+      },
+      {
+        "id": "demon_terrorguard",
+        "name": "Terrorguard",
+        "class": "Winged Elite",
+        "category": "Demons",
+        "subcategory": "Infantry",
+        "hp": 32,
+        "traits": [
+          { "name": "Fear Aura", "effect": "Nearby foes are weakened by oppressive dread." },
+          { "name": "Fel Strike", "effect": "Overwhelms defenses with empowered claws." }
+        ],
+        "description": "An ascended variant of the doomguard, towering winged demons radiating pure fear to break mortals before combat even begins.",
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/terrorguard.png"
+      }
+      
+    ]
+  }
+  

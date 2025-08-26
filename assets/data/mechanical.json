@@ -1,0 +1,493 @@
+{
+    "version": "1.0",
+    "name": "Mechanicals",
+    "entries": [
+      {
+        "id": "mech_gnome_guardian",
+        "name": "Gnomish Guardian",
+        "class": "Defense Construct",
+        "category": "Mechanicals",
+        "subcategory": "Gnomish",
+        "hp": 18,
+        "traits": [
+          { "name": "Shock Baton", "effect": "Delivers a jolt that rattles focus." },
+          { "name": "Tempered Plating", "effect": "Reduces damage from glancing blows." }
+        ],
+        "description": "Compact sentry automata that guard labs and depots.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_gnome_spidertank",
+        "name": "Gnomish Spider Tank",
+        "class": "Walker",
+        "category": "Mechanicals",
+        "subcategory": "Gnomish",
+        "hp": 22,
+        "traits": [
+          { "name": "Stabilized Volley", "effect": "Braced fire keeps aim steady under recoil." },
+          { "name": "Gyro Legs", "effect": "Clambers over rough ground with ease." }
+        ],
+        "description": "Multi-legged light armor frame for patrol and escort.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_lightforged_warframe",
+        "name": "Lightforged Warframe",
+        "class": "Heavy Mech",
+        "category": "Mechanicals",
+        "subcategory": "Army of the Light",
+        "hp": 32,
+        "traits": [
+          { "name": "Lightburst Cannon", "effect": "Emits a radiant pulse that scorches shadow." },
+          { "name": "Sanctified Plating", "effect": "Glowing armor reduces incoming harm by 2." }
+        ],
+        "description": "Titanic bipedal walkers piloted by Lightforged draenei, merging technology with the Holy Light.",
+        "campaignLinks": ["legion"]
+      },
+      {
+        "id": "mech_lightforged_vindicator",
+        "name": "Lightforged Vindicator Mech",
+        "class": "Medium Mech",
+        "category": "Mechanicals",
+        "subcategory": "Army of the Light",
+        "hp": 26,
+        "traits": [
+          { "name": "Radiant Strike", "effect": "Infuses melee blow with searing Light." },
+          { "name": "Blessed Servos", "effect": "Enhances agility, ignoring first hinderance each round." }
+        ],
+        "description": "Smaller warframes built for agile combat and to support ground troops with the Light’s radiance.",
+        "campaignLinks": ["legion"]
+      },
+      {
+        "id": "mech_lightforged_colossus",
+        "name": "Lightforged Colossus",
+        "class": "Colossus Mech",
+        "category": "Mechanicals",
+        "subcategory": "Army of the Light",
+        "hp": 40,
+        "traits": [
+          { "name": "Beacon Nova", "effect": "Unleashes a radiant shockwave that weakens shadow foes." },
+          { "name": "Immovable Faith", "effect": "Immense stance resists forced movement." }
+        ],
+        "description": "Monolithic Lightforged constructs deployed as battlefield anchors and symbols of divine might.",
+        "campaignLinks": ["legion"]
+      },
+  
+      {
+        "id": "mech_sin_dorei_anima_construct",
+        "name": "Blood Elf Anima Construct",
+        "class": "Anima-Powered",
+        "category": "Mechanicals",
+        "subcategory": "Sin’dorei",
+        "hp": 24,
+        "traits": [
+          { "name": "Anima Surge", "effect": "Discharges anima in a destabilizing burst." },
+          { "name": "Crimson Core", "effect": "Glowing anima reservoir dampens a killing blow once per battle." }
+        ],
+        "description": "A construct infused with anima siphoned from magical reserves, animated as a soldier and sentinel.",
+        "campaignLinks": ["tbc","legion"]
+      },
+      {
+        "id": "mech_sin_dorei_arcane_sentinel",
+        "name": "Blood Elf Arcane Sentinel",
+        "class": "Arcane Construct",
+        "category": "Mechanicals",
+        "subcategory": "Sin’dorei",
+        "hp": 22,
+        "traits": [
+          { "name": "Arcane Lance", "effect": "Precision beam of arcane energy." },
+          { "name": "Runed Plating", "effect": "Enchanted armor absorbs 2 magic damage this round." }
+        ],
+        "description": "Magically forged guardians patrolling blood elf spires, powered by intricate runic engines.",
+        "campaignLinks": ["tbc","legion"]
+      },
+      {
+        "id": "mech_sin_dorei_arcane_colossus",
+        "name": "Blood Elf Arcane Colossus",
+        "class": "Arcane Colossus",
+        "category": "Mechanicals",
+        "subcategory": "Sin’dorei",
+        "hp": 34,
+        "traits": [
+          { "name": "Mana Storm", "effect": "Channels unstable arcane energy in a wide blast." },
+          { "name": "Overcharged Core", "effect": "When below half HP, attacks gain +1 potency." }
+        ],
+        "description": "Towering runic constructs built in Silvermoon and Netherstorm, blending arcane mastery with engineered dread.",
+        "campaignLinks": ["tbc"]
+      },
+      {
+        "id": "mech_mechanostrider",
+        "name": "Mechanostrider",
+        "class": "Mount Frame",
+        "category": "Mechanicals",
+        "subcategory": "Gnomish",
+        "hp": 16,
+        "traits": [
+          { "name": "Burst Servo", "effect": "A short sprint of boosted speed." },
+          { "name": "Auto-Balance", "effect": "Keeps rider steady while moving." }
+        ],
+        "description": "Clockwork bird-mounts used by scouts and couriers.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_goblin_shredder",
+        "name": "Goblin Shredder",
+        "class": "Lumber Mech",
+        "category": "Mechanicals",
+        "subcategory": "Goblin",
+        "hp": 24,
+        "traits": [
+          { "name": "Saw Arms", "effect": "Ripping blades chew through armor." },
+          { "name": "Overheat Purge", "effect": "Vents steam to avoid stall under strain." }
+        ],
+        "description": "Work mech re-tooled for war, all blades and fumes.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_goblin_bombardier",
+        "name": "Goblin Bombardier",
+        "class": "Demolition Frame",
+        "category": "Mechanicals",
+        "subcategory": "Goblin",
+        "hp": 20,
+        "traits": [
+          { "name": "Cluster Charge", "effect": "Launches a bundle that scatters sub-charges." },
+          { "name": "Blast Shield", "effect": "Angled plates deflect shrapnel." }
+        ],
+        "description": "A wheeled chassis built to lob far too many explosives.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_arcane_guardian",
+        "name": "Arcane Guardian",
+        "class": "Titan Construct",
+        "category": "Mechanicals",
+        "subcategory": "Titan-Arcane",
+        "hp": 26,
+        "traits": [
+          { "name": "Mana Beam", "effect": "Precise arcane lance that scrambles casting." },
+          { "name": "Runic Shell", "effect": "Glyphs dampen magical harm." }
+        ],
+        "description": "Ancient watchers animated by runic cores.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_iron_colossus",
+        "name": "Iron Colossus",
+        "class": "Heavy Construct",
+        "category": "Mechanicals",
+        "subcategory": "Titan-Arcane",
+        "hp": 32,
+        "traits": [
+          { "name": "Hammerfist", "effect": "A titanic blow that staggers ranks." },
+          { "name": "Adamant Frame", "effect": "Massive plating shrugs off punishing strikes." }
+        ],
+        "description": "Towering golems tasked with sealing forbidden vaults.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_mechagon_enforcer",
+        "name": "Mechagon Enforcer",
+        "class": "Security Frame",
+        "category": "Mechanicals",
+        "subcategory": "Mechagon",
+        "hp": 21,
+        "traits": [
+          { "name": "Stun Pulse", "effect": "Concussive burst that disrupts actions." },
+          { "name": "Alloy Core", "effect": "Composite shell resists wear and tear." }
+        ],
+        "description": "Patrol units from Mechagon’s authoritarian streets.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_mechagon_spider",
+        "name": "Mechagon Spider Walker",
+        "class": "Walker",
+        "category": "Mechanicals",
+        "subcategory": "Mechagon",
+        "hp": 23,
+        "traits": [
+          { "name": "Net-Caster", "effect": "Fires a weighted mesh that entangles." },
+          { "name": "Hydraulic Stride", "effect": "Leg servos keep pace over obstacles." }
+        ],
+        "description": "Slick, chromium walkers designed for urban pursuit.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_scrap_goliath",
+        "name": "Scrap Goliath",
+        "class": "Junk Titan",
+        "category": "Mechanicals",
+        "subcategory": "Mechagon",
+        "hp": 30,
+        "traits": [
+          { "name": "Scrapstorm", "effect": "Whips debris into a cutting vortex." },
+          { "name": "Self-Weld", "effect": "Fuses loose plates to patch damage." }
+        ],
+        "description": "An improvised giant pieced together from the city’s refuse.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_siege_demolisher",
+        "name": "Siege Demolisher",
+        "class": "Artillery",
+        "category": "Mechanicals",
+        "subcategory": "Siege Engines",
+        "hp": 28,
+        "traits": [
+          { "name": "Demolition Shot", "effect": "Shatters fortifications and nerve." },
+          { "name": "Stabilizer Rigs", "effect": "Recoil dampers keep aim true." }
+        ],
+        "description": "Tracked artillery used to batter gates and towers.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_siege_ironstar",
+        "name": "Iron Star",
+        "class": "Rolling Engine",
+        "category": "Mechanicals",
+        "subcategory": "Siege Engines",
+        "hp": 30,
+        "traits": [
+          { "name": "Runaway Mass", "effect": "Momentum crushes anything in the path." },
+          { "name": "Boiler Surge", "effect": "Emergency steam burst to clear jams." }
+        ],
+        "description": "A runaway steel wheel driven by roaring furnaces.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_harvest_golem",
+        "name": "Harvest Golem",
+        "class": "Utility Frame",
+        "category": "Mechanicals",
+        "subcategory": "Ground Frames",
+        "hp": 16,
+        "traits": [
+          { "name": "Thresh Arms", "effect": "Flailing blades that batter close targets." },
+          { "name": "Clunky Resilience", "effect": "Keeps clanking even when damaged." }
+        ],
+        "description": "Farm automata repurposed as militia in a pinch.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_steam_assistant",
+        "name": "Steam Assistant",
+        "class": "Support Frame",
+        "category": "Mechanicals",
+        "subcategory": "Ground Frames",
+        "hp": 14,
+        "traits": [
+          { "name": "Pressure Jet", "effect": "Blasts steam to shove attackers off balance." },
+          { "name": "Boiler Patch", "effect": "Briefly boosts an ally’s output." }
+        ],
+        "description": "Pipe-laden helpers that lug tools and vent steam.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_gyrocopter",
+        "name": "Gyrocopter",
+        "class": "Airframe",
+        "category": "Mechanicals",
+        "subcategory": "Airframes",
+        "hp": 18,
+        "traits": [
+          { "name": "Rotor Wash", "effect": "Buffets foes; aim falters under the gale." },
+          { "name": "Auto-Gyro", "effect": "Stays aloft through sudden maneuvers." }
+        ],
+        "description": "Whirring scout craft for reconnaissance and strike.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_rocket_warhead",
+        "name": "Rocket Warhead",
+        "class": "Missile",
+        "category": "Mechanicals",
+        "subcategory": "Airframes",
+        "hp": 12,
+        "traits": [
+          { "name": "Guidance", "effect": "Corrects course toward marked targets." },
+          { "name": "Volatile Fuel", "effect": "Risk of catastrophic detonation on failure." }
+        ],
+        "description": "Goblin-grade rocketry—fast, loud, and temperamental.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_bomb_bot",
+        "name": "Bomb Bot",
+        "class": "Explosive Drone",
+        "category": "Mechanicals",
+        "subcategory": "Drones & Bots",
+        "hp": 8,
+        "traits": [
+          { "name": "Detonate", "effect": "Explodes on command or critical damage." },
+          { "name": "Unstable Core", "effect": "Can chain-ignite nearby bombs." }
+        ],
+        "description": "Cheap suicidal drones for mine-clearing and chaos.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_repair_bot",
+        "name": "Repair Bot",
+        "class": "Service Drone",
+        "category": "Mechanicals",
+        "subcategory": "Drones & Bots",
+        "hp": 10,
+        "traits": [
+          { "name": "Patch Kit", "effect": "Repairs constructs and armor plates." },
+          { "name": "Diagnostic Ping", "effect": "Highlights weak points for allied fire." }
+        ],
+        "description": "Helpful drones that keep the war machines running.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_scrap_bot",
+        "name": "Scrap Bot",
+        "class": "Collector Drone",
+        "category": "Mechanicals",
+        "subcategory": "Drones & Bots",
+        "hp": 9,
+        "traits": [
+          { "name": "Magnet Claw", "effect": "Snatches metal debris from the ground." },
+          { "name": "Self-Reclaim", "effect": "Can salvage itself into another device." }
+        ],
+        "description": "Scavenger drones that strip battlefields for parts.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "mech_mechanical_squirrel",
+        "name": "Mechanical Squirrel",
+        "class": "Clockwork Critter",
+        "category": "Mechanicals",
+        "subcategory": "Clockwork Critters",
+        "hp": 6,
+        "traits": [
+          { "name": "Whirr-and-Bite", "effect": "A surprising nip from tiny gears." },
+          { "name": "Tinny Frame", "effect": "Small profile makes it hard to hit cleanly." }
+        ],
+        "description": "Beloved gnomish trinkets with more bite than expected.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_mechanical_chicken",
+        "name": "Mechanical Chicken",
+        "class": "Clockwork Critter",
+        "category": "Mechanicals",
+        "subcategory": "Clockwork Critters",
+        "hp": 6,
+        "traits": [
+          { "name": "Peck Protocol", "effect": "A rapid series of jabs." },
+          { "name": "Panic Waddle", "effect": "Erratic movement throws off aim." }
+        ],
+        "description": "A clanking poultry prototype that escaped the workshop.",
+        "campaignLinks": []
+      },
+      {
+        "id": "mech_goblin_zeppelin",
+        "name": "Goblin Zeppelin",
+        "class": "Air Transport",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 60,
+        "traits": [
+          { "name": "Explosive Payload", "effect": "Drops volatile bombs or barrels on enemies below." },
+          { "name": "Unstable Engineering", "effect": "Prone to catastrophic failure when critically damaged." }
+        ],
+        "description": "Ramshackle airships crewed by goblins; rickety but laden with bombs and ingenuity.",
+        "campaignLinks": ["wotlk"]
+      },
+      {
+        "id": "mech_alliance_gunship",
+        "name": "Alliance Gunship",
+        "class": "Air Warship",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 80,
+        "traits": [
+          { "name": "Broadside Cannons", "effect": "Unleashes devastating synchronized volleys." },
+          { "name": "Defensive Aegis", "effect": "Lightforged runes reinforce hull plating against magic." }
+        ],
+        "description": "Flying dreadnoughts of the Alliance, equipped with heavy cannons and rune-forged armor.",
+        "campaignLinks": ["wotlk","bfa","Legion"]
+      },
+      {
+        "id": "mech_horde_gunship",
+        "name": "Horde Gunship",
+        "class": "Air Warship",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 80,
+        "traits": [
+          { "name": "Warsong Cannons", "effect": "Spews rapid-fire barrages of cannon shot." },
+          { "name": "Reinforced Spikes", "effect": "Hull braced for ramming tactics." }
+        ],
+        "description": "Skyborne dreadships of the Horde, bristling with weaponry and tribal warpaint.",
+        "campaignLinks": ["wotlk","bfa","Legion"]
+      },
+      {
+        "id": "mech_alliance_warship",
+        "name": "Alliance Warship",
+        "class": "Naval Vessel",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 90,
+        "traits": [
+          { "name": "Cannonade", "effect": "Coordinated broadside fire to devastate targets." },
+          { "name": "Runed Hull", "effect": "Arcane runes reduce fire and frost damage." }
+        ],
+        "description": "Mighty ships of the Alliance navy, armed with cannons and layered with rune-forged defenses.",
+        "campaignLinks": ["bfa"]
+      },
+      {
+        "id": "mech_horde_warship",
+        "name": "Horde Warship",
+        "class": "Naval Vessel",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 90,
+        "traits": [
+          { "name": "Ramprow", "effect": "Built to smash through blockades and smaller craft." },
+          { "name": "Warchief’s Banner", "effect": "Nearby troops rally and fight harder." }
+        ],
+        "description": "Orcish and troll-crewed war galleons; brutal and adorned with the Horde’s sigils.",
+        "campaignLinks": ["bfa"]
+      },
+      {
+        "id": "mech_goblin_trade_ship",
+        "name": "Goblin Trade Ship",
+        "class": "Naval Vessel",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 70,
+        "traits": [
+          { "name": "Overloaded Cargo", "effect": "Explodes violently when sunk, scattering debris." },
+          { "name": "Grease the Wheels", "effect": "Crew improvises quick repairs mid-battle." }
+        ],
+        "description": "Merchant vessels laden with goods, explosives, and dubious goblin ‘safety’ measures.",
+        "campaignLinks": ["cata","bfa"]
+      },
+      {
+        "id": "mech_sindorei_destroyer",
+        "name": "Sin'dorei Destroyer",
+        "class": "Naval Warship",
+        "category": "Mechanicals",
+        "subcategory": "Transports",
+        "hp": 95,
+        "traits": [
+          { "name": "Solar Lance", "effect": "Fires a concentrated beam of arcane and holy magic." },
+          { "name": "Shield Warders", "effect": "Elven magi protect the ship from incoming fire, deflecting attacks." }
+        ],
+        "description": "Blood Elf destroyers powered by anima, serving as rapid support vessels around Quel’Thalas’s harbors.",
+        "campaignLinks": ["tbc"]
+      }
+      
+    ]
+  }
+  
