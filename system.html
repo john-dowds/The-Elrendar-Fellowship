@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elrendar Fellowship — Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .systems-wrap{
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      gap: 1.25rem;
+    }
+
+    .tabs{
+      flex: 0 0 236px;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      position: sticky;
+      top: 96px; 
+      z-index: 5;
+    }
+    .tab-btn{
+      appearance: none;
+      border: 1px solid rgba(252,229,205,.25);
+      background: rgba(0,0,0,.28);
+      color: #fce5cd;
+      padding: .55rem .7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .95rem;
+      line-height: 1.15;
+      text-align: left;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .tab-btn:hover{ background: rgba(252,229,205,.18); }
+    .tab-btn.active{
+      background: rgba(252,229,205,.58);
+      border-color: rgba(252,229,205,.58);
+      color: #1a0f0b;
+      font-weight: 600;
+    }
+
+    .panels{ flex: 1; min-width: 0; margin-right: 180px}
+    .panel{
+      display: none;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(252,229,205,.15);
+      background: rgba(0,0,0,.55);
+      border-radius: 10px;
+      max-height: calc(100vh - 160px);
+      overflow: auto;
+    }
+    .panel.active{ display: block; }
+
+    .sys-table{
+      width: 100%;
+      border-collapse: collapse;
+      margin: .75rem 0 1rem;
+      font-size: .95rem;
+    }
+    .sys-table th, .sys-table td{
+      border: 1px solid rgba(252,229,205,.15);
+      padding: .5rem .6rem;
+      vertical-align: top;
+    }
+    .sys-table th{
+      background: rgba(252,229,205,.08);
+      color: #fce5cd;
+      text-align: left;
+    }
+    .badge{
+      display: inline-block;
+      border: 1px solid rgba(252,229,205,.35);
+      border-radius: 999px;
+      padding: .15rem .55rem;
+      margin-right: .4rem;
+      font-size: .8rem;
+      color: #fce5cd;
+      white-space: nowrap;
+    }
+    .note{ font-size: .95rem; opacity: .9; margin-top: .4rem; }
+    .mini{ font-size: .95rem; opacity: .96; }
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .9rem;
+      padding: .05rem .35rem;
+      border: 1px solid rgba(252,229,205,.3);
+      border-radius: 6px;
+      background: rgba(252,229,205,.08);
+      color: #fce5cd;
+    }
+    .linkgrid{
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: .6rem; margin-top: .5rem;
+    }
+    .linkgrid a{
+      display: block;
+      border: 1px solid rgba(252,229,205,.18);
+      border-radius: 8px;
+      padding: .45rem .6rem;
+      color: #fce5cd;
+      text-decoration: none;
+      background: rgba(252,229,205,.05);
+    }
+    .linkgrid a:hover{ background: rgba(252,229,205,.1); }
+    .callout{
+      border-left: 3px solid rgba(252,229,205,.45);
+      padding-left: .75rem;
+      margin: .6rem 0;
+    }
+
+    @media (max-width: 900px){
+      .systems-wrap{ flex-direction: column; }
+      .tabs{ position: static; flex: 0 0 auto; }
+      .panel{ max-height: none; }
+    }
+#panel-perks .sys-table td:first-child .badge{
+  background: rgba(252,229,205,.10);
+  border-color: rgba(252,229,205,.45);
+}
+#panel-perks .sys-table tbody tr:hover td{
+  background: rgba(252,229,205,.05);
+}
+
+  </style>
+</head>
+<body>
+  <img src="assets/art/crest2.png" alt="Elven Sigil" class="sigil-overlay" />
+
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="systems-wrap">
+    <div class="tabs" role="tablist" aria-label="ESS Tabs">
+      <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+      <button class="tab-btn" data-tab="stances" role="tab">Stances</button>
+      <button class="tab-btn" data-tab="intervene" role="tab">Interventions</button>
+      <button class="tab-btn" data-tab="env" role="tab">Environment & Perception</button>
+      <button class="tab-btn" data-tab="classes" role="tab">Class Perks</button>
+      <button class="tab-btn" data-tab="perks" role="tab">Player Perks & Debuffs</button>
+      <button class="tab-btn" data-tab="monsters" role="tab">Using the Monster Guide</button>
+      <button class="tab-btn" data-tab="npc" role="tab">NPC Modifications</button>
+      <button class="tab-btn" data-tab="quick" role="tab">Player Quick Card</button>
+    </div>
+
+    <div class="panels">
+      <section id="panel-overview" class="panel active" role="tabpanel" aria-labelledby="overview">
+        <h2>Elrendar Sword &amp; Shields — Combat (ESS)</h2>
+        <p class="mini">Simple, fast, and built to keep the RP moving. Pick a stance, roll, narrate. That’s the loop. We keep the focus on the story, not the dice.</p>
+
+        <div class="callout">
+          <strong>Health</strong>: PCs start at <strong>15 HP</strong>. Fall to <strong>0 HP</strong> and you’re down until someone stabilizes or heals you. Healers can swap “damage dealt” for “healing done” at will, but remain at the same risk of themselves taking damage.
+        </div>
+
+        <h3>Turn flow</h3>
+        <ol>
+          <li>Plan what you want to do.</li>
+          <li>Choose a <a href="#panel-stances" class="kbd">Stance</a> or keep the current one.</li>
+          <li>Roll a d20.</li>
+          <li>Check the table for the results:
+            <span class="kbd">1</span> backfire,
+            <span class="kbd">2–9</span> miss,
+            <span class="kbd">10–11</span> draw,
+            <span class="kbd">12–19</span> hit,
+            <span class="kbd">20</span> crit.
+          </li>
+          <li>Emote your actions based on the results.</li>
+        </ol>
+
+        <h3>Roll Philosophy</h3>
+        <div class="callout">
+          We prefer fast and easy mechanics so that we can stay focused on story. Unlike traditional table-top RPGs, you don't roll for defense and <strong>then</strong> offensive separately; we wrap it into a single turn. When you roll, you determine what happens for both you and the enemy. If you roll low, you take an injury; if you roll high, you deal damage. Simple as that.
+        </div>
+
+        <div class="linkgrid">
+          <a href="monsterguide.html">Open the Monster Manual</a>
+          <a href="monsterbuilder.html">Encounter Creator</a>
+          <a href="history.html">Campaign History</a>
+          <a href="about.html#systems">About Our Systems</a>
+        </div>
+      </section>
+
+      <section id="panel-stances" class="panel" role="tabpanel" aria-labelledby="stances">
+        <h2>Stances</h2>
+        <p>Stances can be changed throughout an event at a player's discretion, but they take a full turn to transition between once active. There's an ideal stance for every situation, but if balancing your numbers isn't a priority, stick to just one and take things as they come.</p>
+
+        <table class="sys-table">
+          <thead>
+            <tr>
+              <th>Stance</th>
+              <th>1</th>
+              <th>2–9</th>
+              <th>10–11</th>
+              <th>12–19</th>
+              <th>Nat 20</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">Aggressive</span></td>
+              <td>−6 HP</td>
+              <td>−3 HP</td>
+              <td>Draw</td>
+              <td>+2 dmg</td>
+              <td>+6 dmg</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Balanced</span></td>
+              <td>−4 HP</td>
+              <td>−2 HP</td>
+              <td>Draw</td>
+              <td>+1 dmg</td>
+              <td>+4 dmg</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Defensive</span></td>
+              <td>−3 HP</td>
+              <td>−2 HP</td>
+              <td>Disarm / Deflect</td>
+              <td>Draw</td>
+              <td>+2 dmg (if 18–19) / +3 dmg (if 20)</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Focused</span></td>
+              <td>−5 HP</td>
+              <td>−3 HP (if 7–9) / −2 HP (if 2–5)</td>
+              <td>1 dmg &amp; −1 HP</td>
+              <td>+2 dmg</td>
+              <td>+5 dmg</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="note">Changing stance takes your turn. Healers can treat “damage” as “healing” without any other changes.</p>
+      </section>
+
+      <section id="panel-intervene" class="panel" role="tabpanel" aria-labelledby="intervene">
+        <h2>Interventions</h2>
+        <p>On any result that’s a <strong>Draw or better</strong>, you can step in and take the hit for an ally—if you're close or can reasonably get to them. Keep it cinematic; if you’re in reach, you can try it, no need to ask. If you succeed, you can either take the injury for your ally, or block/deflect it if you roll high enough.<br> <br>Keep in mind that rescuing everyone from everything can take a lot of the weight off consequences and fate; be mindful that sometimes it's better to let things happen to increase the stakes. That said, interventions are a great way to foster interactivity between players.</p>
+      </section>
+
+      <section id="panel-env" class="panel" role="tabpanel" aria-labelledby="env">
+        <h2>Environment &amp; Perception</h2>
+
+        <h3>Environment & Terrain Calls (DM picks a TN and a bite)</h3>
+        <p>The DM sets a target number (TN). Fail it, take a little damage based on how nasty the scene is, or lose grip if you're grappling with some obstacle; pass it, you keep your footing and progress. Simple as that.</p>
+        <p><strong>Additional effects which can be announced depending on circumstances:</strong></p>
+        <ul>
+          <li><strong>Lava / Fire</strong> · fail = −2 to −4 HP</li>
+          <li><strong>Ice / Slick</strong> · fail = −1 to −2 HP and Off-Balance</li>
+          <li><strong>Poison Cloud</strong> · fail = Poisoned</li>
+          <li><strong>Darkness</strong> · fail = Blind (1 turn)</li>
+          <li><strong>High Winds</strong> · fail = ranged attacks at disadvantage</li>
+          <li><strong>Deep Water</strong> · fail = −1 to −2 HP and halved movement</li>
+        </ul>
+
+        <h3>Perception</h3>
+        <p>DM sets a TN. Highest success gets the first whisper with the most detail; we cascade to the rest in order with less valuable hints. It’s fair and fast, and rewards the high rolls without leaving everyone else in the dark.</p>
+
+        <p class="note">If your class perk gives a small +1, you can toss it on Env <em>or</em> Perception that round—your call.</p>
+      </section>
+
+      <section id="panel-classes" class="panel" role="tabpanel" aria-labelledby="classes">
+        <h2>Class Perks</h2>
+        <p>Always-on helpers. Nothing to track—just remember your edge in the scene.</p>
+        <ul>
+          <li><span class="badge">Magi / Healers</span> +1 dmg/heal on hits, and +1 Perception</li>
+          <li><span class="badge">Rogues / Rangers</span> +1 Attack, and +1 Environment</li>
+          <li><span class="badge">Armored Fighters</span> +1 Attack, and +1 dmg/heal on hits</li>
+          <li><span class="badge">Mounted Fighters</span> +1 dmg/heal, and +1 Environment</li>
+        </ul>
+      </section>
+
+      <section id="panel-perks" class="panel" role="tabpanel" aria-labelledby="perks">
+        <h2>Player Perks &amp; Debuffs</h2>
+
+        <p>Pick two; whatever fits your character. Perks marked “Always-on” are constant and require no work; limited perks or user activated ones, however, show uses. If two don’t play nice, it’s marked. Keep it fast and honest.</p>
+        
+        <h3>Perks</h3>
+        <table class="sys-table">
+          <thead>
+            <tr>
+              <th>Perk</th>
+              <th>What it does</th>
+              <th>Uses</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">Bulwark Bearer</span></td>
+              <td>Reduce incoming damage by <strong>1</strong>.</td>
+              <td>Always-on</td>
+              <td>≠ <em>Bladesworn Resolve</em>.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Bladesworn Resolve</span></td>
+              <td>Your hits deal <strong>+2</strong> damage.</td>
+              <td>Always-on</td>
+              <td>≠ <em>Bulwark Bearer</em>.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Skirmisher’s Step</span></td>
+              <td>Once per round, ignore one opportunity hit or disengage freely.</td>
+              <td>Always-on</td>
+              <td>Stacks well with Rogues/Rangers.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Second Wind</span></td>
+              <td>When you’d hit 0 HP, instead pop to <strong>5 HP</strong>.</td>
+              <td>1 / event</td>
+              <td>Triggers automatically.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Battlefield Medic</span></td>
+              <td>At your discretion, you may split your "output", dealing both damage and healing instead of just one or the other.</td>
+              <td>Always-on</td>
+              <td>Pairs with Magi/Healer perks.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Rally Banner</span></td>
+              <td>Allies within earshot gain <strong>+1 morale</strong> to their roll for this round.</td>
+              <td>1 / encounter</td>
+              <td>Use before allies roll.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Iron Will</span></td>
+              <td>Ignore <em>Fear</em> or <em>Charm</em> once; act normally.</td>
+              <td>1 / encounter</td>
+              <td>Declare when affected.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Pathfinder</span></td>
+              <td>Gain <strong>+1</strong> on either Environment <em>or</em> Perception each round (pick when you roll).</td>
+              <td>Always-on</td>
+              <td>Simple, flexible +1.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Mounted Momentum</span></td>
+              <td>If you moved first, your hit deals <strong>+1</strong> damage this turn.</td>
+              <td>Always-on</td>
+              <td>Works with any mount/beast.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Shadow Veil</span></td>
+              <td>Turn one incoming hit against you into a miss.</td>
+              <td>1 / encounter</td>
+              <td>Use after the result is called.</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Battle Rhythm</span></td>
+              <td>After you score a hit, your next hit this encounter gains <strong>+1</strong> damage.</td>
+              <td>Always-on</td>
+              <td>Resets when spent.</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p class="note">If a perk is “mutually exclusive,” pick one of the pair and stick with it for the event.</p>
+        
+        <h3>Debuffs (used across our monsters)</h3>
+        <table class="sys-table">
+          <thead>
+            <tr>
+              <th>Debuff</th>
+              <th>Effect</th>
+              <th>Typical Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">Poisoned</span></td>
+              <td>Either −1 to rolls <em>or</em> −1 HP / round (DM declares which fits the attack).</td>
+              <td>1–2 turns</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Bleeding</span></td>
+              <td>Lose 1 HP at the start of your turn.</td>
+              <td>1–2 turns</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Burning</span></td>
+              <td>Lose 1 HP this round; fire blocks Regeneration.</td>
+              <td>1–2 turns</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Fear</span></td>
+              <td>Roll 11+ or lose your action this turn.</td>
+              <td>1 turn (retest as called)</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Blind</span></td>
+              <td>Attacks at disadvantage (take the lower of two rolls).</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Rooted / Webbed</span></td>
+              <td>No movement next turn; you may still act.</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Staggered / Off-Balance</span></td>
+              <td>Any hit you land next turn deals −1 damage.</td>
+              <td>1 attack</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Weakened</span></td>
+              <td>−1 to all actions (or −1 damage) as appropriate to the source.</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Shocked</span></td>
+              <td>No reactions this round (lightning/arcane hits).</td>
+              <td>1 round</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Chilled / Slowed</span></td>
+              <td>Half movement; on DM call, −1 to the next action.</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Stunned</span></td>
+              <td>You can’t act this turn.</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Prone / Knocked Down</span></td>
+              <td>Stand up instead of moving next turn; attacks vs. you at advantage until you do.</td>
+              <td>Until you stand</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Grabbed / Restrained</span></td>
+              <td>No movement; attacker may drag or swallow on a follow-up (as listed on their card).</td>
+              <td>Contest or 1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Diseased</span></td>
+              <td>−1 to rolls; healing on you restores 1 fewer HP.</td>
+              <td>1–2 turns or until cleansed</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Cursed / Hexed</span></td>
+              <td>Disadvantage on your next action <em>or</em> −1 to all rolls this round.</td>
+              <td>1 turn</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Sundered Armor</span></td>
+              <td>Reduce your damage reduction by 1 (or take +1 damage) on the next hit.</td>
+              <td>1 hit</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Disoriented</span></td>
+              <td>Your next attack is at disadvantage.</td>
+              <td>1 attack</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Morale: Shaken</span></td>
+              <td>Immediate −1 morale; if already Shaken and it happens again this scene, you hesitate (lose your action) unless you roll 11+.</td>
+              <td>Scene (until rallied)</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Silenced</span></td>
+              <td>You can’t cast or use abilities that require speech this turn.</td>
+              <td>1 turn</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p class="note">If a monster trait uses a flavorful name (e.g., “Void Phase” or “Amber Sting”), map it to the closest effect above and keep the fiction strong.</p>
+        
+      </section>
+
+      <section id="panel-monsters" class="panel" role="tabpanel" aria-labelledby="monsters">
+        <h2>Using the Monster Manual</h2>
+        <p>Every entry in the <a href="monsterguide.html">Monster Manual</a> already has what we need: <em>Name, Class, HP, and two Traits</em>.</p>
+
+        <h3>At the table</h3>
+        <p><span class="kbd"><strong>Name</strong>, <strong>Class</strong>, <strong>HP/Size:</strong> 1-50, <strong>Traits:</strong> [two quick effects]</span> </p>
+
+        <h3>HP sizing (read at a glance)</h3>
+        <ul>
+          <li><span class="badge">Critter</span> 4–8</li>
+          <li><span class="badge">Small</span> 9–14</li>
+          <li><span class="badge">Medium</span> 15–22</li>
+          <li><span class="badge">Large</span> 23–30</li>
+          <li><span class="badge">Colossal</span> 31–50</li>
+        </ul>
+
+        <h3>Trait Glossary (quick conversions)</h3>
+        <ul>
+          <li><strong>Poison / Venom</strong>: −1 to rolls or −1 HP for 1–2 turns</li>
+          <li><strong>Bleeding</strong>: lose 1 HP at the start of the next 1–2 turns</li>
+          <li><strong>Burning</strong>: lose 1 HP this round; fire shuts off Regeneration</li>
+          <li><strong>Fear</strong>: roll 11+ or lose your action this turn</li>
+          <li><strong>Blind</strong>: attacks at disadvantage this turn</li>
+          <li><strong>Root / Web</strong>: can’t move next turn (you still act)</li>
+          <li><strong>Staggered / Off-Balance</strong>: −1 to the next attack’s damage</li>
+          <li><strong>Shell / Carapace / Stonehide</strong>: reduce the next hit by 1–2</li>
+          <li><strong>Magic Ward</strong>: reduce the next <em>spell</em> hit by 1–2</li>
+          <li><strong>Thorns / Reflect</strong>: melee attacker takes 1 HP back</li>
+        </ul>
+
+        <p class="note">If a trait name is flavorful (e.g., “Void Phase”), we apply the nearest effect above and keep the fiction strong.</p>
+      </section>
+
+      <section id="panel-npc" class="panel" role="tabpanel" aria-labelledby="npc">
+        <h2>NPC Modifications</h2>
+        <p>Snap any monster into Minion / Elite / Boss without rewriting stats.</p>
+
+        <table class="sys-table">
+          <thead>
+            <tr>
+              <th>Template</th>
+              <th>HP</th>
+              <th>On Hit</th>
+              <th>On Crit</th>
+              <th>Special</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">Minion</span></td>
+              <td>Entry HP −4 (min 1)</td>
+              <td>1 dmg</td>
+              <td>+1 dmg</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Elite</span></td>
+              <td>Entry HP</td>
+              <td>2 dmg</td>
+              <td>+1 dmg</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Boss</span></td>
+              <td>Entry HP +6–12</td>
+              <td>3 dmg</td>
+              <td>+2 dmg</td>
+              <td>At 50% HP, auto-trigger one trait once (e.g., Regeneration, Sandstorm)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="note">Simple modifications like this can add flavor and variety, and are a great way to scale up or down a fight if time becomes a constraint.</p>
+      </section>
+
+      <section id="panel-quick" class="panel" role="tabpanel" aria-labelledby="quick">
+        <h2>Player Quick Card (hand this to players)</h2>
+        <ul>
+          <li><strong>Turn:</strong> pick a Stance, roll d20</li>
+          <li><span class="kbd">1</span> backfire · <span class="kbd">2–9</span> miss · <span class="kbd">10–11</span> draw · <span class="kbd">12–19</span> hit · <span class="kbd">20</span> crit</li>
+          <li><strong>Intervene:</strong> on Draw+, take an ally’s hit if you’re in reach</li>
+          <li><strong>Healers:</strong> damage = healing</li>
+          <li><strong>Change stance:</strong> costs a turn</li>
+          <li><strong>Perks:</strong> always on; optional perks available</li>
+        </ul>
+        <p class="note">Open the <a href="monsterguide.html">Monster Manual</a> for stat cards. Use Minion/Elite/Boss on the fly.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = {
+      overview: document.getElementById('panel-overview'),
+      stances: document.getElementById('panel-stances'),
+      intervene: document.getElementById('panel-intervene'),
+      env: document.getElementById('panel-env'),
+      classes: document.getElementById('panel-classes'),
+      perks: document.getElementById('panel-perks'),
+      monsters: document.getElementById('panel-monsters'),
+      npc: document.getElementById('panel-npc'),
+      quick: document.getElementById('panel-quick')
+    };
+
+    function showTab(key){
+      tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === key));
+      Object.entries(panels).forEach(([k, el]) => el.classList.toggle('active', k === key));
+      if (panels[key]) panels[key].scrollTop = 0;
+      history.replaceState(null, '', '#'+key); // update hash for deep links
+    }
+
+    tabs.forEach(btn => btn.addEventListener('click', () => showTab(btn.dataset.tab)));
+
+    const hash = (location.hash || '').replace('#','');
+    if (hash && panels[hash]) showTab(hash);
+  </script>
+</body>
+</html>

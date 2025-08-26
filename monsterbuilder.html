@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monster Builder — The Elrendar Fellowship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <style>
+    nav.menu-bar { z-index: 1200 !important; }
+    nav.menu-bar .dropdown-menu { z-index: 1300 !important; }
+    a, a:visited { color: #fce5cd; }
+
+    .builder-wrap{
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #fce5cd;
+    }
+    .controls {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(252,229,205,.2);
+      border-radius: 12px; padding: .75rem;
+      position: sticky; top: 80px; z-index: 103;
+      backdrop-filter: blur(2px);
+    }
+    .controls .left, .controls .right { display:flex; gap:.5rem; align-items:center; flex-wrap: wrap; }
+    .btn {
+      background: linear-gradient(#7d5a1a,#3d2a12);
+      color: #fff; border: 1px solid #000; border-radius: 999px;
+      padding: .55rem .9rem; cursor: pointer; font-weight: 700; font-size: .95rem;
+    }
+    .btn:hover{ filter:brightness(1.08); }
+
+    .picker {
+      display: grid; gap: .5rem;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      margin: 1rem 0;
+    }
+    @media (max-width: 900px){ .picker{ grid-template-columns: 1fr; } }
+
+    .picker select {
+      background: rgba(0,0,0,.35); color: #fce5cd;
+      border: 1px solid rgba(252,229,205,.25); border-radius: 8px;
+      padding: .6rem .7rem; width: 100%;
+    }
+
+    .muted { opacity:.85; font-size:.95rem; }
+
+    .tabs {
+      margin-top: 1rem;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(252,229,205,.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .tab-bar {
+      display:flex; flex-wrap: wrap; gap:.5rem; padding:.5rem;
+      border-bottom: 1px solid rgba(252,229,205,.15);
+      background: rgba(0,0,0,.35);
+    }
+    .tab {
+      display:flex; align-items:center; gap:.4rem;
+      padding: .35rem .6rem; border:1px solid rgba(252,229,205,.25); border-radius: 999px; cursor: pointer;
+      background: rgba(0,0,0,.2);
+    }
+    .tab.is-active { background: rgba(252,229,205,.08); }
+    .tab .x { font-weight: 900; opacity:.8; cursor: pointer; }
+    .tab .x:hover{ opacity:1; }
+
+    .tab-body {
+      padding: 1rem;
+      display: grid; gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 900px){ .tab-body{ grid-template-columns: 1fr; } }
+
+    .card {
+      background: rgba(0,0,0,.4);
+      border: 1px solid rgba(252,229,205,.2);
+      border-radius: 10px; padding: .9rem;
+    }
+    .card h3 { margin: .25rem 0 .5rem; }
+
+    .row-2 { display:grid; gap:.6rem; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 700px){ .row-2{ grid-template-columns: 1fr; } }
+
+    .field { margin: .55rem 0; }
+    .field label { display:block; font-weight:700; margin-bottom:.25rem; }
+    .field input, .field textarea {
+      width:100%; background: rgba(0,0,0,.35); color:#fce5cd;
+      border:1px solid rgba(252,229,205,.25); border-radius:8px; padding:.6rem .7rem;
+    }
+    .field input[readonly] {
+      opacity: .9;
+      background: rgba(0,0,0,.25);
+    }
+    .field textarea { min-height: 120px; resize: vertical; }
+
+    .badge { border:1px solid rgba(252,229,205,.35); border-radius: 999px; padding:.15rem .55rem; }
+  </style>
+</head>
+<body>
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Monster Builder</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </li>
+
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="builder-wrap">
+    <div class="controls">
+      <div class="left">
+        <strong>Monster Builder</strong>
+        <span class="badge">Each tab exports into a shared spreadsheet.</span>
+      </div>
+      <div class="right">
+        <button id="addMonster" class="btn">+ Add Monster Tab</button>
+        <button id="exportExcel" class="btn">⬇ Export Excel</button>
+      </div>
+    </div>
+
+    <div class="picker" aria-label="Monster Picker">
+      <select id="pickCategory" aria-label="Category"></select>
+      <select id="pickSubcategory" aria-label="Subcategory"></select>
+      <select id="pickMonster" aria-label="Monster"></select>
+      <select id="pickLevel" aria-label="Level">
+        <option value="Minion">Minion</option>
+        <option value="Elite">Elite</option>
+        <option value="Boss">Boss</option>
+      </select>
+    </div>
+    <div class="muted">Choose a monster (and Level) above, then use <em>+ Add Monster Tab</em>. Clone or reload tabs as needed; export when done. All data is pulled from the Monster Manual.</div>
+
+    <section class="tabs">
+      <div id="tabBar" class="tab-bar"></div>
+      <div id="tabPanel"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script>
+    const dataFiles = [
+      'assets/data/aberrations.json',
+      'assets/data/beasts.json',
+      'assets/data/critters.json',
+      'assets/data/demons.json',
+      'assets/data/dragonkin.json',
+      'assets/data/elementals.json',
+      'assets/data/giants.json',
+      'assets/data/humanoids.json',
+      'assets/data/mechanical.json',
+      'assets/data/undead.json',
+      'assets/data/npcs.json'
+    ];
+
+    async function loadJsonSafe(url) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        if (!text.trim()) return { entries: [], categories: [] };
+        return JSON.parse(text);
+      } catch (e) {
+        console.warn('Skipping data file:', url, e);
+        return { entries: [], categories: [] };
+      }
+    }
+
+    function normalize(source) {
+  if (Array.isArray(source.categories)) return JSON.parse(JSON.stringify(source.categories));
+
+  const byCategory = new Map();
+
+  function addPlacement(entry, cat, sub) {
+    const category = cat || 'Other';
+    const subcategory = sub || 'Misc';
+    if (!byCategory.has(category)) byCategory.set(category, new Map());
+    const subs = byCategory.get(category);
+    if (!subs.has(subcategory)) subs.set(subcategory, []);
+    const list = subs.get(subcategory);
+    if (!list.some(e => e.id === entry.id)) {
+      list.push({ ...entry, category: category, subcategory: subcategory });
+    }
+  }
+
+  for (const e of (source.entries || [])) {
+    addPlacement(e, e.category, e.subcategory);
+    if (Array.isArray(e.alsoAppearsIn)) {
+      for (const p of e.alsoAppearsIn) {
+        if (p && (p.category || p.subcategory)) {
+          addPlacement(e, p.category, p.subcategory);
+        }
+      }
+    }
+  }
+
+  const out = [];
+  for (const [category, subs] of byCategory.entries()) {
+    const subcategories = [];
+    for (const [name, entries] of subs.entries()) {
+      subcategories.push({ name, entries });
+    }
+    subcategories.sort((a, b) => a.name.localeCompare(b.name));
+    out.push({ category, subcategories });
+  }
+
+  out.sort((a, b) => {
+    const pref = (x) => (x.category === 'Humanoids' ? 0 : x.category === 'Beasts' ? 1 : 2);
+    const pa = pref(a), pb = pref(b);
+    return pa === pb ? a.category.localeCompare(b.category) : pa - pb;
+  });
+
+  return out;
+}
+
+    function mergeCategoryBlocks(blocks){
+      const acc = [];
+      for (const cur of blocks) {
+        const ix = acc.findIndex(c=>c.category===cur.category);
+        if (ix===-1) acc.push(cur);
+        else acc[ix].subcategories.push(...cur.subcategories);
+      }
+      return acc.map(cat=>{
+        const map = new Map();
+        for (const s of cat.subcategories) {
+          if (!map.has(s.name)) map.set(s.name, []);
+          map.get(s.name).push(...(s.entries||[]));
+        }
+        const subcategories = [...map.entries()].map(([name, entries])=>({name, entries}))
+          .sort((a,b)=>a.name.localeCompare(b.name));
+        return { category: cat.category, subcategories };
+      });
+    }
+
+    const LEVELS = { Minion: 0.5, Elite: 1.5, Boss: 3 };
+
+    const catSel   = document.getElementById('pickCategory');
+    const subSel   = document.getElementById('pickSubcategory');
+    const monSel   = document.getElementById('pickMonster');
+    const levelSel = document.getElementById('pickLevel');
+
+    const tabBar   = document.getElementById('tabBar');
+    const tabPanel = document.getElementById('tabPanel');
+
+    const addBtn    = document.getElementById('addMonster');
+    const exportBtn = document.getElementById('exportExcel');
+
+    let mergedCategories = [];
+    let tabs = [];
+    let activeId = null;
+
+    (async function init(){
+      const allData = await Promise.all(dataFiles.map(loadJsonSafe));
+      mergedCategories = mergeCategoryBlocks(allData.map(normalize).flat());
+      buildPickers();
+
+      if (catSel.options.length) {
+        catSel.selectedIndex = 0; syncSubcats();
+        if (subSel.options.length) { subSel.selectedIndex = 0; syncMonsters(); }
+      }
+      addTabFromCurrentPicker();
+    })();
+
+    function buildPickers(){
+      catSel.innerHTML = '';
+      for (const c of mergedCategories) {
+        const opt = document.createElement('option');
+        opt.value = c.category; opt.textContent = c.category;
+        catSel.appendChild(opt);
+      }
+      catSel.addEventListener('change', syncSubcats);
+      subSel.addEventListener('change', syncMonsters);
+    }
+
+    function syncSubcats(){
+      subSel.innerHTML = '';
+      monSel.innerHTML = '';
+      const cat = mergedCategories.find(c=>c.category===catSel.value);
+      if (!cat) return;
+      for (const s of (cat.subcategories||[])) {
+        const opt = document.createElement('option');
+        opt.value = s.name; opt.textContent = s.name;
+        subSel.appendChild(opt);
+      }
+      syncMonsters();
+    }
+
+    function syncMonsters(){
+      monSel.innerHTML = '';
+      const cat = mergedCategories.find(c=>c.category===catSel.value);
+      const sub = (cat?.subcategories||[]).find(s=>s.name===subSel.value);
+      for (const e of (sub?.entries||[])) {
+        const opt = document.createElement('option');
+        opt.value = e.id || e.name;
+        opt.textContent = e.name || e.id;
+        opt.dataset.payload = JSON.stringify(e);
+        monSel.appendChild(opt);
+      }
+    }
+
+    function currentPickerEntry(){
+      const opt = monSel.selectedOptions[0];
+      return opt ? JSON.parse(opt.dataset.payload) : null;
+    }
+
+    function displayNameFor(tabData){
+      return (tabData.customName && tabData.customName.trim()) || tabData.baseName || 'Monster';
+    }
+
+    function addTabFromCurrentPicker(){
+      const entry = currentPickerEntry();
+      if (!entry) return;
+      const id = 'tab_' + Math.random().toString(36).slice(2,8);
+      const data = toTabDataFromEntry(entry, levelSel.value);
+      const base = displayNameFor(data);
+      const title = uniquifyTitle(base);
+      tabs.push({ id, title, data });
+      activeId = id;
+      renderTabs();
+    }
+
+    function toTabDataFromEntry(m, level) {
+      const mult = LEVELS[level] ?? 1;
+      const baseHpNum = Number(m.hp);
+      const hp = Number.isFinite(baseHpNum) ? Math.max(1, Math.round(baseHpNum * mult)) : '';
+      return {
+        baseName: m.name || '',
+        customName: '',
+        level: level || 'Minion',
+        class: m.class || '',
+        category: m.category || '',
+        subcategory: m.subcategory || '',
+        hp,
+        traits: (m.traits||[]).map(t => `${t.name}: ${t.effect}`).join('\n'),
+        description: m.description || '',
+        image: m.image || '',
+        campaignLinks: (m.campaignLinks||[]).join(', '),
+        count: 1,
+        notes: ''
+      };
+    }
+
+    function uniquifyTitle(base){
+      let n = 1;
+      let t = base || 'Monster';
+      while (tabs.some(tb => tb.title === t)) {
+        n += 1; t = `${base} (${n})`;
+      }
+      return t;
+    }
+
+    function renderTabs(){
+  tabBar.innerHTML = '';
+  for (const t of tabs) {
+    const el = document.createElement('div');
+    el.className = 'tab' + (t.id===activeId ? ' is-active' : '');
+    el.dataset.tabId = t.id;
+    el.innerHTML = `
+      <span class="t-title">${escapeHtml(t.title)}</span>
+      <span data-x="${t.id}" class="x" title="Remove">×</span>
+    `;
+    el.addEventListener('click', (e)=>{
+      if (e.target && e.target.dataset.x) return;
+      activeId = t.id; renderTabs();
+    });
+    el.querySelector('.x').addEventListener('click', ()=> removeTab(t.id));
+    tabBar.appendChild(el);
+  }
+
+  const active = tabs.find(t=>t.id===activeId);
+  tabPanel.innerHTML = active ? tabForm(active) : '<div class="card" style="margin:1rem;">No monsters yet.</div>';
+  if (active) wireForm(active);
+}
+
+
+    function removeTab(id){
+      const ix = tabs.findIndex(t=>t.id===id);
+      if (ix===-1) return;
+      tabs.splice(ix,1);
+      activeId = tabs[ix]?.id || tabs[ix-1]?.id || null;
+      renderTabs();
+    }
+
+    function cloneActive(){
+      const src = tabs.find(t=>t.id===activeId);
+      if (!src) return;
+      const id = 'tab_' + Math.random().toString(36).slice(2,8);
+      const data = JSON.parse(JSON.stringify(src.data));
+      const base = displayNameFor(data);
+      const title = uniquifyTitle(base);
+      tabs.push({ id, title, data });
+      activeId = id;
+      renderTabs();
+    }
+
+    function tabForm(tab){
+      const d = tab.data;
+      return `
+        <div class="tab-body">
+          <div class="card">
+            <h3>Template</h3>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Base Monster:</label>
+                <input data-k="baseName" value="${escapeHtml(d.baseName)}" readonly />
+              </div>
+              <div class="field">
+                <label>Name (Optional):</label>
+                <input data-k="customName" value="${escapeHtml(d.customName)}" placeholder="e.g., Rakkor the Red" />
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Class:</label>
+                <input data-k="class" value="${escapeHtml(d.class)}" />
+              </div>
+              <div class="field">
+                <label>Level:</label>
+                <input data-k="level" value="${escapeHtml(d.level||'')}" />
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Category:</label>
+                <input data-k="category" value="${escapeHtml(d.category)}" />
+              </div>
+              <div class="field">
+                <label>Subcategory:</label>
+                <input data-k="subcategory" value="${escapeHtml(d.subcategory)}" />
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>HP:</label>
+                <input data-k="hp" value="${escapeHtml(String(d.hp))}" />
+              </div>
+              <div class="field">
+                <label>Count:</label>
+                <input data-k="count" type="number" min="1" step="1" value="${Number(d.count)||1}" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Traits (one per line):</label>
+              <textarea data-k="traits">${escapeHtml(d.traits)}</textarea>
+            </div>
+
+            <div class="field">
+              <label>Description:</label>
+              <textarea data-k="description">${escapeHtml(d.description)}</textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Extras</h3>
+            <div class="field">
+              <label>Image URL</label>
+              <input data-k="image" value="${escapeHtml(d.image)}" />
+            </div>
+            <div class="field">
+              <label>Campaign Links (IDs, comma-separated)</label>
+              <input data-k="campaignLinks" value="${escapeHtml(d.campaignLinks)}" />
+            </div>
+            <div class="field">
+              <label>Notes (DM only)</label>
+              <textarea data-k="notes">${escapeHtml(d.notes)}</textarea>
+            </div>
+
+            <div class="field" style="display:flex; gap:.5rem; flex-wrap:wrap;">
+              <button type="button" class="btn" id="cloneBtn">Clone Tab</button>
+              <button type="button" class="btn" id="reloadFromPickerBtn">Reload</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    function setTabTitle(tab, baseTitle, { commit = false } = {}) {
+  let title = (baseTitle || 'Monster').trim() || 'Monster';
+  if (commit) {
+    let suffix = 1, candidate = title;
+    while (tabs.some(t => t.id !== tab.id && t.title === candidate)) {
+      suffix += 1; candidate = `${title} (${suffix})`;
+    }
+    title = candidate;
+    tab.title = title;
+  }
+  const node = tabBar.querySelector(`.tab[data-tab-id="${tab.id}"] .t-title`);
+  if (node) node.textContent = title;
+}
+
+function wireForm(tab){
+  const panel = tabPanel;
+  panel.querySelectorAll('input[data-k], textarea[data-k]').forEach(el=>{
+    const k = el.dataset.k;
+
+    el.addEventListener('input', ()=>{
+      if (k === 'count') tab.data[k] = Math.max(1, parseInt(el.value||'1', 10));
+      else tab.data[k] = el.value;
+
+      if (k === 'customName') {
+        const liveDisplay = (tab.data.customName && tab.data.customName.trim()) || tab.data.baseName || 'Monster';
+        setTabTitle(tab, liveDisplay, { commit: false });
+      }
+    });
+
+    el.addEventListener('blur', ()=>{
+      if (k === 'customName') {
+        const finalDisplay = (tab.data.customName && tab.data.customName.trim()) || tab.data.baseName || 'Monster';
+        setTabTitle(tab, finalDisplay, { commit: true });
+      }
+    });
+    if (el.tagName === 'INPUT') {
+      el.addEventListener('keydown', (ev)=>{
+        if (k === 'customName' && ev.key === 'Enter') {
+          ev.preventDefault();
+          el.blur();
+        }
+      });
+    }
+  });
+
+  panel.querySelector('#cloneBtn').addEventListener('click', cloneActive);
+
+  panel.querySelector('#reloadFromPickerBtn').addEventListener('click', ()=>{
+    const entry = currentPickerEntry();
+    if (!entry) return;
+    const prev = tab.data;
+    const fresh = toTabDataFromEntry(entry, levelSel.value);
+    fresh.customName = prev.customName;
+    fresh.count = prev.count;
+    tab.data = fresh;
+
+    const base = (tab.data.customName && tab.data.customName.trim()) || tab.data.baseName || 'Monster';
+    setTabTitle(tab, base, { commit: true });
+
+    const active = tabs.find(t=>t.id===activeId);
+    tabPanel.innerHTML = active ? tabForm(active) : '<div class="card" style="margin:1rem;">No monsters yet.</div>';
+    if (active) wireForm(active);
+  });
+}
+
+
+    function escapeHtml(s){ return (s??'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+    addBtn.addEventListener('click', addTabFromCurrentPicker);
+
+    exportBtn.addEventListener('click', ()=>{
+      if (tabs.length === 0) return alert('No monsters to export yet.');
+
+      const wb = XLSX.utils.book_new();
+
+      for (const t of tabs) {
+        const d = t.data;
+        const traits = (d.traits||'').split(/\r?\n/).filter(Boolean);
+        const rows = [
+          ['Base Monster', d.baseName],
+          ['Name (Optional)', d.customName],
+          ['Class', d.class],
+          ['Category', d.category],
+          ['Subcategory', d.subcategory],
+          ['Level', d.level],
+          ['Count', d.count],
+          ['HP', d.hp],
+          ['Image', d.image],
+          ['Campaign Links (IDs)', d.campaignLinks],
+          ['Description', d.description],
+          ['Notes', d.notes],
+          [],
+          ['Traits'],
+          ...traits.map(line => [line])
+        ];
+        const ws = XLSX.utils.aoa_to_sheet(rows);
+
+        ws['!cols'] = [
+          { wch: 20 },
+          { wch: 50 }  
+        ];
+
+        const sheetTitle = displayNameFor(d);
+        const safeTitle = (sheetTitle || 'Monster').slice(0,31);
+        XLSX.utils.book_append_sheet(wb, ws, safeTitle || 'Monster');
+      }
+
+      const outName = `Monster_Event_${new Date().toISOString().slice(0,10)}.xlsx`;
+      XLSX.writeFile(wb, outName);
+    });
+  </script>
+</body>
+</html>

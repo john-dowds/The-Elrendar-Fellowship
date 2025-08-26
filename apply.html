@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apply — The Elrendar Fellowship</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="apply.css" />
+</head>
+<body>
+  <header class="banner"><h1 class="site-title">Apply to the Fellowship</h1></header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="apply-main">
+    <form id="appForm" class="app-card" novalidate>
+      <h2>Guild Application</h2>
+
+      <div class="grid">
+        <label>OOC Character Name
+          <input name="name" required />
+        </label>
+
+        <label>Server
+            <input type="text" name="server" placeholder="Wyrmrest-Accord" />
+          </label>          
+
+        <label>Discord
+          <input name="discord" placeholder="user#1234" />
+        </label>
+
+        <label>IC Character Name
+          <input name="character" required />
+        </label>
+
+        <label>IC Character Title
+          <input name="title" />
+        </label>
+
+        <label>Faction/Role
+          <input name="faction" placeholder="e.g., Ranger / Healer / RP" />
+        </label>
+
+        <label>Availability
+          <input name="availability" placeholder="e.g., Weeknights after 8pm" />
+        </label>
+      </div>
+
+      <label>Character History / Notes
+        <textarea name="history" rows="8" required></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Submit Application</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+  </footer>
+
+  <script type="module" src="apply.js"></script>
+</body>
+</html>

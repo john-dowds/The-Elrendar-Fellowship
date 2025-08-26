@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elrendar Fellowship — Monster Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .monsterguide-wrap{
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 320px;
+    }
+    .scroll-pane{
+      height: calc(100vh - 160px);
+      overflow: auto;
+      padding-right: .5rem;
+    }
+    @media (max-width: 900px){
+      .monsterguide-wrap{ grid-template-columns: 1fr; }
+      .scroll-pane{ height: auto; }
+    }
+
+    .sidebar {
+      position: sticky; top: 80px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      display: block;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(252,229,205,.2);
+      border-radius: 12px;
+      padding: .75rem;
+    }
+    .sidebar h2{
+      font-size: 1.1rem; margin:.25rem .25rem .5rem;
+      color:#fce5cd;
+    }
+    .tree { list-style: none; padding: 0; margin: 0; }
+    .tree li { margin: .15rem 0; }
+
+    .tree button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: #fce5cd;
+      border: 1px solid rgba(252,229,205,.15);
+      border-radius: .5rem;
+      padding: .45rem .6rem;
+      cursor: pointer;
+    }
+    .tree button:hover { background: rgba(252,229,205,.08); }
+
+    .tree .indent-1 { margin-left: 0.75rem; }
+    .tree .indent-2 { margin-left: 1.5rem; }
+    .tree .indent-3 { margin-left: 2.25rem; }
+
+    .monster-card {
+      background: rgba(0,0,0,.6);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+    .monster-card h3 {
+      margin: 0 0 .2rem;
+      font-size: 1.3rem;
+      color:#fce5cd;
+    }
+    .badges {
+      display:flex; gap:.5rem; flex-wrap: wrap; margin:.25rem 0 .75rem;
+      font-size: .9rem;
+    }
+    .badge {
+      border:1px solid rgba(252,229,205,.3);
+      border-radius: 999px;
+      padding:.2rem .6rem;
+      color:#fce5cd;
+    }
+    .traits { margin:.25rem 0 .5rem; padding-left: 1rem; }
+    .traits li { margin: .15rem 0; }
+    .campaign-links { margin-top: .5rem; display:flex; gap:.5rem; flex-wrap: wrap; }
+    .campaign-links a {
+      text-decoration:none; border:1px solid rgba(252,229,205,.35);
+      border-radius: .5rem; padding: .3rem .6rem; color:#fce5cd;
+    }
+    .campaign-links a:hover { background: rgba(252,229,205,.08); }
+
+    .monster-card { scroll-margin-top: 100px; }
+    #monsterguide-tree > li > button {
+    font-weight: bold;
+    font-size: 1.1em; 
+    margin-top: 0.25em;
+    }
+
+    #monsterguide-tree .indent-1 > button {
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 0.5em;
+    }
+
+    #monsterguide-tree .indent-2 > button {
+    font-weight: normal;
+    font-size: 0.95em;
+    margin-left: 1em;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="monsterguide-wrap">
+    <section class="scroll-pane" id="monsterguide-list">
+      <div class="text-block">
+        <h1>Monster Manual</h1>
+        <p>
+          Browse categories on the right. Click a category to reveal subcategories, and a subcategory to list its mobs.
+          Click a mob type to jump to its card.
+        </p>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <div class="search-wrap">
+        <input id="monsterguide-search" type="search" placeholder="Search monsters, classes, subcategories…" aria-label="Search">
+      </div>      
+      <ul class="tree" id="monsterguide-tree"></ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script>
+    (async function () {
+        const dataFiles = [
+  'assets/data/npcs.json',
+  'assets/data/aberrations.json',
+  'assets/data/beasts.json',
+  'assets/data/critters.json',
+  'assets/data/demons.json',
+  'assets/data/dragonkin.json', 
+  'assets/data/elementals.json',
+  'assets/data/giants.json',
+  'assets/data/humanoids.json',
+  'assets/data/mechanical.json', 
+  'assets/data/undead.json'
+];
+
+async function loadJsonSafe(url) {
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    if (!text.trim()) return { entries: [], categories: [] };
+    return JSON.parse(text);
+  } catch (e) {
+    console.warn('Skipping data file:', url, e);
+    return { entries: [], categories: [] };
+  }
+}
+
+const [allData, histRes] = await Promise.all([
+  Promise.all(dataFiles.map(loadJsonSafe)),
+  fetch('assets/data/history.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : { sections: [] })
+    .catch(() => ({ sections: [] }))
+]);    
+      const historyTitleById = {};
+      (histRes.sections || []).forEach(s => { historyTitleById[s.id] = s.title || s.id; });
+      function normalize(source) {
+  if (Array.isArray(source.categories)) return JSON.parse(JSON.stringify(source.categories));
+
+  const byCategory = new Map();
+
+  function addPlacement(entry, cat, sub) {
+    const category = cat || 'Other';
+    const subcategory = sub || 'Misc';
+    if (!byCategory.has(category)) byCategory.set(category, new Map());
+    const subs = byCategory.get(category);
+    if (!subs.has(subcategory)) subs.set(subcategory, []);
+    const list = subs.get(subcategory);
+    if (!list.some(e => e.id === entry.id)) {
+      list.push({ ...entry, category: category, subcategory: subcategory });
+    }
+  }
+
+  for (const e of (source.entries || [])) {
+    addPlacement(e, e.category, e.subcategory);
+    if (Array.isArray(e.alsoAppearsIn)) {
+      for (const p of e.alsoAppearsIn) {
+        if (p && (p.category || p.subcategory)) {
+          addPlacement(e, p.category, p.subcategory);
+        }
+      }
+    }
+  }
+
+  const out = [];
+  for (const [category, subs] of byCategory.entries()) {
+    const subcategories = [];
+    for (const [name, entries] of subs.entries()) {
+      subcategories.push({ name, entries });
+    }
+    subcategories.sort((a, b) => a.name.localeCompare(b.name));
+    out.push({ category, subcategories });
+  }
+
+  out.sort((a, b) => {
+    const pref = (x) => (x.category === 'Humanoids' ? 0 : x.category === 'Beasts' ? 1 : 2);
+    const pa = pref(a), pb = pref(b);
+    return pa === pb ? a.category.localeCompare(b.category) : pa - pb;
+  });
+
+  return out;
+}
+      const mergedCategories = allData
+        .map(normalize)
+        .flat()
+        .reduce((acc, cur) => {
+          const ix = acc.findIndex(c => c.category === cur.category);
+          if (ix === -1) acc.push(cur);
+          else acc[ix].subcategories.push(...cur.subcategories);
+          return acc;
+        }, [])
+        .map(cat => {
+          const map = new Map();
+          for (const s of cat.subcategories) {
+            if (!map.has(s.name)) map.set(s.name, []);
+            map.get(s.name).push(...(s.entries || []));
+          }
+          const subcategories = [...map.entries()]
+            .map(([name, entries]) => ({ name, entries }))
+            .sort((a, b) => a.name.localeCompare(b.name));
+          return { category: cat.category, subcategories };
+        });
+    
+      const tree = document.getElementById('monsterguide-tree');
+      const list = document.getElementById('monsterguide-list');
+const searchInput = document.getElementById('monsterguide-search');
+
+function flattenEntries(cats) {
+  const out = [];
+  for (const cat of cats) {
+    for (const sub of (cat.subcategories || [])) {
+      for (const e of (sub.entries || [])) {
+        out.push({ ...e, _cat: cat.category, _sub: sub.name });
+      }
+    }
+  }
+  return out;
+}
+const allEntriesFlat = flattenEntries(mergedCategories);
+
+function matches(q, e) {
+  if (!q) return true;
+  q = q.toLowerCase();
+  return (
+    (e.name || '').toLowerCase().includes(q) ||
+    (e.class || '').toLowerCase().includes(q) ||
+    (e._sub || '').toLowerCase().includes(q) ||
+    (e._cat || '').toLowerCase().includes(q)
+  );
+}
+
+function filterCategories(q) {
+  if (!q) return mergedCategories;
+  const cats = [];
+  for (const cat of mergedCategories) {
+    const subs = [];
+    for (const sub of (cat.subcategories || [])) {
+      const ents = (sub.entries || []).filter(e => matches(q, { ...e, _cat: cat.category, _sub: sub.name }));
+      if (ents.length) subs.push({ name: sub.name, entries: ents });
+    }
+    if (subs.length) cats.push({ category: cat.category, subcategories: subs });
+  }
+  return cats;
+}
+
+function rebuildSidebar(filteredCats, options = {}) {
+  const expand = !!options.expandMatches; // true when searching
+  tree.innerHTML = '';
+  const catFrag = document.createDocumentFragment();
+
+  filteredCats.forEach(cat => {
+    const liCat = document.createElement('li');
+    const btnCat = document.createElement('button');
+    btnCat.textContent = cat.category;
+    btnCat.dataset.toggle = 'category';
+    liCat.appendChild(btnCat);
+
+    const ulSub = document.createElement('ul');
+    ulSub.className = 'tree';
+    ulSub.style.display = expand ? '' : 'none';
+
+    (cat.subcategories || []).forEach(sub => {
+      const liSub = document.createElement('li'); liSub.classList.add('indent-1');
+      const btnSub = document.createElement('button');
+      btnSub.textContent = sub.name;
+      btnSub.dataset.toggle = 'subcategory';
+      liSub.appendChild(btnSub);
+
+      const ulEntries = document.createElement('ul');
+      ulEntries.className = 'tree';
+      ulEntries.style.display = expand ? '' : 'none';
+
+      (sub.entries || []).forEach(ent => {
+        const liEnt = document.createElement('li'); liEnt.classList.add('indent-2');
+        const btnEnt = document.createElement('button');
+        btnEnt.textContent = ent.name;
+        btnEnt.dataset.entryId = ent.id;
+        btnEnt.dataset.toggle = 'entry';
+        liEnt.appendChild(btnEnt);
+        ulEntries.appendChild(liEnt);
+      });
+
+      liSub.appendChild(ulEntries);
+      ulSub.appendChild(liSub);
+
+      btnSub.addEventListener('click', () => {
+        ulEntries.style.display = (ulEntries.style.display === 'none') ? '' : 'none';
+        renderCards(sub.entries || []);
+      });
+    });
+
+    btnCat.addEventListener('click', () => {
+      ulSub.style.display = (ulSub.style.display === 'none') ? '' : 'none';
+    });
+
+    liCat.appendChild(ulSub);
+    catFrag.appendChild(liCat);
+  });
+
+  tree.appendChild(catFrag);
+}
+
+
+function runSearch() {
+  const q = searchInput.value.trim();
+  const filtered = filterCategories(q);
+  rebuildSidebar(filtered);
+  const results = q ? allEntriesFlat.filter(e => matches(q, e)) : [];
+  if (q) renderCards(results);
+}
+searchInput.addEventListener('input', runSearch);
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { searchInput.value = ''; runSearch(); }
+  if (e.key === 'Enter') runSearch();
+});
+
+
+    
+      function renderCards(entries) {
+        list.querySelectorAll('.monster-card').forEach(n => n.remove());
+        const frag = document.createDocumentFragment();
+        for (const m of entries) {
+          const card = document.createElement('article');
+          card.className = 'monster-card';
+          card.id = m.id;
+          const fig = document.createElement('figure');
+    fig.className = 'thumb';
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = m.name || 'monster image';
+    img.src = m.image || 'assets/images/monsters/_placeholder_3x4.jpg'; // fallback
+    fig.appendChild(img);
+    card.appendChild(fig);
+          const h3 = document.createElement('h3');
+          h3.textContent = m.name;
+    
+          const badges = document.createElement('div'); badges.className = 'badges';
+          const badgeData = [
+            ['Class', m.class],
+            ['Race', `${m.category || ''}${m.subcategory ? ' • ' + m.subcategory : ''}`.trim()],
+            ['HP', m.hp]
+          ];
+          for (const [k, v] of badgeData) {
+            if (v === undefined || v === null || v === '') continue;
+            const span = document.createElement('span');
+            span.className = 'badge';
+            span.textContent = `${k}: ${v}`;
+            badges.appendChild(span);
+          }
+    
+          const desc = document.createElement('p');
+          desc.innerHTML = m.description || '';
+    
+          const traits = document.createElement('ul'); traits.className = 'traits';
+          if (m.traits && m.traits.length) {
+            for (const t of m.traits) {
+              const li = document.createElement('li');
+              li.innerHTML = `<strong>${t.name}</strong>: ${t.effect}`;
+              traits.appendChild(li);
+            }
+          }
+    
+          const links = document.createElement('div'); links.className = 'campaign-links';
+          if (m.campaignLinks && m.campaignLinks.length) {
+            for (const hid of m.campaignLinks) {
+              const a = document.createElement('a');
+              a.href = `history.html#${hid}`;
+              a.textContent = historyTitleById[hid] || `Campaign: ${hid}`;
+              links.appendChild(a);
+            }
+          }
+    
+          card.appendChild(h3);
+          card.appendChild(badges);
+          if (m.traits && m.traits.length) {
+            const h4 = document.createElement('h4'); h4.textContent = 'Traits & Abilities';
+            card.appendChild(h4);
+            card.appendChild(traits);
+          }
+          if (m.description) {
+            const h4d = document.createElement('h4'); h4d.textContent = 'Description';
+            card.appendChild(h4d);
+            card.appendChild(desc);
+          }
+          if (links.childElementCount) {
+            const h4c = document.createElement('h4'); h4c.textContent = 'Campaign Links';
+            card.appendChild(h4c);
+            card.appendChild(links);
+          }
+    
+          frag.appendChild(card);
+        }
+        list.appendChild(frag);
+        list.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    
+      const catFrag = document.createDocumentFragment();
+      mergedCategories.forEach(cat => {
+        const liCat = document.createElement('li');
+        const btnCat = document.createElement('button');
+        btnCat.textContent = cat.category;
+        btnCat.dataset.toggle = 'category';
+        liCat.appendChild(btnCat);
+    
+        const ulSub = document.createElement('ul');
+        ulSub.className = 'tree';
+        ulSub.style.display = 'none';
+    
+        (cat.subcategories || []).forEach(sub => {
+          const liSub = document.createElement('li'); liSub.classList.add('indent-1');
+          const btnSub = document.createElement('button');
+          btnSub.textContent = sub.name;
+          btnSub.dataset.toggle = 'subcategory';
+          liSub.appendChild(btnSub);
+    
+          const ulEntries = document.createElement('ul');
+          ulEntries.className = 'tree';
+          ulEntries.style.display = 'none';
+    
+          (sub.entries || []).forEach(ent => {
+            const liEnt = document.createElement('li'); liEnt.classList.add('indent-2');
+            const btnEnt = document.createElement('button');
+            btnEnt.textContent = ent.name;
+            btnEnt.dataset.entryId = ent.id;
+            btnEnt.dataset.toggle = 'entry';
+            liEnt.appendChild(btnEnt);
+            ulEntries.appendChild(liEnt);
+          });
+    
+          liSub.appendChild(ulEntries);
+          ulSub.appendChild(liSub);
+    
+          btnSub.addEventListener('click', () => {
+            ulEntries.style.display = (ulEntries.style.display === 'none') ? '' : 'none';
+            renderCards(sub.entries || []);
+          });
+        });
+    
+        btnCat.addEventListener('click', () => {
+          ulSub.style.display = (ulSub.style.display === 'none') ? '' : 'none';
+        });
+    
+        liCat.appendChild(ulSub);
+        catFrag.appendChild(liCat);
+      });
+      tree.appendChild(catFrag);
+    
+      tree.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('button[data-toggle="entry"]');
+        if (!btn) return;
+        const id = btn.dataset.entryId;
+    
+        let chosen = null;
+        for (const cat of mergedCategories) {
+          for (const sub of (cat.subcategories || [])) {
+            const found = (sub.entries || []).find(e => e.id === id);
+            if (found) { chosen = found; break; }
+          }
+          if (chosen) break;
+        }
+        if (!chosen) return;
+    
+        if (!document.getElementById(id)) renderCards([chosen]);
+        const card = document.getElementById(id);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      function findEntryById(id){
+  for (const cat of mergedCategories) {
+    for (const sub of (cat.subcategories || [])) {
+      const found = (sub.entries || []).find(e => e.id === id);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+function openFromHash(){
+  const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+  if (!id) return;
+  const entry = findEntryById(id);
+  if (!entry) return;
+  renderCards([entry]);
+  const card = document.getElementById(id);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+window.addEventListener('hashchange', openFromHash);
+openFromHash();
+
+    
+    })().catch(console.error);
+    </script>
+    
+</body>
+</html>
