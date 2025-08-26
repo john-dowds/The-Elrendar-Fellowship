@@ -1,0 +1,432 @@
+{
+    "version": "1.0",
+    "name": "Aberrations",
+    "entries": [
+      {
+        "id": "aberration_faceless_one",
+        "name": "Faceless One (N'raqi)",
+        "class": "Old God Servitor",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 26,
+        "traits": [
+          { "name": "Mind Flay", "effect": "Saps clarity; target suffers -1 on next action." },
+          { "name": "Alien Resilience", "effect": "Reduces incoming damage slightly this round." }
+        ],
+        "description": "Void-spawned lieutenants of the Old Gods, all eyes, tendrils, and whispers.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_cthraxx",
+        "name": "C’Thrax (Faceless General)",
+        "class": "Old God Champion",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 34,
+        "traits": [
+          { "name": "Annihilating Roar", "effect": "Crushes morale of nearby foes." },
+          { "name": "Abyssal Carapace", "effect": "Hardened hide dulls heavy blows." }
+        ],
+        "description": "War-champions among the faceless, towering horrors bearing Old God sigils.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_forgotten_one",
+        "name": "Forgotten One",
+        "class": "Void Mass",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 22,
+        "traits": [
+          { "name": "Gibbering Maw", "effect": "On hit, target loses morale." },
+          { "name": "Unearthly Flesh", "effect": "Half-real tissue disperses some damage." }
+        ],
+        "description": "A lumpen offshoot of Old God growth; mouths and eyes without reason.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_eye_of_the_old_god",
+        "name": "Eye of the Old God",
+        "class": "Watcher",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 20,
+        "traits": [
+          { "name": "Gaze of Madness", "effect": "Inflicts confusion; target falters next action." },
+          { "name": "Levitate Carapace", "effect": "Hovering form avoids ground hazards." }
+        ],
+        "description": "A floating ocular horror that projects the will of its master.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_corruptor_tentacle",
+        "name": "Corruptor Tentacle",
+        "class": "Tendril",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 18,
+        "traits": [
+          { "name": "Grasp", "effect": "Immobilizes a foe briefly." },
+          { "name": "Oozing Blight", "effect": "On hit, leaves a lingering, weakening slime." }
+        ],
+        "description": "A sinewed conduit for void corruption, writhing with malevolence.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_void_lasher",
+        "name": "Void Lasher",
+        "class": "Whip-Tendril",
+        "category": "Aberrations",
+        "subcategory": "Old God",
+        "hp": 19,
+        "traits": [
+          { "name": "Void Lash", "effect": "Shadow lash weakens next enemy action." },
+          { "name": "Umbral Hide", "effect": "Partly phase-shifted body blunts damage." }
+        ],
+        "description": "Fast, tendriled attackers that lash minds and flesh alike.",
+        "campaignLinks": []
+      },
+      {
+        "id": "silithid_worker",
+        "name": "Silithid Worker",
+        "class": "Drone",
+        "category": "Aberrations",
+        "subcategory": "Silithid",
+        "hp": 12,
+        "traits": [
+          { "name": "Hive Mind", "effect": "Gains morale when near other silithid." },
+          { "name": "Burrow", "effect": "May evade by tunneling once per encounter." }
+        ],
+        "description": "Base drones of the Silithid hives, tireless diggers and swarmers.",
+        "campaignLinks": ["classic","aq40"]
+      },
+      {
+        "id": "silithid_soldier",
+        "name": "Silithid Soldier",
+        "class": "Infantry",
+        "category": "Aberrations",
+        "subcategory": "Silithid",
+        "hp": 16,
+        "traits": [
+          { "name": "Pincer Strike", "effect": "Deals extra damage when flanking." },
+          { "name": "Carapace", "effect": "Reduces first hit taken each round." }
+        ],
+        "description": "Hardened warriors forming the bulk of hive armies.",
+        "campaignLinks": []
+      },
+      {
+        "id": "silithid_wasp",
+        "name": "Silithid Wasp",
+        "class": "Flying Skirmisher",
+        "category": "Aberrations",
+        "subcategory": "Silithid",
+        "hp": 14,
+        "traits": [
+          { "name": "Sting", "effect": "Applies Poisoned (-1 HP for 2 turns)." },
+          { "name": "Dive", "effect": "Deals extra damage when striking from height." }
+        ],
+        "description": "Aerial attackers used to harass and scatter foes.",
+        "campaignLinks": []
+      },
+      {
+        "id": "silithid_colossus",
+        "name": "Silithid Colossus",
+        "class": "Behemoth",
+        "category": "Aberrations",
+        "subcategory": "Silithid",
+        "hp": 30,
+        "traits": [
+          { "name": "Stomp", "effect": "Shakes terrain, reducing morale of nearby foes." },
+          { "name": "Thick Carapace", "effect": "Reduces incoming damage significantly." }
+        ],
+        "description": "Titanic Silithid war-beasts worshipped as avatars of the hive.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "nerubian_warrior",
+        "name": "Nerubian Warrior",
+        "class": "Infantry",
+        "category": "Aberrations",
+        "subcategory": "Nerubians",
+        "hp": 18,
+        "traits": [
+          { "name": "Piercing Spear", "effect": "On hit, ignores light armor." },
+          { "name": "Hive Discipline", "effect": "Resists morale loss when near allies." }
+        ],
+        "description": "Soldiers of Azjol-Nerub, disciplined spiderfolk of the ancient empire.",
+        "campaignLinks": ["wotlk", "tww"]
+      },
+      {
+        "id": "nerubian_spiderlord",
+        "name": "Nerubian Spiderlord",
+        "class": "Elite Brute",
+        "category": "Aberrations",
+        "subcategory": "Nerubians",
+        "hp": 26,
+        "traits": [
+          { "name": "Web Snare", "effect": "Immobilizes enemy briefly." },
+          { "name": "Carapace Guard", "effect": "Allies behind them take reduced damage." }
+        ],
+        "description": "Towering Nerubian elites who anchor lines with webs and carapace.",
+        "campaignLinks": ["wotlk", "tww"]
+      },
+      {
+        "id": "nerubian_seer",
+        "name": "Nerubian Seer",
+        "class": "Caster",
+        "category": "Aberrations",
+        "subcategory": "Nerubians",
+        "hp": 17,
+        "traits": [
+          { "name": "Shadow Bolt", "effect": "Saps target’s morale." },
+          { "name": "Mind Web", "effect": "Links two enemies; both suffer on one’s failure." }
+        ],
+        "description": "Sorcerers who weave both magic and webbing into their warfare.",
+        "campaignLinks": ["wotlk", "tww"]
+      },
+      {
+        "id": "nerubian_commander",
+        "name": "Nerubian Commander",
+        "class": "Leader",
+        "category": "Aberrations",
+        "subcategory": "Nerubians",
+        "hp": 28,
+        "traits": [
+          { "name": "Command Aura", "effect": "Nearby Nerubians gain +1 morale." },
+          { "name": "Tactical Webbing", "effect": "Can shield allies with layered web walls." }
+        ],
+        "description": "Strategic leaders of Nerubian armies, often resisting Scourge domination.",
+        "campaignLinks": ["wotlk", "tww"]
+      },
+  
+      {
+        "id": "aberration_void_spawn",
+        "name": "Void Spawn",
+        "class": "Voidling",
+        "category": "Aberrations",
+        "subcategory": "Voidspawn",
+        "hp": 14,
+        "traits": [
+          { "name": "Entropy Bite", "effect": "Saps vigor; target suffers -1 morale." },
+          { "name": "Shadow Merge", "effect": "Harder to target in dim light." }
+        ],
+        "description": "Small voidlings congealed from ambient shadow.",
+        "campaignLinks": ["tww"]
+      },
+      {
+        "id": "aberration_void_tendril",
+        "name": "Void Tendril",
+        "class": "Tendril",
+        "category": "Aberrations",
+        "subcategory": "Voidspawn",
+        "hp": 15,
+        "traits": [
+          { "name": "Grasping Shade", "effect": "Briefly restrains a foe." },
+          { "name": "Wisp of Night", "effect": "Reduces ranged damage taken this round." }
+        ],
+        "description": "Strands of living shadow that clutch and bind.",
+        "campaignLinks": ["tww"]
+      },
+      {
+        "id": "aberration_void_wraith",
+        "name": "Void Wraith",
+        "class": "Stalker",
+        "category": "Aberrations",
+        "subcategory": "Voidspawn",
+        "hp": 20,
+        "traits": [
+          { "name": "Mind Shear", "effect": "Disorients; target’s next attack falters." },
+          { "name": "Umbral Form", "effect": "Reduces incoming damage this round." }
+        ],
+        "description": "A lean silhouette of malice, stalking from the edges of reality.",
+        "campaignLinks": ["tww"]
+      },
+      {
+        "id": "aberration_rift_keeper",
+        "name": "Rift Keeper",
+        "class": "Rift Guardian",
+        "category": "Aberrations",
+        "subcategory": "Voidspawn",
+        "hp": 26,
+        "traits": [
+          { "name": "Rift Pulse", "effect": "Warps space; nearby foes lose morale." },
+          { "name": "Phase Anchor", "effect": "Immune to forced movement this round." }
+        ],
+        "description": "A gate-warden that stabilizes and feeds from a tear in the veil.",
+        "campaignLinks": ["tww"]
+      },
+      {
+        "id": "aberration_umbral_emanation",
+        "name": "Umbral Emanation",
+        "class": "Void Amalgam",
+        "category": "Aberrations",
+        "subcategory": "Voidspawn",
+        "hp": 24,
+        "traits": [
+          { "name": "Shadow Surge", "effect": "Area burst that saps resolve." },
+          { "name": "Hollow Core", "effect": "Mundane strikes glance through its center." }
+        ],
+        "description": "A condensed knot of shadowstuff, scarcely bound into shape.",
+        "campaignLinks": ["tww"]
+      },
+  
+      {
+        "id": "aberration_flesh_horror",
+        "name": "Flesh Horror",
+        "class": "Abomination",
+        "category": "Aberrations",
+        "subcategory": "Flesh",
+        "hp": 22,
+        "traits": [
+          { "name": "Rending Claw", "effect": "Applies Bleeding for 2 turns." },
+          { "name": "Unstable Tissue", "effect": "On taking heavy hit, splatters weakening ichor." }
+        ],
+        "description": "Meat and bone rallied by alien will into a hateful shape.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_shambling",
+        "name": "Shambling Aberration",
+        "class": "Lurcher",
+        "category": "Aberrations",
+        "subcategory": "Flesh",
+        "hp": 20,
+        "traits": [
+          { "name": "Crush", "effect": "Heavy slam that staggers target." },
+          { "name": "Maddening Stench", "effect": "Nearby foes suffer -1 morale." }
+        ],
+        "description": "A lopsided heap of sinew animated by whispers.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_nightmare_amalgam",
+        "name": "Nightmare Amalgam",
+        "class": "Corrupted Mass",
+        "category": "Aberrations",
+        "subcategory": "Nightmare",
+        "hp": 24,
+        "traits": [
+          { "name": "Dream Rot", "effect": "Corrupts target’s resolve; -1 next action." },
+          { "name": "Thorned Husk", "effect": "Contact returns a sliver of damage to attacker." }
+        ],
+        "description": "A tangle of nightmare briars and flesh, half-remembered by a sleeping world.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_corrupted_horror",
+        "name": "Corrupted Horror",
+        "class": "Nightmare Horror",
+        "category": "Aberrations",
+        "subcategory": "Nightmare",
+        "hp": 21,
+        "traits": [
+          { "name": "Bog of Dread", "effect": "Exudes muck that slows and disheartens." },
+          { "name": "Thrum of Madness", "effect": "Low drone unsettles nearby foes." }
+        ],
+        "description": "A nightmare-touched brute that leaves dread wherever it lurches.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "aberration_mana_anomaly",
+        "name": "Mana Anomaly",
+        "class": "Arcane Aberration",
+        "category": "Aberrations",
+        "subcategory": "Arcane",
+        "hp": 16,
+        "traits": [
+          { "name": "Mana Shock", "effect": "Disrupts spellcasting; -1 to magical actions next turn." },
+          { "name": "Arcane Sheen", "effect": "Reduces incoming spell damage this round." }
+        ],
+        "description": "A knot of stray mana that learned to hate the hands that wove it.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_arcane_aberration",
+        "name": "Arcane Aberration",
+        "class": "Arcane Construct",
+        "category": "Aberrations",
+        "subcategory": "Arcane",
+        "hp": 22,
+        "traits": [
+          { "name": "Prismatic Burst", "effect": "A cascade of colors that dazes." },
+          { "name": "Runic Lattice", "effect": "Glyphwork disperses some damage." }
+        ],
+        "description": "Arcane geometry accreted into hostility.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_temporal_anomaly",
+        "name": "Temporal Anomaly",
+        "class": "Time Echo",
+        "category": "Aberrations",
+        "subcategory": "Temporal",
+        "hp": 20,
+        "traits": [
+          { "name": "Chrono Shear", "effect": "Delays a target’s next action." },
+          { "name": "Phase Slip", "effect": "Half-present form reduces damage taken this round." }
+        ],
+        "description": "A time-slipped echo made resentful by paradox.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_unstable_construct",
+        "name": "Unstable Construct",
+        "class": "Arcane Amalgam",
+        "category": "Aberrations",
+        "subcategory": "Arcane",
+        "hp": 21,
+        "traits": [
+          { "name": "Overload", "effect": "Discharges energy; nearby foes lose morale." },
+          { "name": "Fracture", "effect": "On heavy damage, splits off a lesser fragment." }
+        ],
+        "description": "A half-finished puzzle of sigils and will, looking for something to ruin.",
+        "campaignLinks": []
+      },
+  
+      {
+        "id": "aberration_living_ooze",
+        "name": "Living Ooze",
+        "class": "Ooze",
+        "category": "Aberrations",
+        "subcategory": "Ooze",
+        "hp": 16,
+        "traits": [
+          { "name": "Dissolve", "effect": "Erodes armor; target suffers -1 to defense next turn." },
+          { "name": "Amorphous", "effect": "Squeezes through, ignoring minor obstacles." }
+        ],
+        "description": "A hungry slick of protoplasm animated by wrong magic.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_corrupted_slime",
+        "name": "Corrupted Slime",
+        "class": "Ooze",
+        "category": "Aberrations",
+        "subcategory": "Ooze",
+        "hp": 18,
+        "traits": [
+          { "name": "Toxic Spill", "effect": "Leaves a patch that weakens those who cross it." },
+          { "name": "Divide", "effect": "On defeat, splits into two weaker slimes." }
+        ],
+        "description": "An ooze swollen with void or plague; more a spill than a creature.",
+        "campaignLinks": []
+      },
+      {
+        "id": "aberration_acidic_amalgam",
+        "name": "Acidic Amalgam",
+        "class": "Ooze Amalgam",
+        "category": "Aberrations",
+        "subcategory": "Ooze",
+        "hp": 20,
+        "traits": [
+          { "name": "Corrode", "effect": "Inflicts a stacking -1 defense for 2 turns." },
+          { "name": "Splashback", "effect": "Melee attackers take a drip of acid damage." }
+        ],
+        "description": "A vat-born tangle of acids and regrets, sloshing toward the nearest scream.",
+        "campaignLinks": []
+      }
+    ]
+  }
+  
