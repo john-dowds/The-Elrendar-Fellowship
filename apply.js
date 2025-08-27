@@ -34,9 +34,8 @@ form.addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-
+ 
     // Some GAS deployments don’t return CORS headers consistently.
-    // If that happens, the catch below will run.
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json().catch(()=>({}));
     if (json.ok) {
@@ -47,7 +46,7 @@ form.addEventListener('submit', async (e) => {
     throw new Error(json.error || 'Submit failed');
 
   } catch (err) {
-    // Fallback: force the POST with no-cors (we can’t read the response)
+    // Fallback: force the POST with no-cors 
     try {
       await fetch(WEB_APP_URL, {
         method: 'POST',

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Suggest New — Monster Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .helper-chips { display:flex; flex-wrap:wrap; gap:.35rem; margin:.35rem 0 .5rem; }
+    .helper-chips .chip{
+      display:inline-block; padding:.15rem .5rem; border-radius:.5rem;
+      border:1px solid rgba(252,229,205,.35); color:#fce5cd; text-decoration:none;
+      background: transparent; cursor:pointer; font-size:.95rem; line-height:1;
+    }
+    .helper-chips .chip:hover{ background: rgba(252,229,205,.08); }
+    .muted-hint{ opacity:.85; font-size:.95rem; margin:.15rem 0 -.15rem; }
+
+    select, select[multiple]{
+      width:100%; background: rgba(0,0,0,.55); color:#fce5cd;
+      border: 1px solid #3a2a14; border-radius: 10px; padding: .6rem .7rem;
+    }
+    select[multiple]{ min-height: 7rem; }
+    .row-2{ display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; }
+    @media (max-width: 720px){ .row-2{ grid-template-columns: 1fr; } }
+    .hidden{ display:none !important; }
+  </style>
+</head>
+<body>
+  <header class="banner"><h1 class="site-title">Suggest a New Monster</h1></header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="apply-main">
+    <form id="suggestForm" class="app-card" novalidate>
+      <h2>Suggest a Monster Manual Entry</h2>
+
+      <div class="grid">
+        <label>ID (lower_snake_case)
+          <input name="id" placeholder="adherent_flamecaller" pattern="[a-z0-9_]+" required />
+        </label>
+
+        <label>Name
+          <input name="name" placeholder="Adherent Flamecaller" required />
+        </label>
+
+        <label>Class
+          <input name="class" placeholder="e.g., Zealot Caster" />
+        </label>
+
+        <label>Category
+          <select name="category" id="categorySelect" required>
+            <option value="" disabled selected>Select a category…</option>
+          </select>
+        </label>
+
+        <label>Subcategory
+          <select name="subcategory" id="subcategorySelect">
+            <option value="" selected>—</option>
+          </select>
+        </label>
+
+        <label id="subcategoryNewWrap" class="hidden">New Subcategory
+          <input name="subcategoryNew" id="subcategoryNew" placeholder="Type a new subcategory…" />
+        </label>
+
+        <label>Base HP
+          <input type="number" min="1" step="1" name="hp" placeholder="18" />
+        </label>
+      </div>
+
+      <label>Description
+        <textarea name="description" rows="6" placeholder="Fanatics of Rukhmar who wield fire in zealous devotion." required></textarea>
+      </label>
+
+      <div class="card" style="margin-top:1rem;">
+        <h3>Traits</h3>
+        <p class="muted-hint">Add as many as you like — click an example to insert a row.</p>
+        <div id="traitExamples" class="helper-chips" aria-label="Trait examples"></div>
+
+        <div id="traitsWrap" class="row-2" style="margin-top:.5rem;">
+          <div class="trait-row" style="display:contents;">
+            <div class="field">
+              <label>Trait Name</label>
+              <input name="traitName" placeholder="Fire Blast" />
+            </div>
+            <div class="field">
+              <label>Effect</label>
+              <input name="traitEffect" placeholder="Burns enemy target heavily." />
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="addTrait" class="btn-primary">+ Add Trait</button>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:1rem;">
+        <label>Campaign Links
+          <select name="campaignLinks" id="campaignLinks" multiple></select>
+        </label>
+      </div>
+      <p class="muted-hint">Hold Ctrl/Cmd to select multiple campaigns.</p>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Submit Suggestion</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+  </footer>
+
+  <script type="module" src="suggest.js"></script>
+</body>
+</html>

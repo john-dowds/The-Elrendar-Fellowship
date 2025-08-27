@@ -107,6 +107,20 @@
     margin-left: 1em;
     }
 
+
+.sidebar-title{
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem;
+  margin:.25rem .25rem .5rem;
+}
+.sidebar-title h2{ margin:0; font-size:1.1rem; } 
+.sidebar .mini-btn{
+  font-size:1.1rem; line-height:1; white-space:nowrap; text-decoration:none;
+  border:1px solid rgba(252,229,205,.35); border-radius:.5rem;
+  padding:.15rem .5rem; color:#fce5cd; background: transparent;
+}
+.sidebar .mini-btn:hover{ background: rgba(252,229,205,.08); }
+
+
   </style>
 </head>
 <body>
@@ -151,12 +165,16 @@
     </section>
 
     <aside class="sidebar">
-      <h2>Categories</h2>
+      <div class="sidebar-title">
+        <h2>Categories</h2>
+        <a href="suggest.html" class="mini-btn" title="Suggest a new monster">+ Suggest New</a>
+      </div>
       <div class="search-wrap">
         <input id="monsterguide-search" type="search" placeholder="Search monsters, classes, subcategories…" aria-label="Search">
       </div>      
       <ul class="tree" id="monsterguide-tree"></ul>
     </aside>
+    
   </main>
 
   <footer class="site-footer">
