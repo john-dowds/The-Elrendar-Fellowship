@@ -1,0 +1,11 @@
+{
+    "version": "1.0",
+    "name": "Traits",
+    "entries": [
+      {
+        "id": "zealotry",
+        "name": "Zealotry",
+        "effect": "Immune to fear this round."}
+    ]
+}
+

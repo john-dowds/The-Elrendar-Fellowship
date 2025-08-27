@@ -246,6 +246,20 @@
         "campaignLinks": []
       },
       {
+        "id": "mech_siege_tower",
+        "name": "Siege Tower",
+        "class": "Rolling Engine",
+        "category": "Mechanicals",
+        "subcategory": "Siege Engines",
+        "hp": 50,
+        "traits": [
+          { "name": "Clearing the Lane", "effect": "Shatters fortifications with a cone-shaped blast, injuring anyone standing nearby." },
+          { "name": "Cannon Shot", "effect": "Long ranged cannon shot to weaken fortifications." }
+        ],
+        "description": "A massive siege tower with both a boarding ramp and front facing cannon.",
+        "campaignLinks": ["bfa"]
+      },
+      {
         "id": "mech_siege_ironstar",
         "name": "Iron Star",
         "class": "Rolling Engine",
@@ -257,7 +271,7 @@
           { "name": "Boiler Surge", "effect": "Emergency steam burst to clear jams." }
         ],
         "description": "A runaway steel wheel driven by roaring furnaces.",
-        "campaignLinks": []
+        "campaignLinks": ["wod"]
       },
   
       {
