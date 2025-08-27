@@ -194,7 +194,8 @@ form.addEventListener('submit', async (e) => {
     traits,
     traitsText:  traits.map(t => `${t.name}: ${t.effect}`).join(' | '),
     siteRef:     location.href,
-    submittedAt: new Date().toISOString()
+    submittedAt: new Date().toISOString(),
+    userAgent:   navigator.userAgent
   };
 
   // Validation
@@ -208,43 +209,21 @@ form.addEventListener('submit', async (e) => {
   }
 
   try {
-    // Primary: CORS JSON post
-    const res = await fetch(SUGGEST_APP_URL, {
+    await fetch(SUGGEST_APP_URL, {
       method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(data)
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const json = await res.json().catch(() => ({}));
-    if (json.ok || json.status === 'ok') {
-      statusEl.textContent = 'Suggestion submitted — thank you!';
-      form.reset();
-      // Reset subcategory UI
-      subcategoryNewWrap.classList.add('hidden');
-      subcategoryNew.required = false;
-      // Leave first trait row; remove extras
-      traitsWrap.querySelectorAll('.trait-row').forEach((row, i) => { if (i) row.remove(); });
-      return;
-    }
-    throw new Error(json.error || 'Submit failed');
+
+    statusEl.textContent = 'Suggestion submitted — thank you!';
+    form.reset();
+    subcategoryNewWrap.classList.add('hidden');
+    subcategoryNew.required = false;
+    traitsWrap.querySelectorAll('.trait-row').forEach((row, i) => { if (i) row.remove(); });
+
   } catch (err) {
-    // Fallback: no-CORS blind post
-    try {
-      await fetch(SUGGEST_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(data)
-      });
-      statusEl.textContent = 'Submitted. Thanks — we’ll review it soon.';
-      form.reset();
-      subcategoryNewWrap.classList.add('hidden');
-      subcategoryNew.required = false;
-      traitsWrap.querySelectorAll('.trait-row').forEach((row, i) => { if (i) row.remove(); });
-    } catch (e2) {
-      statusEl.textContent = 'Error. Could not submit.';
-      console.error('Submit error:', err, e2);
-    }
+    statusEl.textContent = 'Error. Could not submit.';
+    console.error('Submit error:', err);
   }
 });
