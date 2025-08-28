@@ -475,3 +475,121 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   margin: .25rem 0 .25rem;
   color: #fce5cd; 
 }
+
+/* ===== Splash Popup (clean + unclipped) ===== */
+:root{
+  --splash-gold: #E4BE59;
+  --band-h: clamp(90px, 18%, 160px);  
+  --title-nudge: 22px;               
+}
+
+/* Backdrop + shell */
+.splash-backdrop[hidden]{ display:none !important; }
+.splash-backdrop{
+  position:fixed; inset:0; z-index:20001;
+  display:grid; place-items:center;
+  background:rgba(0,0,0,.75); backdrop-filter:blur(2px);
+}
+.splash-modal{
+  position:relative;
+  width:66.666vw; height:66.666vh;            
+  max-width:1200px; max-height:900px; min-width:320px; min-height:380px;
+  color:#fce5cd; background:rgba(15,12,10,.92);
+  border:3px solid var(--splash-gold); border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.35);
+}
+
+/* Close */
+.splash-close{
+  position:absolute; top:10px; right:12px; z-index:4;
+  width:36px; height:36px; border-radius:50%;
+  background:transparent; border:1px solid rgba(252,229,205,.35); color:#fce5cd;
+  font-size:22px; cursor:pointer;
+}
+.splash-close:hover{ background:rgba(252,229,205,.08); }
+
+/* Background */
+.splash-bg{
+  position:absolute; inset:0; z-index:0;
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  filter:saturate(.95) brightness(.95);
+}
+
+/* Band + gold rails */
+.splash-band{
+  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+  height:var(--band-h); z-index:1;
+  background:#2F1C0A; 
+  box-shadow:inset 0 0 42px rgba(0,0,0,.55);
+}
+.splash-band::before, .splash-band::after{
+  content:""; position:absolute; left:0; right:0; height:6px;
+  background:linear-gradient(90deg, rgba(255,238,180,.25), var(--splash-gold), rgba(255,238,180,.25));
+  box-shadow:0 0 14px rgba(228,190,89,.55); pointer-events:none;
+}
+.splash-band::before{ top:-3px; } 
+.splash-band::after { bottom:-3px; }
+
+/* Title: centered on band, one line, nudged slightly right */
+.splash-copy{
+  position:absolute; left:60%; top:50%; transform:translate(-50%,-50%);
+  margin-left: var(--title-nudge);              /* move right/left */
+  width:94%;                                   
+  height:var(--band-h); z-index:4;           
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding: 0 clamp(12px, 2vw, 28px);
+}
+.splash-copy h2{
+  margin:0;
+  white-space: nowrap;                          
+  overflow: visible; text-overflow: initial;   
+  font-size: clamp(1.35rem, 2.35vw, 2.1rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0,0,0,.65);
+}
+
+/* Left description plate */
+.splash-descbox{
+  --bleed: 95px;                                 /* controls overlap above/below */
+  position:absolute; left:3.5%; top:50%; transform: translateY(-50%);
+  width: clamp(190px, 21.5%, 520px);
+  height: calc(var(--band-h) + (var(--bleed) * 2));
+  z-index:3; display:flex; align-items:center;
+  background: linear-gradient(180deg,#1f1308 0%, #2b190a 50%, #1f1308 100%);
+  border: 2px solid var(--splash-gold);
+  border-radius: 12px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.55), inset 0 0 34px rgba(0,0,0,.45);
+  padding: .9rem 1rem;
+}
+.splash-desc{
+  margin:0; font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  line-height: 1.45;
+  text-shadow: 0 2px 10px rgba(0,0,0,.65);
+}
+
+/* Optional hero art; toggle off with data-hero="off" */
+.splash-hero{
+  position:absolute; top:50%; left:84%; transform:translate(-50%,-50%);
+  width: clamp(72px, 17%, 240px);               
+  max-height: calc(var(--band-h) - 12px); height:auto;
+  filter: drop-shadow(0 16px 36px rgba(0,0,0,.65));
+  pointer-events:none; z-index:4;
+}
+#campaign-splash[data-hero="off"] .splash-hero{ display:none !important; }
+
+/* Opt-out (one line) */
+.splash-dontshow{
+  position:absolute; left:14px; bottom:10px; z-index:4;
+  display:flex; align-items:center; gap:.5rem; padding-right:1rem;
+  font-size:.95rem; white-space:nowrap; opacity:.95; user-select:none;
+}
+.splash-dontshow input{ margin:0 .35rem 0 0; accent-color:var(--splash-gold); }
+
+/* Responsive */
+@media (max-width:720px){
+  .splash-modal{ width:92vw; height:70vh; }
+  .splash-copy{ margin-left:0; width:96%; }    
+  .splash-copy h2{ white-space: normal; }      
+  .splash-descbox{ left:4%; width: 90%; --bleed: 18px; }
+}
