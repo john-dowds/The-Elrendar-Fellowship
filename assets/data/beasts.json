@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "name": "Beasts",
   "entries": [
     {
@@ -10,8 +10,18 @@
       "subcategory": "Amphibians",
       "hp": 4,
       "traits": [
-        { "name": "Leap", "effect": "Can jump away from danger once per encounter." },
-        { "name": "Slippery Hide", "effect": "First melee hit each round against them is reduced by 1." }
+        {
+          "name": "Leap",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Slippery Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Small but numerous amphibians found in ponds and wetlands across Azeroth. Though rarely dangerous, they are a staple part of local ecosystems.",
       "campaignLinks": []
@@ -24,8 +34,18 @@
       "subcategory": "Amphibians",
       "hp": 6,
       "traits": [
-        { "name": "Warty Skin", "effect": "On contact, attackers risk becoming Irritated (minor morale penalty)." },
-        { "name": "Hop", "effect": "Can move unpredictably to evade one attack per round." }
+        {
+          "name": "Warty Skin",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with shadow-tinged force, dealing direct damage."
+        },
+        {
+          "name": "Blast",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Unleashes elemental or magical damage at range."
+        }
       ],
       "description": "Large swamp-dwelling amphibians that croak ominously in the night. While harmless alone, some have grown into oversized and aggressive forms in fel- or void-tainted regions.",
       "campaignLinks": []
@@ -38,13 +58,22 @@
       "subcategory": "Amphibians",
       "hp": 18,
       "traits": [
-        { "name": "Blood Frenzy", "effect": "Gains advantage after damaging a bleeding target." },
-        { "name": "Leech Bite", "effect": "Heals self for 1 HP when striking successfully." }
+        {
+          "name": "Blood Frenzy",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Leech Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Massive amphibian predators from Nazmir’s swamps. Revered and feared by the Blood Trolls, crawgs thrive on carrion and corrupted blood magic.",
       "campaignLinks": []
     },
-
     {
       "id": "arachnid_arachnathid",
       "name": "Arachnathid",
@@ -53,8 +82,18 @@
       "subcategory": "Arachnids",
       "hp": 20,
       "traits": [
-        { "name": "Web Snare", "effect": "Immobilizes a target briefly." },
-        { "name": "Carapace", "effect": "Reduces incoming physical damage slightly." }
+        {
+          "name": "Web Snare",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Immobilizes the target in place."
+        },
+        {
+          "name": "Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Alien spider-beasts of Silithus and Ahn’Qiraj, often serving Qiraji masters. Larger, more armored than common spiders.",
       "campaignLinks": []
@@ -67,8 +106,18 @@
       "subcategory": "Arachnids",
       "hp": 14,
       "traits": [
-        { "name": "Leech Bite", "effect": "Heals itself for 1 HP when it deals damage." },
-        { "name": "Swarm Instinct", "effect": "Gains morale when near other ticks." }
+        {
+          "name": "Leech Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Blood-drinking arachnids found in Nazmir during the Blood Troll infestations, known for carrying disease.",
       "campaignLinks": []
@@ -81,8 +130,18 @@
       "subcategory": "Arachnids",
       "hp": 16,
       "traits": [
-        { "name": "Venom Sting", "effect": "Inflicts Poisoned (-1 HP for 2 turns)." },
-        { "name": "Chitinous Hide", "effect": "Reduces damage by 1 from non-magical attacks." }
+        {
+          "name": "Venom Sting",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Chitinous Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Savage desert-dwelling scorpions. Their venom is a staple of apothecaries and assassins alike.",
       "campaignLinks": []
@@ -95,8 +154,18 @@
       "subcategory": "Arachnids",
       "hp": 18,
       "traits": [
-        { "name": "Amber Sting", "effect": "Poisons target and reduces their armor briefly." },
-        { "name": "Resilient Carapace", "effect": "Takes reduced elemental damage." }
+        {
+          "name": "Amber Sting",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Resilient Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Strange scorpids from Pandaria infused with amber, harder to kill than ordinary desert scorpids.",
       "campaignLinks": []
@@ -109,11 +178,23 @@
       "subcategory": "Arachnids",
       "hp": 18,
       "traits": [
-        { "name": "Arcane Surge", "effect": "Deals arcane backlash damage on first hit received each round." },
-        { "name": "Magic Resilience", "effect": "Reduces incoming spell damage slightly." }
+        {
+          "name": "Arcane Surge",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Unleashes elemental or magical damage at range."
+        },
+        {
+          "name": "Magic Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Scorpids infused with arcane energies, often found near leyline nexuses.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "arachnid_sea_scorpion",
@@ -123,8 +204,18 @@
       "subcategory": "Arachnids",
       "hp": 17,
       "traits": [
-        { "name": "Drowning Sting", "effect": "Inflicts Poisoned and Slowed briefly." },
-        { "name": "Aquatic Adaptation", "effect": "Takes no penalties fighting underwater." }
+        {
+          "name": "Drowning Sting",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        },
+        {
+          "name": "Aquatic Adaptation",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Massive ocean-dwelling scorpions that dwell in reefs and kelp forests.",
       "campaignLinks": []
@@ -137,8 +228,18 @@
       "subcategory": "Arachnids",
       "hp": 12,
       "traits": [
-        { "name": "Web Spin", "effect": "Immobilizes target for 1 turn." },
-        { "name": "Venom Fang", "effect": "Inflicts minor Poisoned debuff." }
+        {
+          "name": "Web Spin",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Immobilizes the target in place."
+        },
+        {
+          "name": "Venom Fang",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        }
       ],
       "description": "Common spiders found throughout Azeroth’s forests and caves.",
       "campaignLinks": []
@@ -151,11 +252,23 @@
       "subcategory": "Arachnids",
       "hp": 16,
       "traits": [
-        { "name": "Necrotic Venom", "effect": "Poison reduces healing received for 2 turns." },
-        { "name": "Skeletal Carapace", "effect": "Resists physical attacks." }
+        {
+          "name": "Necrotic Venom",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Skeletal Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Undead arachnids found in Scourge territories, their bodies reanimated husks covered in bone.",
-      "campaignLinks": ["wotlk"]
+      "campaignLinks": [
+        "wotlk"
+      ]
     },
     {
       "id": "arachnid_crystal_spider",
@@ -165,8 +278,18 @@
       "subcategory": "Arachnids",
       "hp": 14,
       "traits": [
-        { "name": "Glittering Carapace", "effect": "Reflects minor spell damage." },
-        { "name": "Frost Bite", "effect": "Chills target for 1 turn." }
+        {
+          "name": "Glittering Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Frost Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Stabs with barbed limbs, dealing direct damage."
+        }
       ],
       "description": "Glittering spiders from cold caverns, infused with crystalline growths.",
       "campaignLinks": []
@@ -179,8 +302,18 @@
       "subcategory": "Arachnids",
       "hp": 18,
       "traits": [
-        { "name": "Burning Web", "effect": "Immobilizes and inflicts Burning for 1 turn." },
-        { "name": "Heat Resistance", "effect": "Reduces fire damage taken." }
+        {
+          "name": "Burning Web",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Root",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Immobilizes the target in place."
+        }
       ],
       "description": "Molten spiders dwelling in volcanic regions such as Blackrock Mountain.",
       "campaignLinks": []
@@ -193,8 +326,18 @@
       "subcategory": "Arachnids",
       "hp": 13,
       "traits": [
-        { "name": "Ambush Pounce", "effect": "Deals bonus damage when striking from concealment." },
-        { "name": "Thick Hair", "effect": "Slightly reduces poison and frost damage." }
+        {
+          "name": "Ambush Pounce",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Thick Hair",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        }
       ],
       "description": "Hairy spiders of deserts and grasslands, known for venomous ambush attacks.",
       "campaignLinks": []
@@ -207,13 +350,22 @@
       "subcategory": "Arachnids",
       "hp": 15,
       "traits": [
-        { "name": "Deadly Venom", "effect": "Applies stronger Poisoned debuff." },
-        { "name": "Hardened Carapace", "effect": "Reduces first hit damage each round." }
+        {
+          "name": "Deadly Venom",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Hardened Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "A larger and deadlier strain of spider, their venom can incapacitate prey quickly.",
       "campaignLinks": []
     },
-
     {
       "id": "crustacean_crab",
       "name": "Crab",
@@ -222,8 +374,18 @@
       "subcategory": "Crustaceans",
       "hp": 12,
       "traits": [
-        { "name": "Pincer Clamp", "effect": "Immobilizes target briefly." },
-        { "name": "Hardened Shell", "effect": "First melee hit each round reduced by 1." }
+        {
+          "name": "Pincer Clamp",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Snaps heavy pincers, dealing direct damage."
+        },
+        {
+          "name": "Hardened Shell",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Hard-shelled shoreline crustaceans. Though small in number, larger crabs can pose a serious hazard to fishermen and travelers.",
       "campaignLinks": []
@@ -236,8 +398,18 @@
       "subcategory": "Crustaceans",
       "hp": 10,
       "traits": [
-        { "name": "Shell Hide", "effect": "Reduces ranged damage taken by 1." },
-        { "name": "Skitter Retreat", "effect": "May disengage safely once per encounter." }
+        {
+          "name": "Shell Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Skitter Retreat",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Smaller crustaceans found along beaches and reefs, often hiding in shells and discarded armor pieces.",
       "campaignLinks": []
@@ -250,8 +422,18 @@
       "subcategory": "Crustaceans",
       "hp": 15,
       "traits": [
-        { "name": "Long Claws", "effect": "May strike from partial cover without penalty." },
-        { "name": "Armored Carapace", "effect": "Reduces incoming damage by 2 this round." }
+        {
+          "name": "Long Claws",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Stabs with barbed limbs, dealing direct damage."
+        },
+        {
+          "name": "Armored Carapace",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Large deepwater crabs with long legs, infamous in Kul Tiran waters and Nazmir swamps.",
       "campaignLinks": []
@@ -264,8 +446,18 @@
       "subcategory": "Crustaceans",
       "hp": 13,
       "traits": [
-        { "name": "Pinch", "effect": "On high roll, inflicts Off-Balance to target." },
-        { "name": "Burrow in Mud", "effect": "Can evade one attack by hiding in terrain." }
+        {
+          "name": "Pinch",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Snaps heavy pincers, dealing direct damage."
+        },
+        {
+          "name": "Root",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Immobilizes the target in place."
+        }
       ],
       "description": "Oversized freshwater crustaceans often found in Outland’s lakes and rivers. Some species have grown large enough to threaten boats.",
       "campaignLinks": []
@@ -278,13 +470,22 @@
       "subcategory": "Crustaceans",
       "hp": 14,
       "traits": [
-        { "name": "Ancient Resilience", "effect": "Reduces damage from elemental sources." },
-        { "name": "Rolling Escape", "effect": "May curl up to avoid an attack once per encounter." }
+        {
+          "name": "Ancient Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Rolling Escape",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Relic species from Azeroth’s ancient past, resembling armored, many-legged insects of the sea. Found in fossil-rich zones and Titan vaults.",
       "campaignLinks": []
     },
-
     {
       "id": "insect_beetle",
       "name": "Beetle",
@@ -293,8 +494,18 @@
       "subcategory": "Insects",
       "hp": 10,
       "traits": [
-        { "name": "Chitinous Shell", "effect": "Reduces first hit damage each round by 1." },
-        { "name": "Burrow", "effect": "Can hide underground briefly to avoid an attack." }
+        {
+          "name": "Chitinous Shell",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Damage Over Time",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Common beetles found throughout Azeroth, often in deserts and ruins.",
       "campaignLinks": []
@@ -307,8 +518,18 @@
       "subcategory": "Insects",
       "hp": 12,
       "traits": [
-        { "name": "Rot Aura", "effect": "Nearby enemies suffer -1 morale due to stench." },
-        { "name": "Gnaw", "effect": "Deals extra damage to already wounded targets." }
+        {
+          "name": "Rot Aura",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Gnaw",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Filth-eating beetles that gather around corpses in swarms.",
       "campaignLinks": []
@@ -321,8 +542,18 @@
       "subcategory": "Insects",
       "hp": 8,
       "traits": [
-        { "name": "Acid Spit", "effect": "Inflicts minor armor reduction on target." },
-        { "name": "Crawl", "effect": "Ignores rough terrain penalties." }
+        {
+          "name": "Acid Spit",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Inflicts damage upon enemies hit by the spray."
+        },
+        {
+          "name": "Crawl",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with chitinous blades, dealing direct damage."
+        }
       ],
       "description": "Slow-moving larvae found in forests and magical groves. Sometimes grow into oversized moths or worms.",
       "campaignLinks": []
@@ -335,8 +566,18 @@
       "subcategory": "Insects",
       "hp": 11,
       "traits": [
-        { "name": "Dust Scales", "effect": "On hit, target is briefly Blinded." },
-        { "name": "Flutter", "effect": "Can avoid one ranged attack each round." }
+        {
+          "name": "Dust Scales",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with chitinous blades, dealing direct damage."
+        },
+        {
+          "name": "Damage Over Time",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Graceful fliers native to Pandaria and magical groves. Revered by the night elves and Pandaren alike.",
       "campaignLinks": []
@@ -349,8 +590,18 @@
       "subcategory": "Insects",
       "hp": 13,
       "traits": [
-        { "name": "Sting", "effect": "Inflicts Poisoned (-1 HP for 2 turns)." },
-        { "name": "Swarm Instinct", "effect": "Deals bonus damage when attacking with another wasp." }
+        {
+          "name": "Sting",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Swarm Instinct",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Aggressive swarmers found in jungles, swamps, and deserts. Larger colonies grow into silithid-like broods.",
       "campaignLinks": []
@@ -363,8 +614,18 @@
       "subcategory": "Insects",
       "hp": 20,
       "traits": [
-        { "name": "Chitin Guard", "effect": "Reduces all incoming damage by 2 for one round." },
-        { "name": "Sand Burst", "effect": "Blinds nearby foes with a spray of sand." }
+        {
+          "name": "Chitin Guard",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Sand Burst",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Massive beetle-like creatures of Vol’dun, used as mounts and war-beasts by the Sethrak.",
       "campaignLinks": []
@@ -377,8 +638,18 @@
       "subcategory": "Insects",
       "hp": 26,
       "traits": [
-        { "name": "Crushing Charge", "effect": "Knocks targets Off-Balance." },
-        { "name": "Mandible Crush", "effect": "On hit, target is briefly immobilized." }
+        {
+          "name": "Crushing Charge",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Mandible Crush",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Stabs with barbed limbs, dealing direct damage."
+        }
       ],
       "description": "Towering insectoid beasts bred by the Mantid as living war engines in Pandaria.",
       "campaignLinks": []
@@ -391,8 +662,18 @@
       "subcategory": "Insects",
       "hp": 18,
       "traits": [
-        { "name": "Blade Limbs", "effect": "Deals bonus damage on a critical roll." },
-        { "name": "Ferocity", "effect": "Gains advantage when below half HP." }
+        {
+          "name": "Blade Limbs",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Ferocity",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with chitinous blades, dealing direct damage."
+        }
       ],
       "description": "Savage insectoids native to Outland, with bladed limbs and hive aggression.",
       "campaignLinks": []
@@ -405,8 +686,18 @@
       "subcategory": "Insects",
       "hp": 10,
       "traits": [
-        { "name": "Gnaw", "effect": "Inflicts Bleeding (1 turn)." },
-        { "name": "Skitter", "effect": "Can move without provoking once per round." }
+        {
+          "name": "Gnaw",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Skitter",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with chitinous blades, dealing direct damage."
+        }
       ],
       "description": "Larval stage of the ravager, still dangerous in numbers.",
       "campaignLinks": []
@@ -419,13 +710,22 @@
       "subcategory": "Insects",
       "hp": 28,
       "traits": [
-        { "name": "Mandible Slam", "effect": "On hit, staggers target." },
-        { "name": "Hive Resilience", "effect": "Reduces incoming damage by 2 for two rounds." }
+        {
+          "name": "Mandible Slam",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Stabs with barbed limbs, dealing direct damage."
+        },
+        {
+          "name": "Hive Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Giant silithid war-beasts unleashed in Ahn’Qiraj. Towering predators that crush even armored foes.",
       "campaignLinks": []
     },
-
     {
       "id": "bird_crow",
       "name": "Crow",
@@ -434,8 +734,18 @@
       "subcategory": "Birds",
       "hp": 6,
       "traits": [
-        { "name": "Scavenger’s Cry", "effect": "Nearby enemies suffer -1 morale briefly." },
-        { "name": "Flock", "effect": "When in groups, gain advantage on attacks." }
+        {
+          "name": "Scavenger’s Cry",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Flock",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Dark-feathered scavengers, common across Azeroth.",
       "campaignLinks": []
@@ -448,8 +758,18 @@
       "subcategory": "Birds",
       "hp": 7,
       "traits": [
-        { "name": "Piercing Call", "effect": "Saps morale of weaker foes." },
-        { "name": "Keen Eyes", "effect": "Grants advantage on spotting hidden enemies." }
+        {
+          "name": "Piercing Call",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Brings allies or entities onto the field."
+        },
+        {
+          "name": "Keen Eyes",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Omens of death and storm, ravens are tied to shadow and prophecy.",
       "campaignLinks": []
@@ -462,8 +782,18 @@
       "subcategory": "Birds",
       "hp": 14,
       "traits": [
-        { "name": "Talon Strike", "effect": "Deals extra damage to smaller targets." },
-        { "name": "Soar", "effect": "Ignores terrain penalties when moving." }
+        {
+          "name": "Talon Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Soar",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Majestic predators that hunt across mountains and plains.",
       "campaignLinks": []
@@ -476,8 +806,18 @@
       "subcategory": "Birds",
       "hp": 12,
       "traits": [
-        { "name": "Dive", "effect": "First attack after movement gains advantage." },
-        { "name": "Keen Vision", "effect": "Spots concealed targets easily." }
+        {
+          "name": "Dive",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Keen Vision",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Swift birds of prey, often bonded with hunters.",
       "campaignLinks": []
@@ -490,8 +830,18 @@
       "subcategory": "Birds",
       "hp": 11,
       "traits": [
-        { "name": "Falconry Bond", "effect": "May grant allies +1 on ranged attacks once per encounter." },
-        { "name": "Swift Dive", "effect": "On hit, forces target Off-Balance." }
+        {
+          "name": "Falconry Bond",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        },
+        {
+          "name": "Swift Dive",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Highly trained hunting birds used by scouts and nobles.",
       "campaignLinks": []
@@ -504,11 +854,23 @@
       "subcategory": "Birds",
       "hp": 12,
       "traits": [
-        { "name": "Silent Flight", "effect": "First attack from stealth has advantage." },
-        { "name": "Night Vision", "effect": "Sees clearly in darkness." }
+        {
+          "name": "Silent Flight",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Night Vision",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Night predators revered by kaldorei for wisdom and stealth.",
-      "campaignLinks": ["kaldorei"]
+      "campaignLinks": [
+        "kaldorei"
+      ]
     },
     {
       "id": "bird_storm_crow",
@@ -518,8 +880,18 @@
       "subcategory": "Birds",
       "hp": 18,
       "traits": [
-        { "name": "Lightning Call", "effect": "On hit, also shocks another nearby target." },
-        { "name": "Storm Rider", "effect": "Immune to weather penalties." }
+        {
+          "name": "Lightning Call",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Storm Rider",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        }
       ],
       "description": "Storm-infused crows summoned by druids and shamans.",
       "campaignLinks": []
@@ -532,8 +904,18 @@
       "subcategory": "Birds",
       "hp": 10,
       "traits": [
-        { "name": "Feast on Carrion", "effect": "Heals 1 HP when near a corpse." },
-        { "name": "Circling Fear", "effect": "Enemies below lose morale while vultures circle." }
+        {
+          "name": "Feast on Carrion",
+          "trait": "area_heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        },
+        {
+          "name": "Circling Fear",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        }
       ],
       "description": "Desert scavengers often circling battlefields.",
       "campaignLinks": []
@@ -546,8 +928,18 @@
       "subcategory": "Birds",
       "hp": 15,
       "traits": [
-        { "name": "Mighty Wings", "effect": "Creates wind buffets that hinder ranged attacks." },
-        { "name": "Carcass Feeder", "effect": "Restores morale to allies after feeding." }
+        {
+          "name": "Mighty Wings",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Enormous scavenger birds, larger than most raptors.",
       "campaignLinks": []
@@ -560,8 +952,18 @@
       "subcategory": "Birds",
       "hp": 20,
       "traits": [
-        { "name": "Flame Wing", "effect": "On hit, inflicts Burning for 1 turn." },
-        { "name": "Molten Form", "effect": "Takes reduced damage from fire." }
+        {
+          "name": "Flame Wing",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Fiery birds infused by Ragnaros’ flame, often bound as mounts or guardians.",
       "campaignLinks": []
@@ -574,8 +976,18 @@
       "subcategory": "Birds",
       "hp": 19,
       "traits": [
-        { "name": "Umbral Cry", "effect": "Inflicts fear on weaker foes." },
-        { "name": "Shadow Soar", "effect": "Takes reduced shadow damage." }
+        {
+          "name": "Umbral Cry",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        },
+        {
+          "name": "Shadow Soar",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Ravens empowered by void or shadow, common in Draenor and the Shadowlands.",
       "campaignLinks": []
@@ -588,8 +1000,18 @@
       "subcategory": "Birds",
       "hp": 28,
       "traits": [
-        { "name": "Crushing Talons", "effect": "Can grapple and restrain medium foes." },
-        { "name": "Sky Terror", "effect": "Nearby enemies suffer morale loss." }
+        {
+          "name": "Crushing Talons",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Sky Terror",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Enormous mythical raptors known across deserts and high peaks.",
       "campaignLinks": []
@@ -602,8 +1024,18 @@
       "subcategory": "Birds",
       "hp": 6,
       "traits": [
-        { "name": "Slide", "effect": "Can move quickly on ice." },
-        { "name": "Schooling", "effect": "Gains advantage when near other penguins." }
+        {
+          "name": "Slide",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Flightless birds of Northrend and southern seas, harmless but comical.",
       "campaignLinks": []
@@ -616,13 +1048,22 @@
       "subcategory": "Birds",
       "hp": 8,
       "traits": [
-        { "name": "Dive Bomb", "effect": "Steals small items or food." },
-        { "name": "Irritating Cry", "effect": "Can distract enemies for one turn." }
+        {
+          "name": "Dive Bomb",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Common scavenger birds of coasts and harbors.",
       "campaignLinks": []
     },
-
     {
       "id": "feathermane_gryphon",
       "name": "Gryphon",
@@ -631,8 +1072,18 @@
       "subcategory": "Feathermanes",
       "hp": 24,
       "traits": [
-        { "name": "Sky Dive", "effect": "On hit from above, knocks target Off-Balance." },
-        { "name": "Wing Buffet", "effect": "Pushes enemies back briefly." }
+        {
+          "name": "Sky Dive",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        }
       ],
       "description": "Majestic winged beasts of dwarven and Alliance armies, serving as mounts and guardians of Aerie Peak and Stormwind.",
       "campaignLinks": []
@@ -645,8 +1096,18 @@
       "subcategory": "Feathermanes",
       "hp": 25,
       "traits": [
-        { "name": "Moon-Blessed", "effect": "Takes reduced damage at night." },
-        { "name": "Raking Claws", "effect": "On hit, inflicts Bleeding (1–2 turns)." }
+        {
+          "name": "Moon-Blessed",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Sacred steeds of the kaldorei, bonded to druids and priestesses of Elune.",
       "campaignLinks": []
@@ -659,8 +1120,18 @@
       "subcategory": "Feathermanes",
       "hp": 23,
       "traits": [
-        { "name": "Stinger Tail", "effect": "Inflicts Poisoned (-1 HP for 2 turns)." },
-        { "name": "Battle Roar", "effect": "Nearby allies gain +1 morale." }
+        {
+          "name": "Stinger Tail",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Battle Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Fierce Horde aerial mounts, native to Kalimdor’s peaks and deserts, known for their loyalty to orcish riders.",
       "campaignLinks": []
@@ -673,11 +1144,23 @@
       "subcategory": "Feathermanes",
       "hp": 20,
       "traits": [
-        { "name": "Silent Pounce", "effect": "First attack from stealth has advantage." },
-        { "name": "Nocturnal Watch", "effect": "Allies nearby resist morale loss at night." }
+        {
+          "name": "Silent Pounce",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Nocturnal Watch",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Mysterious hybrids from Val’sharah, blending the traits of owls and cats, favored by druids of the claw.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "feathermane_wolfhawk",
@@ -687,11 +1170,23 @@
       "subcategory": "Feathermanes",
       "hp": 22,
       "traits": [
-        { "name": "Predatory Bond", "effect": "Allies gain +1 to morale when this beast scores a kill." },
-        { "name": "Piercing Screech", "effect": "Enemies within earshot suffer disadvantage next action." }
+        {
+          "name": "Predatory Bond",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        },
+        {
+          "name": "Piercing Screech",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Feral yet majestic hybrids of wolves and hawks, bred as companions for hunters during the Legion invasion.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "feathermane_larion",
@@ -701,11 +1196,23 @@
       "subcategory": "Feathermanes",
       "hp": 26,
       "traits": [
-        { "name": "Bastion Bond", "effect": "Nearby Kyrian allies gain morale each turn." },
-        { "name": "Radiant Soar", "effect": "On critical, inflicts Blind to enemies struck." }
+        {
+          "name": "Bastion Bond",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Radiant Soar",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Radiant lion-birds of Bastion, companions of the Kyrian who embody duty and valor.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "feathermane_cloudstrider",
@@ -715,13 +1222,22 @@
       "subcategory": "Feathermanes",
       "hp": 27,
       "traits": [
-        { "name": "Heavenly Wings", "effect": "Can hover, ignoring terrain obstacles for 1 round." },
-        { "name": "Beacon Cry", "effect": "Heals allies’ morale when it calls." }
+        {
+          "name": "Heavenly Wings",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Beacon Cry",
+          "trait": "area_heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        }
       ],
       "description": "Celestial feathermanes dwelling in the highest reaches of the Shadowlands’ skies.",
       "campaignLinks": []
     },
-
     {
       "id": "fish_carp",
       "name": "Carp",
@@ -730,8 +1246,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 4,
       "traits": [
-        { "name": "Schooling", "effect": "When in groups, harder to hit." },
-        { "name": "Quick Swim", "effect": "Can evade one attack per round with advantage." }
+        {
+          "name": "Schooling",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Common river fish across Pandaria and other regions. Harmless unless swarming in massive numbers.",
       "campaignLinks": []
@@ -744,8 +1270,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 9,
       "traits": [
-        { "name": "Electric Jolt", "effect": "On hit, target loses morale briefly." },
-        { "name": "Slither", "effect": "Can move through narrow gaps freely." }
+        {
+          "name": "Electric Jolt",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Long-bodied predators that haunt oceans and rivers, striking with lightning-fast attacks.",
       "campaignLinks": []
@@ -758,8 +1294,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 8,
       "traits": [
-        { "name": "Blood Scent", "effect": "Deals bonus damage to bleeding foes." },
-        { "name": "Swarm Attack", "effect": "Multiple Frenzies attacking same target gain advantage." }
+        {
+          "name": "Blood Scent",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Swarm Attack",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Piranha-like predators of Azeroth’s seas, capable of devouring prey in moments.",
       "campaignLinks": []
@@ -772,8 +1318,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 10,
       "traits": [
-        { "name": "Ambush Bite", "effect": "Deals extra damage when attacking from concealment." },
-        { "name": "Deep Dive", "effect": "Can escape into deeper water once per encounter." }
+        {
+          "name": "Ambush Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Large reef fish that can swallow smaller prey whole.",
       "campaignLinks": []
@@ -786,8 +1342,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 6,
       "traits": [
-        { "name": "Inflate", "effect": "Becomes harder to hit for 1 round." },
-        { "name": "Toxic Spines", "effect": "On melee hit, attacker is Poisoned for 1 turn." }
+        {
+          "name": "Inflate",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Toxic Spines",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        }
       ],
       "description": "Small but dangerous fish capable of poisoning predators with its spines.",
       "campaignLinks": []
@@ -800,8 +1366,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 18,
       "traits": [
-        { "name": "Blood Frenzy", "effect": "Deals bonus damage if target is wounded." },
-        { "name": "Swift Swim", "effect": "Can move farther each round underwater." }
+        {
+          "name": "Blood Frenzy",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Swift Swim",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Common apex predators of Azeroth’s oceans. Multiple species exist, from reef sharks to deepwater hunters.",
       "campaignLinks": []
@@ -814,8 +1390,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 40,
       "traits": [
-        { "name": "Massive Bulk", "effect": "Immune to forced movement." },
-        { "name": "Ocean Roam", "effect": "Can move vast distances between zones." }
+        {
+          "name": "Massive Bulk",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Gigantic and ancient sea behemoths, revered as living relics of the deep seas.",
       "campaignLinks": []
@@ -828,11 +1414,24 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 45,
       "traits": [
-        { "name": "Tentacle Slam", "effect": "Can strike multiple targets at once." },
-        { "name": "Drag to the Deep", "effect": "Pulls prey underwater to drown them." }
+        {
+          "name": "Tentacle Slam",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Drag to the Deep",
+          "trait": "pull",
+          "theme": "roots",
+          "effect": "Yanks a target toward the user."
+        }
       ],
       "description": "Mythical leviathans that dwell in Azeroth’s oceans. Their enormous tentacles can sink entire ships.",
-      "campaignLinks": ["cata","bfa"]
+      "campaignLinks": [
+        "cata",
+        "bfa"
+      ]
     },
     {
       "id": "fish_ray",
@@ -842,8 +1441,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 14,
       "traits": [
-        { "name": "Glide", "effect": "Can move silently underwater without detection." },
-        { "name": "Tail Whip", "effect": "On hit, target is briefly Staggered." }
+        {
+          "name": "Glide",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Tail Whip",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Graceful sea rays, including the Fathom Rays of Kul Tiras and Nazjatar.",
       "campaignLinks": []
@@ -856,8 +1465,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 10,
       "traits": [
-        { "name": "Agile Swim", "effect": "Can turn sharply underwater." },
-        { "name": "Bubble Jet", "effect": "Can disorient attackers once per encounter." }
+        {
+          "name": "Agile Swim",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Magical seahorses from Vashj’ir, used as mounts by adventurers during the Cataclysm.",
       "campaignLinks": []
@@ -870,8 +1489,18 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 22,
       "traits": [
-        { "name": "Wave Rider", "effect": "Can traverse surface and underwater seamlessly." },
-        { "name": "Tidal Aura", "effect": "Allies nearby gain advantage on water terrain checks." }
+        {
+          "name": "Wave Rider",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Tidal Aura",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Majestic steeds of Kul Tiras, shaped by ocean tides and druidic magic.",
       "campaignLinks": []
@@ -884,13 +1513,22 @@
       "subcategory": "Fish & Aquatic Beasts",
       "hp": 24,
       "traits": [
-        { "name": "Pod Coordination", "effect": "Gains advantage when fighting with other orcas." },
-        { "name": "Crushing Bite", "effect": "Deals heavy damage on a critical roll." }
+        {
+          "name": "Pod Coordination",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Killer whales that hunt in pods, often revered by seafaring cultures.",
       "campaignLinks": []
     },
-
     {
       "id": "mammal_armadillo",
       "name": "Armadillo",
@@ -899,8 +1537,18 @@
       "subcategory": "Mammals",
       "hp": 10,
       "traits": [
-        { "name": "Roll Up", "effect": "Can curl into a ball, reducing incoming damage by 2 this round." },
-        { "name": "Burrow", "effect": "Can dig through soft terrain to evade once per encounter." }
+        {
+          "name": "Roll Up",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Burrow",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rends with fel-charged claws, dealing direct damage."
+        }
       ],
       "description": "Tough-shelled mammals from deserts and savannas. Rarely aggressive unless provoked.",
       "campaignLinks": []
@@ -913,8 +1561,18 @@
       "subcategory": "Mammals",
       "hp": 9,
       "traits": [
-        { "name": "Echolocation", "effect": "Can detect concealed enemies." },
-        { "name": "Screech", "effect": "Inflicts Disoriented on nearby foes for 1 turn." }
+        {
+          "name": "Echolocation",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        },
+        {
+          "name": "Screech",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Cave-dwelling mammals that swarm in flocks. Often tamed as aerial scouts by the Forsaken.",
       "campaignLinks": []
@@ -927,8 +1585,18 @@
       "subcategory": "Mammals",
       "hp": 11,
       "traits": [
-        { "name": "Blood Drain", "effect": "Heals for 1 HP when striking a living foe." },
-        { "name": "Nocturnal Predator", "effect": "Advantage on first attack each night." }
+        {
+          "name": "Blood Drain",
+          "trait": "area_heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        },
+        {
+          "name": "Nocturnal Predator",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Blood-feeding bats from dark jungles and caves, often associated with troll witch doctors.",
       "campaignLinks": []
@@ -941,8 +1609,18 @@
       "subcategory": "Mammals",
       "hp": 22,
       "traits": [
-        { "name": "Maul", "effect": "On hit, may knock target Prone." },
-        { "name": "Thick Hide", "effect": "Reduces incoming physical damage by 1." }
+        {
+          "name": "Maul",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rends with fel-charged claws, dealing direct damage."
+        },
+        {
+          "name": "Thick Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Powerful omnivores of Azeroth’s forests and tundras. Variants include polar bears, bramblebears, and corrupted felbears.",
       "campaignLinks": []
@@ -955,13 +1633,22 @@
       "subcategory": "Mammals",
       "hp": 8,
       "traits": [
-        { "name": "Quill Burst", "effect": "On hit, melee attackers are Poisoned for 1 turn." },
-        { "name": "Forager", "effect": "Can sniff out edible plants, restoring morale to allies." }
+        {
+          "name": "Quill Burst",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Unleashes elemental or magical damage at range."
+        },
+        {
+          "name": "Forager",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Small, spiny mammals of Pandaria and beyond. Their quills make them dangerous for predators.",
       "campaignLinks": []
     },
-
     {
       "id": "canine_wolf",
       "name": "Wolf",
@@ -970,8 +1657,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 14,
       "traits": [
-        { "name": "Pack Tactics", "effect": "Gains advantage when adjacent to an ally wolf." },
-        { "name": "Howl", "effect": "Allies within earshot gain +1 morale." }
+        {
+          "name": "Pack Tactics",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Howl",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Common predators of Azeroth, loyal to hunters and feared in packs.",
       "campaignLinks": []
@@ -984,8 +1681,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 20,
       "traits": [
-        { "name": "Savage Bite", "effect": "On critical, inflicts Bleeding for 2 turns." },
-        { "name": "Alpha Roar", "effect": "Nearby wolves gain +1 to next attack roll." }
+        {
+          "name": "Savage Bite",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Alpha Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Massive wolves roaming Northrend, Draenor, and ancient forests, often used as mounts by orcs.",
       "campaignLinks": []
@@ -998,8 +1705,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 18,
       "traits": [
-        { "name": "Frostfur", "effect": "Reduces incoming frost damage by 2." },
-        { "name": "Loyal Bond", "effect": "When near Frostwolf orc allies, morale increases." }
+        {
+          "name": "Frostfur",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Loyal Bond",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        }
       ],
       "description": "Companions of the Frostwolf Clan, adapted to snowy peaks and tundras.",
       "campaignLinks": []
@@ -1012,8 +1729,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 16,
       "traits": [
-        { "name": "Ambush", "effect": "First attack from concealment has advantage." },
-        { "name": "Savage Maw", "effect": "Critical hits inflict morale damage." }
+        {
+          "name": "Ambush",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Savage Maw",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Larger, more cunning wolves dwelling in Northrend and the Eastern Kingdoms, often corrupted by dark magic.",
       "campaignLinks": []
@@ -1026,8 +1753,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 19,
       "traits": [
-        { "name": "Umbral Bite", "effect": "On hit, reduces target morale by 2." },
-        { "name": "Phasing Step", "effect": "May teleport a short distance once per encounter." }
+        {
+          "name": "Umbral Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Phasing Step",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
       ],
       "description": "Wolves twisted by the void, their howls spread terror across Draenor’s shadows.",
       "campaignLinks": []
@@ -1040,8 +1777,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 21,
       "traits": [
-        { "name": "Fel Flame", "effect": "On hit, inflicts Burning for 1 turn." },
-        { "name": "Corruption Aura", "effect": "Allies nearby take 1 damage at the start of their turn." }
+        {
+          "name": "Fel Flame",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Corruption Aura",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Orcish wolf breeds infused with fel energy during the Legion’s corruption.",
       "campaignLinks": []
@@ -1054,8 +1801,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 24,
       "traits": [
-        { "name": "Savage Howl", "effect": "All enemies within range must test or lose morale." },
-        { "name": "Fury Claws", "effect": "Deals +2 damage on critical hits." }
+        {
+          "name": "Savage Howl",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Fury Claws",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Gigantic wolf-beasts of Draenor, bred by orcs as living siege weapons.",
       "campaignLinks": []
@@ -1068,8 +1825,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 9,
       "traits": [
-        { "name": "Cunning Step", "effect": "Once per round, may disengage without penalty." },
-        { "name": "Quick Reflexes", "effect": "Has advantage against traps." }
+        {
+          "name": "Cunning Step",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Dash",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Small but clever canines found in forests and plains.",
       "campaignLinks": []
@@ -1082,8 +1849,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 13,
       "traits": [
-        { "name": "Illusory Shift", "effect": "Can disguise itself briefly in terrain once per encounter." },
-        { "name": "Fey Bond", "effect": "Nearby allies restore 1 morale each turn." }
+        {
+          "name": "Illusory Shift",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Fey Bond",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Mystical fox-like creatures of Ardenweald, tied to the Night Fae and anima streams.",
       "campaignLinks": []
@@ -1096,8 +1873,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 15,
       "traits": [
-        { "name": "Diseased Bite", "effect": "Inflicts Weakened (-1 to rolls) for 1 turn." },
-        { "name": "Unholy Resilience", "effect": "Takes half damage from shadow sources." }
+        {
+          "name": "Diseased Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        },
+        {
+          "name": "Unholy Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Undead-corrupted hounds of the Scourge, roaming Lordaeron’s blighted fields.",
       "campaignLinks": []
@@ -1110,8 +1897,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 20,
       "traits": [
-        { "name": "Hellfire Breath", "effect": "Breathes flame, inflicting Burning for 2 turns." },
-        { "name": "Infernal Hide", "effect": "Reduces fire damage taken." }
+        {
+          "name": "Hellfire Breath",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        }
       ],
       "description": "Infernal demon-hounds unleashed during the Legion’s invasions.",
       "campaignLinks": []
@@ -1124,11 +1921,23 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 22,
       "traits": [
-        { "name": "Umbral Maw", "effect": "Inflicts Fear on weaker foes when attacking." },
-        { "name": "Shadowstep", "effect": "Can teleport 1–2 spaces once per round." }
+        {
+          "name": "Umbral Maw",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        },
+        {
+          "name": "Shadowstep",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
       ],
       "description": "Sinister wolf-beasts of the Maw, ridden as mounts by Jailer’s servants.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "hound_mastiff",
@@ -1138,8 +1947,18 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 14,
       "traits": [
-        { "name": "Guard Dog", "effect": "Allies nearby are less likely to be ambushed." },
-        { "name": "Bite and Hold", "effect": "On hit, target is Immobilized briefly." }
+        {
+          "name": "Guard Dog",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Bite and Hold",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        }
       ],
       "description": "Large trained war hounds used by nobles, hunters, and city guards.",
       "campaignLinks": []
@@ -1152,13 +1971,22 @@
       "subcategory": "Carnivorans & Canines",
       "hp": 13,
       "traits": [
-        { "name": "Fetch", "effect": "Can retrieve small objects for allies." },
-        { "name": "Obedient", "effect": "Gains morale when near a trusted handler." }
+        {
+          "name": "Fetch",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Domesticated hounds bred for loyalty and service in Kul Tiras and beyond.",
       "campaignLinks": []
     },
-
     {
       "id": "cat_lion",
       "name": "Lion",
@@ -1167,8 +1995,18 @@
       "subcategory": "Cats",
       "hp": 18,
       "traits": [
-        { "name": "Pride Leader", "effect": "Allied lions gain +1 morale when near this unit." },
-        { "name": "Savage Bite", "effect": "On critical, inflicts Bleeding for 2 turns." }
+        {
+          "name": "Pride Leader",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Savage Bite",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Regal predators of savannas and plains, often associated with human and troll heraldry.",
       "campaignLinks": []
@@ -1181,8 +2019,18 @@
       "subcategory": "Cats",
       "hp": 19,
       "traits": [
-        { "name": "Ambush Pounce", "effect": "First attack from stealth has advantage." },
-        { "name": "Raking Claws", "effect": "On hit, reduces target’s defense briefly." }
+        {
+          "name": "Ambush Pounce",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Raking Claws",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        }
       ],
       "description": "Striped jungle and mountain predators, revered by troll and pandaren cultures.",
       "campaignLinks": []
@@ -1195,8 +2043,18 @@
       "subcategory": "Cats",
       "hp": 17,
       "traits": [
-        { "name": "Stealth Stalker", "effect": "Difficult to detect in foliage or shadows." },
-        { "name": "Throat Bite", "effect": "On critical, silences target for 1 turn." }
+        {
+          "name": "Stealth Stalker",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Throat Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Shadowy cats prowling Stranglethorn and other jungles, sacred to the Gurubashi trolls.",
       "campaignLinks": []
@@ -1209,8 +2067,18 @@
       "subcategory": "Cats",
       "hp": 15,
       "traits": [
-        { "name": "Ear Tufts", "effect": "Advantage on perception checks." },
-        { "name": "Spring Pounce", "effect": "May close distance as a free move once per encounter." }
+        {
+          "name": "Ear Tufts",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Spring Pounce",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Smaller wildcats of Quel’Thalas and northern forests, fast and deadly despite their size.",
       "campaignLinks": []
@@ -1223,8 +2091,18 @@
       "subcategory": "Cats",
       "hp": 16,
       "traits": [
-        { "name": "Silent Stalk", "effect": "Harder to detect while moving." },
-        { "name": "Ice Pelt", "effect": "Snow leopards take reduced frost damage." }
+        {
+          "name": "Silent Stalk",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        },
+        {
+          "name": "Ice Pelt",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Spotted hunters of temperate and icy regions, agile climbers and stealthy stalkers.",
       "campaignLinks": []
@@ -1237,8 +2115,18 @@
       "subcategory": "Cats",
       "hp": 17,
       "traits": [
-        { "name": "Ridge Runner", "effect": "Ignores rough mountain terrain." },
-        { "name": "Pounce", "effect": "First attack after a leap deals extra damage." }
+        {
+          "name": "Ridge Runner",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Pounce",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Solitary predators of Azeroth’s mountain passes.",
       "campaignLinks": []
@@ -1251,8 +2139,18 @@
       "subcategory": "Cats",
       "hp": 14,
       "traits": [
-        { "name": "Sprint", "effect": "Can move twice per turn once per encounter." },
-        { "name": "Fragile Frame", "effect": "Takes +1 damage from critical hits." }
+        {
+          "name": "Sprint",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        },
+        {
+          "name": "Fragile Frame",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Swift runners of open plains, more fragile but faster than other big cats.",
       "campaignLinks": []
@@ -1265,11 +2163,23 @@
       "subcategory": "Cats",
       "hp": 18,
       "traits": [
-        { "name": "Death Drop", "effect": "Can leap from elevated terrain for advantage." },
-        { "name": "Bone Crusher", "effect": "On critical, ignores light armor." }
+        {
+          "name": "Death Drop",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Bone Crusher",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
       ],
       "description": "Stealthy jungle hunters with crushing jaws, common in troll territories.",
-      "campaignLinks": ["zandalar"]
+      "campaignLinks": [
+        "zandalar"
+      ]
     },
     {
       "id": "cat_dreadsaber",
@@ -1279,11 +2189,23 @@
       "subcategory": "Cats",
       "hp": 22,
       "traits": [
-        { "name": "Fearful Roar", "effect": "Nearby enemies must test morale." },
-        { "name": "Fel Pelt", "effect": "Takes reduced shadow and fel damage." }
+        {
+          "name": "Fearful Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Fel Pelt",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Ferocious, corrupted sabercats infused with fel or shadow energy.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "cat_frostsaber",
@@ -1293,8 +2215,18 @@
       "subcategory": "Cats",
       "hp": 20,
       "traits": [
-        { "name": "Ice Claws", "effect": "On hit, chills target for 1 turn." },
-        { "name": "Winter Coat", "effect": "Takes reduced frost damage." }
+        {
+          "name": "Ice Claws",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Winter Coat",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Sacred winter sabercats of Winterspring, bonded to kaldorei hunters and druids.",
       "campaignLinks": []
@@ -1307,8 +2239,18 @@
       "subcategory": "Cats",
       "hp": 19,
       "traits": [
-        { "name": "Shadowmeld", "effect": "First attack from concealment has advantage." },
-        { "name": "Silent Prowl", "effect": "Enemies have disadvantage to detect them at night." }
+        {
+          "name": "Shadowmeld",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Silent Prowl",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Stealthy sabercats of Ashenvale, revered by the kaldorei as companions and mounts.",
       "campaignLinks": []
@@ -1321,11 +2263,23 @@
       "subcategory": "Cats",
       "hp": 21,
       "traits": [
-        { "name": "Arcane Pelt", "effect": "Absorbs 2 arcane damage each round." },
-        { "name": "Blink Strike", "effect": "Once per encounter, teleports before striking." }
+        {
+          "name": "Arcane Pelt",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Blink Strike",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
       ],
       "description": "Arcane-infused sabercats of Suramar and Azeroth, companions to nightborne and kaldorei arcanists.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "cat_jeweled_panther",
@@ -1335,13 +2289,22 @@
       "subcategory": "Cats",
       "hp": 25,
       "traits": [
-        { "name": "Gem Resilience", "effect": "Takes half damage from elemental sources." },
-        { "name": "Prismatic Strike", "effect": "On hit, inflicts a random elemental effect." }
+        {
+          "name": "Gem Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Prismatic Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        }
       ],
       "description": "Magical jewelcrafted constructs shaped like panthers, prized as luxury mounts.",
       "campaignLinks": []
     },
-
     {
       "id": "ungulate_clefthoof",
       "name": "Clefthoof",
@@ -1350,8 +2313,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 28,
       "traits": [
-        { "name": "Gore", "effect": "Deals heavy damage on a charge." },
-        { "name": "Thick Hide", "effect": "Reduces physical damage taken by 2." }
+        {
+          "name": "Gore",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Thick Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Massive draenor-native bovids resembling both oxen and rhinos. Fierce grazers and mounts for the Mag’har.",
       "campaignLinks": []
@@ -1364,8 +2337,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 18,
       "traits": [
-        { "name": "Fleet Hooves", "effect": "Ignores difficult terrain once per encounter." },
-        { "name": "Horn Jab", "effect": "Inflicts Off-Balance on hit." }
+        {
+          "name": "Fleet Hooves",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Stealth",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        }
       ],
       "description": "Graceful antelope-like creatures of Draenor, domesticated as mounts by draenei and orcs.",
       "campaignLinks": []
@@ -1378,8 +2361,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 24,
       "traits": [
-        { "name": "Sturdy Frame", "effect": "Reduces incoming damage by 1 each round." },
-        { "name": "Pack Beast", "effect": "Allies nearby gain morale when resting near a yak." }
+        {
+          "name": "Sturdy Frame",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Pack Beast",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Large, shaggy beasts of Pandaria, valued for carrying goods across mountain passes.",
       "campaignLinks": []
@@ -1392,11 +2385,23 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 30,
       "traits": [
-        { "name": "Bone Plate", "effect": "Takes half damage from the first hit each round." },
-        { "name": "Charge", "effect": "On critical, knocks target Prone." }
+        {
+          "name": "Bone Plate",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Charge",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Armored beasts of Maldraxxus, bred as war mounts for necrolords.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "ungulate_musken",
@@ -1406,8 +2411,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 22,
       "traits": [
-        { "name": "Stampede", "effect": "Deals damage to all enemies in path." },
-        { "name": "Stubborn", "effect": "Immune to forced movement." }
+        {
+          "name": "Stampede",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Stubborn",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Massive ox-like bovids found in Legion’s Broken Isles, often hunted for hides and horns.",
       "campaignLinks": []
@@ -1420,8 +2435,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 16,
       "traits": [
-        { "name": "Spit", "effect": "On hit, target is Blinded for 1 turn." },
-        { "name": "Endurance", "effect": "Ignores exhaustion penalties." }
+        {
+          "name": "Spit",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        },
+        {
+          "name": "Endurance",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Desert-dwelling beasts of burden, key to trade caravans across Uldum.",
       "campaignLinks": []
@@ -1434,8 +2459,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 15,
       "traits": [
-        { "name": "Surefooted", "effect": "Advantage on rough terrain checks." },
-        { "name": "Gentle Aura", "effect": "Allies nearby restore morale when resting." }
+        {
+          "name": "Surefooted",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Gentle Aura",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Domesticated pack beasts found in Vol’dun, adapted to desert survival.",
       "campaignLinks": []
@@ -1448,8 +2483,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 18,
       "traits": [
-        { "name": "Antler Charge", "effect": "Inflicts Off-Balance when charging." },
-        { "name": "Fleet Step", "effect": "Can disengage without penalty once per encounter." }
+        {
+          "name": "Antler Charge",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Fleet Step",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Graceful deer of Azeroth’s forests, often revered by druids and night elves.",
       "campaignLinks": []
@@ -1462,11 +2507,23 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 22,
       "traits": [
-        { "name": "Anima Horns", "effect": "On hit, target loses morale." },
-        { "name": "Spirit Bond", "effect": "Nearby allies gain advantage for 1 round." }
+        {
+          "name": "Anima Horns",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        },
+        {
+          "name": "Spirit Bond",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Anima-infused cervids of Ardenweald, embodying the wilds’ eternal cycle.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "ungulate_horse",
@@ -1476,8 +2533,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 16,
       "traits": [
-        { "name": "Gallop", "effect": "May move double distance once per encounter." },
-        { "name": "Steadfast", "effect": "Resists morale loss when mounted." }
+        {
+          "name": "Gallop",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with claws and fangs, dealing direct damage."
+        },
+        {
+          "name": "Stealth",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        }
       ],
       "description": "Domesticated steeds of humans, widely used for transport and war.",
       "campaignLinks": []
@@ -1490,8 +2557,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 17,
       "traits": [
-        { "name": "Striped Dash", "effect": "On hit after moving, deal extra damage." },
-        { "name": "Herd Instinct", "effect": "Allies nearby gain +1 to morale." }
+        {
+          "name": "Striped Dash",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Herd Instinct",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Striped equines of the Barrens, fierce and untamable by most except the Horde.",
       "campaignLinks": []
@@ -1504,8 +2581,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 24,
       "traits": [
-        { "name": "Healing Horn", "effect": "Restores 3 HP to an ally once per encounter." },
-        { "name": "Aura of Purity", "effect": "Allies nearby resist shadow damage." }
+        {
+          "name": "Healing Horn",
+          "trait": "area_heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        },
+        {
+          "name": "Aura of Purity",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Mythical equines tied to elven and human myths, rare and magical.",
       "campaignLinks": []
@@ -1518,8 +2605,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 30,
       "traits": [
-        { "name": "Stomp", "effect": "AoE knockdown against smaller foes." },
-        { "name": "Enduring Beast", "effect": "Ignores exhaustion penalties." }
+        {
+          "name": "Stomp",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Enduring Beast",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Massive draenei pack beasts resembling elephants, revered in Exodar and Draenor.",
       "campaignLinks": []
@@ -1532,8 +2629,18 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 14,
       "traits": [
-        { "name": "Charge", "effect": "Deals extra damage when moving before attack." },
-        { "name": "Relentless", "effect": "Immune to morale loss when below half HP." }
+        {
+          "name": "Charge",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Relentless",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Aggressive tusked swine found across Azeroth, especially in Elwynn and Durotar.",
       "campaignLinks": []
@@ -1546,13 +2653,22 @@
       "subcategory": "Ungulates & Hoofed Beasts",
       "hp": 20,
       "traits": [
-        { "name": "Corrupted Blood", "effect": "On hit, inflicts Poisoned for 2 turns." },
-        { "name": "Fel Rage", "effect": "At half HP, gains +1 attack." }
+        {
+          "name": "Corrupted Blood",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Fel Rage",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Fel-corrupted boars roaming Outland, spreading disease and corruption.",
       "campaignLinks": []
     },
-
     {
       "id": "primate_monkey",
       "name": "Monkey",
@@ -1561,8 +2677,18 @@
       "subcategory": "Primates",
       "hp": 8,
       "traits": [
-        { "name": "Banana Toss", "effect": "On hit, target is Distracted (disadvantage) 1 turn." },
-        { "name": "Clamber", "effect": "Can climb terrain without penalty." }
+        {
+          "name": "Banana Toss",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        },
+        {
+          "name": "Area Blast",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Mischievous and thieving primates, often found near troll ruins or pirate coves. Known to harass adventurers with stolen food or trinkets.",
       "campaignLinks": []
@@ -1575,8 +2701,18 @@
       "subcategory": "Primates",
       "hp": 20,
       "traits": [
-        { "name": "Mighty Slam", "effect": "On hit, target is Knocked Back." },
-        { "name": "Silverback Roar", "effect": "Allies nearby gain +1 morale until end of round." }
+        {
+          "name": "Mighty Slam",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        },
+        {
+          "name": "Silverback Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Large, powerful primates inhabiting jungles and mountains, revered by trolls and hunters alike.",
       "campaignLinks": []
@@ -1589,14 +2725,22 @@
       "subcategory": "Primates",
       "hp": 26,
       "traits": [
-        { "name": "Frozen Hide", "effect": "Takes half damage from frost attacks." },
-        { "name": "Crushing Grip", "effect": "On hit, immobilizes target for 1 turn." }
+        {
+          "name": "Frozen Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Crushing Grip",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        }
       ],
       "description": "Mythic primate-like beasts of Azeroth’s frozen mountains and caves. Yeti are both feared and worshiped as guardians of the wild.",
       "campaignLinks": []
     },
-
-
     {
       "id": "mollusk_snail",
       "name": "Giant Snail",
@@ -1605,8 +2749,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 14,
       "traits": [
-        { "name": "Slimy Trail", "effect": "Enemies moving through its path are Slowed for 1 turn." },
-        { "name": "Shell Defense", "effect": "First hit each round reduced by 2." }
+        {
+          "name": "Slimy Trail",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        },
+        {
+          "name": "Shell Defense",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Oversized snails found in damp caverns and corrupted forests. Their shells are nearly impenetrable.",
       "campaignLinks": []
@@ -1619,8 +2773,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 15,
       "traits": [
-        { "name": "Coral Armor", "effect": "Takes half damage from ranged attacks." },
-        { "name": "Acidic Slime", "effect": "On hit, target loses 1 armor until end of next turn." }
+        {
+          "name": "Coral Armor",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Marine gastropods inhabiting the reefs of Kul Tiras and Nazjatar. Hardy and venomous.",
       "campaignLinks": []
@@ -1633,8 +2797,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 10,
       "traits": [
-        { "name": "Toxic Ooze", "effect": "Inflicts Poisoned for 1 turn." },
-        { "name": "Camouflage", "effect": "Advantage on stealth rolls in coral or algae terrain." }
+        {
+          "name": "Toxic Ooze",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Camouflage",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        }
       ],
       "description": "Soft-bodied slugs that excrete noxious slime, making them dangerous despite their slow pace.",
       "campaignLinks": []
@@ -1647,8 +2821,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 24,
       "traits": [
-        { "name": "Ink Cloud", "effect": "Creates concealment, imposing disadvantage on attacks." },
-        { "name": "Tentacle Grapple", "effect": "Immobilizes target for 1 turn on hit." }
+        {
+          "name": "Ink Cloud",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        },
+        {
+          "name": "Tentacle Grapple",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Large octopuses of Azeroth’s seas, capable of grappling ships and drowning sailors.",
       "campaignLinks": []
@@ -1661,8 +2845,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 28,
       "traits": [
-        { "name": "Tentacle Slam", "effect": "On hit, pushes target Off-Balance." },
-        { "name": "Deepwater Predator", "effect": "Ignores concealment in deep oceans." }
+        {
+          "name": "Tentacle Slam",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Enormous squid-like monsters lurking in deep seas, sometimes mistaken for kraken kin.",
       "campaignLinks": []
@@ -1675,8 +2869,18 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 30,
       "traits": [
-        { "name": "Shadow Ink", "effect": "Blinds enemies for 1 turn." },
-        { "name": "Tentacle Crush", "effect": "Deals massive damage and immobilizes target." }
+        {
+          "name": "Shadow Ink",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Whips with tentacles, dealing direct damage."
+        },
+        {
+          "name": "Tentacle Crush",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Shadowy abyssal squids tied to Helheim, summoned by Helya’s cultists during Legion.",
       "campaignLinks": []
@@ -1689,13 +2893,22 @@
       "subcategory": "Gastropods & Mollusks",
       "hp": 12,
       "traits": [
-        { "name": "Stinging Tentacles", "effect": "On contact, target is Poisoned for 1 turn." },
-        { "name": "Drift", "effect": "Moves silently with currents; hard to detect." }
+        {
+          "name": "Stinging Tentacles",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Drift",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Bioluminescent creatures drifting in the oceans of Azeroth. Beautiful but deadly when touched.",
       "campaignLinks": []
     },
-
     {
       "id": "reptile_basilisk",
       "name": "Basilisk",
@@ -1704,8 +2917,18 @@
       "subcategory": "Reptiles",
       "hp": 20,
       "traits": [
-        { "name": "Petrifying Gaze", "effect": "On high roll, target is Stunned for 1 turn." },
-        { "name": "Stone Scales", "effect": "Reduces incoming physical damage by 2." }
+        {
+          "name": "Petrifying Gaze",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "Prevents actions for a short time."
+        },
+        {
+          "name": "Stone Scales",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Stone-skinned lizards with a deadly gaze, found in deserts and ruins across Azeroth and Outland.",
       "campaignLinks": []
@@ -1718,8 +2941,18 @@
       "subcategory": "Reptiles",
       "hp": 22,
       "traits": [
-        { "name": "Death Roll", "effect": "On grapple, inflicts extra damage each turn." },
-        { "name": "Amphibious", "effect": "Can fight equally well in water or on land." }
+        {
+          "name": "Death Roll",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Amphibious",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Savage reptilian predators inhabiting swamps, rivers, and jungles of Azeroth.",
       "campaignLinks": []
@@ -1732,8 +2965,18 @@
       "subcategory": "Reptiles",
       "hp": 10,
       "traits": [
-        { "name": "Venom Bite", "effect": "Inflicts Poisoned (2 turns)." },
-        { "name": "Slither", "effect": "Can move through small spaces freely." }
+        {
+          "name": "Venom Bite",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Slither",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Stabs with barbed limbs, dealing direct damage."
+        }
       ],
       "description": "Common serpents of Azeroth’s forests, deserts, and caves. Many are venomous and feared by villagers.",
       "campaignLinks": []
@@ -1746,8 +2989,18 @@
       "subcategory": "Reptiles",
       "hp": 26,
       "traits": [
-        { "name": "Tidal Coil", "effect": "Pulls prey underwater, immobilizing them." },
-        { "name": "Scaled Bulk", "effect": "First hit each round reduced by 2." }
+        {
+          "name": "Tidal Coil",
+          "trait": "pull",
+          "theme": "roots",
+          "effect": "Yanks a target toward the user."
+        },
+        {
+          "name": "Scaled Bulk",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        }
       ],
       "description": "Colossal serpents dwelling in Azeroth’s oceans, sometimes mistaken for proto-dragons.",
       "campaignLinks": []
@@ -1760,8 +3013,18 @@
       "subcategory": "Reptiles",
       "hp": 18,
       "traits": [
-        { "name": "Arcane Bite", "effect": "On hit, inflicts Arcane Burn (-1 for 2 turns)." },
-        { "name": "Ley Sense", "effect": "Detects ley lines and arcane sources nearby." }
+        {
+          "name": "Arcane Bite",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Ley Sense",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Lesser dragon-like serpents infused with arcane energy, often kept as pets or guardians by magi.",
       "campaignLinks": []
@@ -1774,8 +3037,18 @@
       "subcategory": "Reptiles",
       "hp": 14,
       "traits": [
-        { "name": "Arcane Pulse", "effect": "On hit, disrupts caster’s spell next turn." },
-        { "name": "Magical Affinity", "effect": "Takes half damage from arcane sources." }
+        {
+          "name": "Arcane Pulse",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Unleashes elemental or magical damage at range."
+        },
+        {
+          "name": "Magical Affinity",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Small, snake-like arcane constructs often found around Silvermoon City and Sunstrider Isle.",
       "campaignLinks": []
@@ -1788,8 +3061,18 @@
       "subcategory": "Reptiles",
       "hp": 19,
       "traits": [
-        { "name": "Lightning Breath", "effect": "Inflicts Shocked (no reactions) for 1 turn." },
-        { "name": "Soaring Glide", "effect": "Ignores terrain penalties while airborne." }
+        {
+          "name": "Lightning Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Damages enemies in a frontal cone."
+        },
+        {
+          "name": "Soaring Glide",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Agile flying reptiles worshiped by trolls as emissaries of the storm.",
       "campaignLinks": []
@@ -1802,8 +3085,18 @@
       "subcategory": "Reptiles",
       "hp": 20,
       "traits": [
-        { "name": "Shell Shield", "effect": "Reduces incoming damage by 2." },
-        { "name": "Withdraw", "effect": "May avoid all damage for one round, but cannot attack." }
+        {
+          "name": "Shell Shield",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Withdraw",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Turtles of all sizes inhabit Azeroth’s lakes and beaches, serving as mounts and companions.",
       "campaignLinks": []
@@ -1816,8 +3109,18 @@
       "subcategory": "Reptiles",
       "hp": 28,
       "traits": [
-        { "name": "Steam Breath", "effect": "Inflicts Burning for 2 turns." },
-        { "name": "Stalwart", "effect": "Immune to forced movement." }
+        {
+          "name": "Steam Breath",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Stalwart",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
       ],
       "description": "Massive armored turtles of Pandaria, revered by the Pandaren and used as mounts.",
       "campaignLinks": []
@@ -1830,8 +3133,18 @@
       "subcategory": "Reptiles",
       "hp": 22,
       "traits": [
-        { "name": "Molten Shell", "effect": "Inflicts 1 Burning damage to melee attackers." },
-        { "name": "Lava Spit", "effect": "Deals fire damage at range once per encounter." }
+        {
+          "name": "Molten Shell",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites with crushing jaws, dealing direct damage."
+        }
       ],
       "description": "Volcanic turtle species inhabiting lava fields and Firelands, their shells glow with molten veins.",
       "campaignLinks": []
@@ -1844,8 +3157,18 @@
       "subcategory": "Reptiles",
       "hp": 24,
       "traits": [
-        { "name": "Phase Step", "effect": "May teleport short distances once per turn." },
-        { "name": "Warped Hide", "effect": "Takes half damage from arcane sources." }
+        {
+          "name": "Phase Step",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        },
+        {
+          "name": "Warped Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Strange lizard-beasts from Outland capable of phasing between dimensions.",
       "campaignLinks": []
@@ -1858,13 +3181,24 @@
       "subcategory": "Reptiles",
       "hp": 26,
       "traits": [
-        { "name": "Void Phase", "effect": "On miss, may teleport to another nearby space." },
-        { "name": "Umbral Hide", "effect": "Takes reduced damage from shadow attacks." }
+        {
+          "name": "Void Phase",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Umbral Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Void-corrupted warp stalkers twisted into shadow predators during the Legion’s invasion.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
-
     {
       "id": "dino_raptor",
       "name": "Raptor",
@@ -1873,8 +3207,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 20,
       "traits": [
-        { "name": "Pack Hunter", "effect": "Deals +1 damage when near other raptors." },
-        { "name": "Leap Strike", "effect": "First attack after movement gains advantage." }
+        {
+          "name": "Pack Hunter",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Leap Strike",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Swift, cunning predators used as mounts and hunting companions by trolls.",
       "campaignLinks": []
@@ -1887,8 +3231,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 22,
       "traits": [
-        { "name": "Acid Spit", "effect": "On hit, inflicts Poisoned for 1 turn." },
-        { "name": "Ferocious Bite", "effect": "Critical hits inflict Bleeding for 2 turns." }
+        {
+          "name": "Acid Spit",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        },
+        {
+          "name": "Ferocious Bite",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Venomous raptor cousins found in Un’Goro and Feralas, more savage than their kin.",
       "campaignLinks": []
@@ -1901,8 +3255,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 19,
       "traits": [
-        { "name": "Swooping Strike", "effect": "Can attack immediately after a glide." },
-        { "name": "Keen Vision", "effect": "Has advantage detecting concealed targets." }
+        {
+          "name": "Swooping Strike",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Keen Vision",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        }
       ],
       "description": "Feathered raptor-kin introduced in Legion, fiercely loyal when raised from hatchlings.",
       "campaignLinks": []
@@ -1915,8 +3279,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 40,
       "traits": [
-        { "name": "Terrifying Roar", "effect": "All enemies must test morale or flee." },
-        { "name": "Crushing Jaws", "effect": "On hit, ignores armor and deals massive damage." }
+        {
+          "name": "Terrifying Roar",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hits with brutal force, dealing direct damage."
+        },
+        {
+          "name": "Crushing Jaws",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
       ],
       "description": "Towering apex predators that dominate Un’Goro and Zandalar. Trolls revere them as gods of strength.",
       "campaignLinks": []
@@ -1929,8 +3303,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 32,
       "traits": [
-        { "name": "Horn Gore", "effect": "Deals extra damage on a charge." },
-        { "name": "Armored Hide", "effect": "Reduces incoming damage by 2." }
+        {
+          "name": "Horn Gore",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Armored Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Massive horned dinosaurs bred by Zandalari trolls as living siege weapons.",
       "campaignLinks": []
@@ -1943,8 +3327,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 34,
       "traits": [
-        { "name": "Tail Swipe", "effect": "Hits multiple enemies behind it." },
-        { "name": "Thick Scales", "effect": "Takes half damage from physical attacks." }
+        {
+          "name": "Tail Swipe",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hits with brutal force, dealing direct damage."
+        },
+        {
+          "name": "Thick Scales",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
       ],
       "description": "Towering, armored dinosaurs used as beasts of burden and mounts by trolls.",
       "campaignLinks": []
@@ -1957,8 +3351,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 24,
       "traits": [
-        { "name": "Dive Attack", "effect": "First attack after descending deals extra damage." },
-        { "name": "Shriek", "effect": "Inflicts Fear on weaker foes." }
+        {
+          "name": "Dive Attack",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Shriek",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        }
       ],
       "description": "Savage winged reptiles nesting in Zandalar and Un’Goro, worshipped as sacred by trolls.",
       "campaignLinks": []
@@ -1971,8 +3375,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 26,
       "traits": [
-        { "name": "Sonic Screech", "effect": "On hit, disorients enemies for 1 turn." },
-        { "name": "Dive Slam", "effect": "Deals bonus damage on dive attack." }
+        {
+          "name": "Sonic Screech",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hits with brutal force, dealing direct damage."
+        },
+        {
+          "name": "Area Blast",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Variant of pterrordaxes introduced in Pandaria, known for their piercing screams.",
       "campaignLinks": []
@@ -1985,8 +3399,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 50,
       "traits": [
-        { "name": "Massive Stomp", "effect": "Hits all enemies in range, knocking them prone." },
-        { "name": "Thick Hide", "effect": "Reduces incoming damage by 3." }
+        {
+          "name": "Massive Stomp",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Thick Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Gargantuan sauropods of Zandalar, towering over entire battlefields. Sometimes used as living trade caravans.",
       "campaignLinks": []
@@ -1999,8 +3423,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 30,
       "traits": [
-        { "name": "Tail Club", "effect": "On hit, target is Staggered for 1 turn." },
-        { "name": "Armor Plates", "effect": "Takes half damage from piercing attacks." }
+        {
+          "name": "Tail Club",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with chitinous blades, dealing direct damage."
+        },
+        {
+          "name": "Armor Plates",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
       ],
       "description": "Armored behemoths from Zandalar, their tails can shatter stone with a single swing.",
       "campaignLinks": []
@@ -2013,8 +3447,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 18,
       "traits": [
-        { "name": "Swamp Dash", "effect": "Ignores difficult terrain in marshes." },
-        { "name": "Tail Lash", "effect": "Deals extra damage to flanking targets." }
+        {
+          "name": "Swamp Dash",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Tail Lash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Primitive dinosaur breeds from Pandaria’s swamps, related to raptors and crocolisks.",
       "campaignLinks": []
@@ -2027,8 +3471,18 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 16,
       "traits": [
-        { "name": "Tribal Ambush", "effect": "Gains advantage when attacking from concealment." },
-        { "name": "Savage Claws", "effect": "Criticals inflict Bleeding for 2 turns." }
+        {
+          "name": "Tribal Ambush",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hits with brutal force, dealing direct damage."
+        },
+        {
+          "name": "Savage Claws",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Primitive humanoid-like dinosaur species of Pandaria, often used as shock troops by saurok and trolls.",
       "campaignLinks": []
@@ -2041,13 +3495,22 @@
       "subcategory": "Dinosaurs & Ancient Beasts",
       "hp": 28,
       "traits": [
-        { "name": "Deep Maw", "effect": "Can swallow smaller targets whole." },
-        { "name": "Crushing Body", "effect": "Immune to knockback and prone effects." }
+        {
+          "name": "Deep Maw",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Crushing Body",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        }
       ],
       "description": "Colossal sea-dinosaurs dwelling in Azeroth’s deepest oceans, mistaken for kraken by sailors.",
       "campaignLinks": []
     },
-
     {
       "id": "dragonbeast_cloud_serpent",
       "name": "Cloud Serpent",
@@ -2056,8 +3519,18 @@
       "subcategory": "Dragonkin Beasts",
       "hp": 26,
       "traits": [
-        { "name": "Lightning Strike", "effect": "On critical, inflicts Shocked (cannot react) for 1 turn." },
-        { "name": "Soaring Grace", "effect": "Ignores terrain penalties while airborne." }
+        {
+          "name": "Lightning Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites with crushing jaws, dealing direct damage."
+        },
+        {
+          "name": "Slow",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        }
       ],
       "description": "Elegant serpents of Pandaria revered as companions and mounts, bound through rituals of trust.",
       "campaignLinks": []
@@ -2070,8 +3543,18 @@
       "subcategory": "Dragonkin Beasts",
       "hp": 22,
       "traits": [
-        { "name": "Flame Breath", "effect": "On hit, inflicts Burning for 1 turn." },
-        { "name": "Blazing Speed", "effect": "Can disengage after an attack without provoking." }
+        {
+          "name": "Flame Breath",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Blazing Speed",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        }
       ],
       "description": "Fiery draconic beasts bred by the blood elves of Quel’Thalas, used as mounts and war companions.",
       "campaignLinks": []
@@ -2084,8 +3567,18 @@
       "subcategory": "Dragonkin Beasts",
       "hp": 28,
       "traits": [
-        { "name": "Molten Hide", "effect": "Melee attackers take 1 Burning damage." },
-        { "name": "Seismic Roar", "effect": "On use, enemies in range must test morale or be Shaken." }
+        {
+          "name": "Molten Hide",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Seismic Roar",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Obscure draconic beasts tied to Blackrock depths and Outland, often mistaken for lesser drakes.",
       "campaignLinks": []
@@ -2098,13 +3591,22 @@
       "subcategory": "Dragonkin Beasts",
       "hp": 32,
       "traits": [
-        { "name": "Triple Bite", "effect": "Can attack up to 3 adjacent targets per round." },
-        { "name": "Regeneration", "effect": "At start of turn, regains 1 HP unless fire-damaged." }
+        {
+          "name": "Triple Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        },
+        {
+          "name": "Regeneration",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Three-headed monstrosities dwelling in swamps and coasts, feared as ancient proto-draconic aberrations.",
       "campaignLinks": []
     },
-
     {
       "id": "scalehide_kodo",
       "name": "Kodo Beast",
@@ -2113,8 +3615,18 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 26,
       "traits": [
-        { "name": "Stampede", "effect": "When in groups, they deal damage to all enemies in path." },
-        { "name": "Stalwart Hide", "effect": "Reduces incoming damage by 2." }
+        {
+          "name": "Stampede",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Stalwart Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        }
       ],
       "description": "Massive pack lizards of Kalimdor, revered by tauren and orcs as beasts of burden and war mounts.",
       "campaignLinks": []
@@ -2127,8 +3639,18 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 28,
       "traits": [
-        { "name": "Horn Charge", "effect": "On hit after movement, target is Knocked Back." },
-        { "name": "Iron Stomach", "effect": "Immune to poison effects." }
+        {
+          "name": "Horn Charge",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        },
+        {
+          "name": "Iron Stomach",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        }
       ],
       "description": "Large reptilian beasts of Pandaria used as both mounts and sources of meat and leather.",
       "campaignLinks": []
@@ -2141,8 +3663,18 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 22,
       "traits": [
-        { "name": "Venom Spit", "effect": "On hit, inflicts Poisoned for 1 turn." },
-        { "name": "Slither Step", "effect": "Can move through swamp terrain without penalty." }
+        {
+          "name": "Venom Spit",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Slither Step",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites with crushing jaws, dealing direct damage."
+        }
       ],
       "description": "Acid-spitting lizards of Nazmir and Zuldazar, their scales shimmer with swamp toxins.",
       "campaignLinks": []
@@ -2155,8 +3687,18 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 24,
       "traits": [
-        { "name": "Ambush Lunge", "effect": "First strike from stealth has advantage." },
-        { "name": "Shredding Jaws", "effect": "On critical, inflicts Bleeding for 2 turns." }
+        {
+          "name": "Ambush Lunge",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Shredding Jaws",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Massive desert lizards of Vol’dun with saber-like tusks and a savage bite.",
       "campaignLinks": []
@@ -2169,8 +3711,18 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 32,
       "traits": [
-        { "name": "Lightning Breath", "effect": "Deals bonus nature damage to multiple foes." },
-        { "name": "Thunderous Stomp", "effect": "All enemies nearby must test morale or be Staggered." }
+        {
+          "name": "Lightning Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Damages enemies in a frontal cone."
+        },
+        {
+          "name": "Thunderous Stomp",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Ancient, magical lizards of Kalimdor capable of channeling lightning through their horns.",
       "campaignLinks": []
@@ -2183,13 +3735,22 @@
       "subcategory": "Lizards & Scalehides",
       "hp": 30,
       "traits": [
-        { "name": "Crystalline Plates", "effect": "Reduces incoming physical damage by 3." },
-        { "name": "Shatter Stomp", "effect": "On critical, fragments strike nearby enemies." }
+        {
+          "name": "Crystalline Plates",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Shatter Stomp",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Crystalline lizard-beasts of Maldraxxus, hardened by necrotic magic and anima-infused stone.",
       "campaignLinks": []
     },
-
     {
       "id": "worm_jormungar",
       "name": "Jormungar",
@@ -2198,11 +3759,23 @@
       "subcategory": "Worms",
       "hp": 34,
       "traits": [
-        { "name": "Burrow", "effect": "Can disappear underground and reappear elsewhere." },
-        { "name": "Acid Spit", "effect": "On hit, inflicts Poisoned for 2 turns." }
+        {
+          "name": "Burrow",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        },
+        {
+          "name": "Acid Spit",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        }
       ],
       "description": "Colossal worms from Northrend, tunneling through ice and stone. Revered and feared by the Nerubians and Tuskarr.",
-      "campaignLinks": ["wotlk"]
+      "campaignLinks": [
+        "wotlk"
+      ]
     },
     {
       "id": "worm_lava",
@@ -2212,8 +3785,18 @@
       "subcategory": "Worms",
       "hp": 32,
       "traits": [
-        { "name": "Molten Bite", "effect": "Inflicts Burning for 2 turns." },
-        { "name": "Lava Surge", "effect": "On hit, terrain becomes hazardous (fire damage next round)." }
+        {
+          "name": "Molten Bite",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Ground Effect",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        }
       ],
       "description": "Magma-dwelling worms inhabiting the Firelands and volcanic caverns. They radiate heat even when dormant.",
       "campaignLinks": []
@@ -2226,8 +3809,18 @@
       "subcategory": "Worms",
       "hp": 28,
       "traits": [
-        { "name": "Stone Maw", "effect": "Ignores armor on hit." },
-        { "name": "Tunnel Collapse", "effect": "May destabilize ground, reducing movement speed of enemies nearby." }
+        {
+          "name": "Stone Maw",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Tunnel Collapse",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Massive worms of Gorgrond that chew through stone and wood, reshaping terrain as they burrow.",
       "campaignLinks": []
@@ -2240,8 +3833,18 @@
       "subcategory": "Worms",
       "hp": 30,
       "traits": [
-        { "name": "Swallow Whole", "effect": "On hit, small enemies are incapacitated for 1 round." },
-        { "name": "Sandstorm", "effect": "Kicks up a sandstorm, imposing disadvantage on enemies." }
+        {
+          "name": "Swallow Whole",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slams with armored maw, dealing direct damage."
+        },
+        {
+          "name": "Sandstorm",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        }
       ],
       "description": "Classic titanic worms that haunt deserts like Silithus and Tanaris, feared by travelers for ambushes beneath the dunes.",
       "campaignLinks": []
@@ -2254,8 +3857,18 @@
       "subcategory": "Worms",
       "hp": 25,
       "traits": [
-        { "name": "Corpse Eater", "effect": "Heals 1 HP when an enemy dies nearby." },
-        { "name": "Rotting Maw", "effect": "On hit, inflicts Weakened (-1) for 2 turns." }
+        {
+          "name": "Corpse Eater",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Rotting Maw",
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Reduces damage dealt or increases damage taken."
+        }
       ],
       "description": "Worms feeding on corpses in battlefields, spreading disease and rot as they burrow through remains.",
       "campaignLinks": []
@@ -2268,11 +3881,23 @@
       "subcategory": "Worms",
       "hp": 29,
       "traits": [
-        { "name": "Skeletal Hide", "effect": "Takes half damage from physical attacks." },
-        { "name": "Gnawing Hunger", "effect": "On hit, drains 1 morale from target." }
+        {
+          "name": "Skeletal Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Gnawing Hunger",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slams with armored maw, dealing direct damage."
+        }
       ],
       "description": "Undead worm-beasts animated by necrotic energies, leaving trails of gnawed bones in their wake.",
-      "campaignLinks": ["wotlk"]
+      "campaignLinks": [
+        "wotlk"
+      ]
     },
     {
       "id": "worm_tidal_guardian",
@@ -2282,13 +3907,22 @@
       "subcategory": "Worms",
       "hp": 36,
       "traits": [
-        { "name": "Crushing Coil", "effect": "On hit, immobilizes target for 1 turn." },
-        { "name": "Abyssal Pressure", "effect": "Enemies nearby lose 1 morale at start of round." }
+        {
+          "name": "Crushing Coil",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites or rams underwater, dealing direct damage."
+        },
+        {
+          "name": "Abyssal Pressure",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Enormous deep-sea worms serving as guardians of Nazjatar’s abyss, commanded by naga spellcasters.",
       "campaignLinks": []
     },
-
     {
       "id": "exotic_chimaera",
       "name": "Chimaera",
@@ -2297,8 +3931,18 @@
       "subcategory": "Other / Exotic",
       "hp": 34,
       "traits": [
-        { "name": "Twin Breath", "effect": "Breathes frost and lightning simultaneously." },
-        { "name": "Wing Buffet", "effect": "Knocks back all adjacent enemies." }
+        {
+          "name": "Twin Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Damages enemies in a frontal cone."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        }
       ],
       "description": "Two-headed winged predators from Azeroth’s wilds, feared for their elemental breath.",
       "campaignLinks": []
@@ -2311,8 +3955,18 @@
       "subcategory": "Other / Exotic",
       "hp": 40,
       "traits": [
-        { "name": "Magma Breath", "effect": "Inflicts Burning for 2 turns." },
-        { "name": "Molten Hide", "effect": "Melee attackers take 1 Burning damage." }
+        {
+          "name": "Magma Breath",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        }
       ],
       "description": "Two-headed infernal hounds of the Firelands, servants of Ragnaros and his lieutenants.",
       "campaignLinks": []
@@ -2325,11 +3979,23 @@
       "subcategory": "Other / Exotic",
       "hp": 30,
       "traits": [
-        { "name": "Fel Claw", "effect": "On hit, target takes Burning for 1 turn." },
-        { "name": "Infernal Hunger", "effect": "Restores 1 HP when striking a living creature." }
+        {
+          "name": "Fel Claw",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        },
+        {
+          "name": "Infernal Hunger",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Clamps down with fangs and force, dealing direct damage."
+        }
       ],
       "description": "Mutated hounds bred from fel energies, unleashed during the Burning Legion’s crusades.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "exotic_flayedwing",
@@ -2339,11 +4005,23 @@
       "subcategory": "Other / Exotic",
       "hp": 22,
       "traits": [
-        { "name": "Rotting Bite", "effect": "Inflicts Disease for 2 turns." },
-        { "name": "Gore Dive", "effect": "On hit, knocks target prone." }
+        {
+          "name": "Rotting Bite",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Gore Dive",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        }
       ],
       "description": "Grotesque winged carrion beasts of the Shadowlands, stripped of flesh but still alive with hunger.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "exotic_rylakk",
@@ -2353,8 +4031,18 @@
       "subcategory": "Other / Exotic",
       "hp": 28,
       "traits": [
-        { "name": "Icy Breath", "effect": "Inflicts Frost damage and slows target." },
-        { "name": "Dive Slam", "effect": "Deals heavy damage when striking from above." }
+        {
+          "name": "Icy Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Damages enemies in a frontal cone."
+        },
+        {
+          "name": "Dive Slam",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites with crushing jaws, dealing direct damage."
+        }
       ],
       "description": "Wyvern-like flying reptiles of Draenor, often harnessed by the Iron Horde.",
       "campaignLinks": []
@@ -2367,11 +4055,23 @@
       "subcategory": "Other / Exotic",
       "hp": 26,
       "traits": [
-        { "name": "Arcane Drain", "effect": "Reduces target’s spell power for 1 turn." },
-        { "name": "Glide", "effect": "Ignores terrain while moving." }
+        {
+          "name": "Arcane Drain",
+          "trait": "power_shot",
+          "theme": "damage",
+          "effect": "Fires a heavy ranged projectile at a single target."
+        },
+        {
+          "name": "Glide",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Graceful flying rays of Argus, infused with raw arcane energy.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "exotic_panthara",
@@ -2381,11 +4081,23 @@
       "subcategory": "Other / Exotic",
       "hp": 27,
       "traits": [
-        { "name": "Prowl", "effect": "First strike from stealth has advantage." },
-        { "name": "Arcane Pelt", "effect": "Reduces arcane damage taken by 2." }
+        {
+          "name": "Prowl",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Arcane Pelt",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Arcane-infused predators from Argus, feline in appearance with crystalline pelts.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "exotic_seeker",
@@ -2395,11 +4107,23 @@
       "subcategory": "Other / Exotic",
       "hp": 29,
       "traits": [
-        { "name": "Void Gaze", "effect": "On hit, target is Weakened (-1) for 2 turns." },
-        { "name": "Ethereal Flight", "effect": "Can phase through obstacles once per encounter." }
+        {
+          "name": "Void Gaze",
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Reduces damage dealt or increases damage taken."
+        },
+        {
+          "name": "Ethereal Flight",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
       ],
       "description": "Void-touched flying horrors encountered on Argus, minions of the Shadowguard.",
-      "campaignLinks": ["legion"]
+      "campaignLinks": [
+        "legion"
+      ]
     },
     {
       "id": "exotic_shadow_serpent",
@@ -2409,8 +4133,18 @@
       "subcategory": "Other / Exotic",
       "hp": 25,
       "traits": [
-        { "name": "Shadow Breath", "effect": "Inflicts Fear for 1 turn." },
-        { "name": "Umbral Coil", "effect": "Immobilizes target briefly." }
+        {
+          "name": "Shadow Breath",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        },
+        {
+          "name": "Umbral Coil",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Bites with crushing jaws, dealing direct damage."
+        }
       ],
       "description": "Serpentine void creatures slithering in Legion’s corrupted realms.",
       "campaignLinks": []
@@ -2423,11 +4157,23 @@
       "subcategory": "Other / Exotic",
       "hp": 32,
       "traits": [
-        { "name": "Devour Soul", "effect": "On kill, heals 3 HP and gains +1 morale." },
-        { "name": "Abyssal Presence", "effect": "All enemies nearby lose 1 morale at round start." }
+        {
+          "name": "Devour Soul",
+          "trait": "area_heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        },
+        {
+          "name": "Abyssal Presence",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Shadowlands predators feeding on anima and mortal souls, feared across the Maw.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "exotic_necroray",
@@ -2437,11 +4183,23 @@
       "subcategory": "Other / Exotic",
       "hp": 20,
       "traits": [
-        { "name": "Necrotic Spines", "effect": "Inflicts Disease for 1 turn." },
-        { "name": "Carrion Glide", "effect": "Moves silently above battlefield." }
+        {
+          "name": "Necrotic Spines",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Carrion Glide",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Rotting ray-beasts of Maldraxxus, corrupted by necrotic magic and used as war mounts.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "exotic_spirit_beast",
@@ -2451,8 +4209,18 @@
       "subcategory": "Other / Exotic",
       "hp": 24,
       "traits": [
-        { "name": "Spectral Strike", "effect": "Ignores armor on hit." },
-        { "name": "Spirit Mend", "effect": "Heals an ally 3 HP once per encounter." }
+        {
+          "name": "Spectral Strike",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Spirit Mend",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Restores health to a target."
+        }
       ],
       "description": "Ethereal spectral beasts, rarest companions of hunters, drawn from primal spirits of Azeroth.",
       "campaignLinks": []
@@ -2465,8 +4233,18 @@
       "subcategory": "Other / Exotic",
       "hp": 28,
       "traits": [
-        { "name": "Stone Hide", "effect": "Takes half damage from physical attacks." },
-        { "name": "Guardian’s Roar", "effect": "Nearby allies gain +1 morale." }
+        {
+          "name": "Stone Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "name": "Guardian’s Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        }
       ],
       "description": "Stone lion-dogs of Pandaria, guardians of mogu temples and monuments.",
       "campaignLinks": []
@@ -2479,11 +4257,23 @@
       "subcategory": "Other / Exotic",
       "hp": 30,
       "traits": [
-        { "name": "Fanged Maul", "effect": "On critical, target is Knocked Back." },
-        { "name": "Anima Infusion", "effect": "Reduces incoming damage by 2 this round." }
+        {
+          "name": "Fanged Maul",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with primal force, dealing direct damage."
+        },
+        {
+          "name": "Anima Infusion",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
       ],
       "description": "Massive stone-skinned war beasts of Revendreth, bred as mounts by the Venthyr.",
-      "campaignLinks": ["shadowlands"]
+      "campaignLinks": [
+        "shadowlands"
+      ]
     },
     {
       "id": "exotic_sporebat",
@@ -2493,8 +4283,18 @@
       "subcategory": "Other / Exotic",
       "hp": 20,
       "traits": [
-        { "name": "Spore Cloud", "effect": "Inflicts Weakened (-1) for 2 turns." },
-        { "name": "Glide", "effect": "Ignores terrain penalties." }
+        {
+          "name": "Spore Cloud",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        },
+        {
+          "name": "Glide",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
       ],
       "description": "Floating mushroom-like beasts of Zangarmarsh, glowing with bioluminescence and strange spores.",
       "campaignLinks": []
@@ -2507,8 +4307,18 @@
       "subcategory": "Other / Exotic",
       "hp": 18,
       "traits": [
-        { "name": "Fungal Lash", "effect": "On hit, inflicts Poisoned for 1 turn." },
-        { "name": "Toxic Trail", "effect": "Leaves behind spores that reduce enemy morale." }
+        {
+          "name": "Fungal Lash",
+          "trait": "poison_disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Toxic Trail",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        }
       ],
       "description": "Fungoid quadrupeds found in Outland and Shadowlands, spreading spores as they roam.",
       "campaignLinks": []
@@ -2521,8 +4331,18 @@
       "subcategory": "Other / Exotic",
       "hp": 22,
       "traits": [
-        { "name": "Wild Bond", "effect": "Nearby allies gain +1 morale at round start." },
-        { "name": "Fey Step", "effect": "Can teleport a short distance once per encounter." }
+        {
+          "name": "Wild Bond",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Fey Step",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
       ],
       "description": "Mystical beasts of Ardenweald, bound to the cycle of rebirth and the Night Fae.",
       "campaignLinks": []
