@@ -130,7 +130,6 @@
     }
     sidebar.appendChild(linkFrag);
 
-    // Render skeleton articles
     const artFrag = document.createDocumentFragment();
     for (const s of sections) {
       const article = document.createElement('article');
@@ -149,7 +148,6 @@
       const p = document.createElement('p');
       p.innerHTML = s.summary_html || '';
 
-      // container for related entity chips
       const related = document.createElement('div');
       related.className = 'related-wrap';
       related.dataset.historyId = s.id;
@@ -220,7 +218,6 @@
         const links = Array.isArray(e.campaignLinks) ? e.campaignLinks : [];
         for (const hid of links) {
           if (!byHistoryId.has(hid)) byHistoryId.set(hid, []);
-          // avoid duplicates by id
           const arr = byHistoryId.get(hid);
           if (!arr.some(x => x.id === e.id)) {
             arr.push({

@@ -184,88 +184,87 @@
 
   <script>
     (async function () {
-        const dataFiles = [
-  'assets/data/npcs.json',
-  'assets/data/factions.json',
-  'assets/data/aberrations.json',
-  'assets/data/beasts.json',
-  'assets/data/critters.json',
-  'assets/data/demons.json',
-  'assets/data/dragonkin.json', 
-  'assets/data/elementals.json',
-  'assets/data/giants.json',
-  'assets/data/humanoids.json',
-  'assets/data/mechanical.json', 
-  'assets/data/undead.json'
-];
-
-async function loadJsonSafe(url) {
-  try {
-    const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
-    if (!text.trim()) return { entries: [], categories: [] };
-    return JSON.parse(text);
-  } catch (e) {
-    console.warn('Skipping data file:', url, e);
-    return { entries: [], categories: [] };
-  }
-}
-
-const [allData, histRes] = await Promise.all([
-  Promise.all(dataFiles.map(loadJsonSafe)),
-  fetch('assets/data/history.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : { sections: [] })
-    .catch(() => ({ sections: [] }))
-]);    
-      const historyTitleById = {};
-      (histRes.sections || []).forEach(s => { historyTitleById[s.id] = s.title || s.id; });
-      function normalize(source) {
-  if (Array.isArray(source.categories)) return JSON.parse(JSON.stringify(source.categories));
-
-  const byCategory = new Map();
-
-  function addPlacement(entry, cat, sub) {
-    const category = cat || 'Other';
-    const subcategory = sub || 'Misc';
-    if (!byCategory.has(category)) byCategory.set(category, new Map());
-    const subs = byCategory.get(category);
-    if (!subs.has(subcategory)) subs.set(subcategory, []);
-    const list = subs.get(subcategory);
-    if (!list.some(e => e.id === entry.id)) {
-      list.push({ ...entry, category: category, subcategory: subcategory });
-    }
-  }
-
-  for (const e of (source.entries || [])) {
-    addPlacement(e, e.category, e.subcategory);
-    if (Array.isArray(e.alsoAppearsIn)) {
-      for (const p of e.alsoAppearsIn) {
-        if (p && (p.category || p.subcategory)) {
-          addPlacement(e, p.category, p.subcategory);
+      const dataFiles = [
+        'assets/data/npcs.json',
+        'assets/data/factions.json',
+        'assets/data/aberrations.json',
+        'assets/data/beasts.json',
+        'assets/data/critters.json',
+        'assets/data/demons.json',
+        'assets/data/dragonkin.json',
+        'assets/data/elementals.json',
+        'assets/data/giants.json',
+        'assets/data/humanoids.json',
+        'assets/data/mechanical.json',
+        'assets/data/undead.json'
+      ];
+    
+      async function loadJsonSafe(url) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const text = await res.text();
+          if (!text.trim()) return { entries: [], categories: [] };
+          return JSON.parse(text);
+        } catch (e) {
+          console.warn('Skipping data file:', url, e);
+          return { entries: [], categories: [] };
         }
       }
-    }
-  }
-
-  const out = [];
-  for (const [category, subs] of byCategory.entries()) {
-    const subcategories = [];
-    for (const [name, entries] of subs.entries()) {
-      subcategories.push({ name, entries });
-    }
-    subcategories.sort((a, b) => a.name.localeCompare(b.name));
-    out.push({ category, subcategories });
-  }
-
-  out.sort((a, b) => {
-    const pref = (x) => (x.category === 'Humanoids' ? 0 : x.category === 'Beasts' ? 1 : 2);
-    const pa = pref(a), pb = pref(b);
-    return pa === pb ? a.category.localeCompare(b.category) : pa - pb;
-  });
-
-  return out;
-}
+    
+      const [allData, histRes, traitsRes] = await Promise.all([
+        Promise.all(dataFiles.map(loadJsonSafe)),
+        fetch('assets/data/history.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : { sections: [] })
+          .catch(() => ({ sections: [] })),
+        loadJsonSafe('assets/data/traits.json') 
+      ]);
+    
+      const historyTitleById = {};
+      (histRes.sections || []).forEach(s => { historyTitleById[s.id] = s.title || s.id; });
+    
+      function normalize(source) {
+        if (Array.isArray(source.categories)) return JSON.parse(JSON.stringify(source.categories));
+        const byCategory = new Map();
+    
+        function addPlacement(entry, cat, sub) {
+          const category = cat || 'Other';
+          const subcategory = sub || 'Misc';
+          if (!byCategory.has(category)) byCategory.set(category, new Map());
+          const subs = byCategory.get(category);
+          if (!subs.has(subcategory)) subs.set(subcategory, []);
+          const list = subs.get(subcategory);
+          if (!list.some(e => e.id === entry.id)) {
+            list.push({ ...entry, category: category, subcategory: subcategory });
+          }
+        }
+    
+        for (const e of (source.entries || [])) {
+          addPlacement(e, e.category, e.subcategory);
+          if (Array.isArray(e.alsoAppearsIn)) {
+            for (const p of e.alsoAppearsIn) {
+              if (p && (p.category || p.subcategory)) addPlacement(e, p.category, p.subcategory);
+            }
+          }
+        }
+    
+        const out = [];
+        for (const [category, subs] of byCategory.entries()) {
+          const subcategories = [];
+          for (const [name, entries] of subs.entries()) {
+            subcategories.push({ name, entries });
+          }
+          subcategories.sort((a, b) => a.name.localeCompare(b.name));
+          out.push({ category, subcategories });
+        }
+        out.sort((a, b) => {
+          const pref = (x) => (x.category === 'Humanoids' ? 0 : x.category === 'Beasts' ? 1 : 2);
+          const pa = pref(a), pb = pref(b);
+          return pa === pb ? a.category.localeCompare(b.category) : pa - pb;
+        });
+        return out;
+      }
+    
       const mergedCategories = allData
         .map(normalize)
         .flat()
@@ -286,139 +285,219 @@ const [allData, histRes] = await Promise.all([
             .sort((a, b) => a.name.localeCompare(b.name));
           return { category: cat.category, subcategories };
         });
+          function flattenEntries(cats) {
+        const out = [];
+        for (const cat of cats) {
+          for (const sub of (cat.subcategories || [])) {
+            for (const e of (sub.entries || [])) out.push({ ...e, _cat: cat.category, _sub: sub.name });
+          }
+        }
+        return out;
+      }
+      let allEntriesFlat = flattenEntries(mergedCategories);
+      const monsterById = new Map(allEntriesFlat.map(e => [e.id, e]));
     
+      /* ----- "Traits" category grouped by THEME ----- */
+      const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+      const traitsByTheme = new Map();
+
+      for (const t of (traitsRes.entries || [])) {
+        const theme = (t.theme || 'other').toLowerCase();
+        if (!traitsByTheme.has(theme)) traitsByTheme.set(theme, []);
+        traitsByTheme.get(theme).push({
+          id: `trait:${t.id}`,
+          name: t.name,
+          class: 'Trait',
+          category: 'Traits',
+          subcategory: cap(theme), 
+          effect: t.effect,
+          theme: theme,                   
+          traitCategories: t.categories || [],
+          usedBy: t.usedBy || []
+        });
+      }
+
+      const traitSubcats = [...traitsByTheme.entries()]
+        .sort((a,b)=> a[0].localeCompare(b[0]))
+        .map(([theme, list]) => ({
+          name: cap(theme),
+          entries: list.sort((x,y)=> (x.name||'').localeCompare(y.name||''))
+        }));
+
+      mergedCategories.push({
+        category: 'Traits',
+        subcategories: traitSubcats
+      });
+
+      allEntriesFlat = flattenEntries(mergedCategories);
+
+    
+      /* ----- DOM refs ----- */
       const tree = document.getElementById('monsterguide-tree');
       const list = document.getElementById('monsterguide-list');
-const searchInput = document.getElementById('monsterguide-search');
-
-function flattenEntries(cats) {
-  const out = [];
-  for (const cat of cats) {
-    for (const sub of (cat.subcategories || [])) {
-      for (const e of (sub.entries || [])) {
-        out.push({ ...e, _cat: cat.category, _sub: sub.name });
+      const searchInput = document.getElementById('monsterguide-search');
+    
+      /* ----- filtering + search ----- */
+      function matches(q, e) {
+        if (!q) return true;
+        q = q.toLowerCase();
+        return (
+          (e.name || '').toLowerCase().includes(q) ||
+          (e.class || '').toLowerCase().includes(q) ||
+          (e.effect || '').toLowerCase().includes(q) ||  
+          (e._sub || '').toLowerCase().includes(q) ||
+          (e._cat || '').toLowerCase().includes(q)
+        );
       }
-    }
-  }
-  return out;
-}
-const allEntriesFlat = flattenEntries(mergedCategories);
-
-function matches(q, e) {
-  if (!q) return true;
-  q = q.toLowerCase();
-  return (
-    (e.name || '').toLowerCase().includes(q) ||
-    (e.class || '').toLowerCase().includes(q) ||
-    (e._sub || '').toLowerCase().includes(q) ||
-    (e._cat || '').toLowerCase().includes(q)
-  );
-}
-
-function filterCategories(q) {
-  if (!q) return mergedCategories;
-  const cats = [];
-  for (const cat of mergedCategories) {
-    const subs = [];
-    for (const sub of (cat.subcategories || [])) {
-      const ents = (sub.entries || []).filter(e => matches(q, { ...e, _cat: cat.category, _sub: sub.name }));
-      if (ents.length) subs.push({ name: sub.name, entries: ents });
-    }
-    if (subs.length) cats.push({ category: cat.category, subcategories: subs });
-  }
-  return cats;
-}
-
-function rebuildSidebar(filteredCats, options = {}) {
-  const expand = !!options.expandMatches; // true when searching
-  tree.innerHTML = '';
-  const catFrag = document.createDocumentFragment();
-
-  filteredCats.forEach(cat => {
-    const liCat = document.createElement('li');
-    const btnCat = document.createElement('button');
-    btnCat.textContent = cat.category;
-    btnCat.dataset.toggle = 'category';
-    liCat.appendChild(btnCat);
-
-    const ulSub = document.createElement('ul');
-    ulSub.className = 'tree';
-    ulSub.style.display = expand ? '' : 'none';
-
-    (cat.subcategories || []).forEach(sub => {
-      const liSub = document.createElement('li'); liSub.classList.add('indent-1');
-      const btnSub = document.createElement('button');
-      btnSub.textContent = sub.name;
-      btnSub.dataset.toggle = 'subcategory';
-      liSub.appendChild(btnSub);
-
-      const ulEntries = document.createElement('ul');
-      ulEntries.className = 'tree';
-      ulEntries.style.display = expand ? '' : 'none';
-
-      (sub.entries || []).forEach(ent => {
-        const liEnt = document.createElement('li'); liEnt.classList.add('indent-2');
-        const btnEnt = document.createElement('button');
-        btnEnt.textContent = ent.name;
-        btnEnt.dataset.entryId = ent.id;
-        btnEnt.dataset.toggle = 'entry';
-        liEnt.appendChild(btnEnt);
-        ulEntries.appendChild(liEnt);
+      function filterCategories(q) {
+        if (!q) return mergedCategories;
+        const cats = [];
+        for (const cat of mergedCategories) {
+          const subs = [];
+          for (const sub of (cat.subcategories || [])) {
+            const ents = (sub.entries || []).filter(e => matches(q, { ...e, _cat: cat.category, _sub: sub.name }));
+            if (ents.length) subs.push({ name: sub.name, entries: ents });
+          }
+          if (subs.length) cats.push({ category: cat.category, subcategories: subs });
+        }
+        return cats;
+      }
+    
+      function rebuildSidebar(filteredCats, options = {}) {
+        const expand = !!options.expandMatches;
+        tree.innerHTML = '';
+        const catFrag = document.createDocumentFragment();
+    
+        filteredCats.forEach(cat => {
+          const liCat = document.createElement('li');
+          const btnCat = document.createElement('button');
+          btnCat.textContent = cat.category;
+          btnCat.dataset.toggle = 'category';
+          liCat.appendChild(btnCat);
+    
+          const ulSub = document.createElement('ul');
+          ulSub.className = 'tree';
+          ulSub.style.display = expand ? '' : 'none';
+    
+          (cat.subcategories || []).forEach(sub => {
+            const liSub = document.createElement('li'); liSub.classList.add('indent-1');
+            const btnSub = document.createElement('button');
+            btnSub.textContent = sub.name;
+            btnSub.dataset.toggle = 'subcategory';
+            liSub.appendChild(btnSub);
+    
+            const ulEntries = document.createElement('ul');
+            ulEntries.className = 'tree';
+            ulEntries.style.display = expand ? '' : 'none';
+    
+            (sub.entries || []).forEach(ent => {
+              const liEnt = document.createElement('li'); liEnt.classList.add('indent-2');
+              const btnEnt = document.createElement('button');
+              btnEnt.textContent = ent.name;
+              btnEnt.dataset.entryId = ent.id;
+              btnEnt.dataset.toggle = 'entry';
+              liEnt.appendChild(btnEnt);
+              ulEntries.appendChild(liEnt);
+            });
+    
+            liSub.appendChild(ulEntries);
+            ulSub.appendChild(liSub);
+    
+            btnSub.addEventListener('click', () => {
+              ulEntries.style.display = (ulEntries.style.display === 'none') ? '' : 'none';
+              renderCards(sub.entries || []);
+            });
+          });
+    
+          btnCat.addEventListener('click', () => {
+            ulSub.style.display = (ulSub.style.display === 'none') ? '' : 'none';
+          });
+    
+          liCat.appendChild(ulSub);
+          catFrag.appendChild(liCat);
+        });
+    
+        tree.appendChild(catFrag);
+      }
+    
+      function runSearch() {
+        const q = searchInput.value.trim();
+        const filtered = filterCategories(q);
+        rebuildSidebar(filtered, { expandMatches: !!q });
+        const results = q ? allEntriesFlat.filter(e => matches(q, e)) : [];
+        if (q) renderCards(results);
+      }
+      searchInput.addEventListener('input', runSearch);
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { searchInput.value = ''; runSearch(); }
+        if (e.key === 'Enter') runSearch();
       });
-
-      liSub.appendChild(ulEntries);
-      ulSub.appendChild(liSub);
-
-      btnSub.addEventListener('click', () => {
-        ulEntries.style.display = (ulEntries.style.display === 'none') ? '' : 'none';
-        renderCards(sub.entries || []);
-      });
-    });
-
-    btnCat.addEventListener('click', () => {
-      ulSub.style.display = (ulSub.style.display === 'none') ? '' : 'none';
-    });
-
-    liCat.appendChild(ulSub);
-    catFrag.appendChild(liCat);
-  });
-
-  tree.appendChild(catFrag);
-}
-
-
-function runSearch() {
-  const q = searchInput.value.trim();
-  const filtered = filterCategories(q);
-  rebuildSidebar(filtered);
-  const results = q ? allEntriesFlat.filter(e => matches(q, e)) : [];
-  if (q) renderCards(results);
-}
-searchInput.addEventListener('input', runSearch);
-searchInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { searchInput.value = ''; runSearch(); }
-  if (e.key === 'Enter') runSearch();
-});
-
-
     
       function renderCards(entries) {
         list.querySelectorAll('.monster-card').forEach(n => n.remove());
         const frag = document.createDocumentFragment();
+    
         for (const m of entries) {
           const card = document.createElement('article');
           card.className = 'monster-card';
           card.id = m.id;
-          const fig = document.createElement('figure');
-    fig.className = 'thumb';
-    const img = document.createElement('img');
-    img.loading = 'lazy';
-    img.alt = m.name || 'monster image';
-    img.src = m.image || 'assets/images/monsters/_placeholder_3x4.jpg'; // fallback
-    fig.appendChild(img);
-    card.appendChild(fig);
+    
           const h3 = document.createElement('h3');
           h3.textContent = m.name;
+    
+          if (m.class === 'Trait' || m.category === 'Traits') {
+            const badges = document.createElement('div'); badges.className = 'badges';
+            (m.traitCategories || []).forEach(c => {
+              const span = document.createElement('span');
+              span.className = 'badge';
+              span.textContent = c;
+              badges.appendChild(span);
+            });
+
+            if (m.theme) {
+              const th = document.createElement('span');
+              th.className = 'badge';
+              th.textContent = `Theme: ${m.theme[0].toUpperCase()}${m.theme.slice(1)}`;
+              badges.appendChild(th);
+            }
+
+    
+            const p = document.createElement('p');
+            p.textContent = m.effect || '';
+    
+            const usedWrap = document.createElement('div'); usedWrap.className = 'campaign-links';
+            if (Array.isArray(m.usedBy) && m.usedBy.length) {
+              m.usedBy.forEach(mid => {
+                const a = document.createElement('a');
+                a.href = `#${mid}`;
+                a.textContent = monsterById.get(mid)?.name || mid;
+                usedWrap.appendChild(a);
+              });
+            }
+    
+            card.appendChild(h3);
+            card.appendChild(badges);
+            const h4e = document.createElement('h4'); h4e.textContent = 'Effect';
+            card.appendChild(h4e);
+            card.appendChild(p);
+            if (usedWrap.childElementCount) {
+              const h4u = document.createElement('h4'); h4u.textContent = 'Used by';
+              card.appendChild(h4u);
+              card.appendChild(usedWrap);
+            }
+            frag.appendChild(card);
+            continue; 
+          }
+    
+          /* CREATURE CARD (existing layout) */
+          const fig = document.createElement('figure');
+          fig.className = 'thumb';
+          const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.alt = m.name || 'monster image';
+          img.src = m.image || 'assets/images/monsters/_placeholder_3x4.jpg';
+          fig.appendChild(img);
+          card.appendChild(fig);
     
           const badges = document.createElement('div'); badges.className = 'badges';
           const badgeData = [
@@ -434,8 +513,7 @@ searchInput.addEventListener('keydown', (e) => {
             badges.appendChild(span);
           }
     
-          const desc = document.createElement('p');
-          desc.innerHTML = m.description || '';
+          const desc = document.createElement('p'); desc.innerHTML = m.description || '';
     
           const traits = document.createElement('ul'); traits.className = 'traits';
           if (m.traits && m.traits.length) {
@@ -480,6 +558,7 @@ searchInput.addEventListener('keydown', (e) => {
         list.scrollTo({ top: 0, behavior: 'smooth' });
       }
     
+      /* ----- build initial sidebar from merged categories  ----- */
       const catFrag = document.createDocumentFragment();
       mergedCategories.forEach(cat => {
         const liCat = document.createElement('li');
@@ -531,11 +610,11 @@ searchInput.addEventListener('keydown', (e) => {
       });
       tree.appendChild(catFrag);
     
+      /* ----- click to open single card from sidebar ----- */
       tree.addEventListener('click', (ev) => {
         const btn = ev.target.closest('button[data-toggle="entry"]');
         if (!btn) return;
         const id = btn.dataset.entryId;
-    
         let chosen = null;
         for (const cat of mergedCategories) {
           for (const sub of (cat.subcategories || [])) {
@@ -545,38 +624,36 @@ searchInput.addEventListener('keydown', (e) => {
           if (chosen) break;
         }
         if (!chosen) return;
-    
-        if (!document.getElementById(id)) renderCards([chosen]);
+        renderCards([chosen]);
         const card = document.getElementById(id);
         if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-
-      function findEntryById(id){
-  for (const cat of mergedCategories) {
-    for (const sub of (cat.subcategories || [])) {
-      const found = (sub.entries || []).find(e => e.id === id);
-      if (found) return found;
-    }
-  }
-  return null;
-}
-
-function openFromHash(){
-  const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
-  if (!id) return;
-  const entry = findEntryById(id);
-  if (!entry) return;
-  renderCards([entry]);
-  const card = document.getElementById(id);
-  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-window.addEventListener('hashchange', openFromHash);
-openFromHash();
-
     
+      /* ----- deep link by hash (works for both creatures and traits) ----- */
+      function findEntryById(id){
+        for (const cat of mergedCategories) {
+          for (const sub of (cat.subcategories || [])) {
+            const found = (sub.entries || []).find(e => e.id === id);
+            if (found) return found;
+          }
+        }
+        return null;
+      }
+      function openFromHash(){
+        const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+        if (!id) return;
+        const entry = findEntryById(id);
+        if (!entry) return;
+        renderCards([entry]);
+        const card = document.getElementById(id);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      window.addEventListener('hashchange', openFromHash);
+      openFromHash();
     })().catch(console.error);
     </script>
+    
+    
     
 </body>
 </html>

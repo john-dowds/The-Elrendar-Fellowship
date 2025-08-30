@@ -27,7 +27,7 @@ form.addEventListener('submit', async (e) => {
   }
 
   try {
-    // Primary attempt with CORS + JSON (best UX)
+    // Primary attempt with CORS + JSON 
     const res = await fetch(WEB_APP_URL, {
       method: 'POST',
       mode: 'cors',

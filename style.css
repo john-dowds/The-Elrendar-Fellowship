@@ -593,3 +593,50 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   .splash-copy h2{ white-space: normal; }      
   .splash-descbox{ left:4%; width: 90%; --bleed: 18px; }
 }
+
+/* ——— Splash title: INTENSE shadow-cursed purple/black glow ——— */
+.splash-copy h2#splash-title{
+  color: #eee8ff; /* pale lavender for punch; remove if you prefer your original */
+  /* heavy multi-ring aura + deep halo */
+  text-shadow:
+    0   2px 12px rgba(0,0,0,.70),          /* dark lift */
+    0   0    8px rgba(118, 60,190,.85),    /* violet core */
+    0   0   22px rgba(155,122,255,.70),    /* amethyst bloom */
+    0   0   42px rgba(90,  20,160,.60),    /* mid halo */
+    0   0   68px rgba(54,   0, 94,.55),    /* deep halo */
+    0   0  100px rgba(32,   0, 60,.45);    /* far halo */
+
+  /* extra glow off the glyphs */
+  filter:
+    drop-shadow(0 0 10px rgba(118,60,190,.55))
+    drop-shadow(0 0 28px rgba(90,20,160,.45));
+
+  animation: intenseCursedGlow 4.2s ease-in-out infinite;
+}
+
+/* stronger pulse at midpoint (more radius & opacity) */
+@keyframes intenseCursedGlow{
+  0%,100%{
+    text-shadow:
+      0   2px 12px rgba(0,0,0,.70),
+      0   0    8px rgba(118, 60,190,.85),
+      0   0   22px rgba(155,122,255,.70),
+      0   0   42px rgba(90,  20,160,.60),
+      0   0   68px rgba(54,   0, 94,.55),
+      0   0  100px rgba(32,   0, 60,.45);
+  }
+  50%{
+    text-shadow:
+      0   2px 14px rgba(0,0,0,.75),
+      0   0   12px rgba(118, 60,190,.95),
+      0   0   30px rgba(155,122,255,.85),
+      0   0   56px rgba(90,  20,160,.75),
+      0   0   92px rgba(54,   0, 94,.70),
+      0   0  130px rgba(32,   0, 60,.60);
+  }
+}
+
+/* respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+  .splash-copy h2#splash-title{ animation: none; }
+}

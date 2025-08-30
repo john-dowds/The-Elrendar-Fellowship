@@ -57,7 +57,6 @@
       <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
       <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
     </footer>
-<!-- ───────── Splash (toggle with data-active="y" or "n") ───────── -->
 <div id="campaign-splash" class="splash-backdrop" data-active="y" data-hero="off" hidden>
   <div class="splash-modal" role="dialog" aria-modal="true" aria-labelledby="splash-title">
     <button class="splash-close" aria-label="Close">×</button>
@@ -69,19 +68,12 @@
     <span class="splash-date"></span>
   </h2>
 </div>
-
-<!-- Left-side description plate that overlaps the band slightly -->
 <div class="splash-descbox">
   <p class="splash-desc">
     The Magistry of Silvermoon is in a frenzy: breaches at sanctums kept quiet; the lingering taint of fel energy carefully masked; the threat of a traitor now undeniable. <br><br>The Fellowship has one task: uncover the truth, and put an end to the threat.
   </p>
 </div>
-
-
-    <!-- CAMPAIGN-SPECIFIC ART OVERLAY -->
     <img class="splash-hero" src="assets/art/crest2.png" alt="Campaign art" />
-
-    <!-- Bottom-left opt-out -->
     <label class="splash-dontshow">
       <input type="checkbox" id="splash-hide-7"> Don’t show again for 7 days.
     </label>
@@ -101,7 +93,6 @@
   const now = Date.now();
   const hideUntil = Number(localStorage.getItem(STORAGE_KEY) || 0);
 
-  // Show only if active and not snoozed
   if (!ACTIVE || hideUntil > now) return;
   ROOT.hidden = false;
 
