@@ -24,7 +24,7 @@
         }
       ],
       "description": "Reanimated corpses driven by a single urge: to spread the plague.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_ghoul",
@@ -48,7 +48,7 @@
         }
       ],
       "description": "Feral scavengers that swarm battlefields and crypts.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_geist",
@@ -72,7 +72,7 @@
         }
       ],
       "description": "Hunched, masked killers that scuttle and strike with surgical cruelty.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_plaguehound",
@@ -96,7 +96,7 @@
         }
       ],
       "description": "Bred to run down survivors and harry retreating lines.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_abomination",
@@ -120,7 +120,7 @@
         }
       ],
       "description": "Hulking golems of meat and iron, stitched from fallen bodies and guided by a cruel will.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_flesh_giant",
@@ -144,7 +144,7 @@
         }
       ],
       "description": "Towering heaps of sinew and bone bolted to rusted armor—walking siege engines.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_plague_eruption",
@@ -168,7 +168,7 @@
         }
       ],
       "description": "Swell-bellied vectors swollen with alchemists’ worst inventions.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_wight",
@@ -192,7 +192,7 @@
         }
       ],
       "description": "Heavily armed corpses animated with a colder, crueler will.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_crypt_fiend",
@@ -216,7 +216,7 @@
         }
       ],
       "description": "Arachnid-bodied horrors woven into the Scourge’s ranks by Nerubian necromancers.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_crypt_lord",
@@ -240,7 +240,7 @@
         }
       ],
       "description": "Nerubian behemoths that command lesser fiends and anchor tunnel wars.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_deathcharger",
@@ -264,7 +264,7 @@
         }
       ],
       "description": "Bone-shod chargers wreathed in cold smoke, bred to carry death knights and banshees alike.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_skeletal_warrior",
@@ -288,7 +288,7 @@
         }
       ],
       "description": "Reassembled bones marching in lockstep to necromantic drums.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_skeletal_mage",
@@ -312,7 +312,7 @@
         }
       ],
       "description": "Rattling spellcasters whose grins never change, even as they burn you down.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_skeleton_archer",
@@ -336,7 +336,7 @@
         }
       ],
       "description": "Long-dead bowmen loosed again, their quivers never seeming to empty.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_bone_golem",
@@ -360,7 +360,7 @@
         }
       ],
       "description": "A pillar of fused ribs and limbs animated by a grim lattice of magic.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_bone_wraith",
@@ -384,7 +384,7 @@
         }
       ],
       "description": "A storm of bones held together by baleful hatred.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_boneguard_commander",
@@ -408,7 +408,7 @@
         }
       ],
       "description": "Commanders of skeletal cohorts, helm-crests etched with cemetery runes.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_ghost",
@@ -432,7 +432,7 @@
         }
       ],
       "description": "Residual souls tethered to the mortal world by grief, oath, or curse.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_banshee",
@@ -456,7 +456,7 @@
         }
       ],
       "description": "Vengeful women’s souls, weaponized into terror by the Scourge.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_shade",
@@ -480,7 +480,7 @@
         }
       ],
       "description": "Hungry silhouettes that haunt corridors and catacombs.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_wraith",
@@ -504,7 +504,7 @@
         }
       ],
       "description": "Focused malice given form; colder and crueler than any ghost.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_valkyr",
@@ -528,9 +528,7 @@
         }
       ],
       "description": "Winged spirit-wardens that ferry souls and forge new Forsaken.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk","shadowlands"]
     },
     {
       "id": "undead_lich",
@@ -554,9 +552,7 @@
         }
       ],
       "description": "Sovereign necromancers whose souls are bottled in phylacteries and wills are iron.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_death_knight_scourge",
@@ -580,9 +576,7 @@
         }
       ],
       "description": "Fallen heroes reforged as runebound knights under necromantic command.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_death_knight_ebon_blade",
@@ -606,9 +600,7 @@
         }
       ],
       "description": "Knights who broke free of the Lich King and now wield death against greater evils.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_dark_ranger",
@@ -638,7 +630,7 @@
         }
       ],
       "description": "Forsaken marksmen who lace arrows with banshee malice.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_sanlayn",
@@ -668,9 +660,7 @@
         }
       ],
       "description": "Vampiric princes and courtiers who dine on blood and sorrow.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_apothecary",
@@ -694,7 +684,7 @@
         }
       ],
       "description": "Forsaken chemists who perfect alchemical horrors in shadowed labs.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_deathguard",
@@ -718,7 +708,7 @@
         }
       ],
       "description": "Rank-and-file Forsaken infantry, tireless and unflinching.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_valkyr_matron",
@@ -742,9 +732,7 @@
         }
       ],
       "description": "Senior val’kyr who preside over covens and rites of unlife.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk","shadowlands"]
     },
     {
       "id": "undead_frost_wyrm",
@@ -768,9 +756,7 @@
         }
       ],
       "description": "Reanimated dragon corpses bound to necromancy, their breath a storm of tomb-cold frost.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_bone_drake",
@@ -794,7 +780,7 @@
         }
       ],
       "description": "Draconic remains lashed with rune-iron and malice, swift and unnerving in the air.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_skeletal_dragon",
@@ -818,7 +804,7 @@
         }
       ],
       "description": "A lesser drake or dragon stripped to bone and bound with cruel runes.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_plague_wyrm",
@@ -842,7 +828,7 @@
         }
       ],
       "description": "A dragon cadaver suffused with alchemy and plaguecraft, a flying cauldron of ruin.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_ancient_bone_wyrm",
@@ -866,7 +852,7 @@
         }
       ],
       "description": "An elder wyrm’s skeleton, reforged by master necromancy into a tyrant of the skies.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_meat_wagon",
@@ -890,9 +876,7 @@
         }
       ],
       "description": "A bone-and-iron cart that catapults corpses and plague barrels across the field.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_stitched_horror",
@@ -916,7 +900,7 @@
         }
       ],
       "description": "A nastier cousin of the abomination—leaner, stitched tight, and built to hunt.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk","shadowlands"]
     },
     {
       "id": "undead_bone_colossus",
@@ -940,7 +924,7 @@
         }
       ],
       "description": "A towering frame of fused skeletons animated into a walking fortress.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk","shadowlands"]
     },
     {
       "id": "undead_plague_cart",
@@ -964,7 +948,7 @@
         }
       ],
       "description": "A wheeled reservoir of blight escorted by apothecaries and ghouls.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","wotlk"]
     },
     {
       "id": "undead_necropolis",
@@ -988,9 +972,7 @@
         }
       ],
       "description": "A floating tomb-city bristling with runes and bonework, casting a pall over whole regions.",
-      "campaignLinks": [
-        "wotlk"
-      ]
+      "campaignLinks": ["fallqt","wotlk","shadowlands"]
     }
   ]
 }

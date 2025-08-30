@@ -50,7 +50,7 @@
         }
       ],
       "description": "Respected generals who lead Ankoan warbands against naga incursions.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "ankoan_deepseer",
@@ -74,7 +74,7 @@
         }
       ],
       "description": "Mystics and tidecallers who read the depths and call on ocean magics.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "ankoan_scout",
@@ -98,7 +98,7 @@
         }
       ],
       "description": "Stealthy scouts who range the depths of Nazjatar.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "ankoan_tideblade",
@@ -122,7 +122,7 @@
         }
       ],
       "description": "Elite Ankoan melee fighters, wielding twin blades with aquatic grace.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "ankoan_warrior",
@@ -146,7 +146,7 @@
         }
       ],
       "description": "Frontline fighters hardened by war with naga and deep-sea threats.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "arakkoa_guardian",
@@ -250,7 +250,7 @@
       ],
       "description": "Oracles and visionaries who interpret the sun god’s will.",
       "campaignLinks": [
-        "wod"
+        "tbc","wod"
       ]
     },
     {
@@ -302,7 +302,7 @@
       ],
       "description": "Masters of air magic, using storms and gusts in combat.",
       "campaignLinks": [
-        "wod"
+        "wod","tbc"
       ]
     },
     {
@@ -327,7 +327,7 @@
         }
       ],
       "description": "Savage warriors famed for brutality.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "black_tooth_raider",
@@ -351,7 +351,7 @@
         }
       ],
       "description": "Cutthroat raiders of Rend and Maim’s warband.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "blackrock_death_knight",
@@ -375,9 +375,7 @@
         }
       ],
       "description": "Corrupted orc champions resurrected as death knights in the Second War.",
-      "campaignLinks": [
-        "second_war"
-      ]
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "blackrock_warrior",
@@ -401,9 +399,7 @@
         }
       ],
       "description": "The iron-willed soldiers of Blackrock Mountain.",
-      "campaignLinks": [
-        "blackrock"
-      ]
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "bladewind_berserker",
@@ -427,7 +423,7 @@
         }
       ],
       "description": "Wild berserkers who revel in reckless destruction.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "bleeding_hollow_berserker",
@@ -451,7 +447,7 @@
         }
       ],
       "description": "Mad berserkers who revel in carnage.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "bleeding_hollow_hexer",
@@ -475,7 +471,7 @@
         }
       ],
       "description": "Witch doctors who wield blood-fueled shamanism.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "bloodhoof_brave",
@@ -499,7 +495,7 @@
         }
       ],
       "description": "Braves of the Bloodhoof, proud defenders of Mulgore.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","classic,","cataclysm-mop","bfa"]
     },
     {
       "id": "bloodhoof_chieftain",
@@ -523,7 +519,7 @@
         }
       ],
       "description": "Leaders of the Bloodhoof, maintaining traditions and guiding the tribes.",
-      "campaignLinks": []
+      "campaignLinks": ["fallqt","classic,","cataclysm-mop"]
     },
     {
       "id": "bristleback_warrior",
@@ -547,7 +543,7 @@
         }
       ],
       "description": "Savage Bristleback warriors of the Barrens, feared by caravans.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "broken_brute",
@@ -571,7 +567,7 @@
         }
       ],
       "description": "Twisted remnants of draenei, swollen with mutation and fury.",
-      "campaignLinks": []
+      "campaignLinks": ["tbc","legion"]
     },
     {
       "id": "broken_hunter",
@@ -595,7 +591,7 @@
         }
       ],
       "description": "Survivalists who prowl ruins and wastelands with poisoned weapons.",
-      "campaignLinks": []
+      "campaignLinks": ["tbc","legion"]
     },
     {
       "id": "broken_outcast",
@@ -613,9 +609,7 @@
         }
       ],
       "description": "Cursed and withered survivors, often bitter and exiled.",
-      "campaignLinks": [
-        "tbc"
-      ]
+      "campaignLinks": ["tbc","legion"]
     },
     {
       "id": "broken_seer",
@@ -639,7 +633,7 @@
         }
       ],
       "description": "Cursed prophets and mystics who wander half-mad with visions.",
-      "campaignLinks": []
+      "campaignLinks": ["tbc","legion"]
     },
     {
       "id": "broken_shaman",
@@ -798,7 +792,7 @@
         }
       ],
       "description": "Sorcerers steeped in demonic pacts.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "burning_blade_warrior",
@@ -822,7 +816,7 @@
         }
       ],
       "description": "Fanatic fighters bound by the Burning Blade cult.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","wod"]
     },
     {
       "id": "centaur_chieftain",
@@ -846,7 +840,7 @@
         }
       ],
       "description": "Leaders of centaur warbands, often brutal and tyrannical.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "centaur_hunter",
@@ -870,7 +864,7 @@
         }
       ],
       "description": "Hunters and skirmishers adept at harassing foes from a distance.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "centaur_mystic",
@@ -894,7 +888,7 @@
         }
       ],
       "description": "Prophets and visionaries who lead centaur with fear and omen.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "centaur_raider",
@@ -918,7 +912,7 @@
         }
       ],
       "description": "Savage raiders who thrive on ambush and skirmish tactics.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "centaur_scout",
@@ -942,7 +936,7 @@
         }
       ],
       "description": "Quick riders who harry foes and signal raiding parties.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "centaur_shaman",
@@ -966,7 +960,7 @@
         }
       ],
       "description": "Spiritual guides who commune with elemental forces and ancestors.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","dragonflight"]
     },
     {
       "id": "consortium_enforcer",
@@ -1047,7 +1041,7 @@
       ],
       "description": "Twisted necromancers who enslave the dead to serve their shadow cults.",
       "campaignLinks": [
-        "tbc"
+        "tbc","wod"
       ]
     },
     {
@@ -1100,7 +1094,7 @@
       ],
       "description": "Dark sorcerers who embraced Sethe’s shadow magics.",
       "campaignLinks": [
-        "tbc"
+        "tbc","wod"
       ]
     },
     {
@@ -1153,7 +1147,7 @@
       ],
       "description": "Some outcasts turned to fel magic, selling their souls for greater power.",
       "campaignLinks": [
-        "tbc"
+        "tbc","wod"
       ]
     },
     {
@@ -1178,7 +1172,7 @@
         }
       ],
       "description": "Enforcers clad in fire-forged plate armor.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "darkiron_overseer",
@@ -1202,7 +1196,7 @@
         }
       ],
       "description": "Leaders of Dwarves work crews and battalions.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "darkiron_sorcerer",
@@ -1226,7 +1220,7 @@
         }
       ],
       "description": "Spellcasters harnessing the power of magma and flame.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "darkiron_taskmaster",
@@ -1250,7 +1244,7 @@
         }
       ],
       "description": "Cruel overseers in Blackrock Depths, driving both slaves and minions.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "darkiron_weaponsmith",
@@ -1274,7 +1268,7 @@
         }
       ],
       "description": "Blackrock Depths artisans, turning their forges into weapons.",
-      "campaignLinks": []
+      "campaignLinks": ["classic","bfa"]
     },
     {
       "id": "deadwood_corrupted",
@@ -1298,9 +1292,7 @@
         }
       ],
       "description": "Fel-corrupted Deadwood furbolg, dangerous and hostile.",
-      "campaignLinks": [
-        "cata"
-      ]
+      "campaignLinks": ["classic","cataclysm-mop"]
     },
     {
       "id": "deathhead_cultist",
@@ -1324,10 +1316,7 @@
         }
       ],
       "description": "Cultist spellcasters who serve darker powers within Razorfen.",
-      "campaignLinks": [
-        "rfk",
-        "rfd"
-      ]
+      "campaignLinks": ["classic"]
     },
     {
       "id": "draenei_artificer",
@@ -1351,9 +1340,7 @@
         }
       ],
       "description": "Mystics who merge arcane study with crystalline technology.",
-      "campaignLinks": [
-        "tbc"
-      ]
+      "campaignLinks": ["tbc","wod","legion"]
     },
     {
       "id": "draenei_citizen",
@@ -1371,7 +1358,7 @@
         }
       ],
       "description": "Farmers, traders, and artisans of the draenei who rarely take up arms.",
-      "campaignLinks": []
+      "campaignLinks": ["tbc","wod","legion"]
     },
     {
       "id": "draenei_exarch",
@@ -1395,8 +1382,7 @@
         }
       ],
       "description": "Leaders of draenei society and battle, commanding with Light and wisdom.",
-      "campaignLinks": [
-        "wod"
+      "campaignLinks": ["tbc","wod","legion"
       ]
     },
     {
@@ -1421,10 +1407,7 @@
         }
       ],
       "description": "Paladins of the draenei, vindicators fight as warriors of the Light.",
-      "campaignLinks": [
-        "tbc",
-        "wod"
-      ]
+      "campaignLinks": ["tbc","wod","Legion"]
     },
     {
       "id": "draenei_priest",
@@ -1448,8 +1431,7 @@
         }
       ],
       "description": "Priests who guide their people through faith in the naaru.",
-      "campaignLinks": [
-        "tbc"
+      "campaignLinks": ["tbc","wod","legion"
       ]
     },
     {
@@ -1474,8 +1456,7 @@
         }
       ],
       "description": "Hunters, scouts, and assassins of Draenor, experts in survival and stealth.",
-      "campaignLinks": [
-        "wod"
+      "campaignLinks": ["wod","legion"
       ]
     },
     {
@@ -1500,9 +1481,7 @@
         }
       ],
       "description": "Shamans of the draenei, often Broken-trained, who honor elemental spirits.",
-      "campaignLinks": [
-        "tbc",
-        "wod"
+      "campaignLinks": ["tbc","wod","legion"
       ]
     },
     {
@@ -1527,7 +1506,7 @@
         }
       ],
       "description": "Disciplined fighters forming the frontline of draenei defenses.",
-      "campaignLinks": []
+      "campaignLinks": ["tbc","wod","legion"]
     },
     {
       "id": "dragonmaw_raider",
@@ -1551,9 +1530,7 @@
         }
       ],
       "description": "Drake-riding warriors infamous for dragon slavery.",
-      "campaignLinks": [
-        "day_of_dragons"
-      ]
+      "campaignLinks": ["greatwars","classic","cataclysm-mop","wod","bfa"]
     },
     {
       "id": "dragonmaw_warlord",
@@ -1577,7 +1554,7 @@
         }
       ],
       "description": "Leaders of the Dragonmaw’s brutal campaigns.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","classic","cataclysm-mop","wod","bfa"]
     },
     {
       "id": "drust_brute",
@@ -1601,7 +1578,7 @@
         }
       ],
       "description": "Massive undead Drust, hulking remnants of a cursed people.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "drust_construct",
@@ -1625,7 +1602,7 @@
         }
       ],
       "description": "Horrid constructs made of wood, stone, and bone — animated by Drust magic.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "drust_harrower",
@@ -1649,7 +1626,7 @@
         }
       ],
       "description": "Necromantic casters who spread fear and decay throughout the land.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "drust_lord",
@@ -1673,7 +1650,7 @@
         }
       ],
       "description": "Leaders of the Drust, tyrants who harness death magic to dominate their foes.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "drust_runecarver",
@@ -1697,7 +1674,7 @@
         }
       ],
       "description": "Dark shamans who carve runes into bone and wood to channel Thros’ power.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "drust_warrior",
@@ -1721,7 +1698,7 @@
         }
       ],
       "description": "Undying soldiers of the Drustvar woods, steeped in necromantic rites.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "dwarf_commander",
@@ -1902,6 +1879,7 @@
       "campaignLinks": [
         "tbc",
         "tww",
+        "legion",
         "voidelf"
       ]
     },
@@ -1930,6 +1908,7 @@
       "campaignLinks": [
         "tbc",
         "tww",
+        "legion",
         "voidelf"
       ]
     },
@@ -1957,7 +1936,7 @@
       "description": "Void-mad fanatics consumed by conquest and shadow worship.",
       "campaignLinks": [
         "tbc",
-        "tww",
+        "tww","legion",
         "voidelf"
       ]
     },
@@ -1983,7 +1962,7 @@
         }
       ],
       "description": "Elite guardians chosen to embody Sethraliss’ storm and light.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithful_commander",
@@ -2007,7 +1986,7 @@
         }
       ],
       "description": "Faithful leaders who rally Sethrak clans to holy war against the Faithless.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithful_seer",
@@ -2031,7 +2010,7 @@
         }
       ],
       "description": "Priests who guide the Sethrak faithful through devotion to Sethraliss.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithful_stormcaster",
@@ -2055,7 +2034,7 @@
         }
       ],
       "description": "Sethrak mages who channel the storms of Vol’dun in Sethraliss’ name.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithful_warrior",
@@ -2079,7 +2058,7 @@
         }
       ],
       "description": "Warriors loyal to Sethraliss, defending her shrines and her faithful.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithless_captain",
@@ -2103,7 +2082,7 @@
         }
       ],
       "description": "War leaders of the Faithless, merciless commanders bent on conquest.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithless_shadowbinder",
@@ -2127,7 +2106,7 @@
         }
       ],
       "description": "Dark priests of the Faithless who wield necrotic shadow magics.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithless_spearthrower",
@@ -2151,7 +2130,7 @@
         }
       ],
       "description": "Faithless hunters who harass enemies from the dunes with spear volleys.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithless_stormcaller",
@@ -2175,7 +2154,7 @@
         }
       ],
       "description": "Storm mages who bend lightning to crush their rivals.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faithless_warrior",
@@ -2199,7 +2178,7 @@
         }
       ],
       "description": "Savage fighters of the Faithless Sethrak, driven by conquest.",
-      "campaignLinks": []
+      "campaignLinks": ["bfa"]
     },
     {
       "id": "faldorei_ambusher",
@@ -2223,9 +2202,7 @@
         }
       ],
       "description": "Predators that lurk in shadows and strike unseen.",
-      "campaignLinks": [
-        "suramar"
-      ]
+      "campaignLinks": ["legion"]
     },
     {
       "id": "faldorei_arachnomancer",
@@ -2249,8 +2226,7 @@
         }
       ],
       "description": "Powerful spider-casters channeling twisted magic.",
-      "campaignLinks": [
-        "suramar"
+      "campaignLinks": ["legion"
       ]
     },
     {
@@ -2276,7 +2252,7 @@
       ],
       "description": "Brood mothers leading Fal’dorei hives.",
       "campaignLinks": [
-        "suramar"
+        "legion"
       ]
     },
     {
@@ -2302,7 +2278,7 @@
       ],
       "description": "Arcane-weavers who wield enchanted silk.",
       "campaignLinks": [
-        "suramar"
+        "legion"
       ]
     },
     {
@@ -2328,7 +2304,7 @@
       ],
       "description": "Spider-elf hybrids born of the Falanaar collapse.",
       "campaignLinks": [
-        "suramar"
+        "legion"
       ]
     },
     {
@@ -9744,7 +9720,7 @@
       ],
       "description": "Illidari blood elves who sacrificed for power.",
       "campaignLinks": [
-        "tbc"
+        "tbc","campaign1"
       ]
     },
     {
@@ -9793,7 +9769,7 @@
         }
       ],
       "description": "Aristocratic mages of Silvermoon, ruling and teaching.",
-      "campaignLinks": []
+      "campaignLinks": ["greatwars","fallqt","campaign1"]
     },
     {
       "id": "sindorei_spellbow",

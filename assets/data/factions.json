@@ -10,7 +10,7 @@
             "subcategory": "Alliance",
             "alsoAppearsIn": [],
             "description": "The Alliance’s elite expeditionary legion, deployed in global conflicts.",
-            "campaignLinks": ["bfa", "shadowlands"]
+            "campaignLinks": ["wotlk","cataclysm-mop","legion","bfa"]
           },
         {
         "id": "aldor",
@@ -22,9 +22,7 @@
           {"category": "Factions", "subcategory": "Outland"}
         ],
         "description": "Draenei priests and vindicators holding the line for the Light in Shattrath.",
-        "campaignLinks": [
-          "tbc"
-        ]
+        "campaignLinks": ["tbc"]
       },
       {
         "name": "Alliance Expedition",
@@ -36,10 +34,7 @@
 
         ],
         "description": "Alliance forces sent through the Dark Portal during the Second War.",
-        "campaignLinks": [
-          "wc2",
-          "tbc"
-        ],
+        "campaignLinks": ["expedition","tbc"],
         "id": "alliance_expedition"
       },
       {
@@ -50,10 +45,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Crusaders formed from Silver Hand and Argent Dawn to purge undead blight.",
-        "campaignLinks": [
-          "wotlk",
-          "legion"
-        ]
+        "campaignLinks": ["wotlk","legion"]
       },
       {
         "id": "argent_dawn",
@@ -63,10 +55,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Scholars and crusaders who first opposed the Scourge’s rise.",
-        "campaignLinks": [
-          "classic",
-          "wotlk"
-        ]
+        "campaignLinks": ["classic","tbc","wotlk"]
       },
       {
         "id": "army_of_the_light",
@@ -76,9 +65,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "A trans-world crusade tempered by endless war against the Burning Legion.",
-        "campaignLinks": [
-          "legion"
-        ]
+        "campaignLinks": ["legion"]
       },
       {
         "name": "Ashen Verdict",
@@ -87,9 +74,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Alliance of the Argent Crusade and Knights of the Ebon Blade formed to assault Icecrown Citadel.",
-        "campaignLinks": [
-          "wotlk"
-        ],
+        "campaignLinks": ["wotlk"],
         "id": "ashen_verdict"
       },
       {
@@ -100,10 +85,7 @@
         "subcategory": "Kingdom of Quel'Thalas",
         "alsoAppearsIn": [],
         "description": "Silvermoon’s paladin order—once controversial, now steadfast stewards of the Light.",
-        "campaignLinks": [
-          "tbc",
-          "bfa"
-        ]
+        "campaignLinks": ["tbc","bfa","wod","legion"]
       },
       {
         "name": "Burning Legion",
@@ -112,11 +94,7 @@
         "subcategory": "Hostile",
         "alsoAppearsIn": [],
         "description": "A vast army of demons led by Sargeras, seeking the annihilation of all life.",
-        "campaignLinks": [
-          "wc3",
-          "tbc",
-          "legion"
-        ],
+        "campaignLinks": ["wota","greatwars","fallqt","tbc","legion"],
         "id": "burning_legion"
       },
       {
@@ -127,11 +105,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Wardens of the wilds, mediating between mortal settlements and living lands.",
-        "campaignLinks": [
-          "cata",
-          "legion",
-          "tww"
-        ]
+        "campaignLinks": ["classic","tbc","wotlk","cataclysm-mop","legion","dragonflight","tww"]
       },
       {
         "id": "the_conclave",
@@ -163,9 +137,7 @@
             {"category": "Factions", "subcategory": "Neutral"}
 ],
         "description": "A loose affiliation of ethereal traders and smugglers operating in Outland.",
-        "campaignLinks": [
-          "tbc"
-        ],
+        "campaignLinks": ["tbc","tww"],
         "id": "consortium"
       },
       {
@@ -180,7 +152,7 @@
             {"category": "Factions", "subcategory": "Burning Legion"}
         ],
         "description": "Elite Sunfury troops deployed to secure the Isle of Quel’Danas.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["schism","classic","tbc"]
       },
       {
         "id": "earthen_ring",
@@ -190,10 +162,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Unified shamans brokering peace among the elements and mortals.",
-        "campaignLinks": [
-          "cata",
-          "legion"
-        ]
+        "campaignLinks": ["cata","legion"]
       },
       {
         "id": "eclipsion",
@@ -206,7 +175,7 @@
             {"category": "Factions", "subcategory": "Kingdom of Quel'Thalas"}
         ],
         "description": "A Sunfury-aligned sect operating from Shadowmoon Valley under demonic influence.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["schism","classic","tbc"]
       },
       {
         "name": "Ethereum",
@@ -218,9 +187,7 @@
             {"category": "Factions", "subcategory": "Hostile"}
         ],
         "description": "A militant ethereal organization seeking revenge on Dimensius-the All Devouring, who have fallen far from their path.",
-        "campaignLinks": [
-          "tbc"
-        ],
+        "campaignLinks": ["tbc","tww"],
         "id": "ethereum"
       },
       {
@@ -231,9 +198,7 @@
         "subcategory": "Alliance",
         "alsoAppearsIn": [],
         "description": "Dwarven-led explorers cataloging (and occasionally detonating) the world’s mysteries.",
-        "campaignLinks": [
-          "wotlk",
-          "cata"
+        "campaignLinks": ["wotlk","cataclysm-mop"
         ]
       },
       {
@@ -244,9 +209,7 @@
         "subcategory": "Kingdom of Quel'Thalas",
         "alsoAppearsIn": [],
         "description": "Rangers of Quel’Thalas—light on their feet, lethal at range, guardians of the borders.",
-        "campaignLinks": [
-          "tbc"
-        ]
+        "campaignLinks": ["trollwars","greatwars","classic","tbc","wotlk","cataclysm-mop","wod","legion","bfa","shadowlands","tww"]
       },
       {
         "id": "firewing",
@@ -260,7 +223,7 @@
             {"category": "Factions", "subcategory": "Outland"}
         ],
         "description": "A Sunfury contingent entrenched in Terokkar and Hellfire, enforcing Kael’thas’ will.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["schism","classic","tbc"]
       },
       {
         "id": "illidari",
@@ -273,7 +236,7 @@
             {"category": "Factions", "subcategory": "Outland"}
         ],
         "description": "Illidan’s demon hunters and allies committed to annihilating the Burning Legion.",
-        "campaignLinks": ["legion"]
+        "campaignLinks": ["fallqt","schism","tbc","legion"]
       },
       {
         "id": "kingdom_of_quelthalas",
@@ -283,9 +246,7 @@
         "subcategory": "Horde",
         "alsoAppearsIn": [],
         "description": "The High Home of the Quel'dorei, and later the Sin'dorei after the kingdom's ruining by the Scourge. Still clinging to life, the Sin'dorei have reclaimed much of their ancestral homeland and have driven out the undead, giving their future another chance to shine.",
-        "campaignLinks": [
-          "tbc"
-        ]
+        "campaignLinks": ["foundingnation","trollwars","greatwars","expedition","fallqt","classic","tbc","wotlk","cataclysm-mop","wod","legion","bfa","shadowlands","dragonflight","tww"]
       },
       {
         "id": "kirin_tor",
@@ -295,10 +256,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Dalaran’s ruling body, balancing research, neutrality, and the needs of a perilous world.",
-        "campaignLinks": [
-          "wotlk",
-          "legion",
-          "tww"
+        "campaignLinks": ["greatwars","fallqt","classic","tbc","wotlk","cataclysm-mop","wod","legion","tww"
         ]
       },
       {
@@ -309,7 +267,7 @@
         "subcategory": "Horde",
         "alsoAppearsIn": [],
         "description": "The Warchief’s elite guard and shock troops of the Horde.",
-        "campaignLinks": ["wotlk", "cata", "mop"]
+        "campaignLinks": ["classic","wotlk", "cata", "mop"]
       },
       {
         "id": "kareshi_trust",
@@ -321,7 +279,7 @@
             {"category": "Factions", "subcategory": "Outland"},
             {"category": "Factions", "subcategory": "Neutral"}],
         "description": "An ethereal mercantile consortium focused on preventing the return of Dimensius-the All Devouring, and saving the remains of K'aresh.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["tbc","tww"]
       },
       {
         "id": "ebon_blade",
@@ -331,11 +289,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "A re-forged order using the darkness that once bound them to fight greater evils.",
-        "campaignLinks": [
-          "wotlk",
-          "legion",
-          "shadowlands"
-        ]
+        "campaignLinks": ["wotlk","legion","shadowlands"]
       },
       {
         "id": "magisters",
@@ -345,10 +299,7 @@
         "subcategory": "Kingdom of Quel'Thalas",
         "alsoAppearsIn": [],
         "description": "Silvermoon’s policy arm for arcane law, security, and research.",
-        "campaignLinks": [
-          "tbc",
-          "bfa"
-        ]
+        "campaignLinks": ["trollwars","greatwars","classic","tbc","wotlk","cataclysm-mop","wod","legion","bfa","shadowlands","tww"]
       },
       {
         "id": "order_of_the_silver_hand",
@@ -358,7 +309,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "The ancient paladin order originally founded to defend Azeroth from the Horde through the Light.",
-        "campaignLinks": ["classic", "wotlk"]
+        "campaignLinks": ["greatwars","fallqt","classic","tbc","wotlk","legion","bfa"]
       },
       {
         "id": "order_of_the_unseen_path",
@@ -368,7 +319,7 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Hunters bound by oath to defend the wilds and track threats from the shadows.",
-        "campaignLinks": ["legion"]
+        "campaignLinks": ["wota","legion"]
       },
       {
         "id": "reliquary",
@@ -378,10 +329,7 @@
         "subcategory": "Kingdom of Quel'Thalas",
         "alsoAppearsIn": [],
         "description": "Scholars and dig teams racing the Explorers’ League for history’s prizes.",
-        "campaignLinks": [
-          "cata",
-          "bfa"
-        ]
+        "campaignLinks": ["cata","bfa","dragonflight"]
       },
       {
         "name": "Scourge",
@@ -392,10 +340,7 @@
             {"category": "Factions", "subcategory": "Burning Legion"} 
         ],
         "description": "The vast undead army commanded by the Lich King. Originally created by the Burning Legion, the Scourge went rogue and has ever since committed itself to eradicating the living.",
-        "campaignLinks": [
-          "wc3",
-          "wotlk"
-        ],
+        "campaignLinks": ["fallqt","wotlk","shadowlands"],
         "id": "scourge"
       },
       {
@@ -416,9 +361,7 @@
             "subcategory": "Neutral"}
         ],
         "description": "Blood elf seers who broke with Kael’thas to defend Shattrath and Outland’s fragile peace.",
-        "campaignLinks": [
-          "tbc"
-        ]
+        "campaignLinks": ["tbc"]
       },
       {
         "id": "shadowblade",
@@ -431,7 +374,7 @@
             {"category": "Factions", "subcategory": "Kingdom of Quel'Thalas"}
         ],
         "description": "Stealth and reconnaissance specialists within the Sunfury ranks.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["schism","classic","tbc"]
       },
       {
         "name": "Sha'tar",
@@ -444,9 +387,7 @@
                 "subcategory": "Outland"}
         ],
         "description": "The naaru-led faction allied with the Aldor and Scryers in Shattrath City.",
-        "campaignLinks": [
-          "tbc"
-        ],
+        "campaignLinks": ["tbc"],
         "id": "sha_tar"
       },
       {
@@ -459,10 +400,7 @@
             {"category": "Factions", "subcategory": "Burning Legion"}
         ],
         "description": "Warlock conspirators manipulating fel bargains and puppet regimes.",
-        "campaignLinks": [
-          "wod",
-          "legion"
-        ]
+        "campaignLinks": ["greatwars","wod","legion"]
       },
       {
         "name": "Shadowguard",
@@ -476,9 +414,7 @@
               }
         ],
         "description": "A sect of the Ethereum that are hell bent on resurrecting Dimensius-the All Devouring.",
-        "campaignLinks": [
-          "legion"
-        ],
+        "campaignLinks": ["tbc","shadowlands","tww"],
         "id": "shadowguard"
       },
       {
@@ -491,9 +427,7 @@
             {"category": "Factions", "subcategory": "Outland"}
           ],
         "description": "A joint force of Aldor, Scryers, and Sha'tari to retake Quel'Danas.",
-        "campaignLinks": [
-          "tbc"
-        ],
+        "campaignLinks": ["tbc"],
         "id": "shattered_sun_offensive"
       },
       {
@@ -505,11 +439,7 @@
         "alsoAppearsIn": [
         ],
         "description": "High elven hardliners who safeguard Dalaran’s neutrality and Quel’dorei dignity.",
-        "campaignLinks": [
-          "wotlk",
-          "legion",
-          "shadowlands"
-        ]
+        "campaignLinks": ["wotlk","cataclysm-mop","legion","bfa","shadowlands"]
       },
       {
         "id": "sunfury",
@@ -523,7 +453,7 @@
             {"category": "Factions", "subcategory": "Burning Legion"}
         ],
         "description": "Kael’thas Sunstrider’s blood elf army stationed across Outland and Quel'Danas.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["schism","classic","tbc"]
       },
       {
         "id": "sunreavers",
@@ -538,10 +468,7 @@
           }
         ],
         "description": "A Silvermoon-led bloc within the Kirin Tor advocating Horde participation and arcane pragmatism.",
-        "campaignLinks": [
-          "wotlk",
-          "tww"
-        ]
+        "campaignLinks": ["wotlk","cataclysm-mop","legion","bfa","tww"]
       },
       {
         "id": "tirisgarde",
@@ -570,9 +497,7 @@
         "subcategory": "Horde",
         "alsoAppearsIn": [],
         "description": "Garrosh Hellscream’s loyalists who followed him into the Siege of Orgrimmar and beyond.",
-        "campaignLinks": [
-          "mop"
-        ],
+        "campaignLinks": ["cataclysm-mop","wod"],
         "id": "true_horde"
       },
       {
@@ -582,10 +507,18 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "A coalition of dragonflights and mortals united in the Dragon Isles.",
-        "campaignLinks": [
-          "dragonflight"
-        ],
+        "campaignLinks": ["dragonflight"],
         "id": "valdrakken_accord"
+      },
+      {
+        "name": "Elrendar Fellowship",
+        "class": "Mage Order",
+        "category": "Factions",
+        "subcategory": "Neutral",
+        "alsoAppearsIn": [],
+        "description": "Coalition of dragonflights safeguarding Azeroth from threats like Malygos and the Scourge.",
+        "campaignLinks": ["foundingorder","windrunneranomaly","greatwars","fallqt","cataclysm-mop","legion","bfa","tww"],
+        "id": "wyrmrest_accord"
       },
       {
         "name": "Wyrmrest Accord",

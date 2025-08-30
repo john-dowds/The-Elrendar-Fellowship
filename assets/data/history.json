@@ -169,6 +169,7 @@
     {
       "id": "trollwars",
       "title": "The Troll Wars",
+      "subtitle": "== Ancient History ==",
       "date": "c. Year -2,800",
       "summary_html": "\n With the Amani trolls now pinned between the thriving nation of Quel'Thalas and the rapidly expanding human-led Arathi Empire in the south, the trolls desperately reach out to the Zandalari Empire, which agrees to bolster their ranks. The trolls form a massive army and lay siege to Quel'Thalas, exacting a bloody and costly toll which only continues to mount. During the war, the Quel'dorei form numerous organizations to better counter the Amani, including the Farstriders—the rangers of the woodland realm. <br><br> King Anasterian Sunstrider—a descendant of Dath'remar Sunstrider himself—dispatches couriers to the humans of the Arathi Empire, warning that the trolls would turn their attention towards humanity should the elven kingdom fall, and manages to secure the Empire's aid in exchange for teaching one hundred humans the ways of the arcane. Working together, the First Alliance decimates the Amani and Zandalari armies, and the elves subsequently pursue the Amani to the brink of extinction. Never able to fully recover from their devastating loss, the Amani commit themselves to an existence of raiding the elven lands in small warbands, but never more than that. <br><br> The First Alliance retains its strength for years, but inevitable the Kingdom of Quel'Thalas opts for seclusion and withdraws itself from the business of the southern kingdoms. \n      ",
       "order": 4
@@ -176,13 +177,15 @@
     {
       "id": "foundingnation",
       "title": "Exile, & The Founding of Quel'Thalas",
+      "subtitle": "== Ancient History ==",
       "date": "c. Year -6,800",
-      "summary_html": "\n In the wake of the surviving Highborne's exile from Kalimdor, the elves sail east across the sea and struggle terribly during their exodus. Those who survive the journey arrive in the Old God tainted lands now known as Tirisfal—where the ancient Titan Keeper Tyr was slain in battle against one of the Old Gods' minons. Falling to madness and withering away without the arcane power of the Well of Eternity that once sustained them, the elves waste away quickly, and further fall victim to attacks by the Amani trolls. <br><br> The elves embrace their ancient identity of tied to the arcane as a way to hold back the trolls, but it isn't until they come across a stretch of land—land sacred to the Amani trolls—upon which the legendary mage Dath'remar Sunstrider forms the Sunwell with water taken from the ancient Well of Eternity. With a vast font of magic to draw from, the elves proclaim themselves <em>Quel'dorei</em>, High Elves, and begin to secure their holdings. <br><br> They fight back fiercely against the trolls, wielding powerful magic now without restraint. In a rapid but bloody war, the elves drive back the Amani and cement their hold over the northern peninsula, which they claim as their Kingdom—<em>Quel'Thalas</em>, the High Home.)\n      ",
+      "summary_html": "\n In the wake of the surviving Highborne's exile from Kalimdor, the elves sail east across the sea and struggle terribly during their exodus. Those who survive the journey arrive in the Old God tainted lands now known as Tirisfal—where the ancient Titan Keeper Tyr was slain in battle against one of the Old Gods' minons. Falling to madness and withering away without the arcane power of the Well of Eternity that once sustained them, the elves waste away quickly, and further fall victim to attacks by the Amani trolls. <br><br> The elves embrace their ancient identity of tied to the arcane as a way to hold back the trolls, but it isn't until they come across a stretch of land—land sacred to the Amani trolls—upon which the legendary mage Dath'remar Sunstrider forms the Sunwell with water taken from the ancient Well of Eternity. With a vast font of magic to draw from, the elves proclaim themselves <em>Quel'dorei</em>, High Elves, and begin to secure their holdings. <br><br> They fight back fiercely against the trolls, wielding powerful magic now without restraint. In a rapid but bloody war, the elves drive back the Amani and cement their hold over the northern peninsula, which they claim as their Kingdom—<em>Quel'Thalas</em>, the High Home.\n      ",
       "order": 3
     },
     {
       "id": "wota",
       "title": "War of the Ancients",
+      "subtitle": "== Ancient History ==",
       "date": "c. Year -10,000",
       "summary_html": "\n Queen Azshara’s Highborne open Azeroth to the Burning Legion through the Well of Eternity, a pact made in exchange for untold power. The Kaldorei Resistance—druids, sentinels, Moon Guard magi, allies, and the Dragonflights—shatter the portal after a costly war; the Well collapses, sundering Kalimdor into continents. The elven city of Suramar seals itself beneath the power of the Nightwell. Queen Azshara's nobles are drowned alongside the common folk, with many being transformed into the insideous <em>Naga</em> through yet another pact made by the Queen, this time with the imprisoned Old God, N'zoth. Other surviving Highborne are later exiled for continuing to use magic; they sail east and proclaim themselves <em>Quel’dorei</em>. The world survives, but its peoples and cities are forever divided.\n              ",
       "order": 2
@@ -190,6 +193,7 @@
     {
       "id": "origins",
       "title": "Origins & Black Empire",
+      "subtitle": "== Ancient History ==",
       "date": "c. Years -25,000 to -15,000",
       "summary_html": "\n Old Gods burrow into Azeroth, enthroning the Black Empire just before the Titans arrive to order the world. The Titan-Forged defeat and imprison the Old Gods; the Well of Eternity is born of the death of one Old God, and its power accelerates the growth and evolution of life. Proto-dragons become Aspects; early trolls establish empires; dark trolls dwelling near the Well slowly transform into the <em>Kaldorei</em>, Children of the Stars. Seeds of later schisms—arcane vs. wilds, priesthood vs. nobles—take root around Elun’dris—the capital later renamed Zin-Azshari after Queen Azshara.<br><br>Her most favored nobles embrace the arcane and largely remove themselves from the lives of the common folk. Their pursuit of greater power leads them to create their own caste in society, the <em>Highborne</em>.\n",
       "order": 1

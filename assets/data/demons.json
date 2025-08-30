@@ -24,10 +24,7 @@
         }
       ],
       "description": "Petty fel minions that swarm, jeer, and ignite small chaos.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/imp.png"
     },
     {
@@ -52,10 +49,7 @@
         }
       ],
       "description": "Legion-bred imps with hotter flame and nastier pranks.",
-      "campaignLinks": [
-        "legion",
-        "campaign1"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion","campaign1"],
       "image": "assets/art/monsters/imp.png"
     },
     {
@@ -80,10 +74,7 @@
         }
       ],
       "description": "Master schemers who conquer worlds by subversion and fear.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/dreadlord.png"
     },
     {
@@ -108,10 +99,7 @@
         }
       ],
       "description": "Agents who wear stolen faces and undo kingdoms from within.",
-      "campaignLinks": [
-        "legion",
-        "campaign1"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/dreadlord.png"
     },
     {
@@ -142,11 +130,7 @@
         }
       ],
       "description": "High demon sorcerers who command fel and servants alike.",
-      "campaignLinks": [
-        "tbc",
-        "legion",
-        "campaign1"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/eredar.png"
     },
     {
@@ -204,10 +188,7 @@
         }
       ],
       "description": "Seductive tormentors who bind victims with will and whip.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/succubus.png"
     },
     {
@@ -232,9 +213,7 @@
         }
       ],
       "description": "Male sayaad who twist longing into chains.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/incubus.png"
     },
     {
@@ -259,9 +238,7 @@
         }
       ],
       "description": "Six-armed zealots who sermonize with the sword.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/shivarra.png"
     },
     {
@@ -286,10 +263,7 @@
         }
       ],
       "description": "Axe-bearing enforcers who anchor frontline assaults.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/felguard.png"
     },
     {
@@ -314,9 +288,7 @@
         }
       ],
       "description": "Overseers who lead demonic cohorts with iron cruelty.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/fellord.png"
     },
     {
@@ -341,9 +313,7 @@
         }
       ],
       "description": "Tinker-butchers who fuse metal, meat, and misery.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/moarg.png"
     },
     {
@@ -368,10 +338,7 @@
         }
       ],
       "description": "Fidgeting underlings who maintain the Legion’s engines.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/moarg.png"
     },
     {
@@ -396,9 +363,7 @@
         }
       ],
       "description": "Winged commanders who lead whole armies of the Legion to invade and break worlds.",
-      "campaignLinks": [
-        "tbc"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/doomlord.png"
     },
     {
@@ -423,9 +388,7 @@
         }
       ],
       "description": "Winged brutes who patrol skies and break lines.",
-      "campaignLinks": [
-        "tbc"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/doomguard.png"
     },
     {
@@ -450,9 +413,7 @@
         }
       ],
       "description": "An ascended variant of the doomguard, towering winged demons radiating pure fear to break mortals before combat even begins.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/terrorguard.png"
     },
     {
@@ -477,10 +438,7 @@
         }
       ],
       "description": "Runed boulders animated by fel into living meteors.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/infernal.png"
     },
     {
@@ -505,9 +463,7 @@
         }
       ],
       "description": "Greater infernals whose cores burn like furnaces.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/abyssal.png"
     },
     {
@@ -532,11 +488,7 @@
         }
       ],
       "description": "Spell-eating hounds unleashed against mages and wards.",
-      "campaignLinks": [
-        "tbc",
-        "legion",
-        "campaign1"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion","campaign1"],
       "image": "assets/art/monsters/felhunter.png"
     },
     {
@@ -561,9 +513,7 @@
         }
       ],
       "description": "Bulkier kin bred for the brute chase and tear.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/felstalker.png"
     },
     {
@@ -588,9 +538,7 @@
         }
       ],
       "description": "Twin-bladed elites who guard greater commanders.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/wrathguard.png"
     },
     {
@@ -615,9 +563,7 @@
         }
       ],
       "description": "Floating eyes bristling with alien rays and laughter.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/observer.png"
     },
     {
@@ -642,10 +588,7 @@
         }
       ],
       "description": "Colossal demon generals who break armies in a single charge.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/pitlord.png"
     },
     {
@@ -670,9 +613,7 @@
         }
       ],
       "description": "Once-elves, now demonic sneaks steeped in shadowcraft.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/satyr.png"
     },
     {
@@ -697,9 +638,7 @@
         }
       ],
       "description": "Fel priests who spread ruin in Elune’s forests.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/satyr.png"
     },
     {
@@ -724,9 +663,7 @@
         }
       ],
       "description": "Legion sky-hunters that roost on warships and spires.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/felbat.png"
     },
     {
@@ -751,9 +688,7 @@
         }
       ],
       "description": "Truth-bleeders who scour minds for treachery.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["wota","legion"],
       "image": "assets/art/monsters/inquisitor.png"
     },
     {
@@ -778,9 +713,7 @@
         }
       ],
       "description": "Massive, ancient titan-sized demons that embody brute strength, used by the Legion as living siege weapons.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["legion"],
       "image": "assets/art/monsters/antean.png"
     },
     {
@@ -805,9 +738,7 @@
         }
       ],
       "description": "Half-demonic arachnids who serve the Legion as assassins and ambushers, weaving felweb traps in caverns and fortresses.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["legion"],
       "image": "assets/art/monsters/aranasi.png"
     },
     {
@@ -832,10 +763,7 @@
         }
       ],
       "description": "Twisted warhounds and bestial horrors, infused with fel to hunt and maul the Legion’s enemies.",
-      "campaignLinks": [
-        "tbc",
-        "legion"
-      ],
+      "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/felbeast.png"
     },
     {
@@ -860,9 +788,7 @@
         }
       ],
       "description": "Grotesque matriarchs who endlessly spawn lesser imps and lead swarms of cackling minions.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["legion"],
       "image": "assets/art/monsters/impmother.png"
     },
     {
@@ -887,9 +813,7 @@
         }
       ],
       "description": "Floating ocular demons that interrogate and torment with unblinking fel gazes.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["legion"],
       "image": "assets/art/monsters/inquisitor.png"
     },
     {
@@ -914,9 +838,7 @@
         }
       ],
       "description": "Chain-wielding demons tasked with binding prisoners and tormenting souls within Legion fortresses.",
-      "campaignLinks": [
-        "legion"
-      ],
+      "campaignLinks": ["legion"],
       "image": "assets/art/monsters/jailer.png"
     }
   ]
