@@ -64,6 +64,31 @@
     }
     .scroll-pane{ height:auto; }
   }
+  /* Only the Show/Hide Related button */
+.related-wrap > .toggle-related-btn {
+  appearance: none;
+  display: inline-block;
+  margin-bottom: 6px !important;
+  padding: 4px 10px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.2 !important;
+  color: #fce5cd !important;                       
+  background: rgba(0,0,0,0.35) !important;           
+  border: 1px solid rgba(252,229,205,0.35) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.related-wrap > .toggle-related-btn:hover {
+  background: rgba(252,229,205,0.08) !important;
+}
+
+.related-wrap > .toggle-related-btn:focus {
+  outline: 2px solid rgba(252,229,205,0.45) !important;
+  outline-offset: 2px !important;
+}
+
 </style>
 </head>
 <body>
@@ -232,34 +257,47 @@
       }
     }
 
-    for (const s of sections) {
-      const rel = list.querySelector(`.related-wrap[data-history-id="${s.id}"]`);
-      if (!rel) continue;
+    
+for (const s of sections) {
+  const rel = list.querySelector(`.related-wrap[data-history-id="${s.id}"]`);
+  if (!rel) continue;
 
-      const ents = (byHistoryId.get(s.id) || []).sort((a,b)=>{
-        const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
-        const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
-        return ka.localeCompare(kb);
-      });
+  const ents = (byHistoryId.get(s.id) || []).sort((a,b)=>{
+    const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
+    const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
+    return ka.localeCompare(kb);
+  });
 
-      if (!ents.length) continue;
+  if (!ents.length) continue;
 
-      const label = document.createElement('span');
-      label.className = 'related-label';
-      label.textContent = 'Related:';
+  const tags = document.createElement('div');
+  tags.className = 'entity-tags';
 
-      const tags = document.createElement('div');
-      tags.className = 'entity-tags';
+  const toggleBtn = document.createElement('button');
+toggleBtn.type = 'button';
+toggleBtn.className = 'toggle-related-btn';
+toggleBtn.textContent = 'Hide Related ▾';
+toggleBtn.setAttribute('aria-expanded', 'true');
 
-      for (const e of ents) {
-        const a = document.createElement('a');
+toggleBtn.removeAttribute('style');  
+
+
+  toggleBtn.addEventListener('click', () => {
+    const hidden = tags.style.display === 'none';
+    tags.style.display = hidden ? '' : 'none';
+    toggleBtn.textContent = (hidden ? 'Hide' : 'Show') + ' Related ' + (hidden ? '▾' : '▸');
+    toggleBtn.setAttribute('aria-expanded', String(hidden));
+  });
+
+  for (const e of ents) {
+  const a = document.createElement('a');
         a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
         a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
         a.textContent = e.name;
         tags.appendChild(a);
       }
 
-      rel.appendChild(label);
+      rel.appendChild(toggleBtn);
       rel.appendChild(tags);
     }
   })().catch(err => {

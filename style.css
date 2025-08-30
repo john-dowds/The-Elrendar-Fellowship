@@ -429,7 +429,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 @media (max-width: 720px){ .grid{ grid-template-columns: 1fr; } }
 
-/*  keep boxes from overflowing their grid slots */
+/*  keep boxes from overflowing grid slots */
 *, *::before, *::after { box-sizing: border-box; }
 .grid > label { min-width: 0; }
 
@@ -476,7 +476,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   color: #fce5cd; 
 }
 
-/* ===== Splash Popup (clean + unclipped) ===== */
+/* ===== Splash Popup ===== */
 :root{
   --splash-gold: #E4BE59;
   --band-h: clamp(90px, 18%, 160px);  
@@ -596,8 +596,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 /* ——— Splash title: INTENSE shadow-cursed purple/black glow ——— */
 .splash-copy h2#splash-title{
-  color: #eee8ff; /* pale lavender for punch; remove if you prefer your original */
-  /* heavy multi-ring aura + deep halo */
+  color: #eee8ff; 
   text-shadow:
     0   2px 12px rgba(0,0,0,.70),          /* dark lift */
     0   0    8px rgba(118, 60,190,.85),    /* violet core */
@@ -606,7 +605,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
     0   0   68px rgba(54,   0, 94,.55),    /* deep halo */
     0   0  100px rgba(32,   0, 60,.45);    /* far halo */
 
-  /* extra glow off the glyphs */
   filter:
     drop-shadow(0 0 10px rgba(118,60,190,.55))
     drop-shadow(0 0 28px rgba(90,20,160,.45));
@@ -614,7 +612,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   animation: intenseCursedGlow 4.2s ease-in-out infinite;
 }
 
-/* stronger pulse at midpoint (more radius & opacity) */
 @keyframes intenseCursedGlow{
   0%,100%{
     text-shadow:
@@ -636,7 +633,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   }
 }
 
-/* respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce){
   .splash-copy h2#splash-title{ animation: none; }
 }
