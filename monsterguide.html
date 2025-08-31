@@ -107,6 +107,24 @@
     margin-left: 1em;
     }
 
+    @keyframes flash-glow {
+  0%, 100% { outline: 0; box-shadow: 0 0 0 0 rgba(255, 255, 0, 0); }
+  10%, 30%, 50%, 70%, 90% {
+    outline: 6px solid rgba(255, 255, 0, 1);
+    box-shadow: 0 0 80px 40px rgba(255, 255, 0, 1);
+  }
+  20%, 40%, 60%, 80% {
+    outline: 2px solid rgba(255, 255, 0, .7);
+    box-shadow: 0 0 30px 15px rgba(255, 255, 0, .7);
+  }
+}
+
+.flash-focus {
+  animation: flash-glow 10s ease-in-out 1;
+  border-radius: 12px;
+}
+
+
 
 .sidebar-title{
   display:flex; align-items:center; justify-content:space-between; gap:.5rem;
@@ -123,6 +141,7 @@
 
   </style>
 </head>
+
 <body>
   <header class="banner">
     <h1 class="site-title">The Elrendar Fellowship</h1>
@@ -146,6 +165,7 @@
           <li><a href="history.html">History</a></li>
           <li><a href="system.html">Rule Book</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -653,7 +673,108 @@
     })().catch(console.error);
     </script>
     
-    
+    <script>
+      (function(){
+        const QS   = new URLSearchParams(location.search);
+        const cat  = QS.get('cat');      // category (optional)
+        const sub  = QS.get('sub');      // subcategory (optional)
+        // NOTE: we will ignore ?name= and ?trait= on purpose to avoid opening a specific leaf/card
+      
+        // Only glow/center when arriving via deep-link
+        const fromDeepLink = [cat, sub].some(v => v && String(v).trim() !== '');
+      
+        const TREE_SEL = '#monsterguide-tree';
+        const SUB_SEL  = '.indent-1 > button';   // subcategory buttons
+      
+        // Strong normalizer to survive punctuation/curly quotes
+        const norm = s => (s||'')
+          .toString()
+          .normalize('NFKD').replace(/[\u0300-\u036f]/g,'') // accents
+          .replace(/[\u2018\u2019\u201C\u201D]/g,"'")       // curly quotes -> straight
+          .replace(/[^a-z0-9' ]+/gi,' ')                    // strip punctuation/symbols
+          .toLowerCase()
+          .replace(/\s+/g,' ')
+          .trim();
+      
+        function whenReady(fn, tries = 60){
+          const ok = fn();
+          if (ok || tries <= 0) return;
+          setTimeout(()=> whenReady(fn, tries-1), 100);
+        }
+      
+        // Always ensure the nested UL for this button is visible; click at least once
+        function ensureOpen(btn){
+          if (!btn) return;
+          const ul = btn.parentElement && btn.parentElement.querySelector('ul');
+          if (!ul) return;
+          btn.click();                 // fire your renderCards handler
+          setTimeout(()=> {
+            if (ul.style.display === 'none') btn.click(); // re-open if it collapsed
+          }, 30);
+        }
+      
+        // center + insanely bright glow on the subcategory button itself
+        function centerAndFlashSub(subBtn){
+          if (!fromDeepLink || !subBtn) return;
+          subBtn.classList.add('flash-focus');
+subBtn.scrollIntoView({ block:'center', inline:'nearest', behavior:'smooth' });
+// remove after the full 10s animation finishes
+setTimeout(()=> subBtn.classList.remove('flash-focus'), 10000);
+
+        }
+      
+        function openCatSubOnly(){
+          const tree = document.querySelector(TREE_SEL);
+          if (!tree || !tree.querySelector('li > button')) return false;
+      
+          // 1) Expand Category (if provided)
+          if (cat){
+            const catBtn = [...tree.querySelectorAll(':scope > li > button')]
+              .find(b => norm(b.textContent) === norm(cat));
+            ensureOpen(catBtn);
+          }
+      
+          // 2) Expand Subcategory (and ensure its list is rendered)
+          let subBtnEl = null;
+          if (sub){
+            subBtnEl = [...tree.querySelectorAll(SUB_SEL)]
+              .find(b => norm(b.textContent) === norm(sub));
+            ensureOpen(subBtnEl);
+            // Center & glow the subcategory entry (NOT the leaf or card)
+            setTimeout(()=> centerAndFlashSub(subBtnEl), 120);
+            return true;
+          }
+      
+          // If only category given, at least center the first sub
+          if (cat && !sub){
+            const firstSub = tree.querySelector(SUB_SEL);
+            if (firstSub){
+              ensureOpen(firstSub);
+              setTimeout(()=> centerAndFlashSub(firstSub), 120);
+            }
+            return true;
+          }
+      
+          // No params — nothing to do
+          return !!tree;
+        }
+      
+        // Observe the tree so we re-attempt after async rendering
+        const mo = new MutationObserver(()=> openCatSubOnly());
+        whenReady(() => {
+          const root = document.querySelector(TREE_SEL);
+          if (!root) return false;
+          mo.observe(root, { childList: true, subtree: true });
+          // Also try now in case the tree is already ready
+          return openCatSubOnly();
+        });
+      
+      })();
+      </script>
+      
+      
+      
+      
     
 </body>
 </html>

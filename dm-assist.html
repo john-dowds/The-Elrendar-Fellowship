@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DM Assist — The Elrendar Fellowship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dm-assist.css" />
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main class="assist-wrap">
+    <!-- Toolbar -->
+    <div class="controls" id="assistControls">
+      <button id="newTurnBtn" class="btn">+ New Turn</button>
+      <button id="undoBtn" class="btn" title="Undo last edit">↶ Undo</button>
+      <button id="resetBtn" class="btn" title="Clear this session">⟲ Reset</button>
+
+      <label class="file-btn btn" for="importInput" title="Import an encounter (XLSX/CSV)">⬆ Import</label>
+      <input id="importInput" type="file" accept=".xlsx,.csv" hidden />
+
+      <button id="exportJsonBtn" class="btn">⬇ Export JSON</button>
+      <button id="exportCsvBtn" class="btn">⬇ Export CSV</button>
+
+      <span class="muted-note">Dungeon Master Assist:<br>Local session only — reset to clear.</span>
+    </div>
+
+    <!-- Table -->
+    <section class="assist-grid" id="assistGrid">
+      <div class="grid-pane">
+        <div class="table-wrap" id="tableWrap">
+          <table id="assistTable" class="assist-table" aria-label="DM Assist Tracker">
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+            <tfoot id="tfoot"></tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="dm-assist.js"></script>
+</body>
+</html>
