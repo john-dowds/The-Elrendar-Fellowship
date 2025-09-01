@@ -1,0 +1,630 @@
+{
+  "version": "2.0",
+  "name": "Giants",
+  "entries": [
+    {
+      "id": "giant_fire",
+      "name": "Fire Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 42,
+      "traits": [
+        {
+          "name": "Lava Strike",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Searing blow crashes into the target, dealing direct damage."
+        },
+        {
+          "name": "Molten Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Blazing hide sears weapons, dulling harm."
+        }
+      ],
+      "description": "Ancient titanic warriors infused with the Plane of Fire’s essence.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_frost",
+      "name": "Frost Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 42,
+      "traits": [
+        {
+          "name": "Glacier Slam",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Bursts rime outward, damaging nearby foes."
+        },
+        {
+          "name": "Frozen Bulk",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Frozen bulk resists cutting force."
+        }
+      ],
+      "description": "Titanic giants wrought from glacial stone and bound to the cold north.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_stone",
+      "name": "Stone Giant",
+      "class": "Primordial Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 38,
+      "traits": [
+        {
+          "name": "Stonefist",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A rock-laden fist crushes the target, dealing direct damage."
+        },
+        {
+          "name": "Earthen Bulk",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Earthen bulk blunts incoming harm."
+        }
+      ],
+      "description": "Massive titanic guardians of mountains and valleys, shaped from rock itself.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_mountain",
+      "name": "Mountain Giant",
+      "class": "Primordial Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 44,
+      "traits": [
+        {
+          "name": "Boulder Toss",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Throws a hewn stone from range, dealing damage."
+        },
+        {
+          "name": "Stalwart Frame",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Earthen bulk blunts incoming harm."
+        }
+      ],
+      "description": "The largest of the stone giants, towering like mountains themselves.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_ice",
+      "name": "Ice Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Icicle Spear",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A freezing smash batters the target, dealing direct damage."
+        },
+        {
+          "name": "Permafrost Aura",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Chill drags at the target’s steps, reducing speed."
+        }
+      ],
+      "description": "Colossal beings of frozen tundra, kin to frost giants but more primal.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_sea",
+      "name": "Sea Giant",
+      "class": "Aquatic Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 46,
+      "traits": [
+        {
+          "name": "Tidal Smash",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Kicks up a surge that damages nearby foes."
+        },
+        {
+          "name": "Salted Hide",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Sodden weight slows the target’s steps."
+        }
+      ],
+      "description": "Mariners of the deep seas; massive, barnacled titans who stride from surf to war.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_storm",
+      "name": "Storm Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 48,
+      "traits": [
+        {
+          "name": "Thunderclap",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "A colossal impact stuns the target briefly."
+        },
+        {
+          "name": "Storm Aura",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Static drag slows the target’s steps."
+        }
+      ],
+      "description": "Immense titanic beings wreathed in lightning, heralds of titanic wrath.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_iron",
+      "name": "Iron Giant",
+      "class": "Forged Giant",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 50,
+      "traits": [
+        {
+          "name": "Hammerfist",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A piston-strong punch slams the target, dealing direct damage."
+        },
+        {
+          "name": "Ironhide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Plated body shrugs off harm."
+        }
+      ],
+      "description": "Colossi of living iron, forged to guard titanic vaults and sanctums.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_anubisath",
+      "name": "Anubisath Giant",
+      "class": "Titan-forged Guardian",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 46,
+      "traits": [
+        {
+          "name": "Sandstorm Guard",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A rock-laden fist crushes the target, dealing direct damage."
+        },
+        {
+          "name": "Shield",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Earthen bulk blunts incoming harm."
+        }
+      ],
+      "description": "Jackal-headed stone giants forged by titans to guard desert ruins.",
+      "campaignLinks": [
+        "classic"
+      ]
+    },
+    {
+      "id": "giant_titan_watcher",
+      "name": "Titan Watcher",
+      "class": "Titan Sentinel",
+      "category": "Giants",
+      "subcategory": "Titan-forged",
+      "hp": 54,
+      "traits": [
+        {
+          "name": "Runic Judgment",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Runed force hammers the target, dealing direct damage."
+        },
+        {
+          "name": "Sentinel’s Resolve",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Runes lock into a guarding shell."
+        }
+      ],
+      "description": "Titan-forged watchers tasked with overseeing ancient sites and enforcing order.",
+      "campaignLinks": [
+        "wotlk"
+      ]
+    },
+    {
+      "id": "giant_gronn",
+      "name": "Gronn",
+      "class": "Breaker Giant",
+      "category": "Giants",
+      "subcategory": "Breakers of Draenor",
+      "hp": 46,
+      "traits": [
+        {
+          "name": "Crushing Grip",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A brutal clubbing strike deals direct damage."
+        },
+        {
+          "name": "Stonehide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Stalwart frame resists staggering blows."
+        }
+      ],
+      "description": "Massive one-eyed giants native to Draenor, brutish but cunning, often ruling ogres and ogron.",
+      "campaignLinks": [
+        "wod"
+      ]
+    },
+    {
+      "id": "giant_magnaron",
+      "name": "Magnaron",
+      "class": "Ancient Breaker",
+      "category": "Giants",
+      "subcategory": "Breakers of Draenor",
+      "hp": 52,
+      "traits": [
+        {
+          "name": "Magma Slam",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Detonates a heat burst, damaging nearby foes."
+        },
+        {
+          "name": "Earthen Rage",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Searing blow crashes into the target, dealing direct damage."
+        }
+      ],
+      "description": "Elementally charged progenitors of gronn, massive stone-skinned titans infused with molten fury.",
+      "campaignLinks": [
+        "wod"
+      ]
+    },
+    {
+      "id": "giant_ogron",
+      "name": "Ogron",
+      "class": "Draenor Giantkin",
+      "category": "Giants",
+      "subcategory": "Breakers of Draenor",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Club Sweep",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Slams the ground, damaging nearby foes."
+        },
+        {
+          "name": "Thick-Skulled",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Shattered ground harms those who linger."
+        }
+      ],
+      "description": "Smaller cousins of the gronn, brutish servants and warriors who often lead ogre warbands.",
+      "campaignLinks": [
+        "wod"
+      ]
+    },
+    {
+      "id": "giant_colossus",
+      "name": "Colossus",
+      "class": "Titanic Giant",
+      "category": "Giants",
+      "subcategory": "Breakers of Draenor",
+      "hp": 60,
+      "traits": [
+        {
+          "name": "Monolithic Blow",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Runed force hammers the target, dealing direct damage."
+        },
+        {
+          "name": "Immovable Frame",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Runes lock into a guarding shell."
+        }
+      ],
+      "description": "Towering titans of Draenor, larger even than gronn or magnaron, whose presence dominates battlefields.",
+      "campaignLinks": [
+        "wod"
+      ]
+    },
+    {
+      "id": "giant_molten",
+      "name": "Molten Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 48,
+      "traits": [
+        {
+          "name": "Flame Crash",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        },
+        {
+          "name": "Lava Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Blazing hide sears weapons, dulling harm."
+        }
+      ],
+      "description": "Titans of flame and stone birthed from Ragnaros’s domain.",
+      "campaignLinks": [
+        "mc"
+      ]
+    },
+    {
+      "id": "giant_magma",
+      "name": "Magma Giant",
+      "class": "Elemental Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 46,
+      "traits": [
+        {
+          "name": "Molten Burst",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Detonates a burst of flame at range, dealing damage."
+        },
+        {
+          "name": "Core Glow",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        }
+      ],
+      "description": "Massive fire-touched giants composed of magma and ash.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_fungal",
+      "name": "Fungal Giant",
+      "class": "Plant Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 42,
+      "traits": [
+        {
+          "name": "Spore Burst",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A root-knotted limb slams the target, dealing direct damage."
+        },
+        {
+          "name": "Regrowth",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Creepers snag, reducing speed."
+        }
+      ],
+      "description": "Towering myconid-like giants that stride through marsh and jungle.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_gemstone",
+      "name": "Gemstone Colossus",
+      "class": "Crystal Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 50,
+      "traits": [
+        {
+          "name": "Prism Beam",
+          "trait": "line",
+          "theme": "aoe",
+          "effect": "Fires a cutting ray through enemies in a line."
+        },
+        {
+          "name": "Crystal Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Earthen bulk blunts incoming harm."
+        }
+      ],
+      "description": "Shimmering crystalline giants, forged of earth’s deepest veins.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_flesh",
+      "name": "Flesh Giant",
+      "class": "Necro-Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 44,
+      "traits": [
+        {
+          "name": "Slam of Gore",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Runic scorch harms the target over several rounds."
+        },
+        {
+          "name": "Sewn Bulk",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Runes lock into a guarding shell."
+        }
+      ],
+      "description": "Undead titans stitched together by necromancers, used as siege monstrosities.",
+      "campaignLinks": [
+        "wotlk"
+      ]
+    },
+    {
+      "id": "giant_clockwork",
+      "name": "Clockwork Giant",
+      "class": "Mechanical Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 46,
+      "traits": [
+        {
+          "name": "Steam Slam",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Vents steam in a burst, damaging nearby foes."
+        },
+        {
+          "name": "Gearframe",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Plated body shrugs off harm."
+        }
+      ],
+      "description": "Titan-forged constructs of cogs and gears; half-giant, half-machine.",
+      "campaignLinks": [
+        "wotlk"
+      ]
+    },
+    {
+      "id": "giant_ettin",
+      "name": "Ettin",
+      "class": "Two-Headed Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Dual Smash",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Both clubs sweep wide, damaging nearby foes."
+        },
+        {
+          "name": "Split Focus",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Twin clubs smash in tandem, dealing direct damage."
+        }
+      ],
+      "description": "Primitive two-headed giants, brutish but unpredictable.",
+      "campaignLinks": []
+    },
+    {
+      "id": "giant_djaradin",
+      "name": "Djaradin",
+      "class": "Dragonbane Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 48,
+      "traits": [
+        {
+          "name": "Flameforged Weapon",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Damages up to two adjacent targets in a melee arc."
+        },
+        {
+          "name": "Dragonhunter’s Resolve",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Raises natural defenses to blunt incoming harm."
+        }
+      ],
+      "description": "Dragon Isles giants who live to war against dragons and their kin.",
+      "campaignLinks": [
+        "dragonflight"
+      ]
+    },
+    {
+      "id": "giant_magnataur",
+      "name": "Magnataur",
+      "class": "Beast-Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 42,
+      "traits": [
+        {
+          "name": "Tuskspear",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Tuskspear gore drives in, dealing direct damage."
+        },
+        {
+          "name": "Area Blast",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Cracks ice in a shock, damaging nearby foes."
+        }
+      ],
+      "description": "Half-giant taurens of the frozen north, savage and cruel.",
+      "campaignLinks": [
+        "wotlk"
+      ]
+    },
+    {
+      "id": "giant_genesaur",
+      "name": "Genesaur",
+      "class": "Plant-Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 44,
+      "traits": [
+        {
+          "name": "Nature Surge",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Vines seize the target, preventing movement."
+        },
+        {
+          "name": "Sapling Spawn",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Calls allies or lesser giants to the field."
+        }
+      ],
+      "description": "Dinosaur-like plant giants, children of nature’s primal power.",
+      "campaignLinks": [
+        "wod"
+      ]
+    },
+    {
+      "id": "giant_biggun",
+      "name": "Biggun",
+      "class": "Generic Giant",
+      "category": "Giants",
+      "subcategory": "Other",
+      "hp": 36,
+      "traits": [
+        {
+          "name": "Massive Club",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "A towering blow deals direct damage."
+        },
+        {
+          "name": "Thick Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Natural resilience dulls lesser weapons."
+        }
+      ],
+      "description": "Generic wandering giants with no special lineage but immense strength.",
+      "campaignLinks": []
+    }
+  ]
+}

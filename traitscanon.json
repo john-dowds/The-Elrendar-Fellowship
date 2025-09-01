@@ -1,0 +1,344 @@
+{
+  "version": "2.0",
+  "name": "Canon Trait Master List",
+  "themes": [
+    "damage",
+    "aoe",
+    "roots",
+    "healing",
+    "buffs",
+    "debuffs",
+    "translocation",
+    "utility"
+  ],
+  "categories": [
+    {
+      "category": "damage",
+      "entries": [
+        {
+          "id": "light_blow",
+          "name": "Light Blow",
+          "theme": "damage",
+          "effect": "Deals damage directly to the target."
+        },
+        {
+          "id": "heavy_blow",
+          "name": "Heavy Blow",
+          "theme": "damage",
+          "effect": "Deals double damage directly to the target."
+        },
+        {
+          "id": "strike",
+          "name": "Strike",
+          "theme": "damage",
+          "effect": "Delivers a solid hit to a single target."
+        },
+        {
+          "id": "precise_strike",
+          "name": "Precise Strike",
+          "theme": "damage",
+          "effect": "Deals increased damage to a single target."
+        },
+        {
+          "id": "shot",
+          "name": "Shot",
+          "theme": "damage",
+          "effect": "Fires a ranged projectile at a single target."
+        },
+        {
+          "id": "power_shot",
+          "name": "Power Shot",
+          "theme": "damage",
+          "effect": "Fires a heavy ranged projectile at a single target."
+        },
+        {
+          "id": "aimed_shot",
+          "name": "Aimed Shot",
+          "theme": "damage",
+          "effect": "Fires a precise ranged projectile at a single target, double its chance of hitting, but dealing half damage."
+        },
+        {
+          "id": "blast",
+          "name": "Blast",
+          "theme": "damage",
+          "effect": "Unleashes elemental or magical damage at range."
+        },
+        {
+          "id": "damage_over_time",
+          "name": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
+        }
+      ]
+    },
+    {
+      "category": "aoe",
+      "entries": [
+        {
+          "id": "cleave",
+          "name": "Cleave",
+          "theme": "aoe",
+          "effect": "Damages up to two adjacent targets in a melee arc."
+        },
+        {
+          "id": "sweep",
+          "name": "Sweep",
+          "theme": "aoe",
+          "effect": "Damages enemies adjacent to the user."
+        },
+        {
+          "id": "cone",
+          "name": "Cone Attack",
+          "theme": "aoe",
+          "effect": "Damages enemies in a frontal cone."
+        },
+        {
+          "id": "line",
+          "name": "Line Attack",
+          "theme": "aoe",
+          "effect": "Damages enemies in a straight line."
+        },
+        {
+          "id": "area_blast",
+          "name": "Area Blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "id": "ground_effect",
+          "name": "Ground Effect",
+          "theme": "aoe",
+          "effect": "Creates a lasting damaging zone on the ground."
+        },
+        {
+          "id": "chain_attack",
+          "name": "Chain Attack",
+          "theme": "aoe",
+          "effect": "Jumps between targets, dealing reduced damage."
+        },
+        {
+          "id": "volley",
+          "name": "Volley",
+          "theme": "aoe",
+          "effect": "Fires multiple projectiles into an area."
+        }
+      ]
+    },
+    {
+      "category": "roots",
+      "entries": [
+        {
+          "id": "slow",
+          "name": "Slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        },
+        {
+          "id": "root",
+          "name": "Root",
+          "theme": "roots",
+          "effect": "Immobilizes the target in place."
+        },
+        {
+          "id": "knockback",
+          "name": "Knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        },
+        {
+          "id": "pull",
+          "name": "Pull",
+          "theme": "roots",
+          "effect": "Yanks a target toward the user."
+        }
+      ]
+    },
+    {
+      "category": "healing",
+      "entries": [
+        {
+          "id": "heal",
+          "name": "Heal",
+          "theme": "healing",
+          "effect": "Restores health to a target."
+        },
+        {
+          "id": "heal_over_time",
+          "name": "Heal Over Time",
+          "theme": "healing",
+          "effect": "Gradually restores health over time."
+        },
+        {
+          "id": "chain_heal",
+          "name": "Chain Heal",
+          "theme": "healing",
+          "effect": "Restores health to nearby allies."
+        },
+        {
+          "id": "area_heal",
+          "name": "Area Heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
+        }
+      ]
+    },
+    {
+      "category": "buffs",
+      "entries": [
+        {
+          "id": "shield",
+          "name": "Shield",
+          "theme": "buffs",
+          "effect": "Grants a protective barrier or damage reduction."
+        },
+        {
+          "id": "haste",
+          "name": "Haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        },
+        {
+          "id": "fortify",
+          "name": "Fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "id": "empower",
+          "name": "Empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        },
+        {
+          "id": "stealth",
+          "name": "Stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "id": "cleanse",
+          "name": "Cleanse",
+          "theme": "buffs",
+          "effect": "Removes harmful effects from an ally."
+        }
+      ]
+    },
+    {
+      "category": "debuffs",
+      "entries": [
+        {
+          "id": "stun",
+          "name": "Stun",
+          "theme": "debuffs",
+          "effect": "Prevents actions for a short time."
+        },
+        {
+          "id": "silence",
+          "name": "Silence",
+          "theme": "debuffs",
+          "effect": "Prevents spellcasting or abilities."
+        },
+        {
+          "id": "fear",
+          "name": "Fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
+        },
+        {
+          "id": "curse",
+          "name": "Curse",
+          "theme": "debuffs",
+          "effect": "Afflicts the target with a harmful lingering effect or disadvantage to rolls."
+        },
+        {
+          "id": "poison_disease",
+          "name": "Poison/Disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "id": "weaken",
+          "name": "Weaken",
+          "theme": "debuffs",
+          "effect": "Reduces damage dealt or increases damage taken."
+        },
+        {
+          "id": "disarm",
+          "name": "Disarm",
+          "theme": "debuffs",
+          "effect": "Prevents the target from using weapon attacks."
+        }
+      ]
+    },
+    {
+      "category": "translocation",
+      "entries": [
+        {
+          "id": "teleport",
+          "name": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        },
+        {
+          "id": "portal_rift",
+          "name": "Portal/Rift",
+          "theme": "translocation",
+          "effect": "Opens a gateway between locations."
+        },
+        {
+          "id": "summon",
+          "name": "Summon",
+          "theme": "translocation",
+          "effect": "Brings allies or entities onto the field."
+        }
+      ]
+    },
+    {
+      "category": "utility",
+      "entries": [
+        {
+          "id": "interrupt",
+          "name": "Interrupt",
+          "theme": "utility",
+          "effect": "Interrupts a spell or channeled ability."
+        },
+        {
+          "id": "conceal",
+          "name": "Conceal",
+          "theme": "utility",
+          "effect": "Conceal through means of magic or mechanism."
+        },
+        {
+          "id": "reveal_hidden",
+          "name": "Reveal Hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden or invisible units briefly."
+        },
+        {
+          "id": "scry",
+          "name": "Scry",
+          "theme": "utility",
+          "effect": "View events or sense objects and people across long distances."
+        },
+        {
+          "id": "divine",
+          "name": "Divine",
+          "theme": "utility",
+          "effect": "Visions or predictions of potential future outcomes."
+        },
+        {
+          "id": "possession",
+          "name": "Possession",
+          "theme": "utility",
+          "effect": "Enforces control over another being's actions and thoughts."
+        },
+        {
+          "id": "dash",
+          "name": "Dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
+      ]
+    }
+  ]
+}

@@ -119,14 +119,13 @@
       .tabs{ position: static; flex: 0 0 auto; }
       .panel{ max-height: none; }
     }
-#panel-perks .sys-table td:first-child .badge{
-  background: rgba(252,229,205,.10);
-  border-color: rgba(252,229,205,.45);
-}
-#panel-perks .sys-table tbody tr:hover td{
-  background: rgba(252,229,205,.05);
-}
-
+    #panel-perks .sys-table td:first-child .badge{
+      background: rgba(252,229,205,.10);
+      border-color: rgba(252,229,205,.45);
+    }
+    #panel-perks .sys-table tbody tr:hover td{
+      background: rgba(252,229,205,.05);
+    }
   </style>
 </head>
 <body>
@@ -150,9 +149,9 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">Roleplay ▾</a>
         <ul class="dropdown-menu">
-          <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="history.html">History</a></li>
           <li><a href="system.html">Rule Book</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
         </ul>
@@ -173,6 +172,7 @@
       <button class="tab-btn" data-tab="monsters" role="tab">Using the Monster Manual</button>
       <button class="tab-btn" data-tab="npc" role="tab">NPC Modifications</button>
       <button class="tab-btn" data-tab="quick" role="tab">Player Quick Card</button>
+      <button class="tab-btn" data-tab="creation" role="tab">Build & Run Encounters</button>
     </div>
 
     <div class="panels">
@@ -268,7 +268,7 @@
 
       <section id="panel-intervene" class="panel" role="tabpanel" aria-labelledby="intervene">
         <h2>Interventions</h2>
-        <p>On any result that’s a <strong>Draw or better</strong>, you can step in and take the hit for an ally—if you're close or can reasonably get to them. Keep it cinematic; if you’re in reach, you can try it, no need to ask. If you succeed, you can either take the injury for your ally, or block/deflect it if you roll high enough.<br> <br>Keep in mind that rescuing everyone from everything can take a lot of the weight off consequences and fate; be mindful that sometimes it's better to let things happen to increase the stakes. That said, interventions are a great way to foster interactivity between players.</p>
+        <p>On any result that’s a <strong>Draw or better</strong>, you can step in and take the hit for an ally—if you're close or can reasonably get to them. Keep it cinematic; if you’re in reach, you can try it, no need to ask. If you succeed, you can either take the injury for your ally, or block/deflect it if you roll high enough.<br><br>Keep in mind that rescuing everyone from everything can take a lot of the weight off consequences and fate; be mindful that sometimes it's better to let things happen to increase the stakes. That said, interventions are a great way to foster interactivity between players.</p>
       </section>
 
       <section id="panel-env" class="panel" role="tabpanel" aria-labelledby="env">
@@ -499,13 +499,12 @@
         </table>
         
         <p class="note">If a monster trait uses a flavorful name (e.g., “Void Phase” or “Amber Sting”), map it to the closest effect above and keep the fiction strong.</p>
-        
       </section>
 
       <section id="panel-monsters" class="panel" role="tabpanel" aria-labelledby="monsters">
         <h2>Using the Monster Manual</h2>
         <p>Every entry in the <a href="monsterguide.html">Monster Manual</a> already has what we need: <em>Name, Class, HP, and two Traits</em>.</p>
-        <p><span class="kbd"><strong>Name</strong>, <strong>Class</strong>, <strong>HP/Size:</strong> 1-50, <strong>Traits:</strong> [two quick effects]</span> </p>
+        <p><span class="kbd"><strong>Name</strong>, <strong>Class</strong>, <strong>HP/Size:</strong> 1-50, <strong>Traits:</strong> [two quick effects]</span></p>
 
         <h3>HP sizing (read at a glance)</h3>
         <ul>
@@ -587,6 +586,26 @@
         </ul>
         <p class="note">Open the <a href="monsterguide.html">Monster Manual</a> for stat cards. Use Minion/Elite/Boss on the fly.</p>
       </section>
+
+      <section id="panel-creation" class="panel" role="tabpanel" aria-labelledby="creation">
+        <h2>Build &amp; Run Encounters</h2>
+        <p>The <a href="monsterguide.html">Monster Manual</a>, <a href="monsterbuilder.html">Encounter Builder</a>, and <a href="dm-assist.html">DM Event Assistant</a> work together as a closed-loop system.</p>
+
+        <ul>
+          <li><strong>Explore &amp; ideate:</strong> Browse factions, monsters, NPCs, and history on the Monster Manual and History pages to spark event ideas.</li>
+          <li><strong>Build enemies fast:</strong> In the Encounter Builder, set challenge level (Minion, Elite, or Boss), apply existing traits or create new ones, and choose preset or custom HP values to assemble a full roster.</li>
+          <li><strong>Export &amp; run:</strong> Export your encounter as a data file, then upload it into the DM Event Assistant to track damage by turn, update states/debuffs, and keep big events organized.</li>
+          <li><strong>Mindset:</strong> Everything you need is here on the site—and in your head. Get creative, explore, and make cool shit happen.</li>
+        </ul>
+
+        <div class="linkgrid">
+          <a href="monsterguide.html">Open the Monster Manual</a>
+          <a href="monsterbuilder.html">Open the Encounter Builder</a>
+          <a href="dm-assist.html">Open the DM Event Assistant</a>
+        </div>
+
+        <p class="note">Tip: Keep your exported encounter files so you can remix them for future events.</p>
+      </section>
     </div>
   </main>
 
@@ -607,14 +626,15 @@
       perks: document.getElementById('panel-perks'),
       monsters: document.getElementById('panel-monsters'),
       npc: document.getElementById('panel-npc'),
-      quick: document.getElementById('panel-quick')
+      quick: document.getElementById('panel-quick'),
+      creation: document.getElementById('panel-creation')  // fixed: was wrongly keyed as 'quick'
     };
 
     function showTab(key){
       tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === key));
       Object.entries(panels).forEach(([k, el]) => el.classList.toggle('active', k === key));
       if (panels[key]) panels[key].scrollTop = 0;
-      history.replaceState(null, '', '#'+key); // update hash for deep links
+      history.replaceState(null, '', '#'+key);
     }
 
     tabs.forEach(btn => btn.addEventListener('click', () => showTab(btn.dataset.tab)));

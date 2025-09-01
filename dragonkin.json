@@ -1,0 +1,798 @@
+{
+  "version": "2.0",
+  "name": "Dragonkin",
+  "entries": [
+    {
+      "id": "blue_whelp",
+      "name": "Blue Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Blue Dragonflight",
+      "hp": 10,
+      "traits": [
+        {
+          "name": "Arcane Puff",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Releases a surge of arcane force at range, dealing damage."
+        },
+        {
+          "name": "Mana Sense",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Draconic senses pierce concealment briefly."
+        }
+      ],
+      "description": "Curious arcane-touched hatchlings of the Blue Dragonflight.",
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "blue_dragonkin",
+      "name": "Blue Drakonid",
+      "class": "Dragonkin",
+      "category": "Dragonkin",
+      "subcategory": "Blue Dragonflight",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Arcane Lash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Runic Scales",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A runic barrier shimmers, reducing incoming harm."
+        }
+      ],
+      "description": "Bipedal guardians who defend ley nexuses and archives.",
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "blue_drake",
+      "name": "Blue Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Blue Dragonflight",
+      "hp": 24,
+      "traits": [
+        {
+          "name": "Mana Burst",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Releases a surge of arcane force at range, dealing damage."
+        },
+        {
+          "name": "Ward of Wyrmrest",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A runic barrier shimmers, reducing incoming harm."
+        }
+      ],
+      "description": "Medium wyrms that police irresponsible spellwork.",
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "blue_dragon",
+      "name": "Blue Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Blue Dragonflight",
+      "hp": 32,
+      "traits": [
+        {
+          "name": "Arcane Torrent",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
+        },
+        {
+          "name": "Spellweave",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Rouses draconic vigor, increasing potency briefly."
+        }
+      ],
+      "description": "Sovereigns of arcane order and keepers of ley lines.",
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "blue_wyrm",
+      "name": "Ancient Blue Wyrm",
+      "class": "Ancient/Wyrm",
+      "category": "Dragonkin",
+      "subcategory": "Blue Dragonflight",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Apex Surge",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Releases a surge of arcane force at range, dealing damage."
+        },
+        {
+          "name": "Mana Mastery",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        }
+      ],
+      "description": "Millennia-old blues whose will can shape ley itself.",
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "black_whelp",
+      "name": "Black Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Black Dragonflight",
+      "hp": 11,
+      "traits": [
+        {
+          "name": "Cinder Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of flame or cinders that damages enemies before it."
+        },
+        {
+          "name": "Stone-blood",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
+        }
+      ],
+      "description": "Soot-coated hatchlings born in cavernous lairs.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "black_dragonkin",
+      "name": "Black Drakonid",
+      "class": "Dragonkin",
+      "category": "Dragonkin",
+      "subcategory": "Black Dragonflight",
+      "hp": 19,
+      "traits": [
+        {
+          "name": "Magma Slash",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Ember-heat or stone shards harm the target over time."
+        },
+        {
+          "name": "Basalt Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
+        }
+      ],
+      "description": "Burly guardians forged by heat, pressure, and discipline.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "black_drake",
+      "name": "Black Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Black Dragonflight",
+      "hp": 26,
+      "traits": [
+        {
+          "name": "Molten Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Detonates a basalt/flame burst, damaging nearby foes."
+        },
+        {
+          "name": "Obsidian Plates",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
+        }
+      ],
+      "description": "Hardened drakes who prowl for weaknesses in enemy lines.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "black_dragon",
+      "name": "Black Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Black Dragonflight",
+      "hp": 34,
+      "traits": [
+        {
+          "name": "Lava Gout",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Ember-heat or stone shards harm the target over time."
+        },
+        {
+          "name": "Earth Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
+        }
+      ],
+      "description": "Earth-bound overlords whose rage is tectonic.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "black_wyrm",
+      "name": "Ancient Black Wyrm",
+      "class": "Ancient/Wyrm",
+      "category": "Dragonkin",
+      "subcategory": "Black Dragonflight",
+      "hp": 42,
+      "traits": [
+        {
+          "name": "Cataclysmic Bellow",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Crashes with tectonic power, dealing direct damage."
+        },
+        {
+          "name": "Magma Burst",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Sheets the ground in magma or shards that harm those who linger."
+        }
+      ],
+      "description": "Primeval engines of ruin, avatars of earth’s wrath.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "green_whelp",
+      "name": "Green Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Green Dragonflight",
+      "hp": 10,
+      "traits": [
+        {
+          "name": "Dream Dust",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+        },
+        {
+          "name": "Root",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Vines seize the target in place, preventing movement."
+        }
+      ],
+      "description": "Playful guardians tied to the Emerald Dream.",
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "green_dragonkin",
+      "name": "Green Dragonspawn",
+      "class": "Dragonkin",
+      "category": "Dragonkin",
+      "subcategory": "Green Dragonflight",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Vinebind",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Vines seize the target in place, preventing movement."
+        },
+        {
+          "name": "Dream-warded Scales",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Toxic pollen gnaws at the target over several rounds."
+        }
+      ],
+      "description": "Serpentine wardens who patrol groves and gateways.",
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "green_drake",
+      "name": "Green Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Green Dragonflight",
+      "hp": 24,
+      "traits": [
+        {
+          "name": "Sleep Spores",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Dream-haze weighs on the target, reducing movement speed."
+        },
+        {
+          "name": "Verdant Aegis",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Dream-warded scales reduce incoming harm."
+        }
+      ],
+      "description": "Healers and wardens soaring between Dream-touched boughs.",
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "green_dragon",
+      "name": "Green Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Green Dragonflight",
+      "hp": 33,
+      "traits": [
+        {
+          "name": "Emerald Breath",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Whips a leafstorm that damages nearby foes."
+        },
+        {
+          "name": "Dreamveil",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+        }
+      ],
+      "description": "Stewards of life and the slumbering Dream.",
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "green_wyrm",
+      "name": "Ancient Green Wyrm",
+      "class": "Ancient/Wyrm",
+      "category": "Dragonkin",
+      "subcategory": "Green Dragonflight",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Song of the Dream",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+        },
+        {
+          "name": "Elemental Grasp",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Vines seize multiple targets in place, preventing movement."
+        }
+      ],
+      "description": "Ancients who bridge waking world and Dream.",
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+    },
+    {
+      "id": "red_whelp",
+      "name": "Red Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Red Dragonflight",
+      "hp": 11,
+      "traits": [
+        {
+          "name": "Spark Breath",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Sacred flame continues to sear corruption over time."
+        },
+        {
+          "name": "Kindled Heart",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Seares with consecrated flame, dealing direct damage."
+        }
+      ],
+      "description": "Fiery hatchlings already protective of the helpless.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "red_dragonkin",
+      "name": "Red Drakonid",
+      "class": "Dragonkin",
+      "category": "Dragonkin",
+      "subcategory": "Red Dragonflight",
+      "hp": 19,
+      "traits": [
+        {
+          "name": "Flamebrand",
+          "trait": "cleanse",
+          "theme": "buffs",
+          "effect": "Removes harmful effects from an ally."
+        },
+        {
+          "name": "Lifeblood Scales",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Defenders who mingle flame with restoration.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "red_drake",
+      "name": "Red Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Red Dragonflight",
+      "hp": 26,
+      "traits": [
+        {
+          "name": "Cauterizing Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Detonates a curative flame-burst that still harms foes."
+        },
+        {
+          "name": "Flame Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Noble drakes patrolling sanctums of life.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "red_dragon",
+      "name": "Red Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Red Dragonflight",
+      "hp": 34,
+      "traits": [
+        {
+          "name": "Life-Flame",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Seares with consecrated flame, dealing direct damage."
+        },
+        {
+          "name": "Ruby Aegis",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Wardens of life and healers of grievous wounds.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "red_wyrm",
+      "name": "Ancient Red Wyrm",
+      "class": "Ancient/Wyrm",
+      "category": "Dragonkin",
+      "subcategory": "Red Dragonflight",
+      "hp": 41,
+      "traits": [
+        {
+          "name": "Phoenix Gale",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Detonates a curative flame-burst that still harms foes."
+        },
+        {
+          "name": "Sanctuary of Scales",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Ancients whose very presence kindles renewal.",
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "bronze_whelp",
+      "name": "Bronze Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Bronze Dragonflight",
+      "hp": 10,
+      "traits": [
+        {
+          "name": "Time Blink",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Glides or surges rapidly a short distance."
+        },
+        {
+          "name": "Chronal Curiosity",
+          "trait": "reveal_hidden",
+          "theme": "utility",
+          "effect": "Draconic senses pierce concealment briefly."
+        }
+      ],
+      "description": "Playful keepers of temporal threads.",
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+    },
+    {
+      "id": "bronze_dragonkin",
+      "name": "Bronze Drakonid",
+      "class": "Dragonkin",
+      "category": "Dragonkin",
+      "subcategory": "Bronze Dragonflight",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Sands of Delay",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Hits in a time-skipping blur, dealing direct damage over time."
+        },
+        {
+          "name": "Temporal Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Fate-sands dull incoming harm."
+        }
+      ],
+      "description": "Time-touched guardians of the caverns of time.",
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+    },
+    {
+      "id": "bronze_drake",
+      "name": "Bronze Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Bronze Dragonflight",
+      "hp": 24,
+      "traits": [
+        {
+          "name": "Chrono Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of sand-laden time that damages enemies before it."
+        },
+        {
+          "name": "Foresight",
+          "trait": "divine",
+          "theme": "utility",
+          "effect": "Bears witness to visions of the future."
+        }
+      ],
+      "description": "Temporal wardens that police branching histories.",
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+    },
+    {
+      "id": "bronze_dragon",
+      "name": "Bronze Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Bronze Dragonflight",
+      "hp": 33,
+      "traits": [
+        {
+          "name": "Time Collapse",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Projects a temporal pulse at range, dealing damage."
+        },
+        {
+          "name": "Hourglass Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Fate-sands dull incoming harm."
+        }
+      ],
+      "description": "Dragons who steward timelines against paradox.",
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+    },
+    {
+      "id": "bronze_wyrm",
+      "name": "Ancient Bronze Wyrm",
+      "class": "Ancient/Wyrm",
+      "category": "Dragonkin",
+      "subcategory": "Bronze Dragonflight",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Eon Surge",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Projects a temporal pulse at range, dealing damage."
+        },
+        {
+          "name": "Paradox Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Fate-sands dull incoming harm."
+        }
+      ],
+      "description": "Ancients whose breaths taste of sand and centuries.",
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+    },
+    {
+      "id": "proto_whelp",
+      "name": "Proto-Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Protodrakes",
+      "hp": 12,
+      "traits": [
+        {
+          "name": "Gnash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Seares with elemental flame, dealing direct damage."
+        },
+        {
+          "name": "Primeval Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Primal hatchlings hatched in icy aeries and storm-scarred crags.",
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "proto_drake",
+      "name": "Proto-Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Protodrakes",
+      "hp": 30,
+      "traits": [
+        {
+          "name": "Rending Bite",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Mauls with primeval strength, dealing direct damage."
+        },
+        {
+          "name": "Primeval Roar",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Slams the ground in a shock that harms nearby foes."
+        }
+      ],
+      "description": "Ancient, horn-crowned drakes with brutal hunting patterns.",
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "proto_dragon",
+      "name": "Proto-Dragon",
+      "class": "Primal Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Protodrakes",
+      "hp": 36,
+      "traits": [
+        {
+          "name": "Elemental Bellow",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Churns earth and element into a hazard that harms those who linger."
+        },
+        {
+          "name": "Glacial/Voltaic Hide",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Primeval hide blunts incoming harm."
+        }
+      ],
+      "description": "Rare elders among protodrakes—elemental titans of the skies.",
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "twilight_whelp",
+      "name": "Twilight Whelp",
+      "class": "Whelp",
+      "category": "Dragonkin",
+      "subcategory": "Twilight Drakes",
+      "hp": 11,
+      "traits": [
+        {
+          "name": "Shadow Spark",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Seares with twisted shadow flame, dealing direct damage."
+        },
+        {
+          "name": "Unstable Scales",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Radiant flame shields allies from harm."
+        }
+      ],
+      "description": "Void-touched hatchlings bred from forbidden experiments.",
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "twilight_drake",
+      "name": "Twilight Drake",
+      "class": "Drake",
+      "category": "Dragonkin",
+      "subcategory": "Twilight Drakes",
+      "hp": 28,
+      "traits": [
+        {
+          "name": "Umbral Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of shadowed fire that damages enemies before it."
+        },
+        {
+          "name": "Twilight Husk",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Half-real scales distort incoming force."
+        }
+      ],
+      "description": "Dragons forged in shadow and flame to serve apocalyptic cults.",
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "twilight_dragon",
+      "name": "Twilight Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Twilight Drakes",
+      "hp": 36,
+      "traits": [
+        {
+          "name": "Voidstorm",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rips with void-touched fury, dealing direct damage."
+        },
+        {
+          "name": "Blast",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Lances a thread of twilight at range, dealing damage."
+        }
+      ],
+      "description": "Terrible fusions of void and dragonfire unleashed by zealots.",
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+    },
+    {
+      "id": "dracthyr_evoker",
+      "name": "Dracthyr Evoker",
+      "class": "Spellcaster",
+      "category": "Dragonkin",
+      "subcategory": "Dracthyr",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Prismatic Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of mixed-flight power that damages enemies before it."
+        },
+        {
+          "name": "Scattered Mana",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Scatters a hail prismatic mana shards that harms those who linger."
+        }
+      ],
+      "description": "Awakened draconic soldiers who channel the powers of the flights.",
+      "campaignLinks": ["dragonflight"]
+    },
+    {
+      "id": "dracthyr_dragonguard",
+      "name": "Dracthyr Dragonguard",
+      "class": "Melee",
+      "category": "Dragonkin",
+      "subcategory": "Dracthyr",
+      "hp": 20,
+      "traits": [
+        {
+          "name": "Wingshield",
+          "trait": "heavy_blow",
+          "theme": "damage",
+          "effect": "Deals double damage directly to the target."
+        },
+        {
+          "name": "Scaled Resilience",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Scaled wards deflect incoming harm."
+        }
+      ],
+      "description": "Frontline Dracthyr who hold the line while evokers cast.",
+      "campaignLinks": ["dragonflight"]
+    }
+  ]
+}

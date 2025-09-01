@@ -1,0 +1,870 @@
+{
+  "version": "2.0",
+  "name": "Elementals",
+  "entries": [
+    {
+      "id": "earth_elemental",
+      "name": "Earth Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Stonefist",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Crashes a stone-laden blow, dealing direct damage."
+        },
+        {
+          "name": "Rockhide",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
+      ],
+      "description": "A living mass of rock and soil animated by the Plane of Earth.",
+      "campaignLinks": []
+    },
+    {
+      "id": "earth_bound",
+      "name": "Bound Earth Elemental",
+      "class": "Bound",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 19,
+      "traits": [
+        {
+          "name": "Geas of Stone",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Crashes a stone-laden blow, dealing direct damage."
+        },
+        {
+          "name": "Wardstone Core",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
+      ],
+      "description": "A conjured earth spirit shackled to a caster’s sigils.",
+      "campaignLinks": []
+    },
+    {
+      "id": "earth_unbound",
+      "name": "Unbound Earth Elemental",
+      "class": "Unbound",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 20,
+      "traits": [
+        {
+          "name": "Quake Surge",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Detonates a burst of stone and grit at range, dealing damage."
+        },
+        {
+          "name": "Shardshed",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Crashes a stone-laden blow, dealing direct damage."
+        }
+      ],
+      "description": "Freed of any sigil, it follows only tectonic instinct.",
+      "campaignLinks": []
+    },
+    {
+      "id": "earth_revenant",
+      "name": "Earth Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Gravemark",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Crashes a stone-laden blow, dealing direct damage."
+        },
+        {
+          "name": "Bedrock Body",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Stone plates interlock, reducing incoming harm."
+        }
+      ],
+      "description": "A hardened echo of ancient stone will.",
+      "campaignLinks": []
+    },
+    {
+      "id": "earth_ascendant",
+      "name": "Earth Ascendant",
+      "class": "Ascendant",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 28,
+      "traits": [
+        {
+          "name": "Tectonic Wrath",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Detonates a burst of stone and grit at range, dealing damage."
+        },
+        {
+          "name": "Crown of Obsidian",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Stone plates interlock, reducing incoming harm."
+        }
+      ],
+      "description": "A paragon of the Earth Plane, will layered like strata.",
+      "campaignLinks": []
+    },
+    {
+      "id": "earth_spirit",
+      "name": "Earth Spirit",
+      "class": "Spirit",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 14,
+      "traits": [
+        {
+          "name": "Dust Veil",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Burrowglide",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        }
+      ],
+      "description": "A gentler geomancy that steadies allies.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_elemental",
+      "name": "Fire Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Flame Lash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Sears the target with a burning strike, dealing direct damage."
+        },
+        {
+          "name": "Kindled Form",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A heat-shimmer wards off harm."
+        }
+      ],
+      "description": "A hungry blaze given will from the Plane of Fire.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_bound",
+      "name": "Bound Fire Elemental",
+      "class": "Bound",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 19,
+      "traits": [
+        {
+          "name": "Brand Sigil",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Embers continue to burn the target over several rounds."
+        },
+        {
+          "name": "Cinder Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A heat-shimmer wards off harm."
+        }
+      ],
+      "description": "A contained inferno leashed by a caster’s glyph.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_unbound",
+      "name": "Unbound Fire Elemental",
+      "class": "Unbound",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 20,
+      "traits": [
+        {
+          "name": "Wild Conflagration",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Erupts a tongue of flame at range, dealing damage."
+        },
+        {
+          "name": "Ash Wake",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Ignites the floor into a hazard that harms those who linger."
+        }
+      ],
+      "description": "A free-roving inferno that answers only to fuel and wind.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_revenant",
+      "name": "Fire Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Sear the Weak",
+          "trait": "damage_over_time",
+          "theme": "damage",
+          "effect": "Embers continue to burn the target over several rounds."
+        },
+        {
+          "name": "Coalheart",
+          "trait": "heavy_blow",
+          "theme": "damage",
+          "effect": "Deals double damage directly to the target."
+        }
+      ],
+      "description": "Persistent embers of a mighty pyre’s malice.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_ascendant",
+      "name": "Fire Ascendant",
+      "class": "Ascendant",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 28,
+      "traits": [
+        {
+          "name": "Inferno Crown",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Erupts a tongue of flame at range, dealing damage."
+        },
+        {
+          "name": "Sovereign Blaze",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Sears the target with a burning strike, dealing direct damage."
+        }
+      ],
+      "description": "A monarchal conflagration; a furnace made flesh.",
+      "campaignLinks": []
+    },
+    {
+      "id": "fire_spirit",
+      "name": "Fire Spirit",
+      "class": "Spirit",
+      "category": "Elementals",
+      "subcategory": "Fire",
+      "hp": 14,
+      "traits": [
+        {
+          "name": "Warming Light",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Restores health to a target."
+        },
+        {
+          "name": "Emberstep",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        }
+      ],
+      "description": "A benevolent flicker that emboldens allies.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_elemental",
+      "name": "Air Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 16,
+      "traits": [
+        {
+          "name": "Gust Slash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with razor wind, dealing direct damage."
+        },
+        {
+          "name": "Vortex Form",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "An eddying barrier scatters blows."
+        }
+      ],
+      "description": "A whorl of living gale from the Plane of Air.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_bound",
+      "name": "Bound Air Elemental",
+      "class": "Bound",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 17,
+      "traits": [
+        {
+          "name": "Anchor Sigil",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with razor wind, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Flicks a cutting gust from range, dealing damage."
+        }
+      ],
+      "description": "Harnessed wind that holds to a conjurer’s anchor.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_unbound",
+      "name": "Unbound Air Elemental",
+      "class": "Unbound",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Tempest Whorl",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with razor wind, dealing direct damage."
+        },
+        {
+          "name": "Slipstream",
+          "trait": "dash",
+          "theme": "utility",
+          "effect": "Quickly move a short distance without teleporting."
+        }
+      ],
+      "description": "Storm-quick and whimsical, answerable to no rune.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_revenant",
+      "name": "Storm Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 21,
+      "traits": [
+        {
+          "name": "Thunder Mark",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Slices with razor wind, dealing direct damage."
+        },
+        {
+          "name": "Ozone Veil",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        }
+      ],
+      "description": "The lingering spite of a broken stormfront.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_ascendant",
+      "name": "Tempest Ascendant",
+      "class": "Ascendant",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 27,
+      "traits": [
+        {
+          "name": "Eye of the Gale",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Bursts a gale that damages nearby foes."
+        },
+        {
+          "name": "Lightning Crown",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Buffeting eddies reduce speed."
+        }
+      ],
+      "description": "A sovereign storm given will and purpose.",
+      "campaignLinks": []
+    },
+    {
+      "id": "air_spirit",
+      "name": "Zephyr Spirit",
+      "class": "Spirit",
+      "category": "Elementals",
+      "subcategory": "Air",
+      "hp": 13,
+      "traits": [
+        {
+          "name": "Soothing Breeze",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Restores health to a target."
+        },
+        {
+          "name": "Featherlight",
+          "trait": "stealth",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        }
+      ],
+      "description": "A gentle wind-soul that cools heated tempers.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_elemental",
+      "name": "Water Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 17,
+      "traits": [
+        {
+          "name": "Tide Lash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hammers with high-pressure force, dealing direct damage."
+        },
+        {
+          "name": "Shot",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Jets a spear of water from range, dealing damage."
+        }
+      ],
+      "description": "A living tide called from the Plane of Water.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_bound",
+      "name": "Bound Water Elemental",
+      "class": "Bound",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Anchor Shell",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A brine shell blunts impact."
+        },
+        {
+          "name": "Healing Current",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        }
+      ],
+      "description": "A disciplined wave held to a summoner’s call.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_unbound",
+      "name": "Unbound Water Elemental",
+      "class": "Unbound",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 19,
+      "traits": [
+        {
+          "name": "Undertow",
+          "trait": "pull",
+          "theme": "roots",
+          "effect": "Yanks a target toward the user."
+        },
+        {
+          "name": "Mist Shroud",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Pools hazardously underfoot, harming those who linger."
+        }
+      ],
+      "description": "A flood spirit that follows the whims of depth and storm.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_revenant",
+      "name": "Tide Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 21,
+      "traits": [
+        {
+          "name": "Drownheart",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hammers with high-pressure force, dealing direct damage."
+        },
+        {
+          "name": "Brine Ward",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "A brine shell blunts impact."
+        }
+      ],
+      "description": "Salt-soaked memory of a relentless sea.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_ascendant",
+      "name": "Sea Ascendant",
+      "class": "Ascendant",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 27,
+      "traits": [
+        {
+          "name": "King Tide",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Hurls a crashing wave at range, dealing damage."
+        },
+        {
+          "name": "Abyssal Wrath",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Hammers with high-pressure force, dealing direct damage."
+        }
+      ],
+      "description": "The sea’s authority given form and voice.",
+      "campaignLinks": []
+    },
+    {
+      "id": "water_spirit",
+      "name": "River Spirit",
+      "class": "Spirit",
+      "category": "Elementals",
+      "subcategory": "Water",
+      "hp": 13,
+      "traits": [
+        {
+          "name": "Flow",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        },
+        {
+          "name": "Cool Touch",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Restores health to a target."
+        }
+      ],
+      "description": "A cheerful stream-soul that favors gentle guidance.",
+      "campaignLinks": []
+    },
+    {
+      "id": "nature_lasher",
+      "name": "Lasher",
+      "class": "Nature Elemental",
+      "category": "Elementals",
+      "subcategory": "Nature",
+      "hp": 14,
+      "traits": [
+        {
+          "name": "Vinewhip",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Whips with thorned vine, dealing direct damage."
+        },
+        {
+          "name": "Photosurge",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        }
+      ],
+      "description": "Animated flora that guards sacred groves.",
+      "campaignLinks": []
+    },
+    {
+      "id": "nature_treant",
+      "name": "Treant",
+      "class": "Nature Elemental",
+      "category": "Elementals",
+      "subcategory": "Nature",
+      "hp": 20,
+      "traits": [
+        {
+          "name": "Barksmash",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Whips with thorned vine, dealing direct damage."
+        },
+        {
+          "name": "Deep Roots",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Vines seize the target, preventing movement."
+        }
+      ],
+      "description": "Ancient tree-wardens who stir only when needed.",
+      "campaignLinks": []
+    },
+    {
+      "id": "nature_sapling",
+      "name": "Spriggan Sapling",
+      "class": "Nature Elemental",
+      "category": "Elementals",
+      "subcategory": "Nature",
+      "hp": 10,
+      "traits": [
+        {
+          "name": "Seed Spray",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Launches a seed-spine from range, dealing damage."
+        },
+        {
+          "name": "Quick Sprout",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
+        }
+      ],
+      "description": "Mischievous sprouts that flit between roots and stones.",
+      "campaignLinks": []
+    },
+    {
+      "id": "nature_ancient",
+      "name": "Ancient of the Grove",
+      "class": "Ascendant (Nature)",
+      "category": "Elementals",
+      "subcategory": "Nature",
+      "hp": 28,
+      "traits": [
+        {
+          "name": "Verdant Call",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Brings allies or entities onto the field."
+        },
+        {
+          "name": "Heartwood",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
+      ],
+      "description": "A venerable forest spirit that embodies renewal.",
+      "campaignLinks": []
+    },
+    {
+      "id": "holy_elemental",
+      "name": "Light Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Holy",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Radiant Lance",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a lance of light from range, dealing damage."
+        },
+        {
+          "name": "Aureole",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Radiates a halo burst, damaging nearby foes."
+        }
+      ],
+      "description": "A coherent flare of the Holy Light given purpose.",
+      "campaignLinks": []
+    },
+    {
+      "id": "holy_revenant",
+      "name": "Light Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Holy",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Sanctify",
+          "trait": "curse",
+          "theme": "debuffs",
+          "effect": "Afflicts the target with a harmful lingering effect or disadvantage to rolls."
+        },
+        {
+          "name": "Benison",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        }
+      ],
+      "description": "Lingering devotion crystallized into form.",
+      "campaignLinks": []
+    },
+    {
+      "id": "arcane_elemental",
+      "name": "Arcane Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Arcane",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Mana Bolt",
+          "trait": "shot",
+          "theme": "damage",
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
+        },
+        {
+          "name": "Runic Shell",
+          "trait": "silence",
+          "theme": "debuffs",
+          "effect": "Prevents spellcasting or abilities."
+        }
+      ],
+      "description": "Raw mana coalesced into a thinking lattice.",
+      "campaignLinks": []
+    },
+    {
+      "id": "arcane_revenant",
+      "name": "Mana Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Arcane",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Disrupt",
+          "trait": "interrupt",
+          "theme": "utility",
+          "effect": "Interrupts a spell or channeled ability."
+        },
+        {
+          "name": "Aegis Sigil",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Runic shell dampens harm."
+        }
+      ],
+      "description": "A spent ritual’s will that refuses to fade.",
+      "campaignLinks": []
+    },
+    {
+      "id": "mana_wyrm",
+      "name": "Mana Wyrm",
+      "class": "Familiar",
+      "category": "Elementals",
+      "subcategory": "Arcane",
+      "hp": 15,
+      "traits": [
+        {
+          "name": "Mana Siphon",
+          "trait": "ground_effect",
+          "theme": "aoe",
+          "effect": "Marks a runic hazard that harms those who linger."
+        },
+        {
+          "name": "Mana Flush",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Bursts with arcane force, damaging nearby foes."
+        }
+      ],
+      "description": "A simple elemental creature of pure arcane energy.",
+      "campaignLinks": []
+    },
+    {
+      "id": "shadow_elemental",
+      "name": "Shadow Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Shadow",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Void Grasp",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with umbral force, dealing direct damage."
+        },
+        {
+          "name": "Umbral Veil",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Umbral veil dulls harm."
+        }
+      ],
+      "description": "A knot of void energy coalesced into motion.",
+      "campaignLinks": []
+    },
+    {
+      "id": "shadow_revenant",
+      "name": "Shadow Revenant",
+      "class": "Revenant",
+      "category": "Elementals",
+      "subcategory": "Shadow",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Mind Wither",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with umbral force, dealing direct damage."
+        },
+        {
+          "name": "Abyssal Husk",
+          "trait": "heavy_blow",
+          "theme": "damage",
+          "effect": "Deals double damage directly to the target."
+        }
+      ],
+      "description": "A remnant of darkness that clings where light fled.",
+      "campaignLinks": []
+    },
+    {
+      "id": "shadow_ascendant",
+      "name": "Void Ascendant",
+      "class": "Ascendant",
+      "category": "Elementals",
+      "subcategory": "Shadow",
+      "hp": 28,
+      "traits": [
+        {
+          "name": "Entropy Wave",
+          "trait": "blast",
+          "theme": "damage",
+          "effect": "Projects an umbral surge at range, dealing damage."
+        },
+        {
+          "name": "Eventide Form",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Rakes with umbral force, dealing direct damage."
+        }
+      ],
+      "description": "A prince of emptiness whose will dims the world.",
+      "campaignLinks": []
+    }
+  ]
+}
