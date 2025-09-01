@@ -120,7 +120,7 @@
         }
       ],
       "description": "Hulking golems of meat and iron, stitched from fallen bodies and guided by a cruel will.",
-      "campaignLinks": ["fallqt","wotlk"]
+      "campaignLinks": ["fallqt","wotlk","event001"]
     },
     {
       "id": "undead_flesh_giant",
@@ -288,7 +288,7 @@
         }
       ],
       "description": "Reassembled bones marching in lockstep to necromantic drums.",
-      "campaignLinks": ["fallqt","wotlk"]
+      "campaignLinks": ["fallqt","wotlk","event001"]
     },
     {
       "id": "undead_skeletal_mage",
@@ -312,7 +312,7 @@
         }
       ],
       "description": "Rattling spellcasters whose grins never change, even as they burn you down.",
-      "campaignLinks": ["fallqt","wotlk"]
+      "campaignLinks": ["fallqt","wotlk","event001"]
     },
     {
       "id": "undead_skeleton_archer",

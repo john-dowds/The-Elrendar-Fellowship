@@ -4948,8 +4948,8 @@
           "effect": "Steals vitality from foes."
         }
       ],
-      "description": "Practitioners of forbidden necromancy.",
-      "campaignLinks": []
+      "description": "Practitioners of forbidden necromancy; often times associated with the Scourge of Lordaeron.",
+      "campaignLinks": ["event001"]
     },
     {
       "id": "human_peasant",
