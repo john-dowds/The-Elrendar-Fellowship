@@ -135,177 +135,243 @@
   </footer>
 
   <script>
-  (async function () {
-    // Load history first
-    const histData = await fetch('assets/data/history.json', { cache: 'no-store' })
-      .then(r => r.ok ? r.json() : { sections: [] })
-      .catch(() => ({ sections: [] }));
-
-    const sections = (histData.sections || []).sort((a,b) => (b.order ?? 0) - (a.order ?? 0));
-
-    // Sidebar links
-    const sidebar = document.getElementById('history-sidebar');
-    const list = document.getElementById('history-list');
-
-    const linkFrag = document.createDocumentFragment();
-    for (const s of sections) {
-      const a = document.createElement('a');
-      a.href = `#${s.id}`;
-      a.textContent = s.title || s.id;
-      linkFrag.appendChild(a);
-    }
-    sidebar.appendChild(linkFrag);
-
-    const artFrag = document.createDocumentFragment();
-    for (const s of sections) {
-      const article = document.createElement('article');
-      article.className = 'era';
-      article.id = s.id;
-
-      const block = document.createElement('div');
-      block.className = 'text-block';
-
-      const h1 = document.createElement('h1');
-      h1.textContent = s.title || '';
-
-      const h2 = document.createElement('h2');
-      h2.textContent = s.date || '';
-
-      const p = document.createElement('p');
-      p.innerHTML = s.summary_html || '';
-
-      const related = document.createElement('div');
-      related.className = 'related-wrap';
-      related.dataset.historyId = s.id;
-
-      block.appendChild(h1);
-      if (s.subtitle) {
-      const sub = document.createElement('h2');
-      sub.className = 'subtitle';
-      sub.textContent = s.subtitle;
-      block.appendChild(sub);
-    }
-      block.appendChild(h2);
-      
-      block.appendChild(p);
-      block.appendChild(related);
-
-      article.appendChild(block);
-      artFrag.appendChild(article);
-    }
-    list.appendChild(artFrag);
-
-
-    const dataFiles = [
-      'assets/data/npcs.json',
-      'assets/data/factions.json',
-      'assets/data/aberrations.json',
-      'assets/data/beasts.json',
-      'assets/data/critters.json',
-      'assets/data/demons.json',
-      'assets/data/dragonkin.json',
-      'assets/data/elementals.json',
-      'assets/data/giants.json',
-      'assets/data/humanoids.json',
-      'assets/data/mechanical.json',
-      'assets/data/undead.json'
-    ];
-
-    async function loadJsonSafe(url) {
-      try {
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const text = await res.text();
-        if (!text.trim()) return { entries: [], categories: [] };
-        return JSON.parse(text);
-      } catch (e) {
-        console.warn('Skipping data file:', url, e);
-        return { entries: [], categories: [] };
+    (async function () {
+      // Load history first
+      const histData = await fetch('assets/data/history.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : { sections: [] })
+        .catch(() => ({ sections: [] }));
+  
+      const sections = (histData.sections || []).sort((a,b) => (b.order ?? 0) - (a.order ?? 0));
+  
+      // Sidebar links
+      const sidebar = document.getElementById('history-sidebar');
+      const list = document.getElementById('history-list');
+  
+      const linkFrag = document.createDocumentFragment();
+      for (const s of sections) {
+        const a = document.createElement('a');
+        a.href = `#${s.id}`;
+        a.textContent = s.title || s.id;
+        linkFrag.appendChild(a);
       }
-    }
-
-    function* iterEntries(source) {
-      if (Array.isArray(source.categories)) {
-        for (const c of source.categories) {
-          for (const s of (c.subcategories || [])) {
-            for (const e of (s.entries || [])) yield e;
+      sidebar.appendChild(linkFrag);
+  
+      const artFrag = document.createDocumentFragment();
+      for (const s of sections) {
+        const article = document.createElement('article');
+        article.className = 'era';
+        article.id = s.id;
+  
+        const block = document.createElement('div');
+        block.className = 'text-block';
+  
+        const h1 = document.createElement('h1');
+        h1.textContent = s.title || '';
+  
+        const h2 = document.createElement('h2');
+        h2.textContent = s.date || '';
+  
+        const p = document.createElement('p');
+        p.innerHTML = s.summary_html || '';
+  
+        const related = document.createElement('div');
+        related.className = 'related-wrap';
+        related.dataset.historyId = s.id;
+  
+        block.appendChild(h1);
+        if (s.subtitle) {
+          const sub = document.createElement('h2');
+          sub.className = 'subtitle';
+          sub.textContent = s.subtitle;
+          block.appendChild(sub);
+        }
+        block.appendChild(h2);
+        block.appendChild(p);
+        block.appendChild(related);
+  
+        article.appendChild(block);
+        artFrag.appendChild(article);
+      }
+      list.appendChild(artFrag);
+  
+      /* Deep-link scrolling into the inner scroll container */
+      function scrollToHistoryId(id) {
+        if (!id) return false;
+        const el = document.getElementById(id);
+        if (!el) return false;
+  
+        // Try native so CSS scroll-margin-top on .era can apply
+        try {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        } catch {}
+  
+        // Manual alignment fallback (and fine-tune)
+        const pane = document.getElementById('history-list');
+        if (pane) {
+          const elRect   = el.getBoundingClientRect();
+          const paneRect = pane.getBoundingClientRect();
+          const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop || '0') || 0;
+          const delta = elRect.top - paneRect.top + pane.scrollTop - marginTop;
+          pane.scrollTo({ top: delta, behavior: 'smooth' });
+        }
+        return true;
+      }
+  
+      function goToHashTarget() {
+        const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+        if (!id) return;
+        // Defer to ensure paint before measuring
+        requestAnimationFrame(() => scrollToHistoryId(id));
+      }
+  
+      // Initial deep-link (basic content is in DOM now)
+      goToHashTarget();
+  
+      // Sidebar in-page links should scroll the inner pane, not the window
+      if (sidebar) {
+        sidebar.addEventListener('click', (e) => {
+          const a = e.target.closest('a[href^="#"]');
+          if (!a) return;
+          const id = decodeURIComponent(a.getAttribute('href').slice(1));
+          if (scrollToHistoryId(id)) {
+            e.preventDefault();
+            history.replaceState(null, '', '#' + id);
+          }
+        });
+      }
+  
+      // Respond to manual hash changes, too
+      window.addEventListener('hashchange', goToHashTarget);
+  
+      // ----- Data linking for "Related" entity chips -----
+      const dataFiles = [
+        'assets/data/npcs.json',
+        'assets/data/factions.json',
+        'assets/data/aberrations.json',
+        'assets/data/beasts.json',
+        'assets/data/critters.json',
+        'assets/data/demons.json',
+        'assets/data/dragonkin.json',
+        'assets/data/elementals.json',
+        'assets/data/giants.json',
+        'assets/data/humanoids.json',
+        'assets/data/mechanical.json',
+        'assets/data/undead.json'
+      ];
+  
+      async function loadJsonSafe(url) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const text = await res.text();
+          if (!text.trim()) return { entries: [], categories: [] };
+          return JSON.parse(text);
+        } catch (e) {
+          console.warn('Skipping data file:', url, e);
+          return { entries: [], categories: [] };
+        }
+      }
+  
+      function* iterEntries(source) {
+        if (Array.isArray(source.categories)) {
+          for (const c of source.categories) {
+            for (const s of (c.subcategories || [])) {
+              for (const e of (s.entries || [])) yield e;
+            }
+          }
+        } else {
+          for (const e of (source.entries || [])) yield e;
+        }
+      }
+  
+      const allSets = await Promise.all(dataFiles.map(loadJsonSafe));
+      const byHistoryId = new Map();
+  
+      for (const set of allSets) {
+        for (const e of iterEntries(set)) {
+          const links = Array.isArray(e.campaignLinks) ? e.campaignLinks : [];
+          for (const hid of links) {
+            if (!byHistoryId.has(hid)) byHistoryId.set(hid, []);
+            const arr = byHistoryId.get(hid);
+            if (!arr.some(x => x.id === e.id)) {
+              arr.push({
+                id: e.id,
+                name: e.name || e.id,
+                class: e.class || '',
+                category: e.category || '',
+                subcategory: e.subcategory || ''
+              });
+            }
           }
         }
-      } else {
-        for (const e of (source.entries || [])) yield e;
       }
-    }
-
-    const allSets = await Promise.all(dataFiles.map(loadJsonSafe));
-    const byHistoryId = new Map(); 
-
-    for (const set of allSets) {
-      for (const e of iterEntries(set)) {
-        const links = Array.isArray(e.campaignLinks) ? e.campaignLinks : [];
-        for (const hid of links) {
-          if (!byHistoryId.has(hid)) byHistoryId.set(hid, []);
-          const arr = byHistoryId.get(hid);
-          if (!arr.some(x => x.id === e.id)) {
-            arr.push({
-              id: e.id,
-              name: e.name || e.id,
-              class: e.class || '',
-              category: e.category || '',
-              subcategory: e.subcategory || ''
-            });
-          }
+  
+      for (const s of sections) {
+        const rel = list.querySelector(`.related-wrap[data-history-id="${s.id}"]`);
+        if (!rel) continue;
+  
+        const ents = (byHistoryId.get(s.id) || []).sort((a,b)=>{
+          const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
+          const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
+          return ka.localeCompare(kb);
+        });
+  
+        if (!ents.length) continue;
+  
+        const tags = document.createElement('div');
+        tags.className = 'entity-tags';
+  
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'toggle-related-btn';
+        toggleBtn.textContent = 'Hide Related ▾';
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.removeAttribute('style');
+  
+        toggleBtn.addEventListener('click', () => {
+          const hidden = tags.style.display === 'none';
+          tags.style.display = hidden ? '' : 'none';
+          toggleBtn.textContent = (hidden ? 'Hide' : 'Show') + ' Related ' + (hidden ? '▾' : '▸');
+          toggleBtn.setAttribute('aria-expanded', String(hidden));
+        });
+  
+        for (const e of ents) {
+          const a = document.createElement('a');
+          a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
+          a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
+          a.textContent = e.name;
+          tags.appendChild(a);
         }
+  
+        rel.appendChild(toggleBtn);
+        rel.appendChild(tags);
       }
-    }
-
-    
-for (const s of sections) {
-  const rel = list.querySelector(`.related-wrap[data-history-id="${s.id}"]`);
-  if (!rel) continue;
-
-  const ents = (byHistoryId.get(s.id) || []).sort((a,b)=>{
-    const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
-    const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
-    return ka.localeCompare(kb);
-  });
-
-  if (!ents.length) continue;
-
-  const tags = document.createElement('div');
-  tags.className = 'entity-tags';
-
-  const toggleBtn = document.createElement('button');
-toggleBtn.type = 'button';
-toggleBtn.className = 'toggle-related-btn';
-toggleBtn.textContent = 'Hide Related ▾';
-toggleBtn.setAttribute('aria-expanded', 'true');
-
-toggleBtn.removeAttribute('style');  
-
-
-  toggleBtn.addEventListener('click', () => {
-    const hidden = tags.style.display === 'none';
-    tags.style.display = hidden ? '' : 'none';
-    toggleBtn.textContent = (hidden ? 'Hide' : 'Show') + ' Related ' + (hidden ? '▾' : '▸');
-    toggleBtn.setAttribute('aria-expanded', String(hidden));
-  });
-
-  for (const e of ents) {
-  const a = document.createElement('a');
-        a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
-        a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
-        a.textContent = e.name;
-        tags.appendChild(a);
-      }
-
-      rel.appendChild(toggleBtn);
-      rel.appendChild(tags);
-    }
-  })().catch(err => {
-    console.error('Failed to build history page', err);
-    const list = document.getElementById('history-list');
-    if (list) list.innerHTML = '<div class="text-block"><p>History entries are unavailable right now.</p></div>';
-  });
+  
+      // Re-run deep-link after Related chips finished rendering (layout changed)
+      requestAnimationFrame(() => requestAnimationFrame(goToHashTarget));
+  
+      // Also re-run once after the full page finishes loading (fonts/images)
+      window.addEventListener('load', () => {
+        setTimeout(goToHashTarget, 0);
+        setTimeout(goToHashTarget, 80);
+      });
+  
+      // And re-run once on the first measurable resize of the inner pane
+      let didResizeScroll = false;
+      const ro = new ResizeObserver(() => {
+        if (didResizeScroll) return;
+        didResizeScroll = true;
+        goToHashTarget();
+        ro.disconnect();
+      });
+      ro.observe(list);
+  
+    })().catch(err => {
+      console.error('Failed to build history page', err);
+      const list = document.getElementById('history-list');
+      if (list) list.innerHTML = '<div class="text-block"><p>History entries are unavailable right now.</p></div>';
+    });
   </script>
+  
 </body>
 </html>

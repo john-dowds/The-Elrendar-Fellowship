@@ -72,7 +72,7 @@ nav.menu-bar {
   top: 0;
   border-top: 2px solid #fce5cd;
   border-bottom: 2px solid #fce5cd;
-  z-index: 1200; /* final: above sticky builder bars */
+  z-index: 1200; 
 }
 
 nav.menu-bar ul {
@@ -99,7 +99,6 @@ nav.menu-bar li a:hover { text-decoration: underline; }
   nav.menu-bar audio { display: none !important; } 
 }
 
-/*  dropdowns open below; keep above content and builder bars */
 nav.menu-bar li.dropdown { position: relative; display: inline-block; }
 
 nav.menu-bar .dropdown-menu {
@@ -114,7 +113,7 @@ nav.menu-bar .dropdown-menu {
   margin: 0;
   min-width: 8rem;
   border: none;
-  z-index: 1300; /* final: above everything in page content */
+  z-index: 1300; 
 }
 nav.menu-bar .dropdown-menu li a {
   display: block;
@@ -124,7 +123,6 @@ nav.menu-bar .dropdown-menu li a {
   white-space: nowrap;
 }
 
-/*  open states (native <details> or script) and hover keep-open */
 nav.menu-bar li.dropdown:open .dropdown-menu { display: block; text-decoration: underline; }
 nav.menu-bar .dropdown-toggle { cursor: pointer; padding: 0.5rem 1rem; display: inline-block; }
 nav.menu-bar li.dropdown:hover .dropdown-menu,
@@ -263,7 +261,7 @@ main.content {
 }
 #infoModal .modal-actions button:hover { background: #444; }
 
-/* ========== SYSTEMS PAGE EXTRAS (sticky section nav + anchor offsets) ========== */
+/* ========== SYSTEMS PAGE EXTRAS ========== */
 .section-nav {
   position: sticky;
   top: 62px;
@@ -299,18 +297,17 @@ main.content {
 
 @media (max-width: 900px) {
   .hero-split { grid-template-columns: 1fr; }
-  .section-nav { top: 56px; } /*  tighter on small screens */
+  .section-nav { top: 56px; } 
 }
 
 /* ========== MEMBERS PAGE — CAROUSEL (two-size emphasis) ========== */
-/*  only two sizes (center = big, others = small) */
 :root{
   --card-w: clamp(260px, 30vw, 360px);
   --card-gap: clamp(16px, 2vw, 28px);
-  --scale-center: 1.00;  /* focused card size */
-  --scale-small:  0.86;  /* all others */
+  --scale-center: 1.00; 
+  --scale-small:  0.86;  
   --gold: #E4BE59;
-  --teal: #157f84; /* accent only */
+  --teal: #157f84;
   --ink: #1a1410;
   --panel-bg: rgba(15,12,10,.5);
 }
@@ -325,7 +322,7 @@ main.content {
 
 .carousel-viewport {
   overflow:hidden; position:relative; padding: clamp(.5rem, 1vw, 1rem) 0;
-  touch-action: pan-y; cursor: grab; /*  trackpad friendly */
+  touch-action: pan-y; cursor: grab;
 }
 .carousel-viewport.dragging{ cursor: grabbing; }
 
@@ -554,7 +551,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 /* Left description plate */
 .splash-descbox{
-  --bleed: 95px;                                 /* controls overlap above/below */
+  --bleed: 95px;                                 
   position:absolute; left:3.5%; top:50%; transform: translateY(-50%);
   width: clamp(190px, 21.5%, 520px);
   height: calc(var(--band-h) + (var(--bleed) * 2));
@@ -597,7 +594,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   .splash-descbox{ left:4%; width: 90%; --bleed: 18px; }
 }
 
-/* ——— Splash title: INTENSE shadow-cursed purple/black glow ——— */
+/* ——— Splash title:  ——— */
 .splash-copy h2#splash-title{
   color:#eee8ff;
   text-shadow:
@@ -605,7 +602,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
     0 0 10px rgba(118,60,190,.7),
     0 0 26px rgba(155,122,255,.55),
     0 0 48px rgba(90,20,160,.45);
-  /* remove the two filter: drop-shadow() calls */
   animation: intenseCursedGlow 4.2s ease-in-out infinite;
 }
 @keyframes intenseCursedGlow{
@@ -623,4 +619,179 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 @media (prefers-reduced-motion: reduce){
   .splash-copy h2#splash-title{ animation: none; }
+}
+
+
+/* Multi-slide viewport */
+.splash-viewport{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;        
+}
+
+.splash-track{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  height: 100%;
+  transform: translate3d(0,0,0);           
+  transition: transform .45s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.splash-slide{
+  position: relative;
+  flex: 0 0 100%;           
+  height: 100%;
+  overflow: hidden;          
+}
+
+
+.splash-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:5; width:40px; height:40px; border-radius:999px;
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(252,229,205,.25);
+  color:#fce5cd; font-size:22px; line-height:38px; text-align:center;
+  cursor:pointer; opacity:.35; transition: opacity .2s ease, background .2s ease;
+}
+.splash-arrow:hover{ opacity:.9; background: rgba(0,0,0,.4); }
+.splash-arrow.prev{ left:10px; }
+.splash-arrow.next{ right:10px; }
+
+#campaign-splash.freeze .splash-copy h2{ animation: none !important; }
+
+.splash-viewport{ position:absolute; inset:0; z-index:1; overflow:hidden; }
+.splash-track{
+  position:absolute; inset:0; display:flex; height:100%;
+  transform: translate3d(0,0,0);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+.splash-slide{ position:relative; flex:0 0 100%; height:100%; overflow:hidden; }
+
+.splash-modal{ position:relative; }
+.splash-modal .carousel-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:5;
+}
+.splash-modal .carousel-nav.prev{ left:-56px; }
+.splash-modal .carousel-nav.next{ right:-56px; }
+
+#splashDots{ position:relative; z-index:3; margin-top:.5rem; display:flex; justify-content:center; }
+#campaign-splash.freeze .splash-copy h2{ animation:none !important; }
+
+.splash-modal { position: relative; }
+.splash-modal .carousel-nav { position:absolute; top:50%; transform:translateY(-50%); z-index:5; }
+.splash-modal .carousel-nav.prev { left:-56px; }
+.splash-modal .carousel-nav.next { right:-56px; }
+.splash-modal { overflow: visible; }
+
+/* Splash title: purple/corrupted glow */
+.splash-copy .splash-title{
+  color:#eee8ff;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.6),
+    0 0 10px rgba(118,60,190,.70),
+    0 0 26px rgba(155,122,255,.55),
+    0 0 48px rgba(90,20,160,.45),
+    0 0 72px rgba(90,20,160,.35);
+  animation: cursedGlow 4.2s ease-in-out infinite;
+}
+
+#campaign-splash.freeze .splash-copy .splash-title{
+  animation: none !important;
+}
+
+@keyframes cursedGlow{
+  0%,100%{
+    text-shadow:
+      0 2px 10px rgba(0,0,0,.6),
+      0 0 10px rgba(118,60,190,.70),
+      0 0 26px rgba(155,122,255,.55),
+      0 0 48px rgba(90,20,160,.45),
+      0 0 72px rgba(90,20,160,.35);
+  }
+  50%{
+    text-shadow:
+      0 2px 12px rgba(0,0,0,.7),
+      0 0 16px rgba(118,60,190,.85),
+      0 0 36px rgba(155,122,255,.70),
+      0 0 64px rgba(90,20,160,.60),
+      0 0 88px rgba(90,20,160,.50);
+  }
+}
+
+.splash-copy .splash-title.gold{
+  color:#fff7d6;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.55),
+    0 0 10px rgba(255,199,92,.80),
+    0 0 26px rgba(255,223,128,.65),
+    0 0 48px rgba(210,140,20,.55),
+    0 0 72px rgba(210,140,20,.45);
+  animation: gildedGlow 4.2s ease-in-out infinite;
+}
+
+#campaign-splash.freeze .splash-copy .splash-title{ animation:none !important; }
+
+@keyframes gildedGlow{
+  0%,100%{
+    text-shadow:
+      0 2px 10px rgba(0,0,0,.55),
+      0 0 10px rgba(255,199,92,.80),
+      0 0 26px rgba(255,223,128,.65),
+      0 0 48px rgba(210,140,20,.55),
+      0 0 72px rgba(210,140,20,.45);
+  }
+  50%{
+    text-shadow:
+      0 2px 12px rgba(0,0,0,.65),
+      0 0 16px rgba(255,210,110,.95),
+      0 0 36px rgba(255,235,160,.80),
+      0 0 64px rgba(230,160,30,.70),
+      0 0 88px rgba(230,160,30,.60);
+  }
+}
+/* Chevron Buttons */
+#campaign-splash .splash-modal .carousel-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 28px;
+  height: min(calc(var(--band-h) * 4), calc(100% - 40px));
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  color: var(--splash-gold);
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  text-shadow:
+    0 0 6px rgba(0,0,0,.55),
+    0 0 16px rgba(0,0,0,.35);
+  cursor: pointer;
+  user-select: none;
+}
+
+#campaign-splash .splash-modal .carousel-nav.prev{ left: 8px; }
+#campaign-splash .splash-modal .carousel-nav.next{ right: 8px; }
+
+#campaign-splash .splash-modal .carousel-nav:hover{
+  color: #ffe7a3;
+  transform: translateY(-50%) scale(1.05);
+}
+
+@media (max-width: 720px){
+  #campaign-splash .splash-modal .carousel-nav{
+    width: 28px;
+    height: min(calc(var(--band-h) * 3), calc(100% - 36px));
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
+  }
+  #campaign-splash .splash-modal .carousel-nav.prev{ left: 8px; }
+  #campaign-splash .splash-modal .carousel-nav.next{ right: 8px; }
 }
