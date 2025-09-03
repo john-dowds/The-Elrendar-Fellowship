@@ -815,3 +815,155 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 }
 #campaign-splash .splash-slide{ position:relative; flex:0 0 100%; height:100%; overflow:hidden; }
 #campaign-splash .splash-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+/* ------------------ Mobile polish  ------------------ */
+
+@media (max-width: 900px){
+  .sigil-overlay{
+    display: none !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1250px){
+  .sigil-overlay{
+    position: fixed;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    width: clamp(180px, 16vw, 260px);
+    opacity: .18;
+    z-index: 800;        
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 480px){
+  header.banner{ height: 180px; }
+}
+
+@media (max-width: 720px){
+  #campaign-splash .splash-modal{
+    width: 92vw;
+    height: min(70vh, 92dvh);
+  }
+  #campaign-splash .splash-copy{ margin-left: 0; width: 96%; }
+  #campaign-splash .splash-copy h2{ white-space: normal; }
+  #campaign-splash .splash-descbox{
+    left: 4%;
+    width: 90%;
+    --bleed: 18px;
+  }
+}
+
+#campaign-splash .splash-band{ height: var(--band-h, 140px); }
+#campaign-splash .splash-descbox{ height: calc(var(--band-h, 140px) + (var(--bleed, 95px) * 2)); }
+#campaign-splash .splash-modal .carousel-nav{
+  height: min(calc(var(--band-h, 140px) * 4), calc(100% - 40px));
+}
+
+/* ── Gallery Lightbox (scoped) — final overrides ───────────────────── */
+
+/* Hide the center band in the gallery lightbox only */
+#lightbox .splash-band { display: none; }
+
+/* Title stays at the top, centered */
+#lightbox .splash-copy{
+  top: 12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 96%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#lightbox .splash-copy .splash-title{
+  white-space: normal;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+}
+
+#lightbox .splash-descbox{
+  top: auto;
+  bottom: 12px;                 /* beneath the image */
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 94%;
+  height: auto;
+  min-height: 42px;
+  padding: .5rem .75rem;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 4;                   /* above image, below arrows/title */
+}
+#lightbox .splash-desc{
+  text-align: center;
+  font-size: clamp(.9rem, 1vw, .95rem);
+  line-height: 1.35;
+  text-align: inherit;
+  margin: 0 auto;
+}
+@supports (backdrop-filter: blur(2px)){
+  #lightbox .splash-descbox{
+    background: rgba(31,19,8,.28);
+    backdrop-filter: blur(2px);
+  }
+}
+@media (max-width: 720px){
+  #lightbox .splash-descbox{
+    width: 92%;
+    bottom: 10px;
+  }
+}
+
+/* Arrows tucked just inside the edges */
+#lightbox .carousel-nav.prev{ left: 8px; }
+#lightbox .carousel-nav.next{ right: 8px; }
+
+/* Optional readability on bright photos */
+@supports (backdrop-filter: blur(2px)){
+  #lightbox .splash-descbox{
+    background: rgba(31,19,8,.28);
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 720px){
+  #lightbox .splash-copy{ width: 96%; }
+  #lightbox .splash-descbox{
+    width: 90%;
+    min-height: 44px;
+    padding: .5rem .75rem;
+  }
+}
+
+/* Gallery filters: album select + small tag chips */
+.gallery-filters { align-items: center; gap: .5rem; flex-wrap: wrap; }
+
+/* Album dropdown styled to match the site */
+.gallery-filters .album-select{
+  appearance: none;
+  background: rgba(0,0,0,.55);
+  color: #fce5cd;
+  border: 1px solid #3a2a14;
+  border-radius: 10px;
+  padding: .45rem .9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.gallery-filters .album-select:focus{
+  outline: none;
+  border-color: #e4be59;
+  box-shadow: 0 0 0 3px rgba(228,190,89,.25);
+}
+
+/* Smaller chips for tags (inherits your .btn-primary look, but reduced) */
+.gallery-filters .chip{
+  padding: .35rem .6rem;
+  font-size: .9rem;
+  border-radius: 999px;
+}
+.gallery-filters .chip.is-active{
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 2px rgba(228,190,89,.25) inset;
+}

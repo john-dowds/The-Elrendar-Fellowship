@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elrendar Fellowship — Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Crest overlay (sitewide) -->
+  <img src="assets/art/crest2.png" alt="Elven Sigil" class="sigil-overlay" />
+
+  <!-- Header -->
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <!-- Main Nav -->
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="content gallery-page">
+    <section class="text-block" style="max-width:1100px;">
+      <h2 style="margin-top:0;">Gallery</h2>
+      <p>Browse shots from campaigns and events. Tap a tile to open the lightbox; swipe, use ←/→, or the gold arrows to move between photos. Filter by album or tag using the chips.</p>
+    </section>
+
+    <!-- Filters -->
+    <section class="text-block" style="max-width:1100px;">
+      <div id="galleryFilters" class="gallery-filters" aria-label="Gallery filters" style="display:flex;flex-wrap:wrap;gap:.5rem;">
+        <!-- chips injected by JS -->
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="section" style="max-width:1100px;">
+      <div id="galleryGrid" class="gallery-grid" aria-live="polite" style="
+        display:grid; gap:12px;
+        grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+      ">
+        <!-- tiles injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="splash-backdrop" hidden>
+    <div class="splash-modal" role="dialog" aria-modal="true" aria-labelledby="lbTitle" data-hero="off" style="max-width:1200px;">
+      <button class="splash-close" aria-label="Close">×</button>
+
+      <!-- Arrows (inside edges) -->
+      <button class="carousel-nav prev" aria-label="Previous image" title="Previous">‹</button>
+      <button class="carousel-nav next" aria-label="Next image" title="Next">›</button>
+
+      <!-- Viewport/Track -->
+      <div class="splash-viewport">
+        <div class="splash-track" id="lbTrack">
+          <!-- slides injected by JS -->
+        </div>
+      </div>
+
+      <!-- Caption band + text -->
+      <div class="splash-band" aria-hidden="true"></div>
+      <div class="splash-copy">
+        <h2 id="lbTitle" class="splash-title gold"></h2>
+      </div>
+      <div class="splash-descbox">
+        <p id="lbCaption" class="splash-desc"></p>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="lbDots" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Script (root) -->
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>
