@@ -1,0 +1,32 @@
+[
+  {
+    "id": "img001",
+    "src": "assets/gallery/earlybeginnings.png",
+    "thumb": "",
+    "title": "Early Beginnings",
+    "caption": "New fellows gather with the old for a night of social callings.",
+    "album": "Everyday RP",
+    "tags": ["casual-rp","members"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img002",
+    "src": "assets/gallery/privatewords.png",
+    "thumb": "",
+    "title": "Private Words",
+    "caption": "Ansinosth Summerbough and Knight-Lord Caledeth Bloodthorn speak in private.",
+    "album": "Everyday RP",
+    "tags": ["casual-rp","members","ansinosth","caledeth"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img003",
+    "src": "assets/gallery/ansinosthart.png",
+    "thumb": "",
+    "title": "The Chronicler",
+    "caption": "Ansinosth Summerbough at work. Art by Eregbueye.",
+    "album": "Character Art",
+    "tags": ["art","members","ansinosth"],
+    "credit": "© The Fellowship"
+  }
+]
