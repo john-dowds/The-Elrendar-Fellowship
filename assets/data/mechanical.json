@@ -870,7 +870,7 @@
           "name": "Shield Warders",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Elven magi protect the ship from incoming fire, deflecting attacks."
+          "effect": "Magi protect the ship from incoming fire, deflecting attacks."
         }
       ],
       "description": "Blood Elf destroyers powered by anima, serving as rapid support vessels around Quel’Thalas’s harbors.",

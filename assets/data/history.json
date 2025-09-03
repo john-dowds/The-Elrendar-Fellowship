@@ -9,15 +9,15 @@
       "id": "event001",
       "title": "Necrotic Nightcall",
       "subtitle": "== Mini-Event, August 25' ==",
-      "date": "c. 42",
+      "date": "c. Year 42",
       "summary_html": "\n Following the arrival of word that several Farstriders were murdered in the Ghostlands and that foul magic may have been at play, several members of the Fellowship, and their allies, venture out into the southern woodlands in the dark of night and pursue the trail to the Sanctum of the Moon. There, the fellows encounter shrouded figures working necromantic magics and attempting to open a portal to summon forth the death. <br><br> Andrys Blackthorn, Menadrael Embermourn, Hesparius Greymourn, and Magister Vileon Stormwrath battle the sinister cultists and undead, though are unable to prevent the escape of one as a monstrous Abomination is summoned through the portal. <br><br> Given the gruesome nature of the Farstriders' deaths, it is concluded that the Abomination was responsible, and while it was slain in the battle, the cult's leader remains at large.\n            ",
       "order": 25
     },
     {
       "id": "campaign1",
       "title": "What Lurks in the Shadows",
-      "subtitle": "== Fellowship Campaign 1 ==",
-      "date": "c. 42",
+      "subtitle": "== Fellowship Campaign 1, August 25' ==",
+      "date": "c. Year 42",
       "summary_html": "\n The Fellowship is called upon by the Magister Zaedana of Silvermoon to pursue leads on a dire, growing threat: the presence of fel taint within two arcane sanctums across Quel'Thalas. Though the Magisters of Quel'Thalas are well capable themselves of investigating such a task, the greater threat is revealed to be the suspect of a traitor within the ranks of the Magistry itself. <br><br> Tasked with getting to the bottom of the matter swiftly, the Elrendar Fellowship faces a daunting task of investigating the very officials who mandate the practice of magic throughout the High Home, and pursuing leads on somethingi that could prove terribly lethal to all.\n            ",
       "order": 24
     },
@@ -25,7 +25,7 @@
       "id": "tww",
       "title": "Fall of Dalaran & the Void War",
       "subtitle": "'Expansion: The War Within'",
-      "date": "c. 41-42",
+      "date": "c. Years 41-42",
       "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives with the aid of the Dark Heart, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand in the process ignites a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors commit their numbers to the cause of driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. <br><br>Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. \n            ",
       "order": 23
     },
@@ -33,7 +33,7 @@
       "id": "dragonflight",
       "title": "The Primalist War",
       "subtitle": "'Expansion: Dragonflight'",
-      "date": "c. 40-41",
+      "date": "c. Years 40-41",
       "summary_html": "\nWith several years of quiet at long last found on Azeroth, the Sin'dorei hasten their efforts to purge Quel'Thalas of the Scourge's taint, and to rebuild the once glorious High Home. On land far away, though, an awakening had begun; the ancient proto-dragons known as the Primal Incarnates. These massive, vengeful dragons break free from their imprisonment for the first time since the slaying of Galakrond, and set themselves to the destruction of the Dragonflights, whom they see as traitors to dragonkind. <br><br>Painful revelations rise about the transforming of the proto-drakes of old and their eggs into the evolved dragons known today, all made possible through the twisting magic of the Titans, through Keeper Tyr. Viewing this forced transformation as a violation of their free will, the Incarnates rebelled, and for that they were imprisoned. Now free, they renew their war against the dragonflights, and in the process deliver unto Xal'atath, the herald of Dimensius, the All Devouring, an artifact known as the Dark Heart. Imbued with the power of Galakrond's sinister essence, the void entity flees, leaving the dragons to their war, which strangles the Dragon Isles from shore to shore. <br><br>During the epic battles, the Kaldorei plant and grow the new World Tree, Amirdrassil, and settle many of their displaced survivors beneath its boughs. Though the primalist's war ends with the defeat of the Incarnates, the revelations and confrontations prompt the aspects to reassert their dedication to safeguarding Azeroth, once again assuming the mantle of responsibility for its protection.\n      ",
       "order": 22
     },
@@ -41,7 +41,7 @@
       "id": "rebirth",
       "title": "Emergence of the Fellowship",
       "subtitle": "== Guild History ==",
-      "date": "c. 40-42",
+      "date": "c. Years 40-42",
       "summary_html": "\nWith tensions still at an all time high following the unfathomable bloodshed of the Fourth War, surviving members of the reforged Fellowship convene a gathering and elect to step out from\nobscurity and embrace a more public role in guiding the future of elven kind. Some of the last remaining neutral-leaning forces of Thalassian kind, the leading members of the cohort begin to\nreach out to both the Sin'dorei, the Quel'dorei, and the Ren'dorei, aiming to begin building more open lines of communication and securing open visitation privileges for the other members of\nthe cohort.\n<br/>\n<br/>\nAs the conflict on the Dragon Isles raged, the Fellowship set its focus to shoring up holdings across Quel'Thalas, and renewed its efforts to rebuild throughout the southern landscape where \nmany vaults and sanctums had once stood. Even with animosity still ripe between the factions, the Fellowship manages to keep peace within its own ranks.\n      ",
       "order": 21
     },
@@ -147,7 +147,7 @@
       "title": "The Alliance Expedition",
       "subtitle": "'Game: Warcraft II'",
       "date": "c. Year 8",
-      "summary_html": "\n Following yet another incursion by the Horde into Azeroth through a reopened Dark Portal, Farstrider Ranger-Captain Alleria Windrunner joins the human General Turalyon, the dwarven thane Kurdran Wildhammer, the Kirin Tori archmage Khadgar, and the human Trollbane descendant Commander Danath Trollbane in forming the Sons of Lothar, also known as the Alliance Expedition. <br><br> ues the Horde through the Dark Portal into the ruins of Draenor with the intent to end the Horde once and for all. Despite their victories against the orcish Horde there, their Expedition faces disaster as the world is torn asunder by the opening of countless portals, damning countless soldiers to the abyss, and resulting in the presumed loss of the Expedition, and both General Turalyon and Ranger-Captain Alleria Windrunner. <br><br>  years the Expedition is presumed lost beyond the now-decimated Dark Portal. \n      ",
+      "summary_html": "\n Following yet another incursion by the Horde into Azeroth through a reopened Dark Portal, Farstrider Ranger-Captain Alleria Windrunner joins the human General Turalyon, the dwarven thane Kurdran Wildhammer, the Kirin Tori archmage Khadgar, and the human Trollbane descendant Commander Danath Trollbane in forming the Sons of Lothar, also known as the Alliance Expedition. <br><br> The allied forces, calling themselves the Sons of Lothar in honor of the fallen war hero, pursue the Horde through the Dark Portal into the ruins of Draenor with the intent to end the Horde once and for all. Despite their victories against the orcish Horde there, their Expedition faces disaster as the world is torn asunder by the opening of countless portals, damning countless soldiers to the abyss, and resulting in the presumed loss of the Expedition, and both General Turalyon and Ranger-Captain Alleria Windrunner. <br><br>  years the Expedition is presumed lost beyond the now-decimated Dark Portal. \n      ",
       "order": 8
     },
     {

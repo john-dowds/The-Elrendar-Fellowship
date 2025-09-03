@@ -765,7 +765,7 @@
           "effect": "Brings allies or entities onto the field."
         },
         {
-          "name": "Keen Eyes",
+          "name": "Keen Senses",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Reveals hidden or invisible units briefly."
@@ -813,7 +813,7 @@
           "effect": "Rakes with talons in a diving pass, dealing direct damage."
         },
         {
-          "name": "Keen Vision",
+          "name": "Keen Senses",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Reveals hidden or invisible units briefly."
@@ -1127,7 +1127,7 @@
           "effect": "Rakes with talons in a diving pass, dealing direct damage."
         },
         {
-          "name": "Battle Roar",
+          "name": "Screeching Cry",
           "trait": "area_blast",
           "theme": "aoe",
           "effect": "Instantly damages all enemies in a radius."
@@ -3262,7 +3262,7 @@
           "effect": "Quickly move a short distance without teleporting."
         },
         {
-          "name": "Keen Vision",
+          "name": "Keen Senses",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Reveals hidden or invisible units briefly."

@@ -568,7 +568,7 @@
           "name": "Area Blast",
           "trait": "area_blast",
           "theme": "aoe",
-          "effect": "Cracks ice in a shock, damaging nearby foes."
+          "effect": "Instantly damages all enemies in a radius."
         }
       ],
       "description": "Half-giant taurens of the frozen north, savage and cruel.",

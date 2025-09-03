@@ -3196,10 +3196,10 @@
           "effect": "Deals extra damage when attacking with allies."
         },
         {
-          "name": "Keen Nose",
+          "name": "Keen Senses",
           "trait": "reveal_hidden",
           "theme": "utility",
-          "effect": "Advantage on tracking in forests."
+          "effect": "Reveals hidden or invisible units briefly."
         }
       ],
       "description": "Quick-moving hyena-men who stalk roads and camps for prey.",
@@ -3986,10 +3986,10 @@
           "effect": "Resistant to fatigue in mountains and rivers."
         },
         {
-          "name": "Horn Charge",
+          "name": "Antler Charge",
           "trait": "dash",
           "theme": "utility",
-          "effect": "On a solid strike, staggers foes with moose antlers."
+          "effect": "Quickly move a short distance without teleporting."
         }
       ],
       "description": "Hardy tauren of the Broken Isles, descended from Huln Highmountain.",
@@ -7632,7 +7632,7 @@
           "name": "Wolf Charge",
           "trait": "dash",
           "theme": "utility",
-          "effect": "Mount barrels into foes."
+          "effect": "Mount barrels through foes."
         },
         {
           "name": "Harass",
@@ -12087,10 +12087,10 @@
       "hp": 12,
       "traits": [
         {
-          "name": "Keen Nose",
+          "name": "Keen Senses",
           "trait": "reveal_hidden",
           "theme": "utility",
-          "effect": "Advantage on detection and tracking checks."
+          "effect": "Reveals hidden or invisible units briefly."
         },
         {
           "name": "Quick Escape",
