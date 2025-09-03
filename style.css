@@ -863,10 +863,8 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 /* ── Gallery Lightbox (scoped) — final overrides ───────────────────── */
 
-/* Hide the center band in the gallery lightbox only */
 #lightbox .splash-band { display: none; }
 
-/* Title stays at the top, centered */
 #lightbox .splash-copy{
   top: 12px;
   left: 50%;
@@ -884,7 +882,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
 
 #lightbox .splash-descbox{
   top: auto;
-  bottom: 12px;                 /* beneath the image */
+  bottom: 12px;   
   left: 50%;
   transform: translate(-50%, 0);
   width: 94%;
@@ -893,7 +891,7 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   padding: .5rem .75rem;
   border-radius: 10px;
   text-align: center;
-  z-index: 4;                   /* above image, below arrows/title */
+  z-index: 4;      
 }
 #lightbox .splash-desc{
   text-align: center;
@@ -915,11 +913,9 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   }
 }
 
-/* Arrows tucked just inside the edges */
 #lightbox .carousel-nav.prev{ left: 8px; }
 #lightbox .carousel-nav.next{ right: 8px; }
 
-/* Optional readability on bright photos */
 @supports (backdrop-filter: blur(2px)){
   #lightbox .splash-descbox{
     background: rgba(31,19,8,.28);
@@ -927,7 +923,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   }
 }
 
-/* Mobile tweaks */
 @media (max-width: 720px){
   #lightbox .splash-copy{ width: 96%; }
   #lightbox .splash-descbox{
@@ -937,10 +932,8 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   }
 }
 
-/* Gallery filters: album select + small tag chips */
 .gallery-filters { align-items: center; gap: .5rem; flex-wrap: wrap; }
 
-/* Album dropdown styled to match the site */
 .gallery-filters .album-select{
   appearance: none;
   background: rgba(0,0,0,.55);
@@ -957,7 +950,6 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
   box-shadow: 0 0 0 3px rgba(228,190,89,.25);
 }
 
-/* Smaller chips for tags (inherits your .btn-primary look, but reduced) */
 .gallery-filters .chip{
   padding: .35rem .6rem;
   font-size: .9rem;

@@ -1,12 +1,9 @@
-// gallery.js — full replacement (root)
-// Data lives at assets/data/gallery.json; images at assets/gallery/*
-
 const DATA_URL = 'assets/data/gallery.json';
 
 const grid = document.getElementById('galleryGrid');
 const filters = document.getElementById('galleryFilters');
 
-// Lightbox (reuses your splash & carousel classes from style.css)
+// Lightbox 
 const LB = document.getElementById('lightbox');
 const MODAL = LB.querySelector('.splash-modal');
 const CLOSE = LB.querySelector('.splash-close');
@@ -36,9 +33,9 @@ let wheelAcc = 0;
 function createChip(label, value) {
   const b = document.createElement('button');
   b.type = 'button';
-  b.className = 'btn-primary chip';     // smaller chip; styled in CSS
+  b.className = 'btn-primary chip'; 
   b.textContent = label;
-  b.dataset.tag = value;                // '' or 'tag:foo'
+  b.dataset.tag = value;            
   return b;
 }
 
@@ -86,7 +83,6 @@ async function load() {
   });
   filters.appendChild(albumSelect);
 
-  // separator
   if (tags.length) {
     const sep = document.createElement('span');
     sep.style.margin = '0 .5rem';
@@ -95,26 +91,23 @@ async function load() {
     filters.appendChild(sep);
   }
 
-  // --- Tag chips (right) ---
   const allTags = createChip('All tags', '');
   allTags.classList.add('is-active');
   filters.appendChild(allTags);
 
   tags.forEach(t => filters.appendChild(createChip('#' + t, 'tag:' + t)));
 
-  // Tag click handling
   filters.addEventListener('click', (e) => {
     const btn = e.target.closest('button.chip[data-tag]');
     if (!btn) return;
     filters.querySelectorAll('button.chip[data-tag]').forEach(b => b.classList.remove('is-active'));
     btn.classList.add('is-active');
 
-    const raw = btn.dataset.tag;  // '' or 'tag:foo'
+    const raw = btn.dataset.tag; 
     currentTag = raw.startsWith('tag:') ? raw.slice(4) : '';
     applyFilters();
   });
 
-  // Initial draw
   renderGrid(photos);
 }
 
@@ -164,13 +157,10 @@ function buildSlides() {
 }
 
 function measure(){
-  // Compute slide width from viewport or modal
   vw = VIEWPORT.clientWidth || MODAL.clientWidth || 0;
-  // Snap transform to current index
   TRACK.style.transform = `translate3d(${-index * vw}px,0,0)`;
 }
 
-// Ensure we have a usable width before sliding
 function ensureMeasure(){
   if (!vw || vw <= 0) measure();
 }
@@ -195,31 +185,26 @@ function step(dir) {
   isAnimating = true;
   const next = Math.max(0, Math.min(filtered.length - 1, index + dir));
   index = next;
-  TRACK.style.transition = ''; // use CSS transition from .splash-track
+  TRACK.style.transition = '';
   TRACK.style.transform = `translate3d(${-index * vw}px,0,0)`;
   setTimeout(() => { isAnimating = false; }, 250);
   updateUI();
 }
 
 function openLightbox(photoId) {
-  // Pick starting slide
   const i = filtered.findIndex(p => p.id === photoId);
   index = i >= 0 ? i : 0;
 
-  // Build slides & dots
   buildSlides();
 
-  // Make the lightbox visible BEFORE measuring (fixes 0-width bug)
   LB.hidden = false;
   MODAL.setAttribute('aria-labelledby', 'lbTitle');
 
-  // Initial UI text (safe even before measure)
   updateUI();
 
-  // Measure & snap once laid out
   requestAnimationFrame(() => {
     measure();
-    show(index); // ensures transform is correct and dots/title/caption are in sync
+    show(index); 
   });
 }
 
@@ -261,7 +246,7 @@ function prewire() {
     TRACK.style.transition = '';
     const THRESH = 60;
     if (Math.abs(dragDX) > THRESH) step(dragDX < 0 ? 1 : -1);
-    else show(index); // snap back
+    else show(index); 
     dragDX = 0;
   }
   VIEWPORT.addEventListener('pointerup', finishDrag);
