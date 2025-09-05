@@ -31,12 +31,42 @@
   },
   {
     "id": "img004",
-    "src": "assets/frames/caledethbloodthornportrait.png",
+    "src": "assets/frames/caledathbloodthornportrait.png",
     "thumb": "",
     "title": "Caledeth Bloodthorn",
     "caption": "The Knight-Lord himself, Caledeth Bloodthorn",
     "album": "Character Art",
     "tags": ["art","members","caledeth"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img005",
+    "src": "assets/frames/malchiadessilversunportrait.png",
+    "thumb": "",
+    "title": "Scion of the Silversun",
+    "caption": "The archmage and sorcerer himself, Malchiades Silversun.",
+    "album": "Character Art",
+    "tags": ["art","members","malchiades"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img006",
+    "src": "assets/gallery/trainingevent1.png",
+    "thumb": "",
+    "title": "Training in Eversong",
+    "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
+    "album": "Character Art",
+    "tags": ["members","events"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img007",
+    "src": "assets/gallery/trainingevent2.png",
+    "thumb": "",
+    "title": "Training in Eversong",
+    "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
+    "album": "Character Art",
+    "tags": ["members","events"],
     "credit": "© The Fellowship"
   }
 ]
