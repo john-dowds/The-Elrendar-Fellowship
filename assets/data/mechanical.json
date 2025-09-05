@@ -157,7 +157,7 @@
     },
     {
       "id": "mech_sin_dorei_arcane_sentinel",
-      "name": "Blood Elf Arcane Sentinel",
+      "name": "Sin'dorei Arcane Sentinel",
       "class": "Arcane Construct",
       "category": "Mechanicals",
       "subcategory": "Sin’dorei",
@@ -179,8 +179,10 @@
       "description": "Magically forged guardians patrolling blood elf spires, powered by intricate runic engines.",
       "campaignLinks": [
         "tbc",
-        "legion"
-      ]
+        "legion",
+        "event002"
+      ],
+       "image": "assets/art/monsters/arcanegolem.png"
     },
     {
       "id": "mech_sin_dorei_arcane_colossus",
@@ -302,7 +304,8 @@
         }
       ],
       "description": "Ancient watchers animated by runic cores.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/arcanegolem.png"
     },
     {
       "id": "mech_iron_colossus",
@@ -352,6 +355,7 @@
       "description": "Patrol units from Mechagon’s authoritarian streets.",
       "campaignLinks": []
     },
+
     {
       "id": "mech_mechagon_spider",
       "name": "Mechagon Spider Walker",
