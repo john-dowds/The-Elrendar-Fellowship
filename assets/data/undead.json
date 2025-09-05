@@ -483,6 +483,31 @@
       "campaignLinks": ["fallqt","wotlk"]
     },
     {
+      "id": "spirit_fragment",
+      "name": "Tattered Spirit Fragment",
+      "class": "Malignant Spirit",
+      "category": "Undead",
+      "subcategory": "Incorporeal",
+      "hp": 14,
+      "traits": [
+        {
+          "name": "Life Siphon",
+          "trait": "strike",
+          "theme": "damage",
+          "effect": "Steals a measure of vitality on strike."
+        },
+        {
+          "name": "Wail of the Dead",
+          "trait": "wail_of_the_dead",
+          "theme": "debuffs",
+          "effect": "A keening shriek that rattles courage."
+        }
+      ],
+      "description": "Focused malice given form; colder and crueler than any ghost.",
+      "campaignLinks": ["fallqt","wotlk","campaign1"],
+      "image": "assets/art/monsters/angryspirit.png"
+    },
+    {
       "id": "undead_wraith",
       "name": "Wraith",
       "class": "Malignant Spirit",

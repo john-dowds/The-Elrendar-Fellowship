@@ -5391,8 +5391,8 @@
 {
   "id": "skin_walking",
   "name": "Skin Walking",
-  "theme": "damage",
-  "effect": "Cuts deep with runed claws, dealing direct damage.",
+  "theme": "utility",
+  "effect": "Takes control of a victim's body and manipulates it like a puppet.",
   "usedBy": ["demon_nathrezim_infiltrator"],
   "categories": ["Demons:Commanders"]
 },
@@ -6624,9 +6624,9 @@
   "id": "vampiric_touch",
   "name": "Vampiric Touch",
   "theme": "damage",
-  "effect": "Cuts deep with runed claws, dealing direct damage.",
-  "usedBy": ["demon_nathrezim_dreadlord"],
-  "categories": ["Demons:Commanders"]
+  "effect": "Cuts deep with runed claws, dealing direct damage that leechs health over time.",
+  "usedBy": ["demon_nathrezim_dreadlord","kartharax_boss"],
+  "categories": ["Demons:Commanders","NPCs:Demons"]
 },
 {
   "id": "vault_enchantment",
@@ -7465,8 +7465,8 @@
   "name": "Disintegrating Gaze",
   "theme": "aoe",
   "effect": "Fires a piercing beam that damages enemies in a straight line.",
-  "usedBy": ["demon_observer"],
-  "categories": ["Demons:Inquisition"]
+  "usedBy": ["demon_observer","kartharax_boss"],
+  "categories": ["Demons:Inquisition","NPCs:Demons"]
 },
 {
   "id": "dual_smash",
@@ -12889,16 +12889,16 @@
   "name": "Mana Siphon",
   "theme": "debuffs",
   "effect": "Null fel dampens incantations, silencing the target.",
-  "usedBy": ["demon_felhunter"],
-  "categories": ["Demons:Fel Beasts"]
+  "usedBy": ["demon_felhunter","kartharax_boss"],
+  "categories": ["Demons:Fel Beasts","NPCs:Demons"]
 },
 {
   "id": "meteor_impact",
   "name": "Meteor Impact",
   "theme": "debuffs",
   "effect": "A violent surge of fel overloads the target, stunning them briefly.",
-  "usedBy": ["demon_infernal"],
-  "categories": ["Demons:Infantry"]
+  "usedBy": ["demon_infernal","kartharax_boss"],
+  "categories": ["Demons:Infantry","NPCs:Demons"]
 },
 {
   "id": "mogu_discipline",
@@ -13089,8 +13089,8 @@
   "name": "Seed of Corruption",
   "theme": "debuffs",
   "effect": "A doom-mark lingers, afflicting the target with harm.",
-  "usedBy": ["demon_satyr_corrupter"],
-  "categories": ["Demons:Satyr"]
+  "usedBy": ["demon_satyr_corrupter","kartharax_boss"],
+  "categories": ["Demons:Satyr","NPC:demons"]
 },
 {
   "id": "sha_infusion_2",
@@ -13401,7 +13401,7 @@
   "name": "Wail of the Dead",
   "theme": "debuffs",
   "effect": "A keening shriek that rattles courage.",
-  "usedBy": ["undead_banshee"],
+  "usedBy": ["undead_banshee","spirit_fragment"],
   "categories": ["Undead:Incorporeal"]
 },
 {

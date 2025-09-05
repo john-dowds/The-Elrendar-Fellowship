@@ -5171,8 +5171,8 @@
       "id": "iron_dwarf",
       "name": "Iron Dwarf",
       "class": "Construct Infantry",
-      "category": "Humanoids",
-      "subcategory": "Dwarves",
+      "category": "Titan-Forged",
+      "subcategory": "Dwarf",
       "hp": 20,
       "traits": [
         {
@@ -5195,8 +5195,8 @@
       "id": "iron_dwarf_runemaster",
       "name": "Runemaster",
       "class": "Rune Caster",
-      "category": "Humanoids",
-      "subcategory": "Dwarves",
+      "category": "Titan-Forged",
+      "subcategory": "Dwarf",
       "hp": 22,
       "traits": [
         {
@@ -6542,7 +6542,7 @@
       "id": "mogu_arcanist",
       "name": "Mogu Arcanist",
       "class": "Sorcerer",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 22,
       "traits": [
@@ -6568,7 +6568,7 @@
       "id": "mogu_construct_handler",
       "name": "Mogu Construct Handler",
       "class": "Engineer",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 22,
       "traits": [
@@ -6594,7 +6594,7 @@
       "id": "mogu_enforcer",
       "name": "Mogu Enforcer",
       "class": "Bruiser",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 28,
       "traits": [
@@ -6620,7 +6620,7 @@
       "id": "mogu_flesh_shaper",
       "name": "Mogu Flesh-Shaper",
       "class": "Ritualist",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 24,
       "traits": [
@@ -6646,7 +6646,7 @@
       "id": "mogu_spiritbinder",
       "name": "Mogu Spiritbinder",
       "class": "Necromancer",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 23,
       "traits": [
@@ -6672,7 +6672,7 @@
       "id": "mogu_warlord",
       "name": "Mogu Warlord",
       "class": "Commander",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 30,
       "traits": [
@@ -6698,7 +6698,7 @@
       "id": "mogu_warrior",
       "name": "Mogu Warrior",
       "class": "Infantry",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Mogu",
       "hp": 24,
       "traits": [
@@ -10063,7 +10063,7 @@
       "id": "tolvir_arcanist",
       "name": "Tol’vir Arcanist",
       "class": "Arcane Caster",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 20,
       "traits": [
@@ -10089,7 +10089,7 @@
       "id": "tolvir_brute",
       "name": "Tol’vir Brute",
       "class": "Bruiser",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 26,
       "traits": [
@@ -10115,7 +10115,7 @@
       "id": "tolvir_high_priest",
       "name": "Tol’vir High Priest",
       "class": "Ritual Cleric",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 22,
       "traits": [
@@ -10141,7 +10141,7 @@
       "id": "tolvir_sentinel",
       "name": "Tol’vir Sentinel",
       "class": "Defender",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 24,
       "traits": [
@@ -10167,7 +10167,7 @@
       "id": "tolvir_vizier",
       "name": "Tol’vir Vizier",
       "class": "Commander",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 26,
       "traits": [
@@ -10193,7 +10193,7 @@
       "id": "tolvir_warrior",
       "name": "Tol’vir Warrior",
       "class": "Infantry",
-      "category": "Titan-Forged (Flesh)",
+      "category": "Titan-Forged",
       "subcategory": "Tol’vir",
       "hp": 22,
       "traits": [
