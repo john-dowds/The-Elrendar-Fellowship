@@ -55,7 +55,7 @@
     "thumb": "",
     "title": "Training in Eversong",
     "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
-    "album": "Character Art",
+    "album": "Events",
     "tags": ["members","events"],
     "credit": "© The Fellowship"
   },
@@ -65,8 +65,59 @@
     "thumb": "",
     "title": "Training in Eversong",
     "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
-    "album": "Character Art",
+    "album": "Events",
     "tags": ["members","events"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img007",
+    "src": "assets/gallery/campaignevent1ss1.png",
+    "thumb": "",
+    "title": "'The Two' Campaign 1, Event 1",
+    "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
+    "album": "Events",
+    "tags": ["members","events","campaign1"],
+    "credit": "© The Fellowship"
+  }
+  ,
+  {
+    "id": "img008",
+    "src": "assets/gallery/campaignevent1ss2.png",
+    "thumb": "",
+    "title": "'The Two' Campaign 1, Event 1",
+    "caption": "A member of the Fellowship stands guard while others investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
+    "album": "Events",
+    "tags": ["members","events","campaign1"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img009",
+    "src": "assets/gallery/campaignevent1ss3.png",
+    "thumb": "",
+    "title": "'The Two' Campaign 1, Event 1",
+    "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
+    "album": "Events",
+    "tags": ["members","events","campaign1"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img010",
+    "src": "assets/gallery/campaignevent1ss4.png",
+    "thumb": "",
+    "title": "'The Two' Campaign 1, Event 1",
+    "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
+    "album": "Events",
+    "tags": ["members","events","campaign1"],
+    "credit": "© The Fellowship"
+  },
+  {
+    "id": "img011",
+    "src": "assets/gallery/campaignevent1ss5.png",
+    "thumb": "",
+    "title": "'The Two' Campaign 1, Event 1",
+    "caption": "Members of the Fellowship consult in private before departing to investigate a growing crisis.",
+    "album": "Events",
+    "tags": ["members","events","campaign1"],
     "credit": "© The Fellowship"
   }
 ]
