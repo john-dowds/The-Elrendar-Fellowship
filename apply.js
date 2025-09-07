@@ -54,7 +54,7 @@ form.addEventListener('submit', async (e) => {
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(data)
       });
-      statusEl.textContent = 'Submitted. Thanks for applying; we will get back to you soon.';
+      statusEl.textContent = 'Submitted. Thanks for applying; we will get back to you soon. In the meantime, you can join our discord at https://discord.gg/DpjkpE5KPD';
       form.reset();
     } catch (e2) {
       statusEl.textContent = 'Error. Could not submit.';
