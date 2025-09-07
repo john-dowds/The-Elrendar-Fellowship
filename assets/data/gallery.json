@@ -6,8 +6,7 @@
     "title": "Early Beginnings",
     "caption": "New fellows gather with the old for a night of social callings.",
     "album": "Everyday RP",
-    "tags": ["casual-rp","members"],
-    "credit": "© The Fellowship"
+    "tags": ["casual-rp","members"]
   },
   {
     "id": "img002",
@@ -16,8 +15,7 @@
     "title": "Private Words",
     "caption": "Ansinosth Summerbough and Knight-Lord Caledeth Bloodthorn speak in private.",
     "album": "Everyday RP",
-    "tags": ["casual-rp","members","ansinosth","caledeth"],
-    "credit": "© The Fellowship"
+    "tags": ["casual-rp","members","ansinosth","caledeth"]
   },
   {
     "id": "img003",
@@ -26,28 +24,25 @@
     "title": "The Chronicler",
     "caption": "Ansinosth Summerbough at work. Art by Eregbueye.",
     "album": "Character Art",
-    "tags": ["art","members","ansinosth"],
-    "credit": "© The Fellowship"
+    "tags": ["art","members","ansinosth"]
   },
   {
     "id": "img004",
     "src": "assets/frames/caledethbloodthornportrait.png",
     "thumb": "",
     "title": "Caledeth Bloodthorn",
-    "caption": "The Knight-Lord himself, Caledeth Bloodthorn",
+    "caption": "The Knight-Lord himself, Caledeth Bloodthorn. Art by Caledeth.",
     "album": "Character Art",
-    "tags": ["art","members","caledeth"],
-    "credit": "© The Fellowship"
+    "tags": ["art","members","caledeth"]
   },
   {
     "id": "img005",
     "src": "assets/frames/malchiadessilversunportrait.png",
     "thumb": "",
     "title": "Scion of the Silversun",
-    "caption": "The archmage and sorcerer himself, Malchiades Silversun.",
+    "caption": "The archmage and sorcerer himself, Malchiades Silversun. Art by Buyansanjaa.",
     "album": "Character Art",
-    "tags": ["art","members","malchiades"],
-    "credit": "© The Fellowship"
+    "tags": ["art","members","malchiades"]
   },
   {
     "id": "img006",
@@ -56,8 +51,7 @@
     "title": "Training in Eversong",
     "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
     "album": "Events",
-    "tags": ["members","events"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events"]
   },
   {
     "id": "img007",
@@ -66,8 +60,7 @@
     "title": "Training in Eversong",
     "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
     "album": "Events",
-    "tags": ["members","events"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events"]
   },
   {
     "id": "img007",
@@ -76,8 +69,7 @@
     "title": "What Lurks in the Shadows: Campaign 1, Event 1",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events","campaign1"]
   }
   ,
   {
@@ -87,8 +79,7 @@
     "title": "What Lurks in the Shadows: Campaign 1, Event 1",
     "caption": "A member of the Fellowship stands guard while others investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events","campaign1"]
   },
   {
     "id": "img009",
@@ -97,8 +88,7 @@
     "title": "What Lurks in the Shadows: Campaign 1, Event 1",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events","campaign1"]
   },
   {
     "id": "img010",
@@ -107,8 +97,7 @@
     "title": "What Lurks in the Shadows: Campaign 1, Event 1",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events","campaign1"]
   },
   {
     "id": "img011",
@@ -117,7 +106,25 @@
     "title": "What Lurks in the Shadows: Campaign 1, Event 1",
     "caption": "Members of the Fellowship consult in private before departing to investigate a growing crisis.",
     "album": "Events",
-    "tags": ["members","events","campaign1"],
-    "credit": "© The Fellowship"
+    "tags": ["members","events","campaign1"]
+  }
+  ,
+  {
+    "id": "img012",
+    "src": "assets/gallery/ansinosthart2.png",
+    "thumb": "",
+    "title": "The Master Sorcerer",
+    "caption": "Master Sorcerer Ansinosth Summerbough weaving a spell. Art by Mira Sands.",
+    "album": "Character Art",
+    "tags": ["members","ansinosth"]
+  },
+  {
+    "id": "img013",
+    "src": "assets/gallery/hespirart.png",
+    "thumb": "",
+    "title": "Hespir Everwyern",
+    "caption": "A pyromancer of the Sunfury under Kael'thas, Hespir was one of the youngest soldiers defending Quel'Thalas after its fall; he still carries on even today. Art by Mira Sands.",
+    "album": "Character Art",
+    "tags": ["members","hespir"]
   }
 ]
