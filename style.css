@@ -989,3 +989,77 @@ textarea{ resize: vertical; grid-column: 1 / -1; }
       0 0 92px rgba(120,235,255,.65);
   }
 }
+
+/* ── Gallery Lightbox ───────── */
+
+#lightbox .splash-modal{
+  width: auto;
+  height: auto;
+  max-width: 92vw; 
+  max-height: 92vh;
+  display: inline-block;
+  overflow: visible; 
+}
+
+#lightbox .splash-viewport{
+  position: static;   
+  display: inline-block;
+  overflow: visible;
+}
+
+#lightbox .splash-track{
+  position: static;
+  display: block;
+  height: auto;
+  transform: none !important;
+}
+
+#lightbox .splash-slide{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  overflow: visible;
+}
+
+#lightbox .splash-slide img.splash-bg{
+  position: static;  
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 92vw;
+  max-height: calc(92vh - 180px);
+  object-fit: contain;
+}
+#lightbox .carousel-nav.prev{ left: 8px; }
+#lightbox .carousel-nav.next{ right: 8px; }
+
+/* --- Gallery Lightbox: hard reset any darkening/blend on images --- */
+#lightbox .splash-modal,
+#lightbox .splash-viewport,
+#lightbox .splash-track,
+#lightbox .splash-slide,
+#lightbox .splash-slide img.splash-bg {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+}
+
+/* Keep image in normal flow (not a background) */
+#lightbox .splash-slide img.splash-bg{
+  position: static !important;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 92vw;
+  max-height: calc(92vh - 180px);
+  object-fit: contain;
+  background: transparent !important;   /* just in case */
+}
+
+/* Optional: lighten the slide base so blending never multiplies against pure black */
+#lightbox .splash-slide{
+  background: #000; /* or transparent, as you prefer */
+}
+

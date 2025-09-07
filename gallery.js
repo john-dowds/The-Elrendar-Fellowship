@@ -1,41 +1,35 @@
+/* Data location */
 const DATA_URL = 'assets/data/gallery.json';
 
+/* Grid + filters */
 const grid = document.getElementById('galleryGrid');
 const filters = document.getElementById('galleryFilters');
 
-// Lightbox 
-const LB = document.getElementById('lightbox');
-const MODAL = LB.querySelector('.splash-modal');
-const CLOSE = LB.querySelector('.splash-close');
-const TRACK = document.getElementById('lbTrack');
-const DOTS  = document.getElementById('lbDots');
-const BTN_PREV = LB.querySelector('.carousel-nav.prev');
-const BTN_NEXT = LB.querySelector('.carousel-nav.next');
-const VIEWPORT = LB.querySelector('.splash-viewport');
-const TITLE = document.getElementById('lbTitle');
-const CAP   = document.getElementById('lbCaption');
+/* Lightbox (isolated) */
+const GLB = document.getElementById('glb');
+const MODAL = GLB.querySelector('.glb__modal');
+const IMG = document.getElementById('glbImg');
+const TITLE = document.getElementById('glbTitle');
+const CAP = document.getElementById('glbCap');
+const BTN_CLOSE = GLB.querySelector('.glb__close');
+const BTN_PREV = GLB.querySelector('.glb__prev');
+const BTN_NEXT = GLB.querySelector('.glb__next');
 
-// State
 let photos = [];
 let filtered = [];
 let currentAlbum = '';
 let currentTag = '';
 
 let index = 0;
-let vw = 0;
-let isAnimating = false;
 
-let isDragging = false, startX = 0, baseX = 0, dragDX = 0, pointerId = null;
-let wheelAcc = 0;
-
-/* -------------------- Filters UI -------------------- */
+/* =============== Filters UI =============== */
 
 function createChip(label, value) {
   const b = document.createElement('button');
   b.type = 'button';
-  b.className = 'btn-primary chip'; 
+  b.className = 'btn-primary chip';
   b.textContent = label;
-  b.dataset.tag = value;            
+  b.dataset.tag = value;
   return b;
 }
 
@@ -56,11 +50,9 @@ async function load() {
   if (!res.ok) throw new Error('Failed to load assets/data/gallery.json');
   photos = await res.json();
 
-  // Build lists
   const albums = Array.from(new Set(photos.map(p => p.album || 'Unsorted'))).sort((a,b)=>a.localeCompare(b));
   const tags = Array.from(new Set(photos.flatMap(p => p.tags || []))).sort((a,b)=>a.localeCompare(b));
 
-  // --- Album dropdown (left) ---
   const albumSelect = document.createElement('select');
   albumSelect.id = 'albumSelect';
   albumSelect.className = 'album-select';
@@ -103,7 +95,7 @@ async function load() {
     filters.querySelectorAll('button.chip[data-tag]').forEach(b => b.classList.remove('is-active'));
     btn.classList.add('is-active');
 
-    const raw = btn.dataset.tag; 
+    const raw = btn.dataset.tag;
     currentTag = raw.startsWith('tag:') ? raw.slice(4) : '';
     applyFilters();
   });
@@ -111,170 +103,109 @@ async function load() {
   renderGrid(photos);
 }
 
-/* -------------------- Grid -------------------- */
+/* =============== Grid =============== */
 
 function renderGrid(list) {
   filtered = list;
   grid.innerHTML = '';
+
   for (const p of list) {
     const fig = document.createElement('figure');
     fig.className = 'photo-tile';
-    fig.style.cssText = `
-      position:relative; aspect-ratio: 4/3; overflow:hidden; border:1px solid rgba(0,0,0,.45);
-      border-radius:10px; background:#000;
-    `;
+
     fig.innerHTML = `
-      <img src="${p.thumb || p.src}" alt="${p.alt || p.title || ''}" loading="lazy" decoding="async"
-           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.95) brightness(.98)">
-      ${p.credit ? `<figcaption style="position:absolute;right:6px;bottom:4px;font-size:.8rem;opacity:.8;">${p.credit}</figcaption>` : ''}
+      <img src="${p.thumb || p.src}" alt="${p.alt || p.title || ''}" loading="lazy" decoding="async">
     `;
-    fig.addEventListener('click', () => openLightbox(p.id));
+
+    fig.addEventListener('click', () => openLightboxById(p.id));
+    fig.style.position = 'relative';
+
     grid.appendChild(fig);
   }
 }
 
-/* -------------------- Lightbox Slides -------------------- */
 
-function buildSlides() {
-  TRACK.innerHTML = '';
-  DOTS.innerHTML = '';
+/* =============== Lightbox (single <img> approach) =============== */
 
-  filtered.forEach((p, i) => {
-    const slide = document.createElement('section');
-    slide.className = 'splash-slide';
-    slide.innerHTML = `
-      <img class="splash-bg" src="${p.src}" alt="${p.alt || p.title || ''}">
-    `;
-    TRACK.appendChild(slide);
-
-    const d = document.createElement('button');
-    d.type = 'button';
-    d.className = 'carousel-dot';
-    d.setAttribute('aria-label', `Go to image ${i+1}`);
-    d.addEventListener('click', () => show(i));
-    DOTS.appendChild(d);
-  });
-}
-
-function measure(){
-  vw = VIEWPORT.clientWidth || MODAL.clientWidth || 0;
-  TRACK.style.transform = `translate3d(${-index * vw}px,0,0)`;
-}
-
-function ensureMeasure(){
-  if (!vw || vw <= 0) measure();
-}
-
-function updateUI() {
-  const p = filtered[index];
-  TITLE.textContent = p.title || '';
-  CAP.innerHTML = p.caption || '';
-  DOTS.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('is-active', i === index));
-}
-
-function show(n) {
-  ensureMeasure();
-  index = Math.max(0, Math.min(filtered.length - 1, n));
-  TRACK.style.transform = `translate3d(${-index * vw}px,0,0)`;
-  updateUI();
-}
-
-function step(dir) {
-  ensureMeasure();
-  if (isAnimating) return;
-  isAnimating = true;
-  const next = Math.max(0, Math.min(filtered.length - 1, index + dir));
-  index = next;
-  TRACK.style.transition = '';
-  TRACK.style.transform = `translate3d(${-index * vw}px,0,0)`;
-  setTimeout(() => { isAnimating = false; }, 250);
-  updateUI();
-}
-
-function openLightbox(photoId) {
+function openLightboxById(photoId){
   const i = filtered.findIndex(p => p.id === photoId);
   index = i >= 0 ? i : 0;
-
-  buildSlides();
-
-  LB.hidden = false;
-  MODAL.setAttribute('aria-labelledby', 'lbTitle');
-
-  updateUI();
-
-  requestAnimationFrame(() => {
-    measure();
-    show(index); 
-  });
+  GLB.hidden = false;
+  document.documentElement.style.overflow = 'hidden'; // lock scroll
+  show(index);
 }
 
-function closeLightbox() {
-  LB.hidden = true;
-  TRACK.innerHTML = '';
-  DOTS.innerHTML = '';
+function closeLightbox(){
+  GLB.hidden = true;
+  document.documentElement.style.overflow = '';
 }
 
-/* -------------------- Interactions -------------------- */
+/* Show current index by swapping a single <img> source (no tracks). */
+function show(n){
+  index = Math.max(0, Math.min(filtered.length - 1, n));
+  const p = filtered[index];
 
-function prewire() {
-  // arrows / keys
-  BTN_PREV.addEventListener('click', () => step(-1));
-  BTN_NEXT.addEventListener('click', () => step(1));
-  document.addEventListener('keydown', (e) => {
-    if (LB.hidden) return;
+  TITLE.textContent = p.title || '';
+  CAP.innerHTML = p.caption || '';
+
+  // Load image, then size the frame to it
+  IMG.style.opacity = '0'; // fade-in after load
+  IMG.onload = () => {
+    fitModalToImage();
+    requestAnimationFrame(() => { IMG.style.opacity = '1'; });
+  };
+  IMG.onerror = () => {
+    IMG.removeAttribute('src');
+    CAP.innerHTML = (p.caption || '') + '<br><em>Image failed to load.</em>';
+  };
+  IMG.src = p.src;
+  IMG.alt = p.alt || p.title || '';
+}
+
+/* Compute modal size to wrap the displayed image (no side gutters). */
+function fitModalToImage(){
+  const maxW = Math.min(window.innerWidth * 0.92, 1200);
+  const capH = GLB.querySelector('.glb__caption').offsetHeight + 8; // grid gap
+  const maxH = Math.max(320, Math.min(window.innerHeight * 0.92 - capH, 1000));
+
+  const natW = IMG.naturalWidth || IMG.width;
+  const natH = IMG.naturalHeight || IMG.height;
+  if (!natW || !natH) return;
+
+  const scale = Math.min(maxW / natW, maxH / natH, 1);
+  const w = Math.max(320, Math.floor(natW * scale));
+  const h = Math.max(200, Math.floor(natH * scale));
+
+  // Set image size limits (CSS ensures it won't exceed these anyway)
+  IMG.style.maxWidth = w + 'px';
+  IMG.style.maxHeight = h + 'px';
+
+  // Modal width should match image width exactly (no padding)
+  MODAL.style.width = w + 'px';
+}
+
+/* =============== Interactions =============== */
+
+function prewire(){
+  BTN_CLOSE.addEventListener('click', closeLightbox);
+  GLB.addEventListener('click', (e)=>{ if (e.target === GLB || e.target.classList.contains('glb__backdrop')) closeLightbox(); });
+
+  BTN_PREV.addEventListener('click', ()=> show(index - 1));
+  BTN_NEXT.addEventListener('click', ()=> show(index + 1));
+
+  document.addEventListener('keydown', (e)=>{
+    if (GLB.hidden) return;
     if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') step(-1);
-    if (e.key === 'ArrowRight') step(1);
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
   });
 
-  // pointer drag
-  VIEWPORT.addEventListener('pointerdown', e => {
-    if (LB.hidden) return;
-    isDragging = true; startX = e.clientX; dragDX = 0; baseX = -index * vw;
-    VIEWPORT.setPointerCapture(e.pointerId); pointerId = e.pointerId;
-    TRACK.style.transition = 'none';
+  window.addEventListener('resize', ()=>{
+    if (!GLB.hidden && IMG.complete) fitModalToImage();
   });
-  VIEWPORT.addEventListener('pointermove', e => {
-    if (!isDragging) return;
-    dragDX = e.clientX - startX;
-    TRACK.style.transform = `translate3d(${baseX + dragDX}px,0,0)`;
-  });
-  function finishDrag() {
-    if (!isDragging) return;
-    isDragging = false;
-    if (pointerId) { try { VIEWPORT.releasePointerCapture(pointerId); } catch {} pointerId = null; }
-    TRACK.style.transition = '';
-    const THRESH = 60;
-    if (Math.abs(dragDX) > THRESH) step(dragDX < 0 ? 1 : -1);
-    else show(index); 
-    dragDX = 0;
-  }
-  VIEWPORT.addEventListener('pointerup', finishDrag);
-  VIEWPORT.addEventListener('pointercancel', finishDrag);
-
-  // trackpad / wheel
-  VIEWPORT.addEventListener('wheel', (e) => {
-    if (LB.hidden) return;
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-    if (Math.abs(delta) < 1) return;
-    e.preventDefault();
-    const THRESH = 50;
-    wheelAcc += delta;
-    if (Math.abs(wheelAcc) > THRESH) {
-      step(wheelAcc > 0 ? 1 : -1);
-      wheelAcc = 0;
-    }
-  }, { passive: false });
-
-  // close controls
-  CLOSE.addEventListener('click', closeLightbox);
-  LB.addEventListener('click', (e) => { if (e.target === LB) closeLightbox(); });
-
-  // resize
-  window.addEventListener('resize', () => { if (!LB.hidden) { measure(); show(index); } });
 }
 
-/* -------------------- Boot -------------------- */
+/* =============== Boot =============== */
 
 prewire();
 load().catch(err => console.error('Failed to load assets/data/gallery.json', err));
