@@ -126,5 +126,51 @@
     "caption": "A pyromancer of the Sunfury under Kael'thas, Hespir was one of the youngest soldiers defending Quel'Thalas after its fall; he still carries on even today. Art by Mira Sands.",
     "album": "Character Art",
     "tags": ["members","hespir"]
+  },
+  {
+    "id": "img014",
+    "src": "assets/gallery/sinaracinderfallart.png",
+    "thumb": "",
+    "title": "Sinara Cinderfall",
+    "caption": "Once a prominent member of the Sunreavers, the magus now serves the kingdom of Quel'Thalas directly as one of its magisters. Art by",
+    "album": "Character Art",
+    "tags": ["members","sinara"]
+  },
+  {
+    "id": "img015",
+    "src": "assets/gallery/sinaracinderfallart2.png",
+    "thumb": "",
+    "title": "Sinara Cinderfall",
+    "caption": "Once a prominent member of the Sunreavers, the magus now serves the kingdom of Quel'Thalas directly as one of its magisters. Art by",
+    "album": "Character Art",
+    "tags": ["members","sinara"]
+  },
+  {
+    "id": "img016",
+    "src": "assets/gallery/magicevent1.png",
+    "thumb": "",
+    "title": "Fellows at Work",
+    "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
+    "album": "Events",
+    "tags": ["members","Soryn Cloudstrike","Vileon Stormwrath","Menadrael Embermourn"]
+  },
+  {
+    "id": "img017",
+    "src": "assets/gallery/magicevent2.png",
+    "thumb": "",
+    "title": "Fellows at Work",
+    "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
+    "album": "Events",
+    "tags": ["members","Soryn Cloudstrike","Vileon Stormwrath","Menadrael Embermourn"]
+  },
+  {
+    "id": "img018",
+    "src": "assets/gallery/magicevent3.png",
+    "thumb": "",
+    "title": "Fellows at Work",
+    "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
+    "album": "Events",
+    "tags": ["members","Soryn Cloudstrike","Vileon Stormwrath","Menadrael Embermourn"]
   }
 ]
+
