@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elrendar Fellowship — Guides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .guides-wrap {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      gap: 1.25rem;
+    }
+
+    .guides-tabs {
+      flex: 0 0 236px;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      position: sticky;
+      top: 96px;
+      z-index: 5;
+    }
+
+    .guides-panels {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid rgba(252,229,205,.25);
+      background: rgba(0,0,0,.28);
+      color: #fce5cd;
+      padding: .55rem .7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .95rem;
+      line-height: 1.15;
+      text-align: left;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .tab-btn:hover { background: rgba(252,229,205,.18); }
+    .tab-btn.active {
+      background: rgba(252,229,205,.58);
+      border-color: rgba(252,229,205,.58);
+      color: #1a0f0b;
+      font-weight: 600;
+    }
+
+    .panel {
+      display: none;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(252,229,205,.15);
+      background: rgba(0,0,0,.55);
+      border-radius: 10px;
+      max-height: calc(100vh - 160px);
+      overflow: auto;
+      text-align: justify; 
+    }
+    .panel.active { display: block; }
+
+    @media (max-width: 900px) {
+      .guides-wrap { flex-direction: column; }
+      .guides-tabs { position: static; flex: 0 0 auto; }
+      .panel { max-height: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="guides.html" aria-current="page">RP Tips & Guides</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <main class="guides-wrap">
+    <div class="guides-tabs" role="tablist" aria-label="Guides Tabs">
+      <button class="tab-btn active" data-tab="intro"     id="intro"     role="tab" aria-selected="true">Introduction</button>
+      <button class="tab-btn"        data-tab="general"   id="general"   role="tab">General Tips</button>
+      <button class="tab-btn"        data-tab="failing"   id="failing"   role="tab">Failing Forward</button>
+      <button class="tab-btn"        data-tab="depth"     id="depth"     role="tab">Depth of Emotes &amp; Actions</button>
+      <button class="tab-btn"        data-tab="teacher"   id="teacher"   role="tab">Education &amp; Training RP</button>
+    </div>
+
+    <div class="guides-panels">
+      <section id="panel-intro" class="panel active" role="tabpanel" aria-labelledby="intro">
+        <h2>Introduction</h2>
+        <p>As nerdy as it may sound, one of my favorite things about roleplay is learning component (in the meta sense, as well as the IC). As a high school teacher in real life, I spend a lot of my time working with students on how to engage more deeply with their writing, and we do that by examining styles and techniques used by all sorts of authors from all over the globe and history.</p>
+
+        <p>There are so many different backgrounds and approaches to writing, that there's a near-endless amount of learning we can achieve, and it only gives more opportunities to engage and enjoy.</p>
+          
+        <p>These guides, built by both myself and other members, are by no means a requirement for anyone to follow, but I do hope that they may be of some use to you, regardless of whether you're a veteran RPer or brand new to the gig.</p> 
+          
+        <p>Enjoy, reflect, and then get back in the game!</p>
+
+        <p>~Ansinosth</p>
+      </section>
+
+      <section id="panel-general" class="panel" role="tabpanel" aria-labelledby="general">
+        <h2>General Tips</h2>
+        <p>Roleplay is at its best when everyone feels like they have a stake in the scene. That doesn’t mean every line has to be a monologue, or that every action has to shake the world. Often, it’s the <em>small, consistent habits</em> that keep the community alive: responding to others, giving their actions weight, and remembering that no character is the main character all of the time.</p>
+        <p>My advice here mirrors what I tell my students in writing workshops: be generous. Quote or reference what others wrote, build on it, and let your own character be shaped by those interactions. And if you’re feeling stuck, anchor yourself in <em>place</em>. Describe the chair your character is sitting in, or the torchlight on the wall—sometimes setting details are the doorway into deeper character expression.</p>
+      </section>
+
+      <section id="panel-failing" class="panel" role="tabpanel" aria-labelledby="failing">
+        <h2>Failing Forward</h2>
+        <p>This is news about me, but I have a particularly big beef with dry-as-hell failure posts. Let's get that out of the way from the getgo.</p>
+        <p>Let's say you miss your attack, or you take an injury. Sounds pretty lame, right? Well, it doesn't have to be, at least with the Fellowship (where we encourage creative permissiveness).</p>
+        <p><ul>Instead of "Jim the Bard squares up with the giant monster, but fails to block the incoming strike and staggers backwards," why not make it just as intense and heroic as a two paragraph success post?</ul>
+        <ul>What if it became about Jim the Bard setting up an allied player for their own successful attacks? What if Jim the Bard did some insane flips and climbed up the log-thick arms of this monster and grabbed it by the nose ring, yanking it low so that Stacy the Rogue can get a clear shot at the monster's throat?</ul>
+        <ul>Changing the perceptive and vibe of the post does two things: 1. It keeps the player engaged despite the disappointment of a failure. 2. Fosters a sense of failing forward and supporting one another.</ul></p>
+        <p>The Fellowship champions in earnest the mindset of collaborating at events wherever possible. Give your allies an opening; take your damage while selflessly throwing yourself in front of an ally to spare them a potential injury (maybe an incoming blow they didn't even see coming!); use your miss as a way to set up an even more powerful attack the next turn. Whatever you can, give yourself opportunities to fail forwards in the most spectacular way possible.</p>
+      </section>
+
+      <section id="panel-combat" class="panel" role="tabpanel" aria-labelledby="combat">
+        <h2>Running Engaging Combat</h2>
+        <p>Combat scenes are where pacing matters most. Too slow, and folks check out; too fast, and nobody feels they had space to react. I like to think of combat as <em>storytelling in beats</em>, not just dice rolls. Narrate the swing, the miss, the spell fizzling—not just the successes.</p>
+        <p>The key is consequence. Every action, even a miss, should shift the scene somehow: an enemy staggers back, a wall of smoke limits vision, the ground cracks under pressure. And above all, vary the spotlight. Make sure the wizard’s fireball feels as important as the rogue’s knife flick or the paladin’s shield block. If combat feels like a sequence of interesting moments rather than a math problem, you’re on the right track.</p>
+      </section>
+
+      <section id="panel-large" class="panel" role="tabpanel" aria-labelledby="large">
+        <h2>Managing Large Groups</h2>
+        <p>One of the most rewarding and simultaneously challenging things as a DM is having a high turn out for an event. Maybe you planned for ten people, but thirty to forty showed up; phenomenal, except how the hell are you going to manage that? Now, ultimately it depends on the systems you run and how your group is organized, but I personally lean into the mindset of "large stage, small scenes." Even if you have a massive battle going on, there should be smaller scenes playing out within that bigger picture, smaller scenes where individual player actions count. While it can be straining as a DM to have to manage multiple smaller groups, ultimately it is more rewarding for the players, and results in longer-lasting engagement and focus retention.</p>
+        <p>Often times when events are larger than ten people, many players begin to check out while waiting for their "turn." If you've ever attended one of my events, it's why I batch rolls into a single group turn; everyone posts in the same window, often focusing on just their small scene.</p>
+        <p>The importance of this, in my opinion, is twofold: 1, it means that players are actively engaged closer to 60–75% of the time, compared to a single-poster turn based event where each player is engaged likely 10–20% of the time, and waiting for the remaining 80–90%. Now those numbers are not scientifically backed, to be clear, but following the logical structure, I put it in the same context as when my students read in class. Old school thinking was a popcorn method, where every student gets a turn. In that scenario, students spend the entire time leading up to their turn focusing on their one part; or they completely tune things out. It also sparks anxiety in kids, but that's another issue entirely. In small groups or batched posts, everyone has (at my events, at least), eight minutes to write their response and respond to other posts. Some players are fast typers, others are slow; some are verbose, others favor brevity. Leaning into batched posts means that faster typers can bang out two–three posts responding to people in a single turn window, and the slower typers can craft their post without being pressured by the line waiting on them.</p>
+      </section>
+
+      <section id="panel-small" class="panel" role="tabpanel" aria-labelledby="small">
+        <h2>Adapting for Small Groups</h2>
+        <p>Small groups are actually some of my favorite spaces to RP. With three or fewer players, you can dig deeper into personal stakes, quieter moments, and long stretches of uninterrupted dialogue. In my classroom, small groups always lead to more honesty—there’s nowhere to hide. The same applies here.</p>
+        <p>When planning for a small group, don’t worry about epic scale. Instead, lean into intimacy: explore a single mystery, a moral dilemma, or even just one long conversation that spirals in unexpected directions. With fewer people, you’ll find the emotional resonance often feels stronger because each character’s words carry more weight.</p>
+      </section>
+
+      <section id="panel-timing" class="panel" role="tabpanel" aria-labelledby="timing">
+        <h2>Timing &amp; Turns</h2>
+        <p>Time is a slippery thing in RP. Without clear expectations, scenes can drag or fizzle out. I like to set gentle but firm rhythms—what I call “rounds,” even if dice aren’t involved. Everyone posts within a set window, then we move on.</p>
+        <p>I frame it for students as practice in respecting shared space. Just as no one hogs the mic in a debate, no one should drag a scene into endless waiting. At the same time, allow for flexibility: if someone needs an extra minute or two, be human about it. Balance structure with compassion, and your timing will work itself out.</p>
+      </section>
+
+      <section id="panel-depth" class="panel" role="tabpanel" aria-labelledby="depth">
+        <h2>Depth of Emotes &amp; Actions</h2>
+        <p>One of the most critically impactful exercises I employ in my work, with both students and RPers, is to focus on the <strong>physical</strong> engagement between your character and the world.</p>
+        <p>What I mean by "the world" is any other character, an object, a setting, or whatever else you can imagine. When your character has something tangible to interact with, it gives grounding and weight, and it can offer so many new avenues for interaction.</p>
+        <p>The difference between “<em>She smiles</em>” and “<em>She presses her lips together, trying to hide the smile tugging at the corner of her mouth</em>” is the difference between surface-level RP and something immersive that carries weight others can feel. I often push my students in writing to go beyond simple past tense adjectives and into <em>verbs with texture</em>. Don’t just write that a character is “angry.” Show it: the clenched jaw, the tapping foot, the muttered breath they can’t quite contain.</p>
+        <p>Think of emotes as stage directions, and the actual actions as the narrative glue. The more specific the action, the more others have to grab onto. And when in doubt, ask yourself: <em>what does this look like to someone else in the room?</em> That perspective shift alone can add layers to your writing.</p>
+          
+        <p><ul>For example, when a character in a tavern is holding a mug, it can become a window into their state of mind. Are they fidgeting with the mug nervously? Is their grip too tight with white knuckles showing? Is their drink rippling from anxious shaking? Even something as simple as what they do with the mug when it's empty can tell us so much—and all of this is without even uttering a single word in character.</p>
+          
+        <p>Small things like this can go a long way to deepening the immersive experience for us all.</p></ul>
+      </section>
+
+      <section id="panel-oneshots" class="panel" role="tabpanel" aria-labelledby="oneshots">
+        <h2>Planning One Shots</h2>
+        <p>A good one shot is like a short story: it needs a hook, a clear problem, and a satisfying resolution, all without overstaying its welcome. In my classes, I often ask students to write “flash fiction” to practice economy of language—same principle here.</p>
+        <p>When you’re prepping a one shot, think in three beats: the opening that sets the stakes, the middle complication, and the final payoff. Keep your cast of NPCs tight, your setting limited, and your theme clear. That constraint actually breeds creativity, because players know exactly what lane they’re in.</p>
+      </section>
+
+      <section id="panel-campaigns" class="panel" role="tabpanel" aria-labelledby="campaigns">
+        <h2>Planning Campaigns</h2>
+        <p>Campaigns are marathons, not sprints. They require foresight, patience, and a willingness to let go of your own plans when players surprise you. I think of campaigns like my school year: I know the units, the milestones, the big assessments—but the day-to-day lessons flex depending on how my students respond.</p>
+        <p>In RP terms, set your major arcs: where the story begins, where you’d like it to land, and a handful of “tentpole” moments in between. Then let the players weave the rope bridge that connects them. Recaps are invaluable too—just like in class, reminding everyone what we did yesterday makes today’s lesson (or scene) far stronger.</p>
+      </section>
+
+      <section id="panel-teacher" class="panel" role="tabpanel" aria-labelledby="teacher">
+        <h2>Education &amp; Training RP</h2>
+        <p class="page-subtitle"><em>An IRL Teacher’s Perspective</em></p>
+        <p>Here’s the simple truth: RP is one of the most naturally educational activities people stumble into. You’re practicing and flexing skilles tied to writing, reading, communication, empathy, and improvisation—often without realizing it. That’s liquid gold in a classroom.</p>
+        <p>When I work with students, I focus on transferable skills and learning rather than the content: how describing a scene hones narrative writing; how embodying a character sharpens public speaking confidence; how negotiating outcomes teaches collaboration. For guildmates, my “teacher advice” is simple: treat every RP moment as both art and practice. Celebrate improvement, be generous with feedback, and build routines that reinforce growth (brief recaps, reflection prompts, and the occasional peer shout out); these all go a long way.</p>
+        <p>Now, if you’re using RP as a training space—whether for writing, leadership, or teamwork—set small, visible goals. Maybe it’s “use one sensory detail per post,” or “respond directly to someone else’s action every round.” Normalize opt-ins and content warnings, respect boundaries, and make it safe to try new things. That’s the environment where people improve fastest.</p>
+        <p>Most importantly: enjoy yourself. The more we treat RP as a living workshop rather than a performance, the more confident and creative everyone becomes.</p>
+        <p class="page-subtitle"><em>In Game Teaching RP</em></p>
+        <p>One thing we do see fairly often in game is a lot of in character apprentice/mentor relationships and dynamics. Magical instructors, squires and knights, apprenticeships, and so on. These are great opportunities to dive into how our characters, not just us, learn and grow. There is, however, an unfortunate trend of the lecture style approach being the most dominant, which in larger settings can leave people feeling very left out.</p>
+        <p>This is where my years as a teacher have actually helped me out a lot. One thing that research has shown over the years is that people learn more through doing, rather than just listening. Schools are trying to incorporate group work and less teacher-directed lessons, and it applies doubly so in role-play. Take a magical lesson setting, for example:</p>
+        <p><ul>A classic example we see is where the magical instructor stands in front of the role-play group and lectures about this and that. Great fun for the lecturer, and interesting reading for the students, but only one person out of the entire group is actually doing any meaningful interacting. Just like a DM who writes all the actions for the players, the bulk majority of the people are left twiddling their thumbs IRL. </ul>
+        <ul>A more constructive way to approach the situation is to be engaging the students with actual action-focused posting while the lecture is ongoing. This could be them drawing runes tied to the lecture, or trying to untangle some ley-energy puzzle, or maybe sparring with one another while the instructor provides commentary and critique.</ul>
+        <ul>At the end of the day, it doesn't really matter <strong>what</strong> you're doing, as long as something is happening.</ul></p>
+        <p>Another piece to consider is having long term goals as well as small-bite tasks. Doing scatter shot lessons where every week it's something different doesn't prompt or encourage focused development and growth in-character. Giving a character the task of learning how to shoot a fireball can be broken into a bunch of different sections: figuring out the words or runes, figuring out how to shape the energy, figuring out how to properly aim or place the spell, learning how to defend against or negate that type of magic, understanding how to combine that type of magic with others (felfire ball, frostfire ball, etc.)</p>
+        <p>If you have dedicated apprentice/mentor roles established, think about how you can incorporate this sort of mindset to give the apprentice something to focus on independently inbetween sessions.</p>
+        <p>While other tips and tricks will come later, the biggest take away should be to focus on interactivity, rather than just lecture.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script>
+    const guideTabButtons = document.querySelectorAll('.guides-tabs .tab-btn');
+    const guidePanels = {
+      intro:     document.getElementById('panel-intro'),
+      general:   document.getElementById('panel-general'),
+      failing:   document.getElementById('panel-failing'),
+      depth:     document.getElementById('panel-depth'),
+      teacher:   document.getElementById('panel-teacher')
+    };
+
+    function showGuideTab(key){
+      guideTabButtons.forEach(b => {
+        const isActive = b.dataset.tab === key;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      Object.entries(guidePanels).forEach(([k, el]) => el.classList.toggle('active', k === key));
+      if (guidePanels[key]) guidePanels[key].scrollTop = 0;
+      history.replaceState(null, '', '#'+key);
+    }
+
+    guideTabButtons.forEach(btn => btn.addEventListener('click', () => showGuideTab(btn.dataset.tab)));
+
+    const hash = (location.hash || '').replace('#','');
+    showGuideTab(guidePanels[hash] ? hash : 'intro');
+  </script>
+</body>
+</html>
