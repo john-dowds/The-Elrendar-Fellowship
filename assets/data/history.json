@@ -6,6 +6,14 @@
   },
   "sections": [
     {
+      "id": "event003",
+      "title": "Missing Mistmaker",
+      "subtitle": "'Mini-Event, September 11'",
+      "date": "c. Year 42",
+      "summary_html": "\n     On behest of the Magistry of Silvermoon, Magister Vileon Stormwrath leads a party of Fellowship members-including Priestess Menadrael Embermourn, Soryn Cloudspire, and Hesparius Greymourn-to recover an artifact known as the Mistmaker, which had been stolen. Encountering bandits disguised as Sunfury renegades working in concert with a tribe of local naga, the fellows intervened before any exchange could be completed, slaying the naga and ensuring the capture of the bandits.\n            ",
+      "order": 27
+    },
+    {
       "id": "event002",
       "title": "Construct Deconstruction",
       "subtitle": "'Mini-Event, September 4'",
