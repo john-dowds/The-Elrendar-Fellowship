@@ -319,7 +319,7 @@
       let allEntriesFlat = flattenEntries(mergedCategories);
       const monsterById = new Map(allEntriesFlat.map(e => [e.id, e]));
     
-      /* ----- "Traits" category grouped by THEME ----- */
+      /* ----- "Traits" ----- */
       const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
       const traitsByTheme = new Map();
 
@@ -511,7 +511,7 @@
             continue; 
           }
     
-          /* CREATURE CARD (existing layout) */
+          /* CREATURE CARD */
           const fig = document.createElement('figure');
           fig.className = 'thumb';
           const img = document.createElement('img');
@@ -678,17 +678,14 @@
     <script>
       (function(){
         const QS   = new URLSearchParams(location.search);
-        const cat  = QS.get('cat');      // category (optional)
-        const sub  = QS.get('sub');      // subcategory (optional)
-        // NOTE: we will ignore ?name= and ?trait= on purpose to avoid opening a specific leaf/card
+        const cat  = QS.get('cat');     
+        const sub  = QS.get('sub');  
       
-        // Only glow/center when arriving via deep-link
         const fromDeepLink = [cat, sub].some(v => v && String(v).trim() !== '');
       
         const TREE_SEL = '#monsterguide-tree';
-        const SUB_SEL  = '.indent-1 > button';   // subcategory buttons
+        const SUB_SEL  = '.indent-1 > button'; 
       
-        // Strong normalizer to survive punctuation/curly quotes
         const norm = s => (s||'')
           .toString()
           .normalize('NFKD').replace(/[\u0300-\u036f]/g,'') // accents
@@ -704,23 +701,20 @@
           setTimeout(()=> whenReady(fn, tries-1), 100);
         }
       
-        // Always ensure the nested UL for this button is visible; click at least once
         function ensureOpen(btn){
           if (!btn) return;
           const ul = btn.parentElement && btn.parentElement.querySelector('ul');
           if (!ul) return;
-          btn.click();                 // fire your renderCards handler
+          btn.click();                
           setTimeout(()=> {
             if (ul.style.display === 'none') btn.click(); // re-open if it collapsed
           }, 30);
         }
       
-        // center + insanely bright glow on the subcategory button itself
         function centerAndFlashSub(subBtn){
           if (!fromDeepLink || !subBtn) return;
           subBtn.classList.add('flash-focus');
 subBtn.scrollIntoView({ block:'center', inline:'nearest', behavior:'smooth' });
-// remove after the full 10s animation finishes
 setTimeout(()=> subBtn.classList.remove('flash-focus'), 10000);
 
         }
@@ -761,13 +755,11 @@ setTimeout(()=> subBtn.classList.remove('flash-focus'), 10000);
           return !!tree;
         }
       
-        // Observe the tree so we re-attempt after async rendering
         const mo = new MutationObserver(()=> openCatSubOnly());
         whenReady(() => {
           const root = document.querySelector(TREE_SEL);
           if (!root) return false;
           mo.observe(root, { childList: true, subtree: true });
-          // Also try now in case the tree is already ready
           return openCatSubOnly();
         });
       
