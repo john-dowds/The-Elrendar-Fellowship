@@ -11,7 +11,15 @@
       "subtitle": "'Mini-Event, September 11'",
       "date": "c. Year 42",
       "summary_html": "\n     On behest of the Magistry of Silvermoon, Magister Vileon Stormwrath leads a party of Fellowship members-including Priestess Menadrael Embermourn, Soryn Cloudspire, and Hesparius Greymourn-to recover an artifact known as the Mistmaker, which had been stolen. Encountering bandits disguised as Sunfury renegades working in concert with a tribe of local naga, the fellows intervened before any exchange could be completed, slaying the naga and ensuring the capture of the bandits.\n            ",
-      "order": 27
+      "order": 27,
+      "entries": [
+        {
+          "id": "event004",
+          "title": "Spectral Sabotage - September 15",
+          "date": "c. Year 42",
+          "summary_html": "<p>Fellows of the order-including Magister Vileon Stormwrath, Dkakiavis, Alindriel, Merivis, Priestess Menadrael Embermourn, Kalandoril, Greymourn, and Kodestre-pursue a group of outsiders through the Ghostlands and into Goldenmist Village wherein they discover an unusual barrier.</p><p>Investigating further to discern the nature of the barrier and its connection, they uncover its illusionary origins and manage to breach it, only to find the slain Magister Sunstrife, as well as a portal to the plaguelands through which the outsiders escaped.</p><p>Now on the trial of the murderers, the Fellows continue to pursue leads.</p>"
+        }
+      ]
     },
     {
       "id": "event002",
