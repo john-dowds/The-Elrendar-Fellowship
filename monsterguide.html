@@ -360,7 +360,6 @@
       const list = document.getElementById('monsterguide-list');
       const searchInput = document.getElementById('monsterguide-search');
     
-      // Deep-link: ?tab=traits&trait=... and #<monsterId>
       const QS = new URLSearchParams(location.search);
       const wantTraitsTab = (QS.get('tab')||'').toLowerCase() === 'traits';
       const traitQ = QS.get('trait') || '';
@@ -369,7 +368,6 @@
         runSearch();
       }
 
-      // If a hash id is present, try to render that single card
       const hashId = decodeURIComponent(location.hash.replace('#',''));
       if (hashId) {
         const target = allEntriesFlat.find(e => e.id === hashId);
@@ -677,7 +675,7 @@
         if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     
-      /* ----- deep link by hash (works for both creatures and traits) ----- */
+      /* ----- deep link by hash ----- */
       function findEntryById(id){
         for (const cat of mergedCategories) {
           for (const sub of (cat.subcategories || [])) {
@@ -714,9 +712,9 @@
       
         const norm = s => (s||'')
           .toString()
-          .normalize('NFKD').replace(/[\u0300-\u036f]/g,'') // accents
-          .replace(/[\u2018\u2019\u201C\u201D]/g,"'")       // curly quotes -> straight
-          .replace(/[^a-z0-9' ]+/gi,' ')                    // strip punctuation/symbols
+          .normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+          .replace(/[\u2018\u2019\u201C\u201D]/g,"'")
+          .replace(/[^a-z0-9' ]+/gi,' ') 
           .toLowerCase()
           .replace(/\s+/g,' ')
           .trim();
@@ -733,7 +731,7 @@
           if (!ul) return;
           btn.click();                
           setTimeout(()=> {
-            if (ul.style.display === 'none') btn.click(); // re-open if it collapsed
+            if (ul.style.display === 'none') btn.click(); 
           }, 30);
         }
       
@@ -749,20 +747,20 @@ setTimeout(()=> subBtn.classList.remove('flash-focus'), 10000);
           const tree = document.querySelector(TREE_SEL);
           if (!tree || !tree.querySelector('li > button')) return false;
       
-          // 1) Expand Category (if provided)
+          // 1) Expand Category
           if (cat){
             const catBtn = [...tree.querySelectorAll(':scope > li > button')]
               .find(b => norm(b.textContent) === norm(cat));
             ensureOpen(catBtn);
           }
       
-          // 2) Expand Subcategory (and ensure its list is rendered)
+          // 2) Expand Subcategory
           let subBtnEl = null;
           if (sub){
             subBtnEl = [...tree.querySelectorAll(SUB_SEL)]
               .find(b => norm(b.textContent) === norm(sub));
             ensureOpen(subBtnEl);
-            // Center & glow the subcategory entry (NOT the leaf or card)
+            // Center & glow the subcategory entry
             setTimeout(()=> centerAndFlashSub(subBtnEl), 120);
             return true;
           }

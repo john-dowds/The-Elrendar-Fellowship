@@ -126,7 +126,65 @@
     #panel-perks .sys-table tbody tr:hover td{
       background: rgba(252,229,205,.05);
     }
-  </style>
+  
+/* === Quick Card === */
+#panel-quick .qc-grid{ display:grid; gap:.75rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+#panel-quick .qc-row{ display:grid; grid-template-columns: 2fr 1fr; gap:.75rem; }
+#panel-quick .qc-field{ display:grid; gap:.35rem; }
+#panel-quick label{ font-weight:700; }
+#panel-quick input[type="text"],
+#panel-quick select{
+  width:100%; background: rgba(0,0,0,.35); color:#fce5cd;
+  border: 1px solid rgba(252,229,205,.25); border-radius: 8px; padding: .5rem .6rem;
+}
+#panel-quick .qc-actions{ display:flex; gap:.6rem; align-items:center; }
+#panel-quick .btn{ background: linear-gradient(#7d5a1a, #3d2a12); color:#fff; border:1px solid #000; border-radius:999px; padding:.45rem .8rem; cursor:pointer; }
+#panel-quick .btn:hover{ filter:brightness(1.08); }
+#panel-quick .hp-wrap{ display:flex; align-items:center; gap:.5rem; }
+#panel-quick .hp-val{ font-weight:800; font-size:1.15rem; min-width:2ch; text-align:center; }
+#panel-quick .hp-nudge{ width:34px; height:34px; border-radius:999px; }
+#panel-quick .mini-table{ width:100%; border-collapse:collapse; margin:.35rem 0 .5rem; }
+#panel-quick .mini-table th, #panel-quick .mini-table td{ border:1px solid rgba(252,229,205,.15); padding:.4rem .5rem; }
+#panel-quick .mini-table th{ background: rgba(252,229,205,.08); }
+#panel-quick .status-chip{
+  display:inline-block; padding:.2rem .6rem; border-radius:999px;
+  border:1px solid rgba(252,229,205,.35); user-select:none; cursor:pointer; color:#fff;
+}
+#panel-quick .status-active      { background: rgba( 40,120, 40, .45); border-color: #59c25a; }
+#panel-quick .status-rooted      { background: rgba(120, 80,  0, .45); border-color: #d2a857; }
+#panel-quick .status-stunned     { background: rgba(180, 30, 30, .60); border-color: #ff6363; }
+#panel-quick .status-slowed      { background: rgba(140,140, 30, .50); border-color: #e0e05a; }
+#panel-quick .status-possessed   { background: rgba(110,  0,160, .55); border-color: #c46bff; }
+#panel-quick .status-retreated   { background: rgba( 90, 90, 90, .55); border-color: #bdbdbd; }
+#panel-quick .status-channeling  { background: rgba(  0,100,160, .55); border-color: #69c1ff; }
+#panel-quick .status-unconscious { background: rgba( 50, 50, 50, .70); border-color: #888888; }
+#panel-quick .status-flying      { background: rgba( 60,120,180, .50); border-color: #90c4ff; }
+#panel-quick .status-shielded    { background: rgba( 70,120,160, .50); border-color: #9dd1ff; }
+#panel-quick .status-cursed      { background: rgba(120,  0,120, .55); border-color: #f080ff; }
+#panel-quick .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:.9rem; padding:.05rem .35rem; border: 1px solid rgba(252,229,205,.3); border-radius: 6px; background: rgba(252,229,205,.08); color: #fce5cd; }
+#panel-quick .muted{ opacity:.9; font-size:.95rem; }
+#panel-quick .chips{ display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
+
+
+/* === Quick Card === */
+#panel-quick .full{ grid-column: 1 / -1; }
+#panel-quick .qc-perk-row{ display:grid; grid-template-columns: minmax(150px, 220px) 1fr; gap:.65rem; align-items:end; }
+#panel-quick .qc-perk-row input[type="text"]{ background: rgba(0,0,0,.2); }
+#panel-quick .hp-block{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5rem; }
+#panel-quick .hp-wrap{ gap:.8rem; }
+#panel-quick .hp-val{ font-size:1.8rem; min-width:3ch; }
+#panel-quick .hp-nudge{ width:44px; height:44px; font-size:1.15rem; }
+#panel-quick .mini-table th, #panel-quick .mini-table td{ text-align:center; }
+
+
+#qcClassNote{display:none !important;}
+
+#qcClass, #qcClass option { white-space: nowrap; }
+
+#panel-quick .qc-row > .qc-field:last-child{ justify-self: end; }
+
+#qcStance{ text-align-last:center; -moz-text-align-last:center; text-align:center; }
+</style>
 </head>
 <body>
   <img src="assets/art/crest2.png" alt="Elven Sigil" class="sigil-overlay" />
@@ -540,8 +598,8 @@
         <h3>Monster Levels</h3>
         <ul>
           <li><span class="badge">Minion</span> 4-12 HP</li>
-          <li><span class="badge">Elite</span> 13–40</li>
-          <li><span class="badge">Boss</span> 41+</li>
+          <li><span class="badge">Elite</span> 13–40 HP</li>
+          <li><span class="badge">Boss</span> 41+ HP</li>
         </ul>
 
         <h3>Linking & Lore</h3>
@@ -554,18 +612,111 @@
         </div>
       </section>
 
-      <section id="panel-quick" class="panel" role="tabpanel" aria-labelledby="quick">
-        <h2>Player Quick Card (A quick look at the game.)</h2>
-        <ul>
-          <li><strong>Turn:</strong> pick a Stance, roll d20</li>
-          <li><span class="kbd">1</span> backfire - <span class="kbd">2–9</span> miss - <span class="kbd">10–11</span> draw - <span class="kbd">12–19</span> hit - <span class="kbd">20</span> crit</li>
-          <li><strong>Intervene:</strong> on Draw+, take an ally’s hit if you’re in reach</li>
-          <li><strong>Healers:</strong> damage = healing</li>
-          <li><strong>Change stance:</strong> costs a turn</li>
-          <li><strong>Perks:</strong> always on; optional perks available</li>
-        </ul>
-        <p class="note">Open the <a href="monsterguide.html">Monster Manual</a> for stat cards. Use Minion/Elite/Boss on the fly.</p>
-      </section>
+      <section id="panel-quick" class="panel" role="tabpanel" aria-labelledby="quick"><!-- Row: Name / Class -->
+    <div class="qc-field">
+      <label for="qcName">Name</label>
+      <input id="qcName" type="text" placeholder="Character name" />
+    </div>
+    <div class="qc-field">
+      <label for="qcClass">Class</label>
+      <select id="qcClass">
+        <option value="">— Select —</option>
+        <option value="magi">Magi / Healers — +1 dmg/heal on hits, +1 Perception</option>
+        <option value="rogue">Rogues / Rangers — +1 Attack, +1 Environment</option>
+        <option value="armored">Armored Fighters — +1 Attack, +1 dmg/heal on hits</option>
+        <option value="mounted">Mounted Fighters — +1 dmg/heal, +1 Environment</option>
+      </select>
+      <div class="muted" id="qcClassNote"></div>
+    </div>
+    <div class="qc-row full">
+<div class="qc-field">
+<!-- Perk #1 -->
+    <div class="qc-field">
+      <label>Perk #1</label>
+      <div class="qc-perk-row">
+        <select id="qcPerk1">
+          <option value="">— Select —</option>
+          <option>Bulwark Bearer</option>
+          <option>Bladesworn Resolve</option>
+          <option>Skirmisher’s Step</option>
+          <option>Second Wind</option>
+          <option>Battlefield Medic</option>
+          <option>Rally Banner</option>
+          <option>Iron Will</option>
+          <option>Pathfinder</option>
+          <option>Mounted Momentum</option>
+          <option>Shadow Veil</option>
+          <option>Battle Rhythm</option>
+        </select>
+        <input id="qcPerk1Desc" type="text" placeholder="Perk description" readonly />
+      </div>
+    </div>
+<!-- Perk #2 -->
+    <div class="qc-field">
+      <label>Perk #2</label>
+      <div class="qc-perk-row">
+        <select id="qcPerk2">
+          <option value="">— Select —</option>
+          <option>Bulwark Bearer</option>
+          <option>Bladesworn Resolve</option>
+          <option>Skirmisher’s Step</option>
+          <option>Second Wind</option>
+          <option>Battlefield Medic</option>
+          <option>Rally Banner</option>
+          <option>Iron Will</option>
+          <option>Pathfinder</option>
+          <option>Mounted Momentum</option>
+          <option>Shadow Veil</option>
+          <option>Battle Rhythm</option>
+        </select>
+        <input id="qcPerk2Desc" type="text" placeholder="Perk description" readonly />
+      </div>
+    </div>
+</div>
+<!-- Row: HP & State -->
+    <div class="qc-field">
+      <label>HP &amp; State</label>
+      <div class="hp-block">
+        <div class="hp-wrap">
+          <button class="btn hp-nudge" id="qcHPMinus">−</button>
+          <div class="hp-val" id="qcHP">15</div>
+          <button class="btn hp-nudge" id="qcHPPlus">+</button>
+        </div>
+        <div class="chips" style="margin-top:.4rem;">
+          <span role="button" id="qcState" class="status-chip status-active" data-state-index="0">Active</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stance -->
+    <div class="qc-field full">
+      <label for="qcStance">Stance</label>
+      <div class="qc-actions" style="justify-content:flex-start;">
+        <select id="qcStance">
+          <option value="Balanced">Balanced</option>
+          <option value="Aggressive">Aggressive</option>
+          <option value="Defensive">Defensive</option>
+          <option value="Focused">Focused</option>
+        </select>
+      </div>
+      <div id="qcStancePanel">
+        <table class="mini-table" aria-label="Selected Stance Brackets">
+          <thead>
+            <tr>
+              <th>1</th><th>2–9</th><th>10–11</th><th>12–16</th><th>17–19</th><th>Nat 20</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="qcStanceRow"></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Save -->
+    <div class="qc-actions full">
+      <button id="qcSave" class="btn">Save</button>
+      <div class="muted" id="qcSavedMsg" aria-live="polite"></div>
+    </div></section>
 
       <section id="panel-creation" class="panel" role="tabpanel" aria-labelledby="creation">
         <h2>Build &amp; Run Encounters</h2>
@@ -619,6 +770,158 @@
 
     const hash = (location.hash || '').replace('#','');
     if (hash && panels[hash]) showTab(hash);
-  </script>
+  
+
+
+/* === Quick Card === */
+(function(){
+  const LS_KEY = 'elf/quickcard/v1';
+
+  const el = {
+    name: document.getElementById('qcName'),
+    cls: document.getElementById('qcClass'),
+    clsNote: document.getElementById('qcClassNote'),
+    perk1: document.getElementById('qcPerk1'),
+    perk1Desc: document.getElementById('qcPerk1Desc'),
+    perk2: document.getElementById('qcPerk2'),
+    perk2Desc: document.getElementById('qcPerk2Desc'),
+    stance: document.getElementById('qcStance'),
+    stanceRow: document.getElementById('qcStanceRow'),
+    hpMinus: document.getElementById('qcHPMinus'),
+    hpPlus: document.getElementById('qcHPPlus'),
+    hpVal: document.getElementById('qcHP'),
+    state: document.getElementById('qcState'),
+    save: document.getElementById('qcSave'),
+    savedMsg: document.getElementById('qcSavedMsg')
+  };
+
+  const CLASS_NOTES = {
+    magi: '+1 dmg/heal on hits • +1 Perception',
+    rogue: '+1 Attack • +1 Environment',
+    armored: '+1 Attack • +1 dmg/heal on hits',
+    mounted: '+1 dmg/heal • +1 Environment'
+  };
+
+  // Perk name 
+  const PERKS = {
+    'Bulwark Bearer':'Reduce incoming damage by 1.',
+    'Bladesworn Resolve':'Your hits deal +2 damage.',
+    'Skirmisher’s Step':'Once per round, ignore one opportunity hit or disengage freely.',
+    'Second Wind':'When you’d hit 0 HP, instead pop to 5 HP.',
+    'Battlefield Medic':'Split your output to deal damage and healing together.',
+    'Rally Banner':'Allies in earshot gain +1 morale to their roll this round.',
+    'Iron Will':'Ignore Fear or Charm once; act normally.',
+    'Pathfinder':'Gain +1 on either Environment or Perception each round.',
+    'Mounted Momentum':'If you moved first, your hit deals +1 damage this turn.',
+    'Shadow Veil':'Turn one incoming hit against you into a miss.',
+    'Battle Rhythm':'After you score a hit, your next hit this encounter gains +1 damage.'
+  };
+
+  const STANCES = {
+    Aggressive: ['−6 HP','−4 HP','−2 HP','+3 dmg','+4 dmg','+6 dmg'],
+    Balanced:   ['−4 HP','−2 HP','Draw','+1 dmg','+2 dmg','+4 dmg'],
+    Defensive:  ['−3 HP','−1 HP','Draw','Disarm/Deflect','+1 dmg','+2 dmg'],
+    Focused:    ['−5 HP','−3 HP & +1 next roll','−1 HP & +1 dmg','+2 dmg','+3 dmg','+5 dmg']
+  };
+
+  const STATES = ['Active','Rooted','Stunned','Slowed','Possessed','Retreated','Channeling','Unconscious','Flying','Shielded','Cursed'];
+
+  function renderStance(){
+    const key = el.stance.value || 'Balanced';
+    const vals = STANCES[key] || [];
+    el.stanceRow.innerHTML = vals.map(v => `<td>${v}</td>`).join('');
+  }
+
+  function cycleState(){
+    const cur = (el.state.textContent || 'Active').trim();
+    const i = STATES.indexOf(cur);
+    const next = STATES[(i >= 0 ? i + 1 : 1) % STATES.length];
+    el.state.textContent = next;
+    el.state.className = 'status-chip ' + statusClass(next);
+  }
+
+  function statusClass(effect){
+    const key = (effect || 'Active').toLowerCase();
+    return ({
+      active:'status-active', rooted:'status-rooted', stunned:'status-stunned', slowed:'status-slowed',
+      possessed:'status-possessed', retreated:'status-retreated', channeling:'status-channeling',
+      unconscious:'status-unconscious', flying:'status-flying', shielded:'status-shielded', cursed:'status-cursed'
+    }[key] || 'status-active');
+  }
+
+  function setHP(v){
+    const n = Math.max(0, Math.round(Number(v) || 0));
+    el.hpVal.textContent = String(n);
+  }
+
+  function applyPerkDesc(sel, out){
+    const name = (sel.value || '').trim();
+    out.value = PERKS[name] || '';
+  }
+
+  function save(){
+    const data = {
+      name: el.name.value || '',
+      cls: el.cls.value || '',
+      perk1: el.perk1.value || '',
+      perk2: el.perk2.value || '',
+      stance: el.stance.value || 'Balanced',
+      hp: Number(el.hpVal.textContent) || 15,
+      state: (el.state.textContent || 'Active').trim()
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+    el.savedMsg.textContent = 'Saved.';
+    setTimeout(()=> el.savedMsg.textContent = '', 1200);
+  }
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(LS_KEY);
+      setHP(15);
+      el.stance.value = 'Balanced';
+      el.state.textContent = 'Active';
+      el.state.className = 'status-chip ' + statusClass('Active');
+
+      if (raw) {
+        const d = JSON.parse(raw);
+        el.name.value = d.name || '';
+        el.cls.value = d.cls || '';
+        el.perk1.value = d.perk1 || '';
+        el.perk2.value = d.perk2 || '';
+        el.stance.value = d.stance || 'Balanced';
+        setHP(d.hp || 15);
+        el.state.textContent = d.state || 'Active';
+        el.state.className = 'status-chip ' + statusClass(d.state || 'Active');
+      }
+      el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+      applyPerkDesc(el.perk1, el.perk1Desc);
+      el.perk1Desc.readOnly = true;
+      applyPerkDesc(el.perk2, el.perk2Desc);
+      el.perk2Desc.readOnly = true;
+      renderStance();
+    }catch(e){
+      setHP(15);
+      el.stance.value = 'Balanced';
+      renderStance();
+      el.state.className = 'status-chip ' + statusClass('Active');
+    }
+  }
+
+  // Events
+  el.cls.addEventListener('change', () => {
+    el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+  });
+  el.perk1.addEventListener('change', () => applyPerkDesc(el.perk1, el.perk1Desc));
+  el.perk2.addEventListener('change', () => applyPerkDesc(el.perk2, el.perk2Desc));
+  el.stance.addEventListener('change', renderStance);
+  el.hpMinus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) - 1));
+  el.hpPlus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) + 1));
+  el.state.addEventListener('click', cycleState);
+  el.save.addEventListener('click', save);
+
+  load();
+})();
+
+</script>
 </body>
 </html>

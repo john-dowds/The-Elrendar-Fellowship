@@ -5,7 +5,7 @@ const DATA_URL = 'assets/data/gallery.json';
 const grid = document.getElementById('galleryGrid');
 const filters = document.getElementById('galleryFilters');
 
-/* Lightbox (isolated) */
+/* Lightbox */
 const GLB = document.getElementById('glb');
 const MODAL = GLB.querySelector('.glb__modal');
 const IMG = document.getElementById('glbImg');
@@ -125,13 +125,13 @@ function renderGrid(list) {
 }
 
 
-/* =============== Lightbox (single <img> approach) =============== */
+/* =============== Lightbox =============== */
 
 function openLightboxById(photoId){
   const i = filtered.findIndex(p => p.id === photoId);
   index = i >= 0 ? i : 0;
   GLB.hidden = false;
-  document.documentElement.style.overflow = 'hidden'; // lock scroll
+  document.documentElement.style.overflow = 'hidden'; 
   show(index);
 }
 
@@ -140,7 +140,6 @@ function closeLightbox(){
   document.documentElement.style.overflow = '';
 }
 
-/* Show current index by swapping a single <img> source (no tracks). */
 function show(n){
   index = Math.max(0, Math.min(filtered.length - 1, n));
   const p = filtered[index];
@@ -148,8 +147,7 @@ function show(n){
   TITLE.textContent = p.title || '';
   CAP.innerHTML = p.caption || '';
 
-  // Load image, then size the frame to it
-  IMG.style.opacity = '0'; // fade-in after load
+  IMG.style.opacity = '0';
   IMG.onload = () => {
     fitModalToImage();
     requestAnimationFrame(() => { IMG.style.opacity = '1'; });
@@ -162,10 +160,9 @@ function show(n){
   IMG.alt = p.alt || p.title || '';
 }
 
-/* Compute modal size to wrap the displayed image (no side gutters). */
 function fitModalToImage(){
   const maxW = Math.min(window.innerWidth * 0.92, 1200);
-  const capH = GLB.querySelector('.glb__caption').offsetHeight + 8; // grid gap
+  const capH = GLB.querySelector('.glb__caption').offsetHeight + 8; 
   const maxH = Math.max(320, Math.min(window.innerHeight * 0.92 - capH, 1000));
 
   const natW = IMG.naturalWidth || IMG.width;
@@ -176,11 +173,9 @@ function fitModalToImage(){
   const w = Math.max(320, Math.floor(natW * scale));
   const h = Math.max(200, Math.floor(natH * scale));
 
-  // Set image size limits (CSS ensures it won't exceed these anyway)
   IMG.style.maxWidth = w + 'px';
   IMG.style.maxHeight = h + 'px';
 
-  // Modal width should match image width exactly (no padding)
   MODAL.style.width = w + 'px';
 }
 
