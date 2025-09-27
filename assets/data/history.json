@@ -34,6 +34,14 @@
       ]
     },
     {
+      "id": "event005",
+      "title": "Event: Arcane Anomaly",
+      "subtitle": "'Event, September 26'",
+      "date": "c. Year 42",
+      "summary_html": "\n Fellows of the order-including High Sorcerer Aelendan Shatterstar, Haverstead Brightspear, Quely Phoenixheaert, Kindrith Windstalker, Hal'sonas Windreaver, Talis Lightbrook, and Soryn Cloudspire-respond to an anomaly spiraling out of control to the west of the Sunwell Plateau. Joining forces with members of the Magisters, the Fellowship's members identify a clot impacting the ley lines, which they purge and nulify the aberrant anomalies spawning off of it. The occurance, though handled, raises questions about what could have caused a clot in the ley lines.\n            ",
+      "order": 25
+    },
+    {
       "id": "event004",
       "title": "Event: Spectral Sabotage",
       "subtitle": "'Event, September 15'",
