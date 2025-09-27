@@ -1969,16 +1969,28 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Felblade Strike",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "Strikes wreathed in fel fire."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Burning Zeal",
-          "trait": "Damage Over Time",
-          "theme": "buffs",
-          "effect": "Strike with fanatical fervor, increasing damage dealt by 1. for three turns"
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
+        },
+        {
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
+        },
+        {
+          "name": "Hammer of the Naaru",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with radiant force."
         }
       ],
       "description": "Farmers, traders, and artisans of the draenei who rarely take up arms.",
@@ -5049,6 +5061,18 @@
           "trait": "Dash",
           "theme": "translocation",
           "effect": "Deploys a drone to scout or harass."
+        },
+        {
+          "name": "Work Work",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Carries supplies and materials."
+        },
+        {
+          "name": "Wrench Toss",
+          "trait": "light attack",
+          "theme": "damage",
+          "effect": "Improvised ranged attack with tools."
         }
       ],
       "description": "Exploited workers and miners, rarely armed but plentiful.",
@@ -6423,28 +6447,22 @@
       "hp": 6,
       "traits": [
         {
-          "name": "Crushing Fist",
-          "trait": "Stun",
-          "theme": "damage",
-          "effect": "Slams enemy with overwhelming force, staggering target briefly."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Lightning Burst",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "Deals heavy single-target strike."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Righteous Zeal",
-          "trait": "Shield",
-          "theme": "buffs",
-          "effect": "Strikes harder when facing heretical enemies."
-        },
-        {
-          "name": "Fel Claw",
-          "trait": "Damage Over Time",
-          "theme": "damage",
-          "effect": "Inflicts damage that bleeds for several rounds."
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday townsfolk, untrained for combat.",
@@ -7527,16 +7545,22 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Crushing Fist",
-          "trait": "Stun",
-          "theme": "damage",
-          "effect": "Slams enemy with overwhelming force, staggering target briefly."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "War Horn",
-          "trait": "Summon",
-          "theme": "buffs",
-          "effect": "A brazen call that steels allied hearts, emboldening allies to strike twice as hard on their next hit."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
+        },
+        {
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday Jinyu villagers, fishers, and artisans of Pandaria’s rivers.",
@@ -7687,22 +7711,22 @@
       "hp": 9,
       "traits": [
         {
-          "name": "Fel Rupture",
-          "trait": "Area Blast",
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
+        },
+        {
+          "name": "Wild Swing",
+          "trait": "cleave",
           "theme": "aoe",
-          "effect": "Fel spikes rupture through the earth, impaling enemies and dealing heavy damage."
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Adamant Frame",
-          "trait": "Precise Attack",
-          "theme": "buffs",
-          "effect": "Massive plating shrugs off punishing strikes, preventing puncturing hits like Aimed Shot."
-        },
-        {
-          "name": "Fel Bite",
-          "trait": "Damage Over Time",
+          "name": "Flee",
+          "trait": "fear",
           "theme": "debuffs",
-          "effect": "Inflicts a fel-tainted wound that persists unless cleansed."
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday inhabitants of kaldorei settlements.",
@@ -10532,6 +10556,18 @@
           "trait": "Cleave",
           "theme": "damage",
           "effect": "Swings wildly at surrounding enemies."
+        },
+        {
+          "name": "Work Work",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Carries supplies and materials."
+        },
+        {
+          "name": "Wrench Toss",
+          "trait": "light attack",
+          "theme": "damage",
+          "effect": "Improvised ranged attack with tools."
         }
       ],
       "description": "Laborers and builders, pressed into battle only in desperation.",
@@ -10789,16 +10825,22 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Arcane Lash",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "Strikes with mana-hardened force, dealing direct damage."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Spear Throw",
-          "trait": "Root",
-          "theme": "damage",
-          "effect": "A standard ranged throw that can impale and root enemies."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
+        },
+        {
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Villagers, farmers, and traders of Pandaria, typically peaceful but resilient.",
@@ -11335,16 +11377,22 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Fel Bite",
-          "trait": "Damage Over Time",
-          "theme": "debuffs",
-          "effect": "Inflicts a fel-tainted wound that persists unless cleansed."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Lava Smash",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "Strikes with primal force, dealing direct damage."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
+        },
+        {
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday elven townsfolk and artisans.",
@@ -11933,34 +11981,22 @@
       "hp": 9,
       "traits": [
         {
-          "name": "Disguise",
-          "trait": "Dash",
-          "theme": "utility",
-          "effect": "Blends seamlessly among enemies."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Brine Mend",
-          "trait": "Area Heal",
-          "theme": "healing",
-          "effect": "Heals wounds with seawater rituals."
-        },
-        {
-          "name": "Firestorm",
-          "trait": "Area Blast",
+          "name": "Wild Swing",
+          "trait": "cleave",
           "theme": "aoe",
-          "effect": "Unleashes waves of flame."
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Ocean’s Wrath",
-          "trait": "Root",
-          "theme": "roots",
-          "effect": "Unleashes a wave of force that knocks foes back."
-        },
-        {
-          "name": "Rabid Fever",
-          "trait": "Weaken",
+          "name": "Flee",
+          "trait": "fear",
           "theme": "debuffs",
-          "effect": "A disease that evolves into feral behavior if not cured."
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Former high elves reshaped by the void’s touch, many still adapting.",
@@ -12832,28 +12868,22 @@
       "hp": 9,
       "traits": [
         {
-          "name": "Blood Craze",
-          "trait": "Shield",
-          "theme": "buffs",
-          "effect": "Attacks strike harder at low HP."
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Wind Slash",
-          "trait": "Stun",
-          "theme": "damage",
-          "effect": "Knocks enemy back briefly, staggering them."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Undertow",
-          "trait": "Crushing Attack",
-          "theme": "roots",
-          "effect": "Pulls enemies down with crushing water currents."
-        },
-        {
-          "name": "Blade Flurry",
-          "trait": "Rapid Attack",
-          "theme": "damage",
-          "effect": "Rapid strikes overwhelm a single target’s defenses."
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday inhabitants of Suramar, bound to the Nightwell.",
@@ -13379,22 +13409,22 @@
       "hp": 8,
       "traits": [
         {
-          "name": "War Horn",
+          "name": "Call for Help",
           "trait": "Summon",
-          "theme": "buffs",
-          "effect": "A brazen call that steels allied hearts, emboldening allies to strike twice as hard on their next hit."
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Venom Bite",
-          "trait": "Weaken",
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
+        },
+        {
+          "name": "Flee",
+          "trait": "fear",
           "theme": "debuffs",
-          "effect": "Inflicts sickness that weakens and harms."
-        },
-        {
-          "name": "Hammer of the Naaru",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "Strikes with radiant force."
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday residents of Silvermoon City.",
@@ -13756,22 +13786,22 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Whirlwind Rage",
-          "trait": "Root",
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
+        },
+        {
+          "name": "Wild Swing",
+          "trait": "cleave",
           "theme": "aoe",
-          "effect": "Spins weapons to strike many foes."
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Blazing Strike",
-          "trait": "Damage Over Time",
-          "theme": "damage",
-          "effect": "Smashes enemies with fiery weapons, dealing instant damage and leaving Burning damage."
-        },
-        {
-          "name": "Flurry Strike",
-          "trait": "Rapid Attack",
-          "theme": "damage",
-          "effect": "Rapid blow sequence disrupts guard."
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Farmers, herders, and artisans of tauren tribes.",
@@ -16521,34 +16551,22 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Burning Zeal",
-          "trait": "Damage Over Time",
-          "theme": "buffs",
-          "effect": "Strike with fanatical fervor, increasing damage dealt by 1. for three turns"
-        },
-        {
-          "name": "Leap Strike",
-          "trait": "Teleport",
-          "theme": "translocation",
-          "effect": "Quickly move a short distance without teleporting and immediately deal damage."
-        },
-        {
-          "name": "War Horn",
+          "name": "Call for Help",
           "trait": "Summon",
-          "theme": "buffs",
-          "effect": "A brazen call that steels allied hearts, emboldening allies to strike twice as hard on their next hit."
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
         },
         {
-          "name": "Arcane Bolt",
-          "trait": "Precise Attack",
-          "theme": "damage",
-          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+          "name": "Wild Swing",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Hits multiple foes with reckless abandon."
         },
         {
-          "name": "Arcane Bite",
-          "trait": "Crushing Attack",
-          "theme": "damage",
-          "effect": "A bite that leaves a stinging arcane wound, Slowing the target."
+          "name": "Flee",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "At low health, may attempt to run instead of fight."
         }
       ],
       "description": "Everyday Vulpera desert dwellers, traders, and caravan keepers.",
