@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "Dragonkin",
   "entries": [
     {
@@ -11,16 +11,22 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Arcane Puff",
-          "trait": "blast",
+          "name": "Mana Bolt",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Releases a surge of arcane force at range, dealing damage."
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
         },
         {
           "name": "Mana Sense",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Draconic senses pierce concealment briefly."
+        },
+        {
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
         }
       ],
       "description": "Curious arcane-touched hatchlings of the Blue Dragonflight.",
@@ -36,7 +42,7 @@
       "traits": [
         {
           "name": "Arcane Lash",
-          "trait": "strike",
+          "trait": "heavy attack",
           "theme": "damage",
           "effect": "Strikes with mana-hardened force, dealing direct damage."
         },
@@ -44,7 +50,13 @@
           "name": "Runic Scales",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "A runic barrier shimmers, reducing incoming harm."
+          "effect": "Runic scales ward off area-wide damage."
+        },
+        {
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         }
       ],
       "description": "Bipedal guardians who defend ley nexuses and archives.",
@@ -59,16 +71,22 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Mana Burst",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Releases a surge of arcane force at range, dealing damage."
+          "name": "Arcane Torrent",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
         },
         {
-          "name": "Ward of Wyrmrest",
+          "name": "Shimmering Barrier",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "A runic barrier shimmers, reducing incoming harm."
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
         }
       ],
       "description": "Medium wyrms that police irresponsible spellwork.",
@@ -93,6 +111,18 @@
           "trait": "empower",
           "theme": "buffs",
           "effect": "Rouses draconic vigor, increasing potency briefly."
+        },
+        {
+          "name": "Battle Roar",
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Demoralizes enemies."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
         }
       ],
       "description": "Sovereigns of arcane order and keepers of ley lines.",
@@ -107,16 +137,34 @@
       "hp": 40,
       "traits": [
         {
-          "name": "Apex Surge",
-          "trait": "blast",
+          "name": "Arcane Barrage",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Releases a surge of arcane force at range, dealing damage."
+          "effect": "Fires a massive bolt of arcane energy, blasting the enemy with heavy damage."
         },
         {
-          "name": "Mana Mastery",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Strikes with mana-hardened force, dealing direct damage."
+          "name": "Mana Barrier",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Protects themselves with energy shield."
+        },
+        {
+          "name": "Radiant Soar",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Sweep up into the skies and relocate without teleporting."
+        },
+        {
+          "name": "Arcane Torrent",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
+        },
+        {
+          "name": "Draconic Crash",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "Descends rapidly from the sky and slams into the ground, throwing everyone nearby backwards and stunning them, leaving them vulnerable."
         }
       ],
       "description": "Millennia-old blues whose will can shape ley itself.",
@@ -137,10 +185,16 @@
           "effect": "Breathes a cone of flame or cinders that damages enemies before it."
         },
         {
-          "name": "Stone-blood",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Basalt plates or ember-shields blunt incoming harm."
+          "name": "Shadow Bolt",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Blasts enemies with shadow magic."
+        },
+        {
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
         }
       ],
       "description": "Soot-coated hatchlings born in cavernous lairs.",
@@ -155,7 +209,7 @@
       "hp": 19,
       "traits": [
         {
-          "name": "Magma Slash",
+          "name": "Magma Crash",
           "trait": "damage_over_time",
           "theme": "damage",
           "effect": "Ember-heat or stone shards harm the target over time."
@@ -165,6 +219,12 @@
           "trait": "shield",
           "theme": "buffs",
           "effect": "Basalt plates or ember-shields blunt incoming harm."
+        },
+        {
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         }
       ],
       "description": "Burly guardians forged by heat, pressure, and discipline.",
@@ -179,16 +239,22 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Molten Roar",
-          "trait": "area_blast",
+          "name": "Flame Breath",
+          "trait": "cone",
           "theme": "aoe",
-          "effect": "Detonates a basalt/flame burst, damaging nearby foes."
+          "effect": "Inflicts damage across a wide area."
         },
         {
           "name": "Obsidian Plates",
           "trait": "shield",
           "theme": "buffs",
           "effect": "Basalt plates or ember-shields blunt incoming harm."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Hardened drakes who prowl for weaknesses in enemy lines.",
@@ -204,15 +270,27 @@
       "traits": [
         {
           "name": "Lava Gout",
-          "trait": "damage_over_time",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Ember-heat or stone shards harm the target over time."
+          "effect": "Flames erupt beneath the target, burning them over several turns."
         },
         {
-          "name": "Earth Ward",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Basalt plates or ember-shields blunt incoming harm."
+          "name": "Unstoppable Rage",
+          "trait": "deflect",
+          "theme": "damage",
+          "effect": "Ignores effects that would slow them."
+        },
+        {
+          "name": "Cataclysmic Bellow",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Roars with tectonic power, causing all enemies to cower in fear."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
         }
       ],
       "description": "Earth-bound overlords whose rage is tectonic.",
@@ -227,16 +305,34 @@
       "hp": 42,
       "traits": [
         {
-          "name": "Cataclysmic Bellow",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Crashes with tectonic power, dealing direct damage."
+          "name": "Shadow Volley",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Unleashes a deadly volley of shadow bolts."
         },
         {
-          "name": "Magma Burst",
-          "trait": "ground_effect",
+          "name": "Flame Crash",
+          "trait": "ground effect",
           "theme": "aoe",
-          "effect": "Sheets the ground in magma or shards that harm those who linger."
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        },
+        {
+          "name": "Hellfire",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Summons a devastating rain of fire from the skies above."
+        },
+        {
+          "name": "Shadow Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Blasts enemies ahead of the caster with a sickening wave of shadow magic."
+        },
+        {
+          "name": "Cataclysmic Bellow",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Roars with tectonic power, causing all enemies to cower in fear."
         }
       ],
       "description": "Primeval engines of ruin, avatars of earth’s wrath.",
@@ -251,16 +347,22 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Dream Dust",
-          "trait": "strike",
+          "name": "Jade Bolt",
+          "trait": "light attack",
           "theme": "damage",
-          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+          "effect": "A cutting arcane shard of jade-tinted force."
         },
         {
-          "name": "Root",
+          "name": "Deep Roots",
           "trait": "root",
           "theme": "roots",
-          "effect": "Vines seize the target in place, preventing movement."
+          "effect": "Vines seize the target, preventing movement."
+        },
+        {
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
         }
       ],
       "description": "Playful guardians tied to the Emerald Dream.",
@@ -281,10 +383,10 @@
           "effect": "Vines seize the target in place, preventing movement."
         },
         {
-          "name": "Dream-warded Scales",
-          "trait": "damage_over_time",
+          "name": "Aura of Purity",
+          "trait": "area blast",
           "theme": "damage",
-          "effect": "Toxic pollen gnaws at the target over several rounds."
+          "effect": "Instantly damages all enemies in a radius."
         }
       ],
       "description": "Serpentine wardens who patrol groves and gateways.",
@@ -308,7 +410,13 @@
           "name": "Verdant Aegis",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Dream-warded scales reduce incoming harm."
+          "effect": "Life-bound scales reduce incoming harm."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Healers and wardens soaring between Dream-touched boughs.",
@@ -323,16 +431,28 @@
       "hp": 33,
       "traits": [
         {
-          "name": "Emerald Breath",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Whips a leafstorm that damages nearby foes."
+          "name": "Life Flame",
+          "trait": "area heal",
+          "theme": "healing",
+          "effect": "Heals all allies and burns all undead or demons within the area."
         },
         {
-          "name": "Dreamveil",
-          "trait": "strike",
+          "name": "Piercing Talons",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Jade Bolt",
+          "trait": "light attack",
+          "theme": "damage",
+          "effect": "A cutting arcane shard of jade-tinted force."
         }
       ],
       "description": "Stewards of life and the slumbering Dream.",
@@ -347,16 +467,34 @@
       "hp": 40,
       "traits": [
         {
-          "name": "Song of the Dream",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rakes with thorn-keen talons, dealing direct damage."
+          "name": "Sleep Spores",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Dream-haze weighs on the target, reducing movement speed."
         },
         {
-          "name": "Elemental Grasp",
+          "name": "Draconic Crash",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "Descends rapidly from the sky and slams into the ground, throwing everyone nearby backwards and stunning them, leaving them vulnerable."
+        },
+        {
+          "name": "Deep Roots",
           "trait": "root",
           "theme": "roots",
-          "effect": "Vines seize multiple targets in place, preventing movement."
+          "effect": "Vines seize the target, preventing movement."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Archdruid's Ritual",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Summons the most powerful nature elementals as elites, or bosses."
         }
       ],
       "description": "Ancients who bridge waking world and Dream.",
@@ -371,16 +509,22 @@
       "hp": 11,
       "traits": [
         {
-          "name": "Spark Breath",
-          "trait": "damage_over_time",
+          "name": "Fireball",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Sacred flame continues to sear corruption over time."
+          "effect": "Launches a ball of fiery magic at the target from range."
         },
         {
-          "name": "Kindled Heart",
-          "trait": "strike",
+          "name": "Winged Strike",
+          "trait": "weaken",
           "theme": "damage",
-          "effect": "Seares with consecrated flame, dealing direct damage."
+          "effect": "Dive attack staggers foe briefly."
+        },
+        {
+          "name": "Life Breath",
+          "trait": "power heal",
+          "theme": "healing",
+          "effect": "Breath of life that raises or steadies an ally."
         }
       ],
       "description": "Fiery hatchlings already protective of the helpless.",
@@ -395,16 +539,22 @@
       "hp": 19,
       "traits": [
         {
-          "name": "Flamebrand",
+          "name": "Cleanse",
           "trait": "cleanse",
           "theme": "buffs",
-          "effect": "Removes harmful effects from an ally."
+          "effect": "Removes corruption from allies."
         },
         {
-          "name": "Lifeblood Scales",
+          "name": "Guardian Ward",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "effect": "Broad shields and a fierce sense of duty compels the wielder to defend their allies against harm."
+        },
+        {
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         }
       ],
       "description": "Defenders who mingle flame with restoration.",
@@ -419,16 +569,22 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Cauterizing Roar",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Detonates a curative flame-burst that still harms foes."
+          "name": "Cataclysmic Bellow",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Roars with tectonic power, causing all enemies to cower in fear."
         },
         {
-          "name": "Flame Ward",
-          "trait": "shield",
+          "name": "Arcane Ward",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "effect": "Reduces magical damage."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Noble drakes patrolling sanctums of life.",
@@ -443,16 +599,28 @@
       "hp": 34,
       "traits": [
         {
-          "name": "Life-Flame",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Seares with consecrated flame, dealing direct damage."
+          "name": "Life Flame",
+          "trait": "area heal",
+          "theme": "healing",
+          "effect": "Heals all allies and burns all undead or demons within the area."
         },
         {
-          "name": "Ruby Aegis",
-          "trait": "shield",
+          "name": "Verdant Aegis",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "effect": "Life-bound scales reduce incoming harm."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Flame Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Inflicts damage across a wide area."
         }
       ],
       "description": "Wardens of life and healers of grievous wounds.",
@@ -467,16 +635,34 @@
       "hp": 41,
       "traits": [
         {
-          "name": "Phoenix Gale",
-          "trait": "area_blast",
+          "name": "Massive Stomp",
+          "trait": "area blast",
           "theme": "aoe",
-          "effect": "Detonates a curative flame-burst that still harms foes."
+          "effect": "Instantly damages all enemies in a radius."
         },
         {
-          "name": "Sanctuary of Scales",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "name": "Flame Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Inflicts damage across a wide area."
+        },
+        {
+          "name": "Healing Wave",
+          "trait": "power heal",
+          "theme": "healing",
+          "effect": "Restores lots of health to an ally."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Draconic Crash",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "Descends rapidly from the sky and slams into the ground, throwing everyone nearby backwards and stunning them, leaving them vulnerable."
         }
       ],
       "description": "Ancients whose very presence kindles renewal.",
@@ -492,15 +678,21 @@
       "traits": [
         {
           "name": "Time Blink",
-          "trait": "dash",
-          "theme": "utility",
-          "effect": "Glides or surges rapidly a short distance."
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions and rewinds time one turn."
         },
         {
-          "name": "Chronal Curiosity",
-          "trait": "reveal_hidden",
-          "theme": "utility",
-          "effect": "Draconic senses pierce concealment briefly."
+          "name": "Chrono Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of sand-laden time that damages enemies before it."
+        },
+        {
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
         }
       ],
       "description": "Playful keepers of temporal threads.",
@@ -515,16 +707,22 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Sands of Delay",
-          "trait": "damage_over_time",
-          "theme": "damage",
-          "effect": "Hits in a time-skipping blur, dealing direct damage over time."
+          "name": "Shield Bash",
+          "trait": "interrupt",
+          "theme": "utility",
+          "effect": "Bashes enemy, inflicting Off-Balance and interrupting their spells."
         },
         {
-          "name": "Temporal Ward",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Fate-sands dull incoming harm."
+          "name": "Unwinding Touch",
+          "trait": "purge",
+          "theme": "debuffs",
+          "effect": "Fate-sands erase beneficial traits."
+        },
+        {
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         }
       ],
       "description": "Time-touched guardians of the caverns of time.",
@@ -549,6 +747,12 @@
           "trait": "divine",
           "theme": "utility",
           "effect": "Bears witness to visions of the future."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Temporal wardens that police branching histories.",
@@ -563,16 +767,28 @@
       "hp": 33,
       "traits": [
         {
-          "name": "Time Collapse",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Projects a temporal pulse at range, dealing damage."
+          "name": "Massive Stomp",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
         },
         {
-          "name": "Hourglass Ward",
+          "name": "Shimmering Barrier",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Fate-sands dull incoming harm."
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Claw Strike",
+          "trait": "damage over time",
+          "theme": "damage",
+          "effect": "Heavy swipe causes intense bleeding."
         }
       ],
       "description": "Dragons who steward timelines against paradox.",
@@ -587,16 +803,34 @@
       "hp": 40,
       "traits": [
         {
-          "name": "Eon Surge",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Projects a temporal pulse at range, dealing damage."
+          "name": "Elemental Blast",
+          "trait": "damage",
+          "theme": "light attack",
+          "effect": "Unleashes a blast of raw elemental energy."
         },
         {
-          "name": "Paradox Hide",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Fate-sands dull incoming harm."
+          "name": "Wing Buffet",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Chrono Correction",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Warps time to correct prior mistakes, enabling the caster to reverse injuries or outcomes at will."
+        },
+        {
+          "name": "Sands of Madness",
+          "trait": "possession",
+          "theme": "utility",
+          "effect": "Elemental fate-sands warp the target's mind, and the subsequent visions of both future and past possibilities drives the victim to temporary madness."
         }
       ],
       "description": "Ancients whose breaths taste of sand and centuries.",
@@ -611,16 +845,22 @@
       "hp": 12,
       "traits": [
         {
-          "name": "Gnash",
-          "trait": "strike",
+          "name": "Gnaw",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Seares with elemental flame, dealing direct damage."
+          "effect": "Inflicts damage that persists for several rounds."
         },
         {
-          "name": "Primeval Hide",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "name": "Fireball",
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "Launches a ball of fiery magic at the target from range."
+        },
+        {
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
         }
       ],
       "description": "Primal hatchlings hatched in icy aeries and storm-scarred crags.",
@@ -635,16 +875,22 @@
       "hp": 30,
       "traits": [
         {
-          "name": "Rending Bite",
-          "trait": "strike",
+          "name": "Ferocious Bite",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Mauls with primeval strength, dealing direct damage."
+          "effect": "Inflicts damage that bleeds for several rounds."
         },
         {
-          "name": "Primeval Roar",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Slams the ground in a shock that harms nearby foes."
+          "name": "Cataclysmic Bellow",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Roars with tectonic power, causing all enemies to cower in fear."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Ancient, horn-crowned drakes with brutal hunting patterns.",
@@ -659,16 +905,28 @@
       "hp": 36,
       "traits": [
         {
-          "name": "Elemental Bellow",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Churns earth and element into a hazard that harms those who linger."
+          "name": "Bloodthirst",
+          "trait": "healing",
+          "theme": "heal",
+          "effect": "Heals slightly when killing enemies."
         },
         {
-          "name": "Glacial/Voltaic Hide",
+          "name": "Runic Scales",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Primeval hide blunts incoming harm."
+          "effect": "Runic scales ward off area-wide damage."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Frenzied Attack",
+          "trait": "rapid attack",
+          "theme": "damage",
+          "effect": "Strikes erratically, harder at low health."
         }
       ],
       "description": "Rare elders among protodrakes—elemental titans of the skies.",
@@ -683,16 +941,22 @@
       "hp": 11,
       "traits": [
         {
-          "name": "Shadow Spark",
-          "trait": "blast",
+          "name": "Shadow Bolt",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Seares with twisted shadow flame, dealing direct damage."
+          "effect": "Blasts enemies with shadow magic."
         },
         {
-          "name": "Unstable Scales",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Radiant flame shields allies from harm."
+          "name": "Winged Strike",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Dive attack staggers foe briefly."
+        },
+        {
+          "name": "Cursed Claw",
+          "trait": "damage over time",
+          "theme": "damage",
+          "effect": "Strike has a chance to inflict Bleeding."
         }
       ],
       "description": "Void-touched hatchlings bred from forbidden experiments.",
@@ -717,6 +981,12 @@
           "trait": "shield",
           "theme": "buffs",
           "effect": "Half-real scales distort incoming force."
+        },
+        {
+          "name": "Call Whelps",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons whelplings from their brooding dens or eggs, directing them to swarm targeted enemies."
         }
       ],
       "description": "Dragons forged in shadow and flame to serve apocalyptic cults.",
@@ -732,15 +1002,33 @@
       "traits": [
         {
           "name": "Voidstorm",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rips with void-touched fury, dealing direct damage."
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
         },
         {
-          "name": "Blast",
-          "trait": "blast",
+          "name": "Shadow Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Blasts enemies ahead of the caster with a sickening wave of shadow magic."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Summon Major Void",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Calls a major aberrant void spawn to the field."
+        },
+        {
+          "name": "Shadow Bolt",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Lances a thread of twilight at range, dealing damage."
+          "effect": "Blasts enemies with shadow magic."
         }
       ],
       "description": "Terrible fusions of void and dragonfire unleashed by zealots.",
@@ -762,9 +1050,21 @@
         },
         {
           "name": "Scattered Mana",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Scatters a hail prismatic mana shards that harms those who linger."
+          "trait": "disorient",
+          "theme": "roots",
+          "effect": "Overwhelms foes with raw mana, Disoriented them for a turn."
+        },
+        {
+          "name": "Arcane Riposte",
+          "trait": "deflect",
+          "theme": "damage",
+          "effect": "Counters magical strikes, preventing their impact."
+        },
+        {
+          "name": "Leap Strike",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Quickly move a short distance without teleporting and immediately deal damage."
         }
       ],
       "description": "Awakened draconic soldiers who channel the powers of the flights.",
@@ -789,6 +1089,12 @@
           "trait": "shield",
           "theme": "buffs",
           "effect": "Scaled wards deflect incoming harm."
+        },
+        {
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         }
       ],
       "description": "Frontline Dracthyr who hold the line while evokers cast.",

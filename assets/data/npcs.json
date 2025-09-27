@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "NPCs",
   "entries": [
     {
@@ -21,16 +21,34 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Sunreaver Portalwork",
-          "trait": "portal_rift",
-          "theme": "translocation",
-          "effect": "Establishes arcane links for rapid redeployments."
+          "name": "Time Warp",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Briefly accelerates allies’ actions."
         },
         {
-          "name": "Council Leverage",
-          "trait": "strike",
+          "name": "Entropy Surge",
+          "trait": "Dash",
           "theme": "damage",
-          "effect": "Sways neutral factions with political pressure."
+          "effect": "Unleashes a focused fel-arcane blast at range, dealing damage."
+        },
+        {
+          "name": "Veilshot Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Blink between shadowed cover; gains advantage on the next shot."
+        },
+        {
+          "name": "Arcane Drain",
+          "trait": "Weaken",
+          "theme": "utility",
+          "effect": "Saps the mana from a target, Weakening them for a turn."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
         }
       ],
       "description": "Figurehead of the Sunreavers and a canny political actor. Equally at home in a war council or a mage conclave.",
@@ -62,16 +80,34 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Gateway Conjuration",
-          "trait": "portal_rift",
-          "theme": "translocation",
-          "effect": "Opens tactical portals for rapid redeployments or retreats."
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
         },
         {
-          "name": "Sage of Three Eras",
-          "trait": "strike",
+          "name": "Void Rift",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons a portal that disrupts terrain briefly."
+        },
+        {
+          "name": "Escape Portal",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Phase out of danger once per encounter."
+        },
+        {
+          "name": "Arcane Defection",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Once per scene, convert a failed check into a narrow success via hard-earned insight."
+          "effect": "Turns enemy caster wards against their owners."
+        },
+        {
+          "name": "Magister's Portalworks",
+          "trait": "Rapid Attack",
+          "theme": "translocation",
+          "effect": "Establishes arcane links for rapid redeployments."
         }
       ],
       "description": "A steady hand of the Kirin Tor—mediator, problem-solver, and veteran of world-shaping crises.",
@@ -104,16 +140,34 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Black Arrow",
-          "trait": "damage_over_time",
-          "theme": "damage",
-          "effect": "Arrows tainted with dark magic that linger, draining the target's health."
+          "name": "Broadside Cannons",
+          "trait": "Volley",
+          "theme": "aoe",
+          "effect": "Unleashes devastating synchronized volleys."
         },
         {
-          "name": "Banshee Form",
-          "trait": "dash",
-          "theme": "utility",
-          "effect": "Transforms into an ethereal banshee, capable of flight and possessing others."
+          "name": "Focused Cast",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A narrowly focused spellcast with a much higher chance of striking the target."
+        },
+        {
+          "name": "Rapid Fire",
+          "trait": "Rapid Attack",
+          "theme": "damage",
+          "effect": "Unleashes quick volleys of arrows."
+        },
+        {
+          "name": "Barrage",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Unleashes a flurry of shots at a group of enemies, dealing hit damage to all targets."
+        },
+        {
+          "name": "Spear Volley",
+          "trait": "Root",
+          "theme": "damage",
+          "effect": "Throw all remaining spears in rapid succession, pinning and rooting enemies or dealing damage."
         }
       ],
       "description": "Legendary ranger-general of Quel'Thalas who was slain defending Silvermoon against the Scourge. Raised into undeath by Prince Arthas, she has been tormented by her curse ever since.",
@@ -144,16 +198,28 @@
       "hp": 19,
       "traits": [
         {
-          "name": "Shield of the Court",
-          "trait": "shield",
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
           "theme": "buffs",
-          "effect": "Projects a brief barrier for nearby allies in formation."
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
         },
         {
-          "name": "Drillmaster’s Bark",
-          "trait": "empower",
+          "name": "Fel Rend",
+          "trait": "Shield",
+          "theme": "damage",
+          "effect": "Tears through magical wards."
+        },
+        {
+          "name": "Desert Blessing",
+          "trait": "Area Heal",
           "theme": "buffs",
-          "effect": "Squads under Talthis snap to orders; gain poise after rally."
+          "effect": "Shields an ally with spiritual power and heals them when damaged."
+        },
+        {
+          "name": "Blessing of Feathers",
+          "trait": "Empower",
+          "theme": "buffs",
+          "effect": "Nearby harpies resist damage briefly."
         }
       ],
       "description": "A hard-edged trainer and field captain whose standards are as uncompromising as his guard.",
@@ -178,16 +244,34 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Diplomatic Shield",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Reduces fallout from faction incidents in cities."
+          "name": "Rift Implosion",
+          "trait": "Shield",
+          "theme": "roots",
+          "effect": "Collapses a Void Rift to create a gravity well, sucking all enemies towards it."
         },
         {
-          "name": "Silver Ensign",
-          "trait": "empower",
+          "name": "Lunar Blessing",
+          "trait": "Damage Over Time",
           "theme": "buffs",
-          "effect": "Nearby Quel’dorei rally against overwhelming odds."
+          "effect": "Lunar blessings protect against incoming damage for one turn."
+        },
+        {
+          "name": "Hammer of the Naaru",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with radiant force."
+        },
+        {
+          "name": "Blessing of Elune",
+          "trait": "Empower",
+          "theme": "buffs",
+          "effect": "Empowers allies with holy lunar radiance."
+        },
+        {
+          "name": "Draconic Crash",
+          "trait": "Stun",
+          "theme": "debuffs",
+          "effect": "Descends rapidly from the sky and slams into the ground, throwing everyone nearby backwards and stunning them, leaving them vulnerable."
         }
       ],
       "description": "High elven captain and visible standard-bearer for the Silver Covenant’s honor.",
@@ -216,16 +300,16 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Veilshot Step",
-          "trait": "teleport",
-          "theme": "translocation",
-          "effect": "Blink between shadowed cover; gains advantage on the next shot."
+          "name": "Barrage",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Unleashes a flurry of shots at a group of enemies, dealing hit damage to all targets."
         },
         {
-          "name": "Silencing Arrow",
-          "trait": "silence",
-          "theme": "debuffs",
-          "effect": "Briefly disrupts spellcasting and calls for aid."
+          "name": "Spear Volley",
+          "trait": "Root",
+          "theme": "damage",
+          "effect": "Throw all remaining spears in rapid succession, pinning and rooting enemies or dealing damage."
         }
       ],
       "description": "A pragmatic dark ranger accustomed to hard choices; her aid comes with sharp conditions.",
@@ -246,16 +330,16 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Site Safety Protocols",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Mitigates hazards from traps and unstable relics during digs."
+          "name": "Explosive Charge",
+          "trait": "Dash",
+          "theme": "aoe",
+          "effect": "Throws unstable bombs."
         },
         {
-          "name": "Relic Catalog",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Quickly classifies finds; allies gain targeted advantages vs. artifact effects."
+          "name": "Wave Shield",
+          "trait": "Summon",
+          "theme": "buffs",
+          "effect": "Summons a wall of water to block harm briefly."
         }
       ],
       "description": "A meticulous field examiner of the Reliquary with a talent for turning rubble into revelation.",
@@ -276,16 +360,34 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Leyline Attunement",
-          "trait": "haste",
+          "name": "Wave Shield",
+          "trait": "Summon",
           "theme": "buffs",
-          "effect": "Allied casters near ley nodes act with added clarity and speed."
+          "effect": "Summons a wall of water to block harm briefly."
         },
         {
-          "name": "Arcanist’s Focus",
-          "trait": "interrupt",
+          "name": "Collateral Damage",
+          "trait": "Dash",
+          "theme": "damage",
+          "effect": "On defeat, may detonate remaining charges."
+        },
+        {
+          "name": "Diplomatic Shield",
+          "trait": "Weaken",
           "theme": "utility",
-          "effect": "Sustains complex spells; reduces disruption from counter-magic."
+          "effect": "Reduces fallout from faction incidents in cities."
+        },
+        {
+          "name": "Webbed Shield",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Layered silk hardens into a carapace, reducing harm."
+        },
+        {
+          "name": "Bone Breaker",
+          "trait": "Stun",
+          "theme": "damage",
+          "effect": "Cripples enemies with crushing blows, dealing heavy damage and stunning them for two turns."
         }
       ],
       "description": "Leader of the Nightborne of Suramar—formal, decisive, and newly allied with Silvermoon’s interests.",
@@ -310,16 +412,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Counterspell",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Interrupts enemy casting."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Arcane Summon",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
+        },
+        {
+          "name": "Arcane Defection",
+          "trait": "Shield",
+          "theme": "damage",
+          "effect": "Turns enemy caster wards against their owners."
         }
       ],
       "description": "Deceased former grand magister of Quel'Thalas. Stationed at Isle of Quel'Danas.",
@@ -340,16 +454,34 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Summon",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
         },
         {
-          "name": "Interdict",
-          "trait": "interrupt",
-          "theme": "utility",
-          "effect": "Interrupts teleportation and planar travel in a radius."
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        },
+        {
+          "name": "Arcane Starvation",
+          "trait": "Crushing Attack",
+          "theme": "debuff",
+          "effect": "Cuts the target off from accessing mana-fueled abilities."
+        },
+        {
+          "name": "Shimmering Barrier",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
         }
       ],
       "description": "Architect of Silvermoon’s modern arcane doctrine. Stern, pragmatic, and brutally effective against enemy casters.",
@@ -375,16 +507,34 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Artifact Appraisal",
-          "trait": "reveal_hidden",
+          "name": "Shield Bash",
+          "trait": "Crushing Attack",
           "theme": "utility",
-          "effect": "Identifies relic properties; reduces risk from cursed finds."
+          "effect": "Bashes enemy, inflicting Off-Balance and interrupting their spells."
         },
         {
-          "name": "Field Cartography",
-          "trait": "strike",
+          "name": "Balanced Stance",
+          "trait": "Stun",
+          "theme": "buffs",
+          "effect": "Harder to knock down or stagger."
+        },
+        {
+          "name": "Mana Barrier",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Protects themselves with energy shield."
+        },
+        {
+          "name": "Defensive Aegis",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Lightforged runes reinforce hull plating against magic."
+        },
+        {
+          "name": "Thorn Shield",
+          "trait": "Reflect",
           "theme": "damage",
-          "effect": "Generates maps that grant movement advantage."
+          "effect": "Damage dealt back when struck in melee."
         }
       ],
       "description": "Frontier scholar of the Reliquary. Turns dusty ruins into living leads with a quill and a pry bar.",
@@ -403,16 +553,34 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Veil Step",
-          "trait": "teleport",
+          "name": "Rift Step",
+          "trait": "Teleport",
           "theme": "translocation",
-          "effect": "Passes through the Veil to evade danger."
+          "effect": "Short blink through the Veil to reposition."
         },
         {
-          "name": "Teach the Void",
-          "trait": "strike",
+          "name": "Void Blade",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Allows allies to channel controlled shadow safely once."
+          "effect": "Bypasses shields briefly."
+        },
+        {
+          "name": "Summon Major Void",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Calls a major aberrant void spawn to the field."
+        },
+        {
+          "name": "Beacon Nova",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Unleashes a radiant shockwave that weakens shadow foes."
+        },
+        {
+          "name": "Void Slash",
+          "trait": "Dash",
+          "theme": "translocation",
+          "effect": "Blade wounds linger with void corruption."
         }
       ],
       "description": "An enigmatic guide who teaches the Ren’dorei to hear the Void without surrendering to it.",
@@ -436,16 +604,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Flame Lash",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Sears the target with a burning strike, dealing direct damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Firestorm",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Unleashes waves of flame."
+        },
+        {
+          "name": "Diagnostic Ping",
+          "trait": "Root",
+          "theme": "utility",
+          "effect": "Highlights weak points for allied fire."
+        },
+        {
+          "name": "Mana Bolt",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
         }
       ],
       "description": "A blood elf magister encountered in Falcon Watch, Hellfire Peninsula. Stationed at Falcon Watch, Hellfire Peninsula.",
@@ -470,16 +650,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Escape Portal",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Phase out of danger once per encounter."
+        },
+        {
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
+        },
+        {
+          "name": "Jade Bolt",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "A cutting arcane shard of jade-tinted force."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -500,16 +692,34 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Naaru Containment",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Specialized wards neutralize radiant overloads."
+          "name": "Cold Hardened",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Takes less frost damage."
         },
         {
-          "name": "Doctrine of the Blade",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Nearby Blood Knights gain focused resolve."
+          "name": "Blood Rites",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Channels power from sacrifices."
+        },
+        {
+          "name": "Arena Strike",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Can attack twice if first hit connects."
+        },
+        {
+          "name": "Blood Pact",
+          "trait": "Empower",
+          "theme": "damage",
+          "effect": "Sacrifices HP to empower allies."
+        },
+        {
+          "name": "Chill of the Grave",
+          "trait": "Weaken",
+          "theme": "roots",
+          "effect": "Cold touch that saps warmth and slows the body."
         }
       ],
       "description": "Theorist and architect behind controversial doctrines that reshaped paladin practice in Silvermoon.",
@@ -541,16 +751,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Crude Rifle",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Fires inaccurate but powerful shots."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Flame Crash",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        },
+        {
+          "name": "Cinder Breath",
+          "trait": "Cone Attack",
+          "theme": "aoe",
+          "effect": "Breathes a cone of flame or cinders that damages enemies before it."
+        },
+        {
+          "name": "Life Flame",
+          "trait": "Damage Over Time",
+          "theme": "heal",
+          "effect": "Heals all allies and burns all undead or demons within the area."
         }
       ],
       "description": "A blood elf magister seen at Thrallmar in Hellfire Peninsula. Stationed at Thrallmar, Hellfire Peninsula.",
@@ -575,16 +797,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Sting",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Interdict",
+          "trait": "Teleport",
+          "theme": "utility",
+          "effect": "Interrupts teleportation and planar travel in a radius."
+        },
+        {
+          "name": "Arcane Starvation",
+          "trait": "Crushing Attack",
+          "theme": "debuff",
+          "effect": "Cuts the target off from accessing mana-fueled abilities."
+        },
+        {
+          "name": "Control Construct",
+          "trait": "Empower",
+          "theme": "utility",
+          "effect": "Commands arcane guardians."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -605,16 +839,34 @@
       "hp": 30,
       "traits": [
         {
-          "name": "Spellweave",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Chain minor effects together for a combined payoff."
+          "name": "Counterspell",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Interrupts enemy casting."
         },
         {
-          "name": "Glyph Anchor",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Stabilizes allied spellcasting in a small area."
+          "name": "Interdict",
+          "trait": "Teleport",
+          "theme": "utility",
+          "effect": "Interrupts teleportation and planar travel in a radius."
+        },
+        {
+          "name": "Arcane Torrent",
+          "trait": "Disorient",
+          "theme": "roots",
+          "effect": "Overwhelms foes with raw mana, Disoriented them for a turn."
+        },
+        {
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
+        },
+        {
+          "name": "Time Warp",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Briefly accelerates allies’ actions."
         }
       ],
       "description": "An elven Magister of considerable talent who, after being bested by his political rivals, has been reassigned to work in the arcane vaults of the High Home.",
@@ -641,16 +893,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Entropy Surge",
+          "trait": "Dash",
+          "theme": "damage",
+          "effect": "Unleashes a focused fel-arcane blast at range, dealing damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Time Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions and rewinds time one turn."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Arcane Drain",
+          "trait": "Weaken",
+          "theme": "utility",
+          "effect": "Saps the mana from a target, Weakening them for a turn."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -671,16 +935,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Magister's Portalworks",
+          "trait": "Rapid Attack",
+          "theme": "translocation",
+          "effect": "Establishes arcane links for rapid redeployments."
+        },
+        {
+          "name": "Rift Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Short blink through the Veil to reposition."
+        },
+        {
+          "name": "Arcane Barrage",
+          "trait": "Area Blast",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Fires a massive bolt of arcane energy, blasting the enemy with heavy damage."
         }
       ],
       "description": "A magister assisting the guardians of Tranquillien in the Ghostlands. Stationed at Tranquillien, Ghostlands.",
@@ -701,16 +977,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Adamant Frame",
+          "trait": "Precise Attack",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Massive plating shrugs off punishing strikes, preventing puncturing hits like Aimed Shot."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Rapid Fire",
+          "trait": "Rapid Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Unleashes quick volleys of arrows."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "Weaken",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
+        },
+        {
+          "name": "Broadside Cannons",
+          "trait": "Volley",
+          "theme": "aoe",
+          "effect": "Unleashes devastating synchronized volleys."
         }
       ],
       "description": "A Silvermoon magister found at Farstrider Retreat in Eversong Woods. Stationed at Farstrider Retreat, Eversong Woods.",
@@ -735,16 +1023,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Binding",
+          "trait": "Root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+        },
+        {
+          "name": "Blink Strike",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user and grants a second action immediately."
+        },
+        {
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -769,21 +1069,85 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Spellweave",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Chain minor effects together for a combined payoff."
+          "name": "Arcane Lance",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Precision beam of arcane energy."
         },
         {
-          "name": "Glyph Anchor",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Stabilizes allied spellcasting in a small area."
+          "name": "Arcane Surge",
+          "trait": "Dash",
+          "theme": "damage",
+          "effect": "Builds strength for two turns, then unleashes raw arcane power at an enemy, dealing double damage."
+        },
+        {
+          "name": "Time Warp",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Briefly accelerates allies’ actions."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
         }
       ],
       "description": "An elven member of the Kirin Tor seen in both Azsuna and Hall of the Guardian.",
       "campaignLinks": [
         "legion"
+      ]
+    },
+    {
+      "id": "kartharax_boss",
+      "name": "Kar'tharax the Terrible",
+      "class": "Dreadlord",
+      "category": "NPCs",
+      "subcategory": "Demons",
+      "image": "assets/art/monsters/dreadlord.png",
+      "alsoAppearsIn": [
+        {
+          "category": "Factions",
+          "subcategory": "Burning Legion"
+        }
+      ],
+      "hp": 600,
+      "traits": [
+        {
+          "name": "Call for Help",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons nearby allies."
+        },
+        {
+          "name": "Fel Arrow",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Arrows burn with fel energy."
+        },
+        {
+          "name": "Escape Portal",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Phase out of danger once per encounter."
+        },
+        {
+          "name": "Gateway Conjuration",
+          "trait": "Rapid Attack",
+          "theme": "translocation",
+          "effect": "Opens tactical portals for rapid redeployments or retreats."
+        },
+        {
+          "name": "Fel Rupture",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Fel spikes rupture through the earth, impaling enemies and dealing heavy damage."
+        }
+      ],
+      "description": "One of the nathrezim who once served the Burning Legion, Kar'tharax the Terrible is hell bent on attaining power and influence for his new insidious master-and this has led him to Quel'Thalas and the powerful artifacts and energy of the elves.",
+      "campaignLinks": [
+        "legion",
+        "campaign1"
       ]
     },
     {
@@ -805,16 +1169,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Teleport a short distance."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Shimmering Barrier",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -835,16 +1211,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Arcane Ward",
+          "trait": "Weaken",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Reduces magical damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Mana Bolt",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
+        },
+        {
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
+          "theme": "damage",
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+        },
+        {
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
         }
       ],
       "description": "A senior magister at the Sanctum of the Sun in the Ghostlands. Stationed at Sanctum of the Sun, Ghostlands.",
@@ -865,16 +1253,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Escape Portal",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Phase out of danger once per encounter."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Bite",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "A bite that leaves a stinging arcane wound, Slowing the target."
+        },
+        {
+          "name": "Arcane Summon",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
         }
       ],
       "description": "A Silvermoon magister based at Falconwing Square in Eversong Woods. Stationed at Falconwing Square, Eversong Woods.",
@@ -895,16 +1295,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Escape Portal",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Phase out of danger once per encounter."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
+        },
+        {
+          "name": "Arcane Explosion",
+          "trait": "Dash",
+          "theme": "aoe",
+          "effect": "Releases a surge of arcane force at close range, dealing damage to all nearby targets. Doubles damage each time used in succession."
+        },
+        {
+          "name": "Arcane Summon",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
         }
       ],
       "description": "A magister stationed at the Sanctum of the Sun in the Ghostlands. Stationed at Sanctum of the Sun, Ghostlands.",
@@ -925,16 +1337,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Riposte",
+          "trait": "Reflect",
+          "theme": "damage",
+          "effect": "Counters magical strikes, preventing their impact."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Control Construct",
+          "trait": "Empower",
+          "theme": "utility",
+          "effect": "Commands arcane guardians."
+        },
+        {
+          "name": "Rift Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Short blink through the Veil to reposition."
+        },
+        {
+          "name": "Arcane Defection",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Turns enemy caster wards against their owners."
         }
       ],
       "description": "A magister active on alternate Draenor during the Iron Horde conflict. Stationed at Alternate Draenor.",
@@ -955,16 +1379,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Torrent",
+          "trait": "Cone Attack",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
+        },
+        {
+          "name": "Time Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions and rewinds time one turn."
         }
       ],
       "description": "A magister aiding Tranquillien in the Ghostlands. Stationed at Tranquillien, Ghostlands.",
@@ -989,16 +1425,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+        },
+        {
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
+        },
+        {
+          "name": "Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Teleport a short distance."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1023,16 +1471,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Veilshot Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Blink between shadowed cover; gains advantage on the next shot."
+        },
+        {
+          "name": "Control Construct",
+          "trait": "Empower",
+          "theme": "utility",
+          "effect": "Commands arcane guardians."
+        },
+        {
+          "name": "Arcane Shot",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Arrow infused with pure energy, dealing both magic and physical damage that pierces magical barriers, or Slowing a target for several turns."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1057,16 +1517,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Defection",
+          "trait": "Shield",
+          "theme": "damage",
+          "effect": "Turns enemy caster wards against their owners."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
+        },
+        {
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
+        },
+        {
+          "name": "Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Teleport a short distance."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1087,16 +1559,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Surge",
+          "trait": "Dash",
+          "theme": "damage",
+          "effect": "Builds strength for two turns, then unleashes raw arcane power at an enemy, dealing double damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
+        },
+        {
+          "name": "Arcane Starvation",
+          "trait": "Crushing Attack",
+          "theme": "debuff",
+          "effect": "Cuts the target off from accessing mana-fueled abilities."
+        },
+        {
+          "name": "Arcane Binding",
+          "trait": "Root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
         }
       ],
       "description": "A magister posted at An'telas in the Ghostlands. Stationed at An'telas, Ghostlands.",
@@ -1121,16 +1605,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Sting",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Defection",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Turns enemy caster wards against their owners."
+        },
+        {
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Counterspell",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Interrupts enemy casting."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1151,16 +1647,28 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Void Channel",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Stabilizes volatile shadow magics nearby."
+          "name": "Rift Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Short blink through the Veil to reposition."
         },
         {
-          "name": "Exile’s Study",
-          "trait": "strike",
+          "name": "Shimmering Barrier",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
+        },
+        {
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
           "theme": "damage",
-          "effect": "Translates eldritch scripts; reduces miscast risk."
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+        },
+        {
+          "name": "Jade Bolt",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A cutting arcane shard of jade-tinted force."
         }
       ],
       "description": "Exiled magister who forged a path for the Ren’dorei. Curious, careful, and sometimes too brave.",
@@ -1189,16 +1697,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Defection",
+          "trait": "Shield",
+          "theme": "damage",
+          "effect": "Turns enemy caster wards against their owners."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Rift Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Short blink through the Veil to reposition."
+        },
+        {
+          "name": "Arcane Binding",
+          "trait": "Root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
+        },
+        {
+          "name": "Arcane Starvation",
+          "trait": "Crushing Attack",
+          "theme": "debuff",
+          "effect": "Cuts the target off from accessing mana-fueled abilities."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1219,16 +1739,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
         },
         {
-          "name": "Vault Enchantment",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Able to quickly enchant or disenchant vault doors within arcane sanctums, either sealing or unsealing them for access."
+          "name": "Arcane Torrent",
+          "trait": "Disorient",
+          "theme": "roots",
+          "effect": "Overwhelms foes with raw mana, Disoriented them for a turn."
+        },
+        {
+          "name": "Time Blink",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions and rewinds time one turn."
+        },
+        {
+          "name": "Control Construct",
+          "trait": "Empower",
+          "theme": "utility",
+          "effect": "Commands arcane guardians."
         }
       ],
       "description": "Now a magister of Silvermoon, Zaedana was dispatched to the ruins of Theramore during the Fourth War where she battled Alliance forces, but has since returned to Quel'Thalas to continue her work for the Magistry. Most recently, she's taken it upon herself to initiate an investigation of a suspected traitor within the ranks of the Magistry.",
@@ -1255,16 +1787,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Mana Bolt",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Void Rift",
+          "trait": "Summon",
+          "theme": "translocation",
+          "effect": "Summons a portal that disrupts terrain briefly."
+        },
+        {
+          "name": "Arcane Aegis",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Wards dampen magical assaults for a short time, protecting allies from spell damage."
+        },
+        {
+          "name": "Arcane Ward",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "Reduces magical damage."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1285,16 +1829,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Battle Instinct",
+          "trait": "Shield",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Anticipates enemy maneuvers, granting +1 to your next defensive action."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Shield Bash",
+          "trait": "Crushing Attack",
+          "theme": "utility",
+          "effect": "Bashes enemy, inflicting Off-Balance and interrupting their spells."
+        },
+        {
+          "name": "Wolf Charge",
+          "trait": "Dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
+        },
+        {
+          "name": "Defensive Stance",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "Takes reduced melee damage briefly."
         }
       ],
       "description": "A magistrix inhabiting Tranquillien in the Ghostlands. Stationed at Tranquillien, Ghostlands.",
@@ -1319,16 +1875,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Blink Strike",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user and grants a second action immediately."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Shot",
+          "trait": "Shield",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Arrow infused with pure energy, dealing both magic and physical damage that pierces magical barriers, or Slowing a target for several turns."
+        },
+        {
+          "name": "Vault Enchantment",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Able to quickly enchant or disenchant vault doors within arcane sanctums, either sealing or unsealing them for access."
+        },
+        {
+          "name": "Arcane Sting",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Inflicts damage that persists for several rounds."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1349,16 +1917,34 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Tidal Shield",
+          "trait": "Damage Over Time",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Protects an ally with flowing water."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Crushing Charge",
+          "trait": "Dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit."
+        },
+        {
+          "name": "Battle Instinct",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Anticipates enemy maneuvers, granting +1 to your next defensive action."
+        },
+        {
+          "name": "Cave Maul",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Delivers a crushing blow with a stalagmite club."
+        },
+        {
+          "name": "Balanced Stance",
+          "trait": "Stun",
+          "theme": "buffs",
+          "effect": "Harder to knock down or stagger."
         }
       ],
       "description": "A magistrix working with the Horde at Falcon Watch in Hellfire Peninsula. Stationed at Falcon Watch, Hellfire Peninsula.",
@@ -1379,16 +1965,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Cleave of Sewn Flesh",
+          "trait": "Damage Over Time",
+          "theme": "aoe",
+          "effect": "A sweeping butcher’s swing that cuts multiple foes and leaves bleeding wounds."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Shield Bash",
+          "trait": "Crushing Attack",
+          "theme": "utility",
+          "effect": "Bashes enemy, inflicting Off-Balance and interrupting their spells."
+        },
+        {
+          "name": "Aquatic Assault",
+          "trait": "Dash",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Charge at the enemy underwater, gaining +1 damage upon successful hit dealing direct damage."
+        },
+        {
+          "name": "Shield Block",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "First hit each round is reduced."
         }
       ],
       "description": "A magistrix once encountered at Freewind Post in Thousand Needles (deceased). Stationed at Freewind Post, Thousand Needles.",
@@ -1409,16 +2007,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Shell Shield",
+          "trait": "Damage Over Time",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Grants a protective barrier or damage reduction."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Collateral Damage",
+          "trait": "Dash",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "On defeat, may detonate remaining charges."
+        },
+        {
+          "name": "Cave Maul",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Delivers a crushing blow with a stalagmite club."
+        },
+        {
+          "name": "Shield of the Court",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Projects a brief barrier for nearby allies in formation."
         }
       ],
       "description": "A magistrix assisting at Saltheril's Haven in Eversong Woods. Stationed at Saltheril's Haven, Eversong Woods.",
@@ -1443,16 +2053,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
+          "theme": "damage",
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Torrent",
+          "trait": "Disorient",
+          "theme": "roots",
+          "effect": "Overwhelms foes with raw mana, Disoriented them for a turn."
+        },
+        {
+          "name": "Solar Lance",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Fires a concentrated beam of arcane and holy magic."
+        },
+        {
+          "name": "Arcane Binding",
+          "trait": "Root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1473,16 +2095,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Shield Discipline",
+          "trait": "Shield",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Take +1 advantage to all rolls while actively defending allies against damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Charge",
+          "trait": "Dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit."
+        },
+        {
+          "name": "Cleave of Sewn Flesh",
+          "trait": "Damage Over Time",
+          "theme": "aoe",
+          "effect": "A sweeping butcher’s swing that cuts multiple foes and leaves bleeding wounds."
+        },
+        {
+          "name": "Defensive Stance",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "Takes reduced melee damage briefly."
         }
       ],
       "description": "A magistrix who instructs initiates on Sunstrider Isle. Stationed at Sunstrider Isle, Eversong Woods.",
@@ -1507,16 +2141,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Binding",
+          "trait": "Root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Shimmering Barrier",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        },
+        {
+          "name": "Vault Enchantment",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Able to quickly enchant or disenchant vault doors within arcane sanctums, either sealing or unsealing them for access."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1541,16 +2187,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Lance",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Precision beam of arcane energy."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        },
+        {
+          "name": "Arcane Drain",
+          "trait": "Weaken",
+          "theme": "utility",
+          "effect": "Saps the mana from a target, Weakening them for a turn."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1575,16 +2233,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Mana Bolt",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Fires a bolt of arcane energy from range, dealing damage."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Blink Strike",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user and grants a second action immediately."
+        },
+        {
+          "name": "Arcane Torrent",
+          "trait": "Cone Attack",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
+        },
+        {
+          "name": "Arcane Missiles",
+          "trait": "Rapid Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1605,16 +2275,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
+          "name": "Bubble Ward",
+          "trait": "Shield",
           "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "effect": "Shields an ally with absorb 2."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Shield Block",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "First hit each round is reduced."
+        },
+        {
+          "name": "Cluster Charge",
+          "trait": "Dash",
+          "theme": "aoe",
+          "effect": "Launches a bundle that scatters sub-charges."
+        },
+        {
+          "name": "Mana Barrier",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Protects themselves with energy shield."
         }
       ],
       "description": "A magistrix posted at Fairbreeze Village in Eversong Woods. Stationed at Fairbreeze Village, Eversong Woods.",
@@ -1635,16 +2317,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Anima Surge",
+          "trait": "Dash",
+          "theme": "aoe",
+          "effect": "Discharges anima in a destabilizing burst that rapidly spreads."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "name": "Shield Wall",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Interlocks shields to soften incoming harm."
+        },
+        {
+          "name": "Diplomatic Shield",
+          "trait": "Weaken",
+          "theme": "utility",
+          "effect": "Reduces fallout from faction incidents in cities."
+        },
+        {
+          "name": "Shield Warders",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Elven magi protect the ship from incoming fire, deflecting attacks."
         }
       ],
       "description": "A magistrix near the Silvermoon gates in Eversong Woods. Stationed at Eversong Woods.",
@@ -1669,16 +2363,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Pulse",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "A flashing pulse that clings to the target and damages nearby enemies for several turns."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Entropy Surge",
+          "trait": "Dash",
+          "theme": "damage",
+          "effect": "Unleashes a focused fel-arcane blast at range, dealing damage."
+        },
+        {
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1703,16 +2409,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Arcane Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Wards dampen magical assaults for a short time."
+          "name": "Arcane Purge",
+          "trait": "Purge",
+          "theme": "debuff",
+          "effect": "Dispels magical effects benefiting the target."
         },
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Gateway Conjuration",
+          "trait": "Rapid Attack",
+          "theme": "translocation",
+          "effect": "Opens tactical portals for rapid redeployments or retreats."
+        },
+        {
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Interdict",
+          "trait": "Teleport",
+          "theme": "utility",
+          "effect": "Interrupts teleportation and planar travel in a radius."
         }
       ],
       "description": "A Sunreaver magister affiliated with the Kirin Tor in Dalaran. Stationed at Dalaran.",
@@ -1733,16 +2451,34 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Light’s Vindication",
-          "trait": "weaken",
-          "theme": "debuffs",
-          "effect": "Holy strikes burn through corruption."
+          "name": "Storm Ward",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Protects an ally from ranged attacks briefly."
         },
         {
-          "name": "Sanctified Aegis",
-          "trait": "shield",
+          "name": "Ancestral Blessing",
+          "trait": "Empower",
           "theme": "buffs",
-          "effect": "Projects a brief ward that shelters nearby allies."
+          "effect": "Bolsters allies with ancient power and a +1 advantage."
+        },
+        {
+          "name": "Ward Script",
+          "trait": "Root",
+          "theme": "utility",
+          "effect": "Enables sight of trespassers stepping through wards."
+        },
+        {
+          "name": "Guardian’s Ward",
+          "trait": "Shield",
+          "theme": "buffs",
+          "effect": "Nearby allies resist knockback briefly."
+        },
+        {
+          "name": "Void Ward",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Absorbs attacks until overwhelmed, and then unleashes that damage in an explosion."
         }
       ],
       "description": "Leader of the Blood Knights, tempered by hard truths and renewed purpose. A rallying presence on any battlefield.",
@@ -1774,16 +2510,22 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Zeal Tempered",
-          "trait": "fortify",
+          "name": "Blessing of Odyn",
+          "trait": "Fortify",
           "theme": "buffs",
-          "effect": "Pushes through fear and hesitation; steadies nearby squires."
+          "effect": "Grants nearby allies extra resilience, granting +1 to all rolls next round."
         },
         {
-          "name": "Grave Duty",
-          "trait": "fortify",
+          "name": "Greedy Command",
+          "trait": "Shield",
           "theme": "buffs",
-          "effect": "Against undead foes, gains brief resolve after each exchange."
+          "effect": "Nearby allies fight harder if promised reward."
+        },
+        {
+          "name": "Storm Ward",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Protects an ally from ranged attacks briefly."
         }
       ],
       "description": "A driven Blood Knight whose past trials in the Ghostlands shaped an unflinching sense of duty.",
@@ -1812,16 +2554,34 @@
       "hp": 24,
       "traits": [
         {
+          "name": "Shadow Volley",
+          "trait": "Volley",
+          "theme": "aoe",
+          "effect": "Unleashes a deadly volley of shadow bolts."
+        },
+        {
           "name": "Void Trueshot",
-          "trait": "shot",
+          "trait": "Crushing Attack",
           "theme": "damage",
           "effect": "Arrows tear through veils and illusions."
         },
         {
-          "name": "Rift Step",
-          "trait": "teleport",
-          "theme": "translocation",
-          "effect": "Short blink through the Veil to reposition."
+          "name": "Spear Volley",
+          "trait": "Root",
+          "theme": "damage",
+          "effect": "Throw all remaining spears in rapid succession, pinning and rooting enemies or dealing damage."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "Weaken",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
+        },
+        {
+          "name": "Moonlit Arrow",
+          "trait": "Stealth",
+          "theme": "damage",
+          "effect": "Harms enemies over several turns and prevents them from concealing themselves."
         }
       ],
       "description": "Legendary ranger, tempered by the Void but unbroken by it. A bridge between high elven traditions and new shadowed arts.",
@@ -1849,16 +2609,28 @@
       "hp": 17,
       "traits": [
         {
-          "name": "Falcon Watch Garrison",
-          "trait": "strike",
+          "name": "Crude Rifle",
+          "trait": "Crushing Attack",
           "theme": "damage",
-          "effect": "Enlists local aid; reduces travel time in the region."
+          "effect": "Fires inaccurate but powerful shots."
         },
         {
-          "name": "Ashen Stamina",
-          "trait": "strike",
+          "name": "Silencing Arrow",
+          "trait": "Silence",
+          "theme": "utility",
+          "effect": "Briefly disrupts spellcasting and calls for aid."
+        },
+        {
+          "name": "Black Arrow",
+          "trait": "Area Heal",
           "theme": "damage",
-          "effect": "Less affected by environmental hazards in wastelands."
+          "effect": "Arrows tainted with dark magic that linger, draining the target's health."
+        },
+        {
+          "name": "Adamant Frame",
+          "trait": "Precise Attack",
+          "theme": "buffs",
+          "effect": "Massive plating shrugs off punishing strikes, preventing puncturing hits like Aimed Shot."
         }
       ],
       "description": "Pragmatic Farstrider captain who keeps outposts alive with grit and triage.",
@@ -1881,16 +2653,34 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Volley Command",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Coordinated volleys stagger enemy lines."
+          "name": "Bone Arrow",
+          "trait": "Damage Over Time",
+          "theme": "damage",
+          "effect": "Splintering shafts that embed and ache, causing Bleeding."
         },
         {
-          "name": "Ghostlands Pathfinder",
-          "trait": "strike",
+          "name": "Veilshot Step",
+          "trait": "Teleport",
+          "theme": "translocation",
+          "effect": "Blink between shadowed cover; gains advantage on the next shot."
+        },
+        {
+          "name": "Obelisk Ward",
+          "trait": "Volley",
+          "theme": "buffs",
+          "effect": "Raises a runic ward that dulls volleys."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "Weaken",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
+        },
+        {
+          "name": "Aimed Shot",
+          "trait": "Precise Attack",
           "theme": "damage",
-          "effect": "Ignores terrain penalties in woodland and ruin."
+          "effect": "Ignores all armor and line of sight barriers to deal heavy damage. "
         }
       ],
       "description": "Commander of the Farstriders. Keeps the borders secure with crisp orders and sharper arrows.",
@@ -1930,16 +2720,34 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Silver Covenant Rally",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Quel’dorei allies gain morale and precision."
+          "name": "Blackrock Cannons",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "Spews rapid-fire barrages of cannon shot."
         },
         {
-          "name": "Spellbane Arrow",
-          "trait": "interrupt",
-          "theme": "utility",
-          "effect": "Shots disrupt enemy spellcasting briefly."
+          "name": "Obelisk Ward",
+          "trait": "Volley",
+          "theme": "buffs",
+          "effect": "Raises a runic ward that dulls volleys."
+        },
+        {
+          "name": "Aimed Shot",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Ignores all armor and line of sight barriers to deal heavy damage. "
+        },
+        {
+          "name": "Void Trueshot",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Arrows tear through veils and illusions."
+        },
+        {
+          "name": "Spear Volley",
+          "trait": "Root",
+          "theme": "damage",
+          "effect": "Throw all remaining spears in rapid succession, pinning and rooting enemies or dealing damage."
         }
       ],
       "description": "Leader of the Silver Covenant. Defends high elven dignity with a commander’s clarity and a mother’s ferocity.",
@@ -1968,16 +2776,34 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Thalassian Command",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Nearby Farstriders and magisters act with greater discipline."
+          "name": "Aimed Shot",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Ignores all armor and line of sight barriers to deal heavy damage. "
         },
         {
-          "name": "Farstrider’s Poise",
-          "trait": "fortify",
+          "name": "Poisoned Arrow",
+          "trait": "Damage Over Time",
+          "theme": "debuffs",
+          "effect": "Inflicts poison condition on a target."
+        },
+        {
+          "name": "Coordinated Fire",
+          "trait": "Stun",
           "theme": "buffs",
-          "effect": "Calm precision; resists forced movement and distractions."
+          "effect": "Coordinated volleys stagger enemy lines, adding +1 damage done for all allies who join the effort firing at the target."
+        },
+        {
+          "name": "Spellbane Arrow",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Shots disrupt enemy spellcasting briefly."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "Weaken",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
         }
       ],
       "description": "Regent Lord of Quel'Thalas. A measured statesman and veteran ranger, balancing Silvermoon's politics with the realm’s defense.",
@@ -2013,16 +2839,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Glyph Scribe",
-          "trait": "strike",
+          "name": "Thorn Shield",
+          "trait": "Reflect",
           "theme": "damage",
-          "effect": "Imprints temporary wards that stabilize nearby spellwork."
+          "effect": "Damage dealt back when struck in melee."
         },
         {
-          "name": "Diplomatic Prowess",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Reduces backlash from volatile negotiations and court intrigue."
+          "name": "Shield Bash",
+          "trait": "Crushing Attack",
+          "theme": "utility",
+          "effect": "Bashes enemy, inflicting Off-Balance and interrupting their spells."
+        },
+        {
+          "name": "Anima Surge",
+          "trait": "Dash",
+          "theme": "aoe",
+          "effect": "Discharges anima in a destabilizing burst that rapidly spreads."
+        },
+        {
+          "name": "Shield Warders",
+          "trait": "Damage Over Time",
+          "theme": "buffs",
+          "effect": "Elven magi protect the ship from incoming fire, deflecting attacks."
         }
       ],
       "description": "A polished magistrix who moves easily between courtly halls and field camps as Silvermoon’s envoy.",
@@ -2037,16 +2875,28 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Blade Flurry",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rapid strikes overwhelm a single target’s guard."
+          "name": "Fumes",
+          "trait": "Damage Over Time",
+          "theme": "aoe",
+          "effect": "Enemies adjacent at round start take minor poison damage."
         },
         {
-          "name": "Court Connections",
-          "trait": "strike",
+          "name": "Prowl",
+          "trait": "Weaken",
+          "theme": "buffs",
+          "effect": "Conceals or reduces chance to be targeted."
+        },
+        {
+          "name": "Camouflage",
+          "trait": "Stealth",
+          "theme": "utility",
+          "effect": "Essential for effective stealth, conceal yourself with what's available nearby."
+        },
+        {
+          "name": "Bone Breaker",
+          "trait": "Stun",
           "theme": "damage",
-          "effect": "Opens doors in human and elven courts alike."
+          "effect": "Cripples enemies with crushing blows, dealing heavy damage and stunning them for two turns."
         }
       ],
       "description": "A deft blade and deft diplomat, moving between worlds as easily as between shadows.",
@@ -2076,16 +2926,34 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Prophetic Insight",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Once per scene, forewarns allies of a threat."
+          "name": "Erratic Gizmos",
+          "trait": "Stun",
+          "theme": "debuffs",
+          "effect": "Devices malfunction and jam up, stunning the entity."
         },
         {
-          "name": "Arcane Defection",
-          "trait": "strike",
+          "name": "Chill of the Grave",
+          "trait": "Weaken",
+          "theme": "roots",
+          "effect": "Cold touch that saps warmth and slows the body."
+        },
+        {
+          "name": "Blood Rites",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Channels power from sacrifices."
+        },
+        {
+          "name": "Grave Tempest",
+          "trait": "Area Blast",
+          "theme": "aoe",
+          "effect": "A roar that spills hoarfrost and bone splinters across the field."
+        },
+        {
+          "name": "Blood Pact",
+          "trait": "Empower",
           "theme": "damage",
-          "effect": "Turns enemy caster wards against their owners."
+          "effect": "Sacrifices HP to empower allies."
         }
       ],
       "description": "Vision-touched leader whose defection reshaped allegiances. Values redemption and hard choices.",

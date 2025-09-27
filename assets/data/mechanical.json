@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "Mechanicals",
   "entries": [
     {
@@ -14,13 +14,25 @@
           "name": "Shock Baton",
           "trait": "stun",
           "theme": "debuffs",
-          "effect": "Delivers a jolt that rattles focus."
+          "effect": "Delivers a jolt that stuns weaker enemies and disorients stronger ones."
         },
         {
-          "name": "Tempered Plating",
-          "trait": "shield",
+          "name": "Adamant Frame",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "Reduces damage from glancing blows."
+          "effect": "Massive plating shrugs off punishing strikes, preventing puncturing hits like Aimed Shot."
+        },
+        {
+          "name": "Static Net",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Snares a target with a crackling net."
+        },
+        {
+          "name": "Repair Bot",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Deploys a device to restore constructs or armor."
         }
       ],
       "description": "Compact sentry automata that guard labs and depots.",
@@ -35,16 +47,28 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Stabilized Volley",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Braced fire keeps aim steady under recoil."
+          "name": "Barrage",
+          "trait": "rapid attack",
+          "theme": "aoe",
+          "effect": "Unleashes a flurry of shots at a group of enemies, dealing hit damage to all targets."
         },
         {
           "name": "Gyro Legs",
-          "trait": "dash",
+          "trait": "misc",
           "theme": "utility",
           "effect": "Clambers over rough ground with ease."
+        },
+        {
+          "name": "Boiler Surge",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Emergency steam burst to clear jams."
+        },
+        {
+          "name": "Repair Bot",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Deploys a device to restore constructs or armor."
         }
       ],
       "description": "Multi-legged light armor frame for patrol and escort.",
@@ -59,16 +83,28 @@
       "hp": 32,
       "traits": [
         {
-          "name": "Lightburst Cannon",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Emits a radiant pulse that scorches shadow."
+          "name": "Cannon Shot",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
         },
         {
-          "name": "Sanctified Plating",
-          "trait": "shield",
+          "name": "Adamant Frame",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "Glowing armor reduces incoming harm by 2."
+          "effect": "Massive plating shrugs off punishing strikes, preventing puncturing hits like Aimed Shot."
+        },
+        {
+          "name": "Crushing Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit."
+        },
+        {
+          "name": "Repair Bot",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Deploys a device to restore constructs or armor."
         }
       ],
       "description": "Titanic bipedal walkers piloted by Lightforged draenei, merging technology with the Holy Light.",
@@ -86,15 +122,27 @@
       "traits": [
         {
           "name": "Radiant Strike",
-          "trait": "strike",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Infuses melee blow with searing Light."
+          "effect": "A ranged or melee strike imbued with searing Light that weakens shadow foes, demons, and undead."
         },
         {
           "name": "Blessed Servos",
           "trait": "fortify",
           "theme": "buffs",
           "effect": "Enhances agility, ignoring first hinderance each round."
+        },
+        {
+          "name": "Holy Nova",
+          "trait": "area heal",
+          "theme": "healing",
+          "effect": "Releases a surge of holy force at close range, dealing damage to all nearby targets. Doubles damage each time used in succession."
+        },
+        {
+          "name": "Repair Bot",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Deploys a device to restore constructs or armor."
         }
       ],
       "description": "Smaller warframes built for agile combat and to support ground troops with the Light’s radiance.",
@@ -117,10 +165,10 @@
           "effect": "Unleashes a radiant shockwave that weakens shadow foes."
         },
         {
-          "name": "Immovable Faith",
+          "name": "Grave Discipline",
           "trait": "fortify",
           "theme": "buffs",
-          "effect": "Immense stance resists forced movement."
+          "effect": "Holds formation under withering fire."
         }
       ],
       "description": "Monolithic Lightforged constructs deployed as battlefield anchors and symbols of divine might.",
@@ -138,15 +186,21 @@
       "traits": [
         {
           "name": "Anima Surge",
-          "trait": "area_blast",
+          "trait": "chain attack",
           "theme": "aoe",
           "effect": "Discharges anima in a destabilizing burst."
         },
         {
-          "name": "Crimson Core",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Glowing anima reservoir dampens a killing blow once per battle."
+          "name": "Crude Smash",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Heavy melee strike with improvised weapon."
+        },
+        {
+          "name": "Unstoppable Rage",
+          "trait": "deflect",
+          "theme": "damage",
+          "effect": "Ignores effects that would slow them."
         }
       ],
       "description": "A construct infused with anima siphoned from magical reserves, animated as a soldier and sentinel.",
@@ -165,15 +219,27 @@
       "traits": [
         {
           "name": "Arcane Lance",
-          "trait": "line",
-          "theme": "aoe",
+          "trait": "precise attack",
+          "theme": "damage",
           "effect": "Precision beam of arcane energy."
         },
         {
-          "name": "Runed Plating",
-          "trait": "shield",
+          "name": "Guardian's Ward",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "Enchanted armor absorbs 2 magic damage this round."
+          "effect": "Nearby allies resist knockback briefly."
+        },
+        {
+          "name": "Arcane Torrent",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
+        },
+        {
+          "name": "Protective Oath",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Takes reduced damage while guarding merchants."
         }
       ],
       "description": "Magically forged guardians patrolling blood elf spires, powered by intricate runic engines.",
@@ -193,16 +259,28 @@
       "hp": 34,
       "traits": [
         {
-          "name": "Mana Storm",
-          "trait": "area_blast",
+          "name": "Static Field",
+          "trait": "ground effect",
           "theme": "aoe",
-          "effect": "Channels unstable arcane energy in a wide blast."
+          "effect": "Creates a storm zone that hinders enemy movement."
         },
         {
-          "name": "Overcharged Core",
-          "trait": "empower",
+          "name": "Arcane Affinity",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "When below half HP, attacks gain +1 potency."
+          "effect": "Increased resistance to magic."
+        },
+        {
+          "name": "Arcane Summon",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
+        },
+        {
+          "name": "Interdict",
+          "trait": "interrupt",
+          "theme": "utility",
+          "effect": "Interrupts teleportation and planar travel in a radius."
         }
       ],
       "description": "Towering runic constructs built in Silvermoon and Netherstorm, blending arcane mastery with engineered dread.",
@@ -219,16 +297,22 @@
       "hp": 16,
       "traits": [
         {
-          "name": "Burst Servo",
+          "name": "Hydraulic Stride",
           "trait": "dash",
-          "theme": "utility",
-          "effect": "A short sprint of boosted speed."
+          "theme": "translocation",
+          "effect": "Leg servos keep pace over obstacles."
         },
         {
-          "name": "Auto-Balance",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Keeps rider steady while moving."
+          "name": "Crushing Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit."
+        },
+        {
+          "name": "Clearing the Lane",
+          "trait": "line",
+          "theme": "aoe",
+          "effect": "Shatters fortifications with a cone-shaped blast, injuring anyone standing nearby."
         }
       ],
       "description": "Clockwork bird-mounts used by scouts and couriers.",
@@ -243,16 +327,22 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Saw Arms",
-          "trait": "strike",
+          "name": "Buzzsaw Arms",
+          "trait": "rapid attack",
           "theme": "damage",
-          "effect": "Ripping blades chew through armor."
+          "effect": "Tearing melee attacks with sawblades, striking multiple targets."
         },
         {
-          "name": "Overheat Purge",
-          "trait": "cleanse",
-          "theme": "buffs",
-          "effect": "Vents steam to avoid stall under strain."
+          "name": "Pressure Jet",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Blasts steam to shove attackers off balance."
+        },
+        {
+          "name": "Crushing Grip",
+          "trait": "grapple",
+          "theme": "roots",
+          "effect": "Grasps with primal force, dealing direct damage and trapping the target."
         }
       ],
       "description": "Work mech re-tooled for war, all blades and fumes.",
@@ -268,15 +358,21 @@
       "traits": [
         {
           "name": "Cluster Charge",
-          "trait": "volley",
+          "trait": "line",
           "theme": "aoe",
           "effect": "Launches a bundle that scatters sub-charges."
         },
         {
           "name": "Blast Shield",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Angled plates deflect shrapnel."
+          "trait": "reflect",
+          "theme": "damage",
+          "effect": "Angled plates reflect damage back on the attacker, and knock them backwards."
+        },
+        {
+          "name": "Mechano Bomb",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Deploys unstable gadgets for chaotic effects."
         }
       ],
       "description": "A wheeled chassis built to lob far too many explosives.",
@@ -291,45 +387,27 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Mana Beam",
-          "trait": "silence",
-          "theme": "debuffs",
-          "effect": "Precise arcane lance that scrambles casting."
+          "name": "Arcane Affinity",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Increased resistance to magic."
         },
         {
-          "name": "Runic Shell",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Glyphs dampen magical harm."
+          "name": "Arcane Summon",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
+        },
+        {
+          "name": "Interdict",
+          "trait": "interrupt",
+          "theme": "utility",
+          "effect": "Interrupts teleportation and planar travel in a radius."
         }
       ],
       "description": "Ancient watchers animated by runic cores.",
       "campaignLinks": [],
       "image": "assets/art/monsters/arcanegolem.png"
-    },
-    {
-      "id": "mech_iron_colossus",
-      "name": "Iron Colossus",
-      "class": "Heavy Construct",
-      "category": "Mechanicals",
-      "subcategory": "Titan-Arcane",
-      "hp": 32,
-      "traits": [
-        {
-          "name": "Hammerfist",
-          "trait": "heavy_blow",
-          "theme": "damage",
-          "effect": "A titanic blow that staggers ranks."
-        },
-        {
-          "name": "Adamant Frame",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Massive plating shrugs off punishing strikes."
-        }
-      ],
-      "description": "Towering golems tasked with sealing forbidden vaults.",
-      "campaignLinks": []
     },
     {
       "id": "mech_mechagon_enforcer",
@@ -340,16 +418,22 @@
       "hp": 21,
       "traits": [
         {
-          "name": "Stun Pulse",
+          "name": "Thunderclap",
           "trait": "stun",
           "theme": "debuffs",
-          "effect": "Concussive burst that disrupts actions."
+          "effect": "A colossal impact stuns the target briefly."
         },
         {
           "name": "Alloy Core",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Composite shell resists wear and tear."
+          "effect": "Composite shell resists wear and tear, reducing damage taken for a maximum of two turns."
+        },
+        {
+          "name": "Arcane Lance",
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "Precision beam of arcane energy."
         }
       ],
       "description": "Patrol units from Mechagon’s authoritarian streets.",
@@ -365,15 +449,15 @@
       "hp": 23,
       "traits": [
         {
-          "name": "Net-Caster",
+          "name": "Static Net",
           "trait": "root",
           "theme": "roots",
-          "effect": "Fires a weighted mesh that entangles."
+          "effect": "Snares a target with a crackling net."
         },
         {
           "name": "Hydraulic Stride",
           "trait": "dash",
-          "theme": "utility",
+          "theme": "translocation",
           "effect": "Leg servos keep pace over obstacles."
         }
       ],
@@ -389,16 +473,22 @@
       "hp": 30,
       "traits": [
         {
-          "name": "Scrapstorm",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Whips debris into a cutting vortex."
+          "name": "Magnet Claw",
+          "trait": "pull",
+          "theme": "roots",
+          "effect": "Snatches metal debris from the ground."
         },
         {
-          "name": "Self-Weld",
-          "trait": "area_heal",
+          "name": "Grease the Wheels",
+          "trait": "heal",
           "theme": "healing",
-          "effect": "Fuses loose plates to patch damage."
+          "effect": "Crew improvises quick repairs mid-battle."
+        },
+        {
+          "name": "Barrage",
+          "trait": "rapid attack",
+          "theme": "aoe",
+          "effect": "Unleashes a flurry of shots at a group of enemies, dealing hit damage to all targets."
         }
       ],
       "description": "An improvised giant pieced together from the city’s refuse.",
@@ -413,16 +503,22 @@
       "hp": 28,
       "traits": [
         {
-          "name": "Demolition Shot",
-          "trait": "weaken",
-          "theme": "debuffs",
-          "effect": "Shatters fortifications and nerve."
+          "name": "Cannon Shot",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
         },
         {
-          "name": "Stabilizer Rigs",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Recoil dampers keep aim true."
+          "name": "Self-Weld",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Fuses loose plates to patch damage."
+        },
+        {
+          "name": "Ram",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "A sudden burst of speed powered by hydraulic madness throws back all enemies ahead of the unit, and deals crushing damage to any fortifications."
         }
       ],
       "description": "Tracked artillery used to batter gates and towers.",
@@ -438,7 +534,7 @@
       "traits": [
         {
           "name": "Clearing the Lane",
-          "trait": "cone",
+          "trait": "line",
           "theme": "aoe",
           "effect": "Shatters fortifications with a cone-shaped blast, injuring anyone standing nearby."
         },
@@ -464,15 +560,21 @@
       "traits": [
         {
           "name": "Runaway Mass",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Momentum crushes anything in the path."
+          "trait": "line",
+          "theme": "aoe",
+          "effect": "Massive momentum crushes anything in its path, crushing any enemies standing in the way and devastating fortifications upon impact."
         },
         {
           "name": "Boiler Surge",
-          "trait": "dash",
+          "trait": "misc",
           "theme": "utility",
           "effect": "Emergency steam burst to clear jams."
+        },
+        {
+          "name": "Ash Wake",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Ignites the floor into a hazard that harms those who linger."
         }
       ],
       "description": "A runaway steel wheel driven by roaring furnaces.",
@@ -489,16 +591,22 @@
       "hp": 16,
       "traits": [
         {
-          "name": "Thresh Arms",
-          "trait": "strike",
+          "name": "Buzzsaw Arms",
+          "trait": "rapid attack",
           "theme": "damage",
-          "effect": "Flailing blades that batter close targets."
+          "effect": "Tearing melee attacks with sawblades, striking multiple targets."
         },
         {
-          "name": "Clunky Resilience",
+          "name": "Balanced Stance",
           "trait": "fortify",
           "theme": "buffs",
-          "effect": "Keeps clanking even when damaged."
+          "effect": "Harder to knock down or stagger."
+        },
+        {
+          "name": "Self-Weld",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Fuses loose plates to patch damage."
         }
       ],
       "description": "Farm automata repurposed as militia in a pinch.",
@@ -523,6 +631,12 @@
           "trait": "empower",
           "theme": "buffs",
           "effect": "Briefly boosts an ally’s output."
+        },
+        {
+          "name": "Boiler Surge",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Emergency steam burst to clear jams."
         }
       ],
       "description": "Pipe-laden helpers that lug tools and vent steam.",
@@ -538,15 +652,21 @@
       "traits": [
         {
           "name": "Rotor Wash",
-          "trait": "weaken",
-          "theme": "debuffs",
-          "effect": "Buffets foes; aim falters under the gale."
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Throws nearby enemies backwards, knocking them down and slowing them. "
         },
         {
-          "name": "Auto-Gyro",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Stays aloft through sudden maneuvers."
+          "name": "Grease the Wheels",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Crew improvises quick repairs mid-battle."
+        },
+        {
+          "name": "Chain Gun Burst",
+          "trait": "rapid attack",
+          "theme": "aoe",
+          "effect": "Unleashes a flurry of shots from a massive, mounted chain gun."
         }
       ],
       "description": "Whirring scout craft for reconnaissance and strike.",
@@ -562,15 +682,21 @@
       "traits": [
         {
           "name": "Guidance",
-          "trait": "shot",
-          "theme": "damage",
+          "trait": "divine",
+          "theme": "utility",
           "effect": "Corrects course toward marked targets."
         },
         {
           "name": "Volatile Fuel",
           "trait": "weaken",
           "theme": "debuffs",
-          "effect": "Risk of catastrophic detonation on failure."
+          "effect": "Volatile fuel sprays out and coats nearby enemies, weakening them and increasing the likelihood they catch fire."
+        },
+        {
+          "name": "Explosive Impact",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Detonates upon impact, dealing critical damage to all enemies and fortifications nearby."
         }
       ],
       "description": "Goblin-grade rocketry—fast, loud, and temperamental.",
@@ -585,16 +711,16 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Detonate",
-          "trait": "area_blast",
+          "name": "Spontaenous Combustion",
+          "trait": "area blast",
           "theme": "aoe",
-          "effect": "Explodes on command or critical damage."
+          "effect": "Explosives without much warning at all, damaging all nearby enemies, allies, and fortifications."
         },
         {
-          "name": "Unstable Core",
-          "trait": "chain_attack",
+          "name": "Shockwave",
+          "trait": "line",
           "theme": "aoe",
-          "effect": "Can chain-ignite nearby bombs."
+          "effect": "Unleashes a staggering shockwave that knocks all enemies down and deals damage."
         }
       ],
       "description": "Cheap suicidal drones for mine-clearing and chaos.",
@@ -610,15 +736,21 @@
       "traits": [
         {
           "name": "Patch Kit",
-          "trait": "area_heal",
+          "trait": "repair",
           "theme": "healing",
           "effect": "Repairs constructs and armor plates."
         },
         {
           "name": "Diagnostic Ping",
-          "trait": "reveal_hidden",
+          "trait": "misc",
           "theme": "utility",
           "effect": "Highlights weak points for allied fire."
+        },
+        {
+          "name": "Static Net",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Snares a target with a crackling net."
         }
       ],
       "description": "Helpful drones that keep the war machines running.",
@@ -639,10 +771,22 @@
           "effect": "Snatches metal debris from the ground."
         },
         {
-          "name": "Self-Reclaim",
-          "trait": "summon",
-          "theme": "translocation",
-          "effect": "Can salvage itself into another device."
+          "name": "Blessed Servos",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Enhances agility, ignoring first hinderance each round."
+        },
+        {
+          "name": "Collect Loot",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Enhances agility, ignoring first hinderance each round."
+        },
+        {
+          "name": "Spontaenous Combustion",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Explosives without much warning at all, damaging all nearby enemies, allies, and fortifications."
         }
       ],
       "description": "Scavenger drones that strip battlefields for parts.",
@@ -658,15 +802,21 @@
       "traits": [
         {
           "name": "Whirr-and-Bite",
-          "trait": "strike",
+          "trait": "light attack",
           "theme": "damage",
           "effect": "A surprising nip from tiny gears."
         },
         {
-          "name": "Tinny Frame",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Small profile makes it hard to hit cleanly."
+          "name": "Spontaenous Combustion",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Explosives without much warning at all, damaging all nearby enemies, allies, and fortifications."
+        },
+        {
+          "name": "Collect Loot",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Enhances agility, ignoring first hinderance each round."
         }
       ],
       "description": "Beloved gnomish trinkets with more bite than expected.",
@@ -682,15 +832,21 @@
       "traits": [
         {
           "name": "Peck Protocol",
-          "trait": "strike",
+          "trait": "rapid attack",
           "theme": "damage",
-          "effect": "A rapid series of jabs."
+          "effect": "A rapid series of deadly jabs that cut through to the bone, shredding muscle and flesh and leaving extensive injury and damage that can drive even the most powerful warrior cry like a child."
         },
         {
           "name": "Panic Waddle",
-          "trait": "weaken",
-          "theme": "debuffs",
-          "effect": "Erratic movement throws off aim."
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Erratic movement throws off incoming attacks, enabling the entity to disregard precise attacks."
+        },
+        {
+          "name": "Spontaenous Combustion",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Explosives without much warning at all, damaging all nearby enemies, allies, and fortifications."
         }
       ],
       "description": "A clanking poultry prototype that escaped the workshop.",
@@ -706,7 +862,7 @@
       "traits": [
         {
           "name": "Explosive Payload",
-          "trait": "area_blast",
+          "trait": "ground effect",
           "theme": "aoe",
           "effect": "Drops volatile bombs or barrels on enemies below."
         },
@@ -715,6 +871,18 @@
           "trait": "weaken",
           "theme": "debuffs",
           "effect": "Prone to catastrophic failure when critically damaged."
+        },
+        {
+          "name": "Spontaenous Combustion",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Explosives without much warning at all, damaging all nearby enemies, allies, and fortifications."
+        },
+        {
+          "name": "Rope Ladder",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Enables fast evacuation from combat zones."
         }
       ],
       "description": "Ramshackle airships crewed by goblins; rickety but laden with bombs and ingenuity.",
@@ -737,10 +905,28 @@
           "effect": "Unleashes devastating synchronized volleys."
         },
         {
-          "name": "Defensive Aegis",
+          "name": "Shield Warders",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Lightforged runes reinforce hull plating against magic."
+          "effect": "Magi protect the ship from incoming fire, deflecting attacks."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Long ranged cannon shot that weakens fortifications."
+        },
+        {
+          "name": "Repair Bot",
+          "trait": "repair",
+          "theme": "healing",
+          "effect": "Deploys a device to restore constructs or armor."
+        },
+        {
+          "name": "Rope Ladder",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Enables fast evacuation from combat zones."
         }
       ],
       "description": "Flying dreadnoughts of the Alliance, equipped with heavy cannons and rune-forged armor.",
@@ -759,16 +945,28 @@
       "hp": 80,
       "traits": [
         {
-          "name": "Warsong Cannons",
+          "name": "Broadside Cannons",
           "trait": "volley",
           "theme": "aoe",
-          "effect": "Spews rapid-fire barrages of cannon shot."
+          "effect": "Unleashes devastating synchronized volleys."
+        },
+        {
+          "name": "Shield Warders",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Magi protect the ship from incoming fire, deflecting attacks."
         },
         {
           "name": "Reinforced Spikes",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Hull braced for ramming tactics."
+          "effect": "Structural hardpoints are reinforced with spikes, strengthening resistance to ramming and explosives."
+        },
+        {
+          "name": "Rope Ladder",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Enables fast evacuation from combat zones."
         }
       ],
       "description": "Skyborne dreadships of the Horde, bristling with weaponry and tribal warpaint.",
@@ -793,10 +991,22 @@
           "effect": "Coordinated broadside fire to devastate targets."
         },
         {
-          "name": "Runed Hull",
+          "name": "Defensive Aegis",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Lightforged runes reinforce hull plating against magic."
+        },
+        {
+          "name": "Shield Warders",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Arcane runes reduce fire and frost damage."
+          "effect": "Magi protect the ship from incoming fire, deflecting attacks."
+        },
+        {
+          "name": "Captain's Rally",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Nearby troops gain advantage on next roll."
         }
       ],
       "description": "Mighty ships of the Alliance navy, armed with cannons and layered with rune-forged defenses.",
@@ -813,16 +1023,28 @@
       "hp": 90,
       "traits": [
         {
-          "name": "Ramprow",
-          "trait": "heavy_blow",
+          "name": "Broadside Cannons",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Unleashes devastating synchronized volleys."
+        },
+        {
+          "name": "Ram Prow",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Built to smash through blockades and smaller craft."
+          "effect": "Built to smash through blockades and smaller craft, dealing heavy damage to other ships."
         },
         {
           "name": "Warchief’s Banner",
           "trait": "empower",
           "theme": "buffs",
           "effect": "Nearby troops rally and fight harder."
+        },
+        {
+          "name": "Boarding Leap",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Jumps aboard enemy vessels easily."
         }
       ],
       "description": "Orcish and troll-crewed war galleons; brutal and adorned with the Horde’s sigils.",
@@ -839,16 +1061,28 @@
       "hp": 70,
       "traits": [
         {
+          "name": "Bombing Run",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Drops a payload of explosives, dealing massive damage."
+        },
+        {
           "name": "Overloaded Cargo",
-          "trait": "ground_effect",
+          "trait": "area blast",
           "theme": "aoe",
           "effect": "Explodes violently when sunk, scattering debris."
         },
         {
           "name": "Grease the Wheels",
-          "trait": "haste",
-          "theme": "buffs",
+          "trait": "heal",
+          "theme": "healing",
           "effect": "Crew improvises quick repairs mid-battle."
+        },
+        {
+          "name": "Boarding Leap",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Jumps aboard enemy vessels easily."
         }
       ],
       "description": "Merchant vessels laden with goods, explosives, and dubious goblin ‘safety’ measures.",
@@ -857,8 +1091,8 @@
       ]
     },
     {
-      "id": "mech_sindorei_destroyer",
-      "name": "Sin'dorei Destroyer",
+      "id": "mech_elven_destroyer",
+      "name": "Elven Destroyer",
       "class": "Naval Warship",
       "category": "Mechanicals",
       "subcategory": "Transports",
@@ -871,13 +1105,31 @@
           "effect": "Fires a concentrated beam of arcane and holy magic."
         },
         {
+          "name": "Ram Prow",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Built to smash through blockades and smaller craft, dealing heavy damage to other ships."
+        },
+        {
           "name": "Shield Warders",
           "trait": "shield",
           "theme": "buffs",
           "effect": "Magi protect the ship from incoming fire, deflecting attacks."
+        },
+        {
+          "name": "Thalassian Command",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Nearby Blood Knights, Clerics, Farstriders, and Magisters act with greater discipline."
+        },
+        {
+          "name": "Enchanted Boltd",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Enchanted elven ballistae bolts explode with arcane, fire, or frost magics upon impact, damaging all enemies nearby and either burning or freezing them in place."
         }
       ],
-      "description": "Blood Elf destroyers powered by anima, serving as rapid support vessels around Quel’Thalas’s harbors.",
+      "description": "Blood Elf destroyers powered by anima and the arcane, serving as rapid support vessels around Quel’Thalas’s harbors.",
       "campaignLinks": [
         "tbc"
       ]

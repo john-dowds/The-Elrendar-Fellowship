@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "Undead",
   "entries": [
     {
@@ -11,10 +11,10 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Rotting Grasp",
-          "trait": "poison_disease",
-          "theme": "debuffs",
-          "effect": "Clings and worries at flesh, spreading sickness."
+          "name": "Rot Aura",
+          "trait": "damage over time",
+          "theme": "aoe",
+          "effect": "Damages all enemies in a radius every turn while active, and heavier damage to weakened or cursed targets."
         },
         {
           "name": "Mindless Drive",
@@ -36,15 +36,15 @@
       "traits": [
         {
           "name": "Gnaw",
-          "trait": "damage_over_time",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Savage bite leaves an infected wound."
+          "effect": "Inflicts damage that persists for several rounds."
         },
         {
-          "name": "Frenzied Pounce",
+          "name": "Pounce",
           "trait": "dash",
-          "theme": "utility",
-          "effect": "Lurches suddenly when prey falters."
+          "theme": "translocation",
+          "effect": "Leap at an enemy, toppling them and dealing instant damage."
         }
       ],
       "description": "Feral scavengers that swarm battlefields and crypts.",
@@ -60,15 +60,15 @@
       "traits": [
         {
           "name": "Backstab",
-          "trait": "slow",
-          "theme": "debuffs",
-          "effect": "Cuts tendons and hamstrings from the shadows."
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "Deals double damage when flanking."
         },
         {
-          "name": "Skittercrawl",
-          "trait": "strike",
+          "name": "Skittering Rush",
+          "trait": "dash",
           "theme": "damage",
-          "effect": "Climbs walls and ceilings with uncanny agility."
+          "effect": "A rapid advance with chitinous blades, dealing direct damage."
         }
       ],
       "description": "Hunched, masked killers that scuttle and strike with surgical cruelty.",
@@ -83,14 +83,14 @@
       "hp": 14,
       "traits": [
         {
-          "name": "Rabid Tear",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rips and shakes, leaving bleeding wounds."
+          "name": "Savage Bite",
+          "trait": "damage over time",
+          "theme": "debuffs",
+          "effect": "Inflicts a disease that persists until cured."
         },
         {
           "name": "Scourge Scent",
-          "trait": "reveal_hidden",
+          "trait": "reveal hidden",
           "theme": "utility",
           "effect": "Tracks the living through stench of fear and blood."
         }
@@ -108,15 +108,15 @@
       "traits": [
         {
           "name": "Cleave of Sewn Flesh",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "A sweeping butcher’s swing that batters multiple foes."
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "A sweeping butcher’s swing that cuts multiple foes and leaves bleeding wounds."
         },
         {
-          "name": "Putrid Cloud",
-          "trait": "weaken",
-          "theme": "debuffs",
-          "effect": "Reeks of rot; proximity saps stamina and will."
+          "name": "Meat Hook",
+          "trait": "pull",
+          "theme": "roots",
+          "effect": "Drags a victim off balance into crushing reach."
         }
       ],
       "description": "Hulking golems of meat and iron, stitched from fallen bodies and guided by a cruel will.",
@@ -131,16 +131,16 @@
       "hp": 30,
       "traits": [
         {
-          "name": "Meat Hook",
-          "trait": "pull",
-          "theme": "roots",
-          "effect": "Drags a victim off balance into crushing reach."
-        },
-        {
           "name": "Gore-Plated Bulk",
           "trait": "fortify",
           "theme": "buffs",
           "effect": "Grotesque mass shrugs off lesser blows."
+        },
+        {
+          "name": "Massive Stomp",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
         }
       ],
       "description": "Towering heaps of sinew and bone bolted to rusted armor—walking siege engines.",
@@ -156,15 +156,15 @@
       "traits": [
         {
           "name": "Bile Burst",
-          "trait": "ground_effect",
-          "theme": "aoe",
+          "trait": "damage over time",
+          "theme": "damage",
           "effect": "Splashes corrosive rot that lingers."
         },
         {
-          "name": "Festering Load",
-          "trait": "ground_effect",
+          "name": "Blight Vial",
+          "trait": "area blast",
           "theme": "aoe",
-          "effect": "Upon defeat, ruptures into a cloud of contagion."
+          "effect": "Shatters into a lingering pall of rot."
         }
       ],
       "description": "Swell-bellied vectors swollen with alchemists’ worst inventions.",
@@ -179,16 +179,16 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Grave Chill",
+          "name": "Chill of the Grave",
           "trait": "slow",
           "theme": "roots",
-          "effect": "Saps warmth and grit from its victim."
+          "effect": "Cold touch that saps warmth and slows the body."
         },
         {
-          "name": "Gravebound Plate",
+          "name": "Cemetery Plate",
           "trait": "fortify",
           "theme": "buffs",
-          "effect": "Ancient armor dulled but stubbornly protective."
+          "effect": "Grave-wrought armor blunts heavy blows."
         }
       ],
       "description": "Heavily armed corpses animated with a colder, crueler will.",
@@ -210,9 +210,9 @@
         },
         {
           "name": "Venom Spit",
-          "trait": "damage_over_time",
-          "theme": "damage",
-          "effect": "Bites or spits a toxin that lingers."
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and slows enemies."
         }
       ],
       "description": "Arachnid-bodied horrors woven into the Scourge’s ranks by Nerubian necromancers.",
@@ -227,10 +227,16 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Burrow Ambush",
-          "trait": "knockback",
-          "theme": "roots",
-          "effect": "Surges from below to upend formations."
+          "name": "Burrow",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Entity burrows underground, enabling them to Reemerge at any location."
+        },
+        {
+          "name": "Reemerge",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Burrowed targets reemerge, knocking enemies off-balance or knocking them down."
         },
         {
           "name": "Chitin Bulwark",
@@ -251,16 +257,16 @@
       "hp": 14,
       "traits": [
         {
-          "name": "Trample",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Hooves batter and unseat the unwary."
+          "name": "Lance Charge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "Charge at the enemy, gaining +1 damage upon successful hit and knocking enemies down."
         },
         {
-          "name": "Grave Tether",
-          "trait": "fear",
+          "name": "Hoof Stomp",
+          "trait": "stun",
           "theme": "debuffs",
-          "effect": "Resists fear and refuses to break."
+          "effect": "Briefly staggers a foe."
         }
       ],
       "description": "Bone-shod chargers wreathed in cold smoke, bred to carry death knights and banshees alike.",
@@ -275,16 +281,28 @@
       "hp": 12,
       "traits": [
         {
-          "name": "Rattleblade",
-          "trait": "strike",
+          "name": "Rattle Dive",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Relentless cuts that chip away resolve."
+          "effect": "A plunging strike that shatters guard and resolve."
         },
         {
-          "name": "Loose Joints",
-          "trait": "strike",
+          "name": "Bone Breaker",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Glancing blows often pass through empty gaps."
+          "effect": "Cripples enemies with crushing blows, dealing heavy damage and stunning them for two turns."
+        },
+        {
+          "name": "Bone Shield",
+          "trait": "reflect",
+          "theme": "damage",
+          "effect": "Inflicts damage to attacker upon being hit."
+        },
+        {
+          "name": "Deathly Strike",
+          "trait": "light attack",
+          "theme": "damage",
+          "effect": "Melee attack carries necrotic energy."
         }
       ],
       "description": "Reassembled bones marching in lockstep to necromantic drums.",
@@ -300,15 +318,27 @@
       "traits": [
         {
           "name": "Bone Shards",
-          "trait": "shot",
-          "theme": "damage",
+          "trait": "ground effect",
+          "theme": "aoe",
           "effect": "Hurls jagged fragments that pierce will and flesh."
         },
         {
           "name": "Coldfire Veins",
-          "trait": "strike",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Blue witchlight flickers within, dampening damage taken."
+        },
+        {
+          "name": "Shadow Bolt",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Blue witchlight flickers within, dampening pain."
+          "effect": "Blasts enemies with shadow magic."
+        },
+        {
+          "name": "Death Coil",
+          "trait": "leech",
+          "theme": "damage",
+          "effect": "A bolt of magic that siphons harms the living or steadies the dead."
         }
       ],
       "description": "Rattling spellcasters whose grins never change, even as they burn you down.",
@@ -324,15 +354,27 @@
       "traits": [
         {
           "name": "Bone Arrow",
-          "trait": "shot",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Splintering shafts that embed and ache."
+          "effect": "Splintering shafts that embed and ache, causing Bleeding."
         },
         {
-          "name": "Hollow Frame",
-          "trait": "strike",
+          "name": "Aimed Shot",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Light frame makes them oddly nimble."
+          "effect": "Ignores all armor and line of sight barriers to deal heavy damage."
+        },
+        {
+          "name": "Rapid Fire",
+          "trait": "rapid attack",
+          "theme": "damage",
+          "effect": "Unleashes quick volleys of arrows."
+        },
+        {
+          "name": "Volley",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Can hit multiple enemies with a rain of arrows."
         }
       ],
       "description": "Long-dead bowmen loosed again, their quivers never seeming to empty.",
@@ -348,15 +390,27 @@
       "traits": [
         {
           "name": "Marrow Crush",
-          "trait": "heavy_blow",
+          "trait": "crushing attack",
           "theme": "damage",
           "effect": "Cracking slam that leaves limbs numb."
         },
         {
           "name": "Lattice of Sinew",
-          "trait": "strike",
-          "theme": "damage",
+          "trait": "fortify",
+          "theme": "buffs",
           "effect": "Re-threads itself with stolen ligaments."
+        },
+        {
+          "name": "Bone Storm",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Whips jagged ribs and vertebrae into a cutting gale."
+        },
+        {
+          "name": "Cage of Ribs",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Interlocking bones form a near-impervious shell."
         }
       ],
       "description": "A pillar of fused ribs and limbs animated by a grim lattice of magic.",
@@ -372,7 +426,7 @@
       "traits": [
         {
           "name": "Serrated Sweep",
-          "trait": "strike",
+          "trait": "cleave",
           "theme": "damage",
           "effect": "A whirling scythe of splintered bone."
         },
@@ -381,6 +435,18 @@
           "trait": "slow",
           "theme": "roots",
           "effect": "Nearby foes flag under creeping cold."
+        },
+        {
+          "name": "Grave Tempest",
+          "trait": "cone attack",
+          "theme": "aoe",
+          "effect": "A roar that spills hoarfrost and bone splinters across the field."
+        },
+        {
+          "name": "Wail of the Dead",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "A keening shriek that rattles courage."
         }
       ],
       "description": "A storm of bones held together by baleful hatred.",
@@ -405,6 +471,18 @@
           "trait": "fortify",
           "theme": "buffs",
           "effect": "Grave-wrought armor blunts heavy blows."
+        },
+        {
+          "name": "Commanding Presence",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Enemies lose morale in their presence."
+        },
+        {
+          "name": "Bone Rot",
+          "trait": "poison/disease",
+          "theme": "debuffs",
+          "effect": "A disease that rots the bone away, weakening the target and slowing them until cured."
         }
       ],
       "description": "Commanders of skeletal cohorts, helm-crests etched with cemetery runes.",
@@ -422,13 +500,19 @@
           "name": "Chill of the Grave",
           "trait": "slow",
           "theme": "roots",
-          "effect": "Cold touch that saps warmth and resolve."
+          "effect": "Cold touch that saps warmth and slows the body."
         },
         {
-          "name": "Ethereal Drift",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Half-real form blurs weapon strikes."
+          "name": "Ethereal Flight",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
+        },
+        {
+          "name": "Spectral Sight",
+          "trait": "reveal hidden",
+          "theme": "utility",
+          "effect": "Reveals hidden foes."
         }
       ],
       "description": "Residual souls tethered to the mortal world by grief, oath, or curse.",
@@ -450,9 +534,21 @@
         },
         {
           "name": "Possession",
-          "trait": "Possession",
+          "trait": "possession",
           "theme": "utility",
           "effect": "Briefly overwhelms a weakened will."
+        },
+        {
+          "name": "Banshee’s Veil",
+          "trait": "stealth",
+          "theme": "utility",
+          "effect": "Fades into silence; harder to target."
+        },
+        {
+          "name": "Shriek",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
         }
       ],
       "description": "Vengeful women’s souls, weaponized into terror by the Scourge.",
@@ -468,8 +564,8 @@
       "traits": [
         {
           "name": "Umbral Kiss",
-          "trait": "strike",
-          "theme": "damage",
+          "trait": "weaken",
+          "theme": "debuffs",
           "effect": "A draining touch that dulls a target’s next action."
         },
         {
@@ -477,6 +573,18 @@
           "trait": "teleport",
           "theme": "translocation",
           "effect": "Slides through shadows to elude blows."
+        },
+        {
+          "name": "Shadowstep",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions the user behind a foe."
+        },
+        {
+          "name": "Shadow Bind",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Immobilizes a foe in deathly grasp."
         }
       ],
       "description": "Hungry silhouettes that haunt corridors and catacombs.",
@@ -491,16 +599,22 @@
       "hp": 14,
       "traits": [
         {
-          "name": "Life Siphon",
-          "trait": "strike",
+          "name": "Life Drain",
+          "trait": "leech",
           "theme": "damage",
-          "effect": "Steals a measure of vitality on strike."
+          "effect": "Steals vitality from foes."
         },
         {
           "name": "Wail of the Dead",
-          "trait": "wail_of_the_dead",
+          "trait": "fear",
           "theme": "debuffs",
           "effect": "A keening shriek that rattles courage."
+        },
+        {
+          "name": "Dark Harvest",
+          "trait": "heal",
+          "theme": "healing",
+          "effect": "Heals slightly on dealing damage."
         }
       ],
       "description": "Focused malice given form; colder and crueler than any ghost.",
@@ -517,15 +631,27 @@
       "traits": [
         {
           "name": "Life Siphon",
-          "trait": "strike",
+          "trait": "leech",
           "theme": "damage",
           "effect": "Steals a measure of vitality on strike."
         },
         {
           "name": "Hollow Form",
-          "trait": "strike",
-          "theme": "damage",
+          "trait": "fortify",
+          "theme": "buffs",
           "effect": "Mundane blows pass with little purchase."
+        },
+        {
+          "name": "Fear Aura",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "A wave of dread forces the weak-willed to flee."
+        },
+        {
+          "name": "Shadow Bolt",
+          "trait": "damage",
+          "theme": "damage",
+          "effect": "Blasts enemies with shadow magic."
         }
       ],
       "description": "Focused malice given form; colder and crueler than any ghost.",
@@ -550,239 +676,355 @@
           "trait": "fortify",
           "theme": "buffs",
           "effect": "A pall of twilight dulls incoming attacks."
+        },
+        {
+          "name": "Radiant Strike",
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "A ranged or melee strike imbued with searing Light."
+        },
+        {
+          "name": "Spirit Link",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Shares damage between nearby allies briefly."
         }
       ],
       "description": "Winged spirit-wardens that ferry souls and forge new Forsaken.",
       "campaignLinks": ["fallqt","wotlk","shadowlands"]
     },
-    {
-      "id": "undead_lich",
-      "name": "Lich",
-      "class": "Arch-Necromancer",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 28,
-      "traits": [
-        {
-          "name": "Frost Nova",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "A freezing surge that binds and chills."
-        },
-        {
-          "name": "Phylactery Bound",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Soul anchored; destruction demands more than a broken body."
-        }
-      ],
-      "description": "Sovereign necromancers whose souls are bottled in phylacteries and wills are iron.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_death_knight_scourge",
-      "name": "Death Knight (Scourge)",
-      "class": "Runeblade Champion",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 24,
-      "traits": [
-        {
-          "name": "Runic Strike",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "A carved rune flares, chilling flesh and spirit."
-        },
-        {
-          "name": "Death Coil",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Unholy energy that harms the living or steadies the dead."
-        }
-      ],
-      "description": "Fallen heroes reforged as runebound knights under necromantic command.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_death_knight_ebon_blade",
-      "name": "Death Knight (Ebon Blade)",
-      "class": "Runeblade Champion",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 24,
-      "traits": [
-        {
-          "name": "Obliterate",
-          "trait": "heavy_blow",
-          "theme": "damage",
-          "effect": "A brutal rune-carved blow that breaks guard."
-        },
-        {
-          "name": "Icebound Fortitude",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Chilled resolve hardens against harm."
-        }
-      ],
-      "description": "Knights who broke free of the Lich King and now wield death against greater evils.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_dark_ranger",
-      "name": "Dark Ranger",
-      "class": "Shadow Archer",
-      "category": "Undead",
-      "subcategory": "Special",
-      "alsoAppearsIn": [
-        {
-          "category": "Humanoids",
-          "subcategory": "Quel'dorei"
-        }
-      ],
-      "hp": 18,
-      "traits": [
-        {
-          "name": "Black Arrow",
-          "trait": "curse",
-          "theme": "debuffs",
-          "effect": "A shadow-tinged shot that lingers as a curse."
-        },
-        {
-          "name": "Banshee’s Veil",
-          "trait": "silence",
-          "theme": "debuffs",
-          "effect": "Fades into silence; harder to target."
-        }
-      ],
-      "description": "Forsaken marksmen who lace arrows with banshee malice.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_sanlayn",
-      "name": "San’layn (Darkfallen)",
-      "class": "Vampiric Elf",
-      "category": "Undead",
-      "subcategory": "Special",
-      "alsoAppearsIn": [
-        {
-          "category": "Humanoids",
-          "subcategory": "Sin'dorei"
-        }
-      ],
-      "hp": 22,
-      "traits": [
-        {
-          "name": "Blood Siphon",
-          "trait": "heal",
-          "theme": "healing",
-          "effect": "Drinks life to mend its own wounds."
-        },
-        {
-          "name": "Mist Form",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Dissolves into crimson haze to evade harm."
-        }
-      ],
-      "description": "Vampiric princes and courtiers who dine on blood and sorrow.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_apothecary",
-      "name": "Royal Apothecary",
-      "class": "Plague Alchemist",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 16,
-      "traits": [
-        {
-          "name": "Blight Vial",
-          "trait": "curse",
-          "theme": "debuffs",
-          "effect": "Shatters into a lingering pall of rot."
-        },
-        {
-          "name": "Antiplague Draught",
-          "trait": "poison_disease",
-          "theme": "debuffs",
-          "effect": "Briefly resists poison and disease."
-        }
-      ],
-      "description": "Forsaken chemists who perfect alchemical horrors in shadowed labs.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_deathguard",
-      "name": "Deathguard",
-      "class": "Forsaken Soldier",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 18,
-      "traits": [
-        {
-          "name": "Grave Discipline",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Holds formation under withering fire."
-        },
-        {
-          "name": "Rot-Stained Mail",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Corroded armor still blunts heavy strikes."
-        }
-      ],
-      "description": "Rank-and-file Forsaken infantry, tireless and unflinching.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
-    {
-      "id": "undead_valkyr_matron",
-      "name": "Val’kyr Matron",
-      "class": "Ascended Commander",
-      "category": "Undead",
-      "subcategory": "Special",
-      "hp": 26,
-      "traits": [
-        {
-          "name": "Raise Forsaken",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Calls a newly risen ally from the fallen."
-        },
-        {
-          "name": "Shroud of Twilight",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "A mantle of dusk dulls steel and spell alike."
-        }
-      ],
-      "description": "Senior val’kyr who preside over covens and rites of unlife.",
-      "campaignLinks": ["fallqt","wotlk","shadowlands"]
-    },
-    {
-      "id": "undead_frost_wyrm",
-      "name": "Frost Wyrm",
-      "class": "Undead Dragon",
-      "category": "Undead",
-      "subcategory": "Undead Dragons",
-      "hp": 36,
-      "traits": [
-        {
-          "name": "Ice Breath",
-          "trait": "cone",
-          "theme": "aoe",
-          "effect": "A freezing exhalation that chills courage and flesh."
-        },
-        {
-          "name": "Gravechill Bones",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Cold-rimed skeleton blunts weapon strikes."
-        }
-      ],
-      "description": "Reanimated dragon corpses bound to necromancy, their breath a storm of tomb-cold frost.",
-      "campaignLinks": ["fallqt","wotlk"]
-    },
+    [
+      {
+        "id": "undead_lich",
+        "name": "Lich",
+        "class": "Arch-Necromancer",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 28,
+        "traits": [
+          {
+            "name": "Frost Nova",
+            "trait": "roots",
+            "theme": "roots",
+            "effect": "Freezes foes briefly."
+          },
+          {
+            "name": "Shadow Volley",
+            "trait": "aoe",
+            "theme": "aoe",
+            "effect": "Unleashes a deadly volley of shadow bolts."
+          },
+          {
+            "name": "Necromancer's Ritual",
+            "trait": "translocation",
+            "theme": "translocation",
+            "effect": "Reanimates the most powerful entities as undead elites, or bosses."
+          },
+          {
+            "name": "Mana Burn",
+            "trait": "debuffs",
+            "theme": "debuffs",
+            "effect": "Target suffers -1 to next magical action."
+          },
+          {
+            "name": "Phylactery Bound",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Soul anchored; destruction demands more than a broken body."
+          }
+        ],
+        "description": "Sovereign necromancers whose souls are bottled in phylacteries and wills are iron.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_death_knight_scourge",
+        "name": "Death Knight (Scourge)",
+        "class": "Runeblade Champion",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 24,
+        "traits": [
+          {
+            "name": "Runic Strike",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "A carved rune flares, chilling flesh and spirit."
+          },
+          {
+            "name": "Death Coil",
+            "trait": "leech",
+            "theme": "damage",
+            "effect": "A bolt of magic that siphons harms the living or steadies the dead."
+          },
+          {
+            "name": "Icebound Fortitude",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Chilled resolve hardens against harm."
+          },
+          {
+            "name": "Grave Tempest",
+            "trait": "aoe",
+            "theme": "aoe",
+            "effect": "A roar that spills hoarfrost and bone splinters across the field."
+          }
+        ],
+        "description": "Fallen heroes reforged as runebound knights under necromantic command.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_death_knight_ebon_blade",
+        "name": "Death Knight (Ebon Blade)",
+        "class": "Runeblade Champion",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 24,
+        "traits": [
+          {
+            "name": "Obliterate",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "A brutal rune-carved blow that breaks guard."
+          },
+          {
+            "name": "Death Pact",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "Binds a soul, stealing its vitality."
+          },
+          {
+            "name": "Icebound Fortitude",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Chilled resolve hardens against harm."
+          },
+          {
+            "name": "Raise Lesser Undead",
+            "trait": "translocation",
+            "theme": "translocation",
+            "effect": "Reanimates minor entities as undead minions."
+          }
+        ],
+        "description": "Knights who broke free of the Lich King and now wield death against greater evils.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_dark_ranger",
+        "name": "Dark Ranger",
+        "class": "Shadow Archer",
+        "category": "Undead",
+        "subcategory": "Special",
+        "alsoAppearsIn": [
+          { "category": "Humanoids", "subcategory": "Quel'dorei" }
+        ],
+        "hp": 18,
+        "traits": [
+          {
+            "name": "Black Arrow",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "Arrows tainted with dark magic that linger, draining the target's health."
+          },
+          {
+            "name": "Poisoned Arrow",
+            "trait": "debuffs",
+            "theme": "debuffs",
+            "effect": "Inflicts poison condition on a target."
+          },
+          {
+            "name": "Aimed Shot",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "Ignores all armor and line of sight barriers to deal heavy damage."
+          },
+          {
+            "name": "Banshee’s Veil",
+            "trait": "stealth",
+            "theme": "utility",
+            "effect": "Fades into silence; harder to target."
+          }
+        ],
+        "description": "Forsaken marksmen who lace arrows with banshee malice.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_sanlayn",
+        "name": "San’layn (Darkfallen)",
+        "class": "Vampiric Elf",
+        "category": "Undead",
+        "subcategory": "Special",
+        "alsoAppearsIn": [
+          { "category": "Humanoids", "subcategory": "Sin'dorei" }
+        ],
+        "hp": 22,
+        "traits": [
+          {
+            "name": "Blood Siphon",
+            "trait": "healing",
+            "theme": "healing",
+            "effect": "Drinks life to mend its own wounds."
+          },
+          {
+            "name": "Vampiric Touch",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "Leeches health every time target is damaged."
+          },
+          {
+            "name": "Mist Form",
+            "trait": "utility",
+            "theme": "utility",
+            "effect": "Transform into mist to avoid damage."
+          },
+          {
+            "name": "Fear Aura",
+            "trait": "debuffs",
+            "theme": "debuffs",
+            "effect": "A wave of dread forces the weak-willed to flee."
+          }
+        ],
+        "description": "Vampiric princes and courtiers who dine on blood and sorrow.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_apothecary",
+        "name": "Royal Apothecary",
+        "class": "Plague Alchemist",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 16,
+        "traits": [
+          {
+            "name": "Blight Vial",
+            "trait": "aoe",
+            "theme": "aoe",
+            "effect": "Shatters into a lingering pall of rot."
+          },
+          {
+            "name": "Antiplague Draught",
+            "trait": "buffs",
+            "theme": "buffs",
+            "effect": "Briefly resists poison and disease."
+          },
+          {
+            "name": "Volatile Potion Toss",
+            "trait": "debuffs",
+            "theme": "debuffs",
+            "effect": "Throws a volatile flask, dealing damage and spreading poison."
+          },
+          {
+            "name": "Corpse Lob",
+            "trait": "aoe",
+            "theme": "aoe",
+            "effect": "Hurls rotting payloads that spread terror and disease."
+          }
+        ],
+        "description": "Forsaken chemists who perfect alchemical horrors in shadowed labs.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_deathguard",
+        "name": "Deathguard",
+        "class": "Forsaken Soldier",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 18,
+        "traits": [
+          {
+            "name": "Grave Discipline",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Holds formation under withering fire."
+          },
+          {
+            "name": "Rot-Stained Mail",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Corroded armor still blunts heavy strikes."
+          },
+          {
+            "name": "Strike",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "A standard strike that deals melee damage."
+          }
+        ],
+        "description": "Rank-and-file Forsaken infantry, tireless and unflinching.",
+        "campaignLinks": ["fallqt","wotlk"]
+      },
+      {
+        "id": "undead_valkyr_matron",
+        "name": "Val’kyr Matron",
+        "class": "Ascended Commander",
+        "category": "Undead",
+        "subcategory": "Special",
+        "hp": 26,
+        "traits": [
+          {
+            "name": "Raise Greater Undead",
+            "trait": "translocation",
+            "theme": "translocation",
+            "effect": "Reanimates major entities as undead pawns."
+          },
+          {
+            "name": "Radiant Strike",
+            "trait": "damage",
+            "theme": "damage",
+            "effect": "A ranged or melee strike imbued with searing Light."
+          },
+          {
+            "name": "Spirit Link",
+            "trait": "buffs",
+            "theme": "buffs",
+            "effect": "Shares damage between nearby allies briefly, reducing the load on the initial sufferer."
+          },
+          {
+            "name": "Shimmering Barrier",
+            "trait": "buffs",
+            "theme": "buffs",
+            "effect": "An arcane barrier shimmers, reducing incoming harm."
+          }
+        ],
+        "description": "Senior val’kyr who preside over covens and rites of unlife.",
+        "campaignLinks": ["fallqt","wotlk","shadowlands"]
+      },
+      {
+        "id": "undead_frost_wyrm",
+        "name": "Frost Wyrm",
+        "class": "Undead Dragon",
+        "category": "Undead",
+        "subcategory": "Undead Dragons",
+        "hp": 36,
+        "traits": [
+          {
+            "name": "Ice Breath",
+            "trait": "aoe",
+            "theme": "aoe",
+            "effect": "A freezing exhalation that chills courage and flesh."
+          },
+          {
+            "name": "Wing Buffet",
+            "trait": "roots",
+            "theme": "roots",
+            "effect": "Pushes the target back and disrupts movement."
+          },
+          {
+            "name": "Gravechill Bones",
+            "trait": "fortify",
+            "theme": "buffs",
+            "effect": "Cold-rimed skeleton blunts weapon strikes."
+          },
+          {
+            "name": "Death Hex",
+            "trait": "debuffs",
+            "theme": "debuffs",
+            "effect": "Weakens target’s morale and next roll."
+          }
+        ],
+        "description": "Reanimated dragon corpses bound to necromancy, their breath a storm of tomb-cold frost.",
+        "campaignLinks": ["fallqt","wotlk"]
+      }
+    ],
     {
       "id": "undead_bone_drake",
       "name": "Bone Drake",
@@ -793,15 +1035,27 @@
       "traits": [
         {
           "name": "Rattle Dive",
-          "trait": "dash",
-          "theme": "utility",
+          "trait": "damage",
+          "theme": "damage",
           "effect": "A plunging strike that shatters guard and resolve."
         },
         {
-          "name": "Hollow Frame",
-          "trait": "strike",
+          "name": "Wing Buffet",
+          "trait": "roots",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        },
+        {
+          "name": "Radiant Soar",
+          "trait": "translocation",
+          "theme": "translocation",
+          "effect": "Sweep up into the skies and relocate without teleporting."
+        },
+        {
+          "name": "Piercing Talons",
+          "trait": "damage",
           "theme": "damage",
-          "effect": "Hollow bones make glancing blows pass with little purchase."
+          "effect": "Rakes with talons in a diving pass, dealing direct damage."
         }
       ],
       "description": "Draconic remains lashed with rune-iron and malice, swift and unnerving in the air.",
@@ -817,15 +1071,27 @@
       "traits": [
         {
           "name": "Bone Storm",
-          "trait": "area_blast",
+          "trait": "aoe",
           "theme": "aoe",
           "effect": "Whips jagged ribs and vertebrae into a cutting gale."
         },
         {
-          "name": "Runebound Spine",
+          "name": "Deathward Marrow",
           "trait": "fortify",
           "theme": "buffs",
-          "effect": "Necromantic sigils reinforce its frame against harm."
+          "effect": "Old bone and deep runes resist even brutal blows."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "roots",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        },
+        {
+          "name": "Crushing Fist",
+          "trait": "damage",
+          "theme": "damage",
+          "effect": "Slams enemy with overwhelming force, staggering target briefly."
         }
       ],
       "description": "A lesser drake or dragon stripped to bone and bound with cruel runes.",
@@ -841,15 +1107,27 @@
       "traits": [
         {
           "name": "Blight Breath",
-          "trait": "curse",
-          "theme": "debuffs",
-          "effect": "Spews a cloud of rot that lingers upon armor and lungs."
+          "trait": "aoe",
+          "theme": "aoe",
+          "effect": "Spews a cloud of rot and bile that lingers upon armor and in lungs."
         },
         {
-          "name": "Festering Carcass",
-          "trait": "weaken",
+          "name": "Deadly Venom",
+          "trait": "debuffs",
           "theme": "debuffs",
-          "effect": "Wounded body leaks contagion that weakens attackers."
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "roots",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
+        },
+        {
+          "name": "Bile Burst",
+          "trait": "damage",
+          "theme": "damage",
+          "effect": "Splashes corrosive rot that lingers."
         }
       ],
       "description": "A dragon cadaver suffused with alchemy and plaguecraft, a flying cauldron of ruin.",
@@ -865,7 +1143,7 @@
       "traits": [
         {
           "name": "Grave Tempest",
-          "trait": "area_blast",
+          "trait": "aoe",
           "theme": "aoe",
           "effect": "A roar that spills hoarfrost and bone splinters across the field."
         },
@@ -874,6 +1152,18 @@
           "trait": "fortify",
           "theme": "buffs",
           "effect": "Old bone and deep runes resist even brutal blows."
+        },
+        {
+          "name": "Rattle Dive",
+          "trait": "damage",
+          "theme": "damage",
+          "effect": "A plunging strike that shatters guard and resolve."
+        },
+        {
+          "name": "Wing Buffet",
+          "trait": "roots",
+          "theme": "roots",
+          "effect": "Pushes the target back and disrupts movement."
         }
       ],
       "description": "An elder wyrm’s skeleton, reforged by master necromancy into a tyrant of the skies.",
@@ -889,15 +1179,27 @@
       "traits": [
         {
           "name": "Corpse Lob",
-          "trait": "poison_disease",
-          "theme": "debuffs",
+          "trait": "aoe",
+          "theme": "aoe",
           "effect": "Hurls rotting payloads that spread terror and disease."
         },
         {
-          "name": "Rattling Chassis",
-          "trait": "strike",
+          "name": "Overload",
+          "trait": "damage",
           "theme": "damage",
-          "effect": "Ramshackle frame keeps rolling even when battered."
+          "effect": "Forces constructs to explode on defeat."
+        },
+        {
+          "name": "Field Repair",
+          "trait": "healing",
+          "theme": "heal",
+          "effect": "Can patch nearby mechanicals for minor HP."
+        },
+        {
+          "name": "Unstable Engineering",
+          "trait": "debuffs",
+          "theme": "debuffs",
+          "effect": "Suffers catastrophic failure when critically damaged."
         }
       ],
       "description": "A bone-and-iron cart that catapults corpses and plague barrels across the field.",
@@ -913,15 +1215,27 @@
       "traits": [
         {
           "name": "Gore Hook",
-          "trait": "pull",
+          "trait": "roots",
           "theme": "roots",
           "effect": "Snags and drags prey into crushing reach."
         },
         {
-          "name": "Sewn Resilience",
-          "trait": "strike",
+          "name": "Cleave of Sewn Flesh",
+          "trait": "aoe",
+          "theme": "aoe",
+          "effect": "A sweeping butcher’s swing that cuts multiple foes and leaves bleeding wounds."
+        },
+        {
+          "name": "Corrupted Strength",
+          "trait": "buffs",
+          "theme": "buffs",
+          "effect": "Takes less damage while under half HP."
+        },
+        {
+          "name": "Crushing Blow",
+          "trait": "damage",
           "theme": "damage",
-          "effect": "Taut sinew and iron staples hold the form together."
+          "effect": "Slams enemy with overwhelming force, staggering target briefly."
         }
       ],
       "description": "A nastier cousin of the abomination—leaner, stitched tight, and built to hunt.",
@@ -936,16 +1250,28 @@
       "hp": 32,
       "traits": [
         {
-          "name": "Marrowquake",
-          "trait": "heavy_blow",
-          "theme": "damage",
-          "effect": "A crushing step that shakes resolve."
+          "name": "Massive Stomp",
+          "trait": "aoe",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
         },
         {
           "name": "Cage of Ribs",
           "trait": "shield",
           "theme": "buffs",
           "effect": "Interlocking bones form a near-impervious shell."
+        },
+        {
+          "name": "Crushing Fist",
+          "trait": "damage",
+          "theme": "damage",
+          "effect": "Slams enemy with overwhelming force, staggering target briefly."
+        },
+        {
+          "name": "Deathward Marrow",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Old bone and deep runes resist even brutal blows."
         }
       ],
       "description": "A towering frame of fused skeletons animated into a walking fortress.",
@@ -960,16 +1286,22 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Fume Release",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Vents a sickly vapor that weakens those nearby."
+          "name": "Fumes",
+          "trait": "aoe",
+          "theme": "aoe",
+          "effect": "Enemies adjacent at round start take minor poison damage."
         },
         {
-          "name": "Alchemical Tanks",
-          "trait": "fortify",
+          "name": "Alloy Core",
+          "trait": "buffs",
           "theme": "buffs",
-          "effect": "Reinforced vats resist stray punctures… until they don’t."
+          "effect": "Composite shell resists wear and tear, reducing damage taken for a maximum of two turns."
+        },
+        {
+          "name": "Volatile Potion Toss",
+          "trait": "debuffs",
+          "theme": "debuffs",
+          "effect": "Throws a volatile flask, dealing damage and spreading poison."
         }
       ],
       "description": "A wheeled reservoir of blight escorted by apothecaries and ghouls.",
@@ -981,19 +1313,31 @@
       "class": "Flying Fortress",
       "category": "Undead",
       "subcategory": "Engines & Oddities",
-      "hp": 120,
+      "hp": 1000,
       "traits": [
         {
           "name": "Soul Beacon",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Bolsters undead below and chills mortal ranks."
+          "trait": "debuff",
+          "theme": "debuff",
+          "effect": "Marks a target for undead minions, bolstering their damage and redirecting their focus."
         },
         {
-          "name": "Gravemass",
+          "name": "Wardstone Core",
           "trait": "fortify",
           "theme": "buffs",
-          "effect": "Monolithic bulk shrugs off most assaults short of siege fire."
+          "effect": "Raises defenses or maximum health temporarily."
+        },
+        {
+          "name": "Voidstorm",
+          "trait": "aoe",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
+        },
+        {
+          "name": "Raise Greater Undead",
+          "trait": "translocation",
+          "theme": "translocation",
+          "effect": "Reanimates major entities as undead pawns."
         }
       ],
       "description": "A floating tomb-city bristling with runes and bonework, casting a pall over whole regions.",

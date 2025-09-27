@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "Demons",
   "entries": [
     {
@@ -11,22 +11,22 @@
       "hp": 8,
       "traits": [
         {
-          "name": "Fel Spark",
-          "trait": "shot",
+          "name": "Fel Bolt",
+          "trait": "light damage",
           "theme": "damage",
-          "effect": "Pops a spit of fel flame from range, dealing damage."
-        },
+          "effect": "Fires a crackling bolt of fel at range, dealing damage."},
         {
-          "name": "Cackle",
-          "trait": "precise_strike",
+          "name": "Fel Claw",
+          "trait": "light damage",
           "theme": "damage",
-          "effect": "Deals increased damage to a single target."
+          "effect": "Inflicts damage that bleeds for several rounds."
         }
       ],
       "description": "Petty fel minions that swarm, jeer, and ignite small chaos.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/imp.png"
     },
+
     {
       "id": "demon_fel_imp",
       "name": "Fel Imp",
@@ -36,16 +36,16 @@
       "hp": 9,
       "traits": [
         {
-          "name": "Fel Lash",
-          "trait": "shot",
+          "name": "Fire Blast",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Pops a spit of fel flame from range, dealing damage."
+          "effect": "Instantly burns enemy target heavily."
         },
         {
-          "name": "Blink Trick",
+          "name": "Blink Strike",
           "trait": "teleport",
           "theme": "translocation",
-          "effect": "Blink-steps to a nearby space instantly."
+          "effect": "Instantly relocates the user and grants a second action immediately."
         }
       ],
       "description": "Legion-bred imps with hotter flame and nastier pranks.",
@@ -62,15 +62,21 @@
       "traits": [
         {
           "name": "Vampiric Touch",
-          "trait": "strike",
+          "trait": "leech",
           "theme": "damage",
-          "effect": "Cuts deep with runed claws, dealing direct damage."
+          "effect": "Leeches health every time target is damaged."
         },
         {
-          "name": "Felbrand",
-          "trait": "damage_over_time",
+          "name": "Death Coil",
+          "trait": "leech",
           "theme": "damage",
-          "effect": "Siphons life with lingering fel rot over several rounds."
+          "effect": "A bolt of magic that siphons harms the living or steadies the dead."
+        },
+        {
+          "name": "Fel Rupture",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Fel spikes rupture through the earth, impaling enemies and dealing heavy damage."
         }
       ],
       "description": "Master schemers who conquer worlds by subversion and fear.",
@@ -87,21 +93,34 @@
       "traits": [
         {
           "name": "Skin Walking",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Cuts deep with runed claws, dealing direct damage."
+          "trait": "possession",
+          "theme": "utility",
+          "effect": "Strips out the soul of an individual, enabling the manipulator to inhabit the host."
         },
         {
-          "name": "Subvert",
+          "name": "Fear Aura",
           "trait": "fear",
           "theme": "debuffs",
           "effect": "A wave of dread forces the weak-willed to flee."
+        },
+        {
+          "name": "Demonologist's Ritual",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Summons the most powerful entities as undead elites, or bosses."
+        },
+        {
+          "name": "Wicked Pact",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Detonates a minion with fel force, damaging all enemies in a radius."
         }
       ],
       "description": "Agents who wear stolen faces and undo kingdoms from within.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
       "image": "assets/art/monsters/dreadlord.png"
     },
+
     {
       "id": "demon_eredar_warlock",
       "name": "Man'ari Warlock",
@@ -118,15 +137,21 @@
       "traits": [
         {
           "name": "Fel Bolt",
-          "trait": "shot",
+          "trait": "light damage",
           "theme": "damage",
           "effect": "Fires a crackling bolt of fel at range, dealing damage."
         },
         {
-          "name": "Infernal Pact",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "A pact of ruin increases striking potency briefly."
+          "name": "Crushing Infernal",
+          "trait": "crushing attack",
+          "theme": "damage",
+          "effect": "Summons an infernal at the location, dealing crushing damage to anyone beneath it."
+        },
+        {
+          "name": "Demonic Master",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Summons a major demonic servant."
         }
       ],
       "description": "High demon sorcerers who command fel and servants alike.",
@@ -149,15 +174,15 @@
       "traits": [
         {
           "name": "Entropy Surge",
-          "trait": "blast",
+          "trait": "crushing attack",
           "theme": "damage",
           "effect": "Unleashes a focused fel-arcane blast at range, dealing damage."
         },
         {
           "name": "Void Ward",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Demonic warding blunts incoming harm."
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Absorbs attacks until overwhelmed, and then unleashes that damage in an explosion."
         }
       ],
       "description": "Once peerless magi, now rewritten by the Legion’s will.",
@@ -176,15 +201,15 @@
       "traits": [
         {
           "name": "Charm Lash",
-          "trait": "shot",
+          "trait": "light attack",
           "theme": "damage",
-          "effect": "Cracks a lash of fel energy from range, dealing damage."
+          "effect": "A whip crack of fel energy dealt from mid-range, dealing damage."
         },
         {
           "name": "Enthrall",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Lashes with barbed whip, dealing direct damage."
+          "trait": "enthrall",
+          "theme": "utility",
+          "effect": "Enthralls a target, taking full control over them."
         }
       ],
       "description": "Seductive tormentors who bind victims with will and whip.",
@@ -200,16 +225,16 @@
       "hp": 16,
       "traits": [
         {
-          "name": "Gaze of Desire",
-          "trait": "line",
-          "theme": "aoe",
-          "effect": "Fires a piercing beam that damages enemies in a straight line."
+          "name": "Whip Crack",
+          "trait": "weaken",
+          "theme": "damage",
+          "effect": "Demoralizes slaves and enemies alike, including beasts."
         },
         {
-          "name": "Chains of Pleasure",
-          "trait": "chain_attack",
-          "theme": "aoe",
-          "effect": "Jumps between targets, dealing reduced damage as it arcs."
+          "name": "Chains of Desire",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Chains enemies together and slows them, as well as mirroring all damage taken next turn to each individual attached."
         }
       ],
       "description": "Male sayaad who twist longing into chains.",
@@ -226,15 +251,15 @@
       "traits": [
         {
           "name": "Whirl of Blades",
-          "trait": "strike",
-          "theme": "damage",
+          "trait": "cleave",
+          "theme": "aoe",
           "effect": "Carves with paired blades, dealing direct damage."
         },
         {
           "name": "Blasphemous Ward",
-          "trait": "shield",
+          "trait": "empower",
           "theme": "buffs",
-          "effect": "Demonic warding blunts incoming harm."
+          "effect": "Demonic warding canibalizes incoming harm to empower your next attack."
         }
       ],
       "description": "Six-armed zealots who sermonize with the sword.",
@@ -253,13 +278,13 @@
           "name": "Fel Cleave",
           "trait": "cleave",
           "theme": "aoe",
-          "effect": "Detonates a shrapnel-wreathed burst at range, dealing damage."
+          "effect": "Cleaves nearby targets in a wide arc, causing bleeds that persist."
         },
         {
-          "name": "Hellplate",
+          "name": "Obsidian Plates",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Demonic warding blunts incoming harm."
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
         }
       ],
       "description": "Axe-bearing enforcers who anchor frontline assaults.",
@@ -276,15 +301,15 @@
       "traits": [
         {
           "name": "Felbrand",
-          "trait": "blast",
+          "trait": "leech",
           "theme": "damage",
-          "effect": "Detonates a shrapnel-wreathed burst at range, dealing damage."
+          "effect": "Siphons life with lingering fel rot over several rounds."
         },
         {
-          "name": "Tyrant’s Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Demonic warding blunts incoming harm."
+          "name": "Fel Cleave",
+          "trait": "cleave",
+          "theme": "aoe",
+          "effect": "Cleaves nearby targets in a wide arc, causing bleeds that persist."
         }
       ],
       "description": "Overseers who lead demonic cohorts with iron cruelty.",
@@ -300,16 +325,16 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Graft",
-          "trait": "strike",
+          "name": "Wrench Toss",
+          "trait": "light attack",
           "theme": "damage",
-          "effect": "Cleave from brutal augmetics, dealing direct damage."
+          "effect": "Improvised ranged attack with tools."
         },
         {
-          "name": "Tyrant’s Aegis",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Demonic warding blunts incoming harm."
+          "name": "Explosive Satchel",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Throws a bomb that deals area damage."
         }
       ],
       "description": "Tinker-butchers who fuse metal, meat, and misery.",
@@ -325,16 +350,16 @@
       "hp": 12,
       "traits": [
         {
-          "name": "Wrench Toss",
-          "trait": "shot",
+          "name": "Wrench Swing",
+          "trait": "light attack",
           "theme": "damage",
-          "effect": "Cleave from brutal augmetics, dealing direct damage."
+          "effect": "Improvised melee attack with tools."
         },
         {
-          "name": "Scrap Cudgel",
-          "trait": "heavy_blow",
+          "name": "Collateral Damage",
+          "trait": "rapid attack",
           "theme": "damage",
-          "effect": "Deals double damage directly to the target using blunt weapon made of scraps."
+          "effect": "On defeat, may detonate remaining charges."
         }
       ],
       "description": "Fidgeting underlings who maintain the Legion’s engines.",
@@ -350,16 +375,16 @@
       "hp": 28,
       "traits": [
         {
-          "name": "Devastating Ruin",
-          "trait": "strike",
+          "name": "Fel Rend",
+          "trait": "piercing attack",
           "theme": "damage",
-          "effect": "Rends with infernal talons, dealing direct damage."
+          "effect": "Tears through magical wards."
         },
         {
           "name": "Doom Curse",
-          "trait": "curse",
-          "theme": "debuffs",
-          "effect": "A doom-mark lingers, afflicting the target with harm."
+          "trait": "damage over time",
+          "theme": "damage",
+          "effect": "A doom-mark lingers, afflicting the target with harm until they explode."
         }
       ],
       "description": "Winged commanders who lead whole armies of the Legion to invade and break worlds.",
@@ -376,9 +401,9 @@
       "traits": [
         {
           "name": "Crushing Infernal",
-          "trait": "strike",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Rends with infernal talons, dealing direct damage."
+          "effect": "Summons an infernal at the location, dealing crushing damage to anyone beneath it."
         },
         {
           "name": "Hex of Weakness",
@@ -406,10 +431,10 @@
           "effect": "A wave of dread forces the weak-willed to flee."
         },
         {
-          "name": "Fel Strike",
-          "trait": "strike",
+          "name": "Felblade Strike",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Rends with infernal talons, dealing direct damage."
+          "effect": "Strikes wreathed in fel fire."
         }
       ],
       "description": "An ascended variant of the doomguard, towering winged demons radiating pure fear to break mortals before combat even begins.",
@@ -426,15 +451,15 @@
       "traits": [
         {
           "name": "Meteor Impact",
-          "trait": "stun",
-          "theme": "debuffs",
-          "effect": "A violent surge of fel overloads the target, stunning them briefly."
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "A violent meteor impact that blasts all nearby enemies with immense damage and knocks them backwards."
         },
         {
           "name": "Cinder Core",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Smashes with burning mass, dealing direct damage."
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "All attacks that land on enemies deal fire damage."
         }
       ],
       "description": "Runed boulders animated by fel into living meteors.",
@@ -450,16 +475,22 @@
       "hp": 32,
       "traits": [
         {
-          "name": "Hellstorm",
-          "trait": "damage_over_time",
-          "theme": "damage",
-          "effect": "Sheds ember-heat that harms over several rounds."
+          "name": "Hellfire",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Summons a devastating rain of fire from the skies above."
         },
         {
-          "name": "Boulderhide",
-          "trait": "heavy_blow",
+          "name": "Flame Crash",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        },
+        {
+          "name": "Lava Smash",
+          "trait": "heavy damage",
           "theme": "damage",
-          "effect": "Deals double damage directly to the target."
+          "effect": "Strikes with primal force, dealing direct damage."
         }
       ],
       "description": "Greater infernals whose cores burn like furnaces.",
@@ -475,13 +506,13 @@
       "hp": 16,
       "traits": [
         {
-          "name": "Mana Siphon",
-          "trait": "silence",
-          "theme": "debuffs",
-          "effect": "Null fel dampens incantations, silencing the target."
+          "name": "Mana Drain",
+          "trait": "weaken",
+          "theme": "utility",
+          "effect": "Saps the mana from a target, Weakening them for a turn."
         },
         {
-          "name": "Hexsense",
+          "name": "All-Seeing",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Fel sight pierces concealment briefly."
@@ -500,16 +531,16 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Rend and Worry",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Bites with spell-eating jaws, dealing direct damage."
+          "name": "Counterspell",
+          "trait": "interrupt",
+          "theme": "utility",
+          "effect": "Interrupts enemy casting."
         },
         {
           "name": "Unnerving Howl",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Detonates fel force, damaging all enemies in a radius."
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Lets loose an unnerving howl that strikes fear into adversaries. "
         }
       ],
       "description": "Bulkier kin bred for the brute chase and tear.",
@@ -526,12 +557,12 @@
       "traits": [
         {
           "name": "Twin Glaives",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Detonates fel force, damaging all enemies in a radius."
+          "trait": "rapid attack",
+          "theme": "damage",
+          "effect": "Lashes out with deadly glaive attacks, rapidly striking the target multiple times."
         },
         {
-          "name": "Dread Warding",
+          "name": "Fear Aura",
           "trait": "fear",
           "theme": "debuffs",
           "effect": "A wave of dread forces the weak-willed to flee."
@@ -575,16 +606,28 @@
       "hp": 38,
       "traits": [
         {
-          "name": "Fel Smash",
-          "trait": "strike",
+          "name": "Entropy Surge",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Strikes with brutal force, dealing direct damage."
+          "effect": "Unleashes a focused fel-arcane blast at range, dealing damage."
         },
         {
-          "name": "Demonic Hide",
-          "trait": "damage_over_time",
+          "name": "Meteor Impact",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "A violent meteor impact that blasts all nearby enemies with immense damage and knocks them backwards."
+        },
+        {
+          "name": "Brutal Strike",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Fel corruption harms the target over several rounds."
+          "effect": "Staggers foes with sheer force, crushing armor and leaving opponents Weakened."
+        },
+        {
+          "name": "Obsidian Plates",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
         }
       ],
       "description": "Colossal demon generals who break armies in a single charge.",
@@ -601,9 +644,9 @@
       "traits": [
         {
           "name": "Shadowstep",
-          "trait": "stealth",
-          "theme": "buffs",
-          "effect": "Slips between sightlines, becoming harder to target."
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly repositions the user behind "
         },
         {
           "name": "Corrupting Touch",
@@ -625,10 +668,10 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Seed of Corruption",
+          "name": "Hex of Weakness",
           "trait": "curse",
           "theme": "debuffs",
-          "effect": "A doom-mark lingers, afflicting the target with harm."
+          "effect": "A doom-mark lingers, afflicting the target with weakness."
         },
         {
           "name": "Wicked Pact",
@@ -651,15 +694,15 @@
       "traits": [
         {
           "name": "Shriek",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Strikes with brutal force, dealing direct damage."
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Forces the target to flee or lose control."
         },
         {
           "name": "Fel Rupture",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Fires a fel barrage at range, dealing damage."
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Fel spikes rupture through the earth, impaling enemies and dealing heavy damage."
         }
       ],
       "description": "Legion sky-hunters that roost on warships and spires.",
@@ -675,16 +718,22 @@
       "hp": 24,
       "traits": [
         {
-          "name": "Eye of the Legion",
+          "name": "All-Seeing",
           "trait": "reveal_hidden",
           "theme": "utility",
           "effect": "Fel sight pierces concealment briefly."
         },
         {
           "name": "Agonize",
-          "trait": "strike",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Hammers the target with fel-empowered force, dealing direct damage."
+          "effect": "Blights the target with fel-empowered magic, dealing direct damage and leaving a Burning effect."
+        },
+        {
+          "name": "Hellfire",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Summons a devastating rain of fire from the skies above."
         }
       ],
       "description": "Truth-bleeders who scour minds for treachery.",
@@ -700,16 +749,22 @@
       "hp": 34,
       "traits": [
         {
-          "name": "Crushing Stomp",
-          "trait": "area_blast",
+          "name": "Clearing the Lane",
+          "trait": "line",
           "theme": "aoe",
-          "effect": "Detonates fel force, damaging all enemies in a radius."
+          "effect": "Shatters fortifications with a shaped blast, injuring anyone standing along the path."
         },
         {
-          "name": "Unyielding Bulk",
-          "trait": "fortify",
+          "name": "Gore-Plated Bulk",
+          "trait": "shield",
           "theme": "buffs",
-          "effect": "Demonic resilience rises, raising defenses."
+          "effect": "Grotesque mass shrugs off lesser blows."
+        },
+        {
+          "name": "Corruption Aura",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
         }
       ],
       "description": "Massive, ancient titan-sized demons that embody brute strength, used by the Legion as living siege weapons.",
@@ -728,13 +783,25 @@
           "name": "Web Snare",
           "trait": "root",
           "theme": "roots",
-          "effect": "Fel shackles pin the target in place, preventing movement."
+          "effect": "Immobilizes the target in place."
         },
         {
-          "name": "Venomous Bite",
-          "trait": "damage_over_time",
+          "name": "Burning Web",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Injected venom harms the target over several rounds."
+          "effect": "Roots enemies in place and inflicts burn damage that persists for several rounds."
+        },
+        {
+          "name": "Venom Bite",
+          "trait": "poison/disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
+        },
+        {
+          "name": "Web of Domination",
+          "trait": "possession",
+          "theme": "utility",
+          "effect": "Assert control over lesser spawn."
         }
       ],
       "description": "Half-demonic arachnids who serve the Legion as assassins and ambushers, weaving felweb traps in caverns and fortresses.",
@@ -750,16 +817,16 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Savage Rend",
-          "trait": "damage_over_time",
+          "name": "Fel Rend",
+          "trait": "piercing attack",
           "theme": "damage",
-          "effect": "Fel corruption harms the target over several rounds."
+          "effect": "Tears through magical wards."
         },
         {
-          "name": "Fel Howl",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Strikes with brutal force, dealing direct damage."
+          "name": "Unnerving Howl",
+          "trait": "fear",
+          "theme": "debuffs",
+          "effect": "Lets loose an unnerving howl that strikes fear into adversaries. "
         }
       ],
       "description": "Twisted warhounds and bestial horrors, infused with fel to hunt and maul the Legion’s enemies.",
@@ -775,16 +842,22 @@
       "hp": 26,
       "traits": [
         {
-          "name": "Spawn Imps",
+          "name": "Demonic Pact",
           "trait": "summon",
           "theme": "translocation",
-          "effect": "Calls lesser demons or constructs to the field."
+          "effect": "Summons a minor demon."
         },
         {
           "name": "Fel Barrage",
-          "trait": "volley",
+          "trait": "barrage",
           "theme": "aoe",
           "effect": "Fires multiple projectiles into an area."
+        },
+        {
+          "name": "Web of Domination",
+          "trait": "possession",
+          "theme": "utility",
+          "effect": "Assert control over lesser spawn."
         }
       ],
       "description": "Grotesque matriarchs who endlessly spawn lesser imps and lead swarms of cackling minions.",
@@ -806,10 +879,10 @@
           "effect": "Fires a piercing beam that damages enemies in a straight line."
         },
         {
-          "name": "Torment",
-          "trait": "strike",
+          "name": "Agonize",
+          "trait": "damage over time",
           "theme": "damage",
-          "effect": "Blasts a focused ray to strike directly."
+          "effect": "Blights the target with fel-empowered magic, dealing direct damage and leaving a Burning effect."
         }
       ],
       "description": "Floating ocular demons that interrogate and torment with unblinking fel gazes.",
@@ -825,16 +898,16 @@
       "hp": 25,
       "traits": [
         {
-          "name": "Soul Shackles",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Strikes with brutal force, dealing direct damage."
+          "name": "Imprison",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "Captures foes with magical restraint."
         },
         {
-          "name": "Brutal Strike",
-          "trait": "chain_attack",
-          "theme": "aoe",
-          "effect": "Jumps between targets, dealing reduced damage as it arcs."
+          "name": "Burning Presence",
+          "trait": "weaken",
+          "theme": "debuff",
+          "effect": "Enemies nearby suffer weakened morale."
         }
       ],
       "description": "Chain-wielding demons tasked with binding prisoners and tormenting souls within Legion fortresses.",

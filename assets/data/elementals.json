@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "name": "Elementals",
   "entries": [
     {
@@ -11,13 +11,13 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Stonefist",
-          "trait": "strike",
+          "name": "Crushing Fist",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Crashes a stone-laden blow, dealing direct damage."
+          "effect": "Slams enemy with overwhelming force, staggering target briefly."
         },
         {
-          "name": "Rockhide",
+          "name": "Wardstone Core",
           "trait": "fortify",
           "theme": "buffs",
           "effect": "Raises defenses or maximum health temporarily."
@@ -35,16 +35,16 @@
       "hp": 19,
       "traits": [
         {
-          "name": "Geas of Stone",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Crashes a stone-laden blow, dealing direct damage."
+          "name": "Massive Stomp",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
         },
         {
-          "name": "Wardstone Core",
-          "trait": "fortify",
-          "theme": "buffs",
-          "effect": "Raises defenses or maximum health temporarily."
+          "name": "Magma Crash",
+          "trait": "damage over time",
+          "theme": "damage",
+          "effect": "Ember-heat or stone shards harm the target over time."
         }
       ],
       "description": "A conjured earth spirit shackled to a caster’s sigils.",
@@ -59,16 +59,16 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Quake Surge",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Detonates a burst of stone and grit at range, dealing damage."
+          "name": "Quake Stomp",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Shakes the ground to stagger enemies."
         },
         {
-          "name": "Shardshed",
-          "trait": "strike",
+          "name": "Crystal Shard",
+          "trait": "heavy blast",
           "theme": "damage",
-          "effect": "Crashes a stone-laden blow, dealing direct damage."
+          "effect": "Launches empowered crystal fragments."
         }
       ],
       "description": "Freed of any sigil, it follows only tectonic instinct.",
@@ -83,10 +83,10 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Gravemark",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Crashes a stone-laden blow, dealing direct damage."
+          "name": "Elemental Grasp",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Elemental hands seize multiple targets in place, preventing movement."
         },
         {
           "name": "Bedrock Body",
@@ -107,16 +107,16 @@
       "hp": 28,
       "traits": [
         {
-          "name": "Tectonic Wrath",
-          "trait": "blast",
+          "name": "Abyssal Wrath",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Detonates a burst of stone and grit at range, dealing damage."
+          "effect": "A brutal hammering with high-pressure force, dealing direct damage."
         },
         {
-          "name": "Crown of Obsidian",
+          "name": "Obsidian Plates",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Stone plates interlock, reducing incoming harm."
+          "effect": "Basalt plates or ember-shields blunt incoming harm."
         }
       ],
       "description": "A paragon of the Earth Plane, will layered like strata.",
@@ -131,16 +131,22 @@
       "hp": 14,
       "traits": [
         {
-          "name": "Dust Veil",
-          "trait": "stealth",
-          "theme": "buffs",
-          "effect": "Conceals or reduces chance to be targeted."
+          "name": "Ward Script",
+          "trait": "scry",
+          "theme": "utility",
+          "effect": "Enables sight of trespassers stepping through wards."
         },
         {
-          "name": "Burrowglide",
+          "name": "Burrow",
           "trait": "teleport",
           "theme": "translocation",
-          "effect": "Instantly relocates the user."
+          "effect": "Entity burrows underground, enabling them to Reemerge at any location."
+        },
+        {
+          "name": "Reemerge",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Burrowed targets reemerge, knocking enemies off-balance or knocking them down."
         }
       ],
       "description": "A gentler geomancy that steadies allies.",
@@ -156,15 +162,21 @@
       "traits": [
         {
           "name": "Flame Lash",
-          "trait": "strike",
+          "trait": "heavy attack",
           "theme": "damage",
           "effect": "Sears the target with a burning strike, dealing direct damage."
         },
         {
-          "name": "Kindled Form",
-          "trait": "shield",
+          "name": "Fire Blast",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Instantly burns enemy target heavily."
+        },
+        {
+          "name": "Enchanted Ward",
+          "trait": "fortify",
           "theme": "buffs",
-          "effect": "A heat-shimmer wards off harm."
+          "effect": "A planted ward softens incoming harm briefly."
         }
       ],
       "description": "A hungry blaze given will from the Plane of Fire.",
@@ -179,16 +191,22 @@
       "hp": 19,
       "traits": [
         {
-          "name": "Brand Sigil",
+          "name": "Branded Sigil",
           "trait": "damage_over_time",
           "theme": "damage",
-          "effect": "Embers continue to burn the target over several rounds."
+          "effect": "A brand whose embers continue to burn the target over several rounds."
         },
         {
-          "name": "Cinder Ward",
-          "trait": "shield",
+          "name": "Cinder Core",
+          "trait": "empower",
           "theme": "buffs",
-          "effect": "A heat-shimmer wards off harm."
+          "effect": "All attacks that land on enemies deal fire damage."
+        },
+        {
+          "name": "Immolation Aura",
+          "trait": "reflect",
+          "theme": "damage",
+          "effect": "Burns attackers on contact."
         }
       ],
       "description": "A contained inferno leashed by a caster’s glyph.",
@@ -204,9 +222,9 @@
       "traits": [
         {
           "name": "Wild Conflagration",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Erupts a tongue of flame at range, dealing damage."
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Erupts a tongue of flame at range, dealing damage to all nearby enemies."
         },
         {
           "name": "Ash Wake",
@@ -227,16 +245,16 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Sear the Weak",
-          "trait": "damage_over_time",
+          "name": "Flame Lash",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Embers continue to burn the target over several rounds."
+          "effect": "Sears the target with a burning strike, dealing direct damage."
         },
         {
-          "name": "Coalheart",
-          "trait": "heavy_blow",
-          "theme": "damage",
-          "effect": "Deals double damage directly to the target."
+          "name": "Hellfire",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Summons a devastating rain of fire from the skies above."
         }
       ],
       "description": "Persistent embers of a mighty pyre’s malice.",
@@ -251,16 +269,16 @@
       "hp": 28,
       "traits": [
         {
-          "name": "Inferno Crown",
-          "trait": "blast",
-          "theme": "damage",
-          "effect": "Erupts a tongue of flame at range, dealing damage."
+          "name": "Fire Blossom",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Explodes in a burst of flame petals."
         },
         {
-          "name": "Sovereign Blaze",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Sears the target with a burning strike, dealing direct damage."
+          "name": "Ash Wake",
+          "trait": "ground effect",
+          "theme": "aoe",
+          "effect": "Ignites the floor into a hazard that harms those who linger."
         }
       ],
       "description": "A monarchal conflagration; a furnace made flesh.",
@@ -276,15 +294,15 @@
       "traits": [
         {
           "name": "Warming Light",
-          "trait": "heal",
+          "trait": "area heal",
           "theme": "healing",
-          "effect": "Restores health to a target."
+          "effect": "Restores health to targets in an area."
         },
         {
-          "name": "Emberstep",
-          "trait": "haste",
-          "theme": "buffs",
-          "effect": "Increases speed or action frequency through advantage to rolls."
+          "name": "Lava Gout",
+          "trait": "damage over time",
+          "theme": "damage",
+          "effect": "Flames erupt beneath the target, burning them over several turns."
         }
       ],
       "description": "A benevolent flicker that emboldens allies.",
@@ -299,16 +317,22 @@
       "hp": 16,
       "traits": [
         {
-          "name": "Gust Slash",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Slices with razor wind, dealing direct damage."
+          "name": "Gust",
+          "trait": "knockback",
+          "theme": "roots",
+          "effect": "Injuries enemies and pushes them back."
         },
         {
-          "name": "Vortex Form",
-          "trait": "shield",
+          "name": "Flight of Feathers",
+          "trait": "empower",
           "theme": "buffs",
-          "effect": "An eddying barrier scatters blows."
+          "effect": "Nearby allies ignore terrain penalties."
+        },
+        {
+          "name": "Flow",
+          "trait": "haste",
+          "theme": "buffs",
+          "effect": "Increases speed or action frequency through advantage to rolls."
         }
       ],
       "description": "A whorl of living gale from the Plane of Air.",
@@ -323,16 +347,16 @@
       "hp": 17,
       "traits": [
         {
-          "name": "Anchor Sigil",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Slices with razor wind, dealing direct damage."
+          "name": "Spirit Link",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "Shares damage between nearby allies briefly, reducing the load on the initial sufferer."
         },
         {
-          "name": "Shot",
-          "trait": "shot",
+          "name": "Blast",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Flicks a cutting gust from range, dealing damage."
+          "effect": "Unleashes elemental or magical damage at range."
         }
       ],
       "description": "Harnessed wind that holds to a conjurer’s anchor.",
@@ -347,16 +371,16 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Tempest Whorl",
+          "name": "Wind Slash",
           "trait": "strike",
-          "theme": "damage",
-          "effect": "Slices with razor wind, dealing direct damage."
+          "theme": "knockback",
+          "effect": "Knocks enemy back briefly, staggering them."
         },
         {
-          "name": "Slipstream",
-          "trait": "dash",
-          "theme": "utility",
-          "effect": "Quickly move a short distance without teleporting."
+          "name": "Ethereal Flight",
+          "trait": "teleport",
+          "theme": "translocation",
+          "effect": "Instantly relocates the user."
         }
       ],
       "description": "Storm-quick and whimsical, answerable to no rune.",
@@ -371,16 +395,16 @@
       "hp": 21,
       "traits": [
         {
-          "name": "Thunder Mark",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Slices with razor wind, dealing direct damage."
+          "name": "Chain Lightning",
+          "trait": "chain attack",
+          "theme": "aoe",
+          "effect": "Arcs to up to three nearby enemies, dealing reduced damage as it arcs."
         },
         {
-          "name": "Ozone Veil",
-          "trait": "stealth",
-          "theme": "buffs",
-          "effect": "Conceals or reduces chance to be targeted."
+          "name": "Thunderclap",
+          "trait": "stun",
+          "theme": "debuffs",
+          "effect": "A colossal impact stuns the target briefly."
         }
       ],
       "description": "The lingering spite of a broken stormfront.",
@@ -396,15 +420,15 @@
       "traits": [
         {
           "name": "Eye of the Gale",
-          "trait": "area_blast",
+          "trait": "cone",
           "theme": "aoe",
           "effect": "Bursts a gale that damages nearby foes."
         },
         {
-          "name": "Lightning Crown",
+          "name": "Storm Aura",
           "trait": "slow",
           "theme": "roots",
-          "effect": "Buffeting eddies reduce speed."
+          "effect": "Static drag slows the target’s steps."
         }
       ],
       "description": "A sovereign storm given will and purpose.",
@@ -420,14 +444,14 @@
       "traits": [
         {
           "name": "Soothing Breeze",
-          "trait": "heal",
+          "trait": "area heal",
           "theme": "healing",
           "effect": "Restores health to a target."
         },
         {
-          "name": "Featherlight",
+          "name": "Shadowmeld",
           "trait": "stealth",
-          "theme": "buffs",
+          "theme": "utility",
           "effect": "Conceals or reduces chance to be targeted."
         }
       ],
@@ -443,17 +467,23 @@
       "hp": 17,
       "traits": [
         {
-          "name": "Tide Lash",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Hammers with high-pressure force, dealing direct damage."
+          "name": "Warble of the Tide",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Allies fight harder when able to hear the crashing of waves nearby."
         },
         {
-          "name": "Shot",
-          "trait": "shot",
+          "name": "Amphibious Lunge",
+          "trait": "dash",
+          "theme": "translocation",
+          "effect": "A strong rush forwards underwater, enabling fast reposiitioning."
+        },
+        {
+          "name": "Water Bolt",
+          "trait": "heavy attack",
           "theme": "damage",
-          "effect": "Jets a spear of water from range, dealing damage."
-        }
+          "effect": "Blasts enemies with elemental magic."
+        }        
       ],
       "description": "A living tide called from the Plane of Water.",
       "campaignLinks": []
@@ -467,16 +497,22 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Anchor Shell",
-          "trait": "shield",
+          "name": "Anchor Sigil",
+          "trait": "empower",
           "theme": "buffs",
-          "effect": "A brine shell blunts impact."
+          "effect": "Calls upon the power of the sea to strengthen allied resolve."
+        },
+        {
+          "name": "Cleanse",
+          "trait": "cleanse",
+          "theme": "Buffs",
+          "effect": "Removes corruption from allies."
         },
         {
           "name": "Healing Current",
-          "trait": "haste",
-          "theme": "buffs",
-          "effect": "Increases speed or action frequency through advantage to rolls."
+          "trait": "chain heal",
+          "theme": "healing",
+          "effect": "Jumps between targets, dealing reduced healing to allies."
         }
       ],
       "description": "A disciplined wave held to a summoner’s call.",
@@ -494,13 +530,13 @@
           "name": "Undertow",
           "trait": "pull",
           "theme": "roots",
-          "effect": "Yanks a target toward the user."
+          "effect": "Pulls enemies down with crushing water currents."
         },
         {
-          "name": "Mist Shroud",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Pools hazardously underfoot, harming those who linger."
+          "name": "Mist Form",
+          "trait": "misc",
+          "theme": "utility",
+          "effect": "Transform into mist to avoid damage."
         }
       ],
       "description": "A flood spirit that follows the whims of depth and storm.",
@@ -515,16 +551,16 @@
       "hp": 21,
       "traits": [
         {
-          "name": "Drownheart",
-          "trait": "strike",
+          "name": "Abyssal Wrath",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Hammers with high-pressure force, dealing direct damage."
+          "effect": "A brutal hammering with high-pressure force, dealing direct damage."
         },
         {
-          "name": "Brine Ward",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "A brine shell blunts impact."
+          "name": "Brine Mend",
+          "trait": "power heal",
+          "theme": "healing",
+          "effect": "Heals wounds with seawater rituals."
         }
       ],
       "description": "Salt-soaked memory of a relentless sea.",
@@ -539,16 +575,16 @@
       "hp": 27,
       "traits": [
         {
-          "name": "King Tide",
-          "trait": "blast",
+          "name": "Elemental BOlt",
+          "trait": "precise attack",
           "theme": "damage",
-          "effect": "Hurls a crashing wave at range, dealing damage."
+          "effect": "Unleashes a bolt of raw elemental energy."
         },
         {
           "name": "Abyssal Wrath",
-          "trait": "strike",
+          "trait": "crushing attack",
           "theme": "damage",
-          "effect": "Hammers with high-pressure force, dealing direct damage."
+          "effect": "A brutal hammering with high-pressure force, dealing direct damage."
         }
       ],
       "description": "The sea’s authority given form and voice.",
@@ -587,16 +623,16 @@
       "hp": 14,
       "traits": [
         {
-          "name": "Vinewhip",
-          "trait": "strike",
+          "name": "Barkwhip",
+          "trait": "precise attack",
           "theme": "damage",
           "effect": "Whips with thorned vine, dealing direct damage."
         },
         {
-          "name": "Photosurge",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Increases damage, critical chance, or potency."
+          "name": "Deadly Venom",
+          "trait": "poison/disease",
+          "theme": "debuffs",
+          "effect": "Inflicts sickness that weakens and harms."
         }
       ],
       "description": "Animated flora that guards sacred groves.",
@@ -611,8 +647,14 @@
       "hp": 20,
       "traits": [
         {
-          "name": "Barksmash",
-          "trait": "strike",
+          "name": "Crude Smash",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Heavy melee strike with improvised weapon."
+        },
+        {
+          "name": "Barkwhip",
+          "trait": "precise attack",
           "theme": "damage",
           "effect": "Whips with thorned vine, dealing direct damage."
         },
@@ -635,16 +677,16 @@
       "hp": 10,
       "traits": [
         {
-          "name": "Seed Spray",
-          "trait": "shot",
-          "theme": "damage",
-          "effect": "Launches a seed-spine from range, dealing damage."
+          "name": "Fan of Knives",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Unleashes blades in a deadly arc."
         },
         {
           "name": "Quick Sprout",
-          "trait": "haste",
-          "theme": "buffs",
-          "effect": "Increases speed or action frequency through advantage to rolls."
+          "trait": "heal over time",
+          "theme": "healing",
+          "effect": "Quickly sprouts up seddlings which heal allies over time."
         }
       ],
       "description": "Mischievous sprouts that flit between roots and stones.",
@@ -662,13 +704,13 @@
           "name": "Verdant Call",
           "trait": "summon",
           "theme": "translocation",
-          "effect": "Brings allies or entities onto the field."
+          "effect": "Summons a minor nature elemental to the field."
         },
         {
-          "name": "Heartwood",
-          "trait": "fortify",
+          "name": "Hardened Bark",
+          "trait": "shield",
           "theme": "buffs",
-          "effect": "Raises defenses or maximum health temporarily."
+          "effect": "Thick, well aged bark shields the servant of nature from incoming damage."
         }
       ],
       "description": "A venerable forest spirit that embodies renewal.",
@@ -683,16 +725,22 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Radiant Lance",
-          "trait": "shot",
-          "theme": "damage",
-          "effect": "Fires a lance of light from range, dealing damage."
+          "name": "Cleanse",
+          "trait": "cleanse",
+          "theme": "buffs",
+          "effect": "Removes corruption from allies."
         },
         {
-          "name": "Aureole",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Radiates a halo burst, damaging nearby foes."
+          "name": "Benison",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        },
+        {
+          "name": "Sunbeam",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "A focused ray that sears shadow and doubt, and leaves burning nature or holy damage."
         }
       ],
       "description": "A coherent flare of the Holy Light given purpose.",
@@ -707,16 +755,28 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Sanctify",
-          "trait": "curse",
-          "theme": "debuffs",
-          "effect": "Afflicts the target with a harmful lingering effect or disadvantage to rolls."
+          "name": "Radiant Strike",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "A ranged or melee strike imbued with searing Light that weakens shadow foes, demons, and undead."
         },
         {
-          "name": "Benison",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Increases damage, critical chance, or potency."
+          "name": "Aureole",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Radiates a halo burst, damaging nearby foes."
+        },
+        {
+          "name": "Smite",
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "Deals radiant holy damage."
+        },
+        {
+          "name": "Warming Light",
+          "trait": "area heal",
+          "theme": "healing",
+          "effect": "Restores health to targets in an area."
         }
       ],
       "description": "Lingering devotion crystallized into form.",
@@ -732,15 +792,21 @@
       "traits": [
         {
           "name": "Mana Bolt",
-          "trait": "shot",
+          "trait": "precise attack",
           "theme": "damage",
           "effect": "Fires a bolt of arcane energy from range, dealing damage."
         },
         {
-          "name": "Runic Shell",
+          "name": "Arcane Starvation",
           "trait": "silence",
           "theme": "debuffs",
-          "effect": "Prevents spellcasting or abilities."
+          "effect": "Cuts the target off from accessing mana-fueled abilities."
+        },
+        {
+          "name": "Arcane Binding",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Restrains or Roots target briefly."
         }
       ],
       "description": "Raw mana coalesced into a thinking lattice.",
@@ -755,16 +821,22 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Disrupt",
-          "trait": "interrupt",
-          "theme": "utility",
-          "effect": "Interrupts a spell or channeled ability."
+          "name": "Arcane Summon",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Conjures an arcane construct to the field."
         },
         {
-          "name": "Aegis Sigil",
+          "name": "Arcane Explosion",
+          "trait": "area blast",
+          "theme": "aoe",
+          "effect": "Releases a surge of arcane force at close range, dealing damage to all nearby targets. Doubles damage each time used in succession."
+        },
+        {
+          "name": "Mana Barrier",
           "trait": "shield",
           "theme": "buffs",
-          "effect": "Runic shell dampens harm."
+          "effect": "Protects themselves with energy shield."
         }
       ],
       "description": "A spent ritual’s will that refuses to fade.",
@@ -779,16 +851,16 @@
       "hp": 15,
       "traits": [
         {
-          "name": "Mana Siphon",
-          "trait": "ground_effect",
-          "theme": "aoe",
-          "effect": "Marks a runic hazard that harms those who linger."
+          "name": "Mana Drain",
+          "trait": "leech",
+          "theme": "damage",
+          "effect": "Steals mana from foes."
         },
         {
-          "name": "Mana Flush",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Bursts with arcane force, damaging nearby foes."
+          "name": "Mana Burn",
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Target suffers -1 to next magical action."
         }
       ],
       "description": "A simple elemental creature of pure arcane energy.",
@@ -803,16 +875,16 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Void Grasp",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rakes with umbral force, dealing direct damage."
+          "name": "Void Root",
+          "trait": "root",
+          "theme": "roots",
+          "effect": "Grasping tendrils seize the target in place, preventing movement."
         },
         {
-          "name": "Umbral Veil",
-          "trait": "shield",
-          "theme": "buffs",
-          "effect": "Umbral veil dulls harm."
+          "name": "Umbral Surge",
+          "trait": "line",
+          "theme": "aoe",
+          "effect": "Projects an umbral surge at range, dealing damage."
         }
       ],
       "description": "A knot of void energy coalesced into motion.",
@@ -827,16 +899,16 @@
       "hp": 22,
       "traits": [
         {
-          "name": "Mind Wither",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rakes with umbral force, dealing direct damage."
+          "name": "Void Curse",
+          "trait": "curse",
+          "theme": "debuffs",
+          "effect": "An eldritch malediction afflicts the target, weaking them progressively each turn until cured."
         },
         {
-          "name": "Abyssal Husk",
-          "trait": "heavy_blow",
-          "theme": "damage",
-          "effect": "Deals double damage directly to the target."
+          "name": "Voidstorm",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
         }
       ],
       "description": "A remnant of darkness that clings where light fled.",
@@ -852,15 +924,15 @@
       "traits": [
         {
           "name": "Entropy Wave",
-          "trait": "blast",
-          "theme": "damage",
+          "trait": "line",
+          "theme": "aoe",
           "effect": "Projects an umbral surge at range, dealing damage."
         },
         {
-          "name": "Eventide Form",
-          "trait": "strike",
-          "theme": "damage",
-          "effect": "Rakes with umbral force, dealing direct damage."
+          "name": "Shimmering Barrier",
+          "trait": "shield",
+          "theme": "buffs",
+          "effect": "An arcane barrier shimmers, reducing incoming harm."
         }
       ],
       "description": "A prince of emptiness whose will dims the world.",
