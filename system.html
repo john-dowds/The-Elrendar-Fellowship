@@ -166,13 +166,11 @@
   <main class="systems-wrap">
     <div class="tabs" role="tablist" aria-label="ESS Tabs">
       <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
-      <button class="tab-btn" data-tab="stances" role="tab">Stances</button>
+      <button class="tab-btn" data-tab="stances" role="tab">Rolls & Stances</button>
       <button class="tab-btn" data-tab="intervene" role="tab">Interventions</button>
       <button class="tab-btn" data-tab="env" role="tab">Environment & Perception</button>
-      <button class="tab-btn" data-tab="classes" role="tab">Class Perks</button>
-      <button class="tab-btn" data-tab="perks" role="tab">Player Perks & Debuffs</button>
+      <button class="tab-btn" data-tab="classes" role="tab">Class Bonus, Perks, Debuffs</button>
       <button class="tab-btn" data-tab="monsters" role="tab">Using the Monster Manual</button>
-      <button class="tab-btn" data-tab="npc" role="tab">NPC Modifications</button>
       <button class="tab-btn" data-tab="quick" role="tab">Player Quick Card</button>
       <button class="tab-btn" data-tab="creation" role="tab">Build & Run Encounters</button>
     </div>
@@ -180,30 +178,39 @@
     <div class="panels">
       <section id="panel-overview" class="panel active" role="tabpanel" aria-labelledby="overview">
         <h2>Elrendar Sword &amp; Shields — Combat (ESS)</h2>
-        <p class="mini">Simple, fast, and built to keep the RP moving. Pick a stance, roll, narrate. That’s the loop. We keep the focus on the story, not the dice.</p>
+        <p>Simple, fast, and built to keep the RP moving, the ESS system is as simple as they come. Pick a stance, roll, emote what happens. That’s the loop. We keep the focus on the story, not the dice.</p>
 
+        <p><h2>The Basics:</h2></p>
         <div class="callout">
-          <strong>Health</strong>: PCs start at <strong>15 HP</strong>. Fall to <strong>0 HP</strong> and you’re down until someone stabilizes or heals you. Healers can swap “damage dealt” for “healing done” at will, but remain at the same risk of themselves taking damage.
+          <p>Player characters (PCs) start at <strong>15 HP</strong>.</p>
+          <p>Fall to <strong>0 HP</strong> and you’re down until someone stabilizes or heals you; if you want to die, you can, but otherwise you're unconscious.</p>
+          <p>Healers swap “damage dealt” for “healing done” at will, but remain at the same risk of themselves taking damage.</p>
+          <p>We have set brackets for roll outcomes for each combat stance. Follow the structure and keep it streamlined.</p>
+          <p>Even if you fail, you can and should still make it epic. Take your damage or fail while doing something heroic; use it as an excuse to take damage for an ally and set them up for success. We want to make failures just as much fun as wins.</p>
+          <p>We're highly permissive; if you want to try something, just go for it; no need to get permission ahead of time.</p>
         </div>
 
-        <h3>Turn flow</h3>
+        <h2>Turn flow</h2>
+        <div class="callout">
         <ol>
-          <li>Plan what you want to do.</li>
-          <li>Choose a <a href="#panel-stances" class="kbd">Stance</a> or keep the current one.</li>
-          <li>Roll a d20.</li>
-          <li>Check the table for the results:
-            <span class="kbd">1</span> backfire,
-            <span class="kbd">2–9</span> miss,
-            <span class="kbd">10–11</span> draw,
-            <span class="kbd">12–19</span> hit,
-            <span class="kbd">20</span> crit.
+          <li>Choose a <a href="#panel-stances" class="kbd">Stance</a> at the beginning of the event (you can swap later).</li>
+          <li>Each turn "/roll 20."</li>
+          <li>Plan what you want to do with your results.</li>
+          <li>Check the table for the results:<br>
+            <span class="kbd">1</span> crit fail,
+            <span class="kbd">2–9</span> fail/injury,
+            <span class="kbd">10–11</span> draw/miss,
+            <span class="kbd">12–19</span> succeed/hit,
+            <span class="kbd">20</span> crit success.
           </li>
           <li>Emote your actions based on the results.</li>
         </ol>
+        </div>
 
-        <h3>Roll Philosophy</h3>
+        <h2>Roll Philosophy</h2>
         <div class="callout">
-          We prefer fast and easy mechanics so that we can stay focused on story. Unlike traditional table-top RPGs, you don't roll for defense and <strong>then</strong> offensive separately; we wrap it into a single turn. When you roll, you determine what happens for both you and the enemy. If you roll low, you take an injury; if you roll high, you deal damage. Simple as that.
+          <p>We prefer fast and easy mechanics so that we can stay focused on story. Unlike traditional table-top RPGs, you don't roll for defense and <strong>then</strong> offensive separately; we wrap it into a single turn. </p>
+          <p>When you roll, you determine what happens for both you and the enemy. If you roll low, you take an injury; if you roll high, you deal damage. Simple as that.</p>
         </div>
 
         <div class="linkgrid">
@@ -215,11 +222,12 @@
       </section>
 
       <section id="panel-stances" class="panel" role="tabpanel" aria-labelledby="stances">
-        <h2>Stances</h2>
+        <h2>Roll Brackets & Stances</h2>
         <p>Stances can be changed throughout an event at a player's discretion, but they take a full turn to transition between once active. There's an ideal stance for every situation, but if balancing your numbers isn't a priority, stick to just one and take things as they come.</p>
+        <p class="note">Changing stance takes your turn. Healers can treat “damage” as “healing” without any other changes.</p>
 
         <table class="sys-table">
-<caption>Combat Stances &amp; Outcomes by d20 Band</caption>
+<caption><h2>Combat Stances &amp; Outcomes by d20 Band</h2></caption>
 <thead>
   <tr>
     <th>Stance</th>
@@ -233,7 +241,7 @@
 </thead>
 <tbody>
   <tr>
-    <td>Aggressive</td>
+    <td><span class="kbd">Aggressive</span></td>
     <td>−6 HP</td>
     <td>−4 HP</td>
     <td>−2 HP</td>
@@ -242,7 +250,7 @@
     <td>+6 dmg</td>
   </tr>
   <tr>
-    <td>Balanced</td>
+    <td><span class="kbd">Balanced</span></td>
     <td>−4 HP</td>
     <td>−2 HP</td>
     <td>Draw</td>
@@ -251,7 +259,7 @@
     <td>+4 dmg</td>
   </tr>
   <tr>
-    <td>Defensive</td>
+    <td><span class="kbd">Defensive</span></td>
     <td>−3 HP</td>
     <td>−1 HP</td>
     <td>Draw</td>
@@ -260,20 +268,36 @@
     <td>+2 dmg</td>
   </tr>
   <tr>
-    <td>Focused</td>
-    <td>−6 HP</td>
-    <td>−4 HP</td>
-    <td>−1 HP &amp; +1 dmg</td>
-    <td>+3 dmg</td>
-    <td>+4 dmg</td>
-    <td>+6 dmg</td>
+    <td><span class="kbd">Focused</span></td>
+    <td>−5 HP</td>
+    <td>−3 HP &amp; <br>+1 next roll*</td>
+    <td>−1 HP &amp; <br>+1 dmg</td>
+    <td>+2 dmg &amp; <br>+1 next roll*</td>
+    <td>+3 dmg &amp; <br>expose**</td>
+    <td>+5 dmg</td>
   </tr>
   
 </tbody>
 </table>
+*Only applies to the same target as before.
+<br>**Exposes target to +1 damage by all attackers next turn only.
 
-        <p class="note">Changing stance takes your turn. Healers can treat “damage” as “healing” without any other changes.</p>
-        <p class="note">Aggressive is high risk high reward, Focused is a generic "glass cannon", and Balanced and Defensive are safe stances.</p>
+        <p><h3>Aggressive</h3></p>
+        <div class="callout">
+          <p>Everyone's favorite high risk, high reward type of playstyle. Deal more damage, take more damage, and have very little down town. Great for straight offense types.</p>
+        </div>
+        <p><h3>Balanced</h3></p>
+        <div class="callout">
+          <p>A safe, steady, and reliable middle ground stance for players who are less focused on min-maxing their gameplay. Great for utility classes and healers.</p>
+        </div>
+        <p><h3>Defensive</h3></p>
+        <div class="callout">
+          <p>Designed for characters focused on protecting their allies. Great for tanks and bodyguards.</p>
+        </div>
+        <p><h3>Focused</h3></p>
+        <div class="callout">
+          <p>The well honed and practiced fighter stance, this is ideal for characters who are highly skilled and build forwards.</p>
+        </div>
       </section>
 
       <section id="panel-intervene" class="panel" role="tabpanel" aria-labelledby="intervene">
@@ -285,11 +309,11 @@
         <h2>Environment &amp; Perception</h2>
 
         <h3>Environment & Terrain Calls (DM picks a TN and a bite)</h3>
-        <p>The DM sets a target number (TN). Fail it, take a little damage based on how nasty the scene is, or lose grip if you're grappling with some obstacle; pass it, you keep your footing and progress. Simple as that.</p>
+        <p>The DM sets a target number (TN). Fail it, take a little disadvantage or damage based on how nasty the scene is, or lose grip if you're grappling with some obstacle; pass it, you keep your footing and progress. Simple as that.</p>
         <p><strong>Additional effects which can be announced depending on circumstances:</strong></p>
         <ul>
           <li><strong>Lava / Fire</strong> - fail = −2 to −4 HP</li>
-          <li><strong>Ice / Slick</strong> - fail = −1 to −2 HP and Off-Balance</li>
+          <li><strong>Ice / Slick</strong> - fail = −1 to −2 HP or Off-Balance</li>
           <li><strong>Poison Cloud</strong> - fail = Poisoned</li>
           <li><strong>Darkness</strong> - fail = Blind (1 turn)</li>
           <li><strong>High Winds</strong> - fail = ranged attacks at disadvantage</li>
@@ -303,7 +327,7 @@
       </section>
 
       <section id="panel-classes" class="panel" role="tabpanel" aria-labelledby="classes">
-        <h2>Class Perks</h2>
+        <h2>Class Bonuses</h2>
         <p>Always-on helpers. Nothing to track—just remember your edge in the scene.</p>
         <ul>
           <li><span class="badge">Magi / Healers</span> +1 dmg/heal on hits, and +1 Perception</li>
@@ -311,10 +335,7 @@
           <li><span class="badge">Armored Fighters</span> +1 Attack, and +1 dmg/heal on hits</li>
           <li><span class="badge">Mounted Fighters</span> +1 dmg/heal, and +1 Environment</li>
         </ul>
-      </section>
-
-      <section id="panel-perks" class="panel" role="tabpanel" aria-labelledby="perks">
-        <h2>Player Perks &amp; Debuffs</h2>
+        <h2>Perks &amp; Debuffs</h2>
 
         <p>Pick two; whatever fits your character. Perks marked “Always-on” are constant and require no work; limited perks or user activated ones, however, show uses. If two don’t play nice, it’s marked. Keep it fast and honest.</p>
         
@@ -422,7 +443,7 @@
             </tr>
             <tr>
               <td><span class="badge">Burning</span></td>
-              <td>Lose 1 HP this round; fire blocks Regeneration.</td>
+              <td>Lose 1 HP at the start of your turn; fire blocks Regeneration.</td>
               <td>1–2 turns</td>
             </tr>
             <tr>
@@ -513,75 +534,24 @@
 
       <section id="panel-monsters" class="panel" role="tabpanel" aria-labelledby="monsters">
         <h2>Using the Monster Manual</h2>
-        <p>Every entry in the <a href="monsterguide.html">Monster Manual</a> already has what we need: <em>Name, Class, HP, and two Traits</em>.</p>
-        <p><span class="kbd"><strong>Name</strong>, <strong>Class</strong>, <strong>HP/Size:</strong> 1-50, <strong>Traits:</strong> [two quick effects]</span></p>
+        <p>Every entry in the <a href="monsterguide.html">Monster Manual</a> already has what you'll need to create cool encounters, including:</p>
+        <p><span class="kbd"><strong>Name</strong>, <strong>Class</strong>, <strong>HP/Level:</strong> 1-50, <strong>Traits:</strong> [two to five quick effects]</span></p>
 
-        <h3>HP sizing (read at a glance)</h3>
+        <h3>Monster Levels</h3>
         <ul>
-          <li><span class="badge">Critter</span> 4–8</li>
-          <li><span class="badge">Small</span> 9–14</li>
-          <li><span class="badge">Medium</span> 15–22</li>
-          <li><span class="badge">Large</span> 23–30</li>
-          <li><span class="badge">Colossal</span> 31–50</li>
+          <li><span class="badge">Minion</span> 4-12 HP</li>
+          <li><span class="badge">Elite</span> 13–40</li>
+          <li><span class="badge">Boss</span> 41+</li>
         </ul>
 
-        <h3>Trait Glossary (quick conversions)</h3>
-        <ul>
-          <li><strong>Poison / Venom</strong>: −1 to rolls or −1 HP for 1–2 turns</li>
-          <li><strong>Bleeding</strong>: lose 1 HP at the start of the next 1–2 turns</li>
-          <li><strong>Burning</strong>: lose 1 HP this round; fire shuts off Regeneration</li>
-          <li><strong>Fear</strong>: roll 11+ or lose your action this turn</li>
-          <li><strong>Blind</strong>: attacks at disadvantage this turn</li>
-          <li><strong>Root / Web</strong>: can’t move next turn (you still act)</li>
-          <li><strong>Staggered / Off-Balance</strong>: −1 to the next attack’s damage</li>
-          <li><strong>Shell / Carapace / Stonehide</strong>: reduce the next hit by 1–2</li>
-          <li><strong>Magic Ward</strong>: reduce the next <em>spell</em> hit by 1–2</li>
-          <li><strong>Thorns / Reflect</strong>: melee attacker takes 1 HP back</li>
-        </ul>
-
-        <p class="note">If a trait name is flavorful (e.g., “Void Phase”), we apply the nearest effect above and keep the fiction strong.</p>
-      </section>
-
-      <section id="panel-npc" class="panel" role="tabpanel" aria-labelledby="npc">
-        <h2>NPC Modifications</h2>
-        <p>Snap any monster into Minion / Elite / Boss without rewriting stats.</p>
-
-        <table class="sys-table">
-          <thead>
-            <tr>
-              <th>Template</th>
-              <th>HP</th>
-              <th>On Hit</th>
-              <th>On Crit</th>
-              <th>Special</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="badge">Minion</span></td>
-              <td>Entry HP −4 (min 1)</td>
-              <td>1 dmg</td>
-              <td>+1 dmg</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td><span class="badge">Elite</span></td>
-              <td>Entry HP</td>
-              <td>2 dmg</td>
-              <td>+1 dmg</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td><span class="badge">Boss</span></td>
-              <td>Entry HP +6–12</td>
-              <td>3 dmg</td>
-              <td>+2 dmg</td>
-              <td>At 50% HP, auto-trigger one trait once (e.g., Regeneration, Sandstorm)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p class="note">Simple modifications like this can add flavor and variety, and are a great way to scale up or down a fight if time becomes a constraint.</p>
+        <h3>Linking & Lore</h3>
+        <div class="callout">
+          <p>All monsters have their own card in the Monster Manual, and when you're creating new ones using the Encounter Creator, or whenever an event is being run, you're assured to have this manual as a resource to check out the details, and what to expect.</p>
+        </div>
+        <h3>Traits & Abilities</h3>
+        <div class="callout">
+          <p>All traits are monster-used abilities/traits are based on a set of guiding base abilities, like "Stun". Even though a paladin-type monster would have Hammer of Justice, or a rogue might have Sap, it all ties back to that same "Stun" ability, making it easy to keep things consistent regardless of flavor text. </p>
+        </div>
       </section>
 
       <section id="panel-quick" class="panel" role="tabpanel" aria-labelledby="quick">
@@ -633,11 +603,9 @@
       intervene: document.getElementById('panel-intervene'),
       env: document.getElementById('panel-env'),
       classes: document.getElementById('panel-classes'),
-      perks: document.getElementById('panel-perks'),
       monsters: document.getElementById('panel-monsters'),
-      npc: document.getElementById('panel-npc'),
       quick: document.getElementById('panel-quick'),
-      creation: document.getElementById('panel-creation')  // fixed: was wrongly keyed as 'quick'
+      creation: document.getElementById('panel-creation')
     };
 
     function showTab(key){
