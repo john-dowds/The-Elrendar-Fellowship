@@ -775,7 +775,7 @@
         }
       ],
       "description": "A knot of stray mana that learned to hate the hands that wove it.",
-      "campaignLinks": []
+      "campaignLinks": ["event005"]
     },
     {
       "id": "aberration_temporal_anomaly",

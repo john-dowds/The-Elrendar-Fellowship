@@ -840,7 +840,7 @@
         }
       ],
       "description": "A spent ritual’s will that refuses to fade.",
-      "campaignLinks": []
+      "campaignLinks": ["event005"]
     },
     {
       "id": "mana_wyrm",
@@ -864,7 +864,7 @@
         }
       ],
       "description": "A simple elemental creature of pure arcane energy.",
-      "campaignLinks": []
+      "campaignLinks": ["event005"]
     },
     {
       "id": "shadow_elemental",
