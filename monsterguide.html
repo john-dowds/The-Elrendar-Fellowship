@@ -333,7 +333,8 @@
           category: 'Traits',
           subcategory: cap(theme), 
           effect: t.effect,
-          theme: theme,                   
+          theme: theme,
+          canon: t.canon || '',                   
           traitCategories: t.categories || [],
           usedBy: t.usedBy || []
         });
@@ -359,6 +360,23 @@
       const list = document.getElementById('monsterguide-list');
       const searchInput = document.getElementById('monsterguide-search');
     
+      // Deep-link: ?tab=traits&trait=... and #<monsterId>
+      const QS = new URLSearchParams(location.search);
+      const wantTraitsTab = (QS.get('tab')||'').toLowerCase() === 'traits';
+      const traitQ = QS.get('trait') || '';
+      if (wantTraitsTab && traitQ) {
+        searchInput.value = traitQ;
+        runSearch();
+      }
+
+      // If a hash id is present, try to render that single card
+      const hashId = decodeURIComponent(location.hash.replace('#',''));
+      if (hashId) {
+        const target = allEntriesFlat.find(e => e.id === hashId);
+        if (target) renderCards([target]);
+      }
+
+    
       /* ----- filtering + search ----- */
       function matches(q, e) {
         if (!q) return true;
@@ -368,7 +386,8 @@
           (e.class || '').toLowerCase().includes(q) ||
           (e.effect || '').toLowerCase().includes(q) ||  
           (e._sub || '').toLowerCase().includes(q) ||
-          (e._cat || '').toLowerCase().includes(q)
+          (e._cat || '').toLowerCase().includes(q) ||
+          (e.canon || '').toLowerCase().includes(q)
         );
       }
       function filterCategories(q) {
@@ -481,6 +500,13 @@
               th.className = 'badge';
               th.textContent = `Theme: ${m.theme[0].toUpperCase()}${m.theme.slice(1)}`;
               badges.appendChild(th);
+            }
+
+            if (m.canon) {
+              const cn = document.createElement('span');
+              cn.className = 'badge';
+              cn.textContent = `Canon: ${m.canon}`;
+              badges.appendChild(cn);
             }
 
     
