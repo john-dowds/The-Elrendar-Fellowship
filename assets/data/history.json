@@ -11,7 +11,7 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 28,
+      "order": 30,
       "entries": [
         {
           "id": "oct3ms",
@@ -39,7 +39,7 @@
       "subtitle": "'Event, September 26'",
       "date": "c. Year 42",
       "summary_html": "\n Fellows of the order-including High Sorcerer Aelendan Shatterstar, Haverstead Brightspear, Quely Phoenixheaert, Kindrith Windstalker, Hal'sonas Windreaver, Talis Lightbrook, and Soryn Cloudspire-respond to an anomaly spiraling out of control to the west of the Sunwell Plateau. Joining forces with members of the Magisters, the Fellowship's members identify a clot impacting the ley lines, which they purge and nulify the aberrant anomalies spawning off of it. The occurance, though handled, raises questions about what could have caused a clot in the ley lines.\n            ",
-      "order": 25
+      "order": 29
     },
     {
       "id": "event004",
@@ -47,7 +47,7 @@
       "subtitle": "'Event, September 15'",
       "date": "c. Year 42",
       "summary_html": "\n Fellows of the order-including Magister Vileon Stormwrath, Dkakiavis, Alindriel, Merivis, Priestess Menadrael Embermourn, Kalandoril, Greymourn, and Kodestre-pursue a group of outsiders through the Ghostlands and into Goldenmist Village wherein they discover an unusual barrier.</p><p>Investigating further to discern the nature of the barrier and its connection, they uncover its illusionary origins and manage to breach it, only to find the slain Magister Sunstrife, as well as a portal to the plaguelands through which the outsiders escaped.</p><p>Now on the trial of the murderers, the Fellows continue to pursue leads.\n            ",
-      "order": 25
+      "order": 28
     },
     {
       "id": "event003",
@@ -55,7 +55,7 @@
       "subtitle": "'Event, September 11'",
       "date": "c. Year 42",
       "summary_html": "\n On behest of the Magistry of Silvermoon, Magister Vileon Stormwrath leads a party of Fellowship members-including Priestess Menadrael Embermourn, Soryn Cloudspire, and Hesparius Greymourn-to recover an artifact known as the Mistmaker, which had been stolen. Encountering bandits disguised as Sunfury renegades working in concert with a tribe of local naga, the fellows intervened before any exchange could be completed, slaying the naga and ensuring the capture of the bandits.\n            ",
-      "order": 25
+      "order": 27
     },
     {
       "id": "event002",
