@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Phoenix Path — Thalassian Lane-Strategy Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .game-wrap{max-width:1400px;margin:24px auto;}
+    .tri-grid{
+      display:grid; grid-template-columns: 300px minmax(720px, 980px) 300px;
+      gap:16px; align-items:start; justify-content:center;
+    }
+    @media (max-width:1180px){
+      .tri-grid{grid-template-columns:1fr;}
+      .right-col,.left-col{order:2}
+      .board-wrap{order:1}
+    }
+    .panel{background:rgba(0,0,0,.6);border-radius:12px;padding:12px;position:relative}
+    .left-col{display:flex; flex-direction:column; gap:12px;} 
+
+    .board-wrap{
+      background:rgba(0,0,0,.55);
+      border:2px solid rgba(252,229,205,.35);
+      border-radius:12px; padding:10px;
+      display:flex;justify-content:center;align-items:center; position:relative;
+      overflow:hidden;
+    }
+    canvas#board{width:100%;height:auto;display:block;cursor:grab}
+    canvas#board.dragging{cursor:grabbing}
+
+    .win-banner{
+      position:absolute; inset:0; display:none; pointer-events:none;
+      align-items:center; justify-content:center;
+      font-family: "EB Garamond", serif; font-weight:700; letter-spacing:.02em;
+      text-shadow:0 2px 6px rgba(0,0,0,.6);
+    }
+    .win-banner span{
+      font-size: clamp(36px, 8vw, 92px);
+      color:#fce5cd; padding:.25em .6em; border-radius:16px;
+      background:linear-gradient( to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15) );
+      border:2px solid rgba(252,229,205,.35);
+    }
+
+    .toolbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.5rem 0}
+    .toolbar select,.toolbar button{
+      background:rgba(0,0,0,.55);color:#fce5cd;border:1px solid #3a2a14;border-radius:10px;
+      padding:.45rem .7rem;cursor:pointer
+    }
+    .toolbar button[disabled]{opacity:.5;cursor:not-allowed}
+    .legend{display:grid;grid-template-columns:24px 1fr;gap:8px 10px;align-items:center}
+    .chip{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;
+      border:2px solid #fce5cd;background:radial-gradient(#7d5a1a,#3d2a12);color:#fce5cd;font-weight:700}
+    .status{font-size:1.05rem;margin:.5rem 0}
+
+    .tray-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      grid-auto-rows: 72px;
+      align-items:center;
+    }
+    .slot{
+      display:grid;place-items:center;height:66px;width:66px;margin:auto;
+      border-radius:50%;border:2px solid #fce5cd;background:rgba(0,0,0,.35);
+    }
+    .slot img{width:58px;height:58px;border-radius:50%;user-select:none;pointer-events:none}
+    .slot[draggable="true"]{cursor:grab}
+    .piece-count{font-size:.8rem;opacity:.9;margin-top:6px;text-align:center}
+    .log{max-height:640px;overflow:auto;padding:6px 8px;border-radius:10px;background:rgba(0,0,0,.35);}
+    .log p{margin:.25rem 0;font-size:.95rem}
+
+    .lane-key{display:flex;gap:6px;align-items:center;margin:.25rem 0}
+    .lane-swatch{width:16px;height:16px;border-radius:4px;border:1px solid #fce5cd66}
+    .drop-cue{outline:2px dashed #e4be59;outline-offset:6px}
+
+    .coin-toggle{
+      position:absolute; right:10px; top:10px; width:34px; height:34px;
+      border-radius:50%; border:2px solid #e4be59; background:radial-gradient(#b8892a,#5c3f0a);
+      display:grid; place-items:center; cursor:pointer;
+      box-shadow:0 0 6px rgba(228,190,89,.35);
+    }
+    .coin-toggle:after{ content:"\W"; color:#2b1605; font-size:18px; }
+
+    .fs-exit{
+      position:fixed; top:8px; right:12px; z-index:9999;
+      background:rgba(0,0,0,.65); color:#fce5cd; border:1px solid #e4be59; border-radius:10px;
+      padding:.35rem .6rem; display:none;
+    }
+
+    .mobile-guard{
+      position:fixed; inset:0; display:none; z-index:10000;
+      background:rgba(0,0,0,.85); color:#fce5cd; align-items:center; justify-content:center; text-align:center;
+      padding:24px;
+    }
+    .mobile-guard.active{ display:flex; }
+
+    .modal{
+      position:fixed; inset:0; display:none; place-items:center; z-index:10001;
+      background:rgba(0,0,0,.6);
+    }
+    .modal .card{
+      background:rgba(25,18,12,.95); color:#fce5cd;
+      border:2px solid rgba(252,229,205,.35); border-radius:12px; padding:16px 18px; max-width:420px;
+      box-shadow:0 8px 30px rgba(0,0,0,.6);
+    }
+    .modal.show{ display:grid; }
+
+    .chatbox h3{margin:.2rem 0 .4rem;}
+    .chatlog{max-height:220px; overflow:auto; background:rgba(0,0,0,.35); padding:8px; border-radius:10px}
+    .chatline{margin:.25rem 0; font-size:.95rem}
+    .chatline .who{opacity:.8; margin-right:.25rem}
+    .chat-controls{display:flex; gap:6px; margin-top:6px}
+    .chat-controls input{
+      flex:1; background:rgba(0,0,0,.55); color:#fce5cd; border:1px solid #3a2a14; border-radius:10px; padding:.45rem .6rem;
+    }
+    .chat-controls button{
+      background:rgba(0,0,0,.55); color:#fce5cd; border:1px solid #3a2a14; border-radius:10px; padding:.45rem .6rem; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/art/crest2.png" alt="" class="sigil-overlay" id="crestSigil"/>
+  <header class="banner" id="siteHeader">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar" id="siteNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="guides.html">RP Tips & Guides</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+    </ul>
+  </nav>
+
+  <button class="fs-exit" id="btnFsExit">Exit Fullscreen ✕</button>
+  <div class="mobile-guard" id="mobileGuard">
+    <div>
+      <h2 style="margin:0 0 .5rem">Desktop Required</h2>
+      <p>This demo is optimized for a computer browser. Please visit on desktop for the best experience.</p>
+    </div>
+  </div>
+
+  <main class="content game-wrap">
+    <section class="text-block">
+      <h1 style="margin-top:0">The Phoenix Path <span style="opacity:.8;font-size:1rem">— Thalassian Lane-Strategy Game</span></h1>
+      <p class="status" id="status">Drag your sanctum token and 18 pieces from the tray (right) onto your two back rows. You can rearrange them freely until you click <b>Begin Game</b>.</p>
+    </section>
+
+  <div class="tri-grid">
+    <div class="left-col">
+      <aside class="panel settings" id="leftPanel">
+        <div class="coin-toggle" id="btnStatsToggle" title="Toggle Player Stats"></div>
+        <div id="settingsView">
+          <h2 style="margin-right:44px">Match Settings</h2>
+          <div class="toolbar">
+            <label>AI:
+              <select id="aiDepth">
+                <option value="1">Challenger</option>
+                <option value="2" selected>Adversary</option>
+                <option value="3">Archmage</option>
+              </select>
+            </label>
+            <label>Player Side:
+              <select id="playerSide">
+                <option value="red" selected>Red (bottom)</option>
+                <option value="green">Green (top)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="legend" style="margin-top:8px">
+            <div class="chip">1</div><div>One-prong (forward)</div>
+            <div class="chip">2</div><div>Two-prong (diagonals)</div>
+            <div class="chip">3</div><div>Three-prong (forward+diags)</div>
+          </div>
+
+          <div class="toolbar" style="margin-top:10px;justify-content:space-between">
+            <div>
+              <button id="btnClear">Clear Board</button>
+              <button id="btnBegin" disabled>Begin Game</button>
+            </div>
+            <div>
+              <button id="btnOnline">Online Match</button>
+              <button id="btnFullscreen">Fullscreen</button>
+            </div>
+          </div>
+
+          <details style="margin-top:8px">
+            <summary>Quick Rules</summary>
+            <ul>
+              <li>12×12; lanes 5/2/5. Two back rows per side; Sanctum must be empty.</li>
+              <li>Each side 18 pieces (6× type 1/2/3). One piece per turn; leap capture; multi-leap allowed.</li>
+              <li>Ascension: reaching enemy back row lets a unit reverse direction on future moves.</li>
+              <li>Win: land 4 in enemy back row (≥1 via center, ≥1 inside the chosen Sanctum) or reduce enemy ≤2 pieces.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div id="statsView" style="display:none">
+          <h2>Player Stats</h2>
+          <div id="statsContent"></div>
+        </div>
+      </aside>
+
+      <aside class="panel" id="chatPanel">
+        <div class="chatbox">
+          <h3>Chat</h3>
+          <div class="chatlog" id="chatLog"></div>
+          <div class="chat-controls">
+            <input id="chatInput" type="text" placeholder="Type a message…" />
+            <button id="chatSend">Send</button>
+            <button id="chatHint">Hint</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="board-wrap">
+      <canvas id="board" width="1200" height="1200" aria-label="Phoenix Path board"></canvas>
+      <div class="win-banner" id="winBanner"><span></span></div>
+    </section>
+
+    <aside class="panel right-col" id="rightPanel">
+      <h2 id="rightTitle">Piece Tray</h2>
+      <p id="rightSubtitle" style="margin:.25rem 0 .5rem">Drag onto your two back rows. You can rearrange until the game begins.</p>
+      <div id="tray" class="tray-grid" aria-label="tray"></div>
+      <div class="piece-count" id="trayCount"></div>
+
+      <div id="turnLogWrap" style="display:none">
+        <div class="log" id="turnLog"></div>
+      </div>
+    </aside>
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <div class="modal" id="modalOnline">
+    <div class="card">
+      <h3 style="margin:.2rem 0 .6rem">Online Match</h3>
+      <p>Feature not available yet. Two-player play is coming soon.</p>
+      <div style="text-align:right;margin-top:.6rem">
+        <button id="btnCloseModal">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /* ===========================================================
+     Phoenix Path — version 2.0
+     =========================================================== */
+
+  // ------- Mobile guard -------
+  const mobileGuard = document.getElementById('mobileGuard');
+  const isMobile = matchMedia('(pointer:coarse)').matches || window.innerWidth < 900;
+  if (isMobile){ mobileGuard.classList.add('active'); }
+
+  // Geometry & lanes
+  const COLS=12, ROWS=12;
+  let CELL=56; 
+  const CENTER_START=5, CENTER_END=6;
+  const RED='red', GREEN='green';
+
+  // --- UX timing (AI & animation) ---
+  const AI_DELAY_MS   = 1000; // delay before AI moves
+  const MOVE_ANIM_MS  = 350;  // duration for each AI step animation
+
+  // Row color theme
+  const TAN_DARK   = '#6b4e2a'; // sanctum rows
+  const TAN_LIGHT  = '#7a5a33'; // guard rows
+  const MID_A      = '#2f1c0a'; // brown
+  const MID_B      = '#5b3d22'; // tan partner for checkers
+  const CENTER_RED = '#7c2424'; // subtle red base for center lane overlay
+
+  // Image assets
+  const IMG = {
+    red: { 1:'assets/art/phoenixpath/redoneprong.png', 2:'assets/art/phoenixpath/redtwoprong.png', 3:'assets/art/phoenixpath/redthreeprong.png' },
+    green:{1:'assets/art/phoenixpath/greenoneprong.png',2:'assets/art/phoenixpath/greentwoprong.png',3:'assets/art/phoenixpath/greenthreeprong.png'},
+    sanctum:{ red:'assets/art/phoenixpath/redsanctum.png', green:'assets/art/phoenixpath/greensanctum.png' }
+  };
+
+  // Opponents and phrase packs 
+  const OPPONENTS = [
+    "Lor'themar Theron","Grand Magister Rommath","Aethas Sunreaver","Lady Liadrin",
+    "Arator","Vereesa Windrunner","Alleria Windrunner","Halduron Brightwing",
+    "Ranger-Captain Auric","Salandria"
+  ];
+  const LINES = {
+    playerCapture: [
+      "A fair move.","A lucky strike. It won't happen again.","You're cunning; that won't save you, though.",
+      "Damn. Fine, I'll let you have that one.","Don't get too confident.","A good use of the opening.",
+      "So you've played this before then, have you?","I'll have to remember that move..."
+    ],
+    aiCapture: [
+      "Another piece for my box.","Bet you didn't see that coming, did you?","This is one opponent you won't get the best of, clearly.",
+      "Have you had enough, yet?","Success; another piece for my collection.","Another!","Take that, noob!",
+      "There's a reason I have the reputation I do...","Try overcoming that."
+    ],
+    playerMulticap: [
+      "Damn; a good move, all the same.","Didn't see that coming.","A clever use of the opening... I'll concede the point.",
+      "You've some skill, you know.","A surge? Lucky you..."
+    ],
+    aiMulticap: [
+      "Now you can see how a true champion plays.","Learn from my mastery, young one.",
+      "I warned you not to get too confident.","Only a few more of these...","This is one rush you cannot stop."
+    ],
+    idle: [
+      "Nervous? I don't blame you...but I don't have all day.",
+      "You know what they say about those slow to decide...",
+      "Anasterian's ears—pick a move already!",
+      "We live forever, but not this long; hurry up!",
+      "Brb, going bio while you make up your mind."
+    ],
+    playerWin: [
+      "A well played game; I concede.","You've true talent at this game, friend. Good work.",
+      "GG - well played.","Nicely won; another game?"
+    ],
+    aiWin: [
+      "I warned you! And now you've learned.","And that is how you win.",
+      "Remember this moment, friend; you've had the honor of losing to a true champion.",
+      "How you thought it could ever end otherwise...I'll never know. I am clearly the better player, after all.",
+      "I'll be humble and simply shake your hand, friend; well played."
+    ],
+    opening: [
+      "Let us see if your formations honor the Phoenix.",
+      "A clear mind and steady hand—shall we begin?",
+      "Your path glows bright; do not stumble.",
+      "Strategy is patience sculpted into motion."
+    ]
+  };
+
+  // Preload with OK/ERR flags
+  const cache = {}; 
+  function preload(src){
+    return new Promise(resolve=>{
+      const im = new Image();
+      im.onload = ()=>{ cache[src]={img:im, ok:true}; resolve(); };
+      im.onerror= ()=>{ console.warn('Image failed:', src); cache[src]={img:null, ok:false}; resolve(); };
+      im.src = src;
+    });
+  }
+  Promise.all([
+    ...Object.values(IMG.red).map(preload),
+    ...Object.values(IMG.green).map(preload),
+    preload(IMG.sanctum.red),
+    preload(IMG.sanctum.green)
+  ]).then(()=> draw());
+
+  // UI refs
+  const crestSigil = document.getElementById('crestSigil');
+  const canvas = document.getElementById('board');
+  const ctx = canvas.getContext('2d'); ctx.imageSmoothingEnabled = true;
+  const statusEl = document.getElementById('status');
+  const trayEl = document.getElementById('tray');
+  const trayCountEl = document.getElementById('trayCount');
+  const rightPanel = document.getElementById('rightPanel');
+  const rightTitle = document.getElementById('rightTitle');
+  const rightSubtitle = document.getElementById('rightSubtitle');
+  const turnLogWrap = document.getElementById('turnLogWrap');
+  const turnLog = document.getElementById('turnLog');
+
+  const btnBegin = document.getElementById('btnBegin');
+  const btnClear = document.getElementById('btnClear');
+  const selDepth = document.getElementById('aiDepth');
+  const selPlayerSide = document.getElementById('playerSide');
+
+  const btnOnline = document.getElementById('btnOnline');
+  const modalOnline = document.getElementById('modalOnline');
+  const btnCloseModal = document.getElementById('btnCloseModal');
+
+  const btnFullscreen = document.getElementById('btnFullscreen');
+  const btnFsExit = document.getElementById('btnFsExit');
+  const siteHeader = document.getElementById('siteHeader');
+  const siteNav = document.getElementById('siteNav');
+
+  // Stats toggle
+  const btnStatsToggle = document.getElementById('btnStatsToggle');
+  const settingsView = document.getElementById('settingsView');
+  const statsView = document.getElementById('statsView');
+  const statsContent = document.getElementById('statsContent');
+
+  // Chat refs
+  const chatPanel = document.getElementById('chatPanel');
+  const chatLog = document.getElementById('chatLog');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  const chatHint = document.getElementById('chatHint');
+
+  // Win banner
+  const winBanner = document.getElementById('winBanner');
+
+  // Game state
+  let G=null, lastMoveTrail=null, shimmerT=0, opponent='';
+  let idleTimer=null; const IDLE_MS = 20000;
+  let captureFlashes=[]; // {r,c,t}
+
+  // --- animation & preview state ---
+  let moveAnim = null;  // {active, p:{id}, from:{r,c}, to:{r,c}, t0, t1, onDone}
+  let previewMoves = null; // green tiles to preview when a piece is clicked
+
+  function resizeBoard(){
+    const wrap = canvas.parentElement.getBoundingClientRect();
+    const fsBoost = document.fullscreenElement ? 60 : 220;
+    const size = Math.min(wrap.width - 20, window.innerHeight - fsBoost);
+    const cell = Math.floor(size / COLS);
+    CELL = Math.max(36, cell);
+    canvas.width  = CELL * COLS;
+    canvas.height = CELL * ROWS;
+    draw();
+  }
+  window.addEventListener('resize', resizeBoard);
+  document.addEventListener('fullscreenchange', ()=>{
+    // Sync UI on FS/Esc
+    const fs = !!document.fullscreenElement;
+    btnFsExit.style.display = fs ? 'inline-block' : 'none';
+    crestSigil.style.display = fs ? 'none' : '';
+    siteHeader.style.display = fs ? 'none' : '';
+    siteNav.style.display = fs ? 'none' : '';
+    resizeBoard();
+  });
+  btnFullscreen.addEventListener('click', async ()=>{
+    if (!document.fullscreenElement){
+      await document.documentElement.requestFullscreen();
+    }
+  });
+  btnFsExit.addEventListener('click', async ()=>{
+    if (document.fullscreenElement) await document.exitFullscreen();
+  });
+  document.addEventListener('keydown', async (e)=>{
+    if (e.key==='Escape' && document.fullscreenElement){
+      await document.exitFullscreen();
+    }
+  });
+
+  // Storage helpers
+  const ST_KEY='phoenixPathStats';
+  function getStats(){
+    const raw = localStorage.getItem(ST_KEY);
+    return raw ? JSON.parse(raw) : {
+      games:0, wins:0, losses:0, winPhoenix:0, winCollapse:0, captures:0, lost:0
+    };
+  }
+  function putStats(s){ localStorage.setItem(ST_KEY, JSON.stringify(s)); }
+  function renderStats(){
+    const s=getStats();
+    const ratio = s.games? ((s.wins/s.games)*100).toFixed(1)+'%' : '—';
+    statsContent.innerHTML = `
+      <p><b>Games:</b> ${s.games}</p>
+      <p><b>Wins:</b> ${s.wins} &middot; <b>Losses:</b> ${s.losses} &middot; <b>Win Rate:</b> ${ratio}</p>
+      <p><b>Victory Types:</b> Phoenix Ascendant ${s.winPhoenix} &middot; Total Collapse ${s.winCollapse}</p>
+      <p><b>Captures:</b> ${s.captures} &middot; <b>Pieces Lost:</b> ${s.lost}</p>
+      <p style="opacity:.8">Stats are saved locally in your browser.</p>
+    `;
+  }
+  btnStatsToggle.addEventListener('click', ()=>{
+    const showingStats = statsView.style.display!=='none';
+    if (showingStats){ statsView.style.display='none'; settingsView.style.display=''; }
+    else { renderStats(); settingsView.style.display='none'; statsView.style.display=''; }
+  });
+
+  // Online modal
+  btnOnline.addEventListener('click', ()=> modalOnline.classList.add('show'));
+  btnCloseModal.addEventListener('click', ()=> modalOnline.classList.remove('show'));
+
+  // Chat helpers
+  function chatSay(who, text){
+    const div=document.createElement('div');
+    div.className='chatline';
+    div.innerHTML=`<span class="who"><b>${who}:</b></span> ${text}`;
+    chatLog.appendChild(div);
+    chatLog.scrollTop=chatLog.scrollHeight;
+  }
+  function playerSay(text){
+    const div=document.createElement('div');
+    div.className='chatline';
+    div.innerHTML=`<span class="who"><b>You:</b></span> ${text}`;
+    chatLog.appendChild(div);
+    chatLog.scrollTop=chatLog.scrollHeight;
+  }
+  function pick(arr){ return arr[(Math.random()*arr.length)|0]; }
+  function openingLine(){ return pick(LINES.opening); }
+  function scheduleIdleGoad(){
+    clearTimeout(idleTimer);
+    if (G && G.phase==='play' && G.turn===G.playerSide){
+      idleTimer=setTimeout(()=> chatSay(opponent, pick(LINES.idle)), IDLE_MS);
+    }
+  }
+
+  chatSend.addEventListener('click', ()=> {
+    const msg = chatInput.value.trim(); if (!msg) return;
+    playerSay(msg); chatInput.value='';
+  });
+  chatInput.addEventListener('keydown', (e)=>{ if (e.key==='Enter'){ chatSend.click(); } });
+
+  // Hint routed through chat (AI persona) — use current depth (revise again; still not working)
+  chatHint.addEventListener('click', ()=>{
+    if (G.phase!=='play' || G.turn!==G.playerSide) { chatSay(opponent,"Place or move your pieces first."); return; }
+    const baseDepth=Number(document.getElementById('aiDepth').value||'2');
+    const think=minimax(cloneState(G), baseDepth, G.playerSide, {aggressive:false});
+    if (think.move){
+      const {p,m}=think.move;
+      chatSay(opponent, `Consider the ${p.type}-prong toward [${m.r}, ${m.c}].`);
+    }else{
+      chatSay(opponent, "I see no profitable motion. Reposition your strength.");
+    }
+  });
+
+  // Setup & Tray
+  function newEmpty(){
+    opponent = OPPONENTS[(Math.random()*OPPONENTS.length)|0];
+    chatLog.innerHTML='';
+    chatSay(opponent, openingLine());
+    const playerSide = selPlayerSide.value;
+    const aiSide = playerSide===RED? GREEN : RED;
+    return {
+      phase:'placement',
+      turn: RED, // Once game starts, red moves first
+      playerSide, aiSide,
+      sanctum: { red:null, green:null },
+      board: Array.from({length:ROWS},()=>Array(COLS).fill(null)),
+      pieces: [], // {id, side, type, r, c, alive, ascended}
+      counts:{red:0,green:0},
+      landed:{red:0,green:0}, landedCenter:{red:0,green:0}, landedSanctum:{red:0,green:0},
+      captures:{red:0,green:0}, losses:{red:0,green:0}
+    };
+  }
+
+  // Tray order: 1s, 2s, 3s, then sanctum at the very bottom
+  function resetTray(){
+    rightTitle.textContent='Piece Tray';
+    rightSubtitle.style.display='';
+    turnLogWrap.style.display='none';
+    trayEl.style.display='';
+    trayEl.innerHTML='';
+    const side = G.playerSide;
+
+    function pushTypeRows(type){
+      for (let i=0;i<6;i++){
+        const d=document.createElement('div');
+        d.className='slot'; d.setAttribute('draggable','true');
+        d.dataset.kind='piece'; d.dataset.type=String(type);
+        const pic=document.createElement('img');
+        pic.src = side===RED ? IMG.red[type] : IMG.green[type];
+        pic.alt = `${side} ${type}-prong`;
+        d.appendChild(pic); trayEl.appendChild(d);
+      }
+    }
+    pushTypeRows(1);  // rows 1–2
+    pushTypeRows(2);  // rows 3–4
+    pushTypeRows(3);  // rows 5–6
+
+    // Sanctum last row (bottom), centered across
+    const sanctRow = document.createElement('div');
+    sanctRow.className='slot'; sanctRow.style.gridColumn='1 / 4'; sanctRow.style.display='flex'; sanctRow.style.justifyContent='center';
+    const s = document.createElement('div');
+    s.className='slot'; s.setAttribute('draggable','true'); s.dataset.kind='sanctum';
+    const simg = document.createElement('img');
+    simg.src = (side === RED) ? IMG.sanctum.red : IMG.sanctum.green;
+    simg.alt = 'Sanctum';
+    s.appendChild(simg); sanctRow.appendChild(s); trayEl.appendChild(sanctRow);
+
+    updateTrayCount();
+  }
+
+  function updateTrayCount(){
+    const left = trayEl.querySelectorAll('.slot[data-kind="piece"]').length;
+    const sanctLeft = trayEl.querySelectorAll('.slot[data-kind="sanctum"]').length;
+    trayCountEl.textContent = `Pieces remaining: ${left}  • Sanctum token: ${sanctLeft? 'not placed' : 'placed'}`;
+  }
+
+  // Tray drag
+  trayEl.addEventListener('dragstart', (e)=>{
+    const slot = e.target.closest('.slot'); if (!slot || isMobile) return;
+    e.dataTransfer.effectAllowed='copy';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      kind: slot.dataset.kind,
+      type: slot.dataset.type ? Number(slot.dataset.type) : null
+    }));
+    canvas.classList.add('drop-cue');
+  });
+  trayEl.addEventListener('dragend', ()=> canvas.classList.remove('drop-cue'));
+
+  // Convert client coords board cell
+  function clientToCell(clientX, clientY){
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (clientX - rect.left) * scaleX;
+    const y = (clientY - rect.top)  * scaleY;
+    return { r: Math.floor(y / CELL), c: Math.floor(x / CELL) };
+  }
+
+  // Placement dropping from tray
+  canvas.addEventListener('dragover', (e)=>{
+    if (G?.phase==='placement' && !isMobile){ e.preventDefault(); e.dataTransfer.dropEffect='copy'; }
+  });
+  canvas.addEventListener('drop', (e)=>{
+    if (G?.phase!=='placement' || isMobile) return;
+    e.preventDefault();
+    const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+    const {r,c} = clientToCell(e.clientX, e.clientY);
+    if (!inBounds(r,c)) return;
+    const backRows = playerBackRows(G.playerSide);
+    if (!(r===backRows.back || r===backRows.guard)){ setStatus('Place only on your two back rows.'); return; }
+    if (G.board[r][c]){ setStatus('That square is occupied.'); return; }
+
+    if (data.kind==='sanctum'){
+      if (r!==backRows.back){ setStatus('Sanctum must be on the back row.'); return; }
+      G.sanctum[G.playerSide]=c;
+      // fix for “black circle” lingering issue in peice box (don't remove)
+      const rowEl = trayEl.querySelector('.slot[draggable="true"][data-kind="sanctum"]')?.parentElement;
+      if (rowEl) rowEl.remove();
+      updateTrayCount(); draw(); maybeEnableBegin(); setStatus('Sanctum set. Place your pieces.'); return;
+    }
+    if (data.kind==='piece'){
+      if (G.sanctum[G.playerSide]!==null && r===backRows.back && c===G.sanctum[G.playerSide]){
+        setStatus('Your Sanctum cell must remain empty.'); return;
+      }
+      placeNewPiece(G.playerSide, data.type, r, c);
+      const btn = Array.from(trayEl.querySelectorAll('.slot[data-kind="piece"]')).find(b=> Number(b.dataset.type)===data.type);
+      if (btn) btn.remove();
+      updateTrayCount(); draw(); maybeEnableBegin();
+    }
+  });
+
+  // Helpers
+  const inBounds = (r,c)=> r>=0&&r<ROWS&&c>=0&&c<COLS;
+  const isCenter = c => c>=CENTER_START && c<=CENTER_END;
+  const playerBackRows = (side)=> side===RED? {back:ROWS-1, guard:ROWS-2} : {back:0, guard:1};
+  const enemyBackRow = (side)=> side===RED? 0 : ROWS-1;
+
+  function placeNewPiece(side, type, r, c){
+    const p = { id: side[0]+Math.random().toString(36).slice(2,7), side, type, r, c, alive:true, ascended:false };
+    G.pieces.push(p); G.board[r][c]=p; G.counts[side]++;
+  }
+
+  // Begin Game
+  function beginGame(){
+    if (!canBegin()){ setStatus('Place sanctum and all 18 pieces first.'); return; }
+    // AI sanctum default mirror
+    const aiSide = G.aiSide;
+    if (G.sanctum[aiSide]==null){
+      const mirror=c=>(COLS-1)-c;
+      G.sanctum[aiSide]=mirror(G.sanctum[G.playerSide] ?? Math.floor(COLS/2));
+    }
+    // AI placement
+    const rows = playerBackRows(aiSide);
+    const sanctCol = G.sanctum[aiSide];
+    const cells=[]; for (let c=0;c<COLS;c++) if (c!==sanctCol) cells.push({r:rows.back,c});
+    for (let c=0;c<COLS;c++) cells.push({r:rows.guard,c});
+    const pool=[...Array(6).fill(1),...Array(6).fill(2),...Array(6).fill(3)];
+    pool.sort(()=>Math.random()-.5);
+    for (let i=0;i<18;i++){ const spot=cells[i]; placeNewPiece(aiSide, pool[i], spot.r, spot.c); }
+
+    // Switch right panel to turn log
+    trayEl.style.display='none';
+    rightTitle.textContent='Turn Log';
+    rightSubtitle.style.display='none';
+    turnLogWrap.style.display='';
+    turnLog.innerHTML='';
+    chatSay(opponent, "Very well—let us begin.");
+
+    G.phase='play'; G.turn=RED;
+    draw(); setStatus('Game begun. Red to move.');
+    if (G.playerSide!==G.turn) aiTurn();
+    scheduleIdleGoad();
+  }
+
+  function canBegin(){
+    const placed = G.pieces.filter(p=>p.side===G.playerSide).length;
+    const sanctOK = (G.sanctum[G.playerSide]!==null);
+    return (G.phase==='placement' && sanctOK && placed===18);
+  }
+  function maybeEnableBegin(){ btnBegin.disabled = !canBegin(); }
+
+  // --- animation helpers ---
+  function startMoveAnim(piece, from, to, duration, onDone){
+    moveAnim = {
+      active: true,
+      p: { id: piece.id },
+      from, to,
+      t0: performance.now(),
+      t1: performance.now() + duration,
+      onDone
+    };
+  }
+
+  function animateStepAndMaybeChain(piece, firstMove, onAllDone){
+    const from = { r: piece.r, c: piece.c };
+
+    // Apply move in state (captures, ascension, logs handled elsewhere)
+    applyMove(G, piece, firstMove);
+
+    const to = { r: piece.r, c: piece.c };
+    startMoveAnim(piece, from, to, MOVE_ANIM_MS, () => {
+      // After the step animation, if more captures are available and first was a capture, continue chaining; is this even working? test more
+      let nextCaps = legalMoves(G, piece).filter(m => m.capture);
+      if (firstMove.capture && nextCaps.length){
+        setTimeout(() => {
+          animateStepAndMaybeChain(piece, nextCaps[0], onAllDone);
+        }, 150);
+      } else {
+        onAllDone();
+      }
+    });
+
+    lastMoveTrail = { from, to, t:0 };
+    logMove(piece.side, from, to, !!firstMove.capture);
+    draw();
+  }
+
+  // Sanctum reposition
+  let dragInfo=null;
+  canvas.addEventListener('mousedown', (e)=>{
+    if (isMobile) return;
+    const {r,c}=clientToCell(e.clientX,e.clientY);
+    if (!inBounds(r,c)) return;
+
+    if (G.phase==='placement'){
+      const rows = playerBackRows(G.playerSide);
+      // If click is on own sanctum cell, enable sanctum drag
+      if (G.sanctum[G.playerSide]!==null && r===rows.back && c===G.sanctum[G.playerSide]){
+        dragInfo={type:'sanctum', phase:'placement', start:{r,c}, dragging:true};
+        canvas.classList.add('dragging'); return;
+      }
+      // Otherwise piece drag
+      const p = G.board[r][c];
+      if (!p || p.side!==G.playerSide) return;
+      dragInfo={type:'piece', piece:p, phase:'placement', start:{r,c}, dragging:true};
+      canvas.classList.add('dragging'); return;
+    }
+
+    if (G.phase==='play'){
+      const p = G.board[r][c];
+      if (!p || p.side!==G.playerSide || p.side!==G.turn) return;
+      dragInfo={type:'piece', piece:p, phase:'play', moves:legalMoves(G,p), start:{r,c}, dragging:true};
+      // show preview squares immediately on click
+      previewMoves = dragInfo.moves;
+      draw();
+      canvas.classList.add('dragging'); return;
+    }
+  });
+
+  canvas.addEventListener('mousemove', (e)=>{
+    if (isMobile) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX - rect.left) * (canvas.width/rect.width);
+    const y = (e.clientY - rect.top)  * (canvas.height/rect.height);
+    draw();
+
+    if (!dragInfo?.dragging){
+      const {r:hr, c:hc}=clientToCell(e.clientX,e.clientY);
+      if (G && inBounds(hr,hc)){
+        const h = G.board[hr][hc];
+        if ((G.phase==='placement' && ( (h && h.side===G.playerSide) ||
+             (G.sanctum[G.playerSide]!==null && hr===playerBackRows(G.playerSide).back && hc===G.sanctum[G.playerSide]) )) ||
+            (G.phase==='play' && h && h.side===G.playerSide && G.turn===G.playerSide)){
+          ctx.save(); ctx.strokeStyle='rgba(140,255,180,.25)'; ctx.lineWidth=2.5;
+          ctx.strokeRect(hc*CELL+3, hr*CELL+3, CELL-6, CELL-6); ctx.restore();
+        }
+      }
+      return;
+    }
+
+    // Ghosts
+    if (dragInfo.type==='sanctum'){
+      const src = (G.playerSide === RED) ? IMG.sanctum.red : IMG.sanctum.green;
+      const rec = cache[src];
+      if (rec && rec.ok){
+        const radius=Math.floor(CELL*0.8);
+        ctx.save(); ctx.globalAlpha=.7;
+        ctx.drawImage(rec.img, x - radius/2, y - radius/2, radius, radius);
+        ctx.restore();
+      }
+    } else {
+      ctx.save(); ctx.globalAlpha=0.7;
+      drawPieceImage(dragInfo.piece.side, dragInfo.piece.type, x, y, true, dragInfo.piece.ascended);
+      ctx.restore();
+      if (dragInfo.phase==='play'){
+        dragInfo.moves.forEach(m=>{
+          ctx.fillStyle = m.capture ? 'rgba(140,255,180,.35)' : 'rgba(140,255,180,.22)';
+          ctx.fillRect(m.c*CELL+6, m.r*CELL+6, CELL-12, CELL-12);
+        });
+      }
+    }
+  });
+
+  canvas.addEventListener('mouseup', (e)=>{
+    if (!dragInfo?.dragging || isMobile) return;
+    const {r,c}=clientToCell(e.clientX,e.clientY);
+    canvas.classList.remove('dragging');
+
+    if (dragInfo.phase==='placement'){
+      const back = playerBackRows(G.playerSide);
+      if (dragInfo.type==='sanctum'){
+        if (inBounds(r,c) && r===back.back && !G.board[r][c]){
+          G.sanctum[G.playerSide]=c; draw();
+        }
+        dragInfo=null; return;
+      }
+
+      if (!inBounds(r,c) || !(r===back.back || r===back.guard) || G.board[r][c]){
+        draw(); dragInfo=null; return;
+      }
+      if (G.sanctum[G.playerSide]!==null && r===back.back && c===G.sanctum[G.playerSide]){
+        setStatus('Your Sanctum cell must remain empty.'); draw(); dragInfo=null; return;
+      }
+      const p=dragInfo.piece; G.board[p.r][p.c]=null; p.r=r; p.c=c; G.board[r][c]=p;
+      draw(); dragInfo=null; return;
+    }
+
+    if (dragInfo.phase==='play'){
+      const mv = dragInfo.moves.find(m=>m.r===r && m.c===c);
+      if (!mv){
+        previewMoves = null; // clear preview on cancel
+        draw(); dragInfo=null; return;
+      }
+      let capCount=0;
+      capCount += applyMove(G, dragInfo.piece, mv) ? 1 : 0;
+      let more = legalMoves(G, dragInfo.piece).filter(m=>m.capture);
+      while (mv.capture && more.length){
+        capCount += applyMove(G, dragInfo.piece, more[0]) ? 1 : 0;
+        more = legalMoves(G, dragInfo.piece).filter(m=>m.capture);
+      }
+      if (capCount>1 && Math.random()<0.30) chatSay(opponent, pick(LINES.playerMulticap));
+      if (mv.capture && Math.random()<0.25) chatSay(opponent, pick(LINES.playerCapture));
+      logMove(dragInfo.piece.side, dragInfo.start, {r:dragInfo.piece.r, c:dragInfo.piece.c}, mv.capture);
+      lastMoveTrail = {from:dragInfo.start, to:{r:dragInfo.piece.r,c:dragInfo.piece.c}, t:0};
+      previewMoves = null; // clear preview after a real move
+      if (checkWin(dragInfo.piece.side)) return;
+      G.turn = (G.turn===RED? GREEN : RED);
+      draw(); setStatus((G.turn===G.playerSide?'Your':'AI') + ' move.');
+      if (G.turn===G.aiSide) aiTurn();
+      dragInfo=null; scheduleIdleGoad(); return;
+    }
+  });
+
+  // Rules
+  function forwardDir(side){ return side===RED? -1 : +1; }
+  function legalMoves(S, p){
+    if (!p.alive) return [];
+    const out=[]; const dir=forwardDir(p.side);
+    function step(dr,dc){
+      const r=p.r+dr, c=p.c+dc;
+      if (!inBounds(r,c) || S.board[r][c]) return;
+      const ownRow = (p.side===RED? ROWS-1 : 0);
+      const ownCol = (p.side===RED? S.sanctum.red : S.sanctum.green);
+      if (r===ownRow && c===ownCol) return;
+      out.push({r,c,capture:false});
+    }
+    function leap(dr,dc){
+      const r1=p.r+dr, c1=p.c+dc;
+      const r2=p.r+2*dr, c2=p.c+2*dc;
+      if (!inBounds(r1,c1)||!inBounds(r2,c2)) return;
+      const mid=S.board[r1][c1];
+      if (mid && mid.side!==p.side && !S.board[r2][c2]) out.push({r:r2,c:c2,capture:true,victim:mid});
+    }
+    // type 1 & 3 forward
+    if (p.type===1 || p.type===3){ step(dir,0); if (p.ascended) step(-dir,0); leap(dir,0); if (p.ascended) leap(-dir,0); }
+    // type 2 & 3 diagonals
+    if (p.type===2 || p.type===3){
+      [[dir,-1],[dir,1]].forEach(([dr,dc])=>step(dr,dc));
+      if (p.ascended) [[-dir,-1],[-dir,1]].forEach(([dr,dc])=>step(dr,dc));
+      [[dir,-1],[dir,1]].forEach(([dr,dc])=>leap(dr,dc));
+      if (p.ascended) [[-dir,-1],[-dir,1]].forEach(([dr,dc])=>leap(dr,dc));
+    }
+    return out;
+  }
+
+
+  function applyMove(S, p, mv){
+    S.board[p.r][p.c]=null;
+    p.r=mv.r; p.c=mv.c;
+    S.board[p.r][p.c]=p;
+
+    let didCap=false;
+    if (mv.capture){
+      const vr = mv.victim?.r, vc = mv.victim?.c;
+      const onBoardVictim = (vr!=null && vc!=null) ? S.board[vr]?.[vc] : null;
+      const victim = onBoardVictim && onBoardVictim.alive ? onBoardVictim
+                    : S.pieces.find(q => q.alive && q.r===vr && q.c===vc && q.side!==p.side);
+
+      if (victim){
+        captureFlashes.push({r:victim.r, c:victim.c, t:0});
+        victim.alive=false;
+        S.board[victim.r][victim.c]=null;
+        S.counts[victim.side]--;
+        S.captures[p.side]++;
+        S.losses[victim.side]++;
+        didCap=true;
+        if (p.side===G.aiSide && Math.random()<0.25) chatSay(opponent, pick(LINES.aiCapture));
+      }
+    }
+
+    // Ascension when entering enemy back row
+    if (p.r===enemyBackRow(p.side)) p.ascended=true;
+    return didCap;
+  }
+
+  function recomputeLandings(S){
+    function scan(side){
+      const row = enemyBackRow(side); let total=0, center=0, sanct=0;
+      for (const q of S.pieces){
+        if (!q.alive || q.side!==side) continue;
+        if (q.r===row){ total++; if (isCenter(q.c)) center++; const scCol=(side===RED? S.sanctum.green : S.sanctum.red); if (q.c===scCol) sanct++; }
+      }
+      return {total,center,sanct};
+    }
+    const R=scan(RED), Gg=scan(GREEN);
+    S.landed.red=R.total; S.landedCenter.red=R.center; S.landedSanctum.red=R.sanct;
+    S.landed.green=Gg.total; S.landedCenter.green=Gg.center; S.landedSanctum.green=Gg.sanct;
+  }
+
+  function checkWin(side){
+    recomputeLandings(G);
+    const me=side, op=(side===RED?GREEN:RED);
+    const phoenix = (G.landed[me]>=4 && G.landedCenter[me]>=1 && G.landedSanctum[me]>=1);
+    const collapse = (G.counts[op]<=2);
+
+    if (phoenix || collapse){
+      G.phase='over';
+      const s=getStats(); s.games++; if (me===G.playerSide){ s.wins++; } else { s.losses++; }
+      if (phoenix && me===G.playerSide) s.winPhoenix++;
+      if (collapse && me===G.playerSide) s.winCollapse++;
+      s.captures += G.captures[G.playerSide]; s.lost += G.losses[G.playerSide];
+      putStats(s); renderStats();
+
+      if (Math.random()<0.5){
+        if (me===G.playerSide) chatSay(opponent, pick(LINES.playerWin));
+        else                    chatSay(opponent, pick(LINES.aiWin));
+      }
+
+      showWin(me===G.playerSide ? 'You Win!' : `${opponent} Wins!`);
+      setStatus((me===G.playerSide?'You':'AI')+' win!');
+      logText('— Game Over —');
+      return true;
+    }
+
+    // Threat lines
+    const meL = G.landed[me], opL = G.landed[op];
+    if ((meL===3 || G.counts[op]===3) && Math.random()<0.30) chatSay(opponent, pick(LINES.playerMulticap));
+    if ((opL===3 || G.counts[me]===3) && Math.random()<0.30) chatSay(opponent, pick(LINES.aiMulticap));
+    return false;
+  }
+
+  // AI (minimax) — Archmage gets depth boost + aggressive eval
+  function cloneState(S){
+    const z = JSON.parse(JSON.stringify(S));
+    z.board = Array.from({length:ROWS},()=>Array(COLS).fill(null));
+    z.pieces.forEach(p=>{ if(p.alive) z.board[p.r][p.c]=p; }); return z;
+  }
+  function listMoves(S, side){
+    const out=[]; for (const p of S.pieces){ if (!p.alive || p.side!==side) continue; legalMoves(S,p).forEach(m=> out.push({p,m})); }
+    out.sort((a,b)=> (b.m.capture?1:0) - (a.m.capture?1:0));
+    return out;
+  }
+
+  function evalState(S, side, style){
+    const me=side, op=(side===RED?GREEN:RED);
+    const aggressive = !!(style && style.aggressive);
+    let sc=0;
+
+    // base multipliers
+    const MAT     = aggressive ? 1.0  : 1.0;
+    const ADV     = aggressive ? 0.95 : 0.80;
+    const CENTER  = aggressive ? 4.2  : 3.0;
+    const ASCEND  = aggressive ? 4.5  : 4.0;
+    const ROWBON  = aggressive ? 18   : 18;
+    const SANC    = aggressive ? 22   : 22;
+
+    for (const p of S.pieces){
+      if (!p.alive) continue;
+      const sgn = (p.side===me? +1 : -1);
+
+      const typeVal = (p.type===1? 10 : p.type===2? 11 : 14);
+      sc += sgn * (MAT * typeVal);
+
+      const adv = (p.side===RED ? (ROWS-1 - p.r) : p.r);
+      sc += sgn * (ADV * adv);
+
+      if (isCenter(p.c)) sc += sgn * CENTER;
+      if (p.ascended)    sc += sgn * ASCEND;
+
+      const eb=enemyBackRow(p.side);
+      if (p.r===eb){
+        sc += sgn * ROWBON;
+        const scCol=(p.side===RED? S.sanctum.green : S.sanctum.red);
+        if (p.c===scCol) sc += sgn * SANC;
+      }
+    }
+
+    // landings & attrition bonuses
+    recomputeLandings(S);
+    const L = (side===RED? S.landed.red : S.landed.green);
+    const C = (side===RED? S.landedCenter.red : S.landedCenter.green);
+    const SS= (side===RED? S.landedSanctum.red : S.landedSanctum.green);
+    sc += (L*5 + C*7 + SS*9);
+
+    // Attrition emphasis for aggressive mode
+    const myCount = S.counts[me], opCount = S.counts[op];
+    if (aggressive){
+      sc += ( (18 - opCount) * 3.5 );
+      sc -= ( (18 - myCount) * 1.5 ); 
+    }else{
+      if (opCount<=2) sc += 999;
+    }
+
+    return sc;
+  }
+
+  function stepState(S, mv){
+    const Z=cloneState(S);
+    const p = Z.pieces.find(q=>q.id===mv.p.id);
+    applyMove(Z, p, mv.m);
+    Z.turn = (Z.turn===RED?GREEN:RED);
+    return Z;
+  }
+
+  function minimax(S, depth, pov, style, alpha=-1e9, beta=1e9){
+    if (depth===0) return {score:evalState(S,pov,style)};
+    const side=S.turn, moves=listMoves(S,side);
+    if (!moves.length) return {score:evalState(S,pov,style)};
+    if (side===pov){
+      let best=-1e9, chosen=null;
+      for (const mv of moves){
+        const NS=stepState(S,mv);
+        const {score}=minimax(NS, depth-1, pov, style, alpha, beta);
+        if (score>best){best=score;chosen=mv}
+        alpha=Math.max(alpha,score); if (beta<=alpha) break;
+      }
+      return {score:best,move:chosen};
+    }else{
+      let best=+1e9, chosen=null;
+      for (const mv of moves){
+        const NS=stepState(S,mv);
+        const {score}=minimax(NS, depth-1, pov, style, alpha, beta);
+        if (score<best){best=score;chosen=mv}
+        beta=Math.min(beta,score); if (beta<=alpha) break;
+      }
+      return {score:best,move:chosen};
+    }
+  }
+
+  // --- AI turn: delay + animated step(s). keep player moves instant for fluidity; reconfigure for online---
+  function aiTurn(){
+    const sel   = document.getElementById('aiDepth').value || '2';
+    const base  = Number(sel);
+    const style = {aggressive: (sel==='3')};  
+    const depth = (sel==='3') ? base + 1 : base; 
+
+    const think=minimax(cloneState(G), depth, G.aiSide, style);
+    if (!think.move){
+      setStatus('AI has no legal move.');
+      G.turn=(G.turn===RED?GREEN:RED);
+      return;
+    }
+
+    setStatus('AI is thinking...');
+    setTimeout(() => {
+      if (G.phase!=='play') return;
+      const live=G.pieces.find(p=>p.id===think.move.p.id);
+      if (!live || !live.alive) return;
+
+      // Animate the AI step; chain additional captures with small pauses
+      animateStepAndMaybeChain(live, think.move.m, () => {
+        if (checkWin(live.side)) return;
+        G.turn=(G.turn===RED?GREEN:RED);
+        draw(); setStatus('Your move.');
+        scheduleIdleGoad();
+      });
+    }, AI_DELAY_MS);
+  }
+
+  // Turn log helpers
+  function logText(text){ const p=document.createElement('p'); p.textContent=text; turnLog.appendChild(p); turnLog.scrollTop=turnLog.scrollHeight; }
+  function logMove(side, from, to, cap){ logText(`${side==='red'?'Red':'Green'}: ${cap?'x':''} (${from.r},${from.c}) → (${to.r},${to.c})`); }
+
+  // Rendering helpers
+  function fillCell(r,c){
+    // Sanctum / Guard rows first
+    if (r===0 || r===ROWS-1){ ctx.fillStyle=TAN_DARK; ctx.fillRect(c*CELL, r*CELL, CELL, CELL); return; }
+    if (r===1 || r===ROWS-2){ ctx.fillStyle=TAN_LIGHT; ctx.fillRect(c*CELL, r*CELL, CELL, CELL); return; }
+    // Middle checkers
+    const isAlt = ((r+c)&1)===1;
+    ctx.fillStyle = isAlt ? MID_A : MID_B;
+    ctx.fillRect(c*CELL, r*CELL, CELL, CELL);
+    // Phoenix Path overlay 
+    if (c>=CENTER_START && c<=CENTER_END){
+      ctx.fillStyle=CENTER_RED; ctx.globalAlpha = 0.35; ctx.fillRect(c*CELL, r*CELL, CELL, CELL); ctx.globalAlpha=1;
+      const pulse = 0.04 + 0.025*Math.sin((shimmerT + r*0.4 + c*0.7));
+      ctx.fillStyle=`rgba(255,180,140,${pulse})`;
+      ctx.fillRect(c*CELL, r*CELL, CELL, CELL);
+    }
+  }
+
+  function drawSanctumCoins(){
+    const recR = cache[IMG.sanctum.red];
+    const recG = cache[IMG.sanctum.green];
+    const radius = Math.floor(CELL * 0.8);
+
+    if (G.sanctum.green != null && recG?.ok){
+      const x = G.sanctum.green * CELL + CELL / 2;
+      const y = CELL / 2; // top row
+      ctx.drawImage(recG.img, x - radius/2, y - radius/2, radius, radius);
+    }
+    if (G.sanctum.red != null && recR?.ok){
+      const x = G.sanctum.red * CELL + CELL / 2;
+      const y = (ROWS - 1) * CELL + CELL / 2; // bottom row
+      ctx.drawImage(recR.img, x - radius/2, y - radius/2, radius, radius);
+    }
+  }
+
+  // Rendering
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // rows & grid
+    for (let r=0;r<ROWS;r++){
+      for (let c=0;c<COLS;c++){
+        fillCell(r,c);
+        ctx.strokeStyle='rgba(252,229,205,.25)';
+        ctx.strokeRect(c*CELL+0.5, r*CELL+0.5, CELL-1, CELL-1);
+      }
+    }
+
+    // sanctum outlines + coin images
+    if (G){
+      if (G.sanctum.red!=null){ ctx.strokeStyle='#e4be59'; ctx.lineWidth=3;
+        ctx.strokeRect(G.sanctum.red*CELL+4, (ROWS-1)*CELL+4, CELL-8, CELL-8); }
+      if (G.sanctum.green!=null){ ctx.strokeStyle='#e4be59'; ctx.lineWidth=3;
+        ctx.strokeRect(G.sanctum.green*CELL+4, 4, CELL-8, CELL-8); }
+      drawSanctumCoins();
+    }
+
+    // --- preview move tiles (when a piece is clicked) ---
+    if (previewMoves && previewMoves.length){
+      for (const m of previewMoves){
+        ctx.fillStyle = m.capture ? 'rgba(140,255,180,.35)' : 'rgba(140,255,180,.22)';
+        ctx.fillRect(m.c*CELL+6, m.r*CELL+6, CELL-12, CELL-12);
+      }
+    }
+
+    // last move trail
+    if (lastMoveTrail){
+      const {from,to,t}=lastMoveTrail;
+      const alpha=Math.max(0, .28 - t*0.003);
+      ctx.fillStyle=`rgba(180,220,255,${alpha})`;
+      ctx.fillRect(to.c*CELL+6, to.r*CELL+6, CELL-12, CELL-12);
+      ctx.fillStyle=`rgba(255,220,180,${alpha})`;
+      ctx.fillRect(from.c*CELL+10, from.r*CELL+10, CELL-20, CELL-20);
+      lastMoveTrail.t+=1;
+      if (alpha<=0) lastMoveTrail=null;
+    }
+
+    // capture flashes
+    const next=[];
+    for (const f of captureFlashes){
+      const a=Math.max(0, .6 - f.t*.05);
+      if (a>0){
+        ctx.save(); ctx.globalAlpha=a;
+        ctx.fillStyle='rgba(255,255,255,.35)';
+        ctx.beginPath(); ctx.arc(f.c*CELL+CELL/2, f.r*CELL+CELL/2, CELL*.38 + f.t*2, 0, Math.PI*2); ctx.fill();
+        ctx.restore(); f.t++; next.push(f);
+      }
+    }
+    captureFlashes=next;
+
+    // pieces (skip the one currently animating, then draw it at the end)
+    let animId = moveAnim && moveAnim.active ? moveAnim.p.id : null;
+
+    if (G){
+      for (const p of G.pieces){
+        if (!p.alive) continue;
+        if (animId && p.id === animId) continue; // animated piece will be drawn last
+        const x=p.c*CELL+CELL/2, y=p.r*CELL+CELL/2;
+        drawPieceImage(p.side, p.type, x, y, false, p.ascended);
+      }
+    }
+
+    // --- animated moving piece (AI) on top ---
+    if (moveAnim && moveAnim.active){
+      const now = performance.now();
+      const t = Math.min(1, (now - moveAnim.t0) / (moveAnim.t1 - moveAnim.t0));
+      const ir = moveAnim.from.r + (moveAnim.to.r - moveAnim.from.r) * t;
+      const ic = moveAnim.from.c + (moveAnim.to.c - moveAnim.to.c) * 0 + (moveAnim.to.c - moveAnim.from.c) * t;
+      const x = ic*CELL + CELL/2;
+      const y = ir*CELL + CELL/2;
+
+      const live = G.pieces.find(q => q.id === moveAnim.p.id && q.alive);
+      if (live){
+        drawPieceImage(live.side, live.type, x, y, false, live.ascended);
+      }
+
+      if (t >= 1){
+        const done = moveAnim.onDone;
+        moveAnim = null;
+        if (done) done();
+      }
+    }
+  }
+
+  function drawPieceImage(side, type, x, y, isGhost=false, asc=false){
+    const src = side==='red' ? IMG.red[type] : IMG.green[type];
+    const rec = cache[src];
+    const ready = rec && rec.ok && rec.img && rec.img.complete && rec.img.naturalWidth>0;
+    const radius = Math.floor(CELL*0.8);
+
+    ctx.save();
+    if (isGhost) ctx.globalAlpha=0.7;
+
+    if (asc){
+      // rotate 180° to indicate reverse capability
+      ctx.translate(x,y); ctx.rotate(Math.PI);
+      if (ready) ctx.drawImage(rec.img, -radius/2, -radius/2, radius, radius);
+      else { ctx.fillStyle = side==='red'? '#8a3322' : '#1d5c48'; ctx.beginPath(); ctx.arc(0,0, CELL*0.36, 0, Math.PI*2); ctx.fill(); }
+      ctx.restore();
+      // ascended ring
+      ctx.strokeStyle='#e4be59'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.arc(x,y, CELL*0.42, 0, Math.PI*2); ctx.stroke();
+    } else {
+      if (ready) ctx.drawImage(rec.img, x - radius/2, y - radius/2, radius, radius);
+      else { ctx.fillStyle = side==='red'? '#8a3322' : '#1d5c48'; ctx.beginPath(); ctx.arc(x,y, CELL*0.36, 0, Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    }
+  }
+
+  // Buttons
+  btnClear.addEventListener('click', ()=> boot());
+  btnBegin.addEventListener('click', ()=> beginGame());
+  selPlayerSide.addEventListener('change', ()=> boot());
+
+  function setStatus(t){ statusEl.textContent=t; }
+
+  // Boot
+  function boot(){
+    G=newEmpty(); resetTray(); document.getElementById('btnBegin').disabled=true;
+    lastMoveTrail=null; captureFlashes=[]; moveAnim=null; previewMoves=null; winBanner.style.display='none';
+    setStatus(`Drag Sanctum + 18 pieces onto your back two rows as ${G.playerSide.toUpperCase()}.`);
+    resizeBoard(); 
+  }
+
+  // Phoenix Path animation
+  function animate(){
+    shimmerT += 0.06;
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  // Turn log helpers
+  function logText(text){ const p=document.createElement('p'); p.textContent=text; turnLog.appendChild(p); turnLog.scrollTop=turnLog.scrollHeight; }
+  function logMove(side, from, to, cap){ logText(`${side==='red'?'Red':'Green'}: ${cap?'x':''} (${from.r},${from.c}) → (${to.r},${to.c})`); }
+
+  // Win banner helper
+  function showWin(text){ winBanner.querySelector('span').textContent=text; winBanner.style.display='flex'; }
+
+  // Init
+  if (!isMobile){
+    boot();
+    animate();
+  }
+
+  </script>
+</body>
+</html>
