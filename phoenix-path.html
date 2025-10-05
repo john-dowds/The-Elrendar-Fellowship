@@ -287,6 +287,11 @@
   const CENTER_START=5, CENTER_END=6;
   const RED='red', GREEN='green';
 
+// ----- Chat feature flags -----
+const AI_CHAT_ENABLED = false;  // master kill-switch for AI persona lines
+const AI_IDLE_ENABLED = false;  // optional: disable idle goads specifically
+
+
   // --- UX timing (AI & animation) ---
   const AI_DELAY_MS   = 1000; // delay before AI moves
   const MOVE_ANIM_MS  = 350;  // duration for each AI step animation
@@ -355,6 +360,7 @@
     ]
   };
 
+  
   // Preload with OK/ERR flags
   const cache = {}; 
   function preload(src){
@@ -490,12 +496,16 @@
 
   // Chat helpers
   function chatSay(who, text){
-    const div=document.createElement('div');
-    div.className='chatline';
-    div.innerHTML=`<span class="who"><b>${who}:</b></span> ${text}`;
-    chatLog.appendChild(div);
-    chatLog.scrollTop=chatLog.scrollHeight;
-  }
+  // Hard off-switch for AI persona lines (the “who” for AI is the global `opponent`)
+  if (!AI_CHAT_ENABLED && who === opponent) return;
+
+  const div=document.createElement('div');
+  div.className='chatline';
+  div.innerHTML=`<span class="who"><b>${who}:</b></span> ${text}`;
+  chatLog.appendChild(div);
+  chatLog.scrollTop=chatLog.scrollHeight;
+}
+
   function playerSay(text){
     const div=document.createElement('div');
     div.className='chatline';
@@ -506,11 +516,13 @@
   function pick(arr){ return arr[(Math.random()*arr.length)|0]; }
   function openingLine(){ return pick(LINES.opening); }
   function scheduleIdleGoad(){
-    clearTimeout(idleTimer);
-    if (G && G.phase==='play' && G.turn===G.playerSide){
-      idleTimer=setTimeout(()=> chatSay(opponent, pick(LINES.idle)), IDLE_MS);
-    }
+  clearTimeout(idleTimer);
+  if (!AI_IDLE_ENABLED) return;                    // <- disables idle nags
+  if (G && G.phase==='play' && G.turn===G.playerSide){
+    idleTimer=setTimeout(()=> chatSay(opponent, pick(LINES.idle)), IDLE_MS);
   }
+}
+
 
   chatSend.addEventListener('click', ()=> {
     const msg = chatInput.value.trim(); if (!msg) return;
