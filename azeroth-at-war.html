@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Azeroth at War</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#281b12;
+    --gold:#c8aa6e;
+    --gold-deep:#9c7b3c;
+    --parch:#f6eddc;
+    --parch-deep:#eadfc7;
+    --emerald:#2e7d62;
+    --crimson:#8b2f2f;
+  }
+.hud .game-icon{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-left: 4px;  
+  filter: drop-shadow(0 1px 2px #0008);
+}
+
+  html,body{height:100%;margin:0;background:#0d0c10;color:var(--parch);font-family:"EB Garamond", Georgia, serif;overflow:hidden}
+  .hud{position:fixed;left:0;right:0;top:0;height:56px;display:flex;align-items:center;gap:12px;padding:8px 12px;background:linear-gradient(180deg, rgba(12,11,15,.95), rgba(12,11,15,.7));backdrop-filter:saturate(140%) blur(4px);border-bottom:1px solid rgba(200,170,110,.25);z-index:50}
+  .hud .crest{width:36px;height:36px;border-radius:50%;background:radial-gradient(closest-side, rgba(255,255,255,.15), transparent 70%),conic-gradient(from 90deg, var(--gold) 0 25%, transparent 0 100%),radial-gradient(circle at 55% 40%, var(--gold) 0 18%, transparent 19% 100%),radial-gradient(circle at 45% 60%, var(--gold) 0 18%, transparent 19% 100%),radial-gradient(circle at 50% 48%, #fff2 0 6%, transparent 7% 100%), #221b13;border:1px solid var(--gold-deep);box-shadow:0 0 0 1px #000 inset, 0 1px 6px #000}
+  .hud h1{font-size:18px;margin:0 8px 0 2px;letter-spacing:1px;color:var(--gold)}
+  .btn{appearance:none;border:none;cursor:pointer;padding:8px 12px;border-radius:10px;background:linear-gradient(180deg, #2b2320, #1a1512);color:var(--parch);border:1px solid var(--gold-deep);box-shadow:inset 0 0 0 1px #0007, 0 1px 2px #000a;font-weight:600}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .chip{padding:4px 8px;border:1px solid var(--gold-deep);border-radius:999px;background:#1b1713;color:var(--gold);font-weight:700;font-size:12px}
+  .sep{width:1px;height:28px;background:linear-gradient(#0000,#0008,#0000);margin:0 4px}
+  #viewport{position:fixed;inset:56px 0 0 0;overflow:hidden;cursor:grab;background:#0c0b0f}
+  #viewport:active{cursor:grabbing}
+  #world{position:absolute;left:0;top:0;transform-origin:0 0}
+  .tile-grid{position:absolute;left:0;top:0;display:grid;grid-template-columns:repeat(3, 2728px);grid-template-rows:repeat(3, 2048px);image-rendering:auto}
+  .tile{width:1600px;height:1200px;background-size:cover;background-position:center;filter:contrast(1.05) saturate(1.05) brightness(.9)}
+  .tile.fallback{background:radial-gradient(1000px 700px at 40% 35%, #2a241d 0 45%, #1b1713 70%),radial-gradient(1200px 900px at 70% 65%, #1f1a14 0 40%, #16120e 70%),repeating-radial-gradient(closest-side, #0000 0 16px,#0001 17px 18px)}
+  svg.map{position:absolute;left:0;top:0;overflow:visible}
+  .edge{opacity:.75;filter:drop-shadow(0 0 2px #000)}
+  .edge.thin{stroke:#9fb9ff;stroke-width:3}
+  .edge.thick{stroke:#d0b06a;stroke-width:7}
+.edge.underground{
+  stroke: var(--emerald);
+  stroke-width: 4;
+  stroke-dasharray: 4 10;
+  opacity: .9;
+}
+  .edge.navy{
+    stroke: #76c8ff;
+    stroke-width: 4;
+    stroke-dasharray: 4 10;
+    opacity: .9;
+}
+.edge.navy{ stroke:#76c8ff; stroke-width:4; stroke-dasharray:4 10; opacity:.9; }
+.pin.ring.clr-water{ background:#7ec8ff; border-color:#2d6ea4; }
+.pin.ring.clr-alliance{ background:#1871e8; border-color:#0e3f8f; }
+.pin.ring.clr-horde{ background:#b11226; border-color:#6b0b16; }
+.pin.ring.clr-neutral{ background:#2aa84a; border-color:#17692e; }
+.pin.ring.clr-unclaimed{ background:#8a8f98; border-color:#5a5e65; }
+
+.popup.fixed-left {
+  position: fixed;      /* anchor to the screen, not the world */
+  left: 16px;           /* distance from left edge of the viewport */
+  top: 72px;            /* sit below top HUD bar */
+  width: 360px;
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+  z-index: 60;
+}
+
+/* banner at the top of the popup */
+.popup-banner{
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px #0006, inset 0 0 0 1px rgba(0,0,0,.25);
+  margin: 2px 0 8px;
+  background:#000;
+}
+.popup-banner img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+/* ===== Battle Log (bottom bar) ===== */
+.logbar{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 100px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px;
+  background: linear-gradient(180deg, rgba(10,9,12,.95), rgba(10,9,12,.90));
+  border-top: 1px solid rgba(200,170,110,.25);
+  z-index: 80;
+}
+
+.log-crest{
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e6d0a0, #a6813f 60%, #3a2d1a 100%);
+  box-shadow: 0 0 0 1px rgba(200,170,110,.35), inset 0 0 0 1px rgba(0,0,0,.4);
+}
+
+.log-title{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0e6d2;
+}
+
+.log-sep{
+  width: 1px; height: 70%;
+  background: linear-gradient(180deg, rgba(200,170,110,.35), rgba(200,170,110,.15));
+  margin: 0 6px;
+}
+
+.log-scroll{
+  flex: 1 1 auto;
+  height: 100%;
+  overflow-y: auto;
+  font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #e7dec8;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: inset 0 0 0 1px rgba(200,170,110,.15);
+}
+/* pulsing candidate nodes during drag STILL IN TEST MODE*/
+.pin.candidate {
+  animation: pinPulse 0.8s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes pinPulse {
+  0%   { transform: scale(1);   filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  50%  { transform: scale(1.06); filter: drop-shadow(0 0 4px rgba(0,0,0,.25)); }
+  100% { transform: scale(1); }
+}
+
+/* subtle preview line drawn during drag STILL IN TEST MODE */
+#dragPreviewLine {
+  pointer-events: none;
+  stroke: rgba(0,0,0,.55);
+  stroke-width: 3;
+  stroke-dasharray: 6 8;
+}
+
+.log-entry{ margin: 0 0 4px 0; opacity:.95; }
+.log-turn { margin: 6px 0 8px; font-weight: 700; color:#c8aa6e; }
+.log-tip  { color:#b9d7ff; opacity:.9; }
+
+  .node{position:absolute;transform:translate(-50%, -100%);pointer-events:auto}
+  .pin{border-radius:50%;box-shadow:0 1px 4px #000c, inset 0 0 0 2px #0008;border:1px solid #000}
+  /* SIZE SCALING */
+  .pin.land.small{width:19px;height:19px;background:radial-gradient(circle at 35% 30%, #c0e4ff 0, #5aa2cf 50%, #2a5b8a 100%)}
+  .pin.land.medium{width:25px;height:25px;background:radial-gradient(circle at 35% 30%, #ffd7a3 0, #e0a85d 50%, #9a6b30 100%)}
+  .pin.land.large{width:32px;height:32px;background:radial-gradient(circle at 35% 30%, #ffd9e1 0, #cb6a7a 50%, #7a2834 100%)}
+  .pin.ocean{width:18px;height:18px;background:radial-gradient(circle at 35% 30%, #dff5ff 0, #7cc6ff 50%, #2a6ea0 100%)}
+
+  .ring.player{outline:2px solid var(--emerald)}
+  .ring.ai{outline:2px solid var(--crimson)}
+  .ring.neutral{outline:2px dashed #b7b7b7aa}
+  .ring.none{outline:2px dotted #6fb1ffbb}
+
+  .label{position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg, #221a14, #1a140f);padding:2px 8px;border-radius:8px;border:1px solid var(--gold-deep);color:var(--gold);font-size:12px;white-space:nowrap;pointer-events:none;box-shadow:0 0 0 1px #000 inset, 0 1px 3px #000}
+  .label.ocean{opacity:.8;color:#cfeaff}
+
+  .units-badge{position:absolute;top:-6px;left:-6px;background:#0c0b0f;border:1px solid #000;color:#fff;padding:1px 5px;border-radius:10px;font-size:11px;box-shadow:0 1px 2px #0009}
+  .popup{position:absolute;min-width:260px;max-width:350px;background:radial-gradient(600px 300px at -10% -20%, #fff1 0 40%, #0000 60%),linear-gradient(180deg, var(--parch), var(--parch-deep));color:#2b2016;border:2px solid var(--gold-deep);border-radius:14px;box-shadow:0 12px 30px #000d, 0 0 0 1px #000 inset;padding:10px;z-index:60}
+  .popup .title{font-weight:800;color:#3a2c1e;margin:0 0 6px;font-size:18px}
+  .tabs{display:flex;gap:6px;margin-bottom:8px}
+  .tab-btn{flex:1;padding:6px;border-radius:10px;border:1px solid var(--gold-deep);background:linear-gradient(180deg,#ede3cf,#d8c7a5);cursor:pointer;font-weight:700}
+  .tab-btn.active{outline:2px solid var(--gold)}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .row{display:flex;align-items:center;gap:8px;margin:6px 0}
+  .row label{min-width:90px;font-weight:700}
+  .value-box{padding:4px 8px;border:1px solid #0003;background:#fff7;border-radius:8px}
+  .army-tray{display:flex;flex-wrap:wrap;gap:8px;padding:8px;border:2px dashed #8a6e42;border-radius:12px;background:#0001}
+  .chip-unit{user-select:none;padding:6px 10px;border-radius:999px;border:1px solid var(--gold-deep);background:linear-gradient(180deg,#2b2320,#1a1512);color:var(--gold);cursor:grab;font-weight:800}
+  .chip-unit:active{cursor:grabbing}
+  .legend{position:fixed;left:10px;bottom:10px;z-index:70;font-size:12px;color:#ddd;background:#1118;border:1px solid #000;border-radius:10px;padding:8px 10px}
+  .legend b{color:var(--gold)}
+  .debug{position:fixed;right:10px;bottom:10px;z-index:70;padding:8px 10px;border-radius:10px;background:#1118;border:1px solid #000;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+  .pin.ring.clr-horde    { background: #b11226; border-color:#6b0b16; }
+.pin.ring.clr-alliance { background: #1871e8; border-color:#0e3f8f; }
+.pin.ring.clr-neutral  { background: #2aa84a; border-color:#17692e; }
+.pin.ring.clr-unclaimed{ background: #8a8f98; border-color:#5a5e65; }
+.pin.ring.clr-water {
+  background: #7ec8ff;      /* light blue fill */
+  border-color: #2d6ea4;    /* darker blue ring */
+}
+/* Scrollable stats box (fits panel; monospace grid for perfect columns) */
+.stats-box{
+  box-sizing: border-box; 
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
+  overflow-y: auto;
+  overflow-x: auto; 
+  /* Monospace only for the grid text; rest of UI stays EB Garamond */
+  font-family: ui-monospace, Menlo, Consolas, "SFMono-Regular", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  white-space: pre; 
+  color:#2b2016;
+  background:#fff8;
+  border:1px solid #0003;
+  border-radius:8px;
+  padding:8px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+
+
+/* PHASE-1: start modal */
+.modal-mask{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:72px;
+  background:radial-gradient(900px 700px at 50% 35%, rgba(30,26,20,.98), rgba(10,9,12,.95))}
+.modal{width:min(760px,92vw);color:#f0e6d2;font-family:"EB Garamond",Georgia,serif}
+.modal .panel{background:#161218;border:1px solid #8f6b2b;border-radius:14px;box-shadow:0 16px 48px #000d;padding:16px 18px}
+.modal h1{margin:0 0 6px;font-size:26px;color:#c8aa6e}
+.row-flex{display:flex;gap:14px;flex-wrap:wrap}
+.seg{flex:1 1 260px;background:#1b161f;border:1px solid #3a2b19;border-radius:12px;padding:12px}
+.seg h2{margin:0 0 8px;font-size:18px;color:#e6d6b0}
+.btn{background:#2a221c;color:#f0e6d2;border:1px solid #8f6b2b;border-radius:10px;padding:8px 12px;cursor:pointer}
+.grid-races{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.race-card{background:#211a24;border:1px solid #4d3b21;border-radius:10px;padding:6px;text-align:center;cursor:pointer}
+.race-card.selected{outline:2px solid #c8aa6e}
+.race-card img{width:48px;height:48px;border-radius:50%;display:block;margin:0 auto 4px;object-fit:cover}
+.hidden{display:none!important}
+
+</style>
+</head>
+<body>
+  <div class="hud">
+    <img class="game-icon" src="assets/art/w-logo.png" alt="Azeroth at War icon">
+    <h1>Azeroth at War</h1>
+    <span class="chip" id="turnChip">Turn 1</span>
+    <span class="chip" id="resChip">Resources (You): 0</span>
+    <span class="chip" id="moveChip">Travel Pts: 0/0</span>
+    <div class="sep"></div>
+    <button class="btn" id="btnEndTurn">End Turn</button>
+    <button class="btn" id="btnNewGame">New Game</button>
+    <a class="btn" id="btnReturnHome" href="https://www.elrendarfellowship.com/" rel="noopener">Return Home</a>
+  </div>
+
+  <div id="viewport">
+    <div id="world">
+      <div class="tile-grid" id="tileGrid">
+        <div class="tile fallback" style="grid-column:1;grid-row:1;"></div>
+        <div class="tile fallback" style="grid-column:2;grid-row:1;"></div>
+        <div class="tile fallback" style="grid-column:3;grid-row:1;"></div>
+        <div class="tile fallback" style="grid-column:1;grid-row:2;"></div>
+        <div class="tile fallback" style="grid-column:2;grid-row:2;"></div>
+        <div class="tile fallback" style="grid-column:3;grid-row:2;"></div>
+        <div class="tile fallback" style="grid-column:1;grid-row:3;"></div>
+        <div class="tile fallback" style="grid-column:2;grid-row:3;"></div>
+        <div class="tile fallback" style="grid-column:3;grid-row:3;"></div>
+      </div>
+
+      <svg class="map" id="edgeLayer" width="4800" height="3600"></svg>
+      <div id="nodeLayer"></div>
+    </div>
+  </div>
+
+  <!--
+  <div class="legend">
+    <div><b>Mouse:</b> drag to pan, wheel to zoom</div>
+    <div><b>Owners:</b> green=You, red=AI, gray=Neutral, dotted blue=Ocean (transit)</div>
+    <div><b>Sizes:</b> small(1 def, +1/turn), medium(3 def, +3/turn), large(5 def, +6/turn)</div>
+    <div><b>Edge Cost:</b> thin=1, thick=2</div>
+  </div>
+
+  <div class="debug" id="debugBox" style="display:none">
+    <div><b>Coords:</b> <span id="dbgXY">0,0</span></div>
+    <div><b>Scale:</b> <span id="dbgScale">1.00</span></div>
+  </div>
+  -->
+<!-- Battle Log (fixed bottom bar) -->
+<div id="logBar" class="logbar">
+  <div class="log-crest" aria-hidden="true"></div>
+  <h1 class="log-title">Battle Log</h1>
+  <div class="log-sep"></div>
+  <div id="logScroll" class="log-scroll" aria-live="polite"></div>
+</div>
+
+  <script src="Azeroth-at-War.js"></script>
+  <!-- PHASE-1: Gamemode/Difficulty picker -->
+<div id="startModal" class="modal-mask">
+  <div class="modal">
+    <div class="panel">
+      <h1>Azeroth At War</h1>
+      <div class="row-flex">
+        <div class="seg">
+          <h2>Game Mode</h2>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn" data-mode="faction">Faction War</button>
+            <button class="btn" data-mode="ffa">Free For All</button>
+          </div>
+          <div id="modeHint" style="opacity:.85;margin-top:8px">Faction War: Alliance vs Horde</div>
+        </div>
+
+        <div class="seg">
+          <h2>Difficulty</h2>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn" data-diff="Novice">Novice</button>
+            <button class="btn" data-diff="Expert">Expert</button>
+            <button class="btn" data-diff="Master">Master</button>
+          </div>
+          <div id="diffHint" style="opacity:.85;margin-top:8px">Expert: balanced offense/defense</div>
+        </div>
+      </div>
+
+      <div id="pickFaction" class="seg" style="margin-top:12px">
+        <h2>Choose Faction</h2>
+        <div style="display:flex;gap:10px">
+          <button class="btn" data-faction="Alliance">Alliance</button>
+          <button class="btn" data-faction="Horde">Horde</button>
+        </div>
+      </div>
+
+      <div id="pickRace" class="seg hidden" style="margin-top:12px">
+        <h2>Choose Race</h2>
+        <div id="raceGrid" class="grid-races"></div>
+      </div>
+
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
+        <button id="startBtn" class="btn" disabled>Start Game</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
