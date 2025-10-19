@@ -1,6 +1,6 @@
 /* =========================================================
    AZEROTH AT WAR
-   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. BETA MODEL.
+   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. BETA MODEL; opposition AI still under development.
 ========================================================= */
 
 /* =============[ CONFIG / CONSTANTS ]=====================
@@ -11,6 +11,10 @@ const SIZE_DEFENSE  = { small: 1, medium: 3, large: 5 };
 const SIZE_INCOME   = { small: 1, medium: 3, large: 6 };
 const TILE_W = 2728, TILE_H = 2048;
 const MAX_INCOME_PER_TURN = 10;
+const START_TURN_INCOME_MULTIPLIER = 0.5;
+const FACTION_WAR_INCOME_MULTIPLIER = 0.5;   
+const TURN1_MIN_RES_PLAYER = 1;         
+const TURN1_MIN_RES_AI     = 1;
 const MAX_TRAVEL_CAP      = 8;
 const START_UNITS         = { small: 2, medium: 3, large: 4 };
 const MIN_SCALE = 0.25, MAX_SCALE = 3.0;
@@ -154,15 +158,29 @@ function isWater(n){ return (String(n.type).toLowerCase()==='water'); }
 function isNoValue(n){ return (n.ownerType === 'Capturable (No Value)'); }
 function isNeutralOwner(n){ return (String(n.ownerType).toLowerCase()==='neutral'); }
 function beginPlayerTurn(){
-  state.player.resources += incomeFor('player');
-  state.ai.resources     += incomeFor('ai');
+  const isT1  = (state.turn === 1);
+  const t1Mult = isT1 ? (typeof START_TURN_INCOME_MULTIPLIER !== 'undefined' ? START_TURN_INCOME_MULTIPLIER : 1) : 1;
+  const modeMult = (state.game && state.game.mode === 'faction') ? FACTION_WAR_INCOME_MULTIPLIER : 1;
+  const mult = t1Mult * modeMult;
+  const pInc = Math.floor(incomeFor('player') * mult);
+  const aInc = Math.floor(incomeFor('ai')     * mult);
+  state.player.resources += pInc;
+  state.ai.resources     += aInc;
+
+  if (isT1) {
+    if (typeof TURN1_MIN_RES_PLAYER !== 'undefined' && state.player.resources < TURN1_MIN_RES_PLAYER)
+      state.player.resources = TURN1_MIN_RES_PLAYER;
+    if (typeof TURN1_MIN_RES_AI !== 'undefined' && state.ai.resources < TURN1_MIN_RES_AI)
+      state.ai.resources = TURN1_MIN_RES_AI;
+  }
+
   state.player.travelCap  = travelCapFor('player');
   state.player.travelLeft = state.player.travelCap;
 
   GameLog.turnHeader(state.turn);
-
   refreshHUD();
 }
+
 // Pretty name for a team id: 'player', 'ai', or 'ai_<race>'
 function teamDisplayName(teamId){
   if (teamId === 'player') return 'Player';
