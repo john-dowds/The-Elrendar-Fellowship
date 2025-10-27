@@ -2611,8 +2611,7 @@
   },
   {
     "name": "Ironforge Airfield",
-    "x": 6947,
-    "y": 3021,
+    "x": 6925, "y": 2982,
     "region": "Khaz Modan",
     "type": "land",
     "size": "medium",
@@ -3413,6 +3412,18 @@
     "nameVisible": true
   },
   {
+    "name": "Tyr's Fall",
+    "x": 6421, "y": 2053,
+    "region": "Kingdom of Lordaeron",
+    "type": "land",
+    "size": "small",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 15,
+    "baseDefense": 1,
+    "nameVisible": true
+  },
+  {
     "name": "Dawnstar Village",
     "x": 7519,
     "y": 1455,
@@ -3627,6 +3638,19 @@
     "race": "sin_dorei"
   },
   {
+    "name": "Falthrien Academy",
+    "x": 7228, "y": 1217,
+    "region": "Kingdom of Quel'Thalas",
+    "type": "land",
+    "size": "small",
+    "ownerType": "Horde",
+    "controller": "none",
+    "units": 15,
+    "baseDefense": 5,
+    "nameVisible": true,
+    "race": "sin_dorei"
+  },
+  {
     "name": "Sunwell Plateau",
     "x": 7391,
     "y": 919,
@@ -3735,8 +3759,7 @@
   },
   {
     "name": "Deeprun Tram South",
-    "x": 6621,
-    "y": 3527,
+    "x": 6674, "y": 3556,
     "region": "Kingdom of Stormwind",
     "type": "land",
     "size": "small",
@@ -4979,8 +5002,7 @@
   },
   {
     "name": "Dalson's Farm",
-    "x": 6958,
-    "y": 2078,
+    "x": 6979, "y": 2053,
     "region": "Plaguelands",
     "type": "land",
     "size": "small",
@@ -5260,8 +5282,7 @@
   },
   {
     "name": "Withering Haunt",
-    "x": 7031,
-    "y": 2130,
+    "x": 7063, "y": 2116,
     "region": "Plaguelands",
     "type": "land",
     "size": "medium",
@@ -8354,8 +8375,7 @@
   },
   {
     "name": "Ocean Marker 32",
-    "x": 2421,
-    "y": 1403,
+    "x": 2058, "y": 1233,
     "region": "The Frozen Sea",
     "type": "water",
     "size": "small",
