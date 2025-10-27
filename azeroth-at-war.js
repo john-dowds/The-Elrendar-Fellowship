@@ -1,6 +1,6 @@
 /* =========================================================
    AZEROTH AT WAR
-   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. BETA MODEL; opposition AI still under development.
+   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. BETA MODEL.
 ========================================================= */
 
 /* =============[ CONFIG / CONSTANTS ]=====================
@@ -19,6 +19,20 @@ const MAX_TRAVEL_CAP      = 8;
 const START_UNITS         = { small: 2, medium: 3, large: 4 };
 const MIN_SCALE = 0.25, MAX_SCALE = 3.0;
 const ENABLE_CMDCLICK_COPY = true;
+const SHOW_PATCH_NOTES_ON_START = false;
+const PATCH_NOTES = [
+  {
+    ver: "v2.0.12",
+    date: "2025-10-27",
+    items: [
+      "FFA: each AI race now has its own wallet (independent earn/spend); previously was shared across all races as AI/Player.",
+      "Drag preview now traces a predicted path (lanes + nodes); does not regard currency.",
+      "Travel chip shows current only (cap removed from chip)."
+    ]
+  },
+];
+
+
 // --- Economy knobs --
 const INCOME_PER_LOC = 1;                 // every land location adds at least this much
 const SIZE_INCOME_SOFT = { small: 0, medium: 1, large: 2 }; // small bonus per size
@@ -125,6 +139,90 @@ function neighborsOf(name){
     return true;
   });
 }
+function nodePos(n){
+  return { x: n.x, y: n.y };
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderPatchNotesHTML(){
+  if (!Array.isArray(PATCH_NOTES) || PATCH_NOTES.length === 0) {
+    return `<div class="empty">No patch notes defined.</div>`;
+  }
+  let out = '';
+  for (const entry of PATCH_NOTES){
+    const ver  = escapeHtml(entry.ver || '');
+    const date = escapeHtml(entry.date || '');
+    const items = Array.isArray(entry.items) ? entry.items : [];
+    out += `
+      <div class="pn-entry">
+        <div class="pn-head">
+          <span class="pn-ver">${ver}</span>
+          <span class="pn-date">${date}</span>
+        </div>
+        <ul class="pn-list">
+          ${items.map(it => `<li>${escapeHtml(it)}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+  return out;
+}
+
+function openPatchNotesPopup(){
+  // If already open, just bring focus
+  const existing = document.getElementById('patchNotesPopup');
+  if (existing) { existing.focus(); return; }
+
+  // Build HTML from PATCH_NOTES
+  const html = renderPatchNotesHTML(); // helper below
+
+  const pop = document.createElement('div');
+  pop.className = 'popup fixed-right';
+  pop.id = 'patchNotesPopup';
+  pop.innerHTML = `
+    <div class="title">Patch Notes <span class="chip">From Code</span></div>
+    <div class="pn-wrapper">
+      ${html}
+    </div>
+    <div class="row" style="justify-content:flex-end; gap:8px; margin-top:8px">
+      <button class="btn" id="btnPatchNotesClose">Close</button>
+    </div>
+  `;
+  document.body.appendChild(pop);
+
+  pop.querySelector('#btnPatchNotesClose').addEventListener('click', closePatchNotesPopup);
+  pop.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePatchNotesPopup(); });
+}
+function closePatchNotesPopup(){
+  const p = document.getElementById('patchNotesPopup');
+  if (p) p.remove();
+}
+
+function buildPathDFromNodes(nodeNames){
+  if (!nodeNames || nodeNames.length < 2) return '';
+  const first = nodeByName(nodeNames[0]); if (!first) return '';
+  let d = `M ${first.x} ${first.y}`;
+  for (let i = 1; i < nodeNames.length; i++){
+    const n = nodeByName(nodeNames[i]);
+    if (!n) continue;
+    d += ` L ${n.x} ${n.y}`;
+  }
+  return d;
+}
+
+// optional: highlight nodes along the planned path
+function setPreviewNodeGlow(nodeNames, on){
+  if (!Array.isArray(nodeNames)) return;
+  nodeNames.forEach(nm => {
+    const el = document.querySelector(`[data-node="${nm}"]`);
+    if (!el) return;
+    if (on) el.classList.add('preview-route');
+    else el.classList.remove('preview-route');
+  });
+}
+
 // Shadow/blur strength (land: units + baseDefense; water = 0)
 function defenseShadowFor(n){
   if (String(n.type||'').toLowerCase() === 'water') return { blur: 0, spread: 0, alpha: 0 };
@@ -158,27 +256,68 @@ function isWater(n){ return (String(n.type).toLowerCase()==='water'); }
 function isNoValue(n){ return (n.ownerType === 'Capturable (No Value)'); }
 function isNeutralOwner(n){ return (String(n.ownerType).toLowerCase()==='neutral'); }
 function beginPlayerTurn(){
-  const isT1  = (state.turn === 1);
+  const isT1   = (state.turn === 1);
   const t1Mult = isT1 ? (typeof START_TURN_INCOME_MULTIPLIER !== 'undefined' ? START_TURN_INCOME_MULTIPLIER : 1) : 1;
   const modeMult = (state.game && state.game.mode === 'faction') ? FACTION_WAR_INCOME_MULTIPLIER : 1;
-  const mult = t1Mult * modeMult;
-  const pInc = Math.floor(incomeFor('player') * mult);
-  const aInc = Math.floor(incomeFor('ai')     * mult);
-  state.player.resources += pInc;
-  state.ai.resources     += aInc;
 
-  if (isT1) {
-    if (typeof TURN1_MIN_RES_PLAYER !== 'undefined' && state.player.resources < TURN1_MIN_RES_PLAYER)
-      state.player.resources = TURN1_MIN_RES_PLAYER;
-    if (typeof TURN1_MIN_RES_AI !== 'undefined' && state.ai.resources < TURN1_MIN_RES_AI)
-      state.ai.resources = TURN1_MIN_RES_AI;
+  // Who gets paid this turn?
+  const aiTeams = (state.game?.mode === 'faction')
+    ? ['ai']                                      // single enemy side in FW
+    : (state.aiTurnOrder || []);                  // each ai_<race> in FFA
+
+  // 1) Player income
+  const pInc = Math.floor(incomeFor('player') * t1Mult * modeMult);
+  addResources('player', pInc);
+  if (isT1 && typeof TURN1_MIN_RES_PLAYER !== 'undefined' && resourcesOf('player') < TURN1_MIN_RES_PLAYER) {
+    setResources('player', TURN1_MIN_RES_PLAYER);
   }
 
+  // 2) AI(teams) income
+  aiTeams.forEach(teamId => {
+    const inc = Math.floor(incomeFor(teamId) * t1Mult * modeMult);
+    addResources(teamId, inc);
+    if (isT1 && typeof TURN1_MIN_RES_AI !== 'undefined' && resourcesOf(teamId) < TURN1_MIN_RES_AI) {
+      setResources(teamId, TURN1_MIN_RES_AI);
+    }
+  });
+
+  // Travel caps: AI teams compute on their turn
   state.player.travelCap  = travelCapFor('player');
   state.player.travelLeft = state.player.travelCap;
 
   GameLog.turnHeader(state.turn);
   refreshHUD();
+}
+
+
+// ==== Team economy helpers (player, 'ai', or 'ai_<race>') ====
+state.raceWallets = state.raceWallets || {};  // { [raceKey]: number }
+
+function resourcesOf(teamId){
+  if (teamId === 'player') return state.player.resources|0;
+  if (teamId === 'ai')     return state.ai.resources|0; 
+  if (typeof teamId === 'string' && teamId.startsWith('ai_')){
+    const rk = teamId.slice(3);
+    return state.raceWallets[rk] | 0;
+  }
+  return 0;
+}
+function setResources(teamId, value){
+  if (teamId === 'player'){ state.player.resources = value; return; }
+  if (teamId === 'ai'){     state.ai.resources     = value; return; }
+  if (teamId && teamId.startsWith('ai_')){
+    const rk = teamId.slice(3);
+    state.raceWallets[rk] = value;
+  }
+}
+function addResources(teamId, delta){
+  setResources(teamId, Math.max(0, (resourcesOf(teamId)|0) + (delta|0)));
+}
+function spendResources(teamId, delta){
+  const cur = resourcesOf(teamId);
+  if (cur < delta) return false;
+  setResources(teamId, cur - delta);
+  return true;
 }
 
 // Pretty name for a team id: 'player', 'ai', or 'ai_<race>'
@@ -292,7 +431,6 @@ const GameLog = {
       console.warn('[log] #logScroll not found; will retry on first write');
       return;
     }
-    // flush anything queued before init
     if (this.queue.length) {
       this.queue.forEach(({cls, txt}) => this._append(cls, txt));
       this.queue = [];
@@ -333,34 +471,26 @@ window.addEventListener('keydown', (e) => {
 
 // --- Neutral parking helpers ---
 function ensureParking(n){
-  if (!n.parking) n.parking = { player: 0, ai: 0 };
-  if (typeof n.parking.player !== 'number') n.parking.player = 0;
-  if (typeof n.parking.ai     !== 'number') n.parking.ai     = 0;
+  if (!n.parking || typeof n.parking !== 'object') n.parking = {};
   return n.parking;
 }
-function sideKeyFor(attacker){ return attacker === 'player' ? 'player' : 'ai'; }
-
-// How many units does mover really have at this node?
 function availableUnitsAt(n, mover){
-  const key = sideKeyFor(mover);
   if (isNeutralOwner(n)) {
-    ensureParking(n); 
-    return n.parking[key] || 0;
+    const p = ensureParking(n);
+    return p[mover] | 0;
   }
   if (n.controller === mover) return (n.units || 0);
   return 0;
 }
-
-// Deduct from the appropriate pile at source
 function deductUnitsAt(n, count, mover){
-  const key = sideKeyFor(mover);
   if (isNeutralOwner(n)) {
-    ensureParking(n);
-    n.parking[key] = Math.max(0, (n.parking[key] || 0) - count);
+    const p = ensureParking(n);
+    p[mover] = Math.max(0, (p[mover] | 0) - count);
   } else if (n.controller === mover) {
     n.units = Math.max(0, (n.units || 0) - count);
   }
 }
+
 
 // Total bodies on a neutral node (for badge not box)
 function totalParked(n){
@@ -372,7 +502,6 @@ function totalParked(n){
    Dijkstra (lexicographic: route cost → hops → length).
 ========================================================= */
 function lexiLess(a, b){
-  // Treat missing RHS as “infinite” so any valid `a` wins.
   if (!Array.isArray(a)) return false;
   if (!Array.isArray(b)) return true;
 
@@ -443,53 +572,32 @@ function isPathTraversableForTeam(path, teamId){
   return true;
 }
 
-/**
- * One animated AI action for a given teamId ('ai' for FW, 'ai_<race>' for FFA). */
+/** One animated AI action for a given teamId ('ai' for FW, 'ai_<race>' for FFA). */
 function doAiTurnAnimated(teamId, onDone){
   const teamLabel = (teamId === 'ai') ? 'AI' : teamId.replace(/^ai_/, 'AI ');
   const diff = DIFFICULTY[state.game.difficulty] || DIFFICULTY.Expert;
   const maxActions  = diff.maxActions || 3;
   const minReserve  = Math.max(0, diff.minReserve || 0);
 
-  // Resource pool 
-  const resBefore = state.ai.resources;
+  const resBefore = resourcesOf(teamId);
 
-  // Travel budget for this team (soft curve; per-team aware if travelCapFor handles it)
-  let travelLeft = (typeof travelCapFor === 'function')
-    ? travelCapFor(teamId)
-    : (()=>{
-        const who   = teamId || 'ai';
-        const count = state.nodes.filter(n => !isWater(n) && n.controller === who).length;
-        const linear = (typeof TRAVEL_BASE !== 'undefined' ? TRAVEL_BASE : 2)
-                     + Math.floor(count * (typeof TRAVEL_PER_LOC !== 'undefined' ? TRAVEL_PER_LOC : 1));
-        const cap    = (typeof TRAVEL_SOFT_CAP !== 'undefined' ? TRAVEL_SOFT_CAP : 12);
-        const slope  = (typeof TRAVEL_SOFT_SLOPE !== 'undefined' ? TRAVEL_SOFT_SLOPE : 0.5);
-        return (linear <= cap) ? linear : cap + Math.floor((linear - cap) * slope);
-      })();
+  // Per-team travel budget (soft-curve based on that team’s land holdings)
+  let travelLeft = travelCapFor(teamId);
 
-  // team’s land nodes (FW: all 'ai'; FFA: prefer race if present)
+  // Nodes owned by this team
   function myTeamNodes(){
-    let mine = state.nodes.filter(n => !isWater(n) && n.controller === 'ai');
-    if (teamId !== 'ai') {
-      const rk = teamId.replace(/^ai_/, '');
-      const byRace = mine.filter(n => n.race === rk);
-      if (byRace.length) mine = byRace;
-    }
-    return mine;
+    return state.nodes.filter(n => !isWater(n) && n.controller === teamId);
   }
 
-  // pick richest source each action (recomputed as board changes)
   function pickRichest(){
     const mine = myTeamNodes();
     if (!mine.length) return null;
     return mine.slice().sort((a,b) => (b.units + b.baseDefense) - (a.units + a.baseDefense))[0];
   }
 
-  // Compute best target from richest using scoring (cost>hops>length)
   function computeBest(richest){
     if (!richest) return null;
 
-    // Frontier: neighbors + neighbors-of-neighbors (2 layers)
     const frontier = new Set();
     const nbrs = neighborsOf(richest.name).map(n => n.name);
     for (const a of [richest.name, ...nbrs]) {
@@ -501,11 +609,10 @@ function doAiTurnAnimated(teamId, onDone){
       .map(nm => nodeByName(nm))
       .filter(n => n && n.name !== richest.name && !isWater(n))
       .filter(n => {
-        if (isNeutralOwner(n)) return false;                       // FW: do not target neutral
+        if (isNeutralOwner(n)) return false;   // ignore neutral parking as attack target
         if (n.controller === 'none' || n.controller === 'neutral') return true;
-        if (n.controller === 'player') return (n.units + n.baseDefense) < (richest.units - 1);
-        if (String(n.controller||'').startsWith('ai')) return (n.units + n.baseDefense) < (richest.units - 1);
-        return false;
+        // Attack anyone not me:
+        return n.controller !== teamId && (n.units + n.baseDefense) < (richest.units - 1);
       });
 
     let best = null;
@@ -521,15 +628,14 @@ function doAiTurnAnimated(teamId, onDone){
     return best;
   }
 
-  // Chain multiple actions with animation; collect one summary per team
   const summary = [];
   let actions = 0;
-  let _iterations = 0; // guard against pathological loops
+  let _iterations = 0;
 
   function finish(){
     console.groupCollapsed(`[${teamLabel}] Turn ${state.turn} summary`);
     summary.forEach(m => console.log('•', m));
-    console.log(`• Resources: ${resBefore} → ${state.ai.resources}`);
+    console.log(`• Resources: ${resBefore} → ${resourcesOf(teamId)}`);
     summary.forEach(m => GameLog.event(`${teamDisplayName(teamId)} ${m}`));
     console.groupEnd();
     if (onDone) onDone();
@@ -538,69 +644,49 @@ function doAiTurnAnimated(teamId, onDone){
   const step = () => {
     if (++_iterations > 1000) {
       console.warn('[AI]', teamLabel, 'aborted chain after 1000 iterations');
-      console.groupCollapsed(`[${teamLabel}] Turn ${state.turn} summary`);
-      summary.forEach(m => console.log('•', m));
-      console.groupEnd();
-      if (onDone) onDone();
-      return;
+      return finish();
     }
 
-    // Stop conditions
-    if (actions >= maxActions || travelLeft <= 0) {
-      console.groupCollapsed(`[${teamLabel}] Turn ${state.turn} summary`);
-      summary.forEach(m => console.log('•', m));
-      console.log(`• Resources: ${resBefore} → ${state.ai.resources}`);
-      // Mirror once to Battle Log
-      summary.forEach(m => GameLog.event(`${teamDisplayName(teamId)} ${m}`));
-      console.groupEnd();
-      if (onDone) onDone();
-      return;
-    }
+    if (actions >= maxActions || travelLeft <= 0) return finish();
 
-    // Choose source
     const richest = pickRichest();
     if (!richest) {
       summary.push('No controlled locations.');
       return requestAnimationFrame(step);
     }
 
-    // Compute best target
     const best = computeBest(richest);
 
-    // If no viable attack, attempt small train/build; consumes AI resources but no travel
     if (!best) {
-      if (state.ai.resources >= 1 && Math.random() < 0.6) {
-        richest.units++; state.ai.resources--;
+      if (resourcesOf(teamId) >= 1 && Math.random() < 0.6) {
+        richest.units++; spendResources(teamId, 1);
         summary.push(`Trained +1 at ${richest.name} (units now ${richest.units})`);
-        return requestAnimationFrame(step);         // we progressed > keep going
-      } else if (state.ai.resources >= 5) {
-        richest.baseDefense++; state.ai.resources -= 5;
+        return requestAnimationFrame(step);
+      } else if (resourcesOf(teamId) >= 5) {
+        richest.baseDefense++; spendResources(teamId, 5);
         summary.push(`Built +1 defense at ${richest.name} (baseDefense now ${richest.baseDefense})`);
-        return requestAnimationFrame(step);         // we progressed > keep going
+        return requestAnimationFrame(step);
       }
-      // No progress possible > finish this team
       summary.push('No viable attacks; insufficient resources.');
       return finish();
     }
-    // If the cheapest path crosses an uncaptured Capturable, reject this action
-if (pathBlockedByUncapturedCapturable(best.path)) {
-  summary.push('No valid path (blocked by enemy).');
-  return finish();  // end this team’s chain cleanly
-}
 
-    // Check travel budget
+    if (pathBlockedByUncapturedCapturable(best.path)) {
+      summary.push('No valid path (blocked by enemy).');
+      return finish();
+    }
+
     if (best.cost > travelLeft) {
       summary.push(`Could not reach ${best.target.name} (cost ${best.cost} > cap ${travelLeft}).`);
-      return finish();   // no travel left to make progress
+      return finish();
     }
-    // Decide how many to send (leave a reserve)
+
     const canSend = Math.max(0, richest.units - minReserve);
     const send = Math.max(1, Math.floor(canSend / 2));
     if (send <= 0 || richest.units < send) {
       summary.push(`Insufficient units to move from ${richest.name}.`);
-      return finish();   // can’t move; end this team’s chain
+      return finish();
     }
-    
 
     const tgt = nodeByName(best.target.name);
     const wasCtl   = tgt.controller || 'none';
@@ -608,33 +694,28 @@ if (pathBlockedByUncapturedCapturable(best.path)) {
 
     richest.units -= send;
 
-    // Animate move, then resolve and continue chaining
     animateArmyMove(best.path, send, () => {
-      resolveArrival(tgt, send, 'ai');
+      resolveArrival(tgt, send, teamId); 
 
       const nowCtl   = tgt.controller || 'none';
       const nowUnits = tgt.units || 0;
-      const wasAI = String(wasCtl||'').startsWith('ai') || wasCtl === 'ai';
-      const nowAI = String(nowCtl||'').startsWith('ai') || nowCtl === 'ai';
 
       let outcome = 'engaged';
-      if (nowAI && !wasAI)                    outcome = 'captured';
-      else if (!nowAI && nowUnits < wasPower) outcome = 'weakened defenders';
-      else if (!nowAI && nowUnits >= wasPower)outcome = 'repelled';
+      if (nowCtl === teamId && wasCtl !== teamId) outcome = 'captured';
+      else if (nowCtl !== teamId && nowUnits < wasPower) outcome = 'weakened defenders';
+      else if (nowCtl !== teamId && nowUnits >= wasPower) outcome = 'repelled';
 
       summary.push(`Moved ${send} from ${richest.name} → ${tgt.name} (cost ${best.cost}): ${outcome}. Now ${tgt.name} = controller ${nowCtl}, units ${nowUnits}.`);
 
-      // Consume travel for this team’s chain and repaint
       travelLeft -= best.cost;
       actions += 1;
       rerender();
-
-      // Continue chaining (async to avoid deep recursion)
       requestAnimationFrame(step);
     });
   };
   step();
 }
+
 
 
 
@@ -693,8 +774,12 @@ function renderNodes(){
       wrap.addEventListener('mouseleave',()=>{lbl.style.display='none';});
     }
     wrap.addEventListener('click', ()=>openPopupFor(n.name));
-    wrap.addEventListener('dragover', e=>{ e.preventDefault(); e.dataTransfer.dropEffect='move'; });
-    wrap.addEventListener('drop', e=>{
+    wrap.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      updateDragPreviewOver(n);   
+    });
+        wrap.addEventListener('drop', e=>{
       e.preventDefault(); state.isPanning=false; if(state.draggingToken){ tryDropArmyOn(n.name); }
     });
 
@@ -709,11 +794,33 @@ function ensureDragPreviewLine(){
   if (!line && state.svg){
     line = document.createElementNS('http://www.w3.org/2000/svg','line');
     line.setAttribute('id','dragPreviewLine');
+    line.setAttribute('stroke', '#ffd36b');        // ← visible stroke
+    line.setAttribute('stroke-width', '3');        // ← a bit thicker
+    line.setAttribute('stroke-dasharray', '6 6');  // ← optional dashed look
     line.style.display = 'none';
     state.svg.appendChild(line);
   }
   return line;
 }
+
+function ensureDragPreviewPath(){
+  if (!state.svg) state.svg = document.querySelector('svg');
+  let p = document.getElementById('dragPreviewPath');
+  if (!p && state.svg){
+    p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('id', 'dragPreviewPath');
+    p.setAttribute('fill', 'none');
+    p.setAttribute('stroke', '#ffd36b');
+    p.setAttribute('stroke-width', '3');
+    p.setAttribute('stroke-linecap', 'round');
+    p.setAttribute('stroke-linejoin', 'round');
+    p.setAttribute('stroke-dasharray', '7 6');
+    p.style.display = 'none';
+    state.svg.appendChild(p);
+  }
+  return p;
+}
+
 // Attach dragover/drop handlers to freshly rendered pins and the map surface
 function attachDragPreviewHandlers(){
   // During drag, highlight hovered pin and update preview line to it
@@ -749,48 +856,75 @@ function attachDragPreviewHandlers(){
 
 // Begin preview from a source node (called on dragstart)
 function beginDragPreview(srcNode){
-  state.dragPreview = { src: srcNode, dst: null };
-  markCandidateNodes(true, srcNode);
-  const line = ensureDragPreviewLine();
-  if (line){
-    const p = projectToMap(srcNode.x, srcNode.y);
-    line.setAttribute('x1', p.x);
-    line.setAttribute('y1', p.y);
-    line.setAttribute('x2', p.x);
-    line.setAttribute('y2', p.y);
-    line.style.display = '';
-  }
+  state.dragPreview = state.dragPreview || {};
+  state.dragPreview.src = srcNode?.name || srcNode; // store source node name
+  state.dragPreview.teamId = 'player';               // or derive dynamically if needed
+  const p = ensureDragPreviewPath();
+  p.style.display = 'none';
+  p.setAttribute('d','');
 }
+
+
 
 // Update preview to the current hovered node/point
-function updateDragPreviewOver(dstNodeOrPoint){
-  const line = ensureDragPreviewLine();
-  if (!line || !state.dragPreview) return;
-
-  let x2, y2;
-  if (dstNodeOrPoint && dstNodeOrPoint.x != null && dstNodeOrPoint.y != null){
-    // got map coords
-    const p = projectToMap(dstNodeOrPoint.x, dstNodeOrPoint.y);
-    x2 = p.x; y2 = p.y;
-  } else if (dstNodeOrPoint && dstNodeOrPoint.name){
-    // got a node object
-    const p = projectToMap(dstNodeOrPoint.x, dstNodeOrPoint.y);
-    x2 = p.x; y2 = p.y;
-    state.dragPreview.dst = dstNodeOrPoint;
-  } else {
+function updateDragPreviewOver(targetNode){
+  const p = ensureDragPreviewPath();
+  if (!state.dragPreview || !state.dragPreview.src || !targetNode){
+    // nothing to show
+    p.style.display = 'none';
+    p.setAttribute('d', '');
     return;
   }
-  line.setAttribute('x2', x2);
-  line.setAttribute('y2', y2);
+
+  const srcName = state.dragPreview.src;
+  const dstName = targetNode.name || targetNode;  // accept node or name
+  const teamId  = state.dragPreview.teamId || 'player';
+
+  // If you have a team-aware pathfind, use it; otherwise filter with isPathTraversableForTeam
+  const pf = pathfind(srcName, dstName); // expected to return { path: [nodeNames], cost, hops, length }
+
+  // Check for path validity & traversability for this team
+  if (!pf || !Array.isArray(pf.path) || pf.path.length < 2 || (typeof isPathTraversableForTeam === 'function' && !isPathTraversableForTeam(pf.path, teamId))) {
+    // Hide preview if we can’t reach
+    p.style.display = 'none';
+    p.setAttribute('d','');
+    setPreviewNodeGlow(state.dragPreview._lastNodes, false);
+    state.dragPreview._lastNodes = null;
+    return;
+  }
+
+  // Build a multi-segment path through each hop
+  const d = buildPathDFromNodes(pf.path);
+  if (!d){
+    p.style.display = 'none';
+    p.setAttribute('d','');
+    setPreviewNodeGlow(state.dragPreview._lastNodes, false);
+    state.dragPreview._lastNodes = null;
+    return;
+  }
+
+  // Draw it
+  p.setAttribute('d', d);
+  p.style.display = '';
+
+  // Optional: glow the nodes on the candidate path
+  setPreviewNodeGlow(state.dragPreview._lastNodes, false);   // clear previous glow
+  setPreviewNodeGlow(pf.path, true);                         // add new glow
+  state.dragPreview._lastNodes = pf.path;
 }
+
 
 // Cleanup at end of drag
 function endDragPreview(){
-  markCandidateNodes(false);
-  const line = ensureDragPreviewLine();
-  if (line) line.style.display = 'none';
+  const p = ensureDragPreviewPath();
+  p.style.display = 'none';
+  p.setAttribute('d','');
+  if (state.dragPreview && state.dragPreview._lastNodes){
+    setPreviewNodeGlow(state.dragPreview._lastNodes, false);
+  }
   state.dragPreview = null;
 }
+
 
 // Add/remove pulse class on candidate nodes
 function markCandidateNodes(on, srcNode){
@@ -822,7 +956,6 @@ function onTrain(name){
 
   GameLog.event(`Player trained +1 at ${n.name} (units now ${n.units}).`);
   rerender();
-  // Re-open/refresh popup so numbers update without another click
   openPopupFor(n.name);
 }
 
@@ -1082,15 +1215,13 @@ function resolveArrival(dst, units, attacker='player'){
     return;
   }
 
-  // Neutral: non-capturable parking lot
-  if (isNeutralOwner(dst)){
-    const key = (attacker === 'player') ? 'player' : 'ai';
-    if (!dst.parking) dst.parking = { player: 0, ai: 0 };
-    if (typeof dst.parking.player !== 'number') dst.parking.player = 0;
-    if (typeof dst.parking.ai     !== 'number') dst.parking.ai     = 0;
-    dst.parking[key] = (dst.parking[key] || 0) + units;  // park here
-    return;
-  }
+// Neutral: non-capturable parking lot
+if (isNeutralOwner(dst)){
+  const p = ensureParking(dst);
+  p[attacker] = (p[attacker] || 0) + units;  // park by team id
+  return;
+}
+
 
   // Land (capturable)
   const defenders = (dst.baseDefense || 0) + (dst.units || 0);
@@ -1135,7 +1266,7 @@ function incomeFor(id){
 function refreshHUD(){
   const locs=state.nodes.filter(n=>!isWater(n) && n.controller==='player').length;
   if(state.player.travelLeft>state.player.travelCap) state.player.travelLeft=state.player.travelCap;
-  moveChip.textContent = `Travel Pts: ${state.player.travelLeft}/${Math.min(MAX_TRAVEL_CAP, Math.max(2, locs*2))}`;
+  moveChip.textContent = `Travel Pts: ${state.player.travelLeft}`;
   turnChip.textContent = `Turn ${state.turn}`;
   resChip.textContent  = `Resources (You): ${fmt(state.player.resources)}`;
 }
@@ -1177,6 +1308,8 @@ if (btnNewGame) {
     window.location.reload(); 
   });
 }
+const btnPatchNotes = document.getElementById('btnPatchNotes');
+if (btnPatchNotes) btnPatchNotes.addEventListener('click', openPatchNotesPopup);
 
 
 function doAiTurn(){
@@ -1370,6 +1503,17 @@ function zoomAtPoint(newScale, sx, sy){
   state.pan.x += (after.x-before.x)*state.scale; state.pan.y += (after.y-before.y)*state.scale;
   layoutWorld();
 }
+function projectToMap(x, y){
+  return { x, y };
+}
+function clientToMap(cx, cy){
+  const r = viewport.getBoundingClientRect();
+  return {
+    x: (cx - r.left - state.pan.x) / state.scale,
+    y: (cy - r.top  - state.pan.y) / state.scale
+  };
+}
+
 
 /* =============[ DATA LOADING ]===========================
    Fetch locations & lanes from assets/data; sanitize routes.
@@ -1435,23 +1579,38 @@ state.aiTurnOrder = ['ai'];
 }
 
 function startFreeForAll(raceKey){
-  state.player.race=raceKey;
-  const aiRaces=Object.keys(RACES).filter(k=>k!==raceKey);
-  state.nodes.forEach(n=>{
-    if(n.race===raceKey){ n.controller='player'; seedUnits(n); return; }
-    if(n.race && aiRaces.includes(n.race)){ n.controller='ai'; seedUnits(n); return; }
-    n.controller='none';
-  });
-  state.teams=[{id:'player',label:RACES[raceKey].label,crest:RACES[raceKey].crest,type:'race'}];
-  aiRaces.forEach(k=>{ if(state.nodes.some(n=>n.race===k && n.controller==='ai')) state.teams.push({id:`ai_${k}`,label:RACES[k].label,crest:RACES[k].crest,type:'race',race:k}); });
-// Free-for-All: every race except the player's, if present on the map
-state.aiTurnOrder = [];
-const presentRaces = new Set(
-  state.nodes.filter(n => n.race && n.controller === 'ai').map(n => n.race)
-);
-presentRaces.forEach(rk => state.aiTurnOrder.push(`ai_${rk}`));
+  state.player.race = raceKey;
 
+  // Identify all race keys present on the board
+  const allRaces = new Set(state.nodes.filter(n => n.race).map(n => n.race));
+  const aiRaces  = [...allRaces].filter(k => k !== raceKey);
+
+  // Reset controllers; assign per-team control:
+  state.nodes.forEach(n => {
+    if (n.race === raceKey) {
+      n.controller = 'player'; seedUnits(n);
+    } else if (n.race && aiRaces.includes(n.race)) {
+      n.controller = `ai_${n.race}`; seedUnits(n);     // <<< per-race controller
+    } else {
+      n.controller = 'none';
+    }
+  });
+
+  // Build visible teams list (player + each AI race actually present)
+  state.teams = [{ id:'player', label:RACES[raceKey].label, crest:RACES[raceKey].crest, type:'race', race:raceKey }];
+
+  state.aiTurnOrder = [];
+  state.raceWallets = state.raceWallets || {};
+  aiRaces.forEach(rk => {
+    // Only add AI team if it actually controls at least one node:
+    if (state.nodes.some(n => n.controller === `ai_${rk}`)) {
+      state.teams.push({ id:`ai_${rk}`, label:RACES[rk].label, crest:RACES[rk].crest, type:'race', race:rk });
+      if (!state.raceWallets[rk]) state.raceWallets[rk] = 0;   // initialize wallet
+      state.aiTurnOrder.push(`ai_${rk}`);                       // each race acts on its own turn
+    }
+  });
 }
+
 
 // Centers the camera on a node by name (no scale change)
 function focusOnLocationByName(name){
