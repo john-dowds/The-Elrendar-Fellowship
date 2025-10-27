@@ -10,7 +10,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Astranaar",
@@ -24,7 +25,8 @@
     "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
-    "race": "kaldorei"
+    "race": "kaldorei",
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Auberdine",
@@ -37,7 +39,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Bashal'aran",
@@ -50,7 +53,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Bathran's Haunt",
@@ -63,7 +67,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 2,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Blackfathom Depths",
@@ -141,7 +146,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Hellscream's Watch",
@@ -181,7 +187,8 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "kaldorei"
+    "race": "kaldorei",
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Maestra's Post",
@@ -194,7 +201,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Mor'shan Rampart",
@@ -237,7 +245,8 @@
     "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
-    "race": "kaldorei"
+    "race": "kaldorei",
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Ruins of Constellas",
@@ -277,7 +286,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "hinterlands.jpg"
   },
   {
     "name": "Shrine of Aessina",
@@ -303,7 +313,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Splintertree Post",
@@ -316,7 +327,8 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "mor'shan_rampart.jpg"
   },
   {
     "name": "Talonbranch Glade",
@@ -329,7 +341,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "The Master's Glaive",
@@ -382,7 +395,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 5,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "mor'shan_rampart.jpg"
   },
   {
     "name": "Whisperwind Grove",
@@ -395,7 +409,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "kaldorei.jpg"
   },
   {
     "name": "Zoram'gar Outpost",
@@ -477,7 +492,8 @@
     "controller": "none",
     "units": 35,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "exodar.jpg"
   },
   {
     "name": "Vindicaar",
@@ -491,7 +507,8 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "draenei"
+    "race": "draenei",
+    "banner": "vindicaar.jpg"
   },
   {
     "name": "Wyrmscar Island",
@@ -595,7 +612,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 5,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "sunkentemple.jpg"
   },
   {
     "name": "Surwich",
@@ -608,7 +626,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "sunkentemple.jpg"
   },
   {
     "name": "Tainted Scar",
@@ -634,7 +653,8 @@
     "controller": "none",
     "units": 20,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "darkportal.jpg"
   },
   {
     "name": "The Harborage",
@@ -647,8 +667,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "draenei"
+    "nameVisible": true
   },
   {
     "name": "The Red Reaches",
@@ -6119,7 +6138,8 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "sunkentemple.jpg"
   },
   {
     "name": "Bael Modan",
