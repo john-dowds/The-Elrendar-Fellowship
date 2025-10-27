@@ -21,7 +21,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 20,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "kaldorei"
@@ -178,8 +178,8 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 3,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "kaldorei"
   },
@@ -194,8 +194,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "kaldorei"
+    "nameVisible": true
   },
   {
     "name": "Mor'shan Rampart",
@@ -206,7 +205,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 35,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "orcs",
@@ -235,7 +234,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "kaldorei"
@@ -420,8 +419,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 20,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "draenei"
   },
@@ -434,7 +433,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "draenei"
@@ -446,12 +445,11 @@
     "region": "Azuremyst Isle",
     "type": "land",
     "size": "small",
-    "ownerType": "Alliance",
+    "ownerType": "Capturable",
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "draenei"
+    "nameVisible": true
   },
   {
     "name": "Exodar",
@@ -490,8 +488,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 40,
-    "baseDefense": 1,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "draenei"
   },
@@ -674,9 +672,10 @@
     "size": "medium",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 20,
+    "units": 25,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "race": "dark_iron"
   },
   {
     "name": "Badlands Pass",
@@ -713,7 +712,7 @@
     "size": "large",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 50,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "dark_iron"
@@ -859,8 +858,8 @@
     "size": "small",
     "ownerType": "Neutral",
     "controller": "none",
-    "units": 20,
-    "baseDefense": 5,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "dark_iron"
   },
@@ -913,8 +912,8 @@
     "size": "small",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 2,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "shal_dorei"
   },
@@ -930,6 +929,20 @@
     "units": 15,
     "baseDefense": 1,
     "nameVisible": true
+  },
+  {
+    "name": "Meredil",
+    "x": 5229, "y": 2576,
+    "region": "Broken Isles",
+    "type": "land",
+    "size": "medium",
+    "ownerType": "Horde",
+    "controller": "none",
+    "units": 25,
+    "baseDefense": 3,
+    "nameVisible": true,
+    "race": "shal_dorei",
+    "banner": "suramar.jpg"
   },
   {
     "name": "Suramar City",
@@ -955,9 +968,10 @@
     "size": "large",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 35,
+    "units": 30,
     "baseDefense": 5,
-    "nameVisible": true
+    "nameVisible": true,
+    "race": "tauren"
   },
   {
     "name": "Tomb of Sargeras",
@@ -1126,8 +1140,8 @@
     "size": "large",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 40,
-    "baseDefense": 3,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "scourge",
     "banner": "naxxramas.jpg"
@@ -1433,15 +1447,14 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 50,
-    "baseDefense": 3,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "goblins"
   },
   {
     "name": "Bladefist Bay",
-    "x": 2108,
-    "y": 2707,
+    "x": 2190, "y": 2704,
     "region": "Durotar",
     "type": "water",
     "size": "small",
@@ -1449,8 +1462,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "orcs"
+    "nameVisible": true
   },
   {
     "name": "Dranosh'ar Blockade",
@@ -1503,8 +1515,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "goblins"
+    "nameVisible": true
   },
   {
     "name": "Orgrimmar",
@@ -1543,7 +1554,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "orcs"
@@ -1559,8 +1570,7 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "orcs"
+    "nameVisible": true
   },
   {
     "name": "Ruins of Eldarath",
@@ -1584,7 +1594,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "darkspear"
@@ -1663,7 +1673,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "darkspear"
@@ -2030,8 +2040,7 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "humans"
+    "nameVisible": true
   },
   {
     "name": "Zol'maz Stronghold",
@@ -2081,7 +2090,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "pandaren"
@@ -2095,7 +2104,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "pandaren"
@@ -2151,8 +2160,7 @@
     "controller": "none",
     "units": 20,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "pandaren"
+    "nameVisible": true
   },
   {
     "name": "Timeless Isle",
@@ -2176,8 +2184,8 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 40,
-    "baseDefense": 3,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "wildhammer"
   },
@@ -2297,8 +2305,8 @@
     "size": "large",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 5,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "goblins",
     "banner": "the_south_seas.jpg"
@@ -2312,9 +2320,10 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "race": "goblins"
   },
   {
     "name": "Undermine",
@@ -2365,8 +2374,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 20,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "dwarves"
   },
@@ -2459,8 +2468,7 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 5,
-    "nameVisible": true,
-    "race": "dwarves"
+    "nameVisible": true
   },
   {
     "name": "Dun Modr",
@@ -2563,10 +2571,11 @@
     "size": "large",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 40,
+    "units": 50,
     "baseDefense": 5,
     "nameVisible": true,
-    "banner": "grim_batol.jpg"
+    "banner": "grim_batol.jpg",
+    "race": "wildhammer"
   },
   {
     "name": "Highbank",
@@ -2630,8 +2639,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 1,
+    "units": 30,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "dwarves"
   },
@@ -2644,7 +2653,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "wildhammer"
@@ -2697,8 +2706,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "gnomes"
   },
@@ -2778,8 +2787,7 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 5,
-    "nameVisible": true,
-    "race": "dwarves"
+    "nameVisible": true
   },
   {
     "name": "Swiftgear Station",
@@ -2844,8 +2852,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "gnomes"
+    "nameVisible": true
   },
   {
     "name": "Thelsamar",
@@ -2856,7 +2863,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "dwarves"
@@ -2870,7 +2877,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "wildhammer"
@@ -2951,8 +2958,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "worgen"
+    "nameVisible": true
   },
   {
     "name": "Gilneas City",
@@ -2977,7 +2983,7 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "worgen"
@@ -2993,8 +2999,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "worgen"
+    "nameVisible": true
   },
   {
     "name": "Tempest Reach",
@@ -3005,8 +3010,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "worgen"
   },
@@ -3032,7 +3037,7 @@
     "size": "large",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 50,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "humans"
@@ -3085,7 +3090,7 @@
     "size": "large",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 50,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "gnomes"
@@ -3151,7 +3156,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "forsaken"
@@ -3165,7 +3170,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "forsaken"
@@ -3193,7 +3198,7 @@
     "ownerType": "Horde",
     "controller": "none",
     "units": 30,
-    "baseDefense": 3,
+    "baseDefense": 5,
     "nameVisible": true,
     "race": "forsaken"
   },
@@ -3243,7 +3248,7 @@
     "region": "Kingdom of Lordaeron",
     "type": "land",
     "size": "small",
-    "ownerType": "Forsaken",
+    "ownerType": "Capturable",
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
@@ -3289,7 +3294,7 @@
     "nameVisible": true
   },
   {
-    "name": "Ruins of Lordaeron",
+    "name": "Undercity",
     "x": 6714,
     "y": 2134,
     "region": "Kingdom of Lordaeron",
@@ -3328,8 +3333,7 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 5,
-    "nameVisible": true,
-    "race": "forsaken"
+    "nameVisible": true
   },
   {
     "name": "Silverpine River Crossing",
@@ -3395,8 +3399,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "forsaken"
+    "nameVisible": true
   },
   {
     "name": "The Sepulcher",
@@ -3486,8 +3489,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "sin_dorei"
+    "nameVisible": true
   },
   {
     "name": "Farstrider Enclave",
@@ -3550,7 +3552,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "sin_dorei"
@@ -3594,8 +3596,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "sin_dorei"
+    "nameVisible": true
   },
   {
     "name": "Suncrown Village",
@@ -3632,8 +3633,8 @@
     "size": "large",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 5,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "sin_dorei"
   },
@@ -3647,8 +3648,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 5,
-    "nameVisible": true,
-    "race": "sin_dorei"
+    "nameVisible": true
   },
   {
     "name": "Sunwell Plateau",
@@ -3659,7 +3659,7 @@
     "size": "large",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 40,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "sin_dorei"
@@ -3727,8 +3727,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "humans"
+    "nameVisible": true
   },
   {
     "name": "Deadmines",
@@ -3778,10 +3777,9 @@
     "size": "medium",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "humans"
+    "nameVisible": true
   },
   {
     "name": "Karazhan",
@@ -3821,7 +3819,6 @@
     "units": 15,
     "baseDefense": 3,
     "nameVisible": true,
-    "race": "humans",
     "banner": "lakeshire.jpg"
   },
   {
@@ -3846,8 +3843,8 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "humans"
   },
@@ -3875,8 +3872,7 @@
     "controller": "none",
     "units": 20,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "humans"
+    "nameVisible": true
   },
   {
     "name": "Stone Cairn Lake",
@@ -4046,9 +4042,10 @@
     "size": "large",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 40,
-    "baseDefense": 5,
-    "nameVisible": true
+    "units": 25,
+    "baseDefense": 3,
+    "nameVisible": true,
+    "race": "humans"
   },
   {
     "name": "Thordain's Wall",
@@ -4242,7 +4239,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "tauren"
@@ -4272,8 +4269,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "tauren"
+    "nameVisible": true
   },
   {
     "name": "Red Rocks",
@@ -4286,8 +4282,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "tauren"
+    "nameVisible": true
   },
   {
     "name": "Stonetalon Eastern Pass",
@@ -4342,7 +4337,6 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "scourge",
     "banner": "icecrown_citadel.jpg"
   },
   {
@@ -4383,7 +4377,6 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "scourge",
     "banner": "icecrown_citadel.jpg"
   },
   {
@@ -4492,7 +4485,6 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "scourge",
     "banner": "icecrown_citadel.jpg"
   },
   {
@@ -4518,7 +4510,7 @@
     "size": "medium",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 40,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "scourge",
@@ -4614,7 +4606,6 @@
     "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "scourge",
     "banner": "icecrown_citadel.jpg"
   },
   {
@@ -4826,7 +4817,7 @@
     "size": "large",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 15,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "zandalari",
@@ -4883,7 +4874,7 @@
     "size": "medium",
     "ownerType": "Neutral",
     "controller": "none",
-    "units": 15,
+    "units": 55,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "pandaren"
@@ -4913,7 +4904,6 @@
     "units": 50,
     "baseDefense": 5,
     "nameVisible": true,
-    "race": "zandalari",
     "banner": "thunder_king.jpg"
   },
   {
@@ -4925,7 +4915,7 @@
     "size": "large",
     "ownerType": "Neutral",
     "controller": "none",
-    "units": 15,
+    "units": 30,
     "baseDefense": 5,
     "nameVisible": true,
     "race": "pandaren",
@@ -5190,8 +5180,8 @@
     "size": "large",
     "ownerType": "Capturable",
     "controller": "none",
-    "units": 50,
-    "baseDefense": 5,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "scourge",
     "banner": "stratholme.jpg"
@@ -5841,8 +5831,7 @@
     "controller": "none",
     "units": 20,
     "baseDefense": 3,
-    "nameVisible": true,
-    "race": "pandaren"
+    "nameVisible": true
   },
   {
     "name": "Mistfall Village",
@@ -6169,8 +6158,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "tauren"
+    "nameVisible": true
   },
   {
     "name": "Desolation Hold",
@@ -6522,8 +6510,8 @@
     "size": "small",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 30,
-    "baseDefense": 1,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "tauren"
   },
@@ -6641,9 +6629,10 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 3,
-    "nameVisible": true
+    "units": 30,
+    "baseDefense": 5,
+    "nameVisible": true,
+    "race": "darkspear"
   },
   {
     "name": "Havenwood",
@@ -6656,8 +6645,7 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true,
-    "race": "worgen"
+    "nameVisible": true
   },
   {
     "name": "Jorundal",
@@ -6895,9 +6883,10 @@
     "size": "small",
     "ownerType": "Alliance",
     "controller": "none",
-    "units": 30,
+    "units": 25,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "race": "gnomes"
   },
   {
     "name": "Nexus",
@@ -7001,8 +6990,9 @@
     "ownerType": "Horde",
     "controller": "none",
     "units": 30,
-    "baseDefense": 3,
-    "nameVisible": true
+    "baseDefense": 5,
+    "nameVisible": true,
+    "race": "orcs"
   },
   {
     "name": "Gao-Ran Battlefront",
@@ -7757,7 +7747,6 @@
     "units": 40,
     "baseDefense": 3,
     "nameVisible": true,
-    "race": "zandalari",
     "banner": "zuldazar.jpg"
   },
   {
@@ -7772,7 +7761,6 @@
     "units": 20,
     "baseDefense": 3,
     "nameVisible": true,
-    "race": "zandalari",
     "banner": "dazar'alor.jpg"
   },
   {
@@ -7813,8 +7801,8 @@
     "size": "small",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 15,
-    "baseDefense": 2,
+    "units": 25,
+    "baseDefense": 3,
     "nameVisible": true,
     "race": "zandalari",
     "banner": "dazar'alor.jpg"
@@ -7859,7 +7847,6 @@
     "units": 15,
     "baseDefense": 1,
     "nameVisible": true,
-    "race": "zandalari",
     "banner": "dazar'alor.jpg"
   },
   {
@@ -7899,7 +7886,7 @@
     "size": "medium",
     "ownerType": "Horde",
     "controller": "none",
-    "units": 40,
+    "units": 25,
     "baseDefense": 3,
     "nameVisible": true,
     "race": "zandalari",
