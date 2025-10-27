@@ -49,28 +49,28 @@ const DIFFICULTY = {
   Master: { expandBias:.70, defendBias:.30, scoutRadius:3, maxActions:6, minReserve:0 }
 };
 const RACES = {
-  dark_iron:{label:"Dark Iron", crest:"assets/art/crests/dark_iron.png", start:["Shadowforge City","Blackrock Mountain","Thorium Point"]},
-  darkspear:{label:"Darkspear", crest:"assets/art/crests/darkspear.png", start:["Echo Isles","Sen'jin Village","Valley of Trials"]},
-  draenei:{label:"Draenei", crest:"assets/art/crests/draenei.png", start:["Exodar","Nightsong","Blood Watch","Ammen Vale","Azure Watch","Vindicaar"]},
-  dwarves:{label:"Dwarves", crest:"assets/art/crests/dwarves.png", start:["Ironforge","Thelsamar","Kharanos","Anvilmar","Stonewrought Pass North","Dun Algaz Pass"]},
-  forsaken:{label:"Forsaken", crest:"assets/art/crests/forsaken.png", start:["Ruins of Lordaeron","Deathknell","Brill","Bulwark","Tarren Mill","Shadowfang Keep"]},
-  gnomes:{label:"Gnomes", crest:"assets/art/crests/gnomes.png", start:["Gnomeregan","New Tinkertown","Mechagon"]},
-  goblins:{label:"Goblins", crest:"assets/art/crests/goblins.png", start:["Bilgewater Port","Undermine","Bilgewater Harbor","Crapoppolis","Gadgetzan","Ratchet"]},
-  humans:{label:"Humans", crest:"assets/art/crests/humans.png", start:["Stormwind City","Goldshire","Northshire","Boralus","Lakeshire","Sentinel Hill","Darkshire"]},
-  kaldorei:{label:"Kaldorei", crest:"assets/art/crests/kaldorei.png", start:["Amirdrassil","Lor'danel","Astranaar","Maestra's Post","Raynewood Retreat","Windsheer Hold"]},
-  orcs:{label:"Orcs", crest:"assets/art/crests/orcs.png", start:["Orgrimmar","Rear Gate","Bladefist Bay","Razor Hill","Crossroads","Mor'shan Rampart", "Side Gate"]},
-  pandaren:{label:"Pandaren", crest:"assets/art/crests/pandaren.png", start:["Vale of Eternal Blossoms", "Paw'don Village", "Honeydew Village", "Tian Monastery", "Half Hill", "Shado Pan Monastery"]},
-  scourge:{label:"Scourge", crest:"assets/art/crests/scourge.png", start:["Icecrown Citadel","Corp'rethar","Mord'rethar","Aldur'thar","The Shadow Vault","Naxxramas", "Stratholme"]},
-  shal_dorei:{label:"Shal’dorei", crest:"assets/art/crests/shal_dorei.png", start:["Suramar City","Nar'thalas Academy","Tomb of Sargeras"]},
-  sin_dorei:{label:"Sin’dorei", crest:"assets/art/crests/sin_dorei.png", start:["Silvermoon City","Sunstrider Isle","Sunwell Plateau","Magister's Terrace","Sun's Reach Anchorage","Falcon Wing Square"]},
-  tauren:{label:"Tauren", crest:"assets/art/crests/tauren.png", start:["Thunderbluff","The Great Gate","Camp Narache","Bloodhoof Village","Camp Taurajo","Redrocks"]},
-  wildhammer:{label:"Wildhammer", crest:"assets/art/crests/wildhammer.png", start:["Aerie Peak","Kirthaven","Thundermar"]},
-  worgen:{label:"Worgen", crest:"assets/art/crests/worgen.png", start:["Gilneas City","Duskhaven","Stormglen Village","Tempest Reach","Greymane Wall","Havenwood","Tol Barad"]},
-  zandalari:{label:"Zandalari", crest:"assets/art/crests/zandalari.png", start:["Dazar'alor","Warport Rastari", "Atal'Gral", "Isle of Fangs", "The Blood Gate", "Isle of Giants"]}
+  dark_iron:{label:"Dark Iron", crest:"assets/art/crests/dark_iron.png", start:["Shadowforge City","Blackrock Mountain","Angor Fortress", "Thorium Point"]},
+  darkspear:{label:"Darkspear", crest:"assets/art/crests/darkspear.png", start:["Echo Isles","Darkspear Isles", "Valley of Trials","Sen'jin Village"]},
+  draenei:{label:"Draenei", crest:"assets/art/crests/draenei.png", start:["Exodar","Vindicaar","Ammen Vale","Azure Watch"]},
+  dwarves:{label:"Dwarves", crest:"assets/art/crests/dwarves.png", start:["Ironforge","Kharanos","Anvilmar","Thelsamar"]},
+  forsaken:{label:"Forsaken", crest:"assets/art/crests/forsaken.png", start:["Undercity","Deathknell","Bulwark","Brill"]},
+  gnomes:{label:"Gnomes", crest:"assets/art/crests/gnomes.png", start:["Gnomeregan","Mechagon","New Tinkertown","Fizzcrank's Airstrip"]},
+  goblins:{label:"Goblins", crest:"assets/art/crests/goblins.png", start:["Undermine","Bilgewater Harbor","Bilgewater Port","Crapoppolis"]},
+  humans:{label:"Humans", crest:"assets/art/crests/humans.png", start:["Stormwind City","Boralus","Stromgarde","Northshire"]},
+  kaldorei:{label:"Kaldorei", crest:"assets/art/crests/kaldorei.png", start:["Amirdrassil","Lor'danel","Astranaar","Raynewood Retreat","Astranaar"]},
+  orcs:{label:"Orcs", crest:"assets/art/crests/orcs.png", start:["Orgrimmar","Warsong Hold", "Razor Hill", "Mor'shan Rampart"]},
+  pandaren:{label:"Pandaren", crest:"assets/art/crests/pandaren.png", start:["Shado Pan Monastery", "Vale of Eternal Blossoms", "Paw'don Village", "Honeydew Village"]},
+  scourge:{label:"Scourge", crest:"assets/art/crests/scourge.png", start:["Icecrown Citadel","Naxxramas","Stratholme","Scourgeholme"]},
+  shal_dorei:{label:"Shal’dorei", crest:"assets/art/crests/shal_dorei.png", start:["Suramar City","Tomb of Sargeras","Nar'thalas Academy","Meredil"]},
+  sin_dorei:{label:"Sin’dorei", crest:"assets/art/crests/sin_dorei.png", start:["Silvermoon City","Sunwell Plateau","Magister's Terrace","Sunstrider Isle"]},
+  tauren:{label:"Tauren", crest:"assets/art/crests/tauren.png", start:["Thunderbluff","Thunder Totem","The Great Gate","Bloodhoof Village"]},
+  wildhammer:{label:"Wildhammer", crest:"assets/art/crests/wildhammer.png", start:["Grim Batol", "Aerie Peak","Kirthaven","Thundermar"]},
+  worgen:{label:"Worgen", crest:"assets/art/crests/worgen.png", start:["Gilneas City","Tol Barad","Greymane Wall","Tempest Reach"]},
+  zandalari:{label:"Zandalari", crest:"assets/art/crests/zandalari.png", start:["Dazar'alor","Isle of Thunder", "Warport Rastari", "Isle of Fangs"]}
 };
 const FACTIONS = {
   Alliance:{label:"Alliance", crest:"assets/art/crests/alliance.png", start:["Stormwind City","Ironforge","Shadowforge City","Gnomeregan","Amirdrassil","Exodar","Gilneas City"]},
-  Horde:{label:"Horde", crest:"assets/art/crests/horde.png", start:["Orgrimmar","Thunderbluff","Ruins of Lordaeron","Suramar City","Silvermoon City","Dazar'alor","Bilgewater Port"]}
+  Horde:{label:"Horde", crest:"assets/art/crests/horde.png", start:["Orgrimmar","Thunderbluff","Undercity","Suramar City","Silvermoon City","Dazar'alor","Bilgewater Port"]}
 };
 const REGION_BANNERS = {
   "Ashenvale": "ashenvale.jpg","Azuremyst Isle": "azuremyst_isle.jpg","The Barrens": "the_barrens.jpg","Black Morass": "black_morass.jpg",
