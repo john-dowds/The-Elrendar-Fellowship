@@ -71,6 +71,8 @@
   overflow: auto;
   z-index: 60;
 }
+/* Node glow when part of previewed route */
+.preview-route { filter: drop-shadow(0 0 6px #ffd36b); }
 
 /* banner at the top of the popup */
 .popup-banner{
@@ -195,6 +197,25 @@
   background: #7ec8ff;      /* light blue fill */
   border-color: #2d6ea4;    /* darker blue ring */
 }
+.popup.fixed-right {
+  position: fixed;
+  right: 16px;
+  top: 72px; /* below the HUD bar */
+  width: 420px;
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+  z-index: 60;
+}
+/* Patch Notes styling */
+.pn-wrapper { max-height: calc(70vh); overflow:auto; padding: 6px 2px 0; }
+.pn-entry   { background: #fff8; border: 1px solid #0002; border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; }
+.pn-head    { display:flex; justify-content:space-between; gap:10px; font-weight:700; }
+.pn-ver     { font-weight:800; }
+.pn-date    { opacity:.75; }
+.pn-list    { margin:6px 0 4px 18px; }
+.pn-list li { line-height:1.35; margin: 2px 0; }
+
+
 /* Scrollable stats box (fits panel; monospace grid for perfect columns) */
 .stats-box{
   box-sizing: border-box; 
@@ -247,7 +268,8 @@
     <div class="sep"></div>
     <button class="btn" id="btnEndTurn">End Turn</button>
     <button class="btn" id="btnNewGame">New Game</button>
-    <a class="btn" id="btnReturnHome" href="https://www.elrendarfellowship.com/" rel="noopener">Return Home</a>
+    <button class="btn" id="btnPatchNotes">Patch Notes</button>
+    <a class="btn" id="btnReturnHome" href="https://www.elrendarfellowship.com/" rel="noopener">Return Home</a>    
   </div>
 
   <div id="viewport">
