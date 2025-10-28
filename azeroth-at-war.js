@@ -1,6 +1,6 @@
 /* =========================================================
    AZEROTH AT WAR
-   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. BETA MODEL.
+   Risk-Strategy structured game based in the Warcraft universe, developed by Ansinosth of Moon Guard. V.2.0.12.
 ========================================================= */
 
 /* =============[ CONFIG / CONSTANTS ]=====================
@@ -23,7 +23,7 @@ const SHOW_PATCH_NOTES_ON_START = false;
 const PATCH_NOTES = [
   {
     ver: "v2.0.12",
-    date: "2025-10-27",
+    date: "10.27.2025",
     items: [
       "FFA: each AI race now has its own wallet (independent earn/spend); previously was shared across all races as AI/Player.",
       "Drag preview now traces a predicted path (lanes + nodes); does not regard currency.",
@@ -99,6 +99,9 @@ const state = {
   popup: null, draggingToken: null
   
 };
+
+state.scoreboard = {}; // { [teamId]: { bases:0, units:0, kills:0, skipped:0 } }
+
 // Which AI teams act between player turns
 state.aiTurnOrder = [];
 
@@ -171,18 +174,16 @@ function renderPatchNotesHTML(){
 }
 
 function openPatchNotesPopup(){
-  // If already open, just bring focus
   const existing = document.getElementById('patchNotesPopup');
   if (existing) { existing.focus(); return; }
-
   // Build HTML from PATCH_NOTES
-  const html = renderPatchNotesHTML(); // helper below
+  const html = renderPatchNotesHTML();
 
   const pop = document.createElement('div');
   pop.className = 'popup fixed-right';
   pop.id = 'patchNotesPopup';
   pop.innerHTML = `
-    <div class="title">Patch Notes <span class="chip">From Code</span></div>
+    <div class="title">Patch Notes <span class="chip">@Silvertongue_scribe</span></div>
     <div class="pn-wrapper">
       ${html}
     </div>
@@ -212,7 +213,6 @@ function buildPathDFromNodes(nodeNames){
   return d;
 }
 
-// optional: highlight nodes along the planned path
 function setPreviewNodeGlow(nodeNames, on){
   if (!Array.isArray(nodeNames)) return;
   nodeNames.forEach(nm => {
@@ -256,10 +256,10 @@ function isWater(n){ return (String(n.type).toLowerCase()==='water'); }
 function isNoValue(n){ return (n.ownerType === 'Capturable (No Value)'); }
 function isNeutralOwner(n){ return (String(n.ownerType).toLowerCase()==='neutral'); }
 function beginPlayerTurn(){
+  state.activeTeam = 'player';
   const isT1   = (state.turn === 1);
   const t1Mult = isT1 ? (typeof START_TURN_INCOME_MULTIPLIER !== 'undefined' ? START_TURN_INCOME_MULTIPLIER : 1) : 1;
   const modeMult = (state.game && state.game.mode === 'faction') ? FACTION_WAR_INCOME_MULTIPLIER : 1;
-
   // Who gets paid this turn?
   const aiTeams = (state.game?.mode === 'faction')
     ? ['ai']                                      // single enemy side in FW
@@ -348,12 +348,14 @@ function updateCoordDisplay(){
 
 function colorClassForNode(n){
   if (String(n.type||'').toLowerCase() === 'water') return 'clr-water';
-  if (n.controller === 'player') return 'clr-alliance';
-  if (n.controller === 'ai')     return 'clr-horde';
+  const ctrl = String(n.controller || '');
+  if (ctrl === 'player') return 'clr-alliance';
+  if (ctrl === 'ai' || ctrl.startsWith('ai_')) return 'clr-horde';
   const owner = String(n.ownerType || '').trim().toLowerCase();
   if (owner === 'neutral') return 'clr-neutral';
   return 'clr-unclaimed';
 }
+
 function applyPinColorInline(pinEl, n){
   const isW   = String(n.type || '').toLowerCase() === 'water';
   const owner = String(n.ownerType || '').toLowerCase();
@@ -495,8 +497,15 @@ function deductUnitsAt(n, count, mover){
 // Total bodies on a neutral node (for badge not box)
 function totalParked(n){
   ensureParking(n);
-  return (n.parking.player || 0) + (n.parking.ai || 0);
+  let sum = 0;
+  for (const k in n.parking) {
+    if (!Object.prototype.hasOwnProperty.call(n.parking, k)) continue;
+    const v = n.parking[k] | 0;
+    sum += v;
+  }
+  return sum;
 }
+
 
 /* =============[ PATHFINDING ]============================
    Dijkstra (lexicographic: route cost → hops → length).
@@ -549,17 +558,6 @@ function pathfind(fromName, toName){
 // then calls `done()` to hand control back to the player.
 // Runs one AI team after another, waiting for each team to finish its own action chain.
 // When all teams are done, calls `done()` to hand control back to player.
-function runAiRound(index, done){
-  const order = state.aiTurnOrder || [];
-  if (!order.length || index >= order.length) {
-    if (typeof done === 'function') done();
-    return;
-  }
-  const teamId = order[index];
-  doAiTurnAnimated(teamId, () => runAiRound(index + 1, done));
-}
-
-
 // Team-aware path traversal (can't pass through other teams except the final target)
 function isPathTraversableForTeam(path, teamId){
   for (let i = 1; i < path.length - 1; i++){
@@ -574,12 +572,14 @@ function isPathTraversableForTeam(path, teamId){
 
 /** One animated AI action for a given teamId ('ai' for FW, 'ai_<race>' for FFA). */
 function doAiTurnAnimated(teamId, onDone){
+  state.activeTeam = teamId;   // <<< add this line
   const teamLabel = (teamId === 'ai') ? 'AI' : teamId.replace(/^ai_/, 'AI ');
   const diff = DIFFICULTY[state.game.difficulty] || DIFFICULTY.Expert;
   const maxActions  = diff.maxActions || 3;
   const minReserve  = Math.max(0, diff.minReserve || 0);
 
   const resBefore = resourcesOf(teamId);
+  startRosterPointer(true);
 
   // Per-team travel budget (soft-curve based on that team’s land holdings)
   let travelLeft = travelCapFor(teamId);
@@ -716,7 +716,30 @@ function doAiTurnAnimated(teamId, onDone){
   step();
 }
 
-
+(function(){
+  let tip;
+  function showTip(x, y, text){
+    if (!tip){
+      tip = document.createElement('div');
+      tip.className = 'tooltip-nyi';
+      document.body.appendChild(tip);
+    }
+    tip.textContent = text || 'Feature Not Yet Active';
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+    tip.style.display = 'block';
+    clearTimeout(tip._hide);
+    tip._hide = setTimeout(()=> tip && (tip.style.display='none'), 1200);
+  }
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('.feature-nyi');
+    if (t){
+      e.preventDefault();
+      const msg = t.getAttribute('data-nyi') || 'Feature Not Yet Active';
+      showTip(e.clientX, e.clientY, msg);
+    }
+  });
+})();
 
 
 /* =============[ RENDERING ]==============================
@@ -786,7 +809,7 @@ function renderNodes(){
     nodeLayer.appendChild(wrap);
   }
 }
-function rerender(){ layoutWorld(); renderEdges(); renderNodes(); refreshHUD(); }
+function rerender(){ layoutWorld(); renderEdges(); renderNodes(); refreshHUD(); renderRosterPanel(); }
 // Ensure a single SVG line exists for drag preview STILL IN TEST MODE
 function ensureDragPreviewLine(){
   if (!state.svg) state.svg = document.querySelector('svg'); 
@@ -821,38 +844,7 @@ function ensureDragPreviewPath(){
   return p;
 }
 
-// Attach dragover/drop handlers to freshly rendered pins and the map surface
-function attachDragPreviewHandlers(){
-  // During drag, highlight hovered pin and update preview line to it
-  document.querySelectorAll('.pin').forEach(pin => {
-    pin.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      const dst = nodeByName(pin.dataset.name);
-      if (dst) updateDragPreviewOver(dst);
-    });
 
-    pin.addEventListener('dragleave', () => {
-      // no-op: keep the last preview position until a new target or drop
-    });
-
-    pin.addEventListener('drop', (e) => {
-      e.preventDefault();
-      const dst = nodeByName(pin.dataset.name);
-      // (previous iteration drop > tryMove/tryDropArmyOn logic goes here)
-      endDragPreview(); // ensure cleanup after a drop, success or fail
-    });
-  });
-
-  const mapEl = document.getElementById('map') || document.querySelector('#mapCanvas') || document.querySelector('svg');
-  if (mapEl){
-    mapEl.addEventListener('dragover', (e) => {
-      // convert clientX/Y to map coords
-      const pt = (typeof clientToMap === 'function') ? clientToMap(e.clientX, e.clientY) : null;
-      if (pt) updateDragPreviewOver(pt);
-    });
-    mapEl.addEventListener('drop', () => endDragPreview());
-  }
-}
 
 // Begin preview from a source node (called on dragstart)
 function beginDragPreview(srcNode){
@@ -1131,6 +1123,240 @@ function openPopupFor(name) {
 
 function closePopup(){ const p=document.querySelector('.popup.fixed-left')||world.querySelector('.popup'); if(p) p.remove(); state.popup=null; }
 
+// ===== Minimize/Expand for side panels (persists to localStorage) =====
+function setupPanelMinimax(){
+  const LS_CHAT_COLLAPSED   = 'aaw_mp_chat_collapsed';
+  const LS_ROSTER_COLLAPSED = 'aaw_mp_roster_collapsed';
+
+  const chatAside   = document.querySelector('.mp-side.mp-chat');
+  const rosterAside = document.querySelector('.mp-side.mp-roster');
+
+  const btnChat   = document.getElementById('btnMinimaxChat');
+  const btnRoster = document.getElementById('btnMinimaxRoster');
+
+  // If DOM isn't ready yet, try again on the next tick
+  if (!chatAside || !rosterAside || !btnChat || !btnRoster){
+    setTimeout(setupPanelMinimax, 0);
+    return;
+  }
+
+  // Size collapsed asides to exactly their header height (prevents any sliver)
+  function sizeCollapsedPanels(){
+    [chatAside, rosterAside].forEach(aside => {
+      if (!aside) return;
+      if (aside.classList.contains('collapsed')){
+        const hd = aside.querySelector('.mp-card .hd');
+        const h = hd ? Math.ceil(hd.getBoundingClientRect().height) : 42;
+        aside.style.height = h + 'px';
+      } else {
+        aside.style.height = ''; // clear inline override when expanded
+      }
+    });
+  }
+
+  function applyCollapsed(aside, isCollapsed, btn){
+    if (!aside) return;
+    aside.classList.toggle('collapsed', !!isCollapsed);
+
+    if (btn){
+      btn.textContent = isCollapsed ? '+' : '–';
+      btn.title = isCollapsed ? 'Expand' : 'Minimize';
+      btn.setAttribute('aria-label', isCollapsed ? 'Expand panel' : 'Minimize panel');
+    }
+    sizeCollapsedPanels();
+  }
+
+  // Restore persisted state
+  const chatCollapsed   = localStorage.getItem(LS_CHAT_COLLAPSED)   === '1';
+  const rosterCollapsed = localStorage.getItem(LS_ROSTER_COLLAPSED) === '1';
+  applyCollapsed(chatAside,   chatCollapsed,   btnChat);
+  applyCollapsed(rosterAside, rosterCollapsed, btnRoster);
+
+  // Click handlers
+  btnChat.addEventListener('click', () => {
+    const now = !chatAside.classList.contains('collapsed');
+    applyCollapsed(chatAside, now, btnChat);
+    localStorage.setItem(LS_CHAT_COLLAPSED, now ? '1' : '0');
+  });
+
+  btnRoster.addEventListener('click', () => {
+    const now = !rosterAside.classList.contains('collapsed');
+    applyCollapsed(rosterAside, now, btnRoster);
+    localStorage.setItem(LS_ROSTER_COLLAPSED, now ? '1' : '0');
+  });
+
+  // Keep heights correct when layout changes
+  window.addEventListener('resize', sizeCollapsedPanels);
+  window.addEventListener('orientationchange', sizeCollapsedPanels);
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(sizeCollapsedPanels).catch(()=>{});
+  }
+
+  // One more pass after initial paint
+  requestAnimationFrame(sizeCollapsedPanels);
+}
+
+function sizeCollapsedPanels(){
+  document.querySelectorAll('.mp-side.collapsed').forEach(aside => {
+    const hd = aside.querySelector('.mp-card .hd');
+    if (!hd) return;
+    const h = Math.ceil(hd.getBoundingClientRect().height);
+    aside.style.height = h + 'px';     // exact match → no sliver
+  });
+}
+
+// --- Teams meta (works for FW and FFA) ---
+function getTeamsMeta(){
+  // FFA: state.teams exists with player + ai_<race> entries
+  if (Array.isArray(state.teams) && state.teams.length) return state.teams;
+
+  // FW: synthesize two teams (player + ai) from factions
+  const out = [];
+  const pLab = state.player?.faction || 'Alliance';
+  const aLab = state.ai?.faction || 'Horde';
+  const pCrest = FACTIONS[pLab]?.crest || 'assets/art/crests/alliance.png';
+  const aCrest = FACTIONS[aLab]?.crest || 'assets/art/crests/horde.png';
+  out.push({ id:'player', label:pLab, crest:pCrest, type:'faction', faction:pLab });
+  out.push({ id:'ai',     label:aLab, crest:aCrest, type:'faction', faction:aLab });
+  return out;
+}
+
+// --- Scoreboard compute (bases/units pulled from map; kills/skipped are counters we can increment in combat/timer later) ---
+function computeScoreboard(){
+  const teams = getTeamsMeta();
+  // reset tallies (but preserve kills/skipped counters)
+  teams.forEach(t => {
+    const cur = state.scoreboard[t.id] || { bases:0, units:0, kills:0, skipped:0 };
+    cur.bases = 0; cur.units = 0;
+    state.scoreboard[t.id] = cur;
+  });
+
+  // sum held bases and units
+  for (const n of state.nodes){
+    const ctrl = String(n.controller || 'none');
+    if (ctrl === 'none' || ctrl === 'neutral') continue;
+    const rec = state.scoreboard[ctrl];
+    if (!rec) continue; // unknown team
+    if (!isWater(n)) rec.bases += 1;
+    rec.units += (n.units || 0);
+  }
+  return state.scoreboard;
+}
+
+// --- Roster order (player first, then AI teams in turn order) ---
+function orderForRoster(){
+  if (state.game?.mode === 'faction') return ['player', 'ai'];
+  // FFA: player + aiTurnOrder (ai_<race>…)
+  const rest = Array.isArray(state.aiTurnOrder) ? state.aiTurnOrder.slice() : [];
+  return ['player', ...rest];
+}
+
+// --- Render the right side Players/Stats panel ---
+function renderRosterPanel(){
+  const root = document.querySelector('.mp-side.mp-roster .roster-list');
+  if (!root) return; // panel may be hidden/removed
+
+  const meta = getTeamsMeta();
+  const board = computeScoreboard();
+  const order = orderForRoster();
+
+  // Build a quick lookup for meta by id
+  const metaMap = Object.fromEntries(meta.map(t => [t.id, t]));
+
+  // Clear existing
+  root.innerHTML = '';
+
+  for (const teamId of order){
+    const m = metaMap[teamId];
+    if (!m) continue;
+    const s = board[teamId] || { bases:0, units:0, kills:0, skipped:0 };
+
+    const row = document.createElement('div');
+    row.className = 'roster-row';
+    row.setAttribute('data-team', teamId);
+    row.innerHTML = `
+      <div class="crest" style="background:#ddd url('${m.crest}') center/cover no-repeat"></div>
+      <div class="name">${m.label}</div>
+      <div class="stats">
+        <span title="# Bases">Bases: ${s.bases}</span>
+        <span title="# Units">Units: ${s.units}</span>
+      </div>
+    `;
+    root.appendChild(row);
+  }
+  startRosterPointer(); 
+}
+
+// ----- Roster chevron pointer (jump + flash only) -----
+state.ui = state.ui || {};
+state.ui.rosterPtr = state.ui.rosterPtr || {
+  el: null,
+  activeId: null
+};
+
+
+
+function ensureRosterPointer(){
+  const card = document.querySelector('.mp-side.mp-roster .mp-card');
+  if (!card) return null;
+  if (!state.ui.rosterPtr.el){
+    const el = document.createElement('div');
+    el.className = 'roster-pointer';
+    el.style.top = '0px';
+    card.appendChild(el);
+    state.ui.rosterPtr.el = el;
+  }
+  return state.ui.rosterPtr.el;
+}
+
+function getActiveTeamId(){
+  // Prefer explicit active team (set at turn start); default to 'player'
+  return state.activeTeam || 'player';
+}
+
+function activeRowInfo(){
+  const activeId = getActiveTeamId();
+  const row = document.querySelector(`.mp-side.mp-roster .roster-row[data-team="${activeId}"]`);
+  if (!row) return null;
+  const card = document.querySelector('.mp-side.mp-roster .mp-card');
+  const r = row.getBoundingClientRect();
+  const c = card.getBoundingClientRect();
+  const topInCard = r.top - c.top + 6; // small pad
+  return { topInCard };
+}
+
+function placeRosterPointer(){
+  const el = ensureRosterPointer();
+  if (!el) return;
+  const info = activeRowInfo();
+  if (!info){ el.style.display = 'none'; return; }
+  el.style.display = '';
+  el.style.top = `${Math.round(info.topInCard)}px`;
+}
+
+function flashRosterPointer(){
+  const el = ensureRosterPointer();
+  if (!el) return;
+  // restart CSS animation
+  el.classList.remove('flash');
+  // force reflow to restart the animation reliably
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function startRosterPointer(force=false){
+  const el = ensureRosterPointer();
+  if (!el) return;
+
+  const activeId = getActiveTeamId();
+  // Only react if the active team actually changed (or if forced)
+  if (!force && state.ui.rosterPtr.activeId === activeId) return;
+
+  state.ui.rosterPtr.activeId = activeId;
+  placeRosterPointer();
+  flashRosterPointer();
+}
+
 /* =============[ MOVEMENT / COMBAT ]======================
    Drag tokens to move; animated path; resolve simple combat.
 ========================================================= */
@@ -1218,7 +1444,7 @@ function resolveArrival(dst, units, attacker='player'){
 // Neutral: non-capturable parking lot
 if (isNeutralOwner(dst)){
   const p = ensureParking(dst);
-  p[attacker] = (p[attacker] || 0) + units;  // park by team id
+  p[attacker] = (p[attacker] || 0) + units;
   return;
 }
 
@@ -1250,7 +1476,7 @@ if (isNeutralOwner(dst)){
 
 
 /* =============[ TURN / HUD / AI ]========================
-   Player turn budget; simple one-shot AI turn; HUD refresh.
+   Player turn budget; HUD refresh.
 ========================================================= */
 function incomeFor(id){
   const locs = state.nodes.filter(n => !isWater(n) && n.controller === id);
@@ -1313,7 +1539,7 @@ if (btnPatchNotes) btnPatchNotes.addEventListener('click', openPatchNotesPopup);
 
 
 function doAiTurn(){
-  // DEBUG SUMMARY (legacy single-AI-side turn)
+  // DEBUG SUMMARY ( single-AI-side turn)
   const summary = [];
   const resBefore = state.ai.resources;
   const aiWho = (state.ai?.faction || 'AI'); // e.g., "Horde" in FW; otherwise "AI"
@@ -1341,12 +1567,12 @@ function doAiTurn(){
     for (const nn of neighborsOf(a)) frontier.add(nn.name);
   }
 
-  // 3) Select candidates (same rules as before)
+  // 3) Select candidates
   const candidates = [...frontier]
     .map(nm => nodeByName(nm))
     .filter(n => n && n.name !== richest.name && !isWater(n))
     .filter(n => {
-      if (isNeutralOwner(n)) return false;                               // FW: neutrals not an attack target
+      if (isNeutralOwner(n)) return false;
       if (n.controller === 'none' || n.controller === 'neutral') return true;
       if (n.controller === 'player') return (n.units + n.baseDefense) < (richest.units - 1);
       return false;
@@ -1419,11 +1645,8 @@ function doAiTurn(){
 
   richest.units -= send;
   resolveArrival(tgt, send, 'ai');
-
   const nowCtl   = tgt.controller || 'none';
   const nowUnits = tgt.units || 0;
-
-  // Robust outcome (FW uses "ai", but in other contexts controller may vary)
   const wasAI = String(wasCtl||'').startsWith('ai') || wasCtl === 'ai';
   const nowAI = String(nowCtl||'').startsWith('ai') || nowCtl === 'ai';
 
@@ -1575,6 +1798,10 @@ function startFactionWar(faction){
   const nc=state.nodes.filter(n=>n.controller==='none').length;
   console.log(`[startFactionWar] ${playerF}: player=${pc} ai=${ac} none=${nc}`);
 state.aiTurnOrder = ['ai'];
+state.teams = [
+  { id:'player', label:faction,                crest:FACTIONS[faction]?.crest, type:'faction', faction },
+  { id:'ai',     label:(enemyF),               crest:FACTIONS[enemyF]?.crest,  type:'faction', faction:enemyF }
+];
 
 }
 
@@ -1590,7 +1817,7 @@ function startFreeForAll(raceKey){
     if (n.race === raceKey) {
       n.controller = 'player'; seedUnits(n);
     } else if (n.race && aiRaces.includes(n.race)) {
-      n.controller = `ai_${n.race}`; seedUnits(n);     // <<< per-race controller
+      n.controller = `ai_${n.race}`; seedUnits(n); 
     } else {
       n.controller = 'none';
     }
@@ -1605,8 +1832,8 @@ function startFreeForAll(raceKey){
     // Only add AI team if it actually controls at least one node:
     if (state.nodes.some(n => n.controller === `ai_${rk}`)) {
       state.teams.push({ id:`ai_${rk}`, label:RACES[rk].label, crest:RACES[rk].crest, type:'race', race:rk });
-      if (!state.raceWallets[rk]) state.raceWallets[rk] = 0;   // initialize wallet
-      state.aiTurnOrder.push(`ai_${rk}`);                       // each race acts on its own turn
+      if (!state.raceWallets[rk]) state.raceWallets[rk] = 0;
+      state.aiTurnOrder.push(`ai_${rk}`); 
     }
   });
 }
@@ -1630,6 +1857,30 @@ function showStartModal(){
   const startBtn=document.getElementById('startBtn'), modeHint=document.getElementById('modeHint'), diffHint=document.getElementById('diffHint');
   const pickFaction=document.getElementById('pickFaction'), pickRace=document.getElementById('pickRace'), raceGrid=document.getElementById('raceGrid');
   mask.style.display='flex'; mask.style.pointerEvents='auto'; mask.style.opacity='1';
+
+  // --- Play Type buttons ---
+const btnPlaySingle = document.getElementById('btnPlaySingle');
+const btnPlayMP     = document.getElementById('btnPlayMultiplayer');
+
+// Default: Single Player appears active
+if (btnPlaySingle) btnPlaySingle.classList.add('active');
+
+if (btnPlaySingle){
+  btnPlaySingle.addEventListener('click', () => {
+    btnPlaySingle.classList.add('active');
+    btnPlayMP?.classList.remove('active');
+    // No behavior changes yet; single-player remains the current flow
+  });
+}
+
+if (btnPlayMP){
+  btnPlayMP.addEventListener('click', (e) => {
+    e.preventDefault();
+    // purely visual toggle + tooltip is already handled by .feature-nyi global handler
+    btnPlayMP.classList.add('active');
+    btnPlaySingle?.classList.remove('active');
+  });
+}
 
   let pickedMode='faction', pickedDiff='Expert', pickedFaction=null, pickedRaceKey=null;
 
@@ -1701,10 +1952,15 @@ async function init(){
   });
   GameLog.init();
   ensureCoordBox();
+  setupPanelMinimax();
   await loadData();
   rerender();
 
   if (document.getElementById('startModal')) showStartModal();
   else showFactionChooser();
 }
-init();
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(init, 0);
+} else {
+  window.addEventListener('DOMContentLoaded', init);
+}
