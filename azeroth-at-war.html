@@ -17,13 +17,13 @@
     --emerald:#2e7d62;
     --crimson:#8b2f2f;
   }
-.hud .game-icon{
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-left: 4px;  
-  filter: drop-shadow(0 1px 2px #0008);
-}
+  .hud .game-icon{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-left: 4px;  
+    filter: drop-shadow(0 1px 2px #0008);
+  }
 
   html,body{height:100%;margin:0;background:#0d0c10;color:var(--parch);font-family:"EB Garamond", Georgia, serif;overflow:hidden}
   .hud{position:fixed;left:0;right:0;top:0;height:56px;display:flex;align-items:center;gap:12px;padding:8px 12px;background:linear-gradient(180deg, rgba(12,11,15,.95), rgba(12,11,15,.7));backdrop-filter:saturate(140%) blur(4px);border-bottom:1px solid rgba(200,170,110,.25);z-index:50}
@@ -43,53 +43,33 @@
   .edge{opacity:.75;filter:drop-shadow(0 0 2px #000)}
   .edge.thin{stroke:#9fb9ff;stroke-width:3}
   .edge.thick{stroke:#d0b06a;stroke-width:7}
-.edge.underground{
-  stroke: var(--emerald);
-  stroke-width: 4;
-  stroke-dasharray: 4 10;
-  opacity: .9;
-}
-  .edge.navy{
-    stroke: #76c8ff;
-    stroke-width: 4;
-    stroke-dasharray: 4 10;
-    opacity: .9;
-}
-.edge.navy{ stroke:#76c8ff; stroke-width:4; stroke-dasharray:4 10; opacity:.9; }
-.pin.ring.clr-water{ background:#7ec8ff; border-color:#2d6ea4; }
-.pin.ring.clr-alliance{ background:#1871e8; border-color:#0e3f8f; }
-.pin.ring.clr-horde{ background:#b11226; border-color:#6b0b16; }
-.pin.ring.clr-neutral{ background:#2aa84a; border-color:#17692e; }
-.pin.ring.clr-unclaimed{ background:#8a8f98; border-color:#5a5e65; }
-
-.popup.fixed-left {
-  position: fixed;      /* anchor to the screen, not the world */
-  left: 16px;           /* distance from left edge of the viewport */
-  top: 72px;            /* sit below top HUD bar */
-  width: 360px;
-  max-height: calc(100vh - 96px);
-  overflow: auto;
-  z-index: 60;
-}
+  .edge.underground{stroke: var(--emerald);stroke-width: 4;stroke-dasharray: 4 10;opacity: .9;}
+  .edge.navy{ stroke:#76c8ff; stroke-width:4; stroke-dasharray:4 10; opacity:.9; }
+  .pin.ring.clr-water{ background:#7ec8ff; border-color:#2d6ea4; }
+  .pin.ring.clr-alliance{ background:#1871e8; border-color:#0e3f8f; }
+  .pin.ring.clr-horde{ background:#b11226; border-color:#6b0b16; }
+  .pin.ring.clr-neutral{ background:#2aa84a; border-color:#17692e; }
+  .pin.ring.clr-unclaimed{ background:#8a8f98; border-color:#5a5e65; }
+  .popup.fixed-left {position: fixed;left: 16px;top: 72px;width: 360px;max-height: calc(100vh - 96px);overflow: auto;z-index: 60;}
 /* Node glow when part of previewed route */
-.preview-route { filter: drop-shadow(0 0 6px #ffd36b); }
+  .preview-route { filter: drop-shadow(0 0 6px #ffd36b); }
 
 /* banner at the top of the popup */
-.popup-banner{
-  width: 100%;
-  height: 120px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 1px 4px #0006, inset 0 0 0 1px rgba(0,0,0,.25);
-  margin: 2px 0 8px;
-  background:#000;
-}
-.popup-banner img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+  .popup-banner{
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px #0006, inset 0 0 0 1px rgba(0,0,0,.25);
+    margin: 2px 0 8px;
+    background:#000;
+  }
+  .popup-banner img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
 /* ===== Battle Log (bottom bar) ===== */
 .logbar{
   position: fixed;
@@ -101,27 +81,23 @@
   border-top: 1px solid rgba(200,170,110,.25);
   z-index: 80;
 }
-
 .log-crest{
   width: 28px; height: 28px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #e6d0a0, #a6813f 60%, #3a2d1a 100%);
   box-shadow: 0 0 0 1px rgba(200,170,110,.35), inset 0 0 0 1px rgba(0,0,0,.4);
 }
-
 .log-title{
   margin: 0;
   font-size: 16px;
   font-weight: 700;
   color: #f0e6d2;
 }
-
 .log-sep{
   width: 1px; height: 70%;
   background: linear-gradient(180deg, rgba(200,170,110,.35), rgba(200,170,110,.15));
   margin: 0 6px;
 }
-
 .log-scroll{
   flex: 1 1 auto;
   height: 100%;
@@ -133,6 +109,7 @@
   background: rgba(255,255,255,0.03);
   box-shadow: inset 0 0 0 1px rgba(200,170,110,.15);
 }
+
 /* pulsing candidate nodes during drag STILL IN TEST MODE*/
 .pin.candidate {
   animation: pinPulse 0.8s ease-in-out infinite;
@@ -143,7 +120,6 @@
   50%  { transform: scale(1.06); filter: drop-shadow(0 0 4px rgba(0,0,0,.25)); }
   100% { transform: scale(1); }
 }
-
 /* subtle preview line drawn during drag STILL IN TEST MODE */
 #dragPreviewLine {
   pointer-events: none;
@@ -151,11 +127,9 @@
   stroke-width: 3;
   stroke-dasharray: 6 8;
 }
-
 .log-entry{ margin: 0 0 4px 0; opacity:.95; }
 .log-turn { margin: 6px 0 8px; font-weight: 700; color:#c8aa6e; }
 .log-tip  { color:#b9d7ff; opacity:.9; }
-
   .node{position:absolute;transform:translate(-50%, -100%);pointer-events:auto}
   .pin{border-radius:50%;box-shadow:0 1px 4px #000c, inset 0 0 0 2px #0008;border:1px solid #000}
   /* SIZE SCALING */
@@ -163,15 +137,12 @@
   .pin.land.medium{width:25px;height:25px;background:radial-gradient(circle at 35% 30%, #ffd7a3 0, #e0a85d 50%, #9a6b30 100%)}
   .pin.land.large{width:32px;height:32px;background:radial-gradient(circle at 35% 30%, #ffd9e1 0, #cb6a7a 50%, #7a2834 100%)}
   .pin.ocean{width:18px;height:18px;background:radial-gradient(circle at 35% 30%, #dff5ff 0, #7cc6ff 50%, #2a6ea0 100%)}
-
   .ring.player{outline:2px solid var(--emerald)}
   .ring.ai{outline:2px solid var(--crimson)}
   .ring.neutral{outline:2px dashed #b7b7b7aa}
   .ring.none{outline:2px dotted #6fb1ffbb}
-
   .label{position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg, #221a14, #1a140f);padding:2px 8px;border-radius:8px;border:1px solid var(--gold-deep);color:var(--gold);font-size:12px;white-space:nowrap;pointer-events:none;box-shadow:0 0 0 1px #000 inset, 0 1px 3px #000}
   .label.ocean{opacity:.8;color:#cfeaff}
-
   .units-badge{position:absolute;top:-6px;left:-6px;background:#0c0b0f;border:1px solid #000;color:#fff;padding:1px 5px;border-radius:10px;font-size:11px;box-shadow:0 1px 2px #0009}
   .popup{position:absolute;min-width:260px;max-width:350px;background:radial-gradient(600px 300px at -10% -20%, #fff1 0 40%, #0000 60%),linear-gradient(180deg, var(--parch), var(--parch-deep));color:#2b2016;border:2px solid var(--gold-deep);border-radius:14px;box-shadow:0 12px 30px #000d, 0 0 0 1px #000 inset;padding:10px;z-index:60}
   .popup .title{font-weight:800;color:#3a2c1e;margin:0 0 6px;font-size:18px}
@@ -190,22 +161,12 @@
   .legend b{color:var(--gold)}
   .debug{position:fixed;right:10px;bottom:10px;z-index:70;padding:8px 10px;border-radius:10px;background:#1118;border:1px solid #000;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
   .pin.ring.clr-horde    { background: #b11226; border-color:#6b0b16; }
-.pin.ring.clr-alliance { background: #1871e8; border-color:#0e3f8f; }
-.pin.ring.clr-neutral  { background: #2aa84a; border-color:#17692e; }
-.pin.ring.clr-unclaimed{ background: #8a8f98; border-color:#5a5e65; }
-.pin.ring.clr-water {
-  background: #7ec8ff;      /* light blue fill */
-  border-color: #2d6ea4;    /* darker blue ring */
-}
-.popup.fixed-right {
-  position: fixed;
-  right: 16px;
-  top: 72px; /* below the HUD bar */
-  width: 420px;
-  max-height: calc(100vh - 96px);
-  overflow: auto;
-  z-index: 60;
-}
+  .pin.ring.clr-alliance { background: #1871e8; border-color:#0e3f8f; }
+  .pin.ring.clr-neutral  { background: #2aa84a; border-color:#17692e; }
+  .pin.ring.clr-unclaimed{ background: #8a8f98; border-color:#5a5e65; }
+  .pin.ring.clr-water {background: #7ec8ff; border-color: #2d6ea4; }
+  .popup.fixed-right {position: fixed; right: 16px; top: 72px; width: 420px; max-height: calc(100vh - 96px); overflow: visible; z-index: 120; }
+
 /* Patch Notes styling */
 .pn-wrapper { max-height: calc(70vh); overflow:auto; padding: 6px 2px 0; }
 .pn-entry   { background: #fff8; border: 1px solid #0002; border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; }
@@ -225,7 +186,6 @@
   height: 180px;
   overflow-y: auto;
   overflow-x: auto; 
-  /* Monospace only for the grid text; rest of UI stays EB Garamond */
   font-family: ui-monospace, Menlo, Consolas, "SFMono-Regular", monospace;
   font-size: 12px;
   line-height: 1.35;
@@ -241,8 +201,7 @@
 
 
 /* PHASE-1: start modal */
-.modal-mask{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:72px;
-  background:radial-gradient(900px 700px at 50% 35%, rgba(30,26,20,.98), rgba(10,9,12,.95))}
+.modal-mask{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:72px;background:radial-gradient(900px 700px at 50% 35%, rgba(30,26,20,.98), rgba(10,9,12,.95))}
 .modal{width:min(760px,92vw);color:#f0e6d2;font-family:"EB Garamond",Georgia,serif}
 .modal .panel{background:#161218;border:1px solid #8f6b2b;border-radius:14px;box-shadow:0 16px 48px #000d;padding:16px 18px}
 .modal h1{margin:0 0 6px;font-size:26px;color:#c8aa6e}
@@ -255,6 +214,210 @@
 .race-card.selected{outline:2px solid #c8aa6e}
 .race-card img{width:48px;height:48px;border-radius:50%;display:block;margin:0 auto 4px;object-fit:cover}
 .hidden{display:none!important}
+
+/* ===== Multiplayer scaffolding (visual only; NYI) ===== */
+
+/* Any element with this class will show the NYI tooltip when clicked */
+.feature-nyi { cursor: not-allowed; }
+
+/* Shared tooltip bubble */
+.tooltip-nyi{
+  position: fixed;
+  z-index: 9999;
+  background: #2b2016;
+  color: #ffe6b7;
+  border: 1px solid #0006;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: 12px/1.25 var(--ui-sans, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto);
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+  pointer-events: none;
+  transform: translate(-50%, -140%);
+  white-space: nowrap;
+}
+
+/* Modal toggle 'selected' look (works with Play Type, Mode, Difficulty) */
+.btn.active{
+  outline: 2px solid #ffd36b;
+  box-shadow: 0 0 0 2px rgba(255, 211, 107, .25) inset;
+}
+
+/* Fixed side panels (won’t overlap a centered map on desktop) */
+.mp-side{
+  position: fixed;
+  top: 72px;
+  bottom: 150px;
+  width: 280px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mp-chat{ left: 12px; }
+.mp-roster{ right: 12px; }
+
+.mp-card{
+  background: #fff8;
+  border: 1px solid #0003;
+  border-radius: 14px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mp-card .hd{
+  padding: 8px 10px;
+  background: linear-gradient(#3b2b18, #2b2016);
+  color: #ffd36b;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mp-card .bd{ padding: 8px 10px; overflow: auto; }
+
+/* Chat specifics */
+.mp-chat .log{
+  display: flex; flex-direction: column; gap: 6px;
+  max-height: 40vh; overflow: auto;
+}
+.mp-chat .msg .who{ font-weight: 700; margin-right: 6px; }
+.mp-chat .msg .t{ opacity: .6; font-size: 11px; margin-left: 6px; }
+.mp-chat .input{
+  padding: 8px 10px; display: flex; gap: 8px; border-top: 1px solid #0002;
+}
+.mp-chat .input input[type="text"]{
+  flex: 1; padding: 8px 10px; border-radius: 10px; border: 1px solid #0003; background:#fff8; color:#2b2016;
+}
+
+/* Roster specifics */
+.badge-turn{ padding: 2px 8px; border-radius: 999px; background: #ffd36b; color:#2b2016; font-weight: 800; font-size: 11px; }
+.roster-list{ display:flex; flex-direction:column; gap:8px; }
+.roster-row{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #0002; border-radius:10px; padding:6px 8px; }
+.roster-row .crest{ width:24px; height:24px; border-radius:50%; background:#ddd; box-shadow: inset 0 0 0 2px #0002; }
+.roster-row .name{ font-weight:700; }
+.roster-row .stats{ margin-left:auto; font-size:12px; opacity:.85; display:flex; gap:10px; }
+.roster-row .stats span{ white-space:nowrap; }
+
+/* ===== Side panel minimize/expand ===== */
+.minimax{
+  margin-left: auto;
+  appearance: none;
+  border: 1px solid #0005;
+  background: #fff2;
+  color: #ffd36b;
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+}
+.minimax:hover{ filter: brightness(1.08); }
+
+/* ==== Collapse side panels into the TITLE BAR (no rotation, no rail) ==== */
+
+/* When collapsed, shrink the fixed aside to just the header height */
+:root { --mp-titlebar-h: 42px; } 
+
+.mp-side.collapsed {
+  /* keep width the normal panel width */
+  width: 280px;                 /* override any earlier 36px rail rule */
+  /* convert bottom constraint to a fixed height equal to the title bar */
+  bottom: auto !important;
+  height: var(--mp-titlebar-h);
+  /* smooth collapse/expand */
+  transition: height .18s ease, width .18s ease;
+  /* no scrollbar chrome on the aside itself */
+  scrollbar-width: none;
+}
+.mp-side.collapsed::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Card fills that short aside, header stays horizontal */
+.mp-side.collapsed .mp-card {
+  height: 100%;
+  overflow: hidden;
+}
+
+.mp-side.collapsed .mp-card .hd {
+  writing-mode: horizontal-tb;
+  text-orientation: initial;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+}
+
+/* Roster chevron must disappear when collapsed */
+.mp-side.mp-roster.collapsed .roster-pointer { display: none !important; }
+
+
+/* Smooth width change */
+.mp-side{ transition: width .18s ease; }
+/* Darker roster text for better contrast */
+.mp-side.mp-roster .roster-row .name,
+.mp-side.mp-roster .roster-row .stats,
+.mp-side.mp-roster .roster-row .stats span {
+  color: #2b2016;
+}
+
+/* Roster chevron pointer */
+.mp-side.mp-roster .mp-card { position: relative; overflow: visible; }
+.roster-pointer{
+  position: absolute;
+  left: -12px; 
+  width: 0; height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 16px solid #ffd36b;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.45));
+  z-index: 200;
+  pointer-events: none;
+}
+/* One-shot flash when the active team changes */
+.roster-pointer.flash {
+  animation: rpFlash .6s ease-in-out 2; /* quick flash twice */
+}
+@keyframes rpFlash {
+  0%   { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); opacity: .85; transform: translateX(0); }
+  50%  { filter: drop-shadow(0 0 3px rgba(0,0,0,.45)); opacity: 1; transform: translateX(-1px); }
+  100% { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); opacity: .85; transform: translateX(0); }
+}
+/* Make the card fill the fixed-height aside */
+.mp-side .mp-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the body area the scroll container */
+.mp-side .mp-card .bd{
+  flex: 1;
+  min-height: 0;      /* critical so flex children can shrink and scroll */
+  overflow: auto;     /* restores the scrollbar */
+}
+/* ==== RIGHT PANEL (Players/Turn Order) — collapsed height tuning ==== */
+:root { --roster-collapsed-height: 40px; }
+
+.mp-side.mp-roster.collapsed{
+  /* make the aside only as tall as the title bar */
+  height: var(--roster-collapsed-height);
+  bottom: auto !important;   /* don't anchor to page bottom while collapsed */
+  overflow: hidden;          /* no content peeking */
+}
+
+.mp-side.mp-roster.collapsed .mp-card{
+  overflow: hidden;          /* clip anything inside the card */
+}
+
+.mp-side.mp-roster.collapsed .mp-card .bd,
+.mp-side.mp-roster.collapsed .mp-card .input{
+  display: none !important;  /* hide the scroll/content area entirely */
+}
+
+.mp-side.mp-roster.collapsed .roster-pointer{
+  display: none !important;  /* hide the chevron while collapsed */
+}
 
 </style>
 </head>
@@ -291,19 +454,6 @@
     </div>
   </div>
 
-  <!--
-  <div class="legend">
-    <div><b>Mouse:</b> drag to pan, wheel to zoom</div>
-    <div><b>Owners:</b> green=You, red=AI, gray=Neutral, dotted blue=Ocean (transit)</div>
-    <div><b>Sizes:</b> small(1 def, +1/turn), medium(3 def, +3/turn), large(5 def, +6/turn)</div>
-    <div><b>Edge Cost:</b> thin=1, thick=2</div>
-  </div>
-
-  <div class="debug" id="debugBox" style="display:none">
-    <div><b>Coords:</b> <span id="dbgXY">0,0</span></div>
-    <div><b>Scale:</b> <span id="dbgScale">1.00</span></div>
-  </div>
-  -->
 <!-- Battle Log (fixed bottom bar) -->
 <div id="logBar" class="logbar">
   <div class="log-crest" aria-hidden="true"></div>
@@ -355,9 +505,61 @@
       <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
         <button id="startBtn" class="btn" disabled>Start Game</button>
       </div>
+      <div class="seg">
+        <h2>Play Type</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn active" id="btnPlaySingle">Single Player (AI)</button>
+          <button class="btn feature-nyi" id="btnPlayMultiplayer" data-nyi="Feature Not Yet Active">Multiplayer</button>
+        </div>
+        <div style="opacity:.85;margin-top:8px">Multiplayer is coming, hopefully soon; functionality not yet stable enough for testing.</div>
+      </div>
+      
     </div>
   </div>
 </div>
+<!-- ===== Left: Chat (visual only, NYI) ===== -->
+<aside class="mp-side mp-chat">
+  <div class="mp-card">
+    <div class="hd">
+      <span>Lobby / Match Chat <span class="badge-turn">NYI</span></span>
+      <button class="minimax" id="btnMinimaxChat" aria-label="Minimize chat" title="Minimize">–</button>
+    </div>
+    
+    <div class="bd">
+      <div class="log">
+        <div class="msg"><span class="who">System</span><span class="text">Multiplayer is not active yet.</span></div>
+        <div class="msg"><span class="who">Tip</span><span class="text">Click “Multiplayer” in the Start Game modal to see the tooltip.</span></div>
+      </div>
+    </div>
+    <div class="input">
+      <input class="feature-nyi" type="text" placeholder="Type a message…" disabled />
+      <button class="btn feature-nyi">Send</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ===== Right: Players/Stats (visual only, NYI) ===== -->
+<aside class="mp-side mp-roster">
+  <div class="mp-card">
+    <div class="hd">
+      <span>Players / Turn Order </span>
+      <button class="minimax" id="btnMinimaxRoster" aria-label="Minimize roster" title="Minimize">–</button>
+    </div>
+    
+    <div class="bd">
+      <div class="roster-list">
+        <div class="roster-row">
+          <div class="crest"></div><div class="name">Orcs</div>
+          <div class="stats"><span>B: 0</span><span>U: 0</span><span>K: 0</span><span>S: 0</span></div>
+        </div>
+        <div class="roster-row">
+          <div class="crest"></div><div class="name">Dwarves</div>
+          <div class="stats"><span>B: 0</span><span>U: 0</span><span>K: 0</span><span>S: 0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
 
 </body>
 </html>
