@@ -875,7 +875,7 @@
     "region": "Blackrock Mountains",
     "type": "land",
     "size": "small",
-    "ownerType": "Neutral",
+    "ownerType": "Capturable",
     "controller": "none",
     "units": 25,
     "baseDefense": 3,
