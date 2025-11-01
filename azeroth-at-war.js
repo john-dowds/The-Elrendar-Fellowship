@@ -19,18 +19,67 @@ const MAX_TRAVEL_CAP      = 8;
 const START_UNITS         = { small: 2, medium: 3, large: 4 };
 const MIN_SCALE = 0.25, MAX_SCALE = 3.0;
 const ENABLE_CMDCLICK_COPY = true;
+const MAX_LOG_ITEMS = 250;
 const SHOW_PATCH_NOTES_ON_START = false;
 const PATCH_NOTES = [
   {
-    ver: "v2.0.12",
-    date: "10.27.2025",
+    ver: "v2.0.13",
+    date: "11.1.2025",
     items: [
-      "FFA: each AI race now has its own wallet (independent earn/spend); previously was shared across all races as AI/Player.",
-      "Drag preview now traces a predicted path (lanes + nodes); does not regard currency.",
-      "Travel chip shows current only (cap removed from chip)."
+      "New updates to locations, lanes, and new additions included.",
+      "Revamped single-player AI thinking processes to focus on more aggressive, long term strategy.",
+      "Reconfigured Battle Log functionality to address a data throttling issue; should run much more smoothly after 20+ turns.",
+      "Rebalanced starting population counts."
     ]
   },
 ];
+// ---- Guide ----
+const GUIDE_SECTIONS = [
+  {
+    title: "Overview",
+    body: `
+Azeroth at War is a lane-and-node control strategy map. Build up your armies, fortify your positions, and venture out to capture settlements, strangle major throughways, and outmaneuver opponents.
+`
+  },
+  {
+    title: "Synopsis",
+    list: [
+      "Azeroth is at war, and there's no telling who will rule once the fires have died down.",
+      "In this game, you'll choose between either a Free For All game of world conquest, or a grueling war of attrition between the Horde and Alliance in the Faction War mode.",
+      "Currently, only the AI mode is available, where you'll play against the computer. In the future, a multiplayer feature will be implemented enabling you to play with up to seventeen of your friends."
+    ]
+  },
+  {
+    title: "Turn Flow",
+    list: [
+      "Start of your turn: resources & travel points are granted based on total number of locations held.",
+      "Spend resources to Train (+1 unit) or Build (+1 defense).",
+      "Training adds new units for you to command. Building fortifies your controlled locations, making them harder to capture.",
+      "Drag units from a location to move across connected lanes.",
+      "End Turn when finished; AI/other players act between your turns.",
+      "All races in Free For All start with four bases and 130 units total."
+    ]
+  },
+  {
+    title: "Movement & Combat",
+    list: [
+      "Movement cost is based on lane thickness (thin = 1, thick, underground, & navy = 2).",
+      "You can’t pass through enemy-held locations, except for neutral ones (green).",
+      "On arrival: if defenders exist, the the higher number wins in combat. Attacker must have more units than the natural defense rating.",
+      "Maintain a balance of defensive locations and offensive groupings, and be strategic about which control points you focus on."
+    ]
+  },
+  {
+    title: "Bugs & Improvements",
+    list: [
+      "Azeroth at War is a constant WIP, and a side project for the guild master; there will be bugs.",
+      "If you notice any specific issues, or have suggestions or critiques, you can reach out at silvertongue_scribe on Discord.",
+      "Multiplayer is a WIP, and will be released at a time in the future when it is stable.",
+      "World map created by Ansinosth for this project, based on the World of Warcraft game maps."
+    ]
+  }
+];
+
 
 
 // --- Economy knobs --
@@ -70,7 +119,7 @@ const RACES = {
 };
 const FACTIONS = {
   Alliance:{label:"Alliance", crest:"assets/art/crests/alliance.png", start:["Stormwind City","Ironforge","Shadowforge City","Gnomeregan","Amirdrassil","Exodar","Gilneas City"]},
-  Horde:{label:"Horde", crest:"assets/art/crests/horde.png", start:["Orgrimmar","Thunderbluff","Undercity","Suramar City","Silvermoon City","Dazar'alor","Bilgewater Port"]}
+  Horde:{label:"Horde", crest:"assets/art/crests/horde1.png", start:["Orgrimmar","Thunderbluff","Undercity","Suramar City","Silvermoon City","Dazar'alor","Bilgewater Port"]}
 };
 const REGION_BANNERS = {
   "Ashenvale": "ashenvale.jpg","Azuremyst Isle": "azuremyst_isle.jpg","The Barrens": "the_barrens.jpg","Black Morass": "black_morass.jpg",
@@ -198,6 +247,49 @@ function openPatchNotesPopup(){
 }
 function closePatchNotesPopup(){
   const p = document.getElementById('patchNotesPopup');
+  if (p) p.remove();
+}
+
+function renderGuideHTML(){
+  if (!Array.isArray(GUIDE_SECTIONS) || GUIDE_SECTIONS.length === 0){
+    return `<div class="g-section"><p>No guide content yet.</p></div>`;
+  }
+  let out = '';
+  for (const sec of GUIDE_SECTIONS){
+    const title = escapeHtml(sec.title || '');
+    const body  = sec.body ? `<p>${escapeHtml(sec.body).replace(/\n/g,'<br>')}</p>` : '';
+    const list  = Array.isArray(sec.list) ? `<ul>${sec.list.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : '';
+    out += `<div class="g-section"><h3>${title}</h3>${body}${list}</div>`;
+  }
+  return out;
+}
+
+function openGuidePopup(){
+  let existing = document.getElementById('guidePopup');
+  if (existing) { existing.focus(); return; }
+
+  const html = renderGuideHTML();
+
+  const pop = document.createElement('div');
+  pop.className = 'popup fixed-right guide';
+  pop.id = 'guidePopup';
+  pop.innerHTML = `
+    <div class="title">Guide <span class="chip">How to Play</span></div>
+    <div class="guide-wrapper">
+      ${html}
+    </div>
+    <div class="row" style="justify-content:flex-end; gap:8px; margin-top:8px">
+      <button class="btn" id="btnGuideClose">Close</button>
+    </div>
+  `;
+  document.body.appendChild(pop);
+
+  pop.querySelector('#btnGuideClose').addEventListener('click', closeGuidePopup);
+  pop.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGuidePopup(); });
+}
+
+function closeGuidePopup(){
+  const p = document.getElementById('guidePopup');
   if (p) p.remove();
 }
 
@@ -454,13 +546,24 @@ const GameLog = {
     this._append(cls, txt);
   },
 
-  _append(cls, txt){
-    const p = document.createElement('div');
-    p.className = cls;
-    p.textContent = txt;
-    this.el.appendChild(p);
-    this.el.scrollTop = this.el.scrollHeight;
+// Replace GameLog._append with this capped version:
+_append(cls, txt){
+  const el = this.el || (this.el = document.getElementById('logScroll'));
+  if (!el) return;
+
+  const p = document.createElement('div');
+  p.className = cls;
+  p.textContent = txt;
+  el.appendChild(p);
+
+  // Cap the number of log nodes to avoid unbounded growth
+  while (el.childElementCount > MAX_LOG_ITEMS) {
+    el.removeChild(el.firstChild);
   }
+
+  el.scrollTop = el.scrollHeight;
+}
+
 };
 
 
@@ -571,150 +674,296 @@ function isPathTraversableForTeam(path, teamId){
 }
 
 /** One animated AI action for a given teamId ('ai' for FW, 'ai_<race>' for FFA). */
+/** Aggressive AI: prefers expansion/capture over building. */
 function doAiTurnAnimated(teamId, onDone){
-  state.activeTeam = teamId;   // <<< add this line
+  state.activeTeam = teamId;
   const teamLabel = (teamId === 'ai') ? 'AI' : teamId.replace(/^ai_/, 'AI ');
   const diff = DIFFICULTY[state.game.difficulty] || DIFFICULTY.Expert;
+
   const maxActions  = diff.maxActions || 3;
   const minReserve  = Math.max(0, diff.minReserve || 0);
+  let   travelLeft  = travelCapFor(teamId);
 
-  const resBefore = resourcesOf(teamId);
+  const resBefore   = resourcesOf(teamId);
+  const summary     = [];
+  let   actions     = 0;
+  let   builtThisTurn = 0;
+
   startRosterPointer(true);
 
-  // Per-team travel budget (soft-curve based on that team’s land holdings)
-  let travelLeft = travelCapFor(teamId);
-
-  // Nodes owned by this team
   function myTeamNodes(){
     return state.nodes.filter(n => !isWater(n) && n.controller === teamId);
   }
+  function stackPower(n){ return (n.units|0) + (n.baseDefense|0); }
 
-  function pickRichest(){
+  // Evaluate best target from a given source node.
+// Score order: (emptiness first) -> cost -> hops -> euclidean length
+function evalFrom(src){
+  const frontier = new Set();
+  const nbrs = neighborsOf(src.name).map(n => n.name);
+  for (const a of [src.name, ...nbrs]) { frontier.add(a); for (const nn of neighborsOf(a)) frontier.add(nn.name); }
+
+  let best = null;
+  for (const nm of frontier){
+    const t = nodeByName(nm);
+    if (!t || t.name === src.name || isWater(t)) continue;
+
+    const emptyOrNeutral = (t.controller === 'none' || t.controller === 'neutral');
+    const bd  = (t.baseDefense|0);
+    const tus = (t.units|0);
+    const defenders = bd + tus;
+
+    // Build a path and ensure team traversability
+    const pf = pathfind(src.name, t.name);
+    if (!pf.path.length) continue;
+    if (!isPathTraversableForTeam(pf.path, teamId)) continue;
+
+    // If route crosses an uncaptured Capturable midpoint, skip
+    if (pathBlockedByUncapturedCapturable(pf.path)) continue;
+
+    // ---- NEW: exact minimum required to CAPTURE this target ----
+    // If it's enemy-held and has 0 units left, you still need bd+1 to flip control.
+    // Otherwise you need defenders+1 (units+bd).
+    const isEnemyHeld = (!emptyOrNeutral && t.controller !== teamId);
+    const required = isEnemyHeld
+      ? ((tus === 0) ? (bd + 1) : (defenders + 1))
+      : 1;
+
+    // If this source can't possibly send the minimum (respecting reserve), skip it
+    const available = Math.max(0, (src.units|0) - minReserve);
+    if (available < required) continue;
+
+    const score = [ emptyOrNeutral ? 0 : 1, pf.cost, pf.hops, pf.length ];
+    if (!best || lexiLess(score, best.score)) {
+      best = { src, target: t, path: pf.path, cost: pf.cost, emptyOrNeutral, defenders, required, score };
+    }
+  }
+  return best; 
+}
+
+
+  // Look across top few strongest stacks, pick global best
+  function findBestPlan(){
     const mine = myTeamNodes();
     if (!mine.length) return null;
-    return mine.slice().sort((a,b) => (b.units + b.baseDefense) - (a.units + a.baseDefense))[0];
+
+    // Try top 6 sources by power (tune up/down easily)
+    const sources = mine.slice().sort((a,b)=>stackPower(b)-stackPower(a)).slice(0, 6);
+    let global = null;
+    for (const s of sources){
+      const cand = evalFrom(s);
+      if (!cand) continue;
+      if (!global || lexiLess(cand.score, global.score)) global = cand;
+    }
+    return global; // may be null
   }
 
-  function computeBest(richest){
-    if (!richest) return null;
+  // Quick, cheap capture adjacent to ANY owned node
+  function tryAdjacentFreeCapture(){
+    const mine = myTeamNodes();
+    for (const s of mine){
+      for (const nb of neighborsOf(s.name)){
+        const t = nodeByName(nb.name);
+        if (!t || isWater(t)) continue;
+        const empty = (t.controller === 'none' || t.controller === 'neutral') && ((t.units|0)+(t.baseDefense|0)) === 0;
+        if (!empty) continue;
 
-    const frontier = new Set();
-    const nbrs = neighborsOf(richest.name).map(n => n.name);
-    for (const a of [richest.name, ...nbrs]) {
-      frontier.add(a);
-      for (const nn of neighborsOf(a)) frontier.add(nn.name);
-    }
+        // Adjacent path
+        const pf = pathfind(s.name, t.name);
+        if (!pf.path.length || pf.cost > travelLeft) continue;
+        if (!isPathTraversableForTeam(pf.path, teamId)) continue;
 
-    const candidates = [...frontier]
-      .map(nm => nodeByName(nm))
-      .filter(n => n && n.name !== richest.name && !isWater(n))
-      .filter(n => {
-        if (isNeutralOwner(n)) return false;   // ignore neutral parking as attack target
-        if (n.controller === 'none' || n.controller === 'neutral') return true;
-        // Attack anyone not me:
-        return n.controller !== teamId && (n.units + n.baseDefense) < (richest.units - 1);
-      });
+        // Send at least 1 (respect reserve)
+        const canSend = Math.max(0, (s.units|0) - minReserve);
+        const send = Math.max(1, Math.min(3, canSend)); 
+        if (send <= 0) continue;
 
-    let best = null;
-    for (const cand of candidates) {
-      const p = pathfind(richest.name, cand.name);
-      if (!p.path.length) continue;
-      if (!isPathTraversableForTeam(p.path, teamId)) continue;
-      const score = [p.cost, p.hops, p.length];
-      if (!best || lexiLess(score, (best.score || [Infinity,Infinity,Infinity]))) {
-        best = { target: cand, path: p.path, cost: p.cost, score };
+        // Execute capture now
+        s.units -= send;
+        animateArmyMove(pf.path, send, () => {
+          const beforeCtl = t.controller || 'none';
+          resolveArrival(t, send, teamId);
+          const captured  = (t.controller === teamId && beforeCtl !== teamId);
+          summary.push(`Quick-claimed ${t.name} from ${s.name} (cost ${pf.cost})${captured?' [captured]':''}.`);
+          travelLeft -= pf.cost; actions += 1; rerender(); requestAnimationFrame(step);
+        });
+        return true;
       }
     }
-    return best;
+    return false;
+  }
+// --- Spend-down helpers: choose good places to build/train ---
+function isExposed(n){
+  // Any neighbor not controlled by me (enemy or neutral) -> exposed
+  return neighborsOf(n.name).some(nb => {
+    const t = nodeByName(nb.name);
+    if (!t || isWater(t)) return false;
+    const ctl = String(t.controller || 'none');
+    return ctl !== teamId;
+  });
+}
+function myTeamNodes(){  // (shadows the earlier one for spend phase)
+  return state.nodes.filter(n => !isWater(n) && n.controller === teamId);
+}
+function pickBuildTarget(){
+  // Prefer exposed, low-defense nodes; then any low-defense node
+  const mine = myTeamNodes();
+  if (!mine.length) return null;
+  const byNeed = mine.slice().sort((a,b) => {
+    const aE = isExposed(a) ? 0 : 1;
+    const bE = isExposed(b) ? 0 : 1;
+    if (aE !== bE) return aE - bE;
+    const ad = (a.baseDefense|0), bd = (b.baseDefense|0);
+    if (ad !== bd) return ad - bd;
+    return (a.units|0) - (b.units|0); // fewer units first
+  });
+  return byNeed[0] || null;
+}
+function pickTrainTarget(){
+  // Prefer exposed nodes with fewest units; then any with fewest units
+  const mine = myTeamNodes();
+  if (!mine.length) return null;
+  const byNeed = mine.slice().sort((a,b) => {
+    const aE = isExposed(a) ? 0 : 1;
+    const bE = isExposed(b) ? 0 : 1;
+    if (aE !== bE) return aE - bE;
+    return (a.units|0) - (b.units|0);
+  });
+  return byNeed[0] || null;
+}
+function spendDownResources(){
+  // Burn all resources this turn: build (5) preferred, then train (1)
+  // Guard against infinite loops if no valid targets exist.
+  let guard = 0;
+  while (resourcesOf(teamId) >= 1 && guard++ < 1000){
+    // Prefer building if we can afford it and there is a good target
+    if (resourcesOf(teamId) >= 5){
+      const b = pickBuildTarget();
+      if (b){
+        b.baseDefense = (b.baseDefense|0) + 1;
+        spendResources(teamId, 5);
+        summary.push(`Built +1 defense at ${b.name} (baseDefense ${b.baseDefense}).`);
+        continue;
+      }
+    }
+    // Otherwise train at the best target we can find
+    const t = pickTrainTarget();
+    if (t){
+      t.units = (t.units|0) + 1;
+      spendResources(teamId, 1);
+      summary.push(`Trained +1 at ${t.name} (units ${t.units}).`);
+      continue;
+    }
+    // No eligible targets → stop to avoid infinite loop
+    break;
+  }
+}
+
+function finish(){
+  // NEW: spend all remaining build points before ending turn
+  const resBeforeSpend = resourcesOf(teamId);
+  spendDownResources();
+  if (resourcesOf(teamId) !== resBeforeSpend){
+    // We changed state → refresh once
+    rerender();
   }
 
-  const summary = [];
-  let actions = 0;
-  let _iterations = 0;
-
-  function finish(){
+  if (summary.length){
     console.groupCollapsed(`[${teamLabel}] Turn ${state.turn} summary`);
     summary.forEach(m => console.log('•', m));
     console.log(`• Resources: ${resBefore} → ${resourcesOf(teamId)}`);
     summary.forEach(m => GameLog.event(`${teamDisplayName(teamId)} ${m}`));
     console.groupEnd();
-    if (onDone) onDone();
   }
+  if (onDone) onDone();
+}
 
-  const step = () => {
-    if (++_iterations > 1000) {
-      console.warn('[AI]', teamLabel, 'aborted chain after 1000 iterations');
-      return finish();
-    }
 
+  function step(){
     if (actions >= maxActions || travelLeft <= 0) return finish();
 
-    const richest = pickRichest();
-    if (!richest) {
-      summary.push('No controlled locations.');
-      return requestAnimationFrame(step);
-    }
+    // Prefer expansion: search across sources for best plan
+    const plan = findBestPlan();
 
-    const best = computeBest(richest);
+    // If nothing found or too expensive, try cheap adjacent flips before giving up
+    if (!plan || plan.cost > travelLeft){
+      if (tryAdjacentFreeCapture()) return; // captured; step will continue via RAF in callback
 
-    if (!best) {
-      if (resourcesOf(teamId) >= 1 && Math.random() < 0.6) {
-        richest.units++; spendResources(teamId, 1);
-        summary.push(`Trained +1 at ${richest.name} (units now ${richest.units})`);
-        return requestAnimationFrame(step);
-      } else if (resourcesOf(teamId) >= 5) {
-        richest.baseDefense++; spendResources(teamId, 5);
-        summary.push(`Built +1 defense at ${richest.name} (baseDefense now ${richest.baseDefense})`);
-        return requestAnimationFrame(step);
+      // No captures reachable—do a single TRAIN, then retry once
+      const myNodes = myTeamNodes().sort((a,b)=>stackPower(b)-stackPower(a));
+      const richest = myNodes[0];
+      if (richest && resourcesOf(teamId) >= 1){
+        richest.units += 1; spendResources(teamId, 1);
+        summary.push(`Trained +1 at ${richest.name} (units now ${richest.units}).`);
+        actions += 1; rerender(); return requestAnimationFrame(step);
       }
-      summary.push('No viable attacks; insufficient resources.');
+
+      // If we have a lot of resources and haven’t built this turn, allow ONE build
+      if (richest && resourcesOf(teamId) >= 5 && builtThisTurn === 0){
+        richest.baseDefense += 1; spendResources(teamId, 5);
+        builtThisTurn = 1;
+        summary.push(`Built +1 defense at ${richest.name} (baseDefense now ${richest.baseDefense}).`);
+        actions += 1; rerender(); return requestAnimationFrame(step);
+      }
+
+      // Truly nothing to do
+      summary.push(`No reachable captures this action.`);
       return finish();
     }
 
-    if (pathBlockedByUncapturedCapturable(best.path)) {
-      summary.push('No valid path (blocked by enemy).');
+    // We have a plan: attack/capture
+const { src, target, path, cost, emptyOrNeutral, defenders, required } = plan;
+
+// Decide how many to send: aggressive but never below the capture minimum
+const canSend = Math.max(0, (src.units|0) - minReserve);
+
+// Capture minimum accounting for baseDefense when units == 0:
+// - empty/neutral → 1
+// - enemy-held, units==0 → baseDefense+1
+// - enemy-held with units → defenders+1
+const mustSend = required;  // computed in evalFrom()
+
+// Aggressive push (≈75% of stack after reserve), but never below mustSend
+const send = Math.max(mustSend, Math.floor(canSend * 0.75));
+
+
+    if (send <= 0 || (src.units|0) < send){
+      summary.push(`Insufficient units at ${src.name} to push on ${target.name}.`);
+      // Try adjacent freebies before giving up this action
+      if (tryAdjacentFreeCapture()) return;
       return finish();
     }
 
-    if (best.cost > travelLeft) {
-      summary.push(`Could not reach ${best.target.name} (cost ${best.cost} > cap ${travelLeft}).`);
+    if (cost > travelLeft){
+      summary.push(`Could not reach ${target.name} (cost ${cost} > cap ${travelLeft}).`);
+      // Try adjacent freebies before giving up this action
+      if (tryAdjacentFreeCapture()) return;
       return finish();
     }
 
-    const canSend = Math.max(0, richest.units - minReserve);
-    const send = Math.max(1, Math.floor(canSend / 2));
-    if (send <= 0 || richest.units < send) {
-      summary.push(`Insufficient units to move from ${richest.name}.`);
-      return finish();
-    }
+    // Execute the move
+    src.units -= send;
+    const wasCtl = target.controller || 'none';
+    const wasPow = (target.units|0) + (target.baseDefense|0);
 
-    const tgt = nodeByName(best.target.name);
-    const wasCtl   = tgt.controller || 'none';
-    const wasPower = (tgt.units || 0) + (tgt.baseDefense || 0);
+    animateArmyMove(path, send, () => {
+      resolveArrival(target, send, teamId);
 
-    richest.units -= send;
-
-    animateArmyMove(best.path, send, () => {
-      resolveArrival(tgt, send, teamId); 
-
-      const nowCtl   = tgt.controller || 'none';
-      const nowUnits = tgt.units || 0;
-
+      const nowCtl = target.controller || 'none';
+      const nowU   = target.units || 0;
       let outcome = 'engaged';
       if (nowCtl === teamId && wasCtl !== teamId) outcome = 'captured';
-      else if (nowCtl !== teamId && nowUnits < wasPower) outcome = 'weakened defenders';
-      else if (nowCtl !== teamId && nowUnits >= wasPower) outcome = 'repelled';
+      else if (nowCtl !== teamId && nowU < wasPow) outcome = 'weakened defenders';
+      else if (nowCtl !== teamId && nowU >= wasPow) outcome = 'repelled';
 
-      summary.push(`Moved ${send} from ${richest.name} → ${tgt.name} (cost ${best.cost}): ${outcome}. Now ${tgt.name} = controller ${nowCtl}, units ${nowUnits}.`);
-
-      travelLeft -= best.cost;
-      actions += 1;
-      rerender();
-      requestAnimationFrame(step);
+      summary.push(`Pushed ${send} from ${src.name} → ${target.name} (cost ${cost}): ${outcome}.`);
+      travelLeft -= cost; actions += 1; rerender(); requestAnimationFrame(step);
     });
-  };
+  }
+
   step();
 }
+
 
 (function(){
   let tip;
@@ -809,7 +1058,7 @@ function renderNodes(){
     nodeLayer.appendChild(wrap);
   }
 }
-function rerender(){ layoutWorld(); renderEdges(); renderNodes(); refreshHUD(); renderRosterPanel(); }
+function rerender(){ layoutWorld(); renderNodes(); refreshHUD(); renderRosterPanel(); }
 // Ensure a single SVG line exists for drag preview STILL IN TEST MODE
 function ensureDragPreviewLine(){
   if (!state.svg) state.svg = document.querySelector('svg'); 
@@ -1215,7 +1464,7 @@ function getTeamsMeta(){
   const pLab = state.player?.faction || 'Alliance';
   const aLab = state.ai?.faction || 'Horde';
   const pCrest = FACTIONS[pLab]?.crest || 'assets/art/crests/alliance.png';
-  const aCrest = FACTIONS[aLab]?.crest || 'assets/art/crests/horde.png';
+  const aCrest = FACTIONS[aLab]?.crest || 'assets/art/crests/horde1.png';
   out.push({ id:'player', label:pLab, crest:pCrest, type:'faction', faction:pLab });
   out.push({ id:'ai',     label:aLab, crest:aCrest, type:'faction', faction:aLab });
   return out;
@@ -1537,6 +1786,8 @@ if (btnNewGame) {
 const btnPatchNotes = document.getElementById('btnPatchNotes');
 if (btnPatchNotes) btnPatchNotes.addEventListener('click', openPatchNotesPopup);
 
+const btnGuide = document.getElementById('btnGuide');
+if (btnGuide) btnGuide.addEventListener('click', openGuidePopup);
 
 function doAiTurn(){
   // DEBUG SUMMARY ( single-AI-side turn)
@@ -1954,6 +2205,7 @@ async function init(){
   ensureCoordBox();
   setupPanelMinimax();
   await loadData();
+  renderEdges();
   rerender();
 
   if (document.getElementById('startModal')) showStartModal();
