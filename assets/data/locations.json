@@ -1511,7 +1511,31 @@
     "race": "darkspear"
   },
   {
-    "name": "Furbolg Village",
+    "name": "Vermillion Redoubt",
+    "x": 7263, "y": 2767,
+    "region": "Khaz Modan",
+    "type": "land",
+    "size": "medium",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 25,
+    "baseDefense": 5,
+    "nameVisible": true
+  },
+  {
+    "name": "Hyjal Barrow Dens",
+    "x": 1897, "y": 2012,
+    "region": "Mount Hyjal",
+    "type": "land",
+    "size": "small",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 15,
+    "baseDefense": 1,
+    "nameVisible": true
+  },
+  {
+    "name": "Azshara Furbolg Village",
     "x": 2117,
     "y": 2258,
     "region": "Durotar",
@@ -4507,6 +4531,18 @@
     "banner": "icecrown_citadel.jpg"
   },
   {
+    "name": "Naz'anak: The Forgotten Depths",
+    "x": 3809, "y": 1029,
+    "region": "Northern Northrend",
+    "type": "land",
+    "size": "medium",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 40,
+    "baseDefense": 5,
+    "nameVisible": true
+  },
+  {
     "name": "Onslaught Harbor",
     "x": 3437,
     "y": 707,
@@ -7415,6 +7451,19 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 3,
+    "nameVisible": true
+  },
+
+  {
+    "name": "Rage Scar Hold",
+    "x": 1055, "y": 3446,
+    "region": "Western Wilds",
+    "type": "land",
+    "size": "small",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 15,
+    "baseDefense": 1,
     "nameVisible": true
   },
   {
