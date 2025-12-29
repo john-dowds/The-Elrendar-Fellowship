@@ -16,19 +16,16 @@
         {
           "id": "oct3ms",
           "title": "The Arcane Fundamentals: The Weave and the Well",
-          "date": "c. Year 42, October 3rd, 8pm EST",
           "summary_html": "<p>Magister Aelendan Shatterstar leads an instructional class for the Fellowship and its attending guests on the basic fundamentals on the arcane.</p>"
         },
         {
           "id": "oct10ms",
           "title": "Arcane Enhancement: Surge Protection",
-          "date": "c. Year 42, October 3rd, 8:30pm EST",
           "summary_html": "<p>Master Sorcerer Ansinosth Summerbough leads an instructional class for the Fellowship and its attending guests on the process of harnessing arcane surges.</p>"
         },
         {
           "id": "oct17ms",
           "title": "The Arcane Fundamentals: Practical Spellwork",
-          "date": "c. Year 42, October 3rd, 8pm EST",
           "summary_html": "<p>Magister Aelendan Shatterstar leads an instructional class for the Fellowship and its attending guests on the finer points of practical spellcasting.</p>"
         }
       ]
@@ -92,6 +89,12 @@
           "title": "The Third Vault - September 7th",
           "date": "c. Year 42",
           "summary_html": "<p>Following the revelations the day prior, the Elrendar Fellowship makes preparations to respond to the dire threat, but is urgently summoned following another disturbance at the Sala'dashal vaults in southern Eversong Woods.</p>"
+        },
+        {
+          "id": "campaign1.3",
+          "title": "The Handoff - September 15th",
+          "date": "c. Year 42",
+          "summary_html": "<p>With the disturbance investigated and determined to be a substantial lead in the case of the traitor, the Fellowship dispatches some of its members to draw out the traitor with a trap, exposing them, and eliminating the threat.</p>"
         }
       ]
     },
