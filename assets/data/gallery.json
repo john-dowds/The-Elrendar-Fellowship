@@ -171,6 +171,96 @@
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
     "tags": ["members","Soryn Cloudstrike","Vileon Stormwrath","Menadrael Embermourn"]
+  },
+  {
+    "id": "img019",
+    "src": "assets/gallery/soirée1.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the sanctum estate.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+  },
+  {
+    "id": "img020",
+    "src": "assets/gallery/soirée2.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the sanctum estate.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+  },
+  {
+    "id": "img021",
+    "src": "assets/gallery/soirée3.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the sanctum estate.",
+    "album": "Events",
+    "tags": ["members","Gwaeloth Songwood","Calcydo","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+  },
+  {
+    "id": "img022",
+    "src": "assets/gallery/soirée4.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the sanctum estate.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+  }
+  ,
+  {
+    "id": "img023",
+    "src": "assets/gallery/magicmysteryevent003.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order rapidly assemble to respond in force as a hex-gone wrong brings chaos into the sanctum, leading them into the dark ruins buried far below.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img024",
+    "src": "assets/gallery/magicmysteryevent001.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img024",
+    "src": "assets/gallery/magicmysteryevent002.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img024",
+    "src": "assets/gallery/magicmysteryevent004.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img024",
+    "src": "assets/gallery/magicmysteryevent005.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img024",
+    "src": "assets/gallery/magicmysteryevent006.png",
+    "thumb": "",
+    "title": "Magister's Magical Mystery",
+    "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
+    "album": "Events",
+    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
   }
 ]
-
