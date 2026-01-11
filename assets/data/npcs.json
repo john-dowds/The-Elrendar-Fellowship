@@ -1129,8 +1129,8 @@
       "image": "assets/art/monsters/dreadlord.png",
       "alsoAppearsIn": [
         {
-          "category": "Factions",
-          "subcategory": "Burning Legion"
+          "category": "Demons",
+          "subcategory": "Commanders"
         }
       ],
       "hp": 600,
