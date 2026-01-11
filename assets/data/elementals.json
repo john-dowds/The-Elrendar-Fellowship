@@ -810,7 +810,7 @@
         }
       ],
       "description": "Raw mana coalesced into a thinking lattice.",
-      "campaignLinks": []
+      "campaignLinks": ["event008"]
     },
     {
       "id": "arcane_revenant",
@@ -864,7 +864,7 @@
         }
       ],
       "description": "A simple elemental creature of pure arcane energy.",
-      "campaignLinks": ["event005"]
+      "campaignLinks": ["event005","event008"]
     },
     {
       "id": "shadow_elemental",
