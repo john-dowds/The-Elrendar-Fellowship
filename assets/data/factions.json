@@ -1,5 +1,5 @@
 {
-    "version": "2.0",
+    "version": "3.0",
     "name": "Factions",
     "entries": [
         {
@@ -155,6 +155,16 @@
         "campaignLinks": ["schism","classic","tbc"]
       },
       {
+        "id": "devouring_host",
+        "name": "Devouring Host",
+        "class": "Void Army",
+        "category": "Factions",
+        "subcategory": "Hostile",
+        "alsoAppearsIn": [],
+        "description": "An near-endless army of void aberrations in service to Xal'atath, once the Harbinger of Dimensius the Devourer who has set her sights on Azeroth.",
+        "campaignLinks": ["midnight","midnightprelude"]
+      },
+      {
         "id": "earthen_ring",
         "name": "Earthen Ring",
         "class": "Shamanic Conclave",
@@ -293,7 +303,7 @@
       },
       {
         "id": "magisters",
-        "name": "Magistry",
+        "name": "Magisters",
         "class": "Arcane Bureaucracy",
         "category": "Factions",
         "subcategory": "Kingdom of Quel'Thalas",
