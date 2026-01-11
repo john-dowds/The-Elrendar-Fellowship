@@ -8,6 +8,7 @@
       "class": "Archmage",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/aethassunreaver.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -71,6 +72,7 @@
       "class": "Archmage",
       "category": "NPCs",
       "subcategory": "Kirin Tor",
+      "image": "assets/art/monsters/khadgar.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -127,6 +129,7 @@
       "class": "Ranger-General / Banshee",
       "category": "NPCs",
       "subcategory": "Forsaken",
+      "image": "assets/art/monsters/sylvanaswindrunner.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -189,6 +192,7 @@
       "class": "Blood Knight",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericbloodknight.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -231,6 +235,7 @@
       "class": "Captain / Paladin",
       "category": "NPCs",
       "subcategory": "Quel'dorei",
+      "image": "assets/art/monsters/auricsunchaser.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -283,6 +288,7 @@
       "class": "Dark Ranger",
       "category": "NPCs",
       "subcategory": "Forsaken",
+      "image": "assets/art/monsters/genericdarkranger.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -351,6 +357,7 @@
       "class": "First Arcanist / Nightborne Leader",
       "category": "NPCs",
       "subcategory": "Shal'dorei",
+      "image": "assets/art/monsters/thalyssra.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -403,6 +410,7 @@
       "class": "Grand Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/belovirsalonar.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -445,6 +453,7 @@
       "class": "Grand Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/rommath.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -504,6 +513,7 @@
       "class": "Reliquary Scholar",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/taethelanbloodwatcher.png",
       "hp": 18,
       "traits": [
         {
@@ -550,6 +560,7 @@
       "class": "Void Mentor (Ethereal)",
       "category": "NPCs",
       "subcategory": "Ethereals",
+      "image": "assets/art/monsters/locuswalker.png",
       "hp": 22,
       "traits": [
         {
@@ -595,6 +606,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -637,6 +649,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -683,6 +696,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/astalorbloodsworn.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -742,6 +756,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -784,6 +799,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -830,6 +846,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -880,6 +897,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -926,6 +944,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -968,6 +987,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1010,6 +1030,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1056,6 +1077,7 @@
       "class": "Magister / Tirisgarde Champion",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1156,6 +1178,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1202,6 +1225,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1244,6 +1268,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1286,6 +1311,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1328,6 +1354,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1370,6 +1397,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1412,6 +1440,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1458,6 +1487,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1504,6 +1534,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1550,6 +1581,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1592,6 +1624,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1638,6 +1671,7 @@
       "class": "Void Scholar",
       "category": "NPCs",
       "subcategory": "Ren'dorei",
+      "image": "assets/art/monsters/magisterumbric.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1684,6 +1718,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1730,6 +1765,7 @@
       "class": "Silvermoon Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1774,6 +1810,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1820,6 +1857,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1862,6 +1900,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1908,6 +1947,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1956,6 +1996,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -1998,6 +2039,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2040,6 +2082,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2086,6 +2129,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2128,6 +2172,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2174,6 +2219,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2220,6 +2266,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2266,6 +2313,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2308,6 +2356,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2350,6 +2399,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2396,6 +2446,7 @@
       "class": "Magistrix",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2442,6 +2493,7 @@
       "class": "Blood Knight Matriarch",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/ladyliadrin.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2501,6 +2553,7 @@
       "class": "Blood Knight",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/mehlardawnblade.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2537,6 +2590,7 @@
       "class": "Ranger-Captain / Void-Hunter",
       "category": "NPCs",
       "subcategory": "Ren'dorei",
+      "image": "assets/art/monsters/alleriawindrunner.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2600,6 +2654,7 @@
       "class": "Ranger-Captain",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericranger.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2644,6 +2699,7 @@
       "class": "Ranger-General",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/halduronbrightwing.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2703,6 +2759,7 @@
       "class": "Ranger-General / Silver Covenant",
       "category": "NPCs",
       "subcategory": "Quel'dorei",
+      "image": "assets/art/monsters/vereesawindrunner.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2767,6 +2824,7 @@
       "class": "Regent Lord / Ranger Lord",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/lorthemartheron.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2826,6 +2884,7 @@
       "class": "Magistrix / Envoy",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2872,6 +2931,7 @@
       "class": "Rogue / Envoy",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/valeerasanguinar.png",
       "hp": 18,
       "traits": [
         {
@@ -2913,6 +2973,7 @@
       "class": "Seer / Archmage",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/vorenthal.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2961,6 +3022,45 @@
         "fallqt",
         "schism",
         "tbc"
+      ]
+    },
+    {
+      "id": "xalatath",
+      "name": "Xal'atath: The Harbinger",
+      "class": "Void Entity",
+      "category": "NPCs",
+      "subcategory": "Devouring Host",
+      "image": "assets/art/monsters/xalatath.png",
+      "hp": 180,
+      "traits": [
+        {
+          "name": "Bind Rift",
+          "trait": "Bind Rift",
+          "theme": "roots",
+          "effect": "Anchors a void tear to destabilize enemies and pull them towards the rift."
+        },
+        {
+          "name": "Whispers of the Void",
+          "trait": "Whispers of the Void",
+          "theme": "debuffs",
+          "effect": "Confuses nearby foes, or subjects them to mind control."
+        },
+        {
+          "name": "Conceal",
+          "trait": "Stealth",
+          "theme": "utility",
+          "effect": "Vanishes from sight and remains obscure."
+        },
+        {
+          "name": "Voidmancer's Ritual",
+          "trait": "Voidmancer's Ritual",
+          "theme": "translocation",
+          "effect": "Summons the most powerful aberrant void entities as elites, or bosses."
+        }
+      ],
+      "description": "A sinister being of the void once in service to Dimensius, the Devourer, Xal'atath has been servant and slave to the Black Empire on Azeroth and other forces elsewhere, but has always had one true goal: the capture and consumption of Azeroth's world soul.",
+      "campaignLinks": [
+        "midnight","tww","bfa"
       ]
     }
   ]
