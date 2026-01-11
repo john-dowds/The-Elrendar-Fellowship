@@ -168,8 +168,18 @@
 
 /* === Quick Card === */
 #panel-quick .full{ grid-column: 1 / -1; }
-#panel-quick .qc-perk-row{ display:grid; grid-template-columns: minmax(150px, 220px) 1fr; gap:.65rem; align-items:end; }
-#panel-quick .qc-perk-row input[type="text"]{ background: rgba(0,0,0,.2); }
+#panel-quick .qc-perk-row{ display:grid; grid-template-columns: minmax(150px, 220px) 1fr; gap:.65rem; align-items:start; }
+#panel-quick .qc-perk-desc{
+  margin: 0;
+  padding: .5rem .6rem;
+  border: 1px solid rgba(252,229,205,.25);
+  border-radius: 8px;
+  background: rgba(0,0,0,.20);
+  color: #fce5cd;
+  line-height: 1.35;
+  min-height: 2.6em;      /* keeps row height stable even when blank */
+  white-space: normal;    /* allow wrapping */
+}
 #panel-quick .hp-block{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5rem; }
 #panel-quick .hp-wrap{ gap:.8rem; }
 #panel-quick .hp-val{ font-size:1.8rem; min-width:3ch; }
@@ -655,7 +665,7 @@
           <option>Shadow Veil</option>
           <option>Battle Rhythm</option>
         </select>
-        <input id="qcPerk1Desc" type="text" placeholder="Perk description" readonly />
+        <p id="qcPerk1Desc" class="qc-perk-desc"></p>
       </div>
     </div>
 <!-- Perk #2 -->
@@ -676,7 +686,7 @@
           <option>Shadow Veil</option>
           <option>Battle Rhythm</option>
         </select>
-        <input id="qcPerk2Desc" type="text" placeholder="Perk description" readonly />
+        <p id="qcPerk2Desc" class="qc-perk-desc"></p>
       </div>
     </div>
 </div>
@@ -862,9 +872,10 @@
   }
 
   function applyPerkDesc(sel, out){
-    const name = (sel.value || '').trim();
-    out.value = PERKS[name] || '';
-  }
+  const name = (sel.value || '').trim();
+  out.textContent = PERKS[name] || '';
+}
+
 
   function save(){
     const data = {
@@ -902,9 +913,7 @@
       }
       el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
       applyPerkDesc(el.perk1, el.perk1Desc);
-      el.perk1Desc.readOnly = true;
       applyPerkDesc(el.perk2, el.perk2Desc);
-      el.perk2Desc.readOnly = true;
       renderStance();
     }catch(e){
       setHP(15);
