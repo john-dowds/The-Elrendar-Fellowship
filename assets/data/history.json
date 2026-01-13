@@ -13,6 +13,11 @@
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
       "order": 34,
       "entries": [
+         {
+          "id": "jan12ms",
+          "title": "Arcane Enhancement: The Lost Form of Quel'ashanar",
+          "summary_html": "<p>Master Sorcerer Ansinosth Summerbough leads an instructional class for the Fellowship and its attending guests on the ancient Highborne casting practice known as Quel'ashanar, a means by which spellcasters can amplify their words of power or spell phrases to enhance the output.</p>"
+        },
         {
           "id": "nov12ms",
           "title": "Worldly Connections: Thalassian Abjuration in Defense of the High Home",
