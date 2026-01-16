@@ -67,6 +67,135 @@
       ]
     },
     {
+      "id": "apprentice_haydalan",
+      "name": "Apprentice Haydal'an",
+      "class": "Apprentice",
+      "category": "NPCs",
+      "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
+      "alsoAppearsIn": [
+        {
+          "category": "NPCs",
+          "subcategory": "Magisters"
+        }
+      ],
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Arcane Lance",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Precision beam of arcane energy."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        }
+      ],
+      "description": "A Silvermoon apprentice who, after drawing the ire of their instructor, was hexed and trapped within the very same spelltome he had neglected to study. He was only rescued from the book more than a decade later when the Elrendar Fellowship intervened entirely by coincidence.",
+      "campaignLinks": ["event008"]
+    },
+    {
+      "id": "apprentice_Kelvath",
+      "name": "Apprentice Kelvath",
+      "class": "Apprentice",
+      "category": "NPCs",
+      "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
+      "alsoAppearsIn": [
+        {
+          "category": "NPCs",
+          "subcategory": "Magisters"
+        }
+      ],
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Arcane Lance",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Precision beam of arcane energy."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        }
+      ],
+      "description": "A Silvermoon apprentice who, after drawing the ire of their instructor, was hexed and trapped within the very same spelltome he had neglected to study. He was only rescued from the book more than a decade later when the Elrendar Fellowship intervened entirely by coincidence.",
+      "campaignLinks": ["event008"]
+    },
+    {
+      "id": "apprentice_sen",
+      "name": "Apprentice Sen",
+      "class": "Apprentice",
+      "category": "NPCs",
+      "subcategory": "Sin'dorei",
+      "image": "assets/art/monsters/genericmagister.png",
+      "alsoAppearsIn": [
+        {
+          "category": "NPCs",
+          "subcategory": "Magisters"
+        }
+      ],
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Arcane Lash",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Strikes with mana-hardened force, dealing direct damage."
+        },
+        {
+          "name": "Arcane Bolt",
+          "trait": "Precise Attack",
+          "theme": "damage",
+          "effect": "Strikes enemies with a more precise bolt raw arcane power with a +1 to hit chance."
+        },
+        {
+          "name": "Arcane Lance",
+          "trait": "Crushing Attack",
+          "theme": "damage",
+          "effect": "Precision beam of arcane energy."
+        },
+        {
+          "name": "Arcane Blast",
+          "trait": "Area Blast",
+          "theme": "damage",
+          "effect": "Releases a bolt of prismatic mana at range, dealing damage."
+        }
+      ],
+      "description": "A Silvermoon apprentice who, after drawing the ire of their instructor, was hexed and trapped within the very same spelltome he had neglected to study. He was only rescued from the book more than a decade later when the Elrendar Fellowship intervened entirely by coincidence.",
+      "campaignLinks": ["event008"]
+    },
+    {
       "id": "archmage_khadgar",
       "name": "Archmage Khadgar",
       "class": "Archmage",
