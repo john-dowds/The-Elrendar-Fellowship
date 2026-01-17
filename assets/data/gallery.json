@@ -262,5 +262,32 @@
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Thekiel"]
+  },
+  {
+    "id": "img029",
+    "src": "assets/gallery/gorehauntevent001.png",
+    "thumb": "",
+    "title": "Ghostlands: Gorehaunt",
+    "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
+    "album": "Events",
+    "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
+  },
+  {
+    "id": "img030",
+    "src": "assets/gallery/gorehauntevent002.png",
+    "thumb": "",
+    "title": "Ghostlands: Gorehaunt",
+    "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
+    "album": "Events",
+    "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
+  },
+  {
+    "id": "img031",
+    "src": "assets/gallery/gorehauntevent003.png",
+    "thumb": "",
+    "title": "Ghostlands: Gorehaunt",
+    "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
+    "album": "Events",
+    "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   }
 ]
