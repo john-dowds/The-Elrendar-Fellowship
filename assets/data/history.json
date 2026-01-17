@@ -11,7 +11,7 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 34,
+      "order": 35,
       "entries": [
          {
           "id": "jan12ms",
@@ -76,7 +76,7 @@
       "subtitle": "January 16",
       "date": "c. Year 42",
       "summary_html": "\n The Fellowship responds quickly to reports of a long-since-missing Scourge abomination, Gorehaunt, emerges in southern Quel'Thalas. One of the Scourge's most terrible flesh abominations used during the Fall of Quel'Thalas, it vanished after the fighting and has since eluded the kingdom's defenders. <p>Now in sight once more, and seemingly on a mission to use the corrupted artifact embedded at its core--the Heart of the Bough--to spread sickness throughout the woodlands, the elves rush to eliminate the threat. <p>Joining forces with the Sin'dorei Blood Knights, Farstriders, and the Magisters of Silvermoon, Fellows Alen'dris Sunblossom, Kynseria Vel'dinariel, Lady Thalena Thori'zaram, Gwaeloth Songwood, Jeshacinin Evertrail, Velara Clarke, Sable Than'rune, and Ansinosth Summerbough deploy and make a stand at the Elrendar River crossing where they battle against Gorehaunt. In the end, after a long winded battle, they manage to fell the abomination and destroy the corrupted heart buried within.\n",
-      "order": 33
+      "order": 34
     },
     {
       "id": "event008",
