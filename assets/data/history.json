@@ -11,13 +11,8 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 35,
+      "order": 36,
       "entries": [
-         {
-          "id": "jan12ms",
-          "title": "Arcane Enhancement: The Lost Form of Quel'ashanar",
-          "summary_html": "<p>Master Sorcerer Ansinosth Summerbough leads an instructional class for the Fellowship and its attending guests on the ancient Highborne casting practice known as Quel'ashanar, a means by which spellcasters can amplify their words of power or spell phrases to enhance the output.</p>"
-        },
         {
           "id": "nov12ms",
           "title": "Worldly Connections: Thalassian Abjuration in Defense of the High Home",
@@ -76,15 +71,15 @@
       "subtitle": "January 16",
       "date": "c. Year 42",
       "summary_html": "\n The Fellowship responds quickly to reports of a long-since-missing Scourge abomination, Gorehaunt, emerges in southern Quel'Thalas. One of the Scourge's most terrible flesh abominations used during the Fall of Quel'Thalas, it vanished after the fighting and has since eluded the kingdom's defenders. <p>Now in sight once more, and seemingly on a mission to use the corrupted artifact embedded at its core--the Heart of the Bough--to spread sickness throughout the woodlands, the elves rush to eliminate the threat. <p>Joining forces with the Sin'dorei Blood Knights, Farstriders, and the Magisters of Silvermoon, Fellows Alen'dris Sunblossom, Kynseria Vel'dinariel, Lady Thalena Thori'zaram, Gwaeloth Songwood, Jeshacinin Evertrail, Velara Clarke, Sable Than'rune, and Ansinosth Summerbough deploy and make a stand at the Elrendar River crossing where they battle against Gorehaunt. In the end, after a long winded battle, they manage to fell the abomination and destroy the corrupted heart buried within.\n",
-      "order": 34
+      "order": 35
     },
     {
       "id": "event008",
       "title": "Event: Magical Mystery",
       "subtitle": "January 10",
       "date": "c. Year 42",
-      "summary_html": "\n A disturbance within the Fellowship's sanctum prompts its members to investigate and resolve the matter swiftly, before things spiral out of hand. Responding swiftly, Master Sorcerer Ansinosth Summerbough, Gwaeloth Songwood, Tal'theas Sunfeather, Soryn Cloudspire, Jeshacinin Evertrail, Calcydo, Allithndria Lightstriker, and Kynseria Vel'dinariel uncover the truth that a collection of tomes-recently transferred to the sanctum from Magistry Sanctums within Silvermoon City-in fact contained a trio of unruly novice mages who had been punished by means of hexing; their instructor, Master Semnalor, transformed them into the same text books the novices had so foolishly disregarded. While such punishments-including Polymorphing-are not atypical, in this particular case of hexing the punishment was rendered just before the death of the Magister, leaving the novices trapped with no knowledge of their whereabouts. A deadly being trapped with them inside the book, Trakun, the Ritualist, is slain, and the three novice mages, Haydal'an, Kelvath, and Sen, are successfully rescued and counseled through the rude awakening of the past twenty years of their lives, which they missed.\n",
-      "order": 33
+      "summary_html": "\n A disturbance within the Fellowship's sanctum prompts its members to investigate and resolve the matter swiftly, before things spiral out of hand. Responding swiftly, Master Sorcerer Ansinosth Summerbough, Gwaeloth Songwood, Tal'theas Sunfeather, Jeshacinin Thekiel, and Kynseria Vel'dinariel uncover the truth that a collection of tomes-recently transferred to the sanctum from Magistry Sanctums within Silvermoon City-in fact contained a trio of unruly novice mages who had been punished by means of hexing; their instructor, Master Semnalor, transformed them into the same text books the novices had so foolishly disregarded. While such punishments-including Polymorphing-are not atypical, in this particular case of hexing the punishment was rendered just before the death of the Magister, leaving the novices trapped with no knowledge of their whereabouts. The three novice mages, Haydal'an, Kelvath, and Sen, are successfully rescued and counseled through the rude awakening of the past twenty years of their lives, which they missed.\n",
+      "order": 34
     },
     {
       "id": "midnightprelude",
@@ -92,7 +87,7 @@
       "subtitle": "'Expansion: Midnight'",
       "date": "c. Years 42",
       "summary_html": "\n Across Azeroth, a growing number of citizens begin to suffer the increasing pangs from what is known as the Radiant Song, believed to be a warning call from the world of Azeroth itself. Some of those experiencing these visions report having begun to see visions of the Kingdom of Quel'Thalas as a focal point of the song.\n            ",
-      "order": 32
+      "order": 33
     },
     {
       "id": "event007",
@@ -100,7 +95,7 @@
       "subtitle": "January 8",
       "date": "c. Year 42",
       "summary_html": "\n To celebrate the new year and new horizons, the Fellowship hosts a soirée within its sanctum-once the estate of Ansinosth Summerbough-with guests from from and wide.\n",
-      "order": 31
+      "order": 32
     },
     {
       "id": "event006",
@@ -108,7 +103,7 @@
       "subtitle": "September 26",
       "date": "c. Year 42",
       "summary_html": "\n Fellows of the order-including High Sorcerer Aelendan Shatterstar, Haverstead Brightspear, Quely Phoenixheaert, Kindrith Windstalker, Hal'sonas Windreaver, Talis Lightbrook, and Soryn Cloudspire-respond to an anomaly spiraling out of control to the west of the Sunwell Plateau. Joining forces with members of the Magisters, the Fellowship's members identify a clot impacting the ley lines, which they purge and nulify the aberrant anomalies spawning off of it. The occurance, though handled, raises questions about what could have caused a clot in the ley lines.\n            ",
-      "order": 30
+      "order": 31
     },
     {
       "id": "event005",
@@ -116,7 +111,7 @@
       "subtitle": "September 15",
       "date": "c. Year 42",
       "summary_html": "\n Fellows of the order-including Magister Vileon Stormwrath, Dkakiavis, Alindriel, Merivis, Priestess Menadrael Embermourn, Kalandoril, Greymourn, and Kodestre-pursue a group of outsiders through the Ghostlands and into Goldenmist Village wherein they discover an unusual barrier.</p><p>Investigating further to discern the nature of the barrier and its connection, they uncover its illusionary origins and manage to breach it, only to find the slain Magister Sunstrife, as well as a portal to the plaguelands through which the outsiders escaped.</p><p>Now on the trial of the murderers, the Fellows continue to pursue leads.\n            ",
-      "order": 29
+      "order": 30
     },
     {
       "id": "event004",
@@ -124,7 +119,7 @@
       "subtitle": "September 11",
       "date": "c. Year 42",
       "summary_html": "\n On behest of the Magistry of Silvermoon, Magister Vileon Stormwrath leads a party of Fellowship members-including Priestess Menadrael Embermourn, Soryn Cloudspire, and Hesparius Greymourn-to recover an artifact known as the Mistmaker, which had been stolen. Encountering bandits disguised as Sunfury renegades working in concert with a tribe of local naga, the fellows intervened before any exchange could be completed, slaying the naga and ensuring the capture of the bandits.\n            ",
-      "order": 28
+      "order": 29
     },
     {
       "id": "event003",
@@ -132,7 +127,7 @@
       "subtitle": "September 4",
       "date": "c. Year 42",
       "summary_html": "\n To better prepare for future tasks and ventures, Magister Vileon Stormwrath leads several fellows of the order in tactical exercises and practice just outside of Silvermoon, including Hespir Everwyern, Zanrolia Sprenlen, Llorial Solcrest, Falthuron Evermist, Menadrael Embermourn, Hesparius Greymourn, Soryn Cloudspire, Lamplighter Kharyym, and Alindriel Brightward. \n            ",
-      "order": 27
+      "order": 28
     },
     {
       "id": "event002",
@@ -140,7 +135,7 @@
       "subtitle": "August 25",
       "date": "c. Year 42",
       "summary_html": "\n Following the arrival of word that several Farstriders were murdered in the Ghostlands and that foul magic may have been at play, several members of the Fellowship, and their allies, venture out into the southern woodlands in the dark of night and pursue the trail to the Sanctum of the Moon. There, the fellows encounter shrouded figures working necromantic magics and attempting to open a portal to summon forth the death. <br><br> Andrys Blackthorn, Menadrael Embermourn, Hesparius Greymourn, and Magister Vileon Stormwrath battle the sinister cultists and undead, though are unable to prevent the escape of one as a monstrous Abomination is summoned through the portal. <br><br> Given the gruesome nature of the Farstriders' deaths, it is concluded that the Abomination was responsible, and while it was slain in the battle, the cult's leader remains at large.\n            ",
-      "order": 26
+      "order": 27
     },
     {
       "id": "tww",
@@ -148,7 +143,7 @@
       "subtitle": "'Expansion: The War Within'",
       "date": "c. Years 41-42",
       "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives with the aid of the Dark Heart, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand in the process ignites a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors commit their numbers to the cause of driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. <br><br>Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. \n            ",
-      "order": 25
+      "order": 26
     },
     {
       "id": "campaign1",
@@ -156,7 +151,7 @@
       "subtitle": "September 6",
       "date": "c. Year 42",
       "summary_html": "<p>The Fellowship is called upon by the Magister Zaedana of Silvermoon to pursue leads on a dire, growing threat: the presence of fel taint within two arcane sanctums across Quel'Thalas. Though the Magisters of Quel'Thalas are well capable themselves of investigating such a task, the greater threat is revealed to be the suspect of a traitor within the ranks of the Magistry itself. <br><br> Tasked with getting to the bottom of the matter swiftly, the Elrendar Fellowship faces a daunting task of investigating the very officials who mandate the practice of magic throughout the High Home, and pursuing leads on somethingi that could prove terribly lethal to all.</p>",
-      "order": 24,
+      "order": 25,
       "entries": [
         {
           "id": "campaign1.1",
@@ -184,7 +179,7 @@
       "subtitle": "Expansion: Dragonflight",
       "date": "c. Years 40-41",
       "summary_html": "\nWith several years of quiet at long last found on Azeroth, the Sin'dorei hasten their efforts to purge Quel'Thalas of the Scourge's taint, and to rebuild the once glorious High Home. On land far away, though, an awakening had begun; the ancient proto-dragons known as the Primal Incarnates. These massive, vengeful dragons break free from their imprisonment for the first time since the slaying of Galakrond, and set themselves to the destruction of the Dragonflights, whom they see as traitors to dragonkind. <br><br>Painful revelations rise about the transforming of the proto-drakes of old and their eggs into the evolved dragons known today, all made possible through the twisting magic of the Titans, through Keeper Tyr. Viewing this forced transformation as a violation of their free will, the Incarnates rebelled, and for that they were imprisoned. Now free, they renew their war against the dragonflights, and in the process deliver unto Xal'atath, the herald of Dimensius, the All Devouring, an artifact known as the Dark Heart. Imbued with the power of Galakrond's sinister essence, the void entity flees, leaving the dragons to their war, which strangles the Dragon Isles from shore to shore. <br><br>During the epic battles, the Kaldorei plant and grow the new World Tree, Amirdrassil, and settle many of their displaced survivors beneath its boughs. Though the primalist's war ends with the defeat of the Incarnates, the revelations and confrontations prompt the aspects to reassert their dedication to safeguarding Azeroth, once again assuming the mantle of responsibility for its protection.\n      ",
-      "order": 23
+      "order": 24
     },
     {
       "id": "rebirth",
@@ -192,7 +187,7 @@
       "subtitle": "Guild History",
       "date": "c. Years 40-42",
       "summary_html": "\nWith tensions still at an all time high following the unfathomable bloodshed of the Fourth War, surviving members of the reforged Fellowship convene a gathering and elect to step out from\nobscurity and embrace a more public role in guiding the future of elven kind. Some of the last remaining neutral-leaning forces of Thalassian kind, the leading members of the cohort begin to\nreach out to both the Sin'dorei, the Quel'dorei, and the Ren'dorei, aiming to begin building more open lines of communication and securing open visitation privileges for the other members of\nthe cohort.\n<br/>\n<br/>\nAs the conflict on the Dragon Isles raged, the Fellowship set its focus to shoring up holdings across Quel'Thalas, and renewed its efforts to rebuild throughout the southern landscape where \nmany vaults and sanctums had once stood. Even with animosity still ripe between the factions, the Fellowship manages to keep peace within its own ranks.\n      ",
-      "order": 22
+      "order": 23
     },
     {
       "id": "shadowlands",
@@ -200,7 +195,7 @@
       "subtitle": "Expansion: Shadowlands",
       "date": "c. Year 35",
       "summary_html": "\n The pursuit of Sylvanas Windrunner by both factions leads in her capture, and, if rumor is said to be true, the return of her soul to her body-with the fragments of it having been severed years prior by the blade of the Lich King. It is unclear what the fate of the Banshee Queen is, but legacy of the Windrunners persists in both Vereesa and Alleria Windrunner, though both remain in exile from Quel'Thalas. \n      ",
-      "order": 21
+      "order": 22
     },
     {
       "id": "bfa",
@@ -208,7 +203,7 @@
       "subtitle": "Expansion: Battle for Azeroth",
       "date": "c. Years 33–34",
       "summary_html": "\n Horde Warchief Sylvanas Windrunner launches a devastating first strike against the Alliance in response to a failed assassination attempt against her during the conflict against the Legion, burning the World Tree Teldrassil to a husk and perpetuating a genocide against the Kaldorei living within it. With the world once again plunged into a chaotic and bloody war, the Sin'dorei are pitted against Quel'dorei and Ren'dorei in open conflict, alongside the rest of the Alliance and Horde. <br><br> The war proves to be one of the most bloody in history since the War of the Ancients, with entire cities and townships razed to the ground and populations put to death enmass. As had occured years prior, the Horde once again splinters under internal pressure as infighting shatters the faction's unity, leading to another pact of desperation with the Alliance in an effort to overthrow the warmongering Banshee Queen, Sylvanas Windrunner. <br><br> The war culiminates in the second Siege of Orgrimmar, which ends with the Banshee Queen's defection and flight. Despite the end of the conflict, and a serious effort at forming a lasting truce, hostilities between the elven people prove themselves too deep to mend. \n      ",
-      "order": 20
+      "order": 21
     },
     {
       "id": "voidelf",
@@ -216,7 +211,7 @@
       "subtitle": "Expansion: Legion",
       "date": "c. Year 32",
       "summary_html": "\n During the final year of the conflict against the Burning Legion, numerous Sin'dorei under the leadership of Magister Umbric seek out the forbidden research of an elven necromancer-and traitor to the Kingdom-Dar'Khan Drathir, in a bid to better arm themselves against the enemies of the kingdom. This proves to be a dire calamity that nearly corrupts the ambitious elves. <br><br> Tayan’adara Autumnbloom, one of the earliest members of the Fellowship who was presumed lost beyond a void rift ages prior, emerges at last, having sensed the corruption of the elves like a beacon amongst the cosmos. Arriving to aid them, she is caught up in their transformation. <br><br> Through the intervention of the void-touched Ranger-Captain Alleria Windrunner and her mentor, the Locus Walker, these elves are saved and taught to control the dark powers they had embraced, transforming them into the <em>Ren'dorei</em>, or Children of the Void. For their seeming betrayal of the edicts of the Regent Lord, the Ren'dorei are exiled from Quel'Thalas by the Sin'dorei, and are driven to seek shelter amongst the Alliance under the leadership of Magister Umbric and Ranger-Captain Alleria Windrunner. \n      ",
-      "order": 19
+      "order": 20
     },
     {
       "id": "legion",
@@ -224,7 +219,7 @@
       "subtitle": "Expansion: Legion",
       "date": "c. Year 32-33",
       "summary_html": "\n The Burning Legion launches its third invasion of Azeroth, this time through a portal opened within the depths of the Tomb of Sargeras. The chaotic onset of the war plunges Azeroth into Chaos, leading both the Sunreavers and Silver Covenant, along with the Quel'dorei and Sin'dorei populations to fully commit to a war footing. During the conflict, the ancient Highborne elves of Suramar-now known as the <em>Shal'dorei</em>, or Children of Night. <br><br> During the conflict, the defenders of Azeroth defeat Kil'jaeden the Deceiver-would be despoiler of the Sunwell during the conflict against Prince Kael'thas Sunstrider years prior-and later invade the world of Argus, home to the Burning Legion. There, the elven forces are reunited with Ranger-Captain Alleria Windrunner and her husband, the human General Turalyon, both who had vanished beyond the Dark Portal with the Alliance Expedition over twenty years prior. Strengthened by the forces of the Army of the Light, of which Turalyon and Alleria are a part, the allied forces bring an end to the Burning Legion once and for all.  \n      ",
-      "order": 18
+      "order": 19
     },
     {
       "id": "event001",
@@ -232,7 +227,7 @@
       "subtitle": "July 16",
       "date": "c. Year 32",
       "summary_html": "\n The Fellowship intervenes as a neutral party in a race between the Sin'dorei and Quel'dorei to investigate a time rift, from which a familiar arcane signature has been detected. It is discovered that beyond the rift, survivors of the long-lost Alliance Expedition are trapped within an anomaly within the Twisting Nether. Near-completely frozen in time, for the elves of the Expedition only mere moments had passed since they escaped the destruction of Draenor, which in reality had been over two decades. Both Silver Covenant and Sunreaver forces, and members of the Fellowship, race to unwind the anomaly and rescue the stranded elves, though tensions erupt in the wake of the rescue as both factions vie for the loyalty of the survivors. The Fellowship is able to mediate the discord and helps to resettle the survivors.\n",
-      "order": 17
+      "order": 18
     },
     {
       "id": "wod",
@@ -240,7 +235,7 @@
       "subtitle": "Expansion: Warlords of Draenor",
       "date": "c. Year 31",
       "summary_html": "\n Garrosh Hellscream, through the aid of rogue agents of the Bronze Dragonflight, secures the aid of orcish forces from an alternate timeline, and launches an invasion of Azeroth to seek vengeance upon those who deposed him. The allied forces of Azeroth counter assault through the Dark Portal and defeat the Iron Horde, but fail to secure an alternate version of the orcish warlock Gul'dan from escaping to Azeroth, where he opens a new invasion portal for the Burning Legion. \n      ",
-      "order": 16
+      "order": 17
     },
     {
       "id": "cataclysm-mop",
@@ -248,7 +243,7 @@
       "subtitle": "Expansion: Cataclysm & Mists of Pandaria",
       "date": "c. Years 27-31",
       "summary_html": "\n All out war between the Horde and Alliance engulfs the world, even admist the ongoing crisis of the reemergence of the once-warder of the earth, the black dragon aspect now known as Deathwing. <br> <br> Chaos and destruction rage across the world, and the elven tribes are thrust against one another in open conflict. After two years of bloody fighting, Deathwing is slain, but the conflict between the Horde and Alliance only deepens. During the third year of the conflict, the Kirin Tor enact a purge of the Sin'dorei from the city under the command of Lady Jaina Proudmoore and Silver Covenant Ranger-General Vereesa Windrunner following the Sunreaver's use of then-neutral Dalaran to infiltrate an Alliance city and steal a powerful artifact known as the Divine Bell. The purge is a watershed moment for the elven people, shattering any hope of reconcillation between the tribes and sparking a deep running blood feud that persists even to this day. <br><br> After four long years of war, the Horde splinters under the pressure of civil strife, and both the Sunreavers and Silver Covenant form a rare, unified front to overthrow the Horde Warchief Garrosh Hellscream. Despite the show of unity, animosity lingers. The Horde and Alliance secure a tenuous armistice, but no lasting peace. Throughout the entirety of the conflict, the Elrendar Fellowship officially maintains a neutral stance, though some of its individual members are drawn into the fighting, fueling a tense atmosphere within the cohort's ranks. <br><br> Despite this, open bloodshed amongst members is avoided, and the surviving leadership begin to face serious doubts about the viability of the Fellowship's longevity given the seemingly insurmountable tension. \n      ",
-      "order": 15
+      "order": 16
     },
 
     {
@@ -257,7 +252,7 @@
       "subtitle": "Guild History",
       "date": "c. Year 27-Present",
       "summary_html": "\n With the escalation of hostilities and conflict across the world, surviving members of the Order try desperately to bring a halt to the conflict between the branches of Thalassian elves, to no avail. Despite this, numerous surviving magisters, mages, arcanists, warlocks, scryers, priests, and other magically-inclined individuals flock to the ranks of the Order, helping to reestablish it and, at least as best as can be achieved, help to mediate the conflict between elven kin.  \n      ",
-      "order": 14
+      "order": 15
     },
     {
       "id": "wotlk",
@@ -265,7 +260,7 @@
       "subtitle": "Expansion: Wrath of the Lich King",
       "date": "c. Year 27",
       "summary_html": "\n The azure dragons of Azeroth launch a war against magic users the world over after the crazed blue aspect Malygos declares mortals unfit to wield the magics his flight was given dominion over. This dire conflict leads the Magistry of Silvermoon to seek amends with the Kirin Tor which imprisoned and persecuted the elves years prior. Magister Aethas Sunreaver, once an archmage of the Kirin Tor, advocates and secures the admission of the Sin'dorei into Dalaran as a new order-the <em>Sunreavers</em>-which is starkly opposed by the surviving Quel'dorei of Dalaran who promptly assemble a new order in opposition, the <em>Silver Covenant</em>. Despite the tension between the Horde and Alliance forces, the Kirin Tor manages to establish itself as a neutral force able to mediate their contributions. <br> <br> Soon after the outbreak of the Nexus War, the Lich King launches an assault upon the mortal cities across the globe, seeking to snuff out the living once and for all. Both the Horde, Alliance, and Kirin Tor launch a full on invasion of Northrend to confront the Lich King, aided by the Argent Crusade-formed of the Argent Dawn and Order of the Silver Hand-and the recently liberated death knights who form a new cohort called the Ebon Blade. <br><br> The war in Northrend exacts a bloody toll from the defenders of Azeroth, and though both Malygos and the Lich King are slain, it comes at the cost of renewed conflict between the Alliance and Horde as internal betrayals spiral and a brutal massacre claims the lives of scores of valiant heroes from both sides. The conflict between the Horde and Alliance persists even after the death of Prince Arthas-the despoiler of Quel'Thalas. A new Lich King is seated to control the remaining undead and prevent further calamity.  \n      ",
-      "order": 13
+      "order": 14
     },
     {
       "id": "tbc",
@@ -273,7 +268,7 @@
       "subtitle": "Expansion: The Burning Crusade",
       "date": "c. Years 25-26",
       "summary_html": "\n Following Illidan Stormrage's ever expanding occupation of the Outlands, the Burning Legion lures the defenders of Azeroth into storming through the Dark Portal and confronting Illidan, casting the Sin'dorei into a state of chaos as their ranks-now in service to the Horde through a pact secured by Regent Lord Lor'themar Theron-are pitted against the increasingly volatile and unstable forces of Prince Kael'thas' Sunfury armies. <br><br> Civil war breaks throughout the surviving elven diaspora, leading to an ultimate confrontation in the Netherstorm, and then the Isle of Quel'Danas, where Prince Kael'thas-now driven to madness through consumption of fel magic-is confronted and finally slain after he tries to summon a demon lord through the Sunwell. <br><br> The final confrontation on the Isle of Quel'Danas marks the second time in a decade that an outside force has stormed the Sunwell Plateau and assaulted the well, though this time the corrupted, broken well is reborn through the willing sacrifice of a naaru. \n ",
-      "order": 12
+      "order": 13
     },
     {
       "id": "classic",
@@ -281,7 +276,7 @@
       "subtitle": "Expansion: Classic WoW",
       "date": "c. Years 22-26",
       "summary_html": "\n Prince Kael’thas sworn loyalty to Illidan Stormrage opens new avenues for the elven recovery; Silvermoon City is rebuilt through a show of tremendous magical might, and the elves begin to claw back control over the Kingdom inch by inch; the Sin’dorei Sunfury forces subdivisions (Sunfury, Sunhawks, Eclipsion, Firewing, Illidari, etc.) proliferate; fel magic becomes a substitute for lost Sunwell energies for many, while others refuse it. <br><br> In this time, Prince Kael'thas leads the Sunfury forces in following Illidan Stormrage back to Azeroth to confront the growing power of the Scourge in Northrend, only to fail. Numerous elves are slain, including Lana'thel-wielder of the legendary blade Quel'delar-who is raised into undeath by the Lich King to serve as Blood Queen of the San'layn, vampiric undead elves. <br><br> Following their defeat, Illidan and Kael's Sunfury army retreats to the Outlands where they work to secure their control over the shattered world. At some point during these years, Prince Kael'thas Sunstrider begins to fall deeper into a madness that would eventually lead him to accept a bargain with the demon lord Kil'Jaeden, the Deceiver.\n      ",
-      "order": 11
+      "order": 12
     },
     {
       "id": "schism",
@@ -289,7 +284,7 @@
       "subtitle": "Game: Warcraft III",
       "date": "c. Years 21-22",
       "summary_html": "\n Prince Kael'thas Sunstrider leads the Sin'dorei in pursuit of aid from the human kingdoms, only to face persecution and inprisonment by the xenophobic survivors of the fall of Lordaeron. Forced to make desperate alliances, the Prince joins forces with the naga sea witch Lady Vash'j and her master, Lord Illidan Stormrage. Through Illidan, the Sin'dorei learn to consume fel energy as a substitute for the arcane, something which drives a wedge amongst the survivors. <br><br> Grand Magister Rommath-at the behest of Regent Lord Lor'themar Theron, who rules in Prince Kael'thas' stead-expels the dissidents who refuse to embrace the new elven identity, leading to a schism between those calling themselves Sin'dorei, and those who cling to the ideals of the Quel'dorei who ruled before the fall. The crackdowns and exile lead to a flight of elves to the human realms, as well as parallel enlistments to the Outlands under Prince Kael'thas' forces who delve further into the darker practices. <br><br> Through this division, the Elrendar Fellowship remains impartial, focusing instead on regathering its strength and preserving and securing the dangerous magical knowledge from its vauilts now in the hands of the Scourge.\n",
-      "order": 10
+      "order": 11
     },
     {
       "id": "fallqt",
@@ -297,7 +292,7 @@
       "subtitle": "Game: Warcraft III",
       "date": "c. Years 20-22",
       "summary_html": "\n Following the corruption plaguing of Lordaeron, the fallen Prince Arthas Menethil leads an army of the dead through the Greenwood, breaches the Elfgates of Quel'Thalas, and plunges the kingdom into darkness. Some ninety percent of the elven populace of the kingdom is either slain and left to rot, or raised into undeath. As further insult, Prince Arthas defiles the Sunwell as a means to raise a powerful servant of the Scourge into undeath as a Lich, leaving the powerful font of magic tainted. <br><br> Silvermoon is devastated; Ranger-General Sylvanas and Grand Magister Belo’vir Salonar, and King Anasterian Sunstrider are all slain, and the Ranger-General is raised into undeath as a Banshee. Some survivors scatter, and others struggle to regroup. The Sunwell’s loss, and its eventual future renewal, reshapes Thalassian destiny. Elven Prince Kael'thas Sunstrider elects to destroy the Sunwell to prevent the corruption of the surviving people, and proclaims a new identity for his people-thus comes the birth of the <em>Sin'dorei</em>, the Children of Blood.\n          ",
-      "order": 9
+      "order": 10
     },
     {
       "id": "expedition",
@@ -305,7 +300,7 @@
       "subtitle": "Game: Warcraft II",
       "date": "c. Year 8",
       "summary_html": "\n Following yet another incursion by the Horde into Azeroth through a reopened Dark Portal, Farstrider Ranger-Captain Alleria Windrunner joins the human General Turalyon, the dwarven thane Kurdran Wildhammer, the Kirin Tori archmage Khadgar, and the human Trollbane descendant Commander Danath Trollbane in forming the Sons of Lothar, also known as the Alliance Expedition. <br><br> The allied forces, calling themselves the Sons of Lothar in honor of the fallen war hero, pursue the Horde through the Dark Portal into the ruins of Draenor with the intent to end the Horde once and for all. Despite their victories against the orcish Horde there, their Expedition faces disaster as the world is torn asunder by the opening of countless portals, damning countless soldiers to the abyss, and resulting in the presumed loss of the Expedition, and both General Turalyon and Ranger-Captain Alleria Windrunner. <br><br>  years the Expedition is presumed lost beyond the now-decimated Dark Portal. \n      ",
-      "order": 8
+      "order": 9
     },
     {
       "id": "greatwars",
@@ -313,7 +308,7 @@
       "subtitle": "Game: Warcraft I & II",
       "date": "c. Years 0–7",
       "summary_html": "\n Groomed and corrupted by the Burning Legion, the orcs of Draeneor force open the Dark Portal and storm into Azeroth; the human nation of Stormwind falls, and the human descendants of the ancient Arathi king summon the pact made between humanity and the Quel'dorei during the Troll Wars. <br><br> A Grand Alliance is formed, and humanity and elvenkind stand side by side against the savagery of the Horde; the Elrendar Fellowship takes an active role in fighting against the Horde, and many of its users begin to study the magic used by the orcish warlocks, including voidmancy, necromancy, and felmancy. Research tied to these dark schools is carefully stored and secured far from the reach of the common magi. <br><br> During the Second War, the barbaric fel Horde enslaves the red Dragonflight and, with its Amani allies, burns much of Quel’Thalas. Silvermoon endures a brutal siege before Alliance counteroffensives drives back the invaders, and ultimately the Horde is broken at Blackrock Mountain. The Dark Portal is destroyed, and the orcs interned within prison camps; despite the hard won victory, the long scars in Thalassian forests and memory remain.\n          ",
-      "order": 7
+      "order": 8
     },
     {
       "id": "windrunneranomaly",
@@ -321,7 +316,7 @@
       "subtitle": "Guild History",
       "date": "c. Year -2,300",
       "summary_html": "\n Founding member Tayan'adara Autumbloom responds to aid from Windrunner Village in southern Quel'Thalas where an arcane anomaly is reported to be threatening the township. Upon arriving, she discovers the anomaly to in fact be an unstable void entity, and battles against it before banishing the entity's remnants. The anomaly's explosive demise, however, a rift into the Void itself, threatening the town. Tayan’adara Autumbloom journeys through the rift and seals it from the otherside, and is presumed dead by the Fellowship. An investigation into the disruption and anomaly is linked to the reckless experimentation and spellcasting of a lone magi who sought to draw energy from the void. The magi responsible is questioned and imprisoned by the local authorities, though Tayan'adara is not seen or heard from for thousands of years.\n",
-      "order": 6
+      "order": 7
     },
     {
       "id": "foundingorder",
@@ -329,7 +324,7 @@
       "subtitle": "Guild History",
       "date": "c. Year -2,680",
       "summary_html": "\n Understanding that knowledge of the Highborne’s failings in the past could be forgotten due to a concerted focus on revising elven history to minimize perceived faults, a sec of elven magi within Quel’Thalas establish the <em>Elrendar Fellowship</em>, an organization designed to rotate magi to various townships and settlements throughout Quel’Thalas to share and spread knowledge, and teach restraint, in a discrete manner. <br><br> In addition to teaching the arcane in more measured and responsible ways, the cohort of magi also work to preserve defenses across Quel’Thalas, while yet another secret sub-sect begins to study dangerous magics with the intent of negating its influence should it ever be used against the High Home. Early members include Tayan’adara Autumnbloom. \n",
-      "order": 5
+      "order": 6
     },
     {
       "id": "trollwars",
@@ -337,6 +332,14 @@
       "subtitle": "Ancient History",
       "date": "c. Year -2,800",
       "summary_html": "\n With the Amani trolls now pinned between the thriving nation of Quel'Thalas and the rapidly expanding human-led Arathi Empire in the south, the trolls desperately reach out to the Zandalari Empire, which agrees to bolster their ranks. The trolls form a massive army and lay siege to Quel'Thalas, exacting a bloody and costly toll which only continues to mount. During the war, the Quel'dorei form numerous organizations to better counter the Amani, including the Farstriders—the rangers of the woodland realm. <br><br> King Anasterian Sunstrider—a descendant of Dath'remar Sunstrider himself—dispatches couriers to the humans of the Arathi Empire, warning that the trolls would turn their attention towards humanity should the elven kingdom fall, and manages to secure the Empire's aid in exchange for teaching one hundred humans the ways of the arcane. Working together, the First Alliance decimates the Amani and Zandalari armies, and the elves subsequently pursue the Amani to the brink of extinction. Never able to fully recover from their devastating loss, the Amani commit themselves to an existence of raiding the elven lands in small warbands, but never more than that. <br><br> The First Alliance retains its strength for years, but inevitable the Kingdom of Quel'Thalas opts for seclusion and withdraws itself from the business of the southern kingdoms. \n      ",
+      "order": 5
+    },
+    {
+      "id": "heartofthebough",
+      "title": "Lore: Heart of the Bough",
+      "subtitle": "Ancient History",
+      "date": "c. Year -6,800",
+      "summary_html": "\n In the years following the creation of the Sunwell in Quel'Thalas, radiant energy from the powerful font leads to the accelerated growth of the wilds throughout the northern penninsula. One area in particular, in the far south, expands rapidly, and becomes home to a tree of tremendous height-Thas'alah, the mother tree of Quel'Thalas. Many treants and other guardians of nature migrant to this grove, and the area surrounding it becomes a haven where life flourishes. In one of the passages leading into the grove of Thas'alah, one treant in particular continues to grow and evolve, eventually becoming more akin to one of the Ancients commonly seen amongst the Kaldorei. This Ancient of nature becomes one of the foremost guardians of the mother tree, raising treants and tending to the grove to ensure its integrity and health. At the core of this Ancient lies the Heart of the Bough, an item which in later years would become a powerful, albeit corrupted artifact. The Ancient, like many in Quel'Thalas, is slain during the Scourge's invasion of Quel'Thalas in Year 20. \n      ",
       "order": 4
     },
     {
