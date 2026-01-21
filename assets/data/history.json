@@ -11,7 +11,7 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 36,
+      "order": 37,
       "entries": [
         {
           "id": "nov12ms",
@@ -64,6 +64,14 @@
           "summary_html": "<p>Magistrix Gladathan Skyshroud leads an instructional class for the Fellowship and its attending guests on the mechanisms of conduit anchoring when drawing energy from a multitude a sources.</p>"
         }
       ]
+    },
+    {
+      "id": "event010",
+      "title": "Event: Puzzle Box of Kel'shunar Starfall",
+      "subtitle": "January 18 & 20",
+      "date": "c. Year 42",
+      "summary_html": "\n Members of the Fellowship gather to delve into the mysterious locked seal sitting atop an ancient elven chest, one once belonging to the Kel'shunar Starfall, an early founding member of the Kingdom of Quel'Thalas who was exiled from Kalimdor. Faeylli Nuth'danil, Ansinosth Summerbough, Tal'theas Sunfeather, Gwaeloth Songwood, and Thalendir Dawncrest gather through the  night and work to break several magical sealed bound by riddles, each associated with various conceptional understandings of the schools of magic, and on the second day manage to unlock the container and recover an ancient elven tome.\n",
+      "order": 36
     },
     {
       "id": "event009",
