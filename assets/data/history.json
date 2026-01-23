@@ -11,7 +11,7 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 37,
+      "order": 38,
       "entries": [
         {
           "id": "nov12ms",
@@ -65,6 +65,14 @@
         }
       ]
     },
+        {
+      "id": "event011",
+      "title": "Event: Fellow's Soirée",
+      "subtitle": "January 22",
+      "date": "c. Year 42",
+      "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's halls. \n",
+      "order": 37
+    },
     {
       "id": "event010",
       "title": "Event: Puzzle Box of Kel'shunar Starfall",
@@ -99,7 +107,7 @@
     },
     {
       "id": "event007",
-      "title": "Social: Fellow's Soirée",
+      "title": "Event: Fellow's Soirée",
       "subtitle": "January 8",
       "date": "c. Year 42",
       "summary_html": "\n To celebrate the new year and new horizons, the Fellowship hosts a soirée within its sanctum-once the estate of Ansinosth Summerbough-with guests from from and wide.\n",
