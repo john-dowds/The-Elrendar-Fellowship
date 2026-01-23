@@ -18,7 +18,6 @@
           <li><a href="about.html">At A Glance</a></li>
           <li><a href="conduct.html">Code of Conduct</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -30,6 +29,7 @@
           <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -47,7 +47,15 @@
   <main class="apply-main">
     <form id="appForm" class="app-card" novalidate>
       <h2>Guild Application</h2>
-
+      <div class="app-type-toggle" aria-label="Application type">
+        <span class="toggle-label" id="appTypeLabel">Main</span>
+      
+        <label class="switch" title="Toggle Main / Alt">
+          <input id="appTypeToggle" type="checkbox" checked />
+          <span class="slider" aria-hidden="true"></span>
+        </label>
+      </div>
+      
       <div class="grid">
         <label>OOC Character Name
           <input name="name" required />
@@ -76,6 +84,11 @@
         <label>Availability
           <input name="availability" placeholder="e.g., Weeknights after 8pm" />
         </label>
+
+        <label id="mainNameWrap" class="is-hidden">Main character name
+          <input name="main" id="mainNameInput" placeholder="Name of your main character" />
+        </label>
+        
       </div>
 
       <label>Brief Character Summary / Notes
@@ -91,8 +104,6 @@
 
   <footer class="site-footer">
     <p>© 2025-2026 The Elrendar Fellowship Guild</p>
-    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
-    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
   </footer>
 
   <script type="module" src="apply.js"></script>
