@@ -66,7 +66,7 @@
     "id": "img007",
     "src": "assets/gallery/campaignevent1ss1.png",
     "thumb": "",
-    "title": "What Lurks in the Shadows: Campaign 1, Event 1",
+    "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members","events","campaign1"]
@@ -76,7 +76,7 @@
     "id": "img008",
     "src": "assets/gallery/campaignevent1ss2.png",
     "thumb": "",
-    "title": "What Lurks in the Shadows: Campaign 1, Event 1",
+    "title": "What Lurks in the Shadows Campaign",
     "caption": "A member of the Fellowship stands guard while others investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members","events","campaign1"]
@@ -85,7 +85,7 @@
     "id": "img009",
     "src": "assets/gallery/campaignevent1ss3.png",
     "thumb": "",
-    "title": "What Lurks in the Shadows: Campaign 1, Event 1",
+    "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members","events","campaign1"]
@@ -94,7 +94,7 @@
     "id": "img010",
     "src": "assets/gallery/campaignevent1ss4.png",
     "thumb": "",
-    "title": "What Lurks in the Shadows: Campaign 1, Event 1",
+    "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members","events","campaign1"]
@@ -103,7 +103,7 @@
     "id": "img011",
     "src": "assets/gallery/campaignevent1ss5.png",
     "thumb": "",
-    "title": "What Lurks in the Shadows: Campaign 1, Event 1",
+    "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship consult in private before departing to investigate a growing crisis.",
     "album": "Events",
     "tags": ["members","events","campaign1"]
@@ -178,7 +178,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
   },
   {
@@ -187,7 +187,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
   },
   {
@@ -196,7 +196,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Gwaeloth Songwood","Calcydo","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
   },
   {
@@ -205,7 +205,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
   }
   ,
@@ -215,7 +215,7 @@
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order rapidly assemble to respond in force as a hex-gone wrong brings chaos into the sanctum, leading them into the dark ruins buried far below.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
   },
   {
@@ -323,7 +323,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
@@ -332,7 +332,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
@@ -341,7 +341,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood", "Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
@@ -350,7 +350,7 @@
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
@@ -359,7 +359,7 @@
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials"]
   },
   {
@@ -368,7 +368,7 @@
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials"]
   },
   {
@@ -377,7 +377,7 @@
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
-    "album": "Events",
+    "album": "Socials",
     "tags": ["members","socials"]
   },
   {
