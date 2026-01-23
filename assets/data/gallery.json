@@ -324,7 +324,7 @@
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
     "id": "img036",
@@ -333,7 +333,7 @@
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
     "id": "img037",
@@ -342,7 +342,7 @@
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood", "Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood", "Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
   },
   {
     "id": "img038",
@@ -351,6 +351,96 @@
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+  },
+  {
+    "id": "img039",
+    "src": "assets/gallery/earlysoiree001.png",
+    "thumb": "",
+    "title": "A Soiree From Long Ago",
+    "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
+    "album": "Events",
+    "tags": ["members","socials"]
+  },
+  {
+    "id": "img040",
+    "src": "assets/gallery/earlysoiree002.png",
+    "thumb": "",
+    "title": "A Soiree From Long Ago",
+    "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
+    "album": "Events",
+    "tags": ["members","socials"]
+  },
+  {
+    "id": "img039",
+    "src": "assets/gallery/earlysoiree003.png",
+    "thumb": "",
+    "title": "A Soiree From Long Ago",
+    "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
+    "album": "Events",
+    "tags": ["members","socials"]
+  },
+  {
+    "id": "img041",
+    "src": "assets/gallery/earlysoiree004.png",
+    "thumb": "",
+    "title": "A Soiree From Long Ago",
+    "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
+    "album": "Events",
+    "tags": ["members","socials"]
+  },
+  {
+    "id": "img042",
+    "src": "assets/gallery/ghostlandsmurder1.png",
+    "thumb": "",
+    "title": "The Hunting of a Murderer",
+    "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members","events"]
+  },
+  {
+    "id": "img043",
+    "src": "assets/gallery/ghostlandsmurder2.png",
+    "thumb": "",
+    "title": "The Hunting of a Murderer",
+    "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members","events"]
+  },
+  {
+    "id": "img044",
+    "src": "assets/gallery/ghostlandsmurder3.png",
+    "thumb": "",
+    "title": "The Hunting of a Murderer",
+    "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members","events"]
+  },
+  {
+    "id": "img045",
+    "src": "assets/gallery/ghostlandsmurder4.png",
+    "thumb": "",
+    "title": "The Hunting of a Murderer",
+    "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members","events"]
+  },
+  {
+    "id": "img046",
+    "src": "assets/gallery/trainingevent001.png",
+    "thumb": "",
+    "title": "Practical Training",
+    "caption": "The Fellowship assembles for training and practice in martial combat.",
+    "album": "Events",
+    "tags": ["members","events"]
+  },
+  {
+    "id": "img047",
+    "src": "assets/gallery/trainingevent002.png",
+    "thumb": "",
+    "title": "Practical Training",
+    "caption": "The Fellowship assembles for training and practice in martial combat.",
+    "album": "Events",
+    "tags": ["members","events"]
   }
 ]
