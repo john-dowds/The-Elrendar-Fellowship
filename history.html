@@ -8,21 +8,17 @@
 
 <style>
   :root{
-    --child-indent: .55rem; 
-  }
+    --child-indent: .55rem; }
   .history-wrap{
     max-width:1200px; margin:2rem auto; padding:0 1rem; display:grid; gap:1.5rem;
-    grid-template-columns: 280px 1fr;
-  }
+    grid-template-columns: 280px 1fr;}
   .scroll-pane{
     height: calc(100vh - 160px);
     overflow: auto;
-    padding-right: .5rem;
-  }
+    padding-right: .5rem; }
   @media (max-width: 900px){
     .history-wrap{ grid-template-columns: 1fr; }
-    .scroll-pane{ height:auto; }
-  }
+    .scroll-pane{ height:auto; }}
 
   .sidebar{
     max-height: calc(100vh - 160px);
@@ -32,15 +28,23 @@
     background: rgba(0,0,0,.55);
     border: 1px solid rgba(252,229,205,.2);
     border-radius: 12px;
-    padding: .75rem;
-  }
+    padding: .75rem;}
   .sidebar h2{ font-size:1.1rem; margin:.25rem .25rem .5rem; color:#fce5cd; }
 
   .tree, .tree ul, .tree li{
     list-style:none;
     padding-left:0;
-    margin-left:0;
-  }
+    margin-left:0;}
+  .sidebar-tools.left { justify-content: left; }
+
+.tree .chip-ico{
+  width: 18px;
+  height: 18px;
+  margin-right: .35rem;
+  vertical-align: middle;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,.35));
+}
 
   .tree li{ margin:.15rem 0; }
 
@@ -148,7 +152,6 @@
           <li><a href="about.html">At A Glance</a></li>
           <li><a href="conduct.html">Code of Conduct</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -160,6 +163,7 @@
           <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -183,6 +187,9 @@
         <button class="mini-btn" id="expand-all">Expand All</button>
         <button class="mini-btn" id="collapse-all">Collapse All</button>
       </div>
+      <div class="sidebar-tools left">
+        <button class="mini-btn" id="submit-entry" type="button">Submit New Entry</button>
+      </div>
       <ul class="tree" id="history-tree"></ul>
     </aside>
 
@@ -196,348 +203,678 @@
   </footer>
 
   <script>
-  (async function () {
-    /* ============ Load JSON ============ */
-    const histData = await fetch('assets/data/history.json', { cache: 'no-store' })
-      .then(r => r.ok ? r.json() : { sections: [] })
-      .catch(() => ({ sections: [] }));
-    const sections = (histData.sections || [])
-      .slice()
-      .sort((a,b) => (b.order ?? 0) - (a.order ?? 0));
-    const tree = document.getElementById('history-tree');
-    const list = document.getElementById('history-list');
-    const frag = document.createDocumentFragment();
-
-    function articleForParent(s){
-      const article = document.createElement('article');
-      article.className = 'era';
-      article.id = s.id;
-
-      const block = document.createElement('div');
-      block.className = 'text-block';
-
-      const h1 = document.createElement('h1');
-      h1.textContent = s.title || s.id;
-
-      if (s.subtitle) {
-        const sub = document.createElement('h2');
-        sub.className = 'subtitle';
-        sub.textContent = s.subtitle;
-        block.appendChild(h1);
-        block.appendChild(sub);
-      } else {
-        block.appendChild(h1);
-      }
-
-      const h2 = document.createElement('h2');
-      h2.textContent = s.date || '';
-      block.appendChild(h2);
-
-      const p = document.createElement('p');
-      p.innerHTML = s.summary_html || '';
-      block.appendChild(p);
-
-      const related = document.createElement('div');
-      related.className = 'related-wrap';
-      related.dataset.historyId = s.id;
-      block.appendChild(related);
-
-      const kids = Array.isArray(s.entries) ? s.entries : [];
-      for (const c of kids){
-        const child = document.createElement('div');
-        child.className = 'child';
-        const cid = `${s.id}--${c.id}`;
-        child.id = cid;
-
-        const badge = document.createElement('span');
-        badge.className = 'child-badge';
-        badge.textContent = 'Entry';
-        child.appendChild(badge);
-
-        const h3 = document.createElement('h3');
-        h3.textContent = c.title || c.id;
-        child.appendChild(h3);
-
-        if (c.date){
-          const cd = document.createElement('p');
-          cd.className = 'date';
-          cd.textContent = c.date;
-          child.appendChild(cd);
-        }
-
-        const cp = document.createElement('p');
-        cp.innerHTML = c.summary_html || '';
-        child.appendChild(cp);
-
-        const childRelated = document.createElement('div');
-        childRelated.className = 'related-wrap';
-        childRelated.dataset.historyId = cid;
-        child.appendChild(childRelated);
-
-        block.appendChild(child);
-      }
-
-      article.appendChild(block);
-      return article;
-    }
-
-    for (const s of sections){
-      frag.appendChild(articleForParent(s));
-    }
-    list.appendChild(frag);
-
-    /* ============ Sidebar Tree (Campaign - Sub-entries) ============ */
-    function buildTree(){
-      tree.innerHTML = '';
-      const f = document.createDocumentFragment();
-
-      for (const s of sections){
-        const liCat = document.createElement('li');
-
-        const btnCat = document.createElement('button');
-        btnCat.textContent = s.title || s.id;
-        btnCat.dataset.target = s.id;
-        btnCat.className = 'parent-btn';
-        liCat.appendChild(btnCat);
-
-        const kids = Array.isArray(s.entries) ? s.entries : [];
-        if (kids.length){
-          const ul = document.createElement('ul');
-          ul.className = 'child-wrap';
-          ul.style.display = 'none';
-
-          for (const c of kids){
-            const liSub = document.createElement('li');
-            liSub.className = 'child-li';
-
-            const btnSub = document.createElement('button');
-            btnSub.textContent = c.title || c.id;
-            btnSub.dataset.target = `${s.id}--${c.id}`;
-            btnSub.className = 'child-btn';
-            liSub.appendChild(btnSub);
-            ul.appendChild(liSub);
-          }
-          liCat.appendChild(ul);
-
-          btnCat.addEventListener('click', () => {
-            ul.style.display = (ul.style.display === 'none') ? '' : 'none';
-            scrollToHistoryId(s.id);
-            markActive(btnCat.dataset.target);
-          });
+    (async function () {
+      /* ============ Load JSON ============ */
+      const histData = await fetch('assets/data/history.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : { sections: [] })
+        .catch(() => ({ sections: [] }));
+      const sections = (histData.sections || [])
+        .slice()
+        .sort((a,b) => (b.order ?? 0) - (a.order ?? 0));
+      const tree = document.getElementById('history-tree');
+      const list = document.getElementById('history-list');
+      const frag = document.createDocumentFragment();
+  
+      function articleForParent(s){
+        const article = document.createElement('article');
+        article.className = 'era';
+        article.id = s.id;
+  
+        const block = document.createElement('div');
+        block.className = 'text-block';
+  
+        const h1 = document.createElement('h1');
+        h1.textContent = s.title || s.id;
+  
+        if (s.subtitle) {
+          const sub = document.createElement('h2');
+          sub.className = 'subtitle';
+          sub.textContent = s.subtitle;
+          block.appendChild(h1);
+          block.appendChild(sub);
         } else {
-          btnCat.addEventListener('click', () => {
-            scrollToHistoryId(s.id);
-            markActive(btnCat.dataset.target);
+          block.appendChild(h1);
+        }
+  
+        const h2 = document.createElement('h2');
+        h2.textContent = s.date || '';
+        block.appendChild(h2);
+  
+        const p = document.createElement('p');
+        p.innerHTML = s.summary_html || '';
+        block.appendChild(p);
+  
+        const related = document.createElement('div');
+        related.className = 'related-wrap';
+        related.dataset.historyId = s.id;
+        block.appendChild(related);
+  
+        const kids = Array.isArray(s.entries) ? s.entries : [];
+        for (const c of kids){
+          const child = document.createElement('div');
+          child.className = 'child';
+          const cid = `${s.id}--${c.id}`;
+          child.id = cid;
+  
+          const badge = document.createElement('span');
+          badge.className = 'child-badge';
+          badge.textContent = 'Entry';
+          child.appendChild(badge);
+  
+          const h3 = document.createElement('h3');
+          h3.textContent = c.title || c.id;
+          child.appendChild(h3);
+  
+          if (c.date){
+            const cd = document.createElement('p');
+            cd.className = 'date';
+            cd.textContent = c.date;
+            child.appendChild(cd);
+          }
+  
+          const cp = document.createElement('p');
+          cp.innerHTML = c.summary_html || '';
+          child.appendChild(cp);
+  
+          const childRelated = document.createElement('div');
+          childRelated.className = 'related-wrap';
+          childRelated.dataset.historyId = cid;
+          child.appendChild(childRelated);
+  
+          block.appendChild(child);
+        }
+  
+        article.appendChild(block);
+        return article;
+      }
+  
+      for (const s of sections){
+        frag.appendChild(articleForParent(s));
+      }
+      list.appendChild(frag);
+  
+      /* ========= Helpers for sidebar icons ========= */
+      function iconFor(obj){
+        if (obj && obj.icon) return String(obj.icon);
+        const t = (obj?.title || obj?.id || '').toLowerCase();
+        if (t.startsWith('event'))    return 'icon_event.png';
+        if (t.startsWith('campaign')) return 'icon_campaign.png';
+        if (t.startsWith('series'))   return 'icon_series.png';
+        if (t.startsWith('lore'))     return 'icon_lore.png';
+        if (t.startsWith('story'))    return 'icon_story.png';
+        return '';
+      }
+      function setBtnLabelWithIcon(btn, iconName, text){
+        btn.textContent = '';
+        if (iconName){
+          const img = document.createElement('img');
+          img.className = 'chip-ico';
+          img.alt = '';
+          img.src = 'assets/art/' + iconName;
+          btn.appendChild(img);
+        }
+        btn.appendChild(document.createTextNode(text));
+      }
+  
+      /* ============ Sidebar Tree ============ */
+      function buildTree(){
+        tree.innerHTML = '';
+        const f = document.createDocumentFragment();
+  
+        for (const s of sections){
+          const liCat = document.createElement('li');
+  
+          const btnCat = document.createElement('button');
+          /* old: btnCat.textContent = s.title || s.id; */
+          setBtnLabelWithIcon(btnCat, iconFor(s), s.title || s.id);
+          btnCat.dataset.target = s.id;
+          btnCat.className = 'parent-btn';
+          liCat.appendChild(btnCat);
+  
+          const kids = Array.isArray(s.entries) ? s.entries : [];
+          if (kids.length){
+            const ul = document.createElement('ul');
+            ul.className = 'child-wrap';
+            ul.style.display = 'none';
+  
+            for (const c of kids){
+              const liSub = document.createElement('li');
+              liSub.className = 'child-li';
+  
+              const btnSub = document.createElement('button');
+              /* old: btnSub.textContent = c.title || c.id; */
+              const childIcon = iconFor(c) || iconFor(s);
+              setBtnLabelWithIcon(btnSub, childIcon, c.title || c.id);
+              btnSub.dataset.target = `${s.id}--${c.id}`;
+              btnSub.className = 'child-btn';
+              liSub.appendChild(btnSub);
+              ul.appendChild(liSub);
+            }
+            liCat.appendChild(ul);
+  
+            btnCat.addEventListener('click', () => {
+              ul.style.display = (ul.style.display === 'none') ? '' : 'none';
+              scrollToHistoryId(s.id);
+              markActive(btnCat.dataset.target);
+            });
+          } else {
+            btnCat.addEventListener('click', () => {
+              scrollToHistoryId(s.id);
+              markActive(btnCat.dataset.target);
+            });
+          }
+  
+          f.appendChild(liCat);
+        }
+        tree.appendChild(f);
+      }
+      buildTree();
+  
+      // Expand/Collapse All controls
+      document.getElementById('expand-all').addEventListener('click', () => {
+        tree.querySelectorAll(':scope > li > .child-wrap').forEach(ul => ul.style.display = '');
+      });
+      document.getElementById('collapse-all').addEventListener('click', () => {
+        tree.querySelectorAll(':scope > li > .child-wrap').forEach(ul => ul.style.display = 'none');
+      });
+  
+      tree.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-target]');
+        if (!btn) return;
+        const id = btn.dataset.target;
+        if (id.includes('--')){
+          const parentId = id.split('--')[0];
+          const parentLi = [...tree.children].find(li => {
+            const b = li.querySelector(':scope > .parent-btn');
+            return b && b.dataset.target === parentId;
+          });
+          const ul = parentLi && parentLi.querySelector(':scope > .child-wrap');
+          if (ul) ul.style.display = '';
+        }
+        scrollToHistoryId(id);
+        markActive(id);
+      });
+  
+      /* ============ Active marker for sidebar ============ */
+      function markActive(id){
+        tree.querySelectorAll('button[aria-current="true"]').forEach(b => b.setAttribute('aria-current','false'));
+        const btn = tree.querySelector(`button[data-target="${CSS.escape(id)}"]`);
+        if (btn) btn.setAttribute('aria-current','true');
+      }
+  
+      /* ============ Scrolling / Deep Links  ============ */
+      function scrollToHistoryId(id){
+        if (!id) return false;
+        const el = document.getElementById(id);
+        if (!el) return false;
+  
+        try { el.scrollIntoView({ behavior:'smooth', block:'start', inline:'nearest' }); } catch {}
+  
+        const pane = document.getElementById('history-list');
+        if (pane){
+          const elRect = el.getBoundingClientRect();
+          const paneRect = pane.getBoundingClientRect();
+          const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop || '0') || 0;
+          const delta = elRect.top - paneRect.top + pane.scrollTop - marginTop;
+          pane.scrollTo({ top: delta, behavior:'smooth' });
+        }
+        history.replaceState(null, '', '#' + encodeURIComponent(id));
+        return true;
+      }
+  
+      function openFromHash(){
+        const raw = (location.hash || '').replace(/^#/, '');
+        const id = decodeURIComponent(raw);
+        if (!id) return;
+        const [parent] = id.split('--', 1);
+        const node = [...tree.querySelectorAll(':scope > li')].find(li => {
+          const b = li.querySelector(':scope > .parent-btn');
+          return b && (b.dataset.target === parent);
+        });
+        if (node){
+          const ul = node.querySelector(':scope > .child-wrap');
+          if (ul) ul.style.display = '';
+        }
+        scrollToHistoryId(id);
+        markActive(id);
+      }
+      window.addEventListener('hashchange', openFromHash);
+      openFromHash();
+  
+      const dataFiles = [
+        'assets/data/npcs.json',
+        'assets/data/factions.json',
+        'assets/data/aberrations.json',
+        'assets/data/beasts.json',
+        'assets/data/critters.json',
+        'assets/data/demons.json',
+        'assets/data/dragonkin.json',
+        'assets/data/elementals.json',
+        'assets/data/giants.json',
+        'assets/data/humanoids.json',
+        'assets/data/mechanical.json',
+        'assets/data/undead.json'
+      ];
+  
+      async function loadJsonSafe(url){
+        try{
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const text = await res.text();
+          if (!text.trim()) return { entries: [], categories: [] };
+          return JSON.parse(text);
+        } catch(e){
+          console.warn('Skipping data file:', url, e);
+          return { entries: [], categories: [] };
+        }
+      }
+      function* iterEntries(source){
+        if (Array.isArray(source.categories)) {
+          for (const c of source.categories) {
+            for (const s of (c.subcategories || [])) {
+              for (const e of (s.entries || [])) yield e;
+            }
+          }
+        } else {
+          for (const e of (source.entries || [])) yield e;
+        }
+      }
+  
+      const allSets = await Promise.all(dataFiles.map(loadJsonSafe));
+      const byHistoryId = new Map();
+  
+      function addLink(hid, e){
+        if (!byHistoryId.has(hid)) byHistoryId.set(hid, []);
+        const arr = byHistoryId.get(hid);
+        if (!arr.some(x => x.id === e.id)){
+          arr.push({
+            id: e.id,
+            name: e.name || e.id,
+            class: e.class || '',
+            category: e.category || '',
+            subcategory: e.subcategory || ''
           });
         }
-
-        f.appendChild(liCat);
       }
-      tree.appendChild(f);
-    }
-    buildTree();
-
-    // Expand/Collapse All controls
-    document.getElementById('expand-all').addEventListener('click', () => {
-      tree.querySelectorAll(':scope > li > .child-wrap').forEach(ul => ul.style.display = '');
-    });
-    document.getElementById('collapse-all').addEventListener('click', () => {
-      tree.querySelectorAll(':scope > li > .child-wrap').forEach(ul => ul.style.display = 'none');
-    });
-
-    tree.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-target]');
-      if (!btn) return;
-      const id = btn.dataset.target;
-      if (id.includes('--')){
-        const parentId = id.split('--')[0];
-        const parentLi = [...tree.children].find(li => {
-          const b = li.querySelector(':scope > .parent-btn');
-          return b && b.dataset.target === parentId;
-        });
-        const ul = parentLi && parentLi.querySelector(':scope > .child-wrap');
-        if (ul) ul.style.display = '';
-      }
-      scrollToHistoryId(id);
-      markActive(id);
-    });
-
-    /* ============ Active marker for sidebar ============ */
-    function markActive(id){
-      tree.querySelectorAll('button[aria-current="true"]').forEach(b => b.setAttribute('aria-current','false'));
-      const btn = tree.querySelector(`button[data-target="${CSS.escape(id)}"]`);
-      if (btn) btn.setAttribute('aria-current','true');
-    }
-
-    /* ============ Scrolling / Deep Links  ============ */
-    function scrollToHistoryId(id){
-      if (!id) return false;
-      const el = document.getElementById(id);
-      if (!el) return false;
-
-      try { el.scrollIntoView({ behavior:'smooth', block:'start', inline:'nearest' }); } catch {}
-
-      const pane = document.getElementById('history-list');
-      if (pane){
-        const elRect = el.getBoundingClientRect();
-        const paneRect = pane.getBoundingClientRect();
-        const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop || '0') || 0;
-        const delta = elRect.top - paneRect.top + pane.scrollTop - marginTop;
-        pane.scrollTo({ top: delta, behavior:'smooth' });
-      }
-      history.replaceState(null, '', '#' + encodeURIComponent(id));
-      return true;
-    }
-
-    function openFromHash(){
-      const raw = (location.hash || '').replace(/^#/, '');
-      const id = decodeURIComponent(raw);
-      if (!id) return;
-      const [parent] = id.split('--', 1);
-      const node = [...tree.querySelectorAll(':scope > li')].find(li => {
-        const b = li.querySelector(':scope > .parent-btn');
-        return b && (b.dataset.target === parent);
-      });
-      if (node){
-        const ul = node.querySelector(':scope > .child-wrap');
-        if (ul) ul.style.display = '';
-      }
-      scrollToHistoryId(id);
-      markActive(id);
-    }
-    window.addEventListener('hashchange', openFromHash);
-    openFromHash();
-
-    const dataFiles = [
-      'assets/data/npcs.json',
-      'assets/data/factions.json',
-      'assets/data/aberrations.json',
-      'assets/data/beasts.json',
-      'assets/data/critters.json',
-      'assets/data/demons.json',
-      'assets/data/dragonkin.json',
-      'assets/data/elementals.json',
-      'assets/data/giants.json',
-      'assets/data/humanoids.json',
-      'assets/data/mechanical.json',
-      'assets/data/undead.json'
-    ];
-
-    async function loadJsonSafe(url){
-      try{
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const text = await res.text();
-        if (!text.trim()) return { entries: [], categories: [] };
-        return JSON.parse(text);
-      } catch(e){
-        console.warn('Skipping data file:', url, e);
-        return { entries: [], categories: [] };
-      }
-    }
-    function* iterEntries(source){
-      if (Array.isArray(source.categories)) {
-        for (const c of source.categories) {
-          for (const s of (c.subcategories || [])) {
-            for (const e of (s.entries || [])) yield e;
+  
+      for (const set of allSets){
+        for (const e of iterEntries(set)){
+          const links = Array.isArray(e.campaignLinks) ? e.campaignLinks : [];
+          for (let hid of links){
+            addLink(hid, e);
           }
         }
-      } else {
-        for (const e of (source.entries || [])) yield e;
       }
-    }
-
-    const allSets = await Promise.all(dataFiles.map(loadJsonSafe));
-    const byHistoryId = new Map();
-
-    function addLink(hid, e){
-      if (!byHistoryId.has(hid)) byHistoryId.set(hid, []);
-      const arr = byHistoryId.get(hid);
-      if (!arr.some(x => x.id === e.id)){
-        arr.push({
-          id: e.id,
-          name: e.name || e.id,
-          class: e.class || '',
-          category: e.category || '',
-          subcategory: e.subcategory || ''
+  
+      function wireRelatedForId(hid){
+        const rel = list.querySelector(`.related-wrap[data-history-id="${CSS.escape(hid)}"]`);
+        if (!rel) return;
+        const ents = (byHistoryId.get(hid) || []).sort((a,b)=>{
+          const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
+          const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
+          return ka.localeCompare(kb);
         });
+        if (!ents.length) return;
+  
+        const tags = document.createElement('div');
+        tags.className = 'entity-tags';
+  
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'toggle-related-btn';
+        toggleBtn.textContent = 'Hide Related ▾';
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.removeAttribute('style');
+        toggleBtn.addEventListener('click', () => {
+          const hidden = tags.style.display === 'none';
+          tags.style.display = hidden ? '' : 'none';
+          toggleBtn.textContent = (hidden ? 'Hide' : 'Show') + ' Related ' + (hidden ? '▾' : '▸');
+          toggleBtn.setAttribute('aria-expanded', String(hidden));
+        });
+  
+        for (const e of ents){
+          const a = document.createElement('a');
+          a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
+          a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
+          a.textContent = e.name;
+          tags.appendChild(a);
+        }
+        rel.appendChild(toggleBtn);
+        rel.appendChild(tags);
       }
-    }
-
-    for (const set of allSets){
-      for (const e of iterEntries(set)){
-        const links = Array.isArray(e.campaignLinks) ? e.campaignLinks : [];
-        for (let hid of links){
-          addLink(hid, e);
+  
+      for (const s of sections) wireRelatedForId(s.id);
+      for (const s of sections){
+        const kids = Array.isArray(s.entries) ? s.entries : [];
+        for (const c of kids){
+          wireRelatedForId(`${s.id}--${c.id}`);
         }
       }
-    }
-
-    function wireRelatedForId(hid){
-      const rel = list.querySelector(`.related-wrap[data-history-id="${CSS.escape(hid)}"]`);
-      if (!rel) return;
-      const ents = (byHistoryId.get(hid) || []).sort((a,b)=>{
-        const ka = `${a.category} ${a.subcategory} ${a.name}`.toLowerCase();
-        const kb = `${b.category} ${b.subcategory} ${b.name}`.toLowerCase();
-        return ka.localeCompare(kb);
+  
+      requestAnimationFrame(() => requestAnimationFrame(openFromHash));
+  
+      window.addEventListener('load', () => {
+        setTimeout(openFromHash, 0);
+        setTimeout(openFromHash, 80);
       });
-      if (!ents.length) return;
-
-      const tags = document.createElement('div');
-      tags.className = 'entity-tags';
-
-      const toggleBtn = document.createElement('button');
-      toggleBtn.type = 'button';
-      toggleBtn.className = 'toggle-related-btn';
-      toggleBtn.textContent = 'Hide Related ▾';
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.removeAttribute('style');
-      toggleBtn.addEventListener('click', () => {
-        const hidden = tags.style.display === 'none';
-        tags.style.display = hidden ? '' : 'none';
-        toggleBtn.textContent = (hidden ? 'Hide' : 'Show') + ' Related ' + (hidden ? '▾' : '▸');
-        toggleBtn.setAttribute('aria-expanded', String(hidden));
+      let didResizeScroll = false;
+      const ro = new ResizeObserver(() => {
+        if (didResizeScroll) return;
+        didResizeScroll = true;
+        openFromHash();
+        ro.disconnect();
       });
-
-      for (const e of ents){
-        const a = document.createElement('a');
-        a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
-        a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
-        a.textContent = e.name;
-        tags.appendChild(a);
-      }
-      rel.appendChild(toggleBtn);
-      rel.appendChild(tags);
-    }
-
-    for (const s of sections) wireRelatedForId(s.id);
-    for (const s of sections){
-      const kids = Array.isArray(s.entries) ? s.entries : [];
-      for (const c of kids){
-        wireRelatedForId(`${s.id}--${c.id}`);
-      }
-    }
-
-    requestAnimationFrame(() => requestAnimationFrame(openFromHash));
-
-    window.addEventListener('load', () => {
-      setTimeout(openFromHash, 0);
-      setTimeout(openFromHash, 80);
+      ro.observe(list);
+  
+    })().catch(err => {
+      console.error('Failed to build history page', err);
+      const list = document.getElementById('history-list');
+      if (list) list.innerHTML = '<div class="text-block"><p>History entries are unavailable right now.</p></div>';
     });
-    let didResizeScroll = false;
-    const ro = new ResizeObserver(() => {
-      if (didResizeScroll) return;
-      didResizeScroll = true;
-      openFromHash();
-      ro.disconnect();
-    });
-    ro.observe(list);
-
-  })().catch(err => {
-    console.error('Failed to build history page', err);
-    const list = document.getElementById('history-list');
-    if (list) list.innerHTML = '<div class="text-block"><p>History entries are unavailable right now.</p></div>';
-  });
   </script>
+
+  <!-- ======= Submission Modal ======= -->
+  <div id="histSubmitModal" class="hsb-backdrop" hidden>
+    <div class="hsb-modal" role="dialog" aria-modal="true" aria-labelledby="hsbTitle">
+      <button class="hsb-close" type="button" aria-label="Close">×</button>
+      <h2 id="hsbTitle" class="hsb-heading">Submit New History Entry</h2>
+  
+      <form id="hsbForm" novalidate>
+        <!-- hidden fields players should not touch -->
+        <input id="hsb_id"    type="hidden" autocomplete="off">
+        <input id="hsb_order" type="hidden" autocomplete="off">
+  
+        <!-- Row 1: Type first, then Title -->
+        <div class="hsb-row">
+          <label class="hsb-field">
+            <span class="hsb-label">Entry Type</span>
+            <select id="hsb_type">
+              <option>Campaign</option>
+              <option>Event</option>
+              <option>Lore</option>
+              <option>PVE</option>
+              <option>Series — New</option>
+              <option>Series — Event</option>
+              <option>Story</option>
+            </select>
+          </label>
+
+          <label class="hsb-field">
+            <span class="hsb-label">Entry Title</span>
+            <input id="hsb_title" required placeholder="e.g., The Burning of Sunspire">
+          </label>
+
+          <div></div>
+        </div>
+
+        <!-- Parent (Series/Campaign) -->
+        <div class="hsb-row" id="hsb_parent_wrap">
+          <label class="hsb-field">
+            <span class="hsb-label">Parent (Series/Campaign)</span>
+            <select id="hsb_parentSeries">
+              <option value="">None</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Subtitle and Date side-by-side -->
+        <div class="hsb-row" style="grid-template-columns: 1fr 1fr;">
+          <label class="hsb-field">
+            <span class="hsb-label" id="hsb_label_subtitle">Subtitle</span>
+            <input id="hsb_subtitle" placeholder="e.g., Expansion name or date.">
+          </label>
+          <label class="hsb-field">
+            <span class="hsb-label" id="hsb_label_date">Canon Year</span>
+            <input id="hsb_date" placeholder="e.g., c. Year 42">
+          </label>
+        </div>
+  
+        <!-- Entry Text -->
+        <label class="hsb-field">
+          <span class="hsb-label">Entry Text</span>
+          <textarea id="hsb_summary" placeholder="Supports &lt;br&gt; tags for paragraph breaks…"></textarea>
+        </label>
+  
+        <!-- Actions -->
+        <div class="hsb-row">
+          <div class="hsb-actions">
+            <button id="hsb_clear" class="hsb-btn ghost" type="button">Clear fields</button>
+            <button id="hsb_submit" class="hsb-btn" type="button">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <style>
+    .hsb-backdrop{position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.7);backdrop-filter:blur(2px);z-index:10000}
+    .hsb-modal{width:min(920px,94vw);max-height:92vh;overflow:auto;background:#1a1410;color:#fce5cd;border:3px solid #d4af37;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.6);padding:18px 18px 12px}
+    .hsb-close{position:sticky;float:right;top:0;right:0;width:34px;height:34px;border-radius:50%;border:2px solid #d4af37;background:#000;color:#fff;font-size:18px;line-height:1;cursor:pointer}
+    .hsb-heading{margin:.25rem 0 1rem 0}
+    .hsb-row{display:grid;grid-template-columns:1fr 220px 1fr;gap:12px;margin:.5rem 0}
+    .hsb-field{display:grid;gap:.35rem}
+    .hsb-label{font-weight:700}
+    .hsb-field input,.hsb-field select,.hsb-field textarea{background:#0f0c0a;color:#fce5cd;border:1px solid #3a2a14;border-radius:10px;padding:.6rem}
+    .hsb-field textarea{min-height:180px;resize:vertical}
+    .hsb-actions{display:flex;justify-content:flex-end;align-items:end;gap:.6rem}
+    .hsb-btn{background:linear-gradient(#7d5a1a,#3d2a12);color:#fff;border:1px solid #000;border-radius:999px;padding:.7rem 1.2rem;font-weight:700;cursor:pointer}
+    .hsb-btn.ghost{background:#000;border-color:#3a2a14}
+    body.hsb-lock{overflow:hidden}
+    .hsb-backdrop[hidden] { display: none !important; }
+    @media (max-width: 780px){ .hsb-row{grid-template-columns:1fr} }
+  </style>
+
+<script>
+  // ======= Submission Modal Wiring =======
+  (function(){
+    const GS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz5Pc_7EVihQBy5AeiH1TiIKOxIkeGDHHbKFS3Mi90anqIkmx-i2If8svSRNnyff7jkGQ/exec';
+    const SECRET = 'hsb_9d3c7c2f7a7e4c4b9b1f8e6d2a5f0a3c';
+    
+    const openBtn   = document.getElementById('submit-entry');
+    const modal     = document.getElementById('histSubmitModal');
+    const closeBtn  = modal?.querySelector('.hsb-close');
+    const form      = document.getElementById('hsbForm');
+
+    const idIn      = document.getElementById('hsb_id');
+    const titleIn   = document.getElementById('hsb_title');
+    const subIn     = document.getElementById('hsb_subtitle');
+    const typeIn    = document.getElementById('hsb_type');
+    const dateIn    = document.getElementById('hsb_date');
+    const sumIn     = document.getElementById('hsb_summary');
+    const orderIn   = document.getElementById('hsb_order');
+    const clearBtn  = document.getElementById('hsb_clear');
+    const submitBtn = document.getElementById('hsb_submit');
+    const parentSel  = document.getElementById('hsb_parentSeries');
+
+    if (!openBtn || !modal || !form) return;
+
+    const LS_KEY = 'history.submit.draft.v1';
+
+    function saveDraft(){
+      const d = {
+        id: (idIn.value||'').trim(),
+        title: (titleIn.value||'').trim(),
+        subtitle: (subIn.value||'').trim(),
+        type: typeIn.value,
+        date: (dateIn.value||'').trim(),
+        summary_html: sumIn.value,
+        order: (orderIn.value||'').trim(),
+        parent: parentSel.value || ''
+      };
+      try { localStorage.setItem(LS_KEY, JSON.stringify(d)); } catch {}
+    }
+
+    async function populateParents(){
+      try{
+        const res = await fetch('assets/data/history.json', { cache:'no-store' });
+        if(!res.ok) throw new Error(res.status);
+        const data = await res.json();
+        const sections = Array.isArray(data.sections) ? data.sections : [];
+        const parents = sections
+          .filter(s => {
+            const t = String(s.title || s.id || '').toLowerCase();
+            return t.startsWith('series') || t.startsWith('campaign');
+          })
+          .map(s => ({ id: s.id, title: s.title || s.id }))
+          .sort((a,b) => a.title.localeCompare(b.title));
+        parentSel.innerHTML = '<option value="">None</option>';
+        for(const p of parents){
+          const opt = document.createElement('option');
+          opt.value = p.id;
+          opt.textContent = `${p.title}  —  (${p.id})`;
+          parentSel.appendChild(opt);
+        }
+      }catch(err){
+        console.warn('Failed to load parents list:', err);
+        parentSel.innerHTML = '<option value="">None</option>';
+      }
+    }
+
+    function loadDraft(){
+      try{
+        const raw = localStorage.getItem(LS_KEY);
+        if (!raw) return;
+        const d = JSON.parse(raw);
+        if (d.id!=null) idIn.value = d.id;
+        if (d.title!=null) titleIn.value = d.title;
+        if (d.subtitle!=null) subIn.value = d.subtitle;
+        if (d.type) typeIn.value = d.type;
+        if (d.date!=null) dateIn.value = d.date;
+        if (d.summary_html!=null) sumIn.value = d.summary_html;
+        if (d.order!=null) orderIn.value = d.order;
+        if (d.parent!=null) parentSel.value = d.parent;
+        updateTypeLabels();
+      } catch {}
+    }
+
+    function clearDraft(){
+      idIn.value = '';
+      titleIn.value = '';
+      subIn.value = '';
+      typeIn.value = 'Campaign';
+      dateIn.value = '';
+      sumIn.value = '';
+      orderIn.value = '';
+      parentSel.value = '';
+      updateTypeLabels();
+      try { localStorage.removeItem(LS_KEY); } catch {}
+    }
+
+    form.addEventListener('input', saveDraft);
+
+    function updateTypeLabels(){
+const val = String(typeIn.value || '').toLowerCase();
+
+const isOOC =
+  val === 'event' ||
+  val === 'campaign' ||
+  val === 'pve';
+
+const subLbl  = document.getElementById('hsb_label_subtitle');
+const dateLbl = document.getElementById('hsb_label_date');
+
+if (subLbl)  subLbl.textContent  = isOOC ? 'OOC Date' : 'Subtitle';
+if (dateLbl) dateLbl.textContent = 'Canon Year';
+}
+
+    typeIn.addEventListener('change', () => { updateTypeLabels(); saveDraft(); });
+
+    function openModal(){
+      modal.hidden = false;
+      document.body.classList.add('hsb-lock');
+      populateParents().then(loadDraft);
+      setTimeout(() => titleIn.focus(), 0);
+    }
+    function closeModal(){
+      modal.hidden = true;
+      document.body.classList.remove('hsb-lock');
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if (!modal.hidden && e.key === 'Escape') closeModal(); });
+
+    clearBtn.addEventListener('click', () => {
+      if (confirm('Clear all fields? This will erase the saved draft.')) clearDraft();
+    });
+
+    function ensureSilentIFrame(){
+      let fr = document.getElementById('hsb_silent_iframe');
+      if (!fr){
+        fr = document.createElement('iframe');
+        fr.name = 'hsb_silent';
+        fr.id = 'hsb_silent_iframe';
+        fr.style.display = 'none';
+        document.body.appendChild(fr);
+      }
+      return fr;
+    }
+
+    submitBtn.addEventListener('click', async () => {
+      if (!titleIn.value.trim()){
+        alert('Please provide an Entry Title.');
+        titleIn.focus();
+        return;
+      }
+      if (!sumIn.value.trim()){
+        alert('Please provide Entry Text.');
+        sumIn.focus();
+        return;
+      }
+
+      const entry = {
+        id: (idIn.value||'').trim() || '',
+        title: (titleIn.value||'').trim(),
+        subtitle: (subIn.value||'').trim(),
+        date: (dateIn.value||'').trim(),
+        summary_html: sumIn.value,
+        order: (orderIn.value||'').trim() || ''
+      };
+
+      const type = String(typeIn.value||'').toLowerCase();
+      const iconMap = {
+        'event':'icon_event.png',
+        'campaign':'icon_campaign.png',
+        'series — new':'icon_series.png',
+        'series — event':'icon_event.png',
+        'lore':'icon_lore.png',
+        'pve':'icon_pve.png',
+        'story':'icon_story.png'
+      };
+      if (!entry.icon && iconMap[type]) entry.icon = iconMap[type];
+
+      const parentVal = (parentSel.value || '').trim();
+      if (parentVal) entry.parent = parentVal;
+
+      if (!GS_WEB_APP_URL || /YOUR_WEB_APP_URL_HERE/.test(GS_WEB_APP_URL)) {
+        alert('Set GS_WEB_APP_URL to your Apps Script Web App URL before submitting.');
+        return;
+      }
+
+      const payload = { secret: SECRET, json: JSON.stringify(entry) };
+
+      ensureSilentIFrame();
+      const tmp = document.createElement('form');
+      tmp.action = GS_WEB_APP_URL;
+      tmp.method = 'POST';
+      tmp.target = 'hsb_silent';
+      const hid = document.createElement('input');
+      hid.type = 'hidden';
+      hid.name = 'payload';
+      hid.value = JSON.stringify(payload);
+      tmp.appendChild(hid);
+      document.body.appendChild(tmp);
+      tmp.submit();
+      tmp.remove();
+
+      alert('Submitted! Your JSON has been added to the sheet.');
+      localStorage.setItem(LS_KEY, JSON.stringify(entry));
+      closeModal();
+    });
+  })();
+</script>
+
 </body>
 </html>
