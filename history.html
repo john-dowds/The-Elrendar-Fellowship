@@ -135,6 +135,94 @@
   .related-wrap > .toggle-related-btn:focus {
     outline: 2px solid rgba(252,229,205,0.45) !important; outline-offset: 2px !important;
   }
+  /* --- Tools row: allow tooltip anchoring --- */
+.sidebar-tools.left.tools-row{
+  position: relative;
+  align-items: center;
+}
+
+/* Icon-only button */
+.icon-btn{
+  padding: .2rem .45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-btn-img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tooltip shell */
+.help-tooltip{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 250px;      
+  max-width: 92vw; 
+  background: rgba(0,0,0,.92);
+  border: 1px solid rgba(252,229,205,.35);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.55);
+  padding: .85rem .85rem .75rem;
+  z-index: 2500;
+}
+
+
+/* Little close button in the corner */
+.help-tooltip-close{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(252,229,205,.35);
+  background: transparent;
+  color: #fce5cd;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.help-tooltip-close:hover{ background: rgba(252,229,205,.08); }
+
+.help-tooltip-title{
+  margin: 0 1.75rem .6rem 0;
+  font-size: 1.05rem;
+  color: #fce5cd;
+}
+
+/* Legend list */
+.help-legend{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .55rem;
+}
+.help-legend li{
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: .6rem;
+  align-items: start;
+  font-size: .98rem;
+  line-height: 1.35;
+}
+.help-legend-ico{
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,.45));
+}
+
+/* Mobile: keep tooltip readable */
+@media (max-width: 520px){
+  .help-tooltip{ left: 0; width: min(520px, 92vw); }
+}
+
 </style>
 </head>
 <body>
@@ -187,9 +275,48 @@
         <button class="mini-btn" id="expand-all">Expand All</button>
         <button class="mini-btn" id="collapse-all">Collapse All</button>
       </div>
-      <div class="sidebar-tools left">
+      <div class="sidebar-tools left tools-row">
         <button class="mini-btn" id="submit-entry" type="button">Submit New Entry</button>
+      
+        <!-- Help icon button -->
+        <button class="mini-btn icon-btn" id="history-help-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="history-help-tooltip" title="Icon legend">
+          <img src="assets/art/icon_help.png" alt="Help" class="icon-btn-img">
+        </button>
+      
+        <!-- Tooltip / legend -->
+        <div id="history-help-tooltip" class="help-tooltip" role="dialog" aria-label="History icon legend" hidden>
+          <button type="button" class="help-tooltip-close" id="history-help-close" aria-label="Close">×</button>
+          <h3 class="help-tooltip-title">History Icon Legend</h3>
+      
+          <ul class="help-legend">
+            <li>
+              <img src="assets/art/icon_campaign.png" alt="" class="help-legend-ico">
+              <div><strong>Campaign</strong>: A multi-part narrative arc with sub-entries.</div>
+            </li>
+            <li>
+              <img src="assets/art/icon_event.png" alt="" class="help-legend-ico">
+              <div><strong>Event</strong>: A single event or session entry (often date-specific).</div>
+            </li>
+            <li>
+              <img src="assets/art/icon_series.png" alt="" class="help-legend-ico">
+              <div><strong>Series</strong>: A themed grouping (e.g., Magical Instruction) that contains entries.</div>
+            </li>
+            <li>
+              <img src="assets/art/icon_lore.png" alt="" class="help-legend-ico">
+              <div><strong>Lore</strong>: Canon/world context entries (timeline, expansions, setting history).</div>
+            </li>
+            <li>
+              <img src="assets/art/icon_story.png" alt="" class="help-legend-ico">
+              <div><strong>Story</strong>: Narrative spotlight pieces (character/plot-focused story beats).</div>
+            </li>
+            <li>
+              <img src="assets/art/icon_pve.png" alt="" class="help-legend-ico">
+              <div><strong>PVE</strong>: Dungeon/Raid content or other gameplay focused entries.</div>
+            </li>
+          </ul>
+        </div>
       </div>
+      
       <ul class="tree" id="history-tree"></ul>
     </aside>
 
@@ -872,6 +999,49 @@ if (dateLbl) dateLbl.textContent = 'Canon Year';
       alert('Submitted! Your JSON has been added to the sheet.');
       localStorage.setItem(LS_KEY, JSON.stringify(entry));
       closeModal();
+    });
+  })();
+</script>
+<script>
+  (function(){
+    const btn   = document.getElementById('history-help-btn');
+    const tip   = document.getElementById('history-help-tooltip');
+    const close = document.getElementById('history-help-close');
+    if (!btn || !tip) return;
+
+    function openTip(){
+      tip.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeTip(){
+      tip.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function toggleTip(){
+      if (tip.hidden) openTip(); else closeTip();
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleTip();
+    });
+
+    close?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeTip();
+      btn.focus();
+    });
+
+    // Click outside closes
+    document.addEventListener('click', (e) => {
+      if (tip.hidden) return;
+      if (tip.contains(e.target) || btn.contains(e.target)) return;
+      closeTip();
+    });
+
+    // Escape closes
+    document.addEventListener('keydown', (e) => {
+      if (!tip.hidden && e.key === 'Escape') closeTip();
     });
   })();
 </script>
