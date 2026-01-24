@@ -11,7 +11,7 @@
       "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
-      "order": 38,
+      "order": 39,
       "entries": [
         {
           "id": "nov12ms",
@@ -65,20 +65,37 @@
         }
       ]
     },
-        {
+    {
+      "id": "event012",
+      "title": "Event: January Ascension",
+      "subtitle": "January 24",
+      "date": "c. Year 42",
+      "summary_html": "\n The Fellowship convenes in the ruined sanctum beneath the guild hall, a place once at the center of the Fellowship's daily life, and hold an induction ceremony, known as the Ascension, to formally admit new members to the order.\n",
+      "order": 38
+    },
+    {
       "id": "event011",
       "title": "Event: Fellow's Soirée",
       "subtitle": "January 22",
       "date": "c. Year 42",
-      "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's halls. In attendance: <li>Ansinosth Summerbough</li><li>Gwaeloth Songwood</li><li>Baroness Belorastra A. Dragonlight</li><li>Haldarin Autumnveil</li><li>Em'thela Silversun</li><li>Gwaeloth Songwood</li><li>Y'lothin Kar'Storas</li><li>Alen'dris Sunblossom</li><li>Calcydo</li><li>Dalentheus Ombrelune</li><li>Arcanist Silanna Leyspire</li><li>Magistrix Laelisel Goldsong</li><li>Kynseria Vel'dinariel</li><li>Jeshacinin Evertrail</li><li>Velara Clarke</li><li>Roxalynn Windsong</li><li>Sorrien Kalos</li><li>Divine Chaniste Skyguard</li><li>Tulindi De Coeur-Errant</li>\n",      "order": 37
+      "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's halls. In attendance: <li>Ansinosth Summerbough</li><li>Gwaeloth Songwood</li><li>Baroness Belorastra A. Dragonlight</li><li>Haldarin Autumnveil</li><li>Em'thela Silversun</li><li>Gwaeloth Songwood</li><li>Y'lothin Kar'Storas</li><li>Alen'dris Sunblossom</li><li>Calcydo</li><li>Dalentheus Ombrelune</li><li>Arcanist Silanna Leyspire</li><li>Magistrix Laelisel Goldsong</li><li>Kynseria Vel'dinariel</li><li>Jeshacinin Evertrail</li><li>Velara Clarke</li><li>Roxalynn Windsong</li><li>Sorrien Kalos</li><li>Tulindi De Coeur-Errant</li>\n",
+      "order": 37
     },
     {
-      "id": "event010",
-      "title": "Event: Puzzle Box of Kel'shunar Starfall",
-      "subtitle": "January 18 & 20",
+      "id": "campaign2",
+      "title": "Campaign: Shadow of the Exiles",
+      "subtitle": "Long Narrative Campaign",
       "date": "c. Year 42",
-      "summary_html": "\n Members of the Fellowship gather to delve into the mysterious locked seal sitting atop an ancient elven chest, one once belonging to the Kel'shunar Starfall, an early founding member of the Kingdom of Quel'Thalas who was exiled from Kalimdor. Faeylli Nuth'danil, Ansinosth Summerbough, Tal'theas Sunfeather, Gwaeloth Songwood, and Thalendir Dawncrest gather through the  night and work to break several magical sealed bound by riddles, each associated with various conceptional understandings of the schools of magic, and on the second day manage to unlock the container and recover an ancient elven tome.\n",
-      "order": 36
+      "summary_html": "<p>The Fellowship delves deep into ancient dating back to the founding of Quel'Thalas, when Highborne exiles braved the perils of Tirisfal and the Amani Empire's dominion in order to find a new home. Something stirs from that time, ever present, and finally seeing its chance to rise once more.</p>",
+      "order": 36,
+      "entries": [
+        {
+          "id": "campaign2.1",
+          "title": "Event: Puzzle Box of Kel'shunar Starfall",
+          "date": "January 18 & 20",
+          "summary_html": "<p>Members of the Fellowship gather to delve into the mysterious locked seal sitting atop an ancient elven chest, one once belonging to the Kel'shunar Starfall, an early founding member of the Kingdom of Quel'Thalas who was exiled from Kalimdor. Faeylli Nuth'danil, Ansinosth Summerbough, Tal'theas Sunfeather, Gwaeloth Songwood, Thalendir Dawncrest, and ASH gather through the  night and work to break several magical sealed bound by riddles, each associated with various conceptional understandings of the schools of magic, and on the second day manage to unlock the container and recover an ancient elven tome.</p>"
+        }
+      ]
     },
     {
       "id": "event009",
@@ -163,27 +180,27 @@
     {
       "id": "campaign1",
       "title": "Campaign: What Lurks in the Shadows",
-      "subtitle": "September 6",
+      "subtitle": "Short Narrative Campaign",
       "date": "c. Year 42",
       "summary_html": "<p>The Fellowship is called upon by the Magister Zaedana of Silvermoon to pursue leads on a dire, growing threat: the presence of fel taint within two arcane sanctums across Quel'Thalas. Though the Magisters of Quel'Thalas are well capable themselves of investigating such a task, the greater threat is revealed to be the suspect of a traitor within the ranks of the Magistry itself. <br><br> Tasked with getting to the bottom of the matter swiftly, the Elrendar Fellowship faces a daunting task of investigating the very officials who mandate the practice of magic throughout the High Home, and pursuing leads on somethingi that could prove terribly lethal to all.</p>",
       "order": 25,
       "entries": [
         {
           "id": "campaign1.1",
-          "title": "The Two Vaults - September 6th",
-          "date": "c. Year 42",
+          "title": "Event: The Two Vaults",
+          "date": "September 6th",
           "summary_html": "<p>The Fellowship and its allies pursue an investigation into a potential traitor within the magistry, and the breaches at arcane vaults deep in the Eversong Woods. Andrys Blackthorn, Soryn Cloudspire, Selindel of Gilderhollow, Lady Menadrael Embermourn, Kodesetre, Hesparius Greymourn, Alen'dris Sunwalker, Lady Thalena Thori'zaram, Lady Zanrolia Sprenlen, Lamplighter Kharyym, Knight-Lord Caledeth Bloodthorn, Falthuron Evermist, and Hal'sonas Windreaver venture deep into one of the vaults, and after a painstaking effort to purify shattered soul fragments found at the wrecked vault, they uncover the truth of a demonic threat-one of the Nathrezim has found their way into Quel'Thalas.</p>"
         },
         {
           "id": "campaign1.2",
-          "title": "The Third Vault - September 7th",
-          "date": "c. Year 42",
+          "title": "Event: The Third Vault",
+          "date": "September 7th",
           "summary_html": "<p>Following the revelations the day prior, the Elrendar Fellowship makes preparations to respond to the dire threat, but is urgently summoned following another disturbance at the Sala'dashal vaults in southern Eversong Woods.</p>"
         },
         {
           "id": "campaign1.3",
-          "title": "The Handoff - September 15th",
-          "date": "c. Year 42",
+          "title": "Event: The Handoff",
+          "date": "September 15th",
           "summary_html": "<p>With the disturbance investigated and determined to be a substantial lead in the case of the traitor, the Fellowship dispatches some of its members to draw out the traitor with a trap, exposing them, and eliminating the threat.</p>"
         }
       ]
