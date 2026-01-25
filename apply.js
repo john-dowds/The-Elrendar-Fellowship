@@ -9,7 +9,7 @@ const mainWrap = document.getElementById('mainNameWrap');
 const mainInput = document.getElementById('mainNameInput');
 
 function isMainSelected(){
-  return !!toggle?.checked;
+  return toggle ? !!toggle.checked : true;
 }
 
 function syncAltFieldUI(){
@@ -62,7 +62,7 @@ form.addEventListener('submit', async (e) => {
   }
 
   if(!mainSelected && !data.main){
-    statusEl.textContent = 'Please enter the name of your main character.';
+    statusEl.textContent = 'Please enter the name of your current main character in the guild.';
     return;
   }
 
