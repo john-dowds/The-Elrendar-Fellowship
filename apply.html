@@ -49,21 +49,30 @@
       <h2>Guild Application</h2>
       <div class="app-type-toggle" aria-label="Application type">
         <span class="toggle-label" id="appTypeLabel">Main</span>
-      
+
         <label class="switch" title="Toggle Main / Alt">
           <input id="appTypeToggle" type="checkbox" checked />
           <span class="slider" aria-hidden="true"></span>
         </label>
       </div>
-      
+
       <div class="grid">
         <label>OOC Character Name
           <input name="name" required />
         </label>
 
         <label>Server
-            <input type="text" name="server" placeholder="Wyrmrest-Accord" />
-          </label>          
+          <select name="server">
+            <option value="" selected>Select a server…</option>
+            <option value="Wyrmrest Accord-Horde">Wyrmrest Accord-Horde</option>
+            <option value="Wrymrest Accord-Alliance">Wrymrest Accord-Alliance</option>
+            <option value="Moon Guard-Horde">Moon Guard-Horde</option>
+            <option value="Moon Guard-Alliance">Moon Guard-Alliance</option>
+            <option value="Emerald Dream-Horde">Emerald Dream-Horde</option>
+            <option value="Emerald Dream-Alliance">Emerald Dream-Alliance</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
 
         <label>Discord
           <input name="discord" placeholder="user#1234" />
@@ -73,12 +82,32 @@
           <input name="character" required />
         </label>
 
-        <label>IC Character Title
+        <label>Applicable Character Titles
           <input name="title" />
         </label>
 
-        <label>Faction/Role
-          <input name="faction" placeholder="e.g., Ranger / Healer / RP" />
+        <label>Class/Role
+          <select name="faction">
+            <option value="" selected>Select a role…</option>
+            <option value="Artificer">Artificer</option>
+            <option value="Artisan / Craftsman">Artisan / Craftsman</option>
+            <option value="Blood Knight / Paladin">Blood Knight / Paladin</option>
+            <option value="Classic Mage / Battle Mage">Classic Mage / Battle Mage</option>
+            <option value="Cleric / Priest">Cleric / Priest</option>
+            <option value="Death Knight">Death Knight</option>
+            <option value="Druid / Naturalist">Druid / Naturalist</option>
+            <option value="Evoker">Evoker</option>
+            <option value="Evoker / Dragonkin">Evoker / Dragonkin</option>
+            <option value="Historical / Scholar / Archaeologist">Historical / Scholar / Archaeologist</option>
+            <option value="Illidari / Demon Hunter">Illidari / Demon Hunter</option>
+            <option value="Monk">Monk</option>
+            <option value="Other">Other</option>
+            <option value="Ranger / Dark Ranger">Ranger / Dark Ranger</option>
+            <option value="Spellbreaker / Spellblade">Spellbreaker / Spellblade</option>
+            <option value="Spy / Rogue">Spy / Rogue</option>
+            <option value="Warlock / Sorcerer">Warlock / Sorcerer</option>
+            <option value="Warrior / Soldier">Warrior / Soldier</option>
+          </select>
         </label>
 
         <label>Availability
@@ -88,7 +117,7 @@
         <label id="mainNameWrap" class="is-hidden">Main character name
           <input name="main" id="mainNameInput" placeholder="Name of your main character" />
         </label>
-        
+
       </div>
 
       <label>Brief Character Summary / Notes
