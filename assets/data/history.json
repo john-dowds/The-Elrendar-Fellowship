@@ -65,6 +65,22 @@
         }
       ]
     },
+        {
+      "id": "campaign3",
+      "title": "Campaign: Ashes of the Sunward Betrayal",
+      "subtitle": "Long Narrative Campaign",
+      "date": "c. Year 42",
+      "summary_html": "<p>Something stirs along the borders of Quel’thalas. Not a warband. Not a horde. Small movements. Measured strikes. Undead forces that advance, test, and withdraw as if learning, rather than conquering. Rangers report Scourge activity that does not behave as it should. Magisters note wards disturbed, not broken. Old places are being touched again. Border posts long abandoned, names long absent from record. Whatever leads these incursions understands elven magic. Understands procedure. Understands what was left behind. The Blood Knights have authorized a quiet response. Small teams. Limited knowledge. No assumptions. Some will strike at the threat directly. Others will follow the threads it leaves behind. Because this is not a story of invasion. It is a story of memory. Of duty. And of what happens when someone who was sworn to protect is never called home. \n The dead remember. \n And someone is making sure Quel’thalas does too.</p>",
+      "order": 44,
+      "entries": [
+        {
+          "id": "campaign.1",
+          "title": "Event: Soon to come!",
+          "date": "TBD",
+          "summary_html": "<p>Recaps will be added after the first event!</p>"
+        }
+      ]
+    },
     {
       "id": "event012",
       "title": "Event: January Ascension",
