@@ -113,6 +113,13 @@
   }
   .child .date{ font-size:1rem; opacity:.9; margin:0 0 .5rem; }
 
+  .child-subtitle{
+  font-size: .95rem;
+  opacity: .85;
+  margin: 0 0 .35rem;
+  font-style: italic;
+}
+
   .related-wrap{
     display:flex; align-items:center; gap:.5rem; flex-wrap: wrap;
     margin: .5rem 0 0;
@@ -391,7 +398,14 @@
           const h3 = document.createElement('h3');
           h3.textContent = c.title || c.id;
           child.appendChild(h3);
-  
+
+          if (c.subtitle) {
+            const sub = document.createElement('div');
+            sub.className = 'child-subtitle';
+            sub.textContent = c.subtitle;
+            child.appendChild(sub);
+          }
+
           if (c.date){
             const cd = document.createElement('p');
             cd.className = 'date';
@@ -419,6 +433,8 @@
         frag.appendChild(articleForParent(s));
       }
       list.appendChild(frag);
+
+      
   
       /* ========= Helpers for sidebar icons ========= */
       function iconFor(obj){
