@@ -65,6 +65,14 @@
         }
       ]
     },
+    {
+      "id": "event013",
+      "title": "Event: The Missing Ring",
+      "subtitle": "January 28",
+      "date": "c. Year 42",
+      "summary_html": "\n The Fellowship, under the direction of Tal'theas Sunfeather, journey to the ruins of Dalaran on the Isle of Dorn to pursue a missing ring of the Silver Covenant, one which has now drawn the attention of sinister Twilight cultists. Joined by Hespir Everwyern, Sorrien Kalos, Jeshacinin Evertrail, Kynsteria Vel'dinariel, Velara Clark, Dalentheus Ombrelune, and Arcanist Silanna Leyspire, the Fellowship breaches the shattered ruins and recovers the artifact. \n",
+      "order": 45
+    },
         {
       "id": "campaign3",
       "title": "Campaign: Ashes of the Sunward Betrayal",
