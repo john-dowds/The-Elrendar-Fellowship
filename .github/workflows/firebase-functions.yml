@@ -29,4 +29,4 @@ jobs:
         run: |
           echo "$FIREBASE_SERVICE_ACCOUNT" > serviceAccount.json
           export GOOGLE_APPLICATION_CREDENTIALS="$PWD/serviceAccount.json"
-          firebase deploy --only functions --project "$FIREBASE_PROJECT_ID"
+          firebase deploy --only functions --project "$FIREBASE_PROJECT_ID" --force
