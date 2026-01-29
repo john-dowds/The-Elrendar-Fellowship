@@ -6,7 +6,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -26,8 +25,8 @@ jobs:
       - name: Deploy Functions
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: elrendar-fellowship
         run: |
           echo "$FIREBASE_SERVICE_ACCOUNT" > serviceAccount.json
-          firebase deploy --only functions \
-            --elrendar-fellowship \
-            --token "$(firebase login:ci --no-localhost)" || true
+          export GOOGLE_APPLICATION_CREDENTIALS="$PWD/serviceAccount.json"
+          firebase deploy --only functions --project "$FIREBASE_PROJECT_ID"
