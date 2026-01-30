@@ -66,6 +66,14 @@
       ]
     },
     {
+      "id": "event014",
+      "title": "Event: Verse & Volume",
+      "subtitle": "January 29",
+      "date": "c. Year 42",
+      "summary_html": "\n The Fellowship welcomes in guests from abroad for an evening of prose and verse, with a grand prize for the winning of a haiku competition. In attendance are Ansinosth Summerbough, Kynseria Vel'dinariel, Jendral Rosepath, Haldarin Autumnveil, Ruecien Greywake, Lillia Sunveil, Laelisel Goldsong, Onitheril, and Papilio Havenfire, with Doctor Lillia Sunveil taking the grand prize.  \n",
+      "order": 46
+    },
+    {
       "id": "event013",
       "title": "Event: The Missing Ring",
       "subtitle": "January 28",
