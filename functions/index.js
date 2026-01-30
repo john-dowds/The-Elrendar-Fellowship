@@ -93,5 +93,76 @@ exports.onApplicationCreate = onDocumentCreated(
     } catch (err) {
       console.error("onApplicationCreate: createUser error", err);
     }
+    const { onRequest } = require("firebase-functions/v2/https");
+
+function setCors(res) {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+}
+
+exports.setUserEnabledHttp = onRequest({ region: REGION }, async (req, res) => {
+  setCors(res);
+
+  // Preflight
+  if (req.method === "OPTIONS") {
+    res.status(204).send("");
+    return;
   }
+
+  try {
+    // Verify Firebase ID token from Authorization header
+    const authHeader = req.get("Authorization") || "";
+    const match = authHeader.match(/^Bearer (.+)$/);
+    if (!match) {
+      res.status(401).json({ ok: false, error: "missing_auth" });
+      return;
+    }
+
+    const decoded = await admin.auth().verifyIdToken(match[1]);
+    const uid = decoded.uid;
+
+    // Admin check (same as assertIsAdmin)
+    const adminDoc = await admin.firestore().collection("admins").doc(uid).get();
+    if (!adminDoc.exists) {
+      res.status(403).json({ ok: false, error: "admins_only" });
+      return;
+    }
+
+    const discord = req.body?.discord;
+    const enabled = !!req.body?.enabled;
+
+    if (!discord) {
+      res.status(400).json({ ok: false, error: "discord_required" });
+      return;
+    }
+
+    const email = `${normalizeDiscord(discord)}@${EMAIL_DOMAIN}`;
+
+    let userRecord;
+    try {
+      userRecord = await admin.auth().getUserByEmail(email);
+    } catch (err) {
+      if (err.code === "auth/user-not-found") {
+        userRecord = await admin.auth().createUser({
+          email,
+          password: TEMP_PASSWORD,
+          disabled: !enabled
+        });
+      } else {
+        throw err;
+      }
+    }
+
+    await admin.auth().updateUser(userRecord.uid, { disabled: !enabled });
+
+    res.json({ ok: true, email, uid: userRecord.uid, enabled });
+  } catch (err) {
+    console.error("setUserEnabledHttp error:", err);
+    res.status(500).json({ ok: false, error: "internal" });
+  }
+});
+
+  }
+  
 );
