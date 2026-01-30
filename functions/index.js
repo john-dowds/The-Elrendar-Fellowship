@@ -7,6 +7,8 @@ exports.setUserEnabled = onCall({ region: "us-central1" }, async (request) => {
   // ...
 });const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 
+const { onRequest } = require("firebase-functions/v2/https");
+
 const REGION = "us-central1";
 const TEMP_PASSWORD = "HighHome101";
 const EMAIL_DOMAIN = "members.elrendar";
@@ -101,6 +103,7 @@ function setCors(res) {
   res.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
 }
 
+
 exports.setUserEnabledHttp = onRequest({ region: REGION }, async (req, res) => {
   setCors(res);
 
@@ -166,3 +169,79 @@ exports.setUserEnabledHttp = onRequest({ region: REGION }, async (req, res) => {
   }
   
 );
+// ================================
+// HTTP wrapper for setUserEnabled
+// CORS-safe for browser calls
+// ================================
+exports.setUserEnabledHttp = onRequest(
+    { region: REGION, cors: true },
+    async (req, res) => {
+      try {
+        // Preflight handled automatically by cors:true,
+        // but we guard anyway.
+        if (req.method === "OPTIONS") {
+          res.status(204).send("");
+          return;
+        }
+  
+        // Expect Authorization: Bearer <ID_TOKEN>
+        const authHeader = req.get("Authorization") || "";
+        const match = authHeader.match(/^Bearer (.+)$/);
+        if (!match) {
+          res.status(401).json({ ok: false, error: "missing_auth" });
+          return;
+        }
+  
+        // Verify Firebase ID token
+        const decoded = await admin.auth().verifyIdToken(match[1]);
+        const uid = decoded.uid;
+  
+        // Admin check
+        const adminDoc = await admin.firestore().collection("admins").doc(uid).get();
+        if (!adminDoc.exists) {
+          res.status(403).json({ ok: false, error: "admins_only" });
+          return;
+        }
+  
+        const discord = req.body?.discord;
+        const enabled = !!req.body?.enabled;
+  
+        if (!discord) {
+          res.status(400).json({ ok: false, error: "discord_required" });
+          return;
+        }
+  
+        const email = `${normalizeDiscord(discord)}@${EMAIL_DOMAIN}`;
+  
+        let userRecord;
+        try {
+          userRecord = await admin.auth().getUserByEmail(email);
+        } catch (err) {
+          if (err.code === "auth/user-not-found") {
+            userRecord = await admin.auth().createUser({
+              email,
+              password: TEMP_PASSWORD,
+              disabled: !enabled
+            });
+          } else {
+            throw err;
+          }
+        }
+  
+        await admin.auth().updateUser(userRecord.uid, {
+          disabled: !enabled
+        });
+  
+        res.json({
+          ok: true,
+          email,
+          uid: userRecord.uid,
+          enabled
+        });
+      } catch (err) {
+        console.error("setUserEnabledHttp error:", err);
+        res.status(500).json({ ok: false, error: "internal" });
+      }
+    }
+  );
+  
