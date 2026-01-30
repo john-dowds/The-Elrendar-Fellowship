@@ -2,7 +2,10 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
-const { onDocumentCreated } = require("firebase-functions/v2/firestore");
+
+exports.setUserEnabled = onCall({ region: "us-central1" }, async (request) => {
+  // ...
+});const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 
 const REGION = "us-central1";
 const TEMP_PASSWORD = "HighHome101";
