@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — The Elrendar Fellowship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       ADMIN LAYOUT
+    ───────────────────────────────────────────────────────────── */
+    .admin-wrap{
+      max-width: 1200px;
+      margin: 22px auto 40px;
+      padding: 0 14px;
+    }
+
+    .admin-tabs{
+      position: sticky;
+      top: 56px; 
+      z-index: 1100;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,.80);
+      border: 1px solid rgba(252,229,205,.35);
+      border-left: none;
+      border-right: none;
+      padding: 10px 10px;
+      margin: 0 auto 14px;
+      backdrop-filter: blur(3px);
+    }
+
+    .admin-tab-left{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .admin-tab{
+      border: 1px solid rgba(252,229,205,.35);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .admin-tab.active{
+      background: rgba(252,229,205,.10);
+      border-color: rgba(252,229,205,.60);
+      text-decoration: underline;
+    }
+
+    .admin-actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .admin-pill{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 12px;
+      padding: 7px 10px;
+      font-size: 13px;
+    }
+    .admin-btn{
+      border: 1px solid rgba(252,229,205,.35);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .admin-btn:hover{ background: rgba(252,229,205,.08); }
+    .admin-btn.primary{
+      border-color: rgba(212,175,55,.65);
+      color: #d4af37;
+      background: rgba(212,175,55,.10);
+    }
+
+    .admin-panel{
+      background: rgba(0, 0, 0, 0.60);
+      border: 1px solid rgba(252,229,205,.35);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.35);
+      color: #fce5cd;
+    }
+
+    .admin-toolbar{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .admin-toolbar .left,
+    .admin-toolbar .right{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+    .admin-input{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 10px;
+      padding: 8px 10px;
+      min-width: 240px;
+      outline: none;
+      font-size: 14px;
+    }
+    .admin-select{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 10px;
+      padding: 8px 10px;
+      outline: none;
+      font-size: 14px;
+    }
+    .admin-msg{
+      font-size: 13px;
+      opacity: .95;
+      min-height: 18px;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       TABLE (Sticky header + Sticky Character column)
+    ───────────────────────────────────────────────────────────── */
+    .table-wrap{
+      overflow: auto;
+      border: 1px solid rgba(252,229,205,.25);
+      border-radius: 12px;
+      max-height: 72vh;
+      background: rgba(0,0,0,.25);
+    }
+
+    table.admin-table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1300px; 
+      font-size: 13px;
+    }
+
+    .admin-table th,
+    .admin-table td{
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      padding: 8px 10px;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .admin-table th{
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(0,0,0,.92);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .admin-table th.sort-asc::after{ content:"  ▲"; opacity:.8; }
+    .admin-table th.sort-desc::after{ content:"  ▼"; opacity:.8; }
+
+    .admin-table th.sticky-col,
+    .admin-table td.sticky-col{
+      position: sticky;
+      left: 0;
+      z-index: 6;
+      background: rgba(0,0,0,.92);
+      border-right: 1px solid rgba(255,255,255,.10);
+    }
+
+    .cell-muted{ opacity: .78; }
+    .cell-small{ font-size: 12px; opacity: .9; }
+    .cell-notes{
+      max-width: 320px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cell-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .mini-x{
+      width: 34px;
+      height: 32px;
+      border-radius: 10px;
+      border: 1px solid rgba(252,229,205,.35);
+      background: rgba(0,0,0,.25);
+      color: #fce5cd;
+      cursor: pointer;
+    }
+    .mini-x:hover{ background: rgba(252,229,205,.08); }
+
+    .row-hover:hover td{ background: rgba(252,229,205,.05); }
+
+    .cell-select{
+      width: 100%;
+      min-width: 170px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 10px;
+      padding: 6px 8px;
+      outline: none;
+      font-size: 13px;
+    }
+
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .toggle input[type="checkbox"]{ transform: scale(1.05); }
+
+    /* ─────────────────────────────────────────────────────────────
+       PROFILE OVERLAY
+    ───────────────────────────────────────────────────────────── */
+    .profile-overlay{
+  position: fixed !important;
+  inset: 0 !important;  
+  top: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+
+  display: none;
+  z-index: 9999;
+  background: rgba(0,0,0,.82);
+
+  padding: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+.profile-overlay[aria-hidden="false"]{
+  display: flex;
+}
+
+.profile-card{
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(12,12,12,.92);
+  border: 1px solid rgba(252,229,205,.35);
+  border-radius: 14px;
+  padding: 14px;
+  color:#fce5cd;
+  box-shadow: 0 16px 40px rgba(0,0,0,.55);
+
+  max-height: calc(100% - 0px);
+  overflow: auto;
+}
+
+    .profile-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .profile-title{
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: .3px;
+    }
+    .profile-sub{
+      margin: 4px 0 0;
+      opacity: .9;
+    }
+    .profile-close{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      color: #fce5cd;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .profile-close:hover{ background: rgba(252,229,205,.08); }
+
+    .profile-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+.profile-box.span-2{
+  grid-column: 1 / -1;
+}
+.notes-new textarea{
+  min-height: 70px;
+}
+
+    @media (max-width: 820px){
+      .profile-grid{ grid-template-columns: 1fr; }
+    }
+    .profile-box{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .profile-box h4{
+      margin: 0 0 6px;
+      font-size: 14px;
+      color:#fce5cd;
+    }
+    .profile-box p{
+      margin: 0;
+      white-space: pre-wrap;
+      line-height: 1.45;
+      color:#fce5cd;
+      opacity: .95;
+      font-size: 13px;
+    }
+
+    .notes-wrap{
+      margin-top: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .notes-wrap h4{ margin: 0 0 8px; font-size: 14px; }
+    .notes-list{
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .note-item{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      border-radius: 12px;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+    .note-meta{
+      font-size: 12px;
+      opacity: .85;
+      margin-bottom: 6px;
+    }
+    .note-text{
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+    .notes-new{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      flex-wrap: wrap;
+    }
+    .notes-new textarea{
+      flex: 1 1 520px;
+      min-height: 90px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 12px;
+      padding: 10px;
+      outline: none;
+    }
+
+    .chips-row{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items:center;
+    }
+    .chip{
+      border: 1px solid rgba(212,175,55,.55);
+      color: #d4af37;
+      background: rgba(212,175,55,.10);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor:pointer;
+    }
+    .chip:hover{ background: rgba(212,175,55,.18); }
+
+    /* ─────────────────────────────────────────────────────────────
+       ADMIN LOG LAYOUT
+    ───────────────────────────────────────────────────────────── */
+    .log-wrap{
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap: 12px;
+      min-height: 70vh;
+    }
+    @media (max-width: 960px){
+      .log-wrap{ grid-template-columns: 1fr; }
+    }
+    .log-sidebar{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      border-radius: 12px;
+      padding: 10px;
+      overflow:auto;
+      max-height: 72vh;
+    }
+    .log-main{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      border-radius: 12px;
+      padding: 10px;
+      overflow:auto;
+      max-height: 72vh;
+    }
+    .log-item{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .log-item.active{ border-color: rgba(212,175,55,.55); }
+    .log-item-title{ margin: 0 0 6px; font-size: 13px; }
+    .log-item-sub{ margin: 0; font-size: 12px; opacity: .85; }
+    .log-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+
+    .log-entry-textarea{
+      width: 100%;
+      min-height: 120px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: #fce5cd;
+      border-radius: 12px;
+      padding: 10px;
+      outline: none;
+    }
+
+.admin-table th,
+.admin-table td{
+  background: rgba(0,0,0,.12); 
+}
+
+.admin-table th{
+  background: rgba(0,0,0,.92);
+  z-index: 30;
+}
+
+.admin-table th.sticky-col,
+.admin-table td.sticky-col{
+  background: rgba(0,0,0,.96);
+  z-index: 60;
+  min-width: 240px;
+  width: 240px;
+  border-right: 1px solid rgba(255,255,255,.20);
+  box-shadow: 10px 0 18px rgba(0,0,0,.45);
+}
+
+.admin-table th.sticky-col{ z-index: 70; }
+.admin-panel{
+  min-height: 76vh;
+}
+
+.table-wrap{
+  max-height: 74vh;
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="guides.html">RP Tips & Guides</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Games ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="phoenix-path.html">The Phoenix Path</a></li>
+          <li><a href="azeroth-at-war.html">Azeroth At War</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="admin-wrap">
+    <div class="admin-tabs">
+      <div class="admin-tab-left">
+        <button class="admin-tab active" id="tabMembership" type="button">Membership</button>
+        <button class="admin-tab" id="tabAdminLog" type="button">Admin Log</button>
+        <span class="admin-pill" id="adminIdentity">Not signed in</span>
+      </div>
+
+      <div class="admin-actions">
+        <button class="admin-btn" id="btnImport" type="button">Import CSV</button>
+        <input id="importFile" type="file" accept=".csv,text/csv" style="display:none;" />
+        <button class="admin-btn primary" id="btnExport" type="button">Export Backup</button>
+      </div>
+      </div> 
+      </div>
+      
+
+      <section class="admin-panel" id="panelMembership">
+      
+      <div class="admin-toolbar">
+        <div class="left">
+          <input class="admin-input" id="searchBox" placeholder="Search: Character / Discord / OOC…" />
+          <select class="admin-select" id="statusFilter">
+            <option value="">All Statuses</option>
+            <option value="Applicant">Applicant</option>
+            <option value="Trial">Trial</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Inactive Guest">Inactive Guest</option>
+            <option value="Inactive Cohort">Inactive Cohort</option>
+            <option value="Active Cohort">Active Cohort</option>
+            <option value="Active Ally">Active Ally</option>
+            <option value="Active Guest">Active Guest</option>
+            <option value="Left on Bad Terms">Left on Bad Terms</option>
+            <option value="Left on Good Terms">Left on Good Terms</option>
+            <option value="Permanent Ban">Permanent Ban</option>
+          </select>
+        </div>
+
+        <div class="right">
+          <span class="admin-msg" id="membershipMsg"></span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table" id="appsTable">
+          <thead>
+            <tr id="appsHeaderRow">
+              <th data-key="submittedAt">Submitted</th>
+              <th data-key="appType">Type</th>
+              <th class="sticky-col" data-key="character">Character</th>
+              <th data-key="discord">Discord</th>
+              <th data-key="server">Server</th>
+              <th data-key="name">OOC Name</th>
+              <th data-key="title">Title</th>
+              <th data-key="faction">Role</th>
+              <th data-key="availability">Availability</th>
+              <th data-key="main">Alt Main</th>
+              <th data-key="status">Status</th>
+              <th data-key="profile">Profile</th>
+              <th data-key="activeState">Active State</th>
+              <th data-key="notesRollup">Notes</th>
+              <th data-key="actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="appsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="profile-overlay" id="profileOverlay" aria-hidden="true">
+        <div class="profile-card">
+          <div class="profile-top">
+            <div>
+              <h2 class="profile-title" id="profileTitle">Profile</h2>
+              <p class="profile-sub" id="profileSub"></p>
+            </div>
+            <button class="profile-close" id="profileClose" type="button" title="Close">✕</button>
+          </div>
+
+          <div class="profile-edit-row" id="profileEditRow" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <label style="display:flex; flex-direction:column; gap:6px; min-width:180px;">
+              <span class="cell-small">Application Type</span>
+              <select id="profileAppType" class="cell-select" style="min-width:180px;">
+                <option value="main">main</option>
+                <option value="alt">alt</option>
+              </select>
+            </label>
+          
+            <label style="display:flex; flex-direction:column; gap:6px; min-width:320px; flex:1 1 320px;">
+              <span class="cell-small">Alt Main (only used if Type = alt)</span>
+              <input id="profileAltMain" class="admin-input" style="min-width:320px;" placeholder="Main character name…" />
+            </label>
+          
+            <div style="display:flex; align-items:flex-end; gap:10px;">
+              <button id="btnSaveProfileEdits" class="admin-btn primary" type="button">Save Profile Edits</button>
+              <span id="profileEditMsg" class="admin-msg"></span>
+            </div>
+          </div>
+          
+          <div class="profile-grid" id="profileGrid"></div>
+          
+          <div class="notes-wrap">
+            <h4>Admin Notes</h4>
+            <div class="notes-list" id="notesList"></div>
+
+            <div class="notes-new">
+              <textarea id="notesInput" placeholder="Add a note… (auto-signed + timestamped)"></textarea>
+              <button class="admin-btn primary" id="btnAddNote" type="button">Add Note</button>
+            </div>
+
+            <div class="admin-msg" id="notesMsg"></div>
+          </div>
+
+          <div class="chips-row" id="chipsRow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Log -->
+    <section class="admin-panel" id="panelAdminLog" style="display:none;">
+      <div class="log-wrap">
+        <div class="log-sidebar">
+          <div class="log-actions">
+            <button class="admin-btn primary" id="btnNewLog" type="button">New Entry</button>
+            <span class="admin-msg" id="logMsg"></span>
+          </div>
+          <div id="logList"></div>
+        </div>
+
+        <div class="log-main">
+          <div id="logDetailEmpty" class="cell-muted">Select an entry from the left.</div>
+          <div id="logDetail" style="display:none;">
+            <h3 id="logDetailTitle" style="margin:0 0 8px;"></h3>
+            <div id="logDetailMeta" class="cell-small" style="margin:0 0 12px;"></div>
+
+            <div id="logDetailActions"></div>
+
+            <div id="manualEntryWrap" style="display:none; margin-top:14px;">
+              <h4 style="margin:0 0 8px;">Manual Entry</h4>
+              <textarea id="manualEntryText" class="log-entry-textarea" placeholder="Type notes here. Use @ to tag characters."></textarea>
+              <div style="display:flex; gap:10px; margin-top:10px;">
+                <button class="admin-btn primary" id="btnSaveManualEntry" type="button">Save</button>
+                <button class="admin-btn" id="btnCancelManualEntry" type="button">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025-2026 The Elrendar Fellowship Guild</p>
+  </footer>
+
+  <script type="module" src="assets/js/auth-ui.js?v=3"></script>
+  <script type="module" src="assets/js/admin.js"></script>
+  
+</body>
+</html>
