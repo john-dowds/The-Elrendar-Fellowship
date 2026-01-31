@@ -399,7 +399,7 @@
         <h3>Perception</h3>
         <p>DM sets a TN. Highest success gets the first whisper with the most detail; we cascade to the rest in order with less valuable hints. It’s fair and fast, and rewards the high rolls without leaving everyone else in the dark.</p>
 
-        <p class="note">If your class perk gives a small +1, you can toss it on Env <em>or</em> Perception that round—your call.</p>
+        <p class="note">If your <strong>class bonus</strong> or a <strong>perk</strong> grants a bonus to Environment or Perception, apply it to the relevant roll that round (declare it briefly OOC if it matters).</p>
       </section>
 
       <section id="panel-classes" class="panel" role="tabpanel" aria-labelledby="classes">
@@ -689,10 +689,11 @@
       <label for="qcClass">Class</label>
       <select id="qcClass">
         <option value="">— Select —</option>
-        <option value="magi">Magi / Healers — +1 dmg/heal on hits, +1 Perception</option>
-        <option value="rogue">Rogues / Rangers — +1 Attack, +1 Environment</option>
-        <option value="armored">Armored Fighters — +1 Attack, +1 dmg/heal on hits</option>
-        <option value="mounted">Mounted Fighters — +1 dmg/heal, +1 Environment</option>
+        <option value="magi">Mages &amp; Healers — +2 dmg/heal on hits • +3 Combat &amp; Perception</option>
+        <option value="assassin">Assassins &amp; Rangers — +3 Combat • +2 Environment &amp; Perception</option>
+        <option value="defensive">Defensive Fighters — −2 physical dmg taken • +3 Strength &amp; Combat</option>
+        <option value="aggressive">Aggressive Fighters — +2 dmg on hits • +3 Combat &amp; Grapple</option>
+        <option value="thief">Thief &amp; Mercenary — +2 dmg on hits • +3 Charisma &amp; Perception</option>
       </select>
       <div class="muted" id="qcClassNote"></div>
     </div>
@@ -707,14 +708,22 @@
           <option>Bulwark Bearer</option>
           <option>Bladesworn Resolve</option>
           <option>Skirmisher’s Step</option>
+          <option>Keen Senses</option>
           <option>Second Wind</option>
           <option>Battlefield Medic</option>
           <option>Rally Banner</option>
           <option>Iron Will</option>
+          <option>Arcane Wisdom</option>
+          <option>Mass Shield</option>
+          <option>Scholar</option>
           <option>Pathfinder</option>
           <option>Mounted Momentum</option>
+          <option>Determination</option>
+          <option>Even Stronger Determination</option>
+          <option>Silver Tongue</option>
           <option>Shadow Veil</option>
           <option>Battle Rhythm</option>
+          <option>Blood Lust</option>
         </select>
         <p id="qcPerk1Desc" class="qc-perk-desc"></p>
       </div>
@@ -728,14 +737,22 @@
           <option>Bulwark Bearer</option>
           <option>Bladesworn Resolve</option>
           <option>Skirmisher’s Step</option>
+          <option>Keen Senses</option>
           <option>Second Wind</option>
           <option>Battlefield Medic</option>
           <option>Rally Banner</option>
           <option>Iron Will</option>
+          <option>Arcane Wisdom</option>
+          <option>Mass Shield</option>
+          <option>Scholar</option>
           <option>Pathfinder</option>
           <option>Mounted Momentum</option>
+          <option>Determination</option>
+          <option>Even Stronger Determination</option>
+          <option>Silver Tongue</option>
           <option>Shadow Veil</option>
           <option>Battle Rhythm</option>
+          <option>Blood Lust</option>
         </select>
         <p id="qcPerk2Desc" class="qc-perk-desc"></p>
       </div>
@@ -778,6 +795,7 @@
             <tr id="qcStanceRow"></tr>
           </tbody>
         </table>
+        <div class="muted" style="margin-top:.35rem;">* Only applies to the same target as before. ** Exposes target to +1 damage by all attackers next turn only.</div>
       </div>
     </div>
     <!-- Save -->
@@ -864,32 +882,41 @@
   };
 
   const CLASS_NOTES = {
-    magi: '+1 dmg/heal on hits • +1 Perception',
-    rogue: '+1 Attack • +1 Environment',
-    armored: '+1 Attack • +1 dmg/heal on hits',
-    mounted: '+1 dmg/heal • +1 Environment'
+    magi: 'Mages & Healers — +2 dmg/heal on hits • +3 Combat & Perception',
+    assassin: 'Assassins & Rangers — +3 Combat • +2 Environment & Perception',
+    defensive: 'Defensive Fighters — −2 physical dmg taken • +3 Strength & Combat',
+    aggressive: 'Aggressive Fighters — +2 dmg on hits • +3 Combat & Grapple',
+    thief: 'Thief & Mercenary — +2 dmg on hits • +3 Charisma & Perception'
   };
 
   // Perk name 
   const PERKS = {
-    'Bulwark Bearer':'Reduce incoming damage by 1.',
+    'Bulwark Bearer':'Reduce incoming damage by 2.',
     'Bladesworn Resolve':'Your hits deal +2 damage.',
-    'Skirmisher’s Step':'Once per round, ignore one opportunity hit or disengage freely.',
-    'Second Wind':'When you’d hit 0 HP, instead pop to 5 HP.',
-    'Battlefield Medic':'Split your output to deal damage and healing together.',
-    'Rally Banner':'Allies in earshot gain +1 morale to their roll this round.',
+    'Skirmisher’s Step':'Once per event, ignore or dodge one incoming hit, or disengage freely from combat.',
+    'Keen Senses':'When investigating, gain +3 to your Perception rolls.',
+    'Second Wind':'When you’d hit 0 HP, pop to 5 HP instead.',
+    'Battlefield Medic':'At your discretion, you may split your output—dealing both damage and healing instead of just one or the other.',
+    'Rally Banner':'Allies within earshot gain +3 morale to their roll for this round.',
     'Iron Will':'Ignore Fear or Charm once; act normally.',
-    'Pathfinder':'Gain +1 on either Environment or Perception each round.',
-    'Mounted Momentum':'If you moved first, your hit deals +1 damage this turn.',
+    'Arcane Wisdom':'When sensing for magical effects or power, gain +3 to your Perception roll.',
+    'Mass Shield':'Protect the entirety of your party (if grouped), preventing all damage taken this round.',
+    'Scholar':'Gain additional information when investigating, regardless of whether you succeed in your roll or not.',
+    'Pathfinder':'Gain +3 on either Environment or Perception each round (pick when you roll).',
+    'Mounted Momentum':'If you engaged the target first (instead of them coming at you), your hit deals +1 damage this turn.',
+    'Determination':'After failing two rolls consecutively, gain +3 to your next roll, and double it each turn thereafter until success.',
+    'Even Stronger Determination':'After suffering five failures in a row, your next turn takes the form of a natural 20.',
+    'Silver Tongue':'When attempting to persuade or deceive, gain +3 to your roll.',
     'Shadow Veil':'Turn one incoming hit against you into a miss.',
-    'Battle Rhythm':'After you score a hit, your next hit this encounter gains +1 damage.'
+    'Battle Rhythm':'After you score a hit, your next hit this encounter gains +1 damage.',
+    'Blood Lust':'After dealing a killing blow, gain +2 to your roll next turn.'
   };
 
   const STANCES = {
     Aggressive: ['−6 HP','−4 HP','−2 HP','+3 dmg','+4 dmg','+6 dmg'],
     Balanced:   ['−4 HP','−2 HP','Draw','+1 dmg','+2 dmg','+4 dmg'],
     Defensive:  ['−3 HP','−1 HP','Draw','Disarm/Deflect','+1 dmg','+2 dmg'],
-    Focused:    ['−5 HP','−3 HP & +1 next roll','−1 HP & +1 dmg','+2 dmg','+3 dmg','+5 dmg']
+    Focused:    ['−5 HP','−3 HP<br>+1 next roll*','−1 HP<br>+1 dmg','+2 dmg<br>+1 next roll*','+3 dmg<br>Expose**','+5 dmg']
   };
 
   const STATES = ['Active','Rooted','Stunned','Slowed','Possessed','Retreated','Channeling','Unconscious','Flying','Shielded','Cursed'];
