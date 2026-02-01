@@ -506,12 +506,13 @@
         <a href="#" class="dropdown-toggle">Roleplay ▾</a>
         <ul class="dropdown-menu">
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
           <li><a href="system.html">Rule Book</a></li>
-          <li><a href="guides.html">RP Tips & Guides</a></li>
+          <li><a href="guides.html" aria-current="page">RP Tips & Guides</a></li>
+          <li><a href="playercard.html">Character Sheet</a></li>
           <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -536,6 +537,7 @@
 
       <div class="admin-actions">
         <button class="admin-btn" id="btnImport" type="button">Import CSV</button>
+        <button class="admin-btn" id="btnResolveAlts" type="button">Resolve Alt Links</button>
         <input id="importFile" type="file" accept=".csv,text/csv" style="display:none;" />
         <button class="admin-btn primary" id="btnExport" type="button">Export Backup</button>
       </div>
@@ -637,7 +639,7 @@
 
             <div class="admin-msg" id="notesMsg"></div>
           </div>
-
+          <div class="chips-row" id="altChipsRow"></div>
           <div class="chips-row" id="chipsRow"></div>
         </div>
       </div>
