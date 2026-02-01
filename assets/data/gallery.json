@@ -433,5 +433,50 @@
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
     "tags": ["members","events"]
+  },
+  {
+    "id": "img057",
+    "src": "assets/gallery/whispersattheborder001.png",
+    "thumb": "",
+    "title": "Whispers at the Border",
+    "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
+    "album": "Events",
+    "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
+  },
+  {
+    "id": "img058",
+    "src": "assets/gallery/whispersattheborder002.png",
+    "thumb": "",
+    "title": "Whispers at the Border",
+    "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
+    "album": "Events",
+    "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
+  },
+  {
+    "id": "img059",
+    "src": "assets/gallery/whispersattheborder003.png",
+    "thumb": "",
+    "title": "Whispers at the Border",
+    "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
+    "album": "Events",
+    "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
+  },
+  {
+    "id": "img060",
+    "src": "assets/gallery/whispersattheborder004.png",
+    "thumb": "",
+    "title": "Whispers at the Border",
+    "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
+    "album": "Events",
+    "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
+  },
+  {
+    "id": "img061",
+    "src": "assets/gallery/whispersattheborder005.png",
+    "thumb": "",
+    "title": "Whispers at the Border",
+    "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
+    "album": "Events",
+    "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
   }
 ]
