@@ -44,11 +44,19 @@ function applyFilters(){
   }
   renderGrid(data);
 }
+function idNum(id){
+  const n = parseInt(String(id || '').replace(/\D+/g, ''), 10);
+  return Number.isFinite(n) ? n : -1;
+}
 
 async function load() {
   const res = await fetch(DATA_URL, { cache: 'no-store' });
   if (!res.ok) throw new Error('Failed to load assets/data/gallery.json');
   photos = await res.json();
+
+  photos = photos
+  .slice()
+  .sort((a, b) => idNum(b.id) - idNum(a.id));
 
   const albums = Array.from(new Set(photos.map(p => p.album || 'Unsorted'))).sort((a,b)=>a.localeCompare(b));
   const tags = Array.from(new Set(photos.flatMap(p => p.tags || []))).sort((a,b)=>a.localeCompare(b));
