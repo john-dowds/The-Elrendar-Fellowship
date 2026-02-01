@@ -94,12 +94,18 @@ exports.setUserEnabled = onCall({ region: REGION }, async (request) => {
 
 // ----------------------------
 // Firestore Trigger: Application submitted
+// Policy A: ONLY create Auth/userAuth for MAIN applications
 // ----------------------------
 exports.onApplicationCreate = onDocumentCreated(
   { region: REGION, document: "applications/{appId}" },
   async (event) => {
     const data = event.data?.data();
     if (!data || !data.discord) return;
+
+    // Policy A: skip alts entirely
+    // Prefer explicit appType, fallback to "main" field presence
+    const appType = String(data.appType || (data.main ? "alt" : "main")).toLowerCase();
+    if (appType === "alt") return;
 
     const email = discordToEmail(data.discord);
 
