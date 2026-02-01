@@ -69,6 +69,7 @@ const panelAdminLog = el("panelAdminLog");
 const adminIdentity = el("adminIdentity");
 const btnExport = el("btnExport");
 const btnImport = el("btnImport");
+const btnResolveAlts = el("btnResolveAlts");
 const importFile = el("importFile");
 
 
@@ -94,6 +95,7 @@ const notesInput = el("notesInput");
 const btnAddNote = el("btnAddNote");
 const notesMsg = el("notesMsg");
 const chipsRow = el("chipsRow");
+const altChipsRow = el("altChipsRow");
 
 const btnNewLog = el("btnNewLog");
 const logMsg = el("logMsg");
@@ -144,6 +146,14 @@ function fmtDate(ts) {
 
 function normalize(s) {
   return String(s || "").toLowerCase().trim();
+}
+
+function normName(s) {
+  return String(s || "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/[^a-z0-9 '\-]/g, "");
 }
 
 function setMsg(targetEl, text) {
@@ -214,7 +224,6 @@ async function checkAdmin(uid) {
 }
 
 function redirectNotAuthorized() {
-  // keep it simple; you can change destination later
   window.location.href = "index.html";
 }
 
@@ -444,13 +453,9 @@ function renderActiveToggle(value) {
 
 /* ─────────────────────────────────────────────────────────────
    CSV Import (Admin-only)
-   - Export your XLSX as CSV and import here
-   - Dedupe key: normalize(discord) + "|" + normalize(character)
-   - Default admin fields applied if missing
 ───────────────────────────────────────────────────────────── */
 
 function parseCSV(text) {
-    // Handles commas + quotes + newlines
     const rows = [];
     let row = [];
     let cur = "";
@@ -544,7 +549,6 @@ function parseCSV(text) {
     let duplicates = 0;
   
     for (const o of objs) {
-      // Best-effort mapping (supports a bunch of common header variants)
       const character = pick(o, ["character", "character name", "ic name", "in character name", "char", "name ic"]);
       const discord = pick(o, ["discord", "discord handle", "discord username", "discord name"]);
       const server = pick(o, ["server"]);
@@ -847,7 +851,7 @@ async function auditAction({ type, appId, field, from, to, details }) {
 
   const sessionRef = doc(db, "adminLogSessions", session.id);
 
-  // Pull latest session doc to append safely (simple, fine for low admin concurrency)
+  // Pull latest session doc to append safely
   const fresh = await getDoc(sessionRef);
   const freshData = fresh.data() || {};
 
@@ -921,6 +925,8 @@ function openProfile(appRow) {
   notesInput.value = "";
   notesList.innerHTML = "";
   chipsRow.innerHTML = "";
+  altChipsRow.innerHTML = "";
+
   setMsg(notesMsg, "");
 
 lockPageScroll();
@@ -930,6 +936,7 @@ lockPageScroll();
 
   loadNotes(appRow.id);
   loadChipsForApp(appRow.id);
+  renderAltRelationshipChips(appRow);
 }
 
 function closeProfile() {
@@ -975,7 +982,7 @@ function addProfileBox(title, content, spanTwo = false) {
       // Refresh local selectedApp so later note/audit uses correct info
       selectedApp = { ...selectedApp, appType: type, main: newMain };
   
-      // Audit with identity (we’ll improve audit below)
+      // Audit with identity
       await auditAction({
         type: "UPDATE",
         appId: selectedApp.id,
@@ -1052,7 +1059,7 @@ async function addNote() {
       sessionId: session.id
     });
 
-    // Update notesRollup (simple preview)
+    // Update notesRollup 
     const roll = text.length > 120 ? (text.slice(0, 120) + "…") : text;
 
     await updateDoc(doc(db, "applications", selectedApp.id), {
@@ -1096,7 +1103,6 @@ async function loadChipsForApp(appId) {
     const sessions = snap.docs.map(d => ({ id: d.id, ...d.data() }));
     renderChips(sessions);
   } catch (err) {
-    // If you don't have an index for this, Firestore may complain; safe to ignore for now.
     console.warn("loadChipsForApp warning:", err?.message || err);
   }
 }
@@ -1119,6 +1125,83 @@ function renderChips(sessions) {
       selectLogSession(s.id);
     });
     chipsRow.appendChild(btn);
+  });
+}
+function renderAltRelationshipChips(appRow) {
+  if (!altChipsRow) return;
+  altChipsRow.innerHTML = "";
+
+  const type = String(appRow.appType || (appRow.main ? "alt" : "main")).toLowerCase();
+  const discordKey = normalize(appRow.discord);
+
+  const openById = (id) => {
+    const target = applications.find(x => x.id === id);
+    if (target) openProfile(target);
+  };
+
+  // If this is an ALT, show a Main chip (click to jump to main)
+  if (type === "alt") {
+    let mainApp = null;
+
+    // Prefer explicit linkage
+    if (appRow.linkedMainId) {
+      mainApp = applications.find(x => x.id === appRow.linkedMainId) || null;
+    }
+
+    // Fallback: match by (discord + main name string)
+    if (!mainApp && appRow.main) {
+      mainApp = applications.find(x =>
+        normalize(x.discord) === discordKey &&
+        String(x.appType || (x.main ? "alt" : "main")).toLowerCase() === "main" &&
+        normName(x.character) === normName(appRow.main)
+      ) || null;
+    }
+
+    if (mainApp) {
+      const btn = document.createElement("button");
+      btn.className = "chip";
+      btn.type = "button";
+      btn.textContent = `Main: ${mainApp.character}`;
+      btn.addEventListener("click", () => openById(mainApp.id));
+      altChipsRow.appendChild(btn);
+    } else {
+      const span = document.createElement("span");
+      span.className = "cell-muted";
+      span.textContent = "Main not linked yet.";
+      altChipsRow.appendChild(span);
+    }
+    return;
+  }
+
+  // If this is a MAIN, list all alts owned by same Discord that map to this main
+  const alts = applications.filter(x => {
+    const t = String(x.appType || (x.main ? "alt" : "main")).toLowerCase();
+    if (t !== "alt") return false;
+    if (normalize(x.discord) !== discordKey) return false;
+
+    // If linkedMainId exists, it must point to this main
+    if (x.linkedMainId) return x.linkedMainId === appRow.id;
+
+    // Otherwise best-effort match on alt.main string
+    if (!x.main) return false;
+    return normName(x.main) === normName(appRow.character);
+  });
+
+  if (!alts.length) {
+    const span = document.createElement("span");
+    span.className = "cell-muted";
+    span.textContent = "No alts linked.";
+    altChipsRow.appendChild(span);
+    return;
+  }
+
+  alts.forEach(a => {
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.textContent = `Alt: ${a.character}`;
+    btn.addEventListener("click", () => openById(a.id));
+    altChipsRow.appendChild(btn);
   });
 }
 
@@ -1204,7 +1287,7 @@ function formatActionLine(a) {
   
 
 async function selectLogSession(sessionId) {
-  // Force open from current snapshots: we can just rely on listener and find it
+  // Force open from current snapshots
   // Quick fetch if needed:
   try {
     const snap = await getDoc(doc(db, "adminLogSessions", sessionId));
@@ -1307,6 +1390,71 @@ async function exportBackup() {
   }
 }
 
+async function resolveAltLinks() {
+  if (!isAdmin) return;
+
+  try {
+    setMsg(membershipMsg, "Resolving alt links…");
+
+    const mainsByDiscord = new Map();
+    const appsById = new Map();
+    applications.forEach(a => appsById.set(a.id, a));
+
+    for (const a of applications) {
+      const discordKey = normalize(a.discord);
+      const type = String(a.appType || (a.main ? "alt" : "main")).toLowerCase();
+
+      if (type === "main") {
+        if (!mainsByDiscord.has(discordKey)) mainsByDiscord.set(discordKey, []);
+        mainsByDiscord.get(discordKey).push(a);
+      }
+    }
+
+    let updated = 0;
+    let skipped = 0;
+
+    for (const a of applications) {
+      const type = String(a.appType || (a.main ? "alt" : "main")).toLowerCase();
+      if (type !== "alt") continue;
+      if (a.linkedMainId) { skipped++; continue; }
+
+      const discordKey = normalize(a.discord);
+      const mainCandidates = mainsByDiscord.get(discordKey) || [];
+      if (!mainCandidates.length) { skipped++; continue; }
+
+      const targetMainName = normName(a.main);
+      if (!targetMainName) { skipped++; continue; }
+
+      const match = mainCandidates.find(m => normName(m.character) === targetMainName);
+      if (!match) { skipped++; continue; }
+
+      await updateDoc(doc(db, "applications", a.id), {
+        linkedMainId: match.id,
+        updatedAt: serverTimestamp(),
+        updatedBy: currentUser?.uid || null
+      });
+
+      await auditAction({
+        type: "LINK_OVERRIDE",
+        appId: a.id,
+        field: "linkedMainId",
+        from: "",
+        to: match.id,
+        details: `Linked alt "${a.character}" → main "${match.character}"`
+      });
+
+      updated++;
+    }
+
+    setMsg(membershipMsg, `Resolve complete: linked ${updated}, skipped ${skipped}.`);
+    setTimeout(() => setMsg(membershipMsg, ""), 3000);
+  } catch (err) {
+    console.error("resolveAltLinks error:", err);
+    setMsg(membershipMsg, "Resolve failed. See console.");
+    setTimeout(() => setMsg(membershipMsg, ""), 4000);
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────
    Wire events
 ───────────────────────────────────────────────────────────── */
@@ -1315,6 +1463,7 @@ function wireEvents() {
   tabAdminLog?.addEventListener("click", () => setActiveTab("adminlog"));
 
   btnExport?.addEventListener("click", exportBackup);
+  btnResolveAlts?.addEventListener("click", resolveAltLinks);
   btnSaveProfileEdits?.addEventListener("click", saveProfileEdits);
 
     // Import CSV
