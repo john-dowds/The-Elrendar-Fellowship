@@ -1,0 +1,503 @@
+/* Player Quick Card — page-specific layout
+   Designed to match your screenshot: perks left, main center, profiles+portrait right, enemies bottom.
+*/
+
+.pc-wrap{
+    max-width: 1300px;
+    margin: 1.25rem auto 2.5rem;
+    padding: 0 1rem;
+    color: #fce5cd;
+  }
+  
+  .pc-grid{
+    display: grid;
+    grid-template-columns: 260px 1fr 320px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "perks main right"
+      "enemies enemies enemies";
+    gap: 1rem;
+    align-items: start;
+  }
+  
+  /* Panels */
+  .pc-panel{
+    background: rgba(0,0,0,.48);
+    border: 1px solid rgba(252,229,205,.18);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.35);
+    padding: .9rem 1rem;
+    backdrop-filter: blur(2px);
+  }
+  
+  .pc-panel-title{
+    margin: 0 0 .65rem;
+    font-size: 1.15rem;
+    letter-spacing: .02em;
+  }
+  
+  .pc-field{
+    display: grid;
+    gap: .35rem;
+    margin-bottom: .75rem;
+  }
+  
+  .pc-field label{
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+  
+  .pc-muted{
+    opacity: .9;
+    font-size: .95rem;
+    line-height: 1.25;
+  }
+  
+  .pc-subnote{
+    opacity: .85;
+    font-size: .92rem;
+    margin-top: .35rem;
+  }
+  
+  /* Inputs */
+  .pc-panel input[type="text"],
+  .pc-panel select{
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.35);
+    color: #fce5cd;
+    border: 1px solid rgba(252,229,205,.25);
+    border-radius: 10px;
+    padding: .55rem .65rem;
+    outline: none;
+  }
+  .pc-panel input[type="text"]:focus,
+  .pc-panel select:focus{
+    border-color: rgba(228,190,89,.8);
+    box-shadow: 0 0 0 3px rgba(228,190,89,.18);
+  }
+  
+  /* Buttons */
+  .pc-btn{
+    background: linear-gradient(#7d5a1a,#3d2a12);
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 999px;
+    padding: .5rem .95rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .pc-btn:hover{ filter: brightness(1.08); }
+  
+  .pc-btn--ghost{
+    background: rgba(0,0,0,.20);
+    border: 1px solid rgba(252,229,205,.25);
+    color: #fce5cd;
+  }
+  .pc-btn--ghost:hover{ background: rgba(252,229,205,.08); }
+  
+  /* Perks column */
+  .pc-perks{ grid-area: perks; }
+  .pc-panel--tall{ padding-bottom: 1rem; }
+  
+  .pc-perk-desc{
+    margin: 0;
+    padding: .55rem .65rem;
+    border: 1px solid rgba(252,229,205,.18);
+    border-radius: 10px;
+    background: rgba(0,0,0,.22);
+    min-height: 2.6em;
+    line-height: 1.35;
+  }
+  
+  /* Main center */
+  .pc-main{ grid-area: main; display: grid; gap: .9rem; }
+  
+  .pc-name-panel{
+    padding: .7rem 1rem;
+    display: grid;
+    gap: .45rem;
+  }
+  .pc-name-label{
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: .03em;
+    text-align: left;
+  }
+  .pc-name-input{
+    font-size: 1.05rem;
+  }
+  
+  /* Mid row: dice / hp / state */
+  .pc-midrow{
+    display: grid;
+    grid-template-columns: 210px 1fr 170px;
+    gap: .9rem;
+    align-items: center;
+  }
+  
+  .pc-dice-panel{
+    display: grid;
+    gap: .5rem;
+    justify-items: center;
+    text-align: center;
+  }
+  
+  .pc-dice-btn{
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    border: 2px solid rgba(252,229,205,.35);
+    background: rgba(0,0,0,.28);
+    color: #fce5cd;
+    font-size: 34px;
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(0,0,0,.35);
+  }
+  .pc-dice-btn:hover{
+    background: rgba(252,229,205,.08);
+  }
+  
+  .pc-rolltype{
+    width: 100%;
+    display: grid;
+    gap: .25rem;
+  }
+  .pc-rolltype label{
+    font-size: .9rem;
+    opacity: .9;
+    font-weight: 800;
+  }
+  .pc-rollout{
+    width: 100%;
+    border-top: 1px solid rgba(252,229,205,.12);
+    padding-top: .5rem;
+  }
+  .pc-rollnum{
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: .03em;
+  }
+  .pc-rollbreak{
+    font-size: .9rem;
+    opacity: .92;
+    line-height: 1.25;
+  }
+  
+  .pc-rolltoggles{
+    width: 100%;
+    border-top: 1px solid rgba(252,229,205,.12);
+    padding-top: .45rem;
+    margin-top: .15rem;
+  }
+  .pc-toggle-title{
+    font-weight: 900;
+    font-size: .92rem;
+    opacity: .95;
+    margin-bottom: .35rem;
+  }
+  .pc-toggle-list{
+    display: grid;
+    gap: .35rem;
+    text-align: left;
+  }
+  .pc-toggle-item{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .92rem;
+    opacity: .95;
+  }
+  .pc-toggle-item input{
+    accent-color: rgba(228,190,89,.9);
+  }
+  
+  /* HP */
+  .pc-hp-panel{
+    display: grid;
+    justify-items: center;
+    padding: .9rem 1rem;
+  }
+  
+  .pc-hp-wrap{
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+  }
+  
+  .pc-hp-val{
+    font-size: 2.2rem;
+    font-weight: 900;
+    min-width: 3ch;
+    text-align: center;
+  }
+  
+  .pc-hp-nudge{
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  
+  /* State */
+  .pc-state-panel{
+    display: grid;
+    gap: .5rem;
+    justify-items: center;
+    padding: .9rem 1rem;
+  }
+  .pc-state-label{
+    font-weight: 900;
+    letter-spacing: .02em;
+  }
+  
+  /* Class */
+  .pc-class-panel{
+    padding: .85rem 1rem;
+  }
+  
+  /* Stance */
+  .pc-stance-panel{
+    padding: .95rem 1rem 1rem;
+  }
+  
+  .pc-mini-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: .5rem;
+  }
+  .pc-mini-table th,
+  .pc-mini-table td{
+    border: 1px solid rgba(252,229,205,.14);
+    padding: .45rem .5rem;
+    text-align: center;
+  }
+  .pc-mini-table th{
+    background: rgba(252,229,205,.08);
+  }
+  
+  .pc-stance-foot{
+    margin-top: .45rem;
+  }
+  
+  /* Actions row */
+  .pc-actions{
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .pc-actions #pcSavedMsg{
+    margin-left: .25rem;
+  }
+  
+  /* Right column: profiles + portrait */
+  .pc-right{ grid-area: right; display: grid; gap: 1rem; }
+  
+  .pc-profiles-panel .pc-profiles-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+  }
+  .pc-profiles-title{
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: .03em;
+  }
+  
+  .pc-profiles-actions{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin: .4rem 0 .25rem;
+  }
+  
+  .pc-portrait-frame{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    border: 2px solid rgba(252,229,205,.22);
+    background: rgba(0,0,0,.35);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  #pcPortraitImg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+  .pc-portrait-placeholder{
+    padding: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.15;
+    opacity: .95;
+  }
+  
+  /* Enemy feed bottom */
+  .pc-enemies{ grid-area: enemies; }
+  .pc-enemy-row{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(140px, 1fr)) 220px;
+    gap: .85rem;
+    align-items: stretch;
+  }
+  
+  .pc-enemy-card{
+    background: rgba(0,0,0,.52);
+    border: 2px solid rgba(252,229,205,.20);
+    border-radius: 18px;
+    padding: .7rem .75rem;
+    min-height: 172px;
+    box-shadow: 0 12px 24px rgba(0,0,0,.35);
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .pc-enemy-top{
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    margin-bottom: .45rem;
+  }
+  .pc-enemy-tag{
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    border: 2px solid rgba(252,229,205,.55);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+  }
+  .pc-enemy-name{
+    font-weight: 900;
+    font-size: .98rem;
+    line-height: 1.1;
+    opacity: .98;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .pc-enemy-mid{
+    display: grid;
+    gap: .25rem;
+    align-content: start;
+    font-size: .92rem;
+  }
+  .pc-enemy-line{
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    opacity: .95;
+  }
+  .pc-enemy-abilities{
+    margin: .25rem 0 0;
+    padding-left: 1.1rem;
+    opacity: .95;
+  }
+  .pc-enemy-abilities li{
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+  }
+  
+  /* Boss styling */
+  .pc-enemy-card--boss{
+    border-color: rgba(228,190,89,.45);
+  }
+  .pc-enemy-top--boss{
+    justify-content: center;
+    gap: .6rem;
+  }
+  .pc-enemy-bossbadge{
+    width: 56px;
+    height: 28px;
+    border-radius: 999px;
+    border: 2px solid rgba(252,229,205,.55);
+    display: grid;
+    place-items: center;
+    font-weight: 1000;
+    font-size: .85rem;
+  }
+  
+  /* ===== Status Chip (match original Quick Card / DM Assist colors) ===== */
+.status-chip{
+    display:inline-block;
+    padding:.2rem .6rem;
+    border-radius:999px;
+    border:1px solid rgba(252,229,205,.35);
+    user-select:none;
+    cursor:pointer;
+    color:#fff;
+  }
+  
+  /* Status Colors */
+  .status-active      { background: rgba( 40,120, 40, .45); border-color: #59c25a; }
+  .status-rooted      { background: rgba(120, 80,  0, .45); border-color: #d2a857; }
+  .status-stunned     { background: rgba(180, 30, 30, .60); border-color: #ff6363; }
+  .status-slowed      { background: rgba(140,140, 30, .50); border-color: #e0e05a; }
+  .status-possessed   { background: rgba(110,  0,160, .55); border-color: #c46bff; }
+  .status-retreated   { background: rgba( 90, 90, 90, .55); border-color: #bdbdbd; }
+  .status-channeling  { background: rgba(  0,100,160, .55); border-color: #69c1ff; }
+  .status-unconscious { background: rgba( 50, 50, 50, .70); border-color: #888888; }
+  .status-flying      { background: rgba( 60,120,180, .50); border-color: #90c4ff; }
+  .status-shielded    { background: rgba( 70,120,160, .50); border-color: #9dd1ff; }
+  .status-cursed      { background: rgba(120,  0,120, .55); border-color: #f080ff; }
+
+  /* Mini section headers above HP / State */
+.pc-mini-header{
+    margin: 0 0 .35rem;
+    font-size: 1.15rem;   /* header-sized but not page-dominating */
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-align: center;
+    color: #fce5cd;
+  }
+  
+  /* Footnote */
+  .pc-enemy-footnote{
+    margin-top: .65rem;
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px){
+    .pc-grid{
+      grid-template-columns: 240px 1fr 300px;
+    }
+    .pc-enemy-row{
+      grid-template-columns: repeat(3, minmax(150px, 1fr)) 220px;
+      grid-auto-rows: auto;
+    }
+  }
+  
+  @media (max-width: 920px){
+    .pc-grid{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "main"
+        "perks"
+        "right"
+        "enemies";
+    }
+    .pc-midrow{
+      grid-template-columns: 1fr;
+    }
+    .pc-enemy-row{
+      grid-template-columns: repeat(2, minmax(160px, 1fr));
+    }
+    .pc-enemy-card--boss{
+      grid-column: 1 / -1;
+    }
+  }
+  

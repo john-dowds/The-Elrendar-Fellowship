@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Player Quick Card — The Elrendar Fellowship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Global site styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Player card page styles -->
+  <link rel="stylesheet" href="playercard.css" />
+</head>
+
+<body>
+
+  <!-- Main site nav (same structure as other pages) -->
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="system.html">Rule Book</a></li>
+          <li><a href="guides.html">RP Tips & Guides</a></li>
+          <li><a href="monsterguide.html">Monster Manual</a></li>
+          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Games ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="phoenix-path.html">The Phoenix Path</a></li>
+          <li><a href="azeroth-at-war.html">Azeroth At War</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="pc-wrap" aria-label="Player Quick Card">
+    <section class="pc-grid">
+
+      <!-- LEFT: Perks column (replaces sidebar; same functionality) -->
+      <aside class="pc-perks" aria-label="Perks">
+        <div class="pc-panel pc-panel--tall">
+          <h2 class="pc-panel-title">Perks</h2>
+
+          <div class="pc-field">
+            <label for="pcPerk1">Perk #1</label>
+            <select id="pcPerk1"></select>
+            <p id="pcPerk1Desc" class="pc-perk-desc"></p>
+          </div>
+
+          <div class="pc-field">
+            <label for="pcPerk2">Perk #2</label>
+            <select id="pcPerk2"></select>
+            <p id="pcPerk2Desc" class="pc-perk-desc"></p>
+          </div>
+
+          <div class="pc-field">
+            <label for="pcPerk3">Perk #3</label>
+            <select id="pcPerk3"></select>
+            <p id="pcPerk3Desc" class="pc-perk-desc"></p>
+          </div>
+
+          <div class="pc-subnote">
+            Tip: Roll type below determines which bonuses apply (Combat / Perception / etc).
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER: Main card -->
+      <section class="pc-main" aria-label="Player Card Main">
+
+        <!-- NAME ROW (centered) -->
+        <div class="pc-panel pc-name-panel">
+          <div class="pc-name-label">Name</div>
+          <input id="pcName" class="pc-name-input" type="text" placeholder="Character name" />
+        </div>
+
+        <!-- HP + DICE + STATE row -->
+        <div class="pc-midrow" aria-label="HP and Dice">
+
+          <!-- Dice roller (left wing) -->
+          <div class="pc-panel pc-dice-panel">
+            <button id="pcRollBtn" class="pc-dice-btn" type="button" aria-label="Roll d20">🎲</button>
+
+            <div class="pc-rolltype">
+              <label for="pcRollType">Roll Type</label>
+              <select id="pcRollType">
+                <option value="combat">Combat</option>
+                <option value="perception">Perception</option>
+                <option value="environment">Environment</option>
+                <option value="grapple">Grapple</option>
+                <option value="charisma">Charisma</option>
+              </select>
+            </div>
+
+            <div class="pc-rollout">
+              <div class="pc-rollnum" id="pcRollNum">—</div>
+              <div class="pc-rollbreak" id="pcRollBreak">Click the die to roll.</div>
+            </div>
+
+            <div class="pc-rolltoggles" id="pcRollToggles" hidden>
+              <div class="pc-toggle-title">Active Buffs</div>
+              <div class="pc-toggle-list" id="pcToggleList"></div>
+            </div>
+          </div>
+
+          <!-- HP center -->
+          <div class="pc-panel pc-hp-panel">
+            <h1 class="pc-mini-header">Health</h1>
+            <div class="pc-hp-wrap">
+              <button id="pcHPMinus" class="pc-btn pc-hp-nudge" type="button">−</button>
+              <div class="pc-hp-val" id="pcHPVal">15</div>
+              <button id="pcHPPlus" class="pc-btn pc-hp-nudge" type="button">+</button>
+            </div>
+          </div>
+
+          <!-- State chip (right wing) -->
+          <div class="pc-panel pc-state-panel">
+            <h1 class="pc-mini-header">State</h1>
+            <button id="pcStateChip" class="status-chip status-active" type="button">Active</button>
+          </div>
+          
+
+        </div>
+
+        <!-- CLASS row (centered under HP) -->
+        <div class="pc-panel pc-class-panel">
+          <div class="pc-field">
+            <label for="pcClass">Class</label>
+            <select id="pcClass">
+              <option value="">— Select —</option>
+              <option value="magi">Mages &amp; Healers — +2 dmg/heal on hits • +3 Combat &amp; Perception</option>
+              <option value="assassin">Assassins &amp; Rangers — +3 Combat • +2 Environment &amp; Perception</option>
+              <option value="aggressive">Aggressive Fighters — +2 dmg on hits • +3 Combat &amp; Grapple</option>
+              <option value="thief">Thief &amp; Mercenary — +2 dmg on hits • +3 Charisma &amp; Perception</option>
+            </select>
+            <div class="pc-muted" id="pcClassNote"></div>
+          </div>
+        </div>
+
+        <!-- STANCE block -->
+        <div class="pc-panel pc-stance-panel">
+          <div class="pc-field">
+            <label for="pcStance">Stance</label>
+            <select id="pcStance">
+              <option value="Balanced">Balanced</option>
+              <option value="Aggressive">Aggressive</option>
+              <option value="Defensive">Defensive</option>
+              <option value="Focused">Focused</option>
+            </select>
+          </div>
+
+          <div class="pc-stance-tablewrap" aria-label="Stance Brackets">
+            <table class="pc-mini-table">
+              <thead>
+                <tr>
+                  <th>1</th><th>2–9</th><th>10–11</th><th>12–16</th><th>17–19</th><th>Nat 20</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="pcStanceRow"></tr>
+              </tbody>
+            </table>
+            <div class="pc-muted pc-stance-foot">
+              * Only applies to the same target as before. ** Exposes target to +1 damage by all attackers next turn only.
+            </div>
+          </div>
+        </div>
+
+        <!-- SAVE row -->
+        <div class="pc-actions">
+          <button id="pcSaveCard" class="pc-btn" type="button">Save</button>
+          <button id="pcResetCard" class="pc-btn pc-btn--ghost" type="button" title="Clear local saved state">Reset</button>
+          <div class="pc-muted" id="pcSavedMsg" aria-live="polite"></div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT: Profiles + portrait -->
+      <aside class="pc-right" aria-label="Profiles and Portrait">
+        <div class="pc-panel pc-profiles-panel">
+          <div class="pc-profiles-header">
+            <div class="pc-profiles-title">Profiles</div>
+          </div>
+
+          <div class="pc-field">
+            <label for="pcProfileSelect">Import Profile</label>
+            <select id="pcProfileSelect"></select>
+          </div>
+
+          <div class="pc-profiles-actions">
+            <button id="pcSaveProfile" class="pc-btn" type="button">Save as Profile</button>
+            <button id="pcDeleteProfile" class="pc-btn pc-btn--ghost" type="button">Delete</button>
+          </div>
+
+          <div class="pc-muted" id="pcProfileMsg"></div>
+        </div>
+
+        <div class="pc-panel pc-portrait-panel" aria-label="Portrait">
+          <div class="pc-portrait-frame">
+            <img id="pcPortraitImg" alt="" />
+            <div id="pcPortraitPlaceholder" class="pc-portrait-placeholder">
+              Character portrait<br/>if available
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- BOTTOM: Enemy feed (placeholder read-only cards) -->
+      <section class="pc-enemies" aria-label="Enemy Live Feed (Placeholder)">
+        <div class="pc-enemy-row">
+          <div class="pc-enemy-card" data-slot="1">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">I</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <div class="pc-enemy-card" data-slot="2">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">II</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <div class="pc-enemy-card" data-slot="3">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">III</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <div class="pc-enemy-card" data-slot="4">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">IV</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <div class="pc-enemy-card" data-slot="5">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">V</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <div class="pc-enemy-card" data-slot="6">
+            <div class="pc-enemy-top">
+              <div class="pc-enemy-tag">VI</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+          <!-- Boss -->
+          <div class="pc-enemy-card pc-enemy-card--boss" data-slot="boss">
+            <div class="pc-enemy-top pc-enemy-top--boss">
+              <div class="pc-enemy-bossbadge">BOSS</div>
+              <div class="pc-enemy-name">—</div>
+            </div>
+            <div class="pc-enemy-mid">
+              <div class="pc-enemy-line"><span>HP/Max</span><span class="pc-enemy-hp">—</span></div>
+              <div class="pc-enemy-line"><span>State</span><span class="pc-enemy-state">—</span></div>
+              <div class="pc-enemy-line"><span>Abilities</span></div>
+              <ul class="pc-enemy-abilities"></ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pc-muted pc-enemy-footnote">
+          Enemy feed is read-only. Later, DM Assist will publish encounter state into this panel during a live session.
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025-2026 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script src="playercard.js"></script>
+</body>
+</html>
