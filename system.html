@@ -137,6 +137,19 @@
   width:100%; background: rgba(0,0,0,.35); color:#fce5cd;
   border: 1px solid rgba(252,229,205,.25); border-radius: 8px; padding: .5rem .6rem;
 }
+#panel-quick .qc-field > label{
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  
+}
+#panel-quick .hp-state-label{
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-align: center;
+}
+
 #panel-quick .qc-actions{ display:flex; gap:.6rem; align-items:center; }
 #panel-quick .btn{ background: linear-gradient(#7d5a1a, #3d2a12); color:#fff; border:1px solid #000; border-radius:999px; padding:.45rem .8rem; cursor:pointer; }
 #panel-quick .btn:hover{ filter:brightness(1.08); }
@@ -755,10 +768,41 @@
         <p id="qcPerk2Desc" class="qc-perk-desc"></p>
       </div>
     </div>
+
+    <!-- Perk #3 -->
+<div class="qc-field">
+  <label>Perk #3</label>
+  <div class="qc-perk-row">
+    <select id="qcPerk3">
+      <option value="">— Select —</option>
+      <option>Bulwark Bearer</option>
+      <option>Bladesworn Resolve</option>
+      <option>Skirmisher’s Step</option>
+      <option>Keen Senses</option>
+      <option>Second Wind</option>
+      <option>Battlefield Medic</option>
+      <option>Rally Banner</option>
+      <option>Iron Will</option>
+      <option>Arcane Wisdom</option>
+      <option>Mass Shield</option>
+      <option>Scholar</option>
+      <option>Pathfinder</option>
+      <option>Mounted Momentum</option>
+      <option>Determination</option>
+      <option>Even Stronger Determination</option>
+      <option>Silver Tongue</option>
+      <option>Shadow Veil</option>
+      <option>Battle Rhythm</option>
+      <option>Blood Lust</option>
+    </select>
+    <p id="qcPerk3Desc" class="qc-perk-desc"></p>
+  </div>
 </div>
+</div>
+
 <!-- Row: HP & State -->
     <div class="qc-field">
-      <label>HP &amp; State</label>
+      <label class="hp-state-label">HP &amp; State</label>
       <div class="hp-block">
         <div class="hp-wrap">
           <button class="btn hp-nudge" id="qcHPMinus">−</button>
@@ -859,7 +903,7 @@
 
 /* === Quick Card === */
 (function(){
-  const LS_KEY = 'elf/quickcard/v1';
+  const LS_KEY = 'elf/quickcard/v2';
 
   const el = {
     name: document.getElementById('qcName'),
@@ -869,6 +913,8 @@
     perk1Desc: document.getElementById('qcPerk1Desc'),
     perk2: document.getElementById('qcPerk2'),
     perk2Desc: document.getElementById('qcPerk2Desc'),
+    perk3: document.getElementById('qcPerk3'),
+    perk3Desc: document.getElementById('qcPerk3Desc'),
     stance: document.getElementById('qcStance'),
     stanceRow: document.getElementById('qcStanceRow'),
     hpMinus: document.getElementById('qcHPMinus'),
@@ -958,6 +1004,7 @@
       cls: el.cls.value || '',
       perk1: el.perk1.value || '',
       perk2: el.perk2.value || '',
+      perk3: el.perk3.value || '',
       stance: el.stance.value || 'Balanced',
       hp: Number(el.hpVal.textContent) || 15,
       state: (el.state.textContent || 'Active').trim()
@@ -981,6 +1028,7 @@
         el.cls.value = d.cls || '';
         el.perk1.value = d.perk1 || '';
         el.perk2.value = d.perk2 || '';
+        el.perk3.value = d.perk2 || '';
         el.stance.value = d.stance || 'Balanced';
         setHP(d.hp || 15);
         el.state.textContent = d.state || 'Active';
@@ -1004,6 +1052,7 @@
   });
   el.perk1.addEventListener('change', () => applyPerkDesc(el.perk1, el.perk1Desc));
   el.perk2.addEventListener('change', () => applyPerkDesc(el.perk2, el.perk2Desc));
+  el.perk3.addEventListener('change', () => applyPerkDesc(el.perk3, el.perk3Desc));
   el.stance.addEventListener('change', renderStance);
   el.hpMinus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) - 1));
   el.hpPlus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) + 1));
