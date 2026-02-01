@@ -1139,22 +1139,28 @@ function renderAltRelationshipChips(appRow) {
     if (target) openProfile(target);
   };
 
-  // If this is an ALT, show a Main chip (click to jump to main)
+  // ALT view: show a Main chip
   if (type === "alt") {
     let mainApp = null;
 
-    // Prefer explicit linkage
     if (appRow.linkedMainId) {
       mainApp = applications.find(x => x.id === appRow.linkedMainId) || null;
     }
 
-    // Fallback: match by (discord + main name string)
+    // fallback match using partial string
     if (!mainApp && appRow.main) {
-      mainApp = applications.find(x =>
+      const target = normName(appRow.main);
+      const candidates = applications.filter(x =>
         normalize(x.discord) === discordKey &&
-        String(x.appType || (x.main ? "alt" : "main")).toLowerCase() === "main" &&
-        normName(x.character) === normName(appRow.main)
-      ) || null;
+        String(x.appType || (x.main ? "alt" : "main")).toLowerCase() === "main"
+      );
+
+      const matches = candidates.filter(m => {
+        const mc = normName(m.character);
+        return mc === target || mc.includes(target) || target.includes(mc);
+      });
+
+      if (matches.length === 1) mainApp = matches[0];
     }
 
     if (mainApp) {
@@ -1173,18 +1179,22 @@ function renderAltRelationshipChips(appRow) {
     return;
   }
 
-  // If this is a MAIN, list all alts owned by same Discord that map to this main
+  // MAIN view: list alts that point to this main
+  const mainName = normName(appRow.character);
+
   const alts = applications.filter(x => {
     const t = String(x.appType || (x.main ? "alt" : "main")).toLowerCase();
     if (t !== "alt") return false;
     if (normalize(x.discord) !== discordKey) return false;
 
-    // If linkedMainId exists, it must point to this main
+    // Prefer explicit linkage
     if (x.linkedMainId) return x.linkedMainId === appRow.id;
 
-    // Otherwise best-effort match on alt.main string
-    if (!x.main) return false;
-    return normName(x.main) === normName(appRow.character);
+    // Fallback: partial match on x.main
+    const target = normName(x.main);
+    if (!target) return false;
+
+    return mainName === target || mainName.includes(target) || target.includes(mainName);
   });
 
   if (!alts.length) {
@@ -1204,6 +1214,7 @@ function renderAltRelationshipChips(appRow) {
     altChipsRow.appendChild(btn);
   });
 }
+
 
 /* ─────────────────────────────────────────────────────────────
    Admin log UI
@@ -1396,18 +1407,18 @@ async function resolveAltLinks() {
   try {
     setMsg(membershipMsg, "Resolving alt links…");
 
-    const mainsByDiscord = new Map();
-    const appsById = new Map();
-    applications.forEach(a => appsById.set(a.id, a));
-
-    for (const a of applications) {
-      const discordKey = normalize(a.discord);
+    // Build list of mains (we’ll try discord match first, then global name match)
+    const mains = applications.filter(a => {
       const type = String(a.appType || (a.main ? "alt" : "main")).toLowerCase();
+      return type === "main";
+    });
 
-      if (type === "main") {
-        if (!mainsByDiscord.has(discordKey)) mainsByDiscord.set(discordKey, []);
-        mainsByDiscord.get(discordKey).push(a);
-      }
+    // Fast lookup mains by discord
+    const mainsByDiscord = new Map();
+    for (const m of mains) {
+      const dk = normalize(m.discord);
+      if (!mainsByDiscord.has(dk)) mainsByDiscord.set(dk, []);
+      mainsByDiscord.get(dk).push(m);
     }
 
     let updated = 0;
@@ -1416,17 +1427,30 @@ async function resolveAltLinks() {
     for (const a of applications) {
       const type = String(a.appType || (a.main ? "alt" : "main")).toLowerCase();
       if (type !== "alt") continue;
+
+      // already linked
       if (a.linkedMainId) { skipped++; continue; }
 
+      const target = normName(a.main);
+      if (!target) { skipped++; continue; }
+
       const discordKey = normalize(a.discord);
-      const mainCandidates = mainsByDiscord.get(discordKey) || [];
-      if (!mainCandidates.length) { skipped++; continue; }
+      const candidates = (mainsByDiscord.get(discordKey) || []).length
+        ? (mainsByDiscord.get(discordKey) || [])
+        : mains; // if discord missing/mismatch, fall back to global
 
-      const targetMainName = normName(a.main);
-      if (!targetMainName) { skipped++; continue; }
+      // Match strategy:
+      // 1) exact match
+      // 2) target is contained in main name
+      // 3) main name contained in target (rare, but safe)
+      const matches = candidates.filter(m => {
+        const mc = normName(m.character);
+        return mc === target || mc.includes(target) || target.includes(mc);
+      });
 
-      const match = mainCandidates.find(m => normName(m.character) === targetMainName);
-      if (!match) { skipped++; continue; }
+      if (matches.length !== 1) { skipped++; continue; }
+
+      const match = matches[0];
 
       await updateDoc(doc(db, "applications", a.id), {
         linkedMainId: match.id,
@@ -1447,13 +1471,14 @@ async function resolveAltLinks() {
     }
 
     setMsg(membershipMsg, `Resolve complete: linked ${updated}, skipped ${skipped}.`);
-    setTimeout(() => setMsg(membershipMsg, ""), 3000);
+    setTimeout(() => setMsg(membershipMsg, ""), 3500);
   } catch (err) {
     console.error("resolveAltLinks error:", err);
     setMsg(membershipMsg, "Resolve failed. See console.");
     setTimeout(() => setMsg(membershipMsg, ""), 4000);
   }
 }
+
 
 /* ─────────────────────────────────────────────────────────────
    Wire events
