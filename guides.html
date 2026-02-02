@@ -91,12 +91,13 @@
         <a href="#" class="dropdown-toggle">Roleplay ▾</a>
         <ul class="dropdown-menu">
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
           <li><a href="system.html">Rule Book</a></li>
           <li><a href="guides.html" aria-current="page">RP Tips & Guides</a></li>
+          <li><a href="playercard.html">Character Sheet</a></li>
           <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
-          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -145,7 +146,7 @@
         <p>This is news about me, but I have a particularly big beef with dry-as-hell failure posts. Let's get that out of the way from the getgo.</p>
         <p>Let's say you miss your attack, or you take an injury. Sounds pretty lame, right? Well, it doesn't have to be, at least with the Fellowship (where we encourage creative permissiveness).</p>
         <p><ul>Instead of "Jim the Bard squares up with the giant monster, but fails to block the incoming strike and staggers backwards," why not make it just as intense and heroic as a two paragraph success post?</ul>
-        <ul>What if it became about Jim the Bard setting up an allied player for their own successful attacks? What if Jim the Bard did some insane flips and climbed up the log-thick arms of this monster and grabbed it by the nose ring, yanking it low so that Stacy the Rogue can get a clear shot at the monster's throat?</ul>
+        <ul>What if it became about Jim the Bard setting up an allied player for their own successful attacks while taking their hit? What if Jim the Bard did some insane flips and climbed up the log-thick arms of this monster and grabbed it by the nose ring, yanking it low so that Stacy the Rogue can get a clear shot at the monster's throat while injuring themself in the process?</ul>
         <ul>Changing the perceptive and vibe of the post does two things: 1. It keeps the player engaged despite the disappointment of a failure. 2. Fosters a sense of failing forward and supporting one another.</ul></p>
         <p>The Fellowship champions in earnest the mindset of collaborating at events wherever possible. Give your allies an opening; take your damage while selflessly throwing yourself in front of an ally to spare them a potential injury (maybe an incoming blow they didn't even see coming!); use your miss as a way to set up an even more powerful attack the next turn. Whatever you can, give yourself opportunities to fail forwards in the most spectacular way possible.</p>
       </section>
@@ -251,5 +252,7 @@
     const hash = (location.hash || '').replace('#','');
     showGuideTab(guidePanels[hash] ? hash : 'intro');
   </script>
+  <script type="module" src="assets/js/auth-ui.js"></script>
+  <script type="module" src="assets/js/auth-ui.js?v=3"></script>
 </body>
 </html>
