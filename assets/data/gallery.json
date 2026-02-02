@@ -547,5 +547,14 @@
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
+  },
+  {
+    "id": "img062",
+    "src": "assets/gallery/magicschool001.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Ansinosth Summerbough leads an instructional course on Blink Strikes.",
+    "album": "Events",
+    "tags": ["members", "Jendral Rosepath","Papilio Havenfire","Calcydo"]
   }
 ]
