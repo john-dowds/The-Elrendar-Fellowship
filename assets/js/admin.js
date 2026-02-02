@@ -895,6 +895,8 @@ function buildSessionSummary(actions) {
 ───────────────────────────────────────────────────────────── */
 function openProfile(appRow) {
   selectedApp = appRow;
+  if (profileOverlay) profileOverlay.dataset.appId = appRow.id;
+
 
     // Populate editable fields
     const derivedType = appRow.appType || (appRow.main ? "alt" : "main");
@@ -947,6 +949,8 @@ function closeProfile() {
   profileOverlay.style.width = "";
   profileOverlay.style.height = "";
   profileOverlay.style.zIndex = "";
+
+  if (profileOverlay) delete profileOverlay.dataset.appId;
 
   selectedApp = null;
 }
@@ -1540,9 +1544,17 @@ document.addEventListener("click", (e) => {
   if (createBtn) {
     console.log("[CreateLogin] handler fired", { selectedApp: !!selectedApp, type: selectedApp?.appType, character: selectedApp?.character });
     if (!selectedApp) {
+      const appId = profileOverlay?.dataset?.appId || "";
+      if (appId) {
+        selectedApp = applications.find(a => a.id === appId) || null;
+      }
+    }
+
+    if (!selectedApp) {
       console.warn("Create Login clicked but no selectedApp set.");
       return;
     }
+
 
     const type = String(selectedApp.appType || (selectedApp.main ? "alt" : "main")).toLowerCase();
     if (type !== "main") {
