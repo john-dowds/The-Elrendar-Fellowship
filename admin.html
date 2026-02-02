@@ -492,6 +492,12 @@
 #btnCreateLogin:hover{
   background: rgba(212,175,55,.20) !important;
 }
+#createLoginModal{
+  border: 1px solid rgba(212,175,55,.45);
+  background: rgba(0,0,0,.55);
+  border-radius: 12px;
+}
+
 
   </style>
 </head>
@@ -632,12 +638,36 @@
           
             <div style="display:flex; align-items:flex-end; gap:10px;">
               <button id="btnSaveProfileEdits" class="admin-btn primary" type="button">Save Profile Edits</button>
-              <button id="btnCreateLogin" class="admin-btn" type="button">Create Login</button>
+              <button class="admin-btn" type="button" data-action="createLogin">Create Login</button>
               <span id="createLoginMsg" class="admin-msg"></span>
               <span id="profileEditMsg" class="admin-msg"></span>
             </div>
           </div>
+          <div id="createLoginModal" style="display:none; margin-top:12px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); border-radius:12px; padding:10px;">
+            <h4 style="margin:0 0 10px;">Create Login for Existing Member</h4>
           
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+              <label style="display:flex; flex-direction:column; gap:6px; min-width:260px; flex:1 1 260px;">
+                <span class="cell-small">Main Character Name</span>
+                <input id="cl_mainCharacter" class="admin-input" placeholder="e.g. Ansinosth Summerbough" />
+              </label>
+          
+              <label style="display:flex; flex-direction:column; gap:6px; min-width:260px; flex:1 1 260px;">
+                <span class="cell-small">Discord</span>
+                <input id="cl_discord" class="admin-input" placeholder="e.g. silvertongue_scribe" />
+              </label>
+          
+              <div style="display:flex; gap:10px;">
+                <button id="cl_submit" class="admin-btn primary" type="button">Create</button>
+                <button id="cl_cancel" class="admin-btn" type="button">Cancel</button>
+              </div>
+            </div>
+          
+            <div id="cl_msg" class="admin-msg" style="margin-top:10px;"></div>
+            <div class="cell-muted" style="margin-top:6px; font-size:12px;">
+              Creates or enables the login for this Discord with temp password <b>HighHome101</b>, then forces password change on first login.
+            </div>
+          </div>
           <div class="profile-grid" id="profileGrid"></div>
           
           <div class="notes-wrap">
@@ -653,31 +683,6 @@
           </div>
           <div class="chips-row" id="altChipsRow"></div>
           <div class="chips-row" id="chipsRow"></div>
-        </div>
-        <div id="createLoginModal" style="display:none; margin-top:12px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); border-radius:12px; padding:10px;">
-          <h4 style="margin:0 0 10px;">Create Login for Existing Member</h4>
-        
-          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
-            <label style="display:flex; flex-direction:column; gap:6px; min-width:260px; flex:1 1 260px;">
-              <span class="cell-small">Main Character Name</span>
-              <input id="cl_mainCharacter" class="admin-input" placeholder="e.g. Ansinosth Summerbough" />
-            </label>
-        
-            <label style="display:flex; flex-direction:column; gap:6px; min-width:260px; flex:1 1 260px;">
-              <span class="cell-small">Discord</span>
-              <input id="cl_discord" class="admin-input" placeholder="e.g. silvertongue_scribe" />
-            </label>
-        
-            <div style="display:flex; gap:10px;">
-              <button id="cl_submit" class="admin-btn primary" type="button">Create</button>
-              <button id="cl_cancel" class="admin-btn" type="button">Cancel</button>
-            </div>
-          </div>
-        
-          <div id="cl_msg" class="admin-msg" style="margin-top:10px;"></div>
-          <div class="cell-muted" style="margin-top:6px; font-size:12px;">
-            Creates or enables the login for this Discord with temp password <b>HighHome101</b>, then forces password change on first login.
-          </div>
         </div>
         
       </div>
