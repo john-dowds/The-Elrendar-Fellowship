@@ -238,6 +238,10 @@ function listenApplications() {
 
   appsUnsub = onSnapshot(qApps, (snap) => {
     applications = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+const newest = applications[0]?.submittedAt;
+const newestMs = newest?.toMillis ? newest.toMillis() : 0;
+if (newestMs) localStorage.setItem("ef_last_seen_app_ms", String(newestMs));
+
     renderTable();
   }, (err) => {
     console.error("Applications listener error:", err);
@@ -364,41 +368,51 @@ function renderTable() {
     const submitted = fmtDate(r.submittedAt);
     const appType = r.appType || (r.main ? "alt" : "main");
     const status = r.status || "Applicant";
+    const isApplicant = status === "Applicant";
+    const flagHTML = isApplicant ? `<span class="app-new-flag" title="Applicant"></span>` : "";
     const profile = r.profile || "N/A";
     const activeState = r.activeState || ACTIVE_STATES.DISABLED;
     const notesRollup = r.notesRollup || "";
 
     tr.innerHTML = `
-      <td class="cell-small">${submitted}</td>
-      <td class="cell-small">${appType}</td>
+  <td class="cell-small">${submitted}</td>
+  <td class="cell-small">${appType}</td>
 
-      <td class="sticky-col">
-        <div style="display:flex; gap:10px; align-items:center;">
-          <span>${r.character || ""}</span>
-          <button class="admin-btn" data-action="viewProfile" style="padding:6px 10px; font-size:12px;">View</button>
-        </div>
-      </td>
+  <td class="sticky-col">
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span style="display:inline-flex; gap:8px; align-items:center;">
+        <span>${r.character || ""}</span>
+        ${flagHTML}
+      </span>
+      <button class="admin-btn" data-action="viewProfile" style="padding:6px 10px; font-size:12px;">View</button>
+    </div>
+  </td>
 
-      <td>${r.discord || ""}</td>
-      <td>${r.server || ""}</td>
-      <td>${r.name || ""}</td>
-      <td>${r.title || ""}</td>
-      <td>${r.faction || ""}</td>
-      <td class="cell-notes">${r.availability || ""}</td>
-      <td>${r.main || ""}</td>
+  <td>${r.discord || ""}</td>
 
-      <td>${renderStatusSelect(status)}</td>
-      <td>${renderProfileSelect(profile)}</td>
-      <td>${renderActiveToggle(activeState)}</td>
+  <td>${renderStatusSelect(status)}</td>
+  <td>${renderActiveToggle(activeState)}</td>
 
-      <td class="cell-notes" title="${notesRollup.replace(/"/g, "&quot;")}">${notesRollup || "<span class='cell-muted'>—</span>"}</td>
+  <td>${r.server || ""}</td>
+  <td>${r.name || ""}</td>
+  <td>${r.title || ""}</td>
+  <td>${r.faction || ""}</td>
+  <td class="cell-notes">${r.availability || ""}</td>
+  <td>${r.main || ""}</td>
 
-      <td>
-        <div class="cell-actions">
-          <button class="mini-x" data-action="deleteRow" title="Delete">✕</button>
-        </div>
-      </td>
-    `;
+  <td>${renderProfileSelect(profile)}</td>
+
+  <td class="cell-notes" title="${notesRollup.replace(/"/g, "&quot;")}">
+    ${notesRollup || "<span class='cell-muted'>—</span>"}
+  </td>
+
+  <td>
+    <div class="cell-actions">
+      <button class="mini-x" data-action="deleteRow" title="Delete">✕</button>
+    </div>
+  </td>
+`;
+
 
     // wire per-row events
     tr.querySelector('[data-action="viewProfile"]')?.addEventListener("click", (e) => {
