@@ -1535,8 +1535,10 @@ function wireEvents() {
   });
 // ---- Event delegation (bulletproof on live) ----
 document.addEventListener("click", (e) => {
+  console.log("[delegate click]", e.target);
   const createBtn = e.target.closest("#btnCreateLogin");
   if (createBtn) {
+    console.log("[CreateLogin] handler fired", { selectedApp: !!selectedApp, type: selectedApp?.appType, character: selectedApp?.character });
     if (!selectedApp) {
       console.warn("Create Login clicked but no selectedApp set.");
       return;
