@@ -723,11 +723,9 @@ async function setActiveState(row, enabled, from, to) {
       );
   
       const json = await resp.json().catch(() => ({}));
+      console.log("CreateLogin response:", resp.status, json);
   
-      if (!resp.ok || !json.ok) {
-        const reason = json?.error || `http_${resp.status}`;
-        throw new Error(reason);
-      }
+      if (!resp.ok || !json.ok) {const reason = json?.error || `http_${resp.status}`; throw new Error(reason);}
   
       // 3) Store display state in applications row
       await updateDoc(doc(db, "applications", row.id), {
