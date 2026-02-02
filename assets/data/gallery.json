@@ -6,7 +6,7 @@
     "title": "Early Beginnings",
     "caption": "New fellows gather with the old for a night of social callings.",
     "album": "Everyday RP",
-    "tags": ["casual-rp","members"]
+    "tags": ["casual-rp", "members"]
   },
   {
     "id": "img002",
@@ -15,7 +15,7 @@
     "title": "Private Words",
     "caption": "Ansinosth Summerbough and Knight-Lord Caledeth Bloodthorn speak in private.",
     "album": "Everyday RP",
-    "tags": ["casual-rp","members","ansinosth","caledeth"]
+    "tags": ["casual-rp", "members", "ansinosth", "caledeth"]
   },
   {
     "id": "img003",
@@ -24,7 +24,7 @@
     "title": "The Chronicler",
     "caption": "Ansinosth Summerbough at work. Art by Eregbueye.",
     "album": "Character Art",
-    "tags": ["art","members","ansinosth"]
+    "tags": ["art", "members", "ansinosth"]
   },
   {
     "id": "img004",
@@ -33,7 +33,7 @@
     "title": "Caledeth Bloodthorn",
     "caption": "The Knight-Lord himself, Caledeth Bloodthorn. Art by Caledeth.",
     "album": "Character Art",
-    "tags": ["art","members","caledeth"]
+    "tags": ["art", "members", "caledeth"]
   },
   {
     "id": "img005",
@@ -42,229 +42,226 @@
     "title": "Scion of the Silversun",
     "caption": "The archmage and sorcerer himself, Malchiades Silversun. Art by Buyansanjaa.",
     "album": "Character Art",
-    "tags": ["art","members","malchiades"]
+    "tags": ["art", "members", "malchiades"]
   },
   {
     "id": "img006",
-    "src": "assets/gallery/trainingevent1.png",
+    "src": "assets/gallery/trainingevent003.png",
     "thumb": "",
     "title": "Training in Eversong",
-    "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
+    "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
     "id": "img007",
-    "src": "assets/gallery/trainingevent2.png",
+    "src": "assets/gallery/trainingevent004.png",
     "thumb": "",
     "title": "Training in Eversong",
-    "caption": "Magister Vileon Stormwrath coordinating tactical exercises.",
+    "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
-    "id": "img007",
+    "id": "img008",
     "src": "assets/gallery/campaignevent1ss1.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"]
-  }
-  ,
+    "tags": ["members", "events", "campaign1"]
+  },
   {
-    "id": "img008",
+    "id": "img009",
     "src": "assets/gallery/campaignevent1ss2.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
     "caption": "A member of the Fellowship stands guard while others investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"]
+    "tags": ["members", "events", "campaign1"]
   },
   {
-    "id": "img009",
+    "id": "img010",
     "src": "assets/gallery/campaignevent1ss3.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"]
+    "tags": ["members", "events", "campaign1"]
   },
   {
-    "id": "img010",
+    "id": "img011",
     "src": "assets/gallery/campaignevent1ss4.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
-    "tags": ["members","events","campaign1"]
+    "tags": ["members", "events", "campaign1"]
   },
   {
-    "id": "img011",
+    "id": "img012",
     "src": "assets/gallery/campaignevent1ss5.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
     "caption": "Members of the Fellowship consult in private before departing to investigate a growing crisis.",
     "album": "Events",
-    "tags": ["members","events","campaign1"]
-  }
-  ,
+    "tags": ["members", "events", "campaign1"]
+  },
   {
-    "id": "img012",
+    "id": "img013",
     "src": "assets/gallery/ansinosthart2.png",
     "thumb": "",
     "title": "The Master Sorcerer",
     "caption": "Master Sorcerer Ansinosth Summerbough weaving a spell. Art by Mira Sands.",
     "album": "Character Art",
-    "tags": ["members","ansinosth"]
+    "tags": ["members", "ansinosth"]
   },
   {
-    "id": "img013",
+    "id": "img014",
     "src": "assets/gallery/hespirart.png",
     "thumb": "",
     "title": "Hespir Everwyern",
     "caption": "A pyromancer of the Sunfury under Kael'thas, Hespir was one of the youngest soldiers defending Quel'Thalas after its fall; he still carries on even today. Art by Mira Sands.",
     "album": "Character Art",
-    "tags": ["members","hespir"]
+    "tags": ["members", "hespir"]
   },
   {
-    "id": "img014",
+    "id": "img015",
     "src": "assets/gallery/sinaracinderfallart.png",
     "thumb": "",
     "title": "Sinara Cinderfall",
     "caption": "Once a prominent member of the Sunreavers, the magus now serves the kingdom of Quel'Thalas directly as one of its magisters. Art by",
     "album": "Character Art",
-    "tags": ["members","sinara"]
+    "tags": ["members", "sinara"]
   },
   {
-    "id": "img015",
+    "id": "img016",
     "src": "assets/gallery/sinaracinderfallart2.png",
     "thumb": "",
     "title": "Sinara Cinderfall",
     "caption": "Once a prominent member of the Sunreavers, the magus now serves the kingdom of Quel'Thalas directly as one of its magisters. Art by",
     "album": "Character Art",
-    "tags": ["members","sinara"]
+    "tags": ["members", "sinara"]
   },
   {
-    "id": "img016",
+    "id": "img017",
     "src": "assets/gallery/magicevent1.png",
     "thumb": "",
     "title": "Fellows at Work",
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
-    "tags": ["members","Soryn Cloudspire","Vileon Stormwrath","Menadrael Embermourn"]
+    "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
   },
   {
-    "id": "img017",
+    "id": "img018",
     "src": "assets/gallery/magicevent2.png",
     "thumb": "",
     "title": "Fellows at Work",
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
-    "tags": ["members","Soryn Cloudspire","Vileon Stormwrath","Menadrael Embermourn"]
+    "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
   },
   {
-    "id": "img018",
+    "id": "img019",
     "src": "assets/gallery/magicevent3.png",
     "thumb": "",
     "title": "Fellows at Work",
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
-    "tags": ["members","Soryn Cloudspire","Vileon Stormwrath","Menadrael Embermourn"]
+    "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
   },
   {
-    "id": "img019",
+    "id": "img020",
     "src": "assets/gallery/soiree1.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
   },
   {
-    "id": "img020",
+    "id": "img021",
     "src": "assets/gallery/soiree2.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
   },
   {
-    "id": "img021",
+    "id": "img022",
     "src": "assets/gallery/soiree3.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
-    "tags": ["members","socials","Gwaeloth Songwood","Calcydo","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
+    "tags": ["members", "socials", "Gwaeloth Songwood", "Calcydo", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
   },
   {
-    "id": "img022",
+    "id": "img023",
     "src": "assets/gallery/soiree4.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Papilio Havenfire","Quely Phoenixheart","Sylvarea Durore'shala","Velara Clarke","Laelisel Goldsong","Kynseria Vel'dinariel","Jendral Rosepath","Soryn Cloudspire","Caledeth Bloodthorn","Andrys Blackthorn","Arionir Tel'vannen","Lady Thalena Thori'zaram","Alen'dris Sunblossom"]
-  }
-  ,
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
+  },
   {
-    "id": "img023",
+    "id": "img024",
     "src": "assets/gallery/magicmysteryevent003.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order rapidly assemble to respond in force as a hex-gone wrong brings chaos into the sanctum, leading them into the dark ruins buried far below.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img024",
+    "id": "img025",
     "src": "assets/gallery/magicmysteryevent001.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img025",
+    "id": "img026",
     "src": "assets/gallery/magicmysteryevent002.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img026",
+    "id": "img027",
     "src": "assets/gallery/magicmysteryevent004.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img027",
+    "id": "img028",
     "src": "assets/gallery/magicmysteryevent005.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img028",
+    "id": "img029",
     "src": "assets/gallery/magicmysteryevent006.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
-    "tags": ["members","Tal'theas Sunfeather","Kynseria Vel'dinariel","Ansinosth Summerbough","Gwaeloth Songwood","Jeshacinin Evertrail"]
+    "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
   },
   {
-    "id": "img029",
+    "id": "img030",
     "src": "assets/gallery/gorehauntevent001.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -273,7 +270,7 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img030",
+    "id": "img031",
     "src": "assets/gallery/gorehauntevent002.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -282,7 +279,7 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img031",
+    "id": "img032",
     "src": "assets/gallery/gorehauntevent003.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -291,7 +288,7 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img032",
+    "id": "img033",
     "src": "assets/gallery/gorehauntevent004.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -300,7 +297,7 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img033",
+    "id": "img034",
     "src": "assets/gallery/gorehauntevent005.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -309,7 +306,7 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img034",
+    "id": "img035",
     "src": "assets/gallery/gorehauntevent006.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
@@ -318,121 +315,193 @@
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
   },
   {
-    "id": "img035",
+    "id": "img036",
     "src": "assets/gallery/soiree5.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
   },
   {
-    "id": "img036",
+    "id": "img037",
     "src": "assets/gallery/soiree6.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
   },
   {
-    "id": "img037",
+    "id": "img038",
     "src": "assets/gallery/soiree7.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood", "Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
   },
   {
-    "id": "img038",
+    "id": "img039",
     "src": "assets/gallery/soiree8.png",
     "thumb": "",
     "title": "The Fellows' Social",
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
-    "tags": ["members","socials","Tal'theas Sunfeather","Velara Clarke","Laelisel Goldsong","Gwaeloth Songwood","Kynseria Vel'dinariel","Jendral Rosepath","Alen'dris Sunblossom","Ansinosth Summerbough","Calcydo","Jeshacinin Evertrail","Roxalynn Windsong","Sorrien Kalos","Divine Chaniste Skyguard","Tulindi De Couer-Errant","Silanna Leyspire","Dalentheus Ombrelune","Y'lothin Kar'Storas","Haldarin Autumnveil","Baroness Belorastra A. Dragonlight","Em'thela Silversun"]
+    "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
   },
   {
-    "id": "img039",
+    "id": "img040",
     "src": "assets/gallery/earlysoiree001.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
-    "tags": ["members","socials"]
+    "tags": ["members", "socials"]
   },
   {
-    "id": "img040",
+    "id": "img041",
     "src": "assets/gallery/earlysoiree002.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
-    "tags": ["members","socials"]
+    "tags": ["members", "socials"]
   },
   {
-    "id": "img039",
+    "id": "img042",
     "src": "assets/gallery/earlysoiree003.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
-    "tags": ["members","socials"]
+    "tags": ["members", "socials"]
   },
   {
-    "id": "img042",
+    "id": "img043",
     "src": "assets/gallery/ghostlandsmurder1.png",
     "thumb": "",
     "title": "The Hunting of a Murderer",
     "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
-    "id": "img043",
+    "id": "img044",
     "src": "assets/gallery/ghostlandsmurder2.png",
     "thumb": "",
     "title": "The Hunting of a Murderer",
     "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
-    "id": "img044",
+    "id": "img045",
     "src": "assets/gallery/ghostlandsmurder3.png",
     "thumb": "",
     "title": "The Hunting of a Murderer",
     "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
-    "id": "img045",
+    "id": "img046",
     "src": "assets/gallery/ghostlandsmurder4.png",
     "thumb": "",
     "title": "The Hunting of a Murderer",
     "caption": "The Fellowship pursues the trail of a murderer within Quel'Thalas.",
     "album": "Events",
-    "tags": ["members","events"]
-  },
-  {
-    "id": "img046",
-    "src": "assets/gallery/trainingevent1.png",
-    "thumb": "",
-    "title": "Practical Training",
-    "caption": "The Fellowship assembles for training and practice in martial combat.",
-    "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
   },
   {
     "id": "img047",
-    "src": "assets/gallery/trainingevent2.png",
+    "src": "assets/gallery/trainingevent001.png",
     "thumb": "",
     "title": "Practical Training",
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
-    "tags": ["members","events"]
+    "tags": ["members", "events"]
+  },
+  {
+    "id": "img048",
+    "src": "assets/gallery/trainingevent002.png",
+    "thumb": "",
+    "title": "Practical Training",
+    "caption": "The Fellowship assembles for training and practice in martial combat.",
+    "album": "Events",
+    "tags": ["members", "events"]
+  },
+  {
+    "id": "img049",
+    "src": "assets/gallery/ascensionevent001.png",
+    "thumb": "",
+    "title": "Ascension Conclave",
+    "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
+  },
+  {
+    "id": "img050",
+    "src": "assets/gallery/ascensionevent002.png",
+    "thumb": "",
+    "title": "Ascension Conclave",
+    "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
+  },
+  {
+    "id": "img051",
+    "src": "assets/gallery/ascensionevent003.png",
+    "thumb": "",
+    "title": "Ascension Conclave",
+    "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
+  },
+  {
+    "id": "img052",
+    "src": "assets/gallery/ascensionevent004.png",
+    "thumb": "",
+    "title": "Ascension Conclave",
+    "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest", "Sorrien Kalos"]
+  },
+  {
+    "id": "img053",
+    "src": "assets/gallery/missingringevent001.png",
+    "thumb": "",
+    "title": "The Missing Ring",
+    "caption": "The Fellowship strikes out in pursuit of a missing artifact, lost in the fall of Dalaran.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Thalendir Dawncrest", "Silanna Leyspire", "Sorrien Kalos", "Dalentheus Ombrelune", "Velara Clarke", "Hespir Everwyern"]
+  },
+  {
+    "id": "img054",
+    "src": "assets/gallery/missingringevent002.png",
+    "thumb": "",
+    "title": "The Missing Ring",
+    "caption": "The Fellowship strikes out in pursuit of a missing artifact, lost in the fall of Dalaran.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Thalendir Dawncrest", "Silanna Leyspire", "Sorrien Kalos", "Dalentheus Ombrelune", "Velara Clarke", "Hespir Everwyern"]
+  },
+  {
+    "id": "img055",
+    "src": "assets/gallery/missingringevent003.png",
+    "thumb": "",
+    "title": "The Missing Ring",
+    "caption": "The Fellowship strikes out in pursuit of a missing artifact, lost in the fall of Dalaran.",
+    "album": "Events",
+    "tags": ["members", "events", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Thalendir Dawncrest", "Silanna Leyspire", "Sorrien Kalos", "Dalentheus Ombrelune", "Velara Clarke", "Hespir Everwyern"]
+  },
+  {
+    "id": "img056",
+    "src": "assets/gallery/soryncloudspire.png",
+    "thumb": "",
+    "title": "Soryn Cloudspire",
+    "caption": "The legend himself, Soryn Cloudspire.",
+    "album": "Everyday RP",
+    "tags": ["members", "Soryn Cloudspire"]
   },
   {
     "id": "img057",
