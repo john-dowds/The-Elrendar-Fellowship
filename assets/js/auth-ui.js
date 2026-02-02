@@ -9,7 +9,10 @@ import {
   updatePassword
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-import { doc, getDoc, updateDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+import {
+  doc, getDoc, updateDoc, serverTimestamp,
+  collection, query, orderBy, limit, onSnapshot
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
 
 
@@ -24,8 +27,49 @@ async function isUserAdmin(uid) {
     }
   }
   
+// ─────────────────────────────────────────────────────────────
+// Admin NAV blip (timestamp-based): show only if a new app arrived
+// since this browser last "checked" admin.
+// Row-level Applicant icons are handled in admin.js and are status-driven.
+// ─────────────────────────────────────────────────────────────
+
+let _appsUnsub = null;
+
+function setAdminBlipVisible(on){
+  const blip = document.getElementById("efAdminBlip");
+  if (!blip) return;
+  blip.style.display = on ? "block" : "none";
+}
+
+function startLastSeenNavBlipListener(){
+  if (_appsUnsub) return;
+
+  const qLatest = query(
+    collection(db, "applications"),
+    orderBy("submittedAt", "desc"),
+    limit(1)
+  );
+
+  _appsUnsub = onSnapshot(qLatest, (snap) => {
+    if (snap.empty) { setAdminBlipVisible(false); return; }
+
+    const latest = snap.docs[0].data()?.submittedAt;
+    const latestMs = latest?.toMillis ? latest.toMillis() : 0;
+
+    const lastSeen = parseInt(localStorage.getItem("ef_last_seen_app_ms") || "0", 10);
+
+    setAdminBlipVisible(latestMs > lastSeen);
+  }, (err) => {
+    console.warn("[AuthUI] nav blip listener error:", err);
+    setAdminBlipVisible(false);
+  });
+}
+
+function stopLastSeenNavBlipListener(){
+  if (_appsUnsub) { _appsUnsub(); _appsUnsub = null; }
+  setAdminBlipVisible(false);
+}
   
-// Discord -> email mapping (keeps your UI as "Discord" but uses Firebase email/pass)
 const EMAIL_DOMAIN = "members.elrendar";
 function normalizeDiscord(s) {
   return String(s || "")
@@ -136,6 +180,30 @@ function injectStyles() {
       cursor:pointer;
       display:none;
     }
+          /* Admin NAV "new apps" blip (timestamp-based) */
+    #efAdminNavItem{ position: relative; }
+
+    .ef-admin-blip{
+      position:absolute;
+      top: -10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      background: url("assets/art/icon_question.png") no-repeat center/contain;
+      display:none;
+      pointer-events:none;
+      filter: drop-shadow(0 0 6px rgba(212,175,55,.55));
+      animation: efBlipPulse 1.1s ease-in-out infinite;
+      transform-origin: center;
+    }
+    @keyframes efBlipPulse{
+      0%, 100%{ transform: scale(1); opacity:.75; }
+      50%     { transform: scale(1.18); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .ef-admin-blip{ animation:none; }
+    }
+
   `;
   document.head.appendChild(style);
 }
@@ -289,7 +357,6 @@ function injectModal() {
 }
 
 function injectCrestButton() {
-  // Looks for the first nav list; works with your existing structure.
   const nav = document.querySelector("nav");
   const ul =
     nav?.querySelector("ul") ||
@@ -302,10 +369,13 @@ function injectCrestButton() {
 if (!document.getElementById("efAdminNavItem")) {
     const li = document.createElement("li");
     li.id = "efAdminNavItem";
-    li.style.marginLeft = "auto";     // pushes it to far right on flex navs
+    li.style.marginLeft = "auto";
     li.style.display = "none";
-    li.innerHTML = `<a href="admin.html" class="nav-link">Admin</a>`;
-    ul.appendChild(li);
+    li.innerHTML = `
+    <a href="admin.html" class="nav-link" id="efAdminNavLink">Admin</a>
+    <span id="efAdminBlip" class="ef-admin-blip" aria-hidden="true"></span>
+  `;
+      ul.appendChild(li);
   }
   
 
@@ -424,12 +494,17 @@ function wireAuthState() {
       
         if (!user) {
           adminNav.style.display = "none";
+          stopLastSeenNavBlipListener();
           return;
         }
+        
       
         // Only show admin link if user is in Firestore admins/{uid}
         const ok = await isUserAdmin(user.uid);
         adminNav.style.display = ok ? "list-item" : "none";
+        if (ok) startLastSeenNavBlipListener();
+else stopLastSeenNavBlipListener();
+
               });
 }
 
