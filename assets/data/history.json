@@ -14,6 +14,16 @@
       "order": 600,
       "entries": [
         {
+          "id": "feb1ms",
+          "title": "Practical Applications: Blink Strikes",
+          "summary_html": "<p>Master Sorcerer Ansinosth Summerbough conducts a live practice instructional session on the use of rapid teleportion assists to strike an targets of opportunity behind enemy lines. Under his administration, students engage in routine practice teleporting to constantly moving fields of obstacles and effect deadly strikes before being teleported back out.</p>"
+        },
+        {
+          "id": "jan12ms",
+          "title": "Practical Applications: Forgotten Techniques for Abjuration",
+          "summary_html": "<p>Master Sorcerer Ansinosth Summerbough conducts an instructional session the application of ancient Highborne techniques to enhance clearcasting flow states with a direct application in abjuration; students practice enhancing their defensive spells using the technique.</p>"
+        },
+        {
           "id": "nov12ms",
           "title": "Worldly Connections: Thalassian Abjuration in Defense of the High Home",
           "summary_html": "<p>Master Sorcerer Ansinosth Summerbough hosts a lecture for the Fellowship and its attending guests on the historic role and functionality of Ban'dinoriel, its destruction, and the viability and necessity of efforts to restore or forge a new barrier for the High Home.</p>"
