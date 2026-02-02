@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="dm-assist.css" />
-  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -26,12 +25,13 @@
         <a href="#" class="dropdown-toggle">Roleplay ▾</a>
         <ul class="dropdown-menu">
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
           <li><a href="system.html">Rule Book</a></li>
           <li><a href="guides.html" aria-current="page">RP Tips & Guides</a></li>
+          <li><a href="playercard.html">Character Sheet</a></li>
           <li><a href="monsterguide.html">Monster Manual</a></li>
           <li><a href="monsterbuilder.html">Encounter Builder</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
-          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
@@ -46,7 +46,9 @@
     </ul>
   </nav>
 
+  <!-- Main -->
   <main class="assist-wrap">
+    <!-- Toolbar -->
     <div class="controls" id="assistControls">
       <button id="newTurnBtn" class="btn">+ New Turn</button>
       <button id="undoBtn" class="btn" title="Undo last edit">↶ Undo</button>
@@ -58,9 +60,18 @@
       <button id="exportJsonBtn" class="btn">⬇ Export JSON</button>
       <button id="exportCsvBtn" class="btn">⬇ Export CSV</button>
 
+      <!-- TEST -->
+      <button id="startEventBtn" class="btn">Start Local Event</button>
+      <button id="endEventBtn" class="btn" hidden>End Event</button>
+      <span id="pinBadge" class="badge" hidden></span>
+      <button id="openPlayerBtn" class="btn" title="Open Player View" hidden>Open Player View</button>
+      <button id="togglePlayersBtn" class="btn" title="Show Players grid" hidden>Players</button>
+      <!-- TEST local-event controls -->
+
       <span class="muted-note">Dungeon Master Assist:<br>Local session only — reset to clear.</span>
     </div>
 
+    <!-- Table -->
     <section class="assist-grid" id="assistGrid">
       <div class="grid-pane">
         <div class="table-wrap" id="tableWrap">
@@ -71,6 +82,26 @@
           </table>
         </div>
       </div>
+
+      <!-- TEST Players grid pane (hidden by default) -->
+      <div class="grid-pane" id="playersPane" hidden>
+        <div class="table-wrap">
+          <table class="assist-table" aria-label="Players">
+            <thead>
+              <tr>
+                <th class="name-cell">Player</th>
+                <th>HP</th>
+                <th>State</th>
+                <th>Stance</th>
+                <th>Perks</th>
+                <th>Last Roll</th>
+              </tr>
+            </thead>
+            <tbody id="playersBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- TEST Players grid pane -->
     </section>
   </main>
 
@@ -79,7 +110,10 @@
     <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
     <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
   </footer>
-  
+
+  <script src="local-sync.js"></script>
   <script src="dm-assist.js"></script>
+  <script type="module" src="assets/js/auth-ui.js"></script>
+  <script type="module" src="assets/js/auth-ui.js?v=3"></script>
 </body>
 </html>
