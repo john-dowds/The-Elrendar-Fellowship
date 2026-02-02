@@ -1533,6 +1533,42 @@ function wireEvents() {
     manualEntryWrap.style.display = "none";
     manualEntryText.value = "";
   });
+    // ---- Event delegation (bulletproof on live) ----
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+  
+      // Create Login button (inside profile overlay)
+      if (t && t.id === "btnCreateLogin") {
+        if (!selectedApp) return;
+  
+        const type = String(selectedApp.appType || (selectedApp.main ? "alt" : "main")).toLowerCase();
+        if (type !== "main") {
+          if (createLoginMsg) createLoginMsg.textContent = "Create Login is only available on MAIN profiles.";
+          return;
+        }
+  
+        if (createLoginMsg) createLoginMsg.textContent = "";
+        if (cl_msg) cl_msg.textContent = "";
+  
+        if (cl_mainCharacter) cl_mainCharacter.value = selectedApp.character || "";
+        if (cl_discord) cl_discord.value = selectedApp.discord || "";
+  
+        if (createLoginModal) createLoginModal.style.display = "block";
+        return;
+      }
+  
+      // Create Login modal buttons
+      if (t && t.id === "cl_cancel") {
+        if (createLoginModal) createLoginModal.style.display = "none";
+        if (cl_msg) cl_msg.textContent = "";
+        return;
+      }
+  
+      if (t && t.id === "cl_submit") {
+        createLoginForExistingMember();
+        return;
+      }
+    }, true);  
 }
 
 /* ─────────────────────────────────────────────────────────────
