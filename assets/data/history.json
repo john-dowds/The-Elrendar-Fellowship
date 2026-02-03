@@ -76,6 +76,22 @@
       ]
     },
     {
+      "id": "campaign4",
+      "title": "Campaign: A Call to Arms",
+      "subtitle": "MSQ Adjacent Campaign",
+      "date": "c. Year 42",
+      "summary_html": "<p>Disturbances have been reported across Azeroth, both in capitals and elsewhere, and a growing sense of unease has begun to sweep across the world. Darkness whispers at every turn, and the Fellowship steps forward to face it.</p>",
+      "order": 48,
+      "entries": [
+        {
+          "id": "campaign4.1",
+          "title": "Event: The Highlands Hitch",
+          "date": "February 6",
+          "summary_html": "<p>Sable Than'rune, a former spy and now-fellow of the order, sends word from the Highlands that the Fellowship's aid is required, though details are vague.</p>"
+        }
+      ]
+    },
+    {
       "id": "event016",
       "title": "PVE: Content Night",
       "subtitle": "Dungeons & Prep-Patch",
@@ -99,7 +115,7 @@
       "summary_html": "\n The Fellowship, under the direction of Tal'theas Sunfeather, journey to the ruins of Dalaran on the Isle of Dorn to pursue a missing ring of the Silver Covenant, one which has now drawn the attention of sinister Twilight cultists. Joined by Hespir Everwyern, Sorrien Kalos, Jeshacinin Evertrail, Kynsteria Vel'dinariel, Velara Clark, Dalentheus Ombrelune, and Arcanist Silanna Leyspire, the Fellowship breaches the shattered ruins and recovers the artifact. \n",
       "order": 45
     },
-        {
+    {
       "id": "campaign3",
       "title": "Campaign: Ashes of the Sunward Betrayal",
       "subtitle": "Long Narrative Campaign",
