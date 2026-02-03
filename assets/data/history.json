@@ -81,7 +81,7 @@
       "subtitle": "MSQ Adjacent Campaign",
       "date": "c. Year 42",
       "summary_html": "<p>Disturbances have been reported across Azeroth, both in capitals and elsewhere, and a growing sense of unease has begun to sweep across the world. Darkness whispers at every turn, and the Fellowship steps forward to face it.</p>",
-      "order": 48,
+      "order": 49,
       "entries": [
         {
           "id": "campaign4.1",
@@ -97,7 +97,7 @@
       "subtitle": "Dungeons & Prep-Patch",
       "date": "February 3",
       "summary_html": "\n The Fellowship delves into a series of timewalking dungeons, Mythic + dungeons, delves, and pre-patch content to push for further team integration and practice for Midnight.\n",
-      "order": 47
+      "order": 48
     },
     {
       "id": "event015",
@@ -105,7 +105,7 @@
       "subtitle": "January 29",
       "date": "c. Year 42",
       "summary_html": "\n The Fellowship welcomes in guests from abroad for an evening of prose and verse, with a grand prize for the winning of a haiku competition. In attendance are Ansinosth Summerbough, Kynseria Vel'dinariel, Jendral Rosepath, Haldarin Autumnveil, Ruecien Greywake, Lillia Sunveil, Laelisel Goldsong, Onitheril, and Papilio Havenfire, with Doctor Lillia Sunveil taking the grand prize.  \n",
-      "order": 46
+      "order": 47
     },
     {
       "id": "event014",
@@ -113,7 +113,7 @@
       "subtitle": "January 28",
       "date": "c. Year 42",
       "summary_html": "\n The Fellowship, under the direction of Tal'theas Sunfeather, journey to the ruins of Dalaran on the Isle of Dorn to pursue a missing ring of the Silver Covenant, one which has now drawn the attention of sinister Twilight cultists. Joined by Hespir Everwyern, Sorrien Kalos, Jeshacinin Evertrail, Kynsteria Vel'dinariel, Velara Clark, Dalentheus Ombrelune, and Arcanist Silanna Leyspire, the Fellowship breaches the shattered ruins and recovers the artifact. \n",
-      "order": 45
+      "order": 46
     },
     {
       "id": "campaign3",
@@ -121,7 +121,7 @@
       "subtitle": "Long Narrative Campaign",
       "date": "c. Year 42",
       "summary_html": "<p>Something stirs along the borders of Quel’thalas. Not a warband. Not a horde. Small movements. Measured strikes. Undead forces that advance, test, and withdraw as if learning, rather than conquering. Rangers report Scourge activity that does not behave as it should. Magisters note wards disturbed, not broken. Old places are being touched again. Border posts long abandoned, names long absent from record. Whatever leads these incursions understands elven magic. Understands procedure. Understands what was left behind. The Blood Knights have authorized a quiet response. Small teams. Limited knowledge. No assumptions. Some will strike at the threat directly. Others will follow the threads it leaves behind. Because this is not a story of invasion. It is a story of memory. Of duty. And of what happens when someone who was sworn to protect is never called home. \n The dead remember. \n And someone is making sure Quel’thalas does too.</p>",
-      "order": 44,
+      "order": 45,
       "entries": [
         {
           "id": "campaign3.1",
