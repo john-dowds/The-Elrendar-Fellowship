@@ -56,6 +56,84 @@ header.banner {
   pointer-events: none;
   z-index: 15000; /* keep way above everything */
 }
+/* ========== CURSORS (CANONICAL, SITE-WIDE) ========== */
+
+:root{
+  --cursor-default: url("assets/cursors/cursor_gauntlet_001.png") 8 8, auto;
+  --cursor-link:    url("assets/cursors/cursor_gauntlet_002.png") 8 8, pointer;
+  --cursor-submit:  url("assets/cursors/cursor_gauntlet_004.png") 8 8, pointer;
+  --cursor-blocked: url("assets/cursors/cursor_gauntlet_003.png") 8 8, not-allowed;
+}
+
+/* 1) Default everywhere */
+html, body{
+  cursor: var(--cursor-default);
+}
+
+/* 2) Interactive / clickable (generic) */
+a, a *,
+button, button *,
+[role="button"], [role="button"] *,
+summary, summary *,
+label[for], label[for] *,
+select, select *,
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+/* Common custom clickables */
+[onclick], [onclick] *,
+.is-clickable, .is-clickable *,
+/* Site components that were forcing system cursors */
+nav.menu-bar .dropdown-toggle,
+.splash-close,
+#campaign-splash .splash-modal .carousel-nav,
+.carousel-nav,
+.carousel-dot,
+.carousel-viewport,
+.carousel-viewport.dragging,
+.options button,
+.switch, .switch *,
+.switch .slider, .switch .slider::before{
+  cursor: var(--cursor-link) !important;
+}
+.chip, .chip *,
+.pill, .pill *,
+.tag,  .tag  *,
+.filter-chip, .filter-chip *,
+.trait-chip, .trait-chip *,
+[data-chip], [data-chip] * {
+  cursor: var(--cursor-link) !important;
+}
+.builder-wrap .chip,
+.builder-wrap .chip * {
+  cursor: var(--cursor-link) !important;
+}
+
+
+
+/* 3) “Submit / Commit” actions */
+button[type="submit"]:not(:disabled):not([aria-disabled="true"]),
+input[type="submit"]:not(:disabled):not([aria-disabled="true"]),
+.btn-primary:not(:disabled):not([aria-disabled="true"]),
+
+/* Export / commit buttons (Monster Builder & other tools) */
+#exportExcel,
+#exportJson,
+#exportCsv,
+.btn.is-export,
+.btn.is-commit{
+  cursor: var(--cursor-submit) !important;
+}
+
+/* 4) Blocked / disabled submit */
+button[type="submit"]:disabled,
+input[type="submit"]:disabled,
+button[type="submit"][aria-disabled="true"],
+input[type="submit"][aria-disabled="true"],
+.is-submit-blocked{
+  cursor: var(--cursor-blocked) !important;
+}
 
 /* ========== NAVIGATION (STICKY + DROPDOWNS) ========== */
 /*  main menu; sticky; must sit above page toolbars */
