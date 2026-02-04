@@ -257,8 +257,7 @@
           <li><a href="system.html">Rule Book</a></li>
           <li><a href="guides.html" aria-current="page">RP Tips & Guides</a></li>
           <li><a href="playercard.html">Character Sheet</a></li>
-          <li><a href="monsterguide.html">Monster Manual</a></li>
-          <li><a href="monsterbuilder.html">Encounter Builder</a></li>
+          <li><a href="monstersuite.html">Monster Manual</a></li>
           <li><a href="dm-assist.html">DM Event Assistant</a></li>
         </ul>
       </li>
@@ -679,7 +678,7 @@
   
         for (const e of ents){
           const a = document.createElement('a');
-          a.href = `monsterguide.html#${encodeURIComponent(e.id)}`;
+          a.href = `monstersuite.html#${encodeURIComponent(e.id)}`;
           a.title = [e.class, e.category, e.subcategory].filter(Boolean).join(' • ');
           a.textContent = e.name;
           tags.appendChild(a);
