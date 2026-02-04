@@ -314,7 +314,7 @@
       ],
       "description": "Overseers who lead demonic cohorts with iron cruelty.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
-      "image": "assets/art/monsters/fellord.png"
+      "image": "assets/art/monsters/moarg.png"
     },
     {
       "id": "demon_moarg_engineer",
@@ -339,7 +339,7 @@
       ],
       "description": "Tinker-butchers who fuse metal, meat, and misery.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
-      "image": "assets/art/monsters/moarg.png"
+      "image": "assets/art/monsters/moarg_engineer.png"
     },
     {
       "id": "demon_ganarg_servitor",
@@ -364,7 +364,7 @@
       ],
       "description": "Fidgeting underlings who maintain the Legion’s engines.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
-      "image": "assets/art/monsters/moarg.png"
+      "image": "assets/art/monsters/ganarg.png"
     },
     {
       "id": "demon_doomlord",
@@ -520,7 +520,7 @@
       ],
       "description": "Spell-eating hounds unleashed against mages and wards.",
       "campaignLinks": ["wota","tbc","fallqt","legion","campaign1"],
-      "image": "assets/art/monsters/felhunter.png"
+      "image": "assets/art/monsters/fel_hunter.png"
     },
     {
       "id": "demon_felstalker",
