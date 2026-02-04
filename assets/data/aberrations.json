@@ -894,7 +894,9 @@
         }
       ],
       "description": "A robed entity of the void that opens hairline tears in reality to drag prey into the dark between stars.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_caller.png"
+
     },
     {
       "id": "aberration_void_revenant",
@@ -924,7 +926,9 @@
         }
       ],
       "description": "A remnant soul stitched back together with umbral hunger—silent, relentless, and difficult to pin down.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_revenant.png"
+
     },
     {
       "id": "aberration_void_hound",
@@ -954,7 +958,9 @@
         }
       ],
       "description": "A prowling void-beast that hunts by scenting fear and unraveling concealment with hungry, starless eyes.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_hound.png"
+
     },
     {
       "id": "aberration_void_lord",
@@ -984,7 +990,8 @@
         }
       ],
       "description": "A towering commander of the void, armored in fragments of collapsing stars.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_lord.png"
     },
     {
       "id": "aberration_void_god",
@@ -1014,7 +1021,8 @@
         }
       ],
       "description": "An incomprehensible sovereign of the deep dark—its presence bends fate, and its openings in reality become battlefields.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_god.png"
     }
   ]
 }
