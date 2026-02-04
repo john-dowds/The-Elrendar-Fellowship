@@ -36,7 +36,9 @@
         }
       ],
       "description": "Void-spawned lieutenants of the Old Gods, all eyes, tendrils, and whispers.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/faceless_one.png"
+
     },
     {
       "id": "aberration_cthraxx",
@@ -72,7 +74,9 @@
         }
       ],
       "description": "War-champions among the faceless, towering horrors bearing Old God sigils.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/cthraxx.png"
+
     },
     {
       "id": "aberration_forgotten_one",
@@ -108,7 +112,8 @@
         }
       ],
       "description": "A lumpen offshoot of Old God growth; mouths and eyes without reason.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/faceless_one.png"
     },
     {
       "id": "aberration_eye_of_the_old_god",
@@ -144,7 +149,8 @@
         }
       ],
       "description": "A floating ocular horror that projects the will of its master.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_eye.png"
     },
     {
       "id": "aberration_corruptor_tentacle",
@@ -174,7 +180,8 @@
         }
       ],
       "description": "A sinewed conduit for void corruption, writhing with malevolence.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/tentacle_corruptor.png"
     },
     {
       "id": "aberration_void_lasher",
@@ -198,7 +205,8 @@
         }
       ],
       "description": "Fast, tendriled attackers that lash minds and flesh alike.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/tentacle_void.png"
     },
     {
       "id": "silithid_worker",
@@ -231,7 +239,8 @@
       "campaignLinks": [
         "classic",
         "aq40"
-      ]
+      ],
+      "image": "assets/art/monsters/silithid_warrior.png"
     },
     {
       "id": "silithid_soldier",
@@ -261,7 +270,8 @@
         }
       ],
       "description": "Hardened warriors forming the bulk of hive armies.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/silithid_warrior.png"
     },
     {
       "id": "silithid_wasp",
@@ -291,7 +301,8 @@
         }
       ],
       "description": "Aerial attackers used to harass and scatter foes.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/silithid_wasp.png"
     },
     {
       "id": "silithid_colossus",
@@ -321,7 +332,8 @@
         }
       ],
       "description": "Titanic Silithid war-beasts worshipped as avatars of the hive.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/silithid_colossus.png"
     },
     {
       "id": "nerubian_warrior",
@@ -354,7 +366,8 @@
       "campaignLinks": [
         "wotlk",
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/nerubian_warrior.png"
     },
     {
       "id": "nerubian_spiderlord",
@@ -393,7 +406,8 @@
       "campaignLinks": [
         "wotlk",
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/nerubian_general.png"
     },
     {
       "id": "nerubian_seer",
@@ -426,7 +440,8 @@
       "campaignLinks": [
         "wotlk",
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/nerubian_seer.png"
     },
     {
       "id": "nerubian_commander",
@@ -465,7 +480,8 @@
       "campaignLinks": [
         "wotlk",
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/evolved_nerubian_seer.png"
     },
     {
       "id": "aberration_void_spawn",
@@ -497,7 +513,8 @@
       "description": "Small voidlings congealed from ambient shadow.",
       "campaignLinks": [
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/flesh_aberration.png"
     },
     {
       "id": "aberration_void_tendril",
@@ -523,7 +540,8 @@
       "description": "Strands of living shadow that clutch and bind.",
       "campaignLinks": [
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/tentacle_void.png"
     },
     {
       "id": "aberration_void_wraith",
@@ -561,7 +579,8 @@
       "description": "A lean silhouette of malice, stalking from the edges of reality.",
       "campaignLinks": [
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/void_wraith.png"
     },
     {
       "id": "aberration_rift_keeper",
@@ -599,7 +618,8 @@
       "description": "A gate-warden that stabilizes and feeds from a tear in the veil.",
       "campaignLinks": [
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/void_spawn.png"
     },
     {
       "id": "aberration_umbral_emanation",
@@ -631,7 +651,8 @@
       "description": "A condensed knot of shadowstuff, scarcely bound into shape.",
       "campaignLinks": [
         "tww"
-      ]
+      ],
+      "image": "assets/art/monsters/void_wraith.png"
     },
     {
       "id": "aberration_flesh_horror",
@@ -661,7 +682,8 @@
         }
       ],
       "description": "Meat and bone rallied by alien will into a hateful shape.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/flesh_aberration.png"
     },
     {
       "id": "aberration_shambling",
@@ -830,6 +852,19 @@
       ],
       "description": "A hungry slick of protoplasm animated by wrong magic.",
       "campaignLinks": []
+    },
+    {
+      "id": "void_rift",
+      "name": "Void Rift",
+      "class": "Aberrations",
+      "category": "Portals",
+      "subcategory": "Rifts",
+      "hp": 200,
+      "traits": [      ],
+      "description": "A void rift which enables passage through the shadowy realms of the void.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_rift.png"
+
     }
   ]
 }
