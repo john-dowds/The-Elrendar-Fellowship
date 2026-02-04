@@ -865,6 +865,156 @@
       "campaignLinks": [],
       "image": "assets/art/monsters/void_rift.png"
 
+    },
+    {
+      "id": "aberration_voidcaller",
+      "name": "Voidcaller",
+      "class": "Voidcaller",
+      "category": "Aberrations",
+      "subcategory": "Void Spawn",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Void Bolt",
+          "trait": "void_bolt",
+          "theme": "damage",
+          "effect": "Blasts enemies with void energy."
+        },
+        {
+          "name": "Bind Rift",
+          "trait": "bind_rift",
+          "theme": "roots",
+          "effect": "Anchors a void tear to destabilize enemies and pull them towards the rift."
+        },
+        {
+          "name": "Void Prophecy",
+          "trait": "void_prophecy",
+          "theme": "utility",
+          "effect": "Spreads fear with visions of doom."
+        }
+      ],
+      "description": "A robed entity of the void that opens hairline tears in reality to drag prey into the dark between stars.",
+      "campaignLinks": []
+    },
+    {
+      "id": "aberration_void_revenant",
+      "name": "Void Revenant",
+      "class": "Void Revenant",
+      "category": "Aberrations",
+      "subcategory": "Void Spawn",
+      "hp": 40,
+      "traits": [
+        {
+          "name": "Void Blade",
+          "trait": "void_blade",
+          "theme": "damage",
+          "effect": "Bypasses shields briefly."
+        },
+        {
+          "name": "Void Root",
+          "trait": "void_root",
+          "theme": "roots",
+          "effect": "Grasping tendrils seize the target in place, preventing movement."
+        },
+        {
+          "name": "Void Stealth",
+          "trait": "void_stealth",
+          "theme": "utility",
+          "effect": "Merges with shadow, becoming harder to target."
+        }
+      ],
+      "description": "A remnant soul stitched back together with umbral hunger—silent, relentless, and difficult to pin down.",
+      "campaignLinks": []
+    },
+    {
+      "id": "aberration_void_hound",
+      "name": "Void Hound",
+      "class": "Void Beast",
+      "category": "Aberrations",
+      "subcategory": "Void Spawn",
+      "hp": 20,
+      "traits": [
+        {
+          "name": "Void Sense",
+          "trait": "void_sense",
+          "theme": "damage",
+          "effect": "Detects illusions and hidden foes."
+        },
+        {
+          "name": "Void Root",
+          "trait": "void_root",
+          "theme": "roots",
+          "effect": "Grasping tendrils seize the target in place, preventing movement."
+        },
+        {
+          "name": "Void Strike",
+          "trait": "void_strike",
+          "theme": "damage",
+          "effect": "Strikes the target with a warped bolt of shadow, dealing direct damage."
+        }
+      ],
+      "description": "A prowling void-beast that hunts by scenting fear and unraveling concealment with hungry, starless eyes.",
+      "campaignLinks": []
+    },
+    {
+      "id": "aberration_void_lord",
+      "name": "Void Lord",
+      "class": "Void Lord",
+      "category": "Aberrations",
+      "subcategory": "Void Spawn",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Void Ward",
+          "trait": "void_ward",
+          "theme": "aoe",
+          "effect": "Absorbs attacks until overwhelmed, and then unleashes that damage in an explosion."
+        },
+        {
+          "name": "Rift Explosion",
+          "trait": "rift_explosion",
+          "theme": "aoe",
+          "effect": "Collapses a Void Rift to unleash an explosion that injures and weakens enemies."
+        },
+        {
+          "name": "Void Rift",
+          "trait": "void_rift",
+          "theme": "translocation",
+          "effect": "Summons a portal that disrupts terrain briefly."
+        }
+      ],
+      "description": "A towering commander of the void, armored in fragments of collapsing stars.",
+      "campaignLinks": []
+    },
+    {
+      "id": "aberration_void_god",
+      "name": "Void God",
+      "class": "Void God",
+      "category": "Aberrations",
+      "subcategory": "Void Spawn",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Voidstorm",
+          "trait": "voidstorm",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
+        },
+        {
+          "name": "Rift Implosion",
+          "trait": "rift_implosion",
+          "theme": "roots",
+          "effect": "Collapses a Void Rift to create a gravity well, sucking all enemies towards it."
+        },
+        {
+          "name": "Voidmancer's Ritual",
+          "trait": "voidmancers_ritual",
+          "theme": "translocation",
+          "effect": "Summons the most powerful aberrant void entities as elites, or bosses."
+        }
+      ],
+      "description": "An incomprehensible sovereign of the deep dark—its presence bends fate, and its openings in reality become battlefields.",
+      "campaignLinks": []
     }
   ]
 }
