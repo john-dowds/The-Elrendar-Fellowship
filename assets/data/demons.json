@@ -389,7 +389,7 @@
       ],
       "description": "Winged commanders who lead whole armies of the Legion to invade and break worlds.",
       "campaignLinks": ["wota","tbc","fallqt","legion"],
-      "image": "assets/art/monsters/doomlord.png"
+      "image": "assets/art/monsters/doomguard.png"
     },
     {
       "id": "demon_doomguard",
