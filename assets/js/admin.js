@@ -391,7 +391,7 @@ function renderTable() {
   <td>${r.discord || ""}</td>
 
   <td>${renderStatusSelect(status)}</td>
-  <td>${renderActiveToggle(activeState)}</td>
+  <td>${renderActiveCell(r)}</td>
 
   <td>${r.server || ""}</td>
   <td>${r.name || ""}</td>
@@ -443,6 +443,18 @@ function renderTable() {
 
     appsBody.appendChild(tr);
   }
+}
+
+function renderActiveCell(row) {
+  const type = String(row.appType || (row.main ? "alt" : "main")).toLowerCase();
+
+  // ALTS never get login controls
+  if (type === "alt") {
+    return `<span class="cell-muted">Alt character</span>`;
+  }
+
+  // MAINS get the real toggle
+  return renderActiveToggle(row.activeState || ACTIVE_STATES.DISABLED);
 }
 
 function renderStatusSelect(value) {
