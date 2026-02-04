@@ -871,7 +871,7 @@
       "name": "Voidcaller",
       "class": "Voidcaller",
       "category": "Aberrations",
-      "subcategory": "Void Spawn",
+      "subcategory": "Voidspawn",
       "hp": 18,
       "traits": [
         {
@@ -901,7 +901,7 @@
       "name": "Void Revenant",
       "class": "Void Revenant",
       "category": "Aberrations",
-      "subcategory": "Void Spawn",
+      "subcategory": "Voidspawn",
       "hp": 40,
       "traits": [
         {
@@ -931,7 +931,7 @@
       "name": "Void Hound",
       "class": "Void Beast",
       "category": "Aberrations",
-      "subcategory": "Void Spawn",
+      "subcategory": "Voidspawn",
       "hp": 20,
       "traits": [
         {
@@ -961,7 +961,7 @@
       "name": "Void Lord",
       "class": "Void Lord",
       "category": "Aberrations",
-      "subcategory": "Void Spawn",
+      "subcategory": "Voidspawn",
       "hp": 200,
       "traits": [
         {
@@ -991,7 +991,7 @@
       "name": "Void God",
       "class": "Void God",
       "category": "Aberrations",
-      "subcategory": "Void Spawn",
+      "subcategory": "Voidspawn",
       "hp": 200,
       "traits": [
         {
