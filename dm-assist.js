@@ -19,12 +19,13 @@ const els = {
 
 /* Guide Navigation */
 function openGuide(params) {
-  const url = new URL('monsterguide.html', window.location.href);
+  const url = new URL('monstersuite.html', window.location.href);
   Object.entries(params || {}).forEach(([k, v]) => {
     if (v != null && String(v).trim() !== '') url.searchParams.set(k, v);
   });
   window.location.assign(url.toString());
 }
+
 
 /* Utilities */
 const uid = () => Math.random().toString(36).slice(2, 10);
@@ -604,3 +605,108 @@ function statusClass(effect) {
 load();
 renderAll();
 updateStickyMetrics();
+
+/* ────────────────────────────────────────────────────────────── */
+/* NEW: Local event sync (LocalAdapter) */
+const localSync = new LocalAdapter();
+let currentEventId = null;
+let monstersDebounceTimer = null;
+const pinBadge = document.getElementById('pinBadge');
+const startBtn = document.getElementById('startEventBtn');
+const endBtn   = document.getElementById('endEventBtn');
+const openPlayerBtn = document.getElementById('openPlayerBtn');
+const togglePlayersBtn = document.getElementById('togglePlayersBtn');
+const playersPane = document.getElementById('playersPane');
+const playersBody = document.getElementById('playersBody');
+
+function sanitizeMonsters(){
+  // Only fields the Player View needs
+  return (state.targets || []).reduce((acc, t) => {
+    acc[t.id] = {
+      id: t.id,
+      name: t.name || t.baseName || 'Monster',
+      class: t.class || '',
+      category: t.category || '',
+      subcategory: t.subcategory || '',
+      level: t.level || '',
+      maxHP: Number(t.maxHP) || 1,
+      turns: Array.from(t.turns || []),
+      statusEffect: t.statusEffect || 'Active',
+      traitsText: t.traitsText || ''
+    };
+    return acc;
+  }, {});
+}
+
+// Publish monsters after each render (debounced)
+const origRenderAll = renderAll;
+renderAll = function(){
+  origRenderAll();
+  if (!currentEventId) return;
+  clearTimeout(monstersDebounceTimer);
+  monstersDebounceTimer = setTimeout(()=>{
+    localSync.publishMonsters(currentEventId, sanitizeMonsters());
+  }, 120);
+};
+
+// Players subscription (read-only view on DM side)
+let unsubPlayers = null;
+function subscribePlayers(){
+  if (!currentEventId) return;
+  if (unsubPlayers) { try{unsubPlayers();}catch{} unsubPlayers=null; }
+  unsubPlayers = localSync.subscribePlayers(currentEventId, (players) => {
+    playersBody.innerHTML = '';
+    if (!players) return;
+    const frag = document.createDocumentFragment();
+    Object.values(players).forEach(p => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="name-cell">
+          <div class="name-stack">
+            <div class="name-line">${escapeHtml(p.name || 'Player')}</div>
+            ${p.class ? `<div class="inline-text">${escapeHtml(p.class)}</div>` : ''}
+          </div>
+        </td>
+        <td class="current-hp">${Number(p.hp) || 0}</td>
+        <td>${escapeHtml(p.state || 'Active')}</td>
+        <td>${escapeHtml(p.stance || '')}</td>
+        <td>${escapeHtml([p.perk1, p.perk2].filter(Boolean).join(' • '))}</td>
+        <td>${(p.rolls && p.rolls[0]) ? Number(p.rolls[0].r) : ''}</td>
+      `;
+      frag.appendChild(tr);
+    });
+    playersBody.appendChild(frag);
+  });
+}
+
+startBtn.addEventListener('click', async ()=>{
+  try{
+    const { eventId, pin } = await localSync.createEvent();
+    currentEventId = eventId;
+    pinBadge.textContent = `PIN: ${pin}`; pinBadge.hidden = false;
+    endBtn.hidden = false; openPlayerBtn.hidden = false; togglePlayersBtn.hidden = false;
+    startBtn.hidden = true;
+
+    subscribePlayers();
+    // immediate publish of current table
+    localSync.publishMonsters(currentEventId, sanitizeMonsters());
+  }catch(e){ alert('Could not start local event.'); }
+});
+
+endBtn.addEventListener('click', async ()=>{
+  if (!currentEventId) return;
+  await localSync.endEvent(currentEventId);
+  currentEventId = null;
+  pinBadge.hidden = true; endBtn.hidden = true; openPlayerBtn.hidden = true; togglePlayersBtn.hidden = true;
+  startBtn.hidden = false;
+  playersBody.innerHTML = '';
+});
+
+openPlayerBtn.addEventListener('click', ()=>{
+  // Opens player view in a new tab — user enters the PIN there
+  window.open('player-view.html', '_blank');
+});
+
+togglePlayersBtn.addEventListener('click', ()=>{
+  playersPane.hidden = !playersPane.hidden;
+});
