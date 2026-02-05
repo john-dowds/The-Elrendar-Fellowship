@@ -5,20 +5,17 @@
   <title>Monster Suite — The Elrendar Fellowship</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- site-wide styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Monster Builder dependency (kept) -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
-    /* ======= Keep existing pages' “z-index safety” lines ======= */
     nav.menu-bar { z-index: 1200 !important; }
     nav.menu-bar .dropdown-menu { z-index: 1300 !important; }
     a, a:visited { color: #fce5cd; }
 
     /* =============================================================================
-       NEW: TOP-OF-WINDOW TAB STRIP (only structural addition requested)
+       NEW: TOP-OF-WINDOW TAB STRIP
        ============================================================================= */
     .suite-wrap{
       max-width:1200px;
@@ -36,26 +33,26 @@
 
     .suite-tabbar{
         display:flex;
-  flex-wrap:nowrap;           /* single row */
+  flex-wrap:nowrap; 
   gap:.75rem;
-  padding:.5rem .75rem;       /* slimmer */
+  padding:.5rem .75rem;     
   border-bottom:1px solid rgba(252,229,205,.15);
   background:rgba(0,0,0,.35);
 
-  position: relative;         /* NOT sticky -> no overlay */
+  position: relative;        
   top: auto;
   z-index: 1;
   backdrop-filter: blur(2px);
 }
 
 .suite-tabbtn{
-  flex: 1 1 0;                /* each button takes half the row */
+  flex: 1 1 0;              
   display:flex;
   align-items:center;
-  justify-content:center;      /* centered label */
+  justify-content:center;  
   gap:.4rem;
 
-  padding:.7rem 1.25rem;       /* bigger click target */
+  padding:.7rem 1.25rem;      
   border:1px solid rgba(252,229,205,.25);
   border-radius:999px;
   cursor:pointer;
@@ -72,14 +69,14 @@
 
     .suite-panel{
       display:none;
-      padding:0; /* each page keeps its own internal spacing */
+      padding:0; 
     }
     .suite-panel.is-active{
       display:block;
     }
 
     /* =============================================================================
-       ORIGINAL: Monster Builder inline styles (copied as-is)
+       Monster Builder inline styles
        ============================================================================= */
     .builder-wrap{ max-width:1200px; margin:2rem auto; padding:0 1rem; color:#fce5cd; }
     .controls{
@@ -150,7 +147,7 @@
     .trait-preview .t-meta{ opacity:.85; font-size:.9rem; margin-bottom:.25rem; }
 
     /* =============================================================================
-       ORIGINAL: Monster Guide inline styles (copied as-is)
+       Monster Guide inline styles
        ============================================================================= */
     .monsterguide-wrap{
       max-width: 1200px;
@@ -332,7 +329,7 @@
   </nav>
 
   <!-- =============================================================================
-       NEW: Combined page wrapper + TOP TABS
+       Combined page wrapper + TOP TABS
        ============================================================================= -->
   <main class="suite-wrap">
     <section class="suite-tabs" aria-label="Monster Suite Tabs">
@@ -346,7 +343,7 @@
         
       </div>
 
-      <!-- ===================== PANEL: Monster Manual (original main content) ===================== -->
+      <!-- ===================== PANEL: Monster Manual ===================== -->
       <div class="suite-panel is-active" id="panel-manual" role="tabpanel" aria-labelledby="tab-manual">
         <main class="monsterguide-wrap">
           <section class="scroll-pane" id="monsterguide-list">
@@ -371,7 +368,7 @@
         </main>
       </div>
 
-      <!-- ===================== PANEL: Monster Builder (original main content) ===================== -->
+      <!-- ===================== PANEL: Monster Builder ===================== -->
       <div class="suite-panel" id="panel-builder" role="tabpanel" aria-labelledby="tab-builder">
         <main class="builder-wrap">
           <div class="controls">
@@ -413,7 +410,7 @@
   </footer>
 
   <!-- =============================================================================
-       NEW: Outer tab switcher only (doesn't touch either tool's logic)
+       NEW: Outer tab switcher only 
        ============================================================================= -->
   <script>
     (function(){
@@ -447,7 +444,7 @@
   </script>
 
   <!-- =============================================================================
-       ORIGINAL: Monster Builder script (copied as-is)
+       Monster Builder script
        ============================================================================= -->
   <script>
     const dataFiles = [
@@ -1052,7 +1049,7 @@
   </script>
 
   <!-- =============================================================================
-       ORIGINAL: Monster Manual scripts (copied as-is)
+      Monster Manual scripts 
        ============================================================================= -->
   <script>
     (async function () {
@@ -1626,7 +1623,6 @@
     })();
   </script>
 
-  <!-- Keep auth-ui includes (once) -->
   <script type="module" src="assets/js/auth-ui.js"></script>
   <script type="module" src="assets/js/auth-ui.js?v=3"></script>
 </body>
