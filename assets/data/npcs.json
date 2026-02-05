@@ -8,7 +8,7 @@
       "class": "Archmage",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/aethassunreaver.png",
+      "image": "assets/art/monsters/aethas_sunreaver.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -201,7 +201,6 @@
       "class": "Archmage",
       "category": "NPCs",
       "subcategory": "Kirin Tor",
-      "image": "assets/art/monsters/khadgar.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -250,7 +249,8 @@
         "legion",
         "tww",
         "bfa"
-      ]
+      ],
+      "image": "assets/art/monsters/khadgar.png"
     },
     {
       "id": "sylvanas_windrunner",
@@ -321,7 +321,7 @@
       "class": "Blood Knight",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/genericbloodknight.png",
+      "image": "assets/art/monsters/bloodknights.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -364,7 +364,6 @@
       "class": "Captain / Paladin",
       "category": "NPCs",
       "subcategory": "Quel'dorei",
-      "image": "assets/art/monsters/auricsunchaser.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -378,38 +377,39 @@
       "hp": 18,
       "traits": [
         {
-          "name": "Rift Implosion",
-          "trait": "Shield",
-          "theme": "roots",
-          "effect": "Collapses a Void Rift to create a gravity well, sucking all enemies towards it."
-        },
-        {
-          "name": "Lunar Blessing",
-          "trait": "Damage Over Time",
-          "theme": "buffs",
-          "effect": "Lunar blessings protect against incoming damage for one turn."
-        },
-        {
-          "name": "Hammer of the Naaru",
-          "trait": "Crushing Attack",
+          "name": "Aimed Shot",
+          "trait": "Precise Attack",
           "theme": "damage",
-          "effect": "Strikes with radiant force."
+          "effect": "Ignores all armor and line of sight barriers to deal heavy damage. "
         },
         {
-          "name": "Blessing of Elune",
-          "trait": "Empower",
-          "theme": "buffs",
-          "effect": "Empowers allies with holy lunar radiance."
-        },
-        {
-          "name": "Draconic Crash",
-          "trait": "Stun",
+          "name": "Poisoned Arrow",
+          "trait": "Damage Over Time",
           "theme": "debuffs",
-          "effect": "Descends rapidly from the sky and slams into the ground, throwing everyone nearby backwards and stunning them, leaving them vulnerable."
+          "effect": "Inflicts poison condition on a target."
+        },
+        {
+          "name": "Coordinated Fire",
+          "trait": "Stun",
+          "theme": "buffs",
+          "effect": "Coordinated volleys stagger enemy lines, adding +1 damage done for all allies who join the effort firing at the target."
+        },
+        {
+          "name": "Spellbane Arrow",
+          "trait": "Dash",
+          "theme": "utility",
+          "effect": "Shots disrupt enemy spellcasting briefly."
+        },
+        {
+          "name": "Cannon Shot",
+          "trait": "Weaken",
+          "theme": "aoe",
+          "effect": "Long ranged ballistae shot that weakens fortifications."
         }
       ],
       "description": "High elven captain and visible standard-bearer for the Silver Covenant’s honor.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/auric_sunchaser.png"
     },
     {
       "id": "dark_ranger_velonara",
@@ -417,7 +417,7 @@
       "class": "Dark Ranger",
       "category": "NPCs",
       "subcategory": "Forsaken",
-      "image": "assets/art/monsters/genericdarkranger.png",
+      "image": "assets/art/monsters/velonara.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -689,7 +689,7 @@
       "class": "Void Mentor (Ethereal)",
       "category": "NPCs",
       "subcategory": "Ethereals",
-      "image": "assets/art/monsters/locuswalker.png",
+      "image": "assets/art/monsters/locus_walker.png",
       "hp": 22,
       "traits": [
         {
@@ -825,7 +825,7 @@
       "class": "Magister",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/astalorbloodsworn.png",
+      "image": "assets/art/monsters/astalor_bloodsworn.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2622,7 +2622,7 @@
       "class": "Blood Knight Matriarch",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/ladyliadrin.png",
+      "image": "assets/art/monsters/liadrin.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2682,7 +2682,7 @@
       "class": "Blood Knight",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/mehlardawnblade.png",
+      "image": "assets/art/monsters/mehlar_dawnblade.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2719,7 +2719,7 @@
       "class": "Ranger-Captain / Void-Hunter",
       "category": "NPCs",
       "subcategory": "Ren'dorei",
-      "image": "assets/art/monsters/alleriawindrunner.png",
+      "image": "assets/art/monsters/alleria_windrunner.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2783,7 +2783,7 @@
       "class": "Ranger-Captain",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/genericranger.png",
+      "image": "assets/art/monsters/venn'ren.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2828,7 +2828,7 @@
       "class": "Ranger-General",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/halduronbrightwing.png",
+      "image": "assets/art/monsters/halduron_brightwing.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2888,7 +2888,7 @@
       "class": "Ranger-General / Silver Covenant",
       "category": "NPCs",
       "subcategory": "Quel'dorei",
-      "image": "assets/art/monsters/vereesawindrunner.png",
+      "image": "assets/art/monsters/vereesa_windrunner.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2953,7 +2953,7 @@
       "class": "Regent Lord / Ranger Lord",
       "category": "NPCs",
       "subcategory": "Sin'dorei",
-      "image": "assets/art/monsters/lorthemartheron.png",
+      "image": "assets/art/monsters/lorthemar_theron.png",
       "alsoAppearsIn": [
         {
           "category": "NPCs",
@@ -2990,7 +2990,7 @@
           "name": "Cannon Shot",
           "trait": "Weaken",
           "theme": "aoe",
-          "effect": "Long ranged cannon shot that weakens fortifications."
+          "effect": "Long ranged ballistae shot that weakens fortifications."
         }
       ],
       "description": "Regent Lord of Quel'Thalas. A measured statesman and veteran ranger, balancing Silvermoon's politics with the realm’s defense.",
