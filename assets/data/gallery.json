@@ -862,5 +862,32 @@
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
+  },
+  {
+    "id": "img097",
+    "src": "assets/gallery/soiree9.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
+    "album": "Socials",
+    "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
+  },
+  {
+    "id": "img98",
+    "src": "assets/gallery/soiree10.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
+    "album": "Socials",
+    "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
+  },
+  {
+    "id": "img099",
+    "src": "assets/gallery/soiree11.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
+    "album": "Socials",
+    "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
   }
 ]
