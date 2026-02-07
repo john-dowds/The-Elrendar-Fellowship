@@ -3157,7 +3157,7 @@
   "id": "portal_keeper_sylas",
   "name": "Portal Keeper Sylas",
   "class": "Mage",
-  "category": "NPC",
+  "category": "NPCs",
   "subcategory": "Devouring Host",
   "hp": 250,
   "traits": [
