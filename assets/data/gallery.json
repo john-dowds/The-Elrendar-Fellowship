@@ -1114,5 +1114,32 @@
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
+  },
+  {
+    "id": "img125",
+    "src": "assets/gallery/quietthreads_001.png",
+    "thumb": "",
+    "title": "Quiet Threads",
+    "caption": "Members of the Fellowship work to uncover the nature of the threats arrayed against them, with a sharp focus on the arcane focus, the scraps of paper, and other items taken from the battle in the Ghostlands some nights prior.",
+    "album": "Events",
+    "tags": ["members", "events", "Kynseria Vel'dinariel", "Alen'dris Sunblossom","Thalendir Dawncrest"]
+  },
+  {
+    "id": "img126",
+    "src": "assets/gallery/quietthreads_002.png",
+    "thumb": "",
+    "title": "Quiet Threads",
+    "caption": "Members of the Fellowship work to uncover the nature of the threats arrayed against them, with a sharp focus on the arcane focus, the scraps of paper, and other items taken from the battle in the Ghostlands some nights prior.",
+    "album": "Events",
+    "tags": ["members", "events", "Kynseria Vel'dinariel", "Alen'dris Sunblossom","Thalendir Dawncrest"]
+  },
+  {
+    "id": "img127",
+    "src": "assets/gallery/quietthreads_003.png",
+    "thumb": "",
+    "title": "Quiet Threads",
+    "caption": "Members of the Fellowship work to uncover the nature of the threats arrayed against them, with a sharp focus on the arcane focus, the scraps of paper, and other items taken from the battle in the Ghostlands some nights prior.",
+    "album": "Events",
+    "tags": ["members", "events", "Kynseria Vel'dinariel", "Alen'dris Sunblossom","Thalendir Dawncrest"]
   }
 ]
