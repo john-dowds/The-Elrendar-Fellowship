@@ -76,6 +76,14 @@
       ]
     },
     {
+      "id": "event017",
+      "title": "Event: Fellow's Soirée",
+      "subtitle": "February 5",
+      "date": "c. Year 42",
+      "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's event hall. In attendance: <li>Ansinosth Summerbough</li><li>Haldarin Autumnveil</li><li>Jeshacinin Evertrail</li><li>Velara Clarke</li><li>Onitheril</li><li>Divine Chaniste Skyguard</li><li>Railery</li><li>Elodi Solaris</li>and<li>Faeyli Nuth'danil</li>\n",
+      "order": 50
+    },
+    {
       "id": "campaign4",
       "title": "Campaign: A Call to Arms",
       "subtitle": "MSQ Adjacent Campaign",
@@ -87,7 +95,7 @@
           "id": "campaign4.1",
           "title": "Event: The Highlands Hitch",
           "date": "February 6",
-          "summary_html": "<p>Sable Than'rune, a former spy and now-fellow of the order, sends word from the Highlands that the Fellowship's aid is required, though details are vague. Members quickly assemble and deploy, following Sable into a cave in the Highlands where Twilight cultists are hard at work excavating the bones of dead black dragons, and hauling the remains through a series of portals. Recognizing some of the mages present as those aiding Magisters Umbric and Rommath, suspicions are raised of what role the Thalassian elves might be playing in whatever nefarious plot the cultists are working up.<br><br>Present among the Fellows who endeavor to close the portal and halt the cultist activity are Sable Than'rune, Alend'dris Sunblossom, Allithndria, Laelisel Goldsong, Calcydo, and Norvina Black.</p>"
+          "summary_html": "<p>Sable Than'rune, a former spy and now-fellow of the order, sends word from the Highlands that the Fellowship's aid is required, though details are vague. Members quickly assemble and deploy, following Sable into a cave in the Highlands where Twilight cultists are hard at work excavating the bones of dead black dragons, and hauling the remains through a series of portals. Recognizing some of the mages present as those aiding Magisters Umbric and Rommath, suspicions are raised of what role the Thalassian elves might be playing in whatever nefarious plot the cultists are working up.<br><br>Present among the Fellows who endeavor to close the portal and halt the cultist activity are Sable Than'rune, Alend'dris Sunblossom, Allithndria, Laelisel Goldsong, Calcydo, Ansinosth Summerbough, Tal'theas Sunfeather, Velara Clark, and Norvina Black.</p>"
         }
       ]
     },
