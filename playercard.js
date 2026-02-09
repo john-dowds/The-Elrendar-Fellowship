@@ -1,15 +1,18 @@
-/* Player Quick Card (offline template)
+/* Player Quick Card
    - Local state save/load
    - Local “Profiles” save/load (placeholder for future auth-backed profiles)
    - Dice roller: d6 + (class roll bonus + perk roll bonus + toggled buffs)
-   - Stance brackets display (same as Systems Quick Card)
-   - Enemy feed placeholder reads from localStorage (future: DM Assist session pipe)
 */
+import { FirebaseAdapter } from "./assets/js/firebase-sync.js";
 
 (() => {
     const LS_CARD_KEY     = 'elf/playercard/v1';
     const LS_PROFILES_KEY = 'elf/playerprofiles/v1';
     const LS_ENEMIES_KEY  = 'elf/playercard/enemies/v1';
+    const LS_SESSION_PIN = 'elf/liveEvent/pin';
+    const LS_LIVE_EVENT_ID  = 'elf/liveEvent/eventId';
+    const LS_LIVE_PLAYER_ID = 'elf/liveEvent/playerId';
+    const LS_LIVE_ROLLS = 'elf/liveEvent/rolls/v1';
   
     const el = {
       // Card
@@ -31,6 +34,8 @@
       saveCard: document.getElementById('pcSaveCard'),
       resetCard: document.getElementById('pcResetCard'),
       savedMsg: document.getElementById('pcSavedMsg'),
+      joinSession: document.getElementById('pcJoinSession'),
+      sessionMsg: document.getElementById('pcSessionMsg'),
   
       // Dice
       rollBtn: document.getElementById('pcRollBtn'),
@@ -51,7 +56,7 @@
       portraitPh: document.getElementById('pcPortraitPlaceholder'),
     };
   
-    /* Data (mirrors the Systems Quick Card) */
+    /* Data */
     const CLASS_NOTES = {
       magi: 'Mages & Healers — +2 dmg/heal on hits • +3 Combat & Perception',
       assassin: 'Assassins & Rangers — +3 Combat • +2 Environment & Perception',
@@ -94,7 +99,7 @@
     const PERK_ROLL_BONUS = {
       'Keen Senses':              { perception: 3 },
       'Arcane Wisdom':            { perception: 3 },
-      'Pathfinder':               { perception: 3, environment: 3 }, // applies to whichever roll type is selected
+      'Pathfinder':               { perception: 3, environment: 3 }, 
       'Silver Tongue':            { charisma: 3 },
     };
   
@@ -175,6 +180,70 @@
       return [el.perk1.value, el.perk2.value, el.perk3.value].map(s => (s||'').trim()).filter(Boolean);
     }
   
+    function getSessionPin(){
+      return (localStorage.getItem(LS_SESSION_PIN) || '').trim();
+    }
+    function setSessionPin(pin){
+      localStorage.setItem(LS_SESSION_PIN, String(pin || '').trim());
+    }
+    function clearSessionPin(){
+      localStorage.removeItem(LS_SESSION_PIN);
+    }
+    
+    function renderSessionMsg(msg){
+      if (!el.sessionMsg) return;
+      el.sessionMsg.textContent = msg || '';
+      if (msg) setTimeout(() => { if (el.sessionMsg.textContent === msg) el.sessionMsg.textContent = ''; }, 1800);
+    }
+    function renderSessionStatus(){
+      const pin = getSessionPin();
+      if (!el.sessionMsg) return;
+      el.sessionMsg.textContent = pin ? `Session PIN: ${pin}` : '';
+    }
+
+    function getLiveEvent(){
+      return {
+        eventId: (localStorage.getItem(LS_LIVE_EVENT_ID) || '').trim(),
+        playerId: (localStorage.getItem(LS_LIVE_PLAYER_ID) || '').trim(),
+      };
+    }
+    function setLiveEvent(eventId, playerId){
+      localStorage.setItem(LS_LIVE_EVENT_ID, String(eventId || '').trim());
+      localStorage.setItem(LS_LIVE_PLAYER_ID, String(playerId || '').trim());
+    }
+    function clearLiveEvent(){
+      localStorage.removeItem(LS_LIVE_EVENT_ID);
+      localStorage.removeItem(LS_LIVE_PLAYER_ID);
+    }
+    
+    let currentTurn = 1;
+
+function loadLiveRolls(){
+  const raw = localStorage.getItem(LS_LIVE_ROLLS);
+  const arr = safeJson(raw, []);
+  return Array.isArray(arr) ? arr : [];
+}
+function saveLiveRolls(arr){
+  localStorage.setItem(LS_LIVE_ROLLS, JSON.stringify(arr || []));
+}
+function clearLiveRolls(){
+  localStorage.removeItem(LS_LIVE_ROLLS);
+}
+
+    function buildPlayerPayload(){
+      const snap = snapshotCard();
+      return {
+        name: snap.name || 'Player',
+        hp: Number(snap.hp ?? 15),
+        state: snap.state || 'Active',
+        stance: snap.stance || 'Balanced',
+        perk1: snap.perk1 || '',
+        perk2: snap.perk2 || '',
+        perk3: snap.perk3 || '',
+        rolls: loadLiveRolls(),  
+      };
+    }
+    
     function renderRollToggles(){
       const perks = getSelectedPerks();
       const rollType = el.rollType.value;
@@ -254,6 +323,27 @@
       const data = loadCard();
       data.lastRoll = { r: total, base, mods, at: Date.now(), type: el.rollType.value };
       persistCard(data);
+      // Live session roll stream (supports multiple rolls per turn)
+      const rolls = loadLiveRolls();
+      rolls.unshift({
+        turn: Number(currentTurn) || 1,
+        r: total,
+        at: Date.now(),
+        type: el.rollType.value || 'combat'
+      });
+
+      // keep only last 5 turns worth of rolls (by turn groups)
+      const byTurn = new Map();
+      for (const rec of rolls){
+        const t = rec.turn;
+        if (!byTurn.has(t)) byTurn.set(t, []);
+        byTurn.get(t).push(rec);
+      }
+      const turnsDesc = Array.from(byTurn.keys()).sort((a,b)=>b-a).slice(0,5);
+      const keep = [];
+      turnsDesc.forEach(t => keep.push(...(byTurn.get(t) || [])));
+      saveLiveRolls(keep);
+
     }
   
     /* Profiles (local placeholder) */
@@ -386,7 +476,6 @@
       const raw = localStorage.getItem(LS_ENEMIES_KEY);
       const data = safeJson(raw, null);
   
-      // Expected shape (later DM Assist can publish this):
       // { slots: { "1": {name,hp,maxHP,state,abilities[]}, ... "6": {...}, "boss": {...} } }
       const slots = (data && data.slots) ? data.slots : {};
   
@@ -414,133 +503,404 @@
         });
       });
     }
+    
   
-    /* Boot */
-    function boot(){
-      buildPerkOptions();
-  
-      // First render
-      renderProfileSelect();
-      renderStance();
-      renderEnemiesFromLocal();
-  
-      // Load saved card state
-      const d = loadCard();
-  
-      el.name.value = d.name || '';
-      el.cls.value = d.cls || '';
-      el.perk1.value = d.perk1 || '';
-      el.perk2.value = d.perk2 || '';
-      el.perk3.value = d.perk3 || '';
-      el.stance.value = d.stance || 'Balanced';
-      el.rollType.value = d.rollType || 'combat';
-      setHP(d.hp ?? 15);
-  
-      const st = d.state || 'Active';
-      el.state.textContent = st;
-      el.state.className = 'status-chip ' + statusClass(st);
-  
-      el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
-      applyPerkDesc(el.perk1, el.perk1Desc);
-      applyPerkDesc(el.perk2, el.perk2Desc);
-      applyPerkDesc(el.perk3, el.perk3Desc);
-      renderStance();
-  
-      setPortrait(d.portraitUrl || '');
-  
-      // Restore last roll if present
-      if (d.lastRoll && typeof d.lastRoll === 'object'){
-        el.rollNum.textContent = String(d.lastRoll.r ?? '—');
-        el.rollBreak.textContent = `Last: ${d.lastRoll.type || ''} • ${new Date(d.lastRoll.at || Date.now()).toLocaleTimeString()}`;
+    function renderEnemiesFromMonsters(monsters){
+      if (!monsters || typeof monsters !== 'object') return;
+    
+      // Use DM’s canonical order if present
+      const order = Array.isArray(monsters?._meta?.order) ? monsters._meta.order : [];
+    
+      // Build list by DM order (preferred)
+      let list = order
+        .map(id => monsters[id])
+        .filter(m => m && typeof m === 'object' && m.id);
+    
+      // Fallback: any monster objects in the payload (if order missing)
+      if (!list.length){
+        list = Object.values(monsters)
+          .filter(m => m && typeof m === 'object' && m.id && m.id !== '_meta');
       }
-  
-      renderRollToggles();
-  
-      /* Events */
-      el.cls.addEventListener('change', () => {
-        el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
-        renderRollToggles();
-      });
-  
-      [el.perk1, el.perk2, el.perk3].forEach((sel, idx) => {
-        sel.addEventListener('change', () => {
-          if (idx === 0) applyPerkDesc(el.perk1, el.perk1Desc);
-          if (idx === 1) applyPerkDesc(el.perk2, el.perk2Desc);
-          if (idx === 2) applyPerkDesc(el.perk3, el.perk3Desc);
-          renderRollToggles();
+    
+      // Only active monsters
+      list = list.filter(m => (m.isActive !== false));
+    
+      // Pick boss (highest HP) ONCE, then remove it from the regular list
+let boss = list.slice().sort((a,b) => (Number(b.maxHP)||0) - (Number(a.maxHP)||0))[0] || null;
+
+if (boss){
+  // remove boss from regular list so it can't appear twice
+  list = list.filter(m => m.id !== boss.id);
+}
+
+      // Helper to compute current hp from maxHP + turns
+      const curHp = (m) => {
+        const maxHP = Number(m.maxHP) || 1;
+        const deltas = Array.isArray(m.turns) ? m.turns : [];
+        const totalDelta = deltas.reduce((s,v)=>s + (Number(v)||0), 0);
+        const hp = Math.max(0, Math.min(maxHP, maxHP + totalDelta));
+        return { hp, maxHP };
+      };
+    
+      function setTargetIcon(card, shape){
+        const img = card.querySelector('.pc-enemy-target img');
+        if (!img) return;
+        const s = String(shape || 'circle').toLowerCase();
+        img.src = `assets/art/target_${s}.png`;
+        img.alt = s;
+      }
+    
+      // Fill slots 1..6 from ordered list
+      const slots = ['1','2','3','4','5','6'];
+      slots.forEach((slotKey, i) => {
+        const card = document.querySelector(`.pc-enemy-card[data-slot="${slotKey}"]`);
+        if (!card) return;
+    
+        const m = list[i] || null;
+        const nameEl = card.querySelector('.pc-enemy-name');
+        const hpEl   = card.querySelector('.pc-enemy-hp');
+        const stEl   = card.querySelector('.pc-enemy-state');
+        const ul     = card.querySelector('.pc-enemy-abilities');
+    
+        if (!m){
+          // In the horizontal lane, remove empty cards entirely
+          card.style.display = 'none';
+          return;
+        }
+        
+        // Show card
+        card.style.display = '';
+        card.style.pointerEvents = 'auto';
+        
+        
+        // Show card
+        card.style.visibility = 'visible';
+        card.style.pointerEvents = 'auto';
+        
+        
+    
+        const { hp, maxHP } = curHp(m);
+        nameEl.textContent = String(m.name || '—');
+        hpEl.textContent = `${hp}/${maxHP}`;
+        const stateText = String(m.statusEffect || 'Active');
+        stEl.textContent = stateText;
+        stEl.className = 'pc-enemy-state status-chip ' + statusClass(stateText);
+        
+    
+        setTargetIcon(card, m.targetShape || 'circle');
+    
+        ul.innerHTML = '';
+        const abilities = String(m.traitsText || '')
+          .split(/\r?\n|;|,/)
+          .map(s => s.trim())
+          .filter(Boolean)
+          .slice(0, 4);
+    
+        abilities.forEach(a => {
+          const li = document.createElement('li');
+          li.textContent = a;
+          ul.appendChild(li);
         });
       });
-  
-      el.stance.addEventListener('change', () => {
-        renderStance();
-      });
-  
-      el.rollType.addEventListener('change', () => {
-        renderRollToggles();
-      });
-  
-      el.rollBtn.addEventListener('click', rollDice);
-      el.toggleList.addEventListener('change', () => {
-        // no-op; included to ensure computeRollMods sees checkboxes; user triggers roll anyway
-      });
-  
-      el.hpMinus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) - 1));
-      el.hpPlus.addEventListener('click', () => setHP(Number(el.hpVal.textContent) + 1));
-      el.state.addEventListener('click', cycleState);
-  
-      el.saveCard.addEventListener('click', () => saveCard('Saved.'));
-      el.resetCard.addEventListener('click', resetCard);
-  
-      // Profiles
-      el.profileSelect.addEventListener('change', () => {
-        const id = el.profileSelect.value || '';
-        if (!id) return;
-        const profiles = loadProfiles();
-        const p = profiles.find(x => x.id === id);
-        applyProfile(p);
-        el.profileMsg.textContent = p ? `Imported: ${p.name || 'Profile'}` : '';
-        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-      });
-  
-      el.saveProfile.addEventListener('click', () => {
-        const nm = (el.name.value || '').trim();
-        const label = nm || prompt('Profile name:', 'New Profile');
-        if (!label) return;
-  
-        const profiles = loadProfiles();
-        const snap = snapshotCard();
-        const id = newId();
-  
-        profiles.push({
-          id,
-          name: label,
-          ...snap,
-          portraitUrl: snap.portraitUrl || '' // optional
-        });
-  
-        saveProfiles(profiles);
-        renderProfileSelect();
-        el.profileSelect.value = id;
-  
-        el.profileMsg.textContent = 'Saved profile.';
-        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-      });
-  
-      el.deleteProfile.addEventListener('click', () => {
-        const id = el.profileSelect.value || '';
-        if (!id) return;
-        if (!confirm('Delete this saved profile?')) return;
-        const profiles = loadProfiles().filter(p => p.id !== id);
-        saveProfiles(profiles);
-        renderProfileSelect();
-        el.profileMsg.textContent = 'Deleted profile.';
-        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-      });
-  
-      // If enemies are updated by something else (later: DM Assist), refresh on focus
-      window.addEventListener('focus', renderEnemiesFromLocal);
+    
+      // Boss slot: pick highest maxHP among active monsters (or blank)
+      const bossCard = document.querySelector('.pc-enemy-card[data-slot="boss"]');
+      if (bossCard){    
+        const nameEl = bossCard.querySelector('.pc-enemy-name');
+        const hpEl   = bossCard.querySelector('.pc-enemy-hp');
+        const stEl   = bossCard.querySelector('.pc-enemy-state');
+        const ul     = bossCard.querySelector('.pc-enemy-abilities');
+    
+        if (!boss){
+          // Keep grid structure stable, but visually hide the boss card
+          bossCard.style.visibility = 'hidden';
+          bossCard.style.pointerEvents = 'none';        
+          nameEl.textContent = '—';
+          hpEl.textContent = '—';
+          stEl.textContent = '—';
+          ul.innerHTML = '';
+          setTargetIcon(bossCard, 'circle');
+        } else {
+          bossCard.style.visibility = 'visible';
+          bossCard.style.pointerEvents = 'auto';
+        
+          const { hp, maxHP } = curHp(boss);
+          nameEl.textContent = String(boss.name || '—');
+          hpEl.textContent = `${hp}/${maxHP}`;
+          const stateText = String(boss.statusEffect || 'Active');
+          stEl.textContent = stateText;
+          stEl.className = 'pc-enemy-state status-chip ' + statusClass(stateText);
+                  
+          setTargetIcon(bossCard, boss.targetShape || 'circle');
+        
+          ul.innerHTML = '';
+          const abilities = String(boss.traitsText || '')
+            .split(/\r?\n|;|,/)
+            .map(s => s.trim())
+            .filter(Boolean)
+            .slice(0, 4);
+        
+          abilities.forEach(a => {
+            const li = document.createElement('li');
+            li.textContent = a;
+            ul.appendChild(li);
+          });
+        }
+        
+      }
     }
+    
+
+/* Boot */
+function boot(){
+  buildPerkOptions();
+
+  // First render
+  renderProfileSelect();
+  renderStance();
+if (!getLiveEvent().eventId) renderEnemiesFromLocal();
+
+  // Live sync (local)
+  const sync = new FirebaseAdapter();
+  let offMonsters = null;
+
+  function publishNow(){
+    const { eventId, playerId } = getLiveEvent();
+    if (!eventId || !playerId) return;
+    sync.publishPlayer(eventId, playerId, buildPlayerPayload());
+  }
+
+  // Load saved card state
+  const d = loadCard();
+
+  el.name.value = d.name || '';
+  el.cls.value = d.cls || '';
+  el.perk1.value = d.perk1 || '';
+  el.perk2.value = d.perk2 || '';
+  el.perk3.value = d.perk3 || '';
+  el.stance.value = d.stance || 'Balanced';
+  el.rollType.value = d.rollType || 'combat';
+  setHP(d.hp ?? 15);
+
+  const st = d.state || 'Active';
+  el.state.textContent = st;
+  el.state.className = 'status-chip ' + statusClass(st);
+
+  el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+  applyPerkDesc(el.perk1, el.perk1Desc);
+  applyPerkDesc(el.perk2, el.perk2Desc);
+  applyPerkDesc(el.perk3, el.perk3Desc);
+  renderStance();
+
+  setPortrait(d.portraitUrl || '');
+
+  // Restore last roll if present
+  if (d.lastRoll && typeof d.lastRoll === 'object'){
+    el.rollNum.textContent = String(d.lastRoll.r ?? '—');
+    el.rollBreak.textContent = `Last: ${d.lastRoll.type || ''} • ${new Date(d.lastRoll.at || Date.now()).toLocaleTimeString()}`;
+  }
+
+  renderRollToggles();
+
+  /* Join/Leave Session (live) */
+  if (el.joinSession){
+    function updateJoinButton(){
+      const pin = getSessionPin();
+      el.joinSession.textContent = pin ? 'Leave Session' : 'Join Session';
+    }
+
+    async function joinWithPin(pin){
+      // join event and store event/player ids for publishing
+      const { eventId, playerId } = await sync.joinEvent(pin);
+      setLiveEvent(eventId, playerId);
+
+      // subscribe to monsters for future enemy feed wiring
+      if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
+      offMonsters = sync.subscribeMonsters(eventId, (monsters) => {
+        if (!monsters) return;
+      
+        // keep player in sync with DM's canonical turn
+        const t = Number(monsters?._meta?.turn);
+        if (Number.isFinite(t) && t >= 1) currentTurn = t;
+      
+        // render enemy feed from DM monsters
+        renderEnemiesFromMonsters(monsters);
+      });
+      
+
+      // publish initial snapshot
+      publishNow();
+    }
+
+    function leaveSession(){
+      if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
+      clearLiveEvent();
+      clearSessionPin();
+      clearLiveRolls();
+      renderSessionMsg('Left session.');
+      updateJoinButton();
+      renderSessionStatus();
+    }
+
+    el.joinSession.addEventListener('click', async () => {
+      const currentPin = getSessionPin();
+
+      // LEAVE
+      if (currentPin){
+        if (!confirm(`Leave session ${currentPin}?`)) return;
+        leaveSession();
+        return;
+      }
+
+      // JOIN
+      const pin = prompt('Enter DM Event PIN (5 digits):', '');
+      if (pin == null) return;
+
+      const clean = String(pin).trim();
+      if (!/^\d{5}$/.test(clean)){
+        renderSessionMsg('PIN must be 5 digits.');
+        return;
+      }
+
+      try{
+        setSessionPin(clean);
+        await joinWithPin(clean);
+        renderSessionMsg('Joined session.');
+      }catch(e){
+        // rollback pin if join fails
+        clearSessionPin();
+        clearLiveEvent();
+        renderSessionMsg('Could not join session.');
+      }
+
+      updateJoinButton();
+      renderSessionStatus();
+    });
+
+    // initial state on load (auto rejoin if pin exists)
+    (async () => {
+      updateJoinButton();
+      renderSessionStatus();
+
+      const pin = getSessionPin();
+      if (pin && /^\d{5}$/.test(pin)){
+        try{
+          await joinWithPin(pin);
+        }catch{
+          // stale pin
+          clearSessionPin();
+          clearLiveEvent();
+          updateJoinButton();
+          renderSessionStatus();
+        }
+      }
+    })();
+  }
+
+  /* Events */
+  el.cls.addEventListener('change', () => {
+    el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+    renderRollToggles();
+    publishNow();
+  });
+
+  [el.perk1, el.perk2, el.perk3].forEach((sel, idx) => {
+    sel.addEventListener('change', () => {
+      if (idx === 0) applyPerkDesc(el.perk1, el.perk1Desc);
+      if (idx === 1) applyPerkDesc(el.perk2, el.perk2Desc);
+      if (idx === 2) applyPerkDesc(el.perk3, el.perk3Desc);
+      renderRollToggles();
+      publishNow();
+    });
+  });
+
+  el.stance.addEventListener('change', () => {
+    renderStance();
+    publishNow();
+  });
+
+  el.rollType.addEventListener('change', () => {
+    renderRollToggles();
+    publishNow();
+  });
+
+  el.rollBtn.addEventListener('click', () => {
+    rollDice();
+    publishNow();
+  });
+
   
-    boot();
+  el.toggleList.addEventListener('change', () => {
+    // no-op; included to ensure computeRollMods sees checkboxes; user triggers roll anyway
+  });
+
+  el.hpMinus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) - 1); publishNow(); });
+  el.hpPlus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) + 1); publishNow(); });
+  el.state.addEventListener('click', () => { cycleState(); publishNow(); });
+
+  // publish name on blur (avoids spamming while typing)
+  el.name.addEventListener('blur', publishNow);
+
+  el.saveCard.addEventListener('click', () => saveCard('Saved.'));
+  el.resetCard.addEventListener('click', resetCard);
+
+  // Profiles
+  el.profileSelect.addEventListener('change', () => {
+    const id = el.profileSelect.value || '';
+    if (!id) return;
+    const profiles = loadProfiles();
+    const p = profiles.find(x => x.id === id);
+    applyProfile(p);
+    el.profileMsg.textContent = p ? `Imported: ${p.name || 'Profile'}` : '';
+    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+
+    publishNow();
+  });
+
+  el.saveProfile.addEventListener('click', () => {
+    const nm = (el.name.value || '').trim();
+    const label = nm || prompt('Profile name:', 'New Profile');
+    if (!label) return;
+
+    const profiles = loadProfiles();
+    const snap = snapshotCard();
+    const id = newId();
+
+    profiles.push({
+      id,
+      name: label,
+      ...snap,
+      portraitUrl: snap.portraitUrl || '' 
+    });
+
+    saveProfiles(profiles);
+    renderProfileSelect();
+    el.profileSelect.value = id;
+
+    el.profileMsg.textContent = 'Saved profile.';
+    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+  });
+
+  el.deleteProfile.addEventListener('click', () => {
+    const id = el.profileSelect.value || '';
+    if (!id) return;
+    if (!confirm('Delete this saved profile?')) return;
+    const profiles = loadProfiles().filter(p => p.id !== id);
+    saveProfiles(profiles);
+    renderProfileSelect();
+    el.profileMsg.textContent = 'Deleted profile.';
+    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+  });
+
+  // If enemies are updated by something else (later: DM Assist), refresh on focus
+  window.addEventListener('focus', () => {
+    const { eventId } = getLiveEvent();
+    if (!eventId) renderEnemiesFromLocal();
+  });
+  }
+
+
+boot();
+
   })();
   

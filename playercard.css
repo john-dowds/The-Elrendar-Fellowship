@@ -1,6 +1,4 @@
-/* Player Quick Card — page-specific layout
-   Designed to match your screenshot: perks left, main center, profiles+portrait right, enemies bottom.
-*/
+/* Player Quick Card — page-specific layout */
 
 .pc-wrap{
     max-width: 1300px;
@@ -281,18 +279,22 @@
     margin-top: .45rem;
   }
   
-  /* Actions row */
   .pc-actions{
     display: flex;
     gap: .6rem;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
+  #pcSessionMsg, #pcSavedMsg{
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+  
   .pc-actions #pcSavedMsg{
     margin-left: .25rem;
   }
   
-  /* Right column: profiles + portrait */
   .pc-right{ grid-area: right; display: grid; gap: 1rem; }
   
   .pc-profiles-panel .pc-profiles-header{
@@ -343,14 +345,39 @@
     opacity: .95;
   }
   
-  /* Enemy feed bottom */
   .pc-enemies{ grid-area: enemies; }
   .pc-enemy-row{
     display: grid;
-    grid-template-columns: repeat(6, minmax(140px, 1fr)) 220px;
+    grid-template-columns: 1fr 360px;
     gap: .85rem;
     align-items: stretch;
   }
+  
+  .pc-enemy-lane{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: .35rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .pc-enemy-lane-inner{
+    display: flex;
+    gap: .85rem;
+    align-items: stretch;
+    width: max-content; 
+  }
+  
+  .pc-enemy-lane-inner .pc-enemy-card{
+    width: 280px; 
+    flex: 0 0 auto;
+  }
+  
+  .pc-enemy-card--boss{
+    width: 100%;
+    min-height: 190px;
+  }
+  
+  
   
   .pc-enemy-card{
     background: rgba(0,0,0,.52);
@@ -378,6 +405,25 @@
     place-items: center;
     font-weight: 900;
   }
+
+  .pc-enemy-target{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(252,229,205,.22);
+    background: rgba(0,0,0,.25);
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    flex-shrink: 0;
+  }
+  .pc-enemy-target img{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display:block;
+  }
+  
   .pc-enemy-name{
     font-weight: 900;
     font-size: .98rem;
@@ -414,6 +460,8 @@
   /* Boss styling */
   .pc-enemy-card--boss{
     border-color: rgba(228,190,89,.45);
+    min-height: 190px;
+
   }
   .pc-enemy-top--boss{
     justify-content: center;
@@ -430,7 +478,7 @@
     font-size: .85rem;
   }
   
-  /* ===== Status Chip (match original Quick Card / DM Assist colors) ===== */
+  /* ===== Status Chip ===== */
 .status-chip{
     display:inline-block;
     padding:.2rem .6rem;
@@ -454,10 +502,9 @@
   .status-shielded    { background: rgba( 70,120,160, .50); border-color: #9dd1ff; }
   .status-cursed      { background: rgba(120,  0,120, .55); border-color: #f080ff; }
 
-  /* Mini section headers above HP / State */
 .pc-mini-header{
     margin: 0 0 .35rem;
-    font-size: 1.15rem;   /* header-sized but not page-dominating */
+    font-size: 1.15rem;  
     font-weight: 900;
     letter-spacing: .04em;
     text-align: center;
@@ -476,9 +523,12 @@
       grid-template-columns: 240px 1fr 300px;
     }
     .pc-enemy-row{
-      grid-template-columns: repeat(3, minmax(150px, 1fr)) 220px;
-      grid-auto-rows: auto;
+      grid-template-columns: 1fr 300px;
     }
+    .pc-enemy-lane-inner .pc-enemy-card{
+      width: 260px;
+    }
+    
   }
   
   @media (max-width: 920px){
@@ -493,11 +543,67 @@
     .pc-midrow{
       grid-template-columns: 1fr;
     }
-    .pc-enemy-row{
-      grid-template-columns: repeat(2, minmax(160px, 1fr));
-    }
     .pc-enemy-card--boss{
       grid-column: 1 / -1;
     }
+    .pc-enemy-row{
+      grid-template-columns: 1fr 300px;
+    }
+    .pc-enemy-lane-inner .pc-enemy-card{
+      width: 260px;
+    }
+    
   }
-  
+.pc-enemy-card{
+  overflow: hidden;
+}
+
+.pc-enemy-top{
+  min-width: 0;
+}
+
+.pc-enemy-name{
+  font-weight: 900;
+  font-size: .98rem;
+  line-height: 1.1;
+  opacity: .98;
+  min-width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+
+.pc-enemy-line{
+  display: grid; 
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+.pc-enemy-hp,
+.pc-enemy-state{
+  justify-self: end;
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pc-enemy-abilities{
+  margin: .25rem 0 0;
+  padding-left: 1.1rem;
+  max-width: 100%;
+}
+.pc-enemy-abilities li{
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pc-enemy-state.status-chip{
+  font-size: .85rem;
+  padding: .15rem .55rem;
+}
