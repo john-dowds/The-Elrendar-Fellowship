@@ -1,0 +1,29 @@
+{
+    "rules": {
+      "pins": {
+        ".read": false,
+        ".write": false
+      },
+  
+      "liveEvents": {
+        "$eventId": {
+          ".read": "auth != null && (root.child('liveEvents').child($eventId).child('meta').child('dmUid').val() === auth.uid || root.child('liveEvents').child($eventId).child('players').child(auth.uid).exists())",
+  
+          "meta": {
+            ".write": false
+          },
+  
+          "monsters": {
+            ".write": "auth != null && root.child('liveEvents').child($eventId).child('meta').child('dmUid').val() === auth.uid"
+          },
+  
+          "players": {
+            "$uid": {
+              ".write": "auth != null && $uid === auth.uid"
+            }
+          }
+        }
+      }
+    }
+  }
+  
