@@ -193,3 +193,152 @@ exports.setUserEnabledHttp = onRequest(
     }
   }
 );
+
+// ============================================================
+// DM Assist — Realtime Database Session Functions
+// ============================================================
+
+// small helpers
+function rid(len = 12) {
+  return Math.random().toString(36).slice(2, 2 + len);
+}
+
+function randDigits(n = 5) {
+  return Array.from({ length: n }, () => Math.floor(Math.random() * 10)).join("");
+}
+
+function normalizePin(pin) {
+  return String(pin || "").trim();
+}
+
+function isValidPin(pin) {
+  return /^\d{5}$/.test(pin);
+}
+
+async function assertCallableAdmin(request) {
+  const auth = request.auth;
+  if (!auth) throw new HttpsError("unauthenticated", "Login required.");
+
+  const adminDoc = await admin.firestore().collection("admins").doc(auth.uid).get();
+  if (!adminDoc.exists) {
+    throw new HttpsError("permission-denied", "Admins only.");
+  }
+
+  return auth.uid;
+}
+
+// ------------------------------------------------------------
+// Callable: createEvent (DM creates session + PIN)
+// ------------------------------------------------------------
+exports.createEvent = onCall({ region: REGION }, async (request) => {
+  const dmUid = await assertCallableAdmin(request);
+  const db = admin.database();
+
+  const eventId = `evt_${rid(14)}`;
+
+  // generate unique 5-digit PIN
+  let pin = randDigits(5);
+  for (let i = 0; i < 25; i++) {
+    const snap = await db.ref(`pins/${pin}`).get();
+    if (!snap.exists()) break;
+    pin = randDigits(5);
+  }
+
+  // map PIN -> event
+  await db.ref(`pins/${pin}`).set({
+    eventId,
+    createdAt: Date.now()
+  });
+
+  // initialize event
+  await db.ref(`liveEvents/${eventId}/meta`).set({
+    eventId,
+    pin,
+    dmUid,
+    createdAt: Date.now(),
+    active: true,
+    endedAt: null
+  });
+
+  await db.ref(`liveEvents/${eventId}/monsters`).set({});
+  await db.ref(`liveEvents/${eventId}/players`).set({});
+
+  return { eventId, pin };
+});
+
+// ------------------------------------------------------------
+// Callable: joinByPin (player joins DM session)
+// ------------------------------------------------------------
+exports.joinByPin = onCall({ region: REGION }, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError("unauthenticated", "Login required.");
+  }
+
+  const pin = normalizePin(request.data?.pin);
+  if (!isValidPin(pin)) {
+    throw new HttpsError("invalid-argument", "PIN must be 5 digits.");
+  }
+
+  const db = admin.database();
+  const pinSnap = await db.ref(`pins/${pin}`).get();
+  if (!pinSnap.exists()) {
+    throw new HttpsError("not-found", "No active event for that PIN.");
+  }
+
+  const eventId = pinSnap.val().eventId;
+  const metaSnap = await db.ref(`liveEvents/${eventId}/meta`).get();
+  const meta = metaSnap.val();
+
+  if (!meta || !meta.active || meta.endedAt) {
+    throw new HttpsError("failed-precondition", "That event has ended.");
+  }
+
+  const uid = request.auth.uid;
+
+  await db.ref(`liveEvents/${eventId}/players/${uid}`).update({
+    id: uid,
+    uid,
+    joinedAt: admin.database.ServerValue.TIMESTAMP,
+    updatedAt: admin.database.ServerValue.TIMESTAMP,
+    name: "Player",
+    hp: 15
+  });
+
+  return { eventId, playerId: uid };
+});
+
+// ------------------------------------------------------------
+// Callable: endEvent (DM ends session)
+// ------------------------------------------------------------
+exports.endEvent = onCall({ region: REGION }, async (request) => {
+  const dmUid = await assertCallableAdmin(request);
+  const eventId = String(request.data?.eventId || "").trim();
+  if (!eventId) {
+    throw new HttpsError("invalid-argument", "eventId required.");
+  }
+
+  const db = admin.database();
+  const metaRef = db.ref(`liveEvents/${eventId}/meta`);
+  const metaSnap = await metaRef.get();
+
+  if (!metaSnap.exists()) {
+    throw new HttpsError("not-found", "Event not found.");
+  }
+
+  const meta = metaSnap.val();
+  if (meta.dmUid !== dmUid) {
+    throw new HttpsError("permission-denied", "Only the DM may end this event.");
+  }
+
+  // invalidate PIN
+  if (meta.pin) {
+    await db.ref(`pins/${meta.pin}`).remove();
+  }
+
+  await metaRef.update({
+    active: false,
+    endedAt: Date.now()
+  });
+
+  return { ok: true };
+});
