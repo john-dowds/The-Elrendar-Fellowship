@@ -201,6 +201,22 @@ import { FirebaseAdapter } from "./assets/js/firebase-sync.js";
       el.sessionMsg.textContent = pin ? `Session PIN: ${pin}` : '';
     }
 
+    function renderLiveTurn(){
+      const wrap = document.getElementById('pcLiveTurn');
+      const num  = document.getElementById('pcLiveTurnNum');
+      if (!wrap || !num) return;
+    
+      const { eventId } = getLiveEvent();
+      if (!eventId){
+        wrap.hidden = true;
+        return;
+      }
+    
+      wrap.hidden = false;
+      num.textContent = String(currentTurn || 1);
+    }
+    
+
     function getLiveEvent(){
       return {
         eventId: (localStorage.getItem(LS_LIVE_EVENT_ID) || '').trim(),
@@ -660,7 +676,6 @@ function boot(){
   renderStance();
 if (!getLiveEvent().eventId) renderEnemiesFromLocal();
 
-  // Live sync (local)
   const sync = new FirebaseAdapter();
   let offMonsters = null;
 
@@ -722,6 +737,7 @@ if (!getLiveEvent().eventId) renderEnemiesFromLocal();
         // keep player in sync with DM's canonical turn
         const t = Number(monsters?._meta?.turn);
         if (Number.isFinite(t) && t >= 1) currentTurn = t;
+        renderLiveTurn();
       
         // render enemy feed from DM monsters
         renderEnemiesFromMonsters(monsters);
@@ -740,6 +756,7 @@ if (!getLiveEvent().eventId) renderEnemiesFromLocal();
       renderSessionMsg('Left session.');
       updateJoinButton();
       renderSessionStatus();
+      renderLiveTurn();
     }
 
     el.joinSession.addEventListener('click', async () => {
@@ -775,12 +792,14 @@ if (!getLiveEvent().eventId) renderEnemiesFromLocal();
 
       updateJoinButton();
       renderSessionStatus();
+      renderLiveTurn();
     });
 
     // initial state on load (auto rejoin if pin exists)
     (async () => {
       updateJoinButton();
       renderSessionStatus();
+      renderLiveTurn();
 
       const pin = getSessionPin();
       if (pin && /^\d{5}$/.test(pin)){
@@ -792,6 +811,7 @@ if (!getLiveEvent().eventId) renderEnemiesFromLocal();
           clearLiveEvent();
           updateJoinButton();
           renderSessionStatus();
+          renderLiveTurn();
         }
       }
     })();
