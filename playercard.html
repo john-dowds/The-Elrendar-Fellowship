@@ -200,12 +200,13 @@
 
           <div class="pc-profiles-actions">
             <button id="pcSaveProfile" class="pc-btn" type="button">Save as Profile</button>
-            <button id="pcDeleteProfile" class="pc-btn pc-btn--ghost" type="button">Delete</button>
-          
-            <!-- NEW: Join / Leave Session -->
+            <button id="pcDeleteProfile" class="pc-btn pc-btn--ghost" type="button">Delete</button>          
             <button id="pcJoinSession" class="pc-btn pc-btn--ghost" type="button">
               Join Session
-            </button>
+            </button>            
+          </div>
+          <div class="pc-muted" id="pcLiveTurn" hidden>
+            Turn: <strong><span id="pcLiveTurnNum">1</span></strong>
           </div>
           
           <div class="pc-muted" id="pcSessionMsg"></div>
@@ -353,7 +354,6 @@
   </footer>
 
   <script type="module" src="playercard.js"></script>
-  <script type="module" src="assets/js/auth-ui.js"></script>
-  <script type="module" src="assets/js/auth-ui.js?v=3"></script>
+  <script type="module" src="assets/js/auth-ui.js?v=4"></script>
 </body>
 </html>
