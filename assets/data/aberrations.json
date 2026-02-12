@@ -890,7 +890,7 @@
       "traits": [      ],
       "description": "A portal gateway built by the Ethereals to enable transit from one location to another. Powered by arcane energy, often harvested from manaforges.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/ethereal_portal.png"
+      "image": "assets/art/monsters/ethereal_gate.png"
     },
     {
       "id": "arcane_portal",
