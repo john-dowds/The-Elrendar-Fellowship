@@ -30,7 +30,8 @@
         }
       ],
       "description": "Curious arcane-touched hatchlings of the Blue Dragonflight.",
-      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/blue_whelp.png"
     },
     {
       "id": "blue_dragonkin",
@@ -60,7 +61,8 @@
         }
       ],
       "description": "Bipedal guardians who defend ley nexuses and archives.",
-      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/blue_drakonid.png"
     },
     {
       "id": "blue_drake",
@@ -90,7 +92,8 @@
         }
       ],
       "description": "Medium wyrms that police irresponsible spellwork.",
-      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/blue_drake.png"
     },
     {
       "id": "blue_dragon",
@@ -126,7 +129,8 @@
         }
       ],
       "description": "Sovereigns of arcane order and keepers of ley lines.",
-      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/blue_dragon.png"
     },
     {
       "id": "blue_wyrm",
@@ -168,7 +172,8 @@
         }
       ],
       "description": "Millennia-old blues whose will can shape ley itself.",
-      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/blue_wyrm.png"
     },
     {
       "id": "black_whelp",
@@ -198,10 +203,12 @@
         }
       ],
       "description": "Soot-coated hatchlings born in cavernous lairs.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/black_whelp.png"
+
     },
     {
-      "id": "black_dragonkin",
+      "id": "black_drakonid",
       "name": "Black Drakonid",
       "class": "Dragonkin",
       "category": "Dragonkin",
@@ -228,7 +235,8 @@
         }
       ],
       "description": "Burly guardians forged by heat, pressure, and discipline.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/black_drakonid.png"
     },
     {
       "id": "black_drake",
@@ -258,7 +266,8 @@
         }
       ],
       "description": "Hardened drakes who prowl for weaknesses in enemy lines.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/black_drake.png"
     },
     {
       "id": "black_dragon",
@@ -294,7 +303,8 @@
         }
       ],
       "description": "Earth-bound overlords whose rage is tectonic.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/black_dragon.png"
     },
     {
       "id": "black_wyrm",
@@ -336,7 +346,8 @@
         }
       ],
       "description": "Primeval engines of ruin, avatars of earth’s wrath.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","legion","bfa","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/black_wyrm.png"
     },
     {
       "id": "green_whelp",
@@ -366,7 +377,8 @@
         }
       ],
       "description": "Playful guardians tied to the Emerald Dream.",
-      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/green_whelp.png"
     },
     {
       "id": "green_dragonkin",
@@ -390,7 +402,8 @@
         }
       ],
       "description": "Serpentine wardens who patrol groves and gateways.",
-      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/green_drakonid.png"
     },
     {
       "id": "green_drake",
@@ -420,7 +433,8 @@
         }
       ],
       "description": "Healers and wardens soaring between Dream-touched boughs.",
-      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/green_drake.png"
     },
     {
       "id": "green_dragon",
@@ -456,7 +470,8 @@
         }
       ],
       "description": "Stewards of life and the slumbering Dream.",
-      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/green_dragon.png"
     },
     {
       "id": "green_wyrm",
@@ -498,7 +513,8 @@
         }
       ],
       "description": "Ancients who bridge waking world and Dream.",
-      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"]
+      "campaignLinks": ["wota","classic","wotlk","legion","dragonflight","cataclysm-mop"],
+      "image": "assets/art/monsters/green_wyrm.png"
     },
     {
       "id": "red_whelp",
@@ -528,7 +544,8 @@
         }
       ],
       "description": "Fiery hatchlings already protective of the helpless.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/red_whelp.png"
     },
     {
       "id": "red_dragonkin",
@@ -558,7 +575,8 @@
         }
       ],
       "description": "Defenders who mingle flame with restoration.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/red_drakonid.png"
     },
     {
       "id": "red_drake",
@@ -588,7 +606,8 @@
         }
       ],
       "description": "Noble drakes patrolling sanctums of life.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/red_drake.png"
     },
     {
       "id": "red_dragon",
@@ -624,7 +643,8 @@
         }
       ],
       "description": "Wardens of life and healers of grievous wounds.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/red_dragon.png"
     },
     {
       "id": "red_wyrm",
@@ -666,7 +686,8 @@
         }
       ],
       "description": "Ancients whose very presence kindles renewal.",
-      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wota","greatwars","expedition","classic","wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/red_wyrm.png"
     },
     {
       "id": "bronze_whelp",
@@ -696,7 +717,8 @@
         }
       ],
       "description": "Playful keepers of temporal threads.",
-      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"],
+      "image": "assets/art/monsters/bronze_whelp.png"
     },
     {
       "id": "bronze_dragonkin",
@@ -726,7 +748,8 @@
         }
       ],
       "description": "Time-touched guardians of the caverns of time.",
-      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"],
+      "image": "assets/art/monsters/bronze_drakonid.png"
     },
     {
       "id": "bronze_drake",
@@ -756,7 +779,8 @@
         }
       ],
       "description": "Temporal wardens that police branching histories.",
-      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"],
+      "image": "assets/art/monsters/bronze_drake.png"
     },
     {
       "id": "bronze_dragon",
@@ -792,7 +816,8 @@
         }
       ],
       "description": "Dragons who steward timelines against paradox.",
-      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"],
+      "image": "assets/art/monsters/bronze_dragon.png"
     },
     {
       "id": "bronze_wyrm",
@@ -834,7 +859,8 @@
         }
       ],
       "description": "Ancients whose breaths taste of sand and centuries.",
-      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"]
+      "campaignLinks": ["wota","classic","wotlk","cataclysm-mop","wod","legion","dragonflight"],
+      "image": "assets/art/monsters/bronze_wyrm.png"
     },
     {
       "id": "proto_whelp",
@@ -864,7 +890,8 @@
         }
       ],
       "description": "Primal hatchlings hatched in icy aeries and storm-scarred crags.",
-      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/proto_whelp.png"
     },
     {
       "id": "proto_drake",
@@ -894,7 +921,8 @@
         }
       ],
       "description": "Ancient, horn-crowned drakes with brutal hunting patterns.",
-      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/proto_drake.png"
     },
     {
       "id": "proto_dragon",
@@ -930,7 +958,8 @@
         }
       ],
       "description": "Rare elders among protodrakes—elemental titans of the skies.",
-      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["wotlk","cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/proto_dragon.png"
     },
     {
       "id": "twilight_whelp",
@@ -960,7 +989,8 @@
         }
       ],
       "description": "Void-touched hatchlings bred from forbidden experiments.",
-      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/twilight_whelp.png"
     },
     {
       "id": "twilight_drake",
@@ -990,7 +1020,8 @@
         }
       ],
       "description": "Dragons forged in shadow and flame to serve apocalyptic cults.",
-      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/twilight_drake.png"
     },
     {
       "id": "twilight_dragon",
@@ -1032,7 +1063,8 @@
         }
       ],
       "description": "Terrible fusions of void and dragonfire unleashed by zealots.",
-      "campaignLinks": ["cataclysm-mop","legion","dragonflight"]
+      "campaignLinks": ["cataclysm-mop","legion","dragonflight"],
+      "image": "assets/art/monsters/twilight_dragon.png"
     },
     {
       "id": "dracthyr_evoker",
@@ -1068,7 +1100,8 @@
         }
       ],
       "description": "Awakened draconic soldiers who channel the powers of the flights.",
-      "campaignLinks": ["dragonflight"]
+      "campaignLinks": ["dragonflight"],
+      "image": "assets/art/monsters/dracthyr_evoker.png"
     },
     {
       "id": "dracthyr_dragonguard",
@@ -1098,7 +1131,51 @@
         }
       ],
       "description": "Frontline Dracthyr who hold the line while evokers cast.",
-      "campaignLinks": ["dragonflight"]
+      "campaignLinks": ["dragonflight"],
+      "image": "assets/art/monsters/dracthyr_dragonguard.png"
+    },
+    {
+      "id": "voidborne_dragon",
+      "name": "Voidborne Dragon",
+      "class": "Dragon",
+      "category": "Dragonkin",
+      "subcategory": "Twilight Drakes",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Voidstorm",
+          "trait": "volley",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
+        },
+        {
+          "name": "Shadow Breath",
+          "trait": "cone",
+          "theme": "aoe",
+          "effect": "Blasts enemies ahead of the caster with a sickening wave of shadow magic."
+        },
+        {
+          "name": "Call Drakes",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "A bellowing call summons full grown drakes from the skies, adding more threats to the field."
+        },
+        {
+          "name": "Summon Major Void",
+          "trait": "summon",
+          "theme": "translocation",
+          "effect": "Calls a major aberrant void spawn to the field."
+        },
+        {
+          "name": "Shadow Bolt",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "Blasts enemies with shadow magic."
+        }
+      ],
+      "description": "Risen from the grave by the twisted influence of the void, little of these dragons remains from what they once were; now, they serve only madness, and the Void.",
+      "campaignLinks": ["campaign4"],
+      "image": "assets/art/monsters/voidborne_dragon.png"
     }
   ]
 }

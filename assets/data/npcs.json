@@ -3154,62 +3154,59 @@
       ]
     },
     {
-  "id": "portal_keeper_sylas",
-  "name": "Portal Keeper Sylas",
-  "class": "Mage",
-  "category": "NPCs",
-  "subcategory": "Devouring Host",
-  "hp": 250,
-  "traits": [
-    {
-      "name": "Arcane Missiles",
-      "trait": "arcane_missiles",
-      "theme": "damage",
-      "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+      "id": "portal_keeper_sylas",
+      "name": "Portal Keeper Sylas",
+      "class": "Mage",
+      "category": "NPCs",
+      "subcategory": "Devouring Host",
+      "hp": 250,
+      "traits": [
+        {
+          "name": "Arcane Missiles",
+          "trait": "arcane_missiles",
+          "theme": "damage",
+          "effect": "Unleashes a flurry of arcane bolts, striking the target three times with a successful hit."
+        },
+        {
+          "name": "Blink",
+          "trait": "blink",
+          "theme": "translocation",
+          "effect": "Teleport a short distance."
+        },
+        {
+          "name": "Slow",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        },
+        {
+          "name": "Arcane Torrent",
+          "trait": "arcane_torrent",
+          "theme": "aoe",
+          "effect": "Breathes a cone of arcane wind that damages enemies before it."
+        },
+        {
+          "name": "Voidstorm",
+          "trait": "voidstorm",
+          "theme": "aoe",
+          "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
+        },
+        {
+          "name": "Shadow Bolt",
+          "trait": "shadow_bolt",
+          "theme": "damage",
+          "effect": "Blasts enemies with shadow magic."
+        },
+        {
+          "name": "Void Ward",
+          "trait": "void_ward",
+          "theme": "aoe",
+          "effect": "Absorbs attacks until overwhelmed, and then unleashes that damage in an explosion."
+        }
+      ],
+      "description": "A Magistrix of the Sin'dorei whose lust for power has driven her into the arms of Xal'atath's cult of Twilight followers. Now, she poses a direct threat to the High Home, and must be brought to justice.",
+      "campaignLinks": ["campaign4.1","campaign4"]
     },
-    {
-      "name": "Blink",
-      "trait": "blink",
-      "theme": "translocation",
-      "effect": "Teleport a short distance."
-    },
-    {
-      "name": "Slow",
-      "trait": "slow",
-      "theme": "roots",
-      "effect": "Reduces movement speed."
-    },
-    {
-      "name": "Arcane Torrent",
-      "trait": "arcane_torrent",
-      "theme": "aoe",
-      "effect": "Breathes a cone of arcane wind that damages enemies before it."
-    },
-    {
-      "name": "Voidstorm",
-      "trait": "voidstorm",
-      "theme": "aoe",
-      "effect": "Rips a tear through reality and beckons a storm of void bolts raining down upon an area."
-    },
-    {
-      "name": "Shadow Bolt",
-      "trait": "shadow_bolt",
-      "theme": "damage",
-      "effect": "Blasts enemies with shadow magic."
-    },
-    {
-      "name": "Void Ward",
-      "trait": "void_ward",
-      "theme": "aoe",
-      "effect": "Absorbs attacks until overwhelmed, and then unleashes that damage in an explosion."
-    }
-  ],
-  "description": "A Magistrix of the Sin'dorei whose lust for power has driven her into the arms of Xal'atath's cult of Twilight followers. Now, she poses a direct threat to the High Home, and must be brought to justice.",
-  "campaignLinks": [
-    "campaign4.1",
-    "campaign4"
-  ]
-},
     {
       "id": "xalatath",
       "name": "Xal'atath: The Harbinger",

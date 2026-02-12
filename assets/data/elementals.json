@@ -24,7 +24,33 @@
         }
       ],
       "description": "A living mass of rock and soil animated by the Plane of Earth.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/earth_elemental.png"
+    },
+    {
+      "id": "sand_elemental",
+      "name": "Sand Elemental",
+      "class": "Elemental",
+      "category": "Elementals",
+      "subcategory": "Earth",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Crushing Fist",
+          "trait": "crushing attack",
+          "theme": "damage",
+          "effect": "Slams enemy with overwhelming force, staggering target briefly."
+        },
+        {
+          "name": "Wardstone Core",
+          "trait": "fortify",
+          "theme": "buffs",
+          "effect": "Raises defenses or maximum health temporarily."
+        }
+      ],
+      "description": "A living mass of rock and soil animated by the Plane of Earth.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/sand_elemental.png"
     },
     {
       "id": "earth_bound",
@@ -41,14 +67,25 @@
           "effect": "Instantly damages all enemies in a radius."
         },
         {
-          "name": "Magma Crash",
-          "trait": "damage over time",
-          "theme": "damage",
-          "effect": "Ember-heat or stone shards harm the target over time."
+          "id": "sand_scatter",
+          "name": "Sand Scatter",
+          "theme": "roots",
+          "effect": "Blinds enemies briefly.",
+          "usedBy": [],
+          "categories": []
+        },
+        {
+          "id": "sandstorm",
+          "name": "Sandstorm",
+          "theme": "aoe",
+          "effect": "Summons a blistering storm of sand that damages and blinds any enemies in the area.",
+          "usedBy": [],
+          "categories": []
         }
       ],
       "description": "A conjured earth spirit shackled to a caster’s sigils.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/earth_elemental.png"
     },
     {
       "id": "earth_unbound",
@@ -72,7 +109,8 @@
         }
       ],
       "description": "Freed of any sigil, it follows only tectonic instinct.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/unbound_earth_elemental.png"
     },
     {
       "id": "earth_revenant",
@@ -96,7 +134,8 @@
         }
       ],
       "description": "A hardened echo of ancient stone will.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/earth_revenant.png"
     },
     {
       "id": "earth_ascendant",
@@ -120,7 +159,8 @@
         }
       ],
       "description": "A paragon of the Earth Plane, will layered like strata.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/earth_ascendant.png"
     },
     {
       "id": "earth_spirit",
@@ -150,7 +190,8 @@
         }
       ],
       "description": "A gentler geomancy that steadies allies.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/earth_elemental.png"
     },
     {
       "id": "fire_elemental",
@@ -180,7 +221,8 @@
         }
       ],
       "description": "A hungry blaze given will from the Plane of Fire.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/fire_elemental.png"
     },
     {
       "id": "fire_bound",
@@ -210,7 +252,8 @@
         }
       ],
       "description": "A contained inferno leashed by a caster’s glyph.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/fire_elemental.png"
     },
     {
       "id": "fire_unbound",
@@ -234,7 +277,8 @@
         }
       ],
       "description": "A free-roving inferno that answers only to fuel and wind.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/unbound_fire_elemental.png"
     },
     {
       "id": "fire_revenant",
@@ -258,7 +302,8 @@
         }
       ],
       "description": "Persistent embers of a mighty pyre’s malice.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/fire_revenant.png"
     },
     {
       "id": "fire_ascendant",
@@ -282,7 +327,8 @@
         }
       ],
       "description": "A monarchal conflagration; a furnace made flesh.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/fire_ascendant.png"
     },
     {
       "id": "fire_spirit",
@@ -306,7 +352,8 @@
         }
       ],
       "description": "A benevolent flicker that emboldens allies.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/fire_elemental.png"
     },
     {
       "id": "air_elemental",
@@ -336,7 +383,8 @@
         }
       ],
       "description": "A whorl of living gale from the Plane of Air.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/air_elemental.png"
     },
     {
       "id": "air_bound",
@@ -360,7 +408,8 @@
         }
       ],
       "description": "Harnessed wind that holds to a conjurer’s anchor.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/air_elemental.png"
     },
     {
       "id": "air_unbound",
@@ -384,7 +433,8 @@
         }
       ],
       "description": "Storm-quick and whimsical, answerable to no rune.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/unbound_air_elemental.png"
     },
     {
       "id": "air_revenant",
@@ -408,7 +458,8 @@
         }
       ],
       "description": "The lingering spite of a broken stormfront.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/air_revenant.png"
     },
     {
       "id": "air_ascendant",
@@ -432,7 +483,8 @@
         }
       ],
       "description": "A sovereign storm given will and purpose.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/air_ascendant.png"
     },
     {
       "id": "air_spirit",
@@ -456,7 +508,8 @@
         }
       ],
       "description": "A gentle wind-soul that cools heated tempers.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/air_elemental.png"
     },
     {
       "id": "water_elemental",
@@ -486,7 +539,8 @@
         }        
       ],
       "description": "A living tide called from the Plane of Water.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/water_elemental.png"
     },
     {
       "id": "water_bound",
@@ -516,7 +570,8 @@
         }
       ],
       "description": "A disciplined wave held to a summoner’s call.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/water_elemental.png"
     },
     {
       "id": "water_unbound",
@@ -540,7 +595,8 @@
         }
       ],
       "description": "A flood spirit that follows the whims of depth and storm.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/unbound_water_elemental.png"
     },
     {
       "id": "water_revenant",
@@ -564,7 +620,8 @@
         }
       ],
       "description": "Salt-soaked memory of a relentless sea.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/water_revenant.png"
     },
     {
       "id": "water_ascendant",
@@ -588,7 +645,8 @@
         }
       ],
       "description": "The sea’s authority given form and voice.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/water_ascendant.png"
     },
     {
       "id": "water_spirit",
@@ -612,7 +670,8 @@
         }
       ],
       "description": "A cheerful stream-soul that favors gentle guidance.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/water_elemental.png"
     },
     {
       "id": "nature_lasher",
@@ -636,7 +695,8 @@
         }
       ],
       "description": "Animated flora that guards sacred groves.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/nature_lasher.png"
     },
     {
       "id": "nature_treant",
@@ -666,7 +726,8 @@
         }
       ],
       "description": "Ancient tree-wardens who stir only when needed.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/nature_treant.png"
     },
     {
       "id": "nature_sapling",
@@ -690,7 +751,8 @@
         }
       ],
       "description": "Mischievous sprouts that flit between roots and stones.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/nature_treant.png"
     },
     {
       "id": "nature_ancient",
@@ -714,7 +776,8 @@
         }
       ],
       "description": "A venerable forest spirit that embodies renewal.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/nature_ancient.png"
     },
     {
       "id": "holy_elemental",
@@ -744,7 +807,8 @@
         }
       ],
       "description": "A coherent flare of the Holy Light given purpose.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/light_elemental.png"
     },
     {
       "id": "holy_revenant",
@@ -780,7 +844,8 @@
         }
       ],
       "description": "Lingering devotion crystallized into form.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/light_elemental.png"
     },
     {
       "id": "arcane_elemental",
@@ -810,7 +875,8 @@
         }
       ],
       "description": "Raw mana coalesced into a thinking lattice.",
-      "campaignLinks": ["event008"]
+      "campaignLinks": ["event008"],
+      "image": "assets/art/monsters/arcane_elemental.png"
     },
     {
       "id": "arcane_revenant",
@@ -840,7 +906,8 @@
         }
       ],
       "description": "A spent ritual’s will that refuses to fade.",
-      "campaignLinks": ["event005"]
+      "campaignLinks": ["event005"],
+      "image": "assets/art/monsters/arcane_revenant.png"
     },
     {
       "id": "mana_wyrm",
@@ -864,7 +931,49 @@
         }
       ],
       "description": "A simple elemental creature of pure arcane energy.",
-      "campaignLinks": ["event005","event008"]
+      "campaignLinks": ["event005","event008"],
+      "image": "assets/art/monsters/mana_wyrm.png"
+    },
+    {
+      "id": "greater_mana_wyrm",
+      "name": "Greater Mana Wyrm",
+      "class": "Familiar",
+      "category": "Elementals",
+      "subcategory": "Arcane",
+      "hp": 30,
+      "traits": [
+        {
+          "name": "Mana Drain",
+          "trait": "leech",
+          "theme": "damage",
+          "effect": "Steals mana from foes."
+        },
+        {
+          "name": "Mana Burn",
+          "trait": "weaken",
+          "theme": "debuffs",
+          "effect": "Target suffers -1 to next magical action."
+        },
+        {
+          "id": "arcane_explosion",
+          "name": "Arcane Explosion",
+          "theme": "aoe",
+          "effect": "Releases a surge of arcane force at close range, dealing damage to all nearby targets. Doubles damage each time used in succession.",
+          "usedBy": [],
+          "categories": []
+        },
+        {
+          "id": "arcane_flood",
+          "name": "Arcane Flood",
+          "theme": "debuffs",
+          "effect": "Unleashes unstable energies, reducing hit chances for all nearby casters for a turn.",
+          "usedBy": [],
+          "categories": []
+        }
+      ],
+      "description": "A simple elemental creature of pure arcane energy.",
+      "campaignLinks": ["event005","event008"],
+      "image": "assets/art/monsters/greater_mana_wyrm.png"
     },
     {
       "id": "shadow_elemental",
@@ -888,7 +997,8 @@
         }
       ],
       "description": "A knot of void energy coalesced into motion.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/shadow_elemental.png"
     },
     {
       "id": "shadow_revenant",
@@ -912,7 +1022,8 @@
         }
       ],
       "description": "A remnant of darkness that clings where light fled.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/shadow_revenant.png"
     },
     {
       "id": "shadow_ascendant",
@@ -936,7 +1047,156 @@
         }
       ],
       "description": "A prince of emptiness whose will dims the world.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/shadow_ascendant.png"
+    },
+    {
+      "id": "neptulon_the_tide_hunter",
+      "name": "Neptulon, the Tide Hunter",
+      "class": "Elemental Lord",
+      "category": "Elementals",
+      "subcategory": "Elemental Lords",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Deep Stride",
+          "trait": "deep_stride",
+          "theme": "translocation",
+          "effect": "Moves swiftly through aquatic terrain."
+        },
+        {
+          "name": "Undertow",
+          "trait": "undertow",
+          "theme": "roots",
+          "effect": "Pulls enemies down with crushing water currents."
+        },
+        {
+          "name": "Aquatic Assault",
+          "trait": "acquatic_assault",
+          "theme": "damage",
+          "effect": "Charge at the enemy underwater, gaining +1 damage upon successful hit dealing direct damage."
+        },
+        {
+          "name": "Water Bolt",
+          "trait": "water_bolt",
+          "theme": "damage",
+          "effect": "Deals damage and knocks foes off balance."
+        }
+      ],
+      "description": "Elemental Lord of water, Neptulon was once imprisoned within the Abyssal Maw by the Titans and their keepers after having been banished during the war against the Black Empire. Now free, he is a fierce defender of the seas who refuses to bow to any tyrant, native to Azeroth or otherwise. Though he shares common goals with the defenders of Azeroth, he is not one to suffer trifling beings.",
+      "campaignLinks": [],
+      "image": "elemental_lord_neptulon"
+    },
+    {
+      "id": "ragnaros_the_fire_lord",
+      "name": "Ragnaros, the Fire Lord",
+      "class": "Elemental Lord",
+      "category": "Elementals",
+      "subcategory": "Elemental Lords",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Fire Blast",
+          "trait": "fire_blast",
+          "theme": "damage",
+          "effect": "Instantly burns enemy target heavily."
+        },
+        {
+          "name": "Elemental Grasp",
+          "trait": "elemental_grasp",
+          "theme": "roots",
+          "effect": "Vines seize multiple targets in place, preventing movement."
+        },
+        {
+          "name": "Firestorm",
+          "trait": "firestorm",
+          "theme": "aoe",
+          "effect": "Unleashes waves of flame."
+        },
+        {
+          "name": "Flame Crash",
+          "trait": "flame_crash",
+          "theme": "aoe",
+          "effect": "Ignites the ground into a hazard that harms those who linger."
+        }
+      ],
+      "description": "The fury-bound Elemental Lord of fire, he has tried time and again to assert dominance over his rivals and all of Azeroth at large. Having made multiple incurisons into the material plane, repeatedly escaping his prison within the Firelands, he is responsible for much of the destruction seen across Azeroth during the Cataclysm.",
+      "campaignLinks": [],
+      "image": "elemental_lord_ragnaros"
+    },
+    {
+      "id": "therazane_the_stonemother",
+      "name": "Therazane, the Stonemother",
+      "class": "Elemental Lord",
+      "category": "Elementals",
+      "subcategory": "Elemental Lords",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Stomp",
+          "trait": "stomp",
+          "theme": "aoe",
+          "effect": "Instantly damages all enemies in a radius."
+        },
+        {
+          "name": "Elemental Surge",
+          "trait": "elemental_surge",
+          "theme": "damage",
+          "effect": "Unleashes a strong blast of raw elemental energy."
+        },
+        {
+          "name": "Crude Smash",
+          "trait": "crude_smash",
+          "theme": "damage",
+          "effect": "Heavy melee strike with improvised weapon."
+        },
+        {
+          "name": "Slow",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        }
+      ],
+      "description": "The steadfast Elemental Lord whose dominion in Deepholme serves as the seat of her rule over the earth. One of the more reclusive Elemental Lords, Therazane and her minions often have been forced into choosing sides during planet-wide conflicts with the war against the Black Empire, Deathwing, the Legion, and other times as well.",
+      "campaignLinks": [],
+      "image": "elemental_lord_therazane"
+    },
+    {
+      "id": "alakir_the_wind_lord",
+      "name": "Al'akir, the Wind Lord",
+      "class": "Elemental Lord",
+      "category": "Elementals",
+      "subcategory": "Elemental Lords",
+      "hp": 200,
+      "traits": [
+        {
+          "name": "Slow",
+          "trait": "slow",
+          "theme": "roots",
+          "effect": "Reduces movement speed."
+        },
+        {
+          "name": "Whirlwind Gust",
+          "trait": "whirlwind_gust",
+          "theme": "roots",
+          "effect": "Pushes enemies back with storm winds."
+        },
+        {
+          "name": "Wind Slash",
+          "trait": "wind_slash",
+          "theme": "damage",
+          "effect": "Knocks enemy back briefly, staggering them."
+        },
+        {
+          "name": "Wind’s Wrath",
+          "trait": "winds_wrath",
+          "theme": "damage",
+          "effect": "Knocks back enemies with gale force."
+        }
+      ],
+      "description": "Perhaps only slightly less ambitious than Ragnaros, Al'akir has pursued his own aims since time immemorial on Azeroth, and time and time until his demise sided with the most aggressive and domineering of masters.",
+      "campaignLinks": [],
+      "image": "elemental_lord_alakir"
     }
   ]
 }

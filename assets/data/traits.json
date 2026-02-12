@@ -36,14 +36,6 @@
       "categories": []
     },
     {
-      "id": "acquatic_assault",
-      "name": "Aquatic Assault",
-      "theme": "damage",
-      "effect": "Charge at the enemy underwater, gaining +1 damage upon successful hit dealing direct damage.",
-      "usedBy": [],
-      "categories": []
-    },
-    {
       "id": "adamant_frame",
       "name": "Adamant Frame",
       "theme": "buffs",

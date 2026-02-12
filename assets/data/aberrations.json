@@ -617,8 +617,7 @@
       ],
       "description": "A gate-warden that stabilizes and feeds from a tear in the veil.",
       "campaignLinks": [
-        "tww"
-      ],
+        "tww"],
       "image": "assets/art/monsters/void_spawn.png"
     },
     {
@@ -797,7 +796,8 @@
         }
       ],
       "description": "A knot of stray mana that learned to hate the hands that wove it.",
-      "campaignLinks": ["event005"]
+      "campaignLinks": ["event005"],
+      "image": "assets/art/monsters/mana_anomaly.png"
     },
     {
       "id": "aberration_temporal_anomaly",
@@ -821,7 +821,8 @@
         }
       ],
       "description": "A time-slipped echo made resentful by paradox.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/temporal_anomaly.png"
     },
     {
       "id": "aberration_living_ooze",
@@ -851,7 +852,9 @@
         }
       ],
       "description": "A hungry slick of protoplasm animated by wrong magic.",
-      "campaignLinks": []
+      "campaignLinks": [],
+      "image": "assets/art/monsters/living_ooze.png"
+
     },
     {
       "id": "void_rift",
@@ -864,7 +867,42 @@
       "description": "A void rift which enables passage through the shadowy realms of the void.",
       "campaignLinks": [],
       "image": "assets/art/monsters/void_rift.png"
-
+    },
+    {
+      "id": "void_tear",
+      "name": "Void Tear",
+      "class": "Aberrations",
+      "category": "Portals",
+      "subcategory": "Rifts",
+      "hp": 200,
+      "traits": [      ],
+      "description": "A slight tear piercing the veil between the nether and the material world; often used by shadow casters to translocate across distances.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/void_tear.png"
+    },
+    {
+      "id": "ethereal_gate",
+      "name": "Ethereal Gate",
+      "class": "Aberrations",
+      "category": "Portals",
+      "subcategory": "Portals",
+      "hp": 200,
+      "traits": [      ],
+      "description": "A portal gateway built by the Ethereals to enable transit from one location to another. Powered by arcane energy, often harvested from manaforges.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/ethereal_portal.png"
+    },
+    {
+      "id": "arcane_portal",
+      "name": "Arcane Portal",
+      "class": "Aberrations",
+      "category": "Portals",
+      "subcategory": "Portals",
+      "hp": 200,
+      "traits": [      ],
+      "description": "Typical arcane portal opened by mages to link two locations; depending on the strength of the anchors, it can fade after a short time, or remain open indefinitely.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/arcane_portal.png"
     },
     {
       "id": "aberration_voidcaller",

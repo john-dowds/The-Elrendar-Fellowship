@@ -1,17 +1,18 @@
 {
-    "version": "3.0",
+    "version": "2.0",
     "name": "Factions",
     "entries": [
-        {
-            "id": "7th_legion",
-            "name": "7th Legion",
-            "class": "Military Force",
-            "category": "Factions",
-            "subcategory": "Alliance",
-            "alsoAppearsIn": [],
-            "description": "The Alliance’s elite expeditionary legion, deployed in global conflicts.",
-            "campaignLinks": ["wotlk","cataclysm-mop","legion","bfa"]
-          },
+      {
+        "id": "7th_legion",
+        "name": "7th Legion",
+        "class": "Military Force",
+         "category": "Factions",
+         "subcategory": "Alliance",
+         "alsoAppearsIn": [],
+         "description": "The Alliance’s elite expeditionary legion, deployed in global conflicts.",
+         "campaignLinks": ["wotlk","cataclysm-mop","legion","bfa"],
+        "image": "assets/art/monsters/7thlegion.png"
+        },
         {
         "id": "aldor",
         "name": "Aldor",
@@ -22,20 +23,21 @@
           {"category": "Factions", "subcategory": "Outland"}
         ],
         "description": "Draenei priests and vindicators holding the line for the Light in Shattrath.",
-        "campaignLinks": ["tbc"]
+        "campaignLinks": ["tbc"],
+        "image": "assets/art/monsters/aldor.png"
       },
       {
+        "id": "alliance_expedition",
         "name": "Alliance Expedition",
         "class": "Military Force",
         "category": "Factions",
         "subcategory": "Alliance",
         "alsoAppearsIn": [
             {"category": "Factions", "subcategory": "Outland"}
-
         ],
         "description": "Alliance forces sent through the Dark Portal during the Second War.",
         "campaignLinks": ["expedition","tbc"],
-        "id": "alliance_expedition"
+        "image": "assets/art/monsters/sonsoflothar.png"
       },
       {
         "id": "argent_crusade",
@@ -45,7 +47,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Crusaders formed from Silver Hand and Argent Dawn to purge undead blight.",
-        "campaignLinks": ["wotlk","legion"]
+        "campaignLinks": ["wotlk","legion"],
+        "image": "assets/art/monsters/argentcrusade.png"
       },
       {
         "id": "argent_dawn",
@@ -55,7 +58,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Scholars and crusaders who first opposed the Scourge’s rise.",
-        "campaignLinks": ["classic","tbc","wotlk"]
+        "campaignLinks": ["classic","tbc","wotlk"],
+        "image": "assets/art/monsters/argentcrusade.png"
       },
       {
         "id": "army_of_the_light",
@@ -65,7 +69,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "A trans-world crusade tempered by endless war against the Burning Legion.",
-        "campaignLinks": ["legion"]
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/armyofthelight.png"
       },
       {
         "name": "Ashen Verdict",
@@ -75,7 +80,8 @@
         "alsoAppearsIn": [],
         "description": "Alliance of the Argent Crusade and Knights of the Ebon Blade formed to assault Icecrown Citadel.",
         "campaignLinks": ["wotlk"],
-        "id": "ashen_verdict"
+        "id": "ashen_verdict",
+        "image": "assets/art/monsters/ebonblade.png"
       },
       {
         "id": "blood_knights",
@@ -85,9 +91,11 @@
         "subcategory": "Kingdom of Quel'Thalas",
         "alsoAppearsIn": [],
         "description": "Silvermoon’s paladin order—once controversial, now steadfast stewards of the Light.",
-        "campaignLinks": ["tbc","bfa","wod","legion"]
+        "campaignLinks": ["tbc","bfa","wod","legion"],
+        "image": "assets/art/monsters/bloodknights.png"
       },
       {
+        "id": "burning_legion",
         "name": "Burning Legion",
         "class": "Demonic Army",
         "category": "Factions",
@@ -95,7 +103,7 @@
         "alsoAppearsIn": [],
         "description": "A vast army of demons led by Sargeras, seeking the annihilation of all life.",
         "campaignLinks": ["wota","greatwars","fallqt","tbc","legion"],
-        "id": "burning_legion"
+        "image": "assets/art/monsters/burninglegion.png"
       },
       {
         "id": "cenarion_circle",
@@ -105,7 +113,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Wardens of the wilds, mediating between mortal settlements and living lands.",
-        "campaignLinks": ["classic","tbc","wotlk","cataclysm-mop","legion","dragonflight","tww"]
+        "campaignLinks": ["classic","tbc","wotlk","cataclysm-mop","legion","dragonflight","tww"],
+        "image": "assets/art/monsters/cenarioncircle.png"
       },
       {
         "id": "the_conclave",
@@ -115,7 +124,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Priesthood uniting diverse callings of Light and Shadow at Netherlight Temple.",
-        "campaignLinks": ["legion"]
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/conclave.png"
       },
       {
         "id": "council_of_the_black_harvest",
@@ -125,9 +135,11 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "An assembly of master warlocks studying and wielding fel for their own designs.",
-        "campaignLinks": ["legion"]
+        "campaignLinks": ["legion"],
+        "image": "assets/art/monsters/blackharvest.png"
       },
       {
+        "id": "consortium",
         "name": "Consortium",
         "class": "Trade Faction",
         "category": "Factions",
@@ -138,7 +150,8 @@
 ],
         "description": "A loose affiliation of ethereal traders and smugglers operating in Outland.",
         "campaignLinks": ["tbc","tww"],
-        "id": "consortium"
+        "image": "assets/art/monsters/ethereal.png"
+
       },
       {
         "id": "dawnblade",
@@ -152,7 +165,8 @@
             {"category": "Factions", "subcategory": "Burning Legion"}
         ],
         "description": "Elite Sunfury troops deployed to secure the Isle of Quel’Danas.",
-        "campaignLinks": ["schism","classic","tbc"]
+        "campaignLinks": ["schism","classic","tbc"],
+        "image": "assets/art/monsters/kaelthas.png"
       },
       {
         "id": "devouring_host",
@@ -162,7 +176,8 @@
         "subcategory": "Hostile",
         "alsoAppearsIn": [],
         "description": "An near-endless army of void aberrations in service to Xal'atath, once the Harbinger of Dimensius the Devourer who has set her sights on Azeroth.",
-        "campaignLinks": ["midnight","midnightprelude"]
+        "campaignLinks": ["midnight","midnightprelude"],
+        "image": "assets/art/monsters/voidwalker.png"
       },
       {
         "id": "earthen_ring",
@@ -172,7 +187,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "Unified shamans brokering peace among the elements and mortals.",
-        "campaignLinks": ["cata","legion"]
+        "campaignLinks": ["cata","legion"],
+        "image": "assets/art/monsters/shaman.png"
       },
       {
         "id": "eclipsion",
@@ -185,7 +201,8 @@
             {"category": "Factions", "subcategory": "Kingdom of Quel'Thalas"}
         ],
         "description": "A Sunfury-aligned sect operating from Shadowmoon Valley under demonic influence.",
-        "campaignLinks": ["schism","classic","tbc"]
+        "campaignLinks": ["schism","classic","tbc"],
+        "image": "assets/art/monsters/kaelthas.png"
       },
       {
         "name": "Ethereum",
@@ -198,7 +215,8 @@
         ],
         "description": "A militant ethereal organization seeking revenge on Dimensius-the All Devouring, who have fallen far from their path.",
         "campaignLinks": ["tbc","tww"],
-        "id": "ethereum"
+        "id": "ethereum",
+        "image": "assets/art/monsters/ethereal.png"
       },
       {
         "id": "explorers_league",
@@ -233,7 +251,8 @@
             {"category": "Factions", "subcategory": "Outland"}
         ],
         "description": "A Sunfury contingent entrenched in Terokkar and Hellfire, enforcing Kael’thas’ will.",
-        "campaignLinks": ["schism","classic","tbc"]
+        "campaignLinks": ["schism","classic","tbc"],
+        "image": "assets/art/monsters/kaelthas.png"
       },
       {
         "id": "illidari",
@@ -289,7 +308,8 @@
             {"category": "Factions", "subcategory": "Outland"},
             {"category": "Factions", "subcategory": "Neutral"}],
         "description": "An ethereal mercantile consortium focused on preventing the return of Dimensius-the All Devouring, and saving the remains of K'aresh.",
-        "campaignLinks": ["tbc","tww"]
+        "campaignLinks": ["tbc","tww"],
+        "image": "assets/art/monsters/ethereal.png"
       },
       {
         "id": "ebon_blade",
@@ -299,7 +319,8 @@
         "subcategory": "Neutral",
         "alsoAppearsIn": [],
         "description": "A re-forged order using the darkness that once bound them to fight greater evils.",
-        "campaignLinks": ["wotlk","legion","shadowlands"]
+        "campaignLinks": ["wotlk","legion","shadowlands"],
+        "image": "assets/art/monsters/ebonblade.png"
       },
       {
         "id": "magisters",
@@ -384,7 +405,8 @@
             {"category": "Factions", "subcategory": "Kingdom of Quel'Thalas"}
         ],
         "description": "Stealth and reconnaissance specialists within the Sunfury ranks.",
-        "campaignLinks": ["schism","classic","tbc"]
+        "campaignLinks": ["schism","classic","tbc"],
+        "image": "assets/art/monsters/kaelthas.png"
       },
       {
         "name": "Sha'tar",
@@ -398,7 +420,8 @@
         ],
         "description": "The naaru-led faction allied with the Aldor and Scryers in Shattrath City.",
         "campaignLinks": ["tbc"],
-        "id": "sha_tar"
+        "id": "sha_tar",
+        "image": "assets/art/monsters/aldor.png"
       },
       {
         "id": "shadow_council",
@@ -425,7 +448,8 @@
         ],
         "description": "A sect of the Ethereum that are hell bent on resurrecting Dimensius-the All Devouring.",
         "campaignLinks": ["tbc","shadowlands","tww"],
-        "id": "shadowguard"
+        "id": "shadowguard",
+        "image": "assets/art/monsters/ethereal.png"
       },
       {
         "name": "Shattered Sun Offensive",
@@ -463,7 +487,8 @@
             {"category": "Factions", "subcategory": "Burning Legion"}
         ],
         "description": "Kael’thas Sunstrider’s blood elf army stationed across Outland and Quel'Danas.",
-        "campaignLinks": ["schism","classic","tbc"]
+        "campaignLinks": ["schism","classic","tbc"],
+        "image": "assets/art/monsters/kaelthas.png"
       },
       {
         "id": "sunreavers",
