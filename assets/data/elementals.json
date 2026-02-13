@@ -160,7 +160,7 @@
       ],
       "description": "A paragon of the Earth Plane, will layered like strata.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/fire_ascendant.png"
+      "image": "assets/art/monsters/elemental_ascendant.png"
     },
     {
       "id": "earth_spirit",
@@ -303,7 +303,7 @@
       ],
       "description": "Persistent embers of a mighty pyre’s malice.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/fire_revenant.png"
+      "image": "assets/art/monsters/elemental_ascendant.png"
     },
     {
       "id": "fire_ascendant",
@@ -780,74 +780,6 @@
       "image": "assets/art/monsters/nature_ancient.png"
     },
     {
-      "id": "holy_elemental",
-      "name": "Light Elemental",
-      "class": "Elemental",
-      "category": "Elementals",
-      "subcategory": "Holy",
-      "hp": 18,
-      "traits": [
-        {
-          "name": "Cleanse",
-          "trait": "cleanse",
-          "theme": "buffs",
-          "effect": "Removes corruption from allies."
-        },
-        {
-          "name": "Benison",
-          "trait": "empower",
-          "theme": "buffs",
-          "effect": "Increases damage, critical chance, or potency."
-        },
-        {
-          "name": "Sunbeam",
-          "trait": "heavy attack",
-          "theme": "damage",
-          "effect": "A focused ray that sears shadow and doubt, and leaves burning nature or holy damage."
-        }
-      ],
-      "description": "A coherent flare of the Holy Light given purpose.",
-      "campaignLinks": [],
-      "image": "assets/art/monsters/light_elemental.png"
-    },
-    {
-      "id": "holy_revenant",
-      "name": "Light Revenant",
-      "class": "Revenant",
-      "category": "Elementals",
-      "subcategory": "Holy",
-      "hp": 22,
-      "traits": [
-        {
-          "name": "Radiant Strike",
-          "trait": "heavy attack",
-          "theme": "damage",
-          "effect": "A ranged or melee strike imbued with searing Light that weakens shadow foes, demons, and undead."
-        },
-        {
-          "name": "Aureole",
-          "trait": "area_blast",
-          "theme": "aoe",
-          "effect": "Radiates a halo burst, damaging nearby foes."
-        },
-        {
-          "name": "Smite",
-          "trait": "precise attack",
-          "theme": "damage",
-          "effect": "Deals radiant holy damage."
-        },
-        {
-          "name": "Warming Light",
-          "trait": "area heal",
-          "theme": "healing",
-          "effect": "Restores health to targets in an area."
-        }
-      ],
-      "description": "Lingering devotion crystallized into form.",
-      "campaignLinks": [],
-      "image": "assets/art/monsters/light_elemental.png"
-    },
-    {
       "id": "arcane_elemental",
       "name": "Arcane Elemental",
       "class": "Elemental",
@@ -1085,7 +1017,7 @@
       ],
       "description": "Elemental Lord of water, Neptulon was once imprisoned within the Abyssal Maw by the Titans and their keepers after having been banished during the war against the Black Empire. Now free, he is a fierce defender of the seas who refuses to bow to any tyrant, native to Azeroth or otherwise. Though he shares common goals with the defenders of Azeroth, he is not one to suffer trifling beings.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/elemental_lord_neptulon"
+      "image": "assets/art/monsters/elemental_lord_neptulon.png"
     },
     {
       "id": "ragnaros_the_fire_lord",
@@ -1122,7 +1054,7 @@
       ],
       "description": "The fury-bound Elemental Lord of fire, he has tried time and again to assert dominance over his rivals and all of Azeroth at large. Having made multiple incurisons into the material plane, repeatedly escaping his prison within the Firelands, he is responsible for much of the destruction seen across Azeroth during the Cataclysm.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/elemental_lord_ragnaros"
+      "image": "assets/art/monsters/elemental_lord_ragnaros.png"
     },
     {
       "id": "therazane_the_stonemother",
@@ -1159,7 +1091,7 @@
       ],
       "description": "The steadfast Elemental Lord whose dominion in Deepholme serves as the seat of her rule over the earth. One of the more reclusive Elemental Lords, Therazane and her minions often have been forced into choosing sides during planet-wide conflicts with the war against the Black Empire, Deathwing, the Legion, and other times as well.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/elemental_lord_therazane"
+      "image": "assets/art/monsters/elemental_lord_therazane.png"
     },
     {
       "id": "alakir_the_wind_lord",
@@ -1196,7 +1128,7 @@
       ],
       "description": "Perhaps only slightly less ambitious than Ragnaros, Al'akir has pursued his own aims since time immemorial on Azeroth, and time and time until his demise sided with the most aggressive and domineering of masters.",
       "campaignLinks": [],
-      "image": "assets/art/monsters/elemental_lord_alakir"
+      "image": "assets/art/monsters/elemental_lord_alakir.png"
     }
   ]
 }
