@@ -719,7 +719,6 @@
       "campaignLinks": ["fallqt","wotlk","shadowlands"],
       "image": "assets/art/monsters/valkyr.png"
     },
-    [
       {
         "id": "undead_lich",
         "name": "Lich",
@@ -1058,8 +1057,7 @@
         "description": "Reanimated dragon corpses bound to necromancy, their breath a storm of tomb-cold frost.",
         "campaignLinks": ["fallqt","wotlk"],
       "image": "assets/art/monsters/frost_wyrm.png"
-      }
-    ],
+      },
     {
       "id": "undead_bone_drake",
       "name": "Bone Drake",
