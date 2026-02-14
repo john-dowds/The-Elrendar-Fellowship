@@ -725,7 +725,7 @@
         "name": "Lich",
         "class": "Arch-Necromancer",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Skeletal",
         "hp": 28,
         "traits": [
           {
@@ -768,7 +768,7 @@
         "name": "Death Knight (Scourge)",
         "class": "Runeblade Champion",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "hp": 24,
         "traits": [
           {
@@ -805,7 +805,7 @@
         "name": "Death Knight (Ebon Blade)",
         "class": "Runeblade Champion",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "hp": 24,
         "traits": [
           {
@@ -842,7 +842,7 @@
         "name": "Dark Ranger",
         "class": "Shadow Archer",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "alsoAppearsIn": [
           { "category": "Humanoids", "subcategory": "Quel'dorei" }
         ],
@@ -882,7 +882,7 @@
         "name": "San’layn (Darkfallen)",
         "class": "Vampiric Elf",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "alsoAppearsIn": [
           { "category": "Humanoids", "subcategory": "Sin'dorei" }
         ],
@@ -922,7 +922,7 @@
         "name": "Royal Apothecary",
         "class": "Plague Alchemist",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "hp": 16,
         "traits": [
           {
@@ -959,7 +959,7 @@
         "name": "Deathguard",
         "class": "Forsaken Soldier",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "hp": 18,
         "traits": [
           {
@@ -990,7 +990,7 @@
         "name": "Val’kyr Matron",
         "class": "Ascended Commander",
         "category": "Undead",
-        "subcategory": "Special",
+        "subcategory": "Corporeal",
         "hp": 26,
         "traits": [
           {
