@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elrendar Fellowship — Story Mapper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css?v=8" />
+  <!-- Cytoscape + edgehandles -->
+  <script src="https://unpkg.com/cytoscape@3.27.0/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/cytoscape-edgehandles@4.0.1/cytoscape-edgehandles.js"></script>
+
+  <style>
+    :root{
+      --sm-gold: #E4BE59;
+      --sm-cream: #fce5cd;
+      --sm-ink: rgba(0,0,0,0.82);
+      --sm-panel: rgba(0,0,0,0.62);
+      --sm-panel-strong: rgba(0,0,0,0.75);
+      --sm-border: rgba(252,229,205,0.35);
+      --sm-shadow: 0 0 12px rgba(0,0,0,0.55);
+      --sm-radius: 12px;
+      --sm-glow: 0 0 18px rgba(228,190,89,0.35);
+    }
+
+    .storymap-wrap{
+      width: calc(100vw - 10px);
+      max-width: none;
+      margin: 10px auto 16px;
+      padding: 0 5px 12px;
+    }
+
+    .storymap-shell{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      width: 100%;
+      margin: 0;
+    }
+
+    /* ONE-LINE TOOLBAR */
+    .sm-toolbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: var(--sm-panel);
+      border: 1px solid var(--sm-border);
+      border-radius: var(--sm-radius);
+      box-shadow: var(--sm-shadow);
+      padding: 10px 10px;
+
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sm-toolbar .left,
+    .sm-toolbar .right{
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .sm-toolbar::-webkit-scrollbar{ height: 8px; }
+    .sm-toolbar::-webkit-scrollbar-thumb{
+      background: rgba(252,229,205,0.18);
+      border-radius: 999px;
+    }
+
+    .sm-btn{
+      appearance: none;
+      border: 1px solid rgba(252,229,205,0.22);
+      background: rgba(0,0,0,0.55);
+      color: var(--sm-cream);
+      padding: .55rem .75rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+      transition: transform .08s ease, filter .15s ease, border-color .15s ease;
+      user-select: none;
+      touch-action: manipulation;
+      flex: 0 0 auto;
+    }
+    .sm-btn:hover{
+      border-color: rgba(228,190,89,0.45);
+      filter: brightness(1.06);
+    }
+    .sm-btn:active{ transform: translateY(1px); }
+    .sm-btn.primary{
+      background: linear-gradient(#7d5a1a,#3d2a12);
+      border-color: rgba(0,0,0,0.75);
+    }
+    .sm-btn.danger{
+      background: rgba(120,25,25,0.55);
+      border-color: rgba(255,140,140,0.25);
+    }
+    .sm-btn.toggle[data-on="true"]{
+      box-shadow: inset 0 0 0 2px rgba(228,190,89,0.35), var(--sm-glow);
+      border-color: rgba(228,190,89,0.65);
+    }
+
+    .sm-input{
+      width: min(360px, 40vw);
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(252,229,205,0.25);
+      color: var(--sm-cream);
+      border-radius: 999px;
+      padding: .55rem .75rem;
+      outline: none;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+      flex: 0 0 auto;
+    }
+    .sm-input:focus{
+      border-color: rgba(228,190,89,0.55);
+      box-shadow: 0 0 0 3px rgba(228,190,89,0.18);
+    }
+
+    .sm-status{
+      font-size: .95rem;
+      opacity: .9;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    /* Canvas panel */
+    .sm-canvas{
+      position: relative;
+      background: var(--sm-panel-strong);
+      border: 2px solid rgba(252,229,205,0.25);
+      border-radius: 16px;
+      box-shadow: var(--sm-shadow);
+      overflow: hidden;
+      min-height: calc(100vh - 220px);
+    }
+
+    #cy{
+      position: absolute;
+      inset: 0;
+      touch-action: none;
+    }
+
+    /* Docked editor: fixed to left side of viewport */
+    .sm-editor{
+      position: fixed !important;
+      z-index: 9000 !important;
+
+      left: 10px !important;
+      top: auto;
+
+      width: min(520px, calc(100vw - 20px)) !important;
+
+      background: rgba(15,12,10,0.92);
+      border: 2px solid rgba(228,190,89,0.65);
+      border-radius: 14px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.75);
+      padding: .75rem .85rem;
+
+      display: none;
+      transform: none !important;
+      backdrop-filter: blur(2px);
+
+      max-height: calc(100vh - 140px) !important;
+      overflow: hidden !important;
+    }
+    .sm-editor[data-open="true"]{ display:block; }
+
+    .sm-editor .row{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .55rem;
+    }
+
+    .sm-editor .title{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: .25rem;
+    }
+    .sm-editor .title h3{
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--sm-gold);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+    .sm-editor .meta{
+      font-size: .85rem;
+      opacity: .85;
+      white-space: nowrap;
+    }
+
+    .sm-label{
+      font-weight: 700;
+      font-size: .95rem;
+      opacity: .95;
+    }
+
+    .sm-field{
+      width: 100%;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(252,229,205,0.25);
+      color: var(--sm-cream);
+      border-radius: 10px;
+      padding: .6rem .7rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .sm-field:focus{
+      border-color: rgba(228,190,89,0.55);
+      box-shadow: 0 0 0 3px rgba(228,190,89,0.18);
+    }
+
+    /* Rich text toolbar inside editor */
+    .sm-formatbar{
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 6px;
+      align-items: center;
+      padding: 6px;
+      border: 1px solid rgba(252,229,205,0.18);
+      border-radius: 12px;
+      background: rgba(0,0,0,0.35);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sm-fbtn{
+      border: 1px solid rgba(252,229,205,0.16);
+      background: rgba(0,0,0,0.45);
+      color: var(--sm-cream);
+      border-radius: 10px;
+      padding: 6px 9px;
+      cursor: pointer;
+      font-weight: 800;
+      line-height: 1;
+      user-select: none;
+      flex: 0 0 auto;
+    }
+    .sm-fbtn:hover{ border-color: rgba(228,190,89,0.45); }
+    .sm-fbtn:active{ transform: translateY(1px); }
+
+    .sm-font{
+      border: 1px solid rgba(252,229,205,0.16);
+      background: rgba(0,0,0,0.45);
+      color: var(--sm-cream);
+      border-radius: 10px;
+      padding: 6px 9px;
+      outline: none;
+      flex: 0 0 auto;
+    }
+
+    .sm-color{
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(252,229,205,0.16);
+      background: rgba(0,0,0,0.45);
+      border-radius: 10px;
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    .sm-rich{
+      width: 100%;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(252,229,205,0.25);
+      color: var(--sm-cream);
+      border-radius: 10px;
+      padding: .6rem .7rem;
+      outline: none;
+      box-sizing: border-box;
+
+      min-height: 190px;
+      max-height: 360px;
+      overflow: auto;
+      line-height: 1.45;
+      white-space: pre-wrap;
+    }
+    .sm-rich:focus{
+      border-color: rgba(228,190,89,0.55);
+      box-shadow: 0 0 0 3px rgba(228,190,89,0.18);
+    }
+
+    .sm-editor .actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .35rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sm-editor .actions .left,
+    .sm-editor .actions .right{
+      display:flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .sm-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding: .3rem .55rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(252,229,205,0.18);
+      font-size: .9rem;
+      opacity: .95;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .sm-hint{
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: .45rem .6rem;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(252,229,205,0.18);
+      color: rgba(252,229,205,0.85);
+      font-size: .95rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+      user-select: none;
+      pointer-events: none;
+      max-width: min(1100px, calc(100vw - 24px));
+    }
+
+    /* Storymap page-specific overrides */
+    body > header.banner { display: none !important; }
+
+    nav.menu-bar{
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 5000 !important;
+    }
+
+    main.content{
+      width: 100vw !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .storymap-wrap{
+      width: 100vw !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 6px !important;
+      box-sizing: border-box !important;
+    }
+
+    html, body{ overflow-x: hidden !important; }
+
+    .sm-canvas{
+      min-height: calc(100vh - 140px) !important;
+    }
+
+    .sm-editor{
+      max-height: calc(100vh - 140px) !important;
+      overflow: hidden !important;
+    }
+    .sm-rich{
+      max-height: min(320px, calc(100vh - 360px)) !important;
+      overflow: auto !important;
+    }
+
+    .sm-alignbtn{
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+    .align-icon{
+      width: 16px;
+      height: 12px;
+      display: inline-block;
+      background:
+        linear-gradient(var(--sm-cream), var(--sm-cream)) 0 0/16px 2px no-repeat,
+        linear-gradient(var(--sm-cream), var(--sm-cream)) 0 5px/16px 2px no-repeat,
+        linear-gradient(var(--sm-cream), var(--sm-cream)) 0 10px/16px 2px no-repeat;
+      opacity: 0.95;
+    }
+
+    .sm-alignmenu{
+      position: absolute;
+      top: 40px;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 8px;
+      background: rgba(0,0,0,0.85);
+      border: 1px solid rgba(252,229,205,0.22);
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+      z-index: 9999;
+      min-width: 170px;
+    }
+    .sm-alignmenu[data-open="true"]{ display: flex; }
+
+    .sm-alignitem{
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(252,229,205,0.16);
+      background: rgba(0,0,0,0.45);
+      cursor: pointer;
+      padding: 8px 10px;
+      text-align: left;
+      color: var(--sm-cream);
+      font-weight: 800;
+      letter-spacing: .1px;
+    }
+    .sm-alignitem:hover{ border-color: rgba(228,190,89,0.45); }
+
+    /* ---- Save & Load dropdown ---- */
+    .sm-dd{
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .sm-ddmenu{
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: min(340px, calc(100vw - 24px));
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px;
+      background: rgba(0,0,0,0.88);
+      border: 1px solid rgba(252,229,205,0.22);
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+      z-index: 9999;
+    }
+    .sm-ddmenu[data-open="true"]{ display:flex; }
+
+    .sm-dditem{
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(252,229,205,0.16);
+      background: rgba(0,0,0,0.45);
+      cursor: pointer;
+      padding: 10px 10px;
+      text-align: left;
+      color: var(--sm-cream);
+      font-weight: 800;
+    }
+    .sm-dditem:hover{ border-color: rgba(228,190,89,0.45); }
+
+    .sm-ddsep{
+      height: 1px;
+      background: rgba(252,229,205,0.14);
+      margin: 6px 0;
+    }
+
+    .sm-ddsub{
+      padding: 6px;
+      border: 1px solid rgba(252,229,205,0.14);
+      border-radius: 12px;
+      background: rgba(0,0,0,0.32);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 260px;
+      overflow: auto;
+    }
+    .sm-ddsub[data-open="true"]{ display:flex; }
+
+    .sm-ddsub .sm-dditem{
+      font-weight: 700;
+      padding: 9px 10px;
+      opacity: .98;
+    }
+
+    .sm-ddnote{
+      font-size: .9rem;
+      opacity: .85;
+      padding: 2px 2px 0;
+    }
+
+    #smFile{ display:none !important; }
+  </style>
+</head>
+
+<body>
+  <header class="banner">
+    <h1 class="site-title">The Elrendar Fellowship</h1>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">At A Glance</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Roleplay ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="system.html">RP Guide Book</a></li>
+          <li><a href="playercard.html">Character Sheet</a></li>
+          <li><a href="monstersuite.html">Monster Manual</a></li>
+          <li><a href="dm-assist.html">DM Event Assistant</a></li>
+          <li><a href="storymap.html"> Story Mapper</a></li>
+        </ul>
+      </li>
+
+      <li><a href="members.html">Members</a></li>
+      <li><a href="apply.html">Apply</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Games ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="phoenix-path.html">The Phoenix Path</a></li>
+          <li><a href="azeroth-at-war.html">Azeroth At War</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="storymap-wrap">
+      <section class="storymap-shell">
+        <div class="sm-toolbar">
+          <div class="left">
+            <button class="sm-btn primary" id="smAdd">+ New Passage</button>
+            <button class="sm-btn" id="smLayout">Auto-Layout</button>
+            <button class="sm-btn" id="smCenter">Center</button>
+            <button class="sm-btn danger" id="smDelete">Delete</button>
+            <button class="sm-btn" id="smFresh" title="Clear the canvas without deleting local saves">Start Fresh</button>
+            Beta Model
+          </div>
+
+          <div class="right">
+            <input class="sm-input" id="smSearch" placeholder="Search passages (Enter)..." />
+
+            <!-- Save & Load dropdown -->
+            <div class="sm-dd">
+              <button class="sm-btn" id="smSaveLoad" aria-haspopup="true" aria-expanded="false">Save &amp; Load</button>
+
+              <div class="sm-ddmenu" id="smSaveLoadMenu" role="menu" aria-label="Save and load menu" data-open="false">
+                <button class="sm-dditem" id="smSaveAsNew" type="button">Save As New</button>
+                <button class="sm-dditem" id="smSaveLocal" type="button">Save Local</button>
+
+                <button class="sm-dditem" id="smLoadLocal" type="button" aria-haspopup="true" aria-expanded="false">
+                  Load Local
+                </button>
+
+                <div class="sm-ddsub" id="smLoadList" data-open="false" aria-label="Local saves list">
+                </div>
+
+                <div class="sm-ddsep"></div>
+
+                <button class="sm-dditem" id="smUploadJson" type="button">Upload JSON</button>
+                <button class="sm-dditem" id="smDownloadJson" type="button">Download JSON</button>
+
+                <div class="sm-ddnote" id="smSaveNote">Local saves stay in this browser only.</div>
+              </div>
+            </div>
+
+            <input type="file" id="smFile" accept="application/json" hidden />
+            <span class="sm-status" id="smStatus">Ready.</span>
+          </div>
+        </div>
+
+        <div class="sm-canvas" id="smCanvas">
+          <div id="cy"></div>
+
+          <div class="sm-editor" id="smEditor" data-open="false" role="dialog" aria-label="Passage editor">
+            <div class="title">
+              <h3>Passage Editor</h3>
+              <div class="meta" id="smMeta">No selection</div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="sm-label">Title</div>
+                <input class="sm-field" id="smTitle" placeholder="Passage title" />
+              </div>
+
+              <div class="sm-formatbar" aria-label="Text formatting toolbar">
+                <button class="sm-fbtn" id="fmtBold" type="button" title="Bold"><b>B</b></button>
+                <button class="sm-fbtn" id="fmtItalic" type="button" title="Italic"><i>I</i></button>
+                <button class="sm-fbtn" id="fmtUnderline" type="button" title="Underline"><u>U</u></button>
+                <button class="sm-fbtn" id="fmtBullets" type="button" title="Bullets">• List</button>
+
+                <div style="position:relative; display:inline-flex;">
+                  <button class="sm-fbtn sm-alignbtn" id="fmtAlignBtn" type="button" title="Alignment"
+                          aria-haspopup="true" aria-expanded="false">
+                    <span class="align-icon" aria-hidden="true"></span>
+                  </button>
+
+                  <div class="sm-alignmenu" id="fmtAlignMenu" role="menu" aria-label="Alignment options" data-open="false">
+                    <button type="button" class="sm-alignitem" data-align="left" role="menuitem">Left</button>
+                    <button type="button" class="sm-alignitem" data-align="center" role="menuitem">Center</button>
+                    <button type="button" class="sm-alignitem" data-align="right" role="menuitem">Right</button>
+                    <button type="button" class="sm-alignitem" data-align="justify" role="menuitem">Justify</button>
+                  </div>
+                </div>
+
+                <select class="sm-font" id="fmtFont" title="Font">
+                  <option value="">Font…</option>
+                  <option value="EB Garamond">EB Garamond</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Arial">Arial</option>
+                  <option value="Verdana">Verdana</option>
+                </select>
+
+                <input class="sm-color" id="fmtColor" type="color" value="#fce5cd" title="Text color" />
+              </div>
+
+              <div>
+                <div class="sm-label">Text</div>
+                <div class="sm-rich" id="smText" contenteditable="true"
+                     spellcheck="true"
+                     aria-label="Passage text editor"></div>
+              </div>
+
+              <div class="actions">
+                <div class="left">
+                  <span class="sm-chip" id="smAutoChip">Auto-links: ON</span>
+                  <button class="sm-btn toggle" id="smAuto" data-on="true">Toggle Auto</button>
+              
+                  <!-- Node color controls -->
+                  <select class="sm-font" id="smColorMode" title="Color mode">
+                    <option value="fill">Fill</option>
+                    <option value="border">Border</option>
+                  </select>
+              
+                  <select class="sm-font" id="smColorPick" title="Node color">
+                    <option value="">None</option>
+                    <option value="#E4BE59">Gold</option>
+                    <option value="#157f84">Teal</option>
+                    <option value="#9b7aff">Violet</option>
+                    <option value="#b54a4a">Crimson</option>
+                    <option value="#5fdcff">Sky</option>
+                    <option value="#888888">Gray</option>
+                  </select>
+                </div>
+              
+                <div class="right">
+                  <button class="sm-btn" id="smClose">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="sm-hint">
+            <b>Gestures:</b> pinch/scroll to zoom; drag background to pan; drag nodes to move.
+            <br>
+            <b>Create:</b> Double-click empty space to add a passage.
+            <br>
+            <b>Connect:</b> Wrap names in brackets, [[like this]]. Targets can be a <b>Title</b> or a <b>Node ID</b>.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025-2026 The Elrendar Fellowship Guild</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a social guild landing webpage and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script type="module" src="assets/js/storymap.js?v=6"></script>
+</body>
+</html>
