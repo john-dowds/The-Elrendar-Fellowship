@@ -1141,5 +1141,68 @@
     "caption": "Members of the Fellowship work to uncover the nature of the threats arrayed against them, with a sharp focus on the arcane focus, the scraps of paper, and other items taken from the battle in the Ghostlands some nights prior.",
     "album": "Events",
     "tags": ["members", "events", "Kynseria Vel'dinariel", "Alen'dris Sunblossom","Thalendir Dawncrest"]
+  },
+  {
+    "id": "img128",
+    "src": "assets/gallery/magicschool002.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Guest lecturer Seophiel Woodheart of the Sunreavers leads an instructional course on abjuration.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil"]
+  },
+  {
+    "id": "img129",
+    "src": "assets/gallery/magicschool003.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Guest lecturer Seophiel Woodheart of the Sunreavers leads an instructional course on abjuration.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil"]
+  },
+  {
+    "id": "img130",
+    "src": "assets/gallery/magicschool004.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
+  },
+  {
+    "id": "img131",
+    "src": "assets/gallery/magicschool005.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
+  },
+  {
+    "id": "img132",
+    "src": "assets/gallery/magicschool006.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
+  },
+  {
+    "id": "img133",
+    "src": "assets/gallery/magicschool007.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
+  },
+  {
+    "id": "img134",
+    "src": "assets/gallery/magicschool008.png",
+    "thumb": "",
+    "title": "Magic School",
+    "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
+    "album": "Events",
+    "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
   }
 ]
