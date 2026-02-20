@@ -1204,5 +1204,32 @@
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
+  },
+  {
+    "id": "img135",
+    "src": "assets/gallery/interrogation001.png",
+    "thumb": "",
+    "title": "Questioning Shadows",
+    "caption": "Members of the Fellowship gather to interrogate a captured Twilight Cultist, and discover concerning leads tied to an ongoing investigation.",
+    "album": "events",
+    "tags": ["members", "events", "Norvina Black", "Sable Than'rune","Quely Phoenixheart","Thalendir Dawncrest","Jendral Rosepath"]
+  },
+  {
+    "id": "img136",
+    "src": "assets/gallery/soiree12.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
+    "album": "Socials",
+    "tags": ["members", "socials", "Norvina Black", "Ruecien Greywake", "Ansinosth Summerbough", "Solaris Manahammer","Sable Than'rune","Faeyli Nuth'danil","Thalendir Dawncrest","Venymir Stormwalker"]
+  },
+  {
+    "id": "img137",
+    "src": "assets/gallery/soiree13.png",
+    "thumb": "",
+    "title": "The Fellows' Social",
+    "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
+    "album": "Socials",
+    "tags": ["members", "socials", "Norvina Black", "Ruecien Greywake", "Ansinosth Summerbough", "Solaris Manahammer","Sable Than'rune","Faeyli Nuth'danil","Thalendir Dawncrest","Venymir Stormwalker"]
   }
 ]
