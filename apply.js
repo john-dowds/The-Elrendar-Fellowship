@@ -1,5 +1,4 @@
 // apply.js (Firestore submission)
-// Replaces the old Google Apps Script submission entirely.
 
 import { db } from "./assets/js/firebase-init.js";
 import {
@@ -92,7 +91,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await addDoc(collection(db, "applications"), data);
-    statusEl.textContent = "Submitted — thank you!";
+    statusEl.textContent = "Submitted; recruitment is currently closed, but we'll reach out when it opens!";
     form.reset();
     syncAltFieldUI();
   } catch (err) {
