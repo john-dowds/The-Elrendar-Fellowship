@@ -109,6 +109,28 @@ async function load() {
   });
 
   renderGrid(photos);
+
+  // Deep-link: ?focus=<photoId> opens the lightbox on that image (and resets filters)
+  try{
+    const params = new URLSearchParams(location.search);
+    const focusId = params.get('focus');
+    if (focusId){
+      // reset filters to ensure the photo is in the current filtered list
+      currentAlbum = '';
+      currentTag = '';
+      const albumSel = document.getElementById('albumSelect');
+      if (albumSel) albumSel.value = '';
+      // activate "All tags" chip
+      const chips = filters.querySelectorAll('button.chip[data-tag]');
+      chips.forEach(b => b.classList.remove('is-active'));
+      const all = filters.querySelector('button.chip[data-tag=""]');
+      if (all) all.classList.add('is-active');
+
+      applyFilters();
+      // open after the grid/filter state is applied
+      requestAnimationFrame(() => openLightboxById(focusId));
+    }
+  }catch(e){ /* ignore */ }
 }
 
 /* =============== Grid =============== */
