@@ -104,6 +104,7 @@
   {"thickness": "thin", "route": ["Refugee Point", "Go'shek Farm", "Hammerfall"]},
   {"thickness": "thin", "route": ["Revantusk Village", "Quel'Danil Lodge"]},
   {"thickness": "thin", "route": ["Ruby Temple", "Dragonscale Base Camp", "Ohn'ahran Plains", "The Obsidian Throne"]},
+  {"thickness": "thin", "route": ["Ohn'ahran Plains","Iskara","The Azure Archives"]},
   {"thickness": "thin", "route": ["Ruins of Alterac", "Strahnbrad", "Alterac Valley"]},
   {"thickness": "thin", "route": ["Ruins of Alterac", "Dalaran Crater", "Ambermill", "Shadowfang Keep"]},
   {"thickness": "thin", "route": ["Ruins of Ammon", "Throne of the Four Winds"]},

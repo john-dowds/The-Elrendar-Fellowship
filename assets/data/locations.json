@@ -369,7 +369,7 @@
     "units": 40,
     "baseDefense": 2,
     "nameVisible": true,
-    "banner": "ashenvale.jpg"
+    "banner": "timbermaw.jpg"
   },
   {
     "name": "Timbermaw Hold",
@@ -382,7 +382,8 @@
     "controller": "none",
     "units": 30,
     "baseDefense": 5,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "timbermaw.jpg"
   },
   {
     "name": "Warsong Lumber Camp",
@@ -1325,6 +1326,19 @@
     "nameVisible": true
   },
   {
+    "name": "Iskara",
+    "x": 6028, "y": 1220,
+    "region": "Dragon Isles",
+    "type": "land",
+    "size": "medium",
+    "ownerType": "Capturable",
+    "controller": "none",
+    "units": 35,
+    "baseDefense": 1,
+    "nameVisible": true,
+    "banner": "timbermaw.jpg"
+  },
+  {
     "name": "Nokhudon Hold",
     "x": 5993,
     "y": 1077,
@@ -1545,7 +1559,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 1,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "timbermaw.jpg"
   },
   {
     "name": "Gallywix Pleasure Palace",
@@ -7802,7 +7817,8 @@
     "controller": "none",
     "units": 15,
     "baseDefense": 3,
-    "nameVisible": true
+    "nameVisible": true,
+    "banner": "timbermaw.jpg"
   },
   {
     "name": "Atal'Dazar",

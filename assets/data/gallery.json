@@ -13,6 +13,7 @@
     "src": "assets/gallery/privatewords.png",
     "thumb": "",
     "title": "Private Words",
+    "map": { "id": "easternkingdoms_map", "x": 12573, "y": 4882 },
     "caption": "Ansinosth Summerbough and Knight-Lord Caledeth Bloodthorn speak in private.",
     "album": "Everyday RP",
     "tags": ["casual-rp", "members", "ansinosth", "caledeth"]
@@ -49,6 +50,7 @@
     "src": "assets/gallery/trainingevent003.png",
     "thumb": "",
     "title": "Training in Eversong",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
     "tags": ["members", "events"]
@@ -58,6 +60,7 @@
     "src": "assets/gallery/trainingevent004.png",
     "thumb": "",
     "title": "Training in Eversong",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
     "tags": ["members", "events"]
@@ -67,6 +70,7 @@
     "src": "assets/gallery/campaignevent1ss1.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members", "events", "campaign1"]
@@ -76,6 +80,7 @@
     "src": "assets/gallery/campaignevent1ss2.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "A member of the Fellowship stands guard while others investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members", "events", "campaign1"]
@@ -85,6 +90,7 @@
     "src": "assets/gallery/campaignevent1ss3.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members", "events", "campaign1"]
@@ -94,6 +100,7 @@
     "src": "assets/gallery/campaignevent1ss4.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "Members of the Fellowship investigate the scene of a brutal attack upon an arcane vault in the Eversong Woods.",
     "album": "Events",
     "tags": ["members", "events", "campaign1"]
@@ -103,6 +110,7 @@
     "src": "assets/gallery/campaignevent1ss5.png",
     "thumb": "",
     "title": "What Lurks in the Shadows Campaign",
+    "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520 },
     "caption": "Members of the Fellowship consult in private before departing to investigate a growing crisis.",
     "album": "Events",
     "tags": ["members", "events", "campaign1"]
@@ -148,6 +156,7 @@
     "src": "assets/gallery/magicevent1.png",
     "thumb": "",
     "title": "Fellows at Work",
+    "map": { "id": "easternkingdoms_map", "x": 13311, "y": 4816 },
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
     "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
@@ -157,6 +166,7 @@
     "src": "assets/gallery/magicevent2.png",
     "thumb": "",
     "title": "Fellows at Work",
+    "map": { "id": "easternkingdoms_map", "x": 13311, "y": 4816 },
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
     "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
@@ -166,6 +176,7 @@
     "src": "assets/gallery/magicevent3.png",
     "thumb": "",
     "title": "Fellows at Work",
+    "map": { "id": "easternkingdoms_map", "x": 13311, "y": 4816 },
     "caption": "Fellows of the Order deploy out into Quel'Thalas on a mission.",
     "album": "Events",
     "tags": ["members", "Soryn Cloudspire", "Vileon Stormwrath", "Menadrael Embermourn"]
@@ -175,6 +186,7 @@
     "src": "assets/gallery/soiree1.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
@@ -184,6 +196,7 @@
     "src": "assets/gallery/soiree2.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
@@ -193,6 +206,7 @@
     "src": "assets/gallery/soiree3.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
     "tags": ["members", "socials", "Gwaeloth Songwood", "Calcydo", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
@@ -202,6 +216,7 @@
     "src": "assets/gallery/soiree4.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 8th.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Papilio Havenfire", "Quely Phoenixheart", "Sylvarea Durore'shala", "Velara Clarke", "Laelisel Goldsong", "Kynseria Vel'dinariel", "Jendral Rosepath", "Soryn Cloudspire", "Caledeth Bloodthorn", "Andrys Blackthorn", "Arionir Tel'vannen", "Lady Thalena Thori'zaram", "Alen'dris Sunblossom"]
@@ -211,6 +226,7 @@
     "src": "assets/gallery/magicmysteryevent003.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order rapidly assemble to respond in force as a hex-gone wrong brings chaos into the sanctum, leading them into the dark ruins buried far below.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -220,6 +236,7 @@
     "src": "assets/gallery/magicmysteryevent001.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -229,6 +246,7 @@
     "src": "assets/gallery/magicmysteryevent002.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -238,6 +256,7 @@
     "src": "assets/gallery/magicmysteryevent004.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -247,6 +266,7 @@
     "src": "assets/gallery/magicmysteryevent005.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -256,6 +276,7 @@
     "src": "assets/gallery/magicmysteryevent006.png",
     "thumb": "",
     "title": "Magister's Magical Mystery",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Fellows of the order delve in to the ruins beneath the order's sanctum where enchanted books have begun to conjure deadly manifestations.",
     "album": "Events",
     "tags": ["members", "Tal'theas Sunfeather", "Kynseria Vel'dinariel", "Ansinosth Summerbough", "Gwaeloth Songwood", "Jeshacinin Evertrail"]
@@ -265,6 +286,7 @@
     "src": "assets/gallery/gorehauntevent001.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -274,6 +296,7 @@
     "src": "assets/gallery/gorehauntevent002.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -283,6 +306,7 @@
     "src": "assets/gallery/gorehauntevent003.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -292,6 +316,7 @@
     "src": "assets/gallery/gorehauntevent004.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -301,6 +326,7 @@
     "src": "assets/gallery/gorehauntevent005.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -310,6 +336,7 @@
     "src": "assets/gallery/gorehauntevent006.png",
     "thumb": "",
     "title": "Ghostlands: Gorehaunt",
+    "map": { "id": "easternkingdoms_map", "x": 11954, "y": 6754 },
     "caption": "Fellows of the order assemble and wage a heated battle alongside the Blood Knights, Magisters, and Farstriders, against a Scourge flesh giant known as Gorehaunt.",
     "album": "Events",
     "tags": ["members", "Alen'dris Sunblossom", "Kynseria Vel'dinariel", "Lady Thalena Thori'zaram", "Gwaeloth Songwood", "Jeshacinin Evertrail", "Velara Clarke", "Sable Than'rune"]
@@ -319,6 +346,7 @@
     "src": "assets/gallery/soiree5.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
@@ -328,6 +356,7 @@
     "src": "assets/gallery/soiree6.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
@@ -337,6 +366,7 @@
     "src": "assets/gallery/soiree7.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
@@ -346,6 +376,7 @@
     "src": "assets/gallery/soiree8.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the sanctum estate on January 22nd.",
     "album": "Socials",
     "tags": ["members", "socials", "Tal'theas Sunfeather", "Velara Clarke", "Laelisel Goldsong", "Gwaeloth Songwood", "Kynseria Vel'dinariel", "Jendral Rosepath", "Alen'dris Sunblossom", "Ansinosth Summerbough", "Calcydo", "Jeshacinin Evertrail", "Roxalynn Windsong", "Sorrien Kalos", "Divine Chaniste Skyguard", "Tulindi De Couer-Errant", "Silanna Leyspire", "Dalentheus Ombrelune", "Y'lothin Kar'Storas", "Haldarin Autumnveil", "Baroness Belorastra A. Dragonlight", "Em'thela Silversun"]
@@ -355,6 +386,7 @@
     "src": "assets/gallery/earlysoiree001.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
+    "map": { "id": "easternkingdoms_map", "x": 12554, "y": 4862 },
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
     "tags": ["members", "socials"]
@@ -364,6 +396,7 @@
     "src": "assets/gallery/earlysoiree002.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
+    "map": { "id": "easternkingdoms_map", "x": 12554, "y": 4862 },
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
     "tags": ["members", "socials"]
@@ -373,6 +406,7 @@
     "src": "assets/gallery/earlysoiree003.png",
     "thumb": "",
     "title": "A Soiree From Long Ago",
+    "map": { "id": "easternkingdoms_map", "x": 12554, "y": 4862 },
     "caption": "In the early days of the order reemergence, The Fellowship gathers for a soirée within the the local tavern along the Walk of Elders.",
     "album": "Socials",
     "tags": ["members", "socials"]
@@ -418,6 +452,7 @@
     "src": "assets/gallery/trainingevent001.png",
     "thumb": "",
     "title": "Practical Training",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
     "tags": ["members", "events"]
@@ -427,6 +462,7 @@
     "src": "assets/gallery/trainingevent002.png",
     "thumb": "",
     "title": "Practical Training",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship assembles for training and practice in martial combat.",
     "album": "Events",
     "tags": ["members", "events"]
@@ -436,6 +472,7 @@
     "src": "assets/gallery/ascensionevent001.png",
     "thumb": "",
     "title": "Ascension Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
     "album": "Events",
     "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
@@ -445,6 +482,7 @@
     "src": "assets/gallery/ascensionevent002.png",
     "thumb": "",
     "title": "Ascension Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
     "album": "Events",
     "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
@@ -454,6 +492,7 @@
     "src": "assets/gallery/ascensionevent003.png",
     "thumb": "",
     "title": "Ascension Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
     "album": "Events",
     "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest"]
@@ -463,6 +502,7 @@
     "src": "assets/gallery/ascensionevent004.png",
     "thumb": "",
     "title": "Ascension Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship, gathering in full for the first time since the crisis during the Purge of Dalaran, convenes to welcome new fellows en mass, marking a new turn of fortune for the ever dwindling membership which was nearly wiped out completely during the Fall of Quel'Thalas.",
     "album": "Events",
     "tags": ["members", "events", "Tal'theas Sunfeather", "Lady Thalena Thori'zaram", "Papilio Havenfire", "Kynseria Vel'dinariel", "Jeshacinin Evertrail", "Jendral Rosepath", "Haldarin Autumnveil", "Gwaeloth Songwood", "Calcydo", "Bellatorriel Riel", "Ashadarie Lightreign", "Allithndria Lightstriker", "Alen'dris Sunblossom", "Thalendir Dawncrest", "Sorrien Kalos"]
@@ -508,6 +548,7 @@
     "src": "assets/gallery/whispersattheborder001.png",
     "thumb": "",
     "title": "Whispers at the Border",
+    "map": { "id": "easternkingdoms_map", "x": 11966, "y": 7698 },
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
@@ -517,6 +558,7 @@
     "src": "assets/gallery/whispersattheborder002.png",
     "thumb": "",
     "title": "Whispers at the Border",
+    "map": { "id": "easternkingdoms_map", "x": 11966, "y": 7698 },
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
@@ -526,6 +568,7 @@
     "src": "assets/gallery/whispersattheborder003.png",
     "thumb": "",
     "title": "Whispers at the Border",
+    "map": { "id": "easternkingdoms_map", "x": 11966, "y": 7698 },
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
@@ -535,6 +578,7 @@
     "src": "assets/gallery/whispersattheborder004.png",
     "thumb": "",
     "title": "Whispers at the Border",
+    "map": { "id": "easternkingdoms_map", "x": 11966, "y": 7698 },
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
@@ -544,6 +588,7 @@
     "src": "assets/gallery/whispersattheborder005.png",
     "thumb": "",
     "title": "Whispers at the Border",
+    "map": { "id": "easternkingdoms_map", "x": 11966, "y": 7698 },
     "caption": "Jeshacinin Evertrail leads a strike team, composed of Galadorei Thel'melas, Haverstead Brightspear, Ashadarie Lightreign, and Jendral Rosepath.",
     "album": "Events",
     "tags": ["members", "Galadorei Thel'melas","Ashadarie Lightreign","Haverstead Brightspear","Jendral Rosepath","Jeshacinin Evertrail"]
@@ -796,6 +841,7 @@
     "src": "assets/gallery/medicalconclave001.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -805,6 +851,7 @@
     "src": "assets/gallery/medicalconclave002.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -814,6 +861,7 @@
     "src": "assets/gallery/medicalconclave003.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -823,6 +871,7 @@
     "src": "assets/gallery/medicalconclave004.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -832,6 +881,7 @@
     "src": "assets/gallery/medicalconclave005.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -841,6 +891,7 @@
     "src": "assets/gallery/medicalconclave006.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -850,6 +901,7 @@
     "src": "assets/gallery/medicalconclave007.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -859,6 +911,7 @@
     "src": "assets/gallery/medicalconclave008.png",
     "thumb": "",
     "title": "February Medical Conclave",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship's healers assemble for a forum on technique and practice, logistics, and personal and professional backgrounds.",
     "album": "Events",
     "tags": ["members", "events","Thalendir Dawncrest","Haverstead Brightspear","Faeyli Nuth'danil","Kynseria Vel'dinariel","Ashadarie Lightreign","Elodi Solaris"]
@@ -868,6 +921,7 @@
     "src": "assets/gallery/soiree9.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
     "album": "Socials",
     "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
@@ -877,6 +931,7 @@
     "src": "assets/gallery/soiree10.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
     "album": "Socials",
     "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
@@ -886,6 +941,7 @@
     "src": "assets/gallery/soiree11.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
     "album": "Socials",
     "tags": ["members", "socials", "Velara Clarke", "Railery", "Ansinosth Summerbough", "Jeshacinin Evertrail","Elodi Solaris","Faeyli Nuth'danil","Haldarin Autumnveil","Divine Chaniste Skyguard","Onitheril"]
@@ -895,6 +951,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_001.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -904,6 +961,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_002.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -913,6 +971,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_003.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -922,6 +981,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_004.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -931,6 +991,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_005.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -940,6 +1001,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_006.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -949,6 +1011,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_007.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -958,6 +1021,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_008.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -967,6 +1031,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_009.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -976,6 +1041,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_010.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -985,6 +1051,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_011.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -994,6 +1061,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_012.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1003,6 +1071,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_013.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1012,6 +1081,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_014.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1021,6 +1091,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_015.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1030,6 +1101,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_016.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1039,6 +1111,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_017.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1048,6 +1121,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_018.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1057,6 +1131,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_019.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1066,6 +1141,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_020.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1075,6 +1151,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_021.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1084,6 +1161,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_022.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1093,6 +1171,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_023.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1102,6 +1181,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_024.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1111,6 +1191,7 @@
     "src": "assets/gallery/hitchinthehhhighlands_025.png",
     "thumb": "",
     "title": "The Hitch in the Highlands",
+    "map": { "id": "easternkingdoms_map", "x": 12828, "y": 17690 },
     "caption": "The Fellowship is urgently dispatched to aid one of their fellows investigating the Twilight Cult in the Highlands, leading them into the lightless depths of an old dragon lair where, upon carving their way through wards and inquiries with no answers, they discover the cultists to be excavating and transporting away the bones of Obsidia, one of the last Black Dragons to bear a clutch during the Cataclysm.",
     "album": "Events",
     "tags": ["members", "events", "Sable Than'rune", "Alend'dris Sunblossom", "Allithndria Lightstriker", "Laelisel Goldsong", "Calcydo", "Norvina Black.", "Ansinosth Summerbough"]
@@ -1138,6 +1219,7 @@
     "src": "assets/gallery/quietthreads_003.png",
     "thumb": "",
     "title": "Quiet Threads",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Members of the Fellowship work to uncover the nature of the threats arrayed against them, with a sharp focus on the arcane focus, the scraps of paper, and other items taken from the battle in the Ghostlands some nights prior.",
     "album": "Events",
     "tags": ["members", "events", "Kynseria Vel'dinariel", "Alen'dris Sunblossom","Thalendir Dawncrest"]
@@ -1147,6 +1229,7 @@
     "src": "assets/gallery/magicschool002.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Guest lecturer Seophiel Woodheart of the Sunreavers leads an instructional course on abjuration.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil"]
@@ -1156,6 +1239,7 @@
     "src": "assets/gallery/magicschool003.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Guest lecturer Seophiel Woodheart of the Sunreavers leads an instructional course on abjuration.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil"]
@@ -1165,6 +1249,7 @@
     "src": "assets/gallery/magicschool004.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
@@ -1174,6 +1259,7 @@
     "src": "assets/gallery/magicschool005.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
@@ -1183,6 +1269,7 @@
     "src": "assets/gallery/magicschool006.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
@@ -1192,6 +1279,7 @@
     "src": "assets/gallery/magicschool007.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
@@ -1201,6 +1289,7 @@
     "src": "assets/gallery/magicschool008.png",
     "thumb": "",
     "title": "Magic School",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "Priestess Kynseria Vel'dinariel leads an instructional course on protections and defense against void magic.",
     "album": "Events",
     "tags": ["members", "Haldarin Autumnveil","Kynseria Vel'dinariel","Hespir Everwyern","Faeyli Nuth'danil","Haverstead Brightspear","Norvina Black","Onitheril","Calcydo","Syrin Nihmedu"]
@@ -1210,8 +1299,9 @@
     "src": "assets/gallery/interrogation_001.png",
     "thumb": "",
     "title": "Questioning Shadows",
+    "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385, "icon": "campaign"},
     "caption": "Members of the Fellowship gather to interrogate a captured Twilight Cultist, and discover concerning leads tied to an ongoing investigation.",
-    "album": "events",
+    "album": "Events",
     "tags": ["members", "events", "Norvina Black", "Sable Than'rune","Quely Phoenixheart","Thalendir Dawncrest","Jendral Rosepath"]
   },
   {
@@ -1219,6 +1309,7 @@
     "src": "assets/gallery/soiree12.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
     "album": "Socials",
     "tags": ["members", "socials", "Norvina Black", "Ruecien Greywake", "Ansinosth Summerbough", "Solaris Manahammer","Sable Than'rune","Faeyli Nuth'danil","Thalendir Dawncrest","Venymir Stormwalker"]
@@ -1228,6 +1319,7 @@
     "src": "assets/gallery/soiree13.png",
     "thumb": "",
     "title": "The Fellows' Social",
+    "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
     "caption": "The Fellowship gathers for a soirée within the Fellowship's event hall on February 5th.",
     "album": "Socials",
     "tags": ["members", "socials", "Norvina Black", "Ruecien Greywake", "Ansinosth Summerbough", "Solaris Manahammer","Sable Than'rune","Faeyli Nuth'danil","Thalendir Dawncrest","Venymir Stormwalker"]

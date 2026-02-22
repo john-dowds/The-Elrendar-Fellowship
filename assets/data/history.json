@@ -8,10 +8,16 @@
     {
       "id": "magicschool",
       "title": "Series: Magical Instruction",
-      "subtitle": "Shatterstar Arcanium & The Fellowship's Academic Curriculum'",
+      "subtitle": "Elrendar Arcanium & The Fellowship's Academic Curriculum'",
       "date": "c. Year -2,680 to Present",
       "summary_html": "<p>Magical instruction occurs within the Fellowship without end, offering new avenues of study to practitioners of all levels of experience. Guest instructors, lecturers, and full time practicing educators provide around the clock mentoring, with larger courses on special topics presented on the regular.</p>",
       "order": 600,
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "entries": [
         {
           "id": "feb16ms",
@@ -90,6 +96,12 @@
       "title": "Event: Fellow's Soirée",
       "subtitle": "February 19",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's event hall.\n",
       "order": 54
     },
@@ -98,6 +110,12 @@
       "title": "Event: Fellow's Soirée",
       "subtitle": "February 5",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's event hall. In attendance: <li>Ansinosth Summerbough</li><li>Haldarin Autumnveil</li><li>Jeshacinin Evertrail</li><li>Velara Clarke</li><li>Onitheril</li><li>Divine Chaniste Skyguard</li><li>Railery</li><li>Elodi Solaris</li>and<li>Faeyli Nuth'danil</li>\n",
       "order": 53
     },
@@ -113,12 +131,19 @@
           "id": "campaign4.1",
           "title": "Event: The Highlands Hitch",
           "date": "February 6",
+          "map": {
+            "id": "easternkingdoms_map",
+            "x": 12828,
+            "y": 17690,
+            "icon": "campaign"
+            },
           "summary_html": "<p>Sable Than'rune, a former spy and now-fellow of the order, sends word from the Highlands that the Fellowship's aid is required, though details are vague. Members quickly assemble and deploy, following Sable into a cave in the Highlands where Twilight cultists are hard at work excavating the bones of dead black dragons, and hauling the remains through a series of portals. Recognizing some of the mages present as those aiding Magisters Umbric and Rommath, suspicions are raised of what role the Thalassian elves might be playing in whatever nefarious plot the cultists are working up.<br><br>Present among the Fellows who endeavor to close the portal and halt the cultist activity are Sable Than'rune, Alend'dris Sunblossom, Allithndria, Laelisel Goldsong, Calcydo, Ansinosth Summerbough, Tal'theas Sunfeather, Velara Clark, and Norvina Black.</p>"
         },
         {
           "id": "campaign4.2",
           "title": "Event: Twilight Interrogation",
           "date": "February 11",
+          "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385, "icon": "campaign"},
           "summary_html": "<p>Jeshacinin Evertrail and Thalendir Dawncrestcoordinates the interrogation of captured Portal Keeper Sylas, a Sin'dorei magister once in service to Rommath, who has turned to the Twilight Cult as one of Xal'atath's followers.<br><br>Through the drawn out questioning, the group is able to discern the mage's involve in a wider, organized effort to excavate and pilfer the bones of long-dead dragons, transporting them to locations concealed beyond several void rifts. Beyond that, the interrogation reveals the witnessed execution of various magisters and other servants of the High Home, though ultimately the portal keeper's greatest contribution is having been witness to the presence of Ethereals and other entities of the void which were beginning to amass.</p>"
         }
       ]
@@ -136,6 +161,12 @@
       "title": "Event: Verse & Volume",
       "subtitle": "January 29",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship welcomes in guests from abroad for an evening of prose and verse, with a grand prize for the winning of a haiku competition. In attendance are Ansinosth Summerbough, Kynseria Vel'dinariel, Jendral Rosepath, Haldarin Autumnveil, Ruecien Greywake, Lillia Sunveil, Laelisel Goldsong, Onitheril, and Papilio Havenfire, with Doctor Lillia Sunveil taking the grand prize.  \n",
       "order": 50
     },
@@ -159,6 +190,12 @@
           "id": "campaign3.1",
           "title": "Event: Whispers at the Border",
           "date": "Jan 31",
+          "map": {
+            "id": "easternkingdoms_map",
+            "x": 11956,
+            "y": 7684,
+            "icon": "campaign"
+            },
           "summary_html": "<p>A strike team is dispatched into the ghostlands to find silence where should have been life. A watch post stood intact, abandoned mid-moment, with its occupants gone without sign of struggle or flight. The quiet, however, did not last. </p><p> Undead emerged from a thick fog as a single survivor is found, these were revealed themselves not to be the shambling remnants of bodies, but instead disciplined soldiers recently raised and guided by a handler whose purpose weas unmistakable. </p><p> Under the command of Jeshacinin Evertrail, Haverstead Everwyern, Ashadarie Lightreign, Galadorei Thel'melas, and Jendral Rosepath engage in stiff battle against the fallen elves, protecting the single survivor, and in the process manage to drive back the fog and put down the undead. \n Despite the victory, an observing presence was still felt, though unable to be found. What remained, however, was more troubling than the battle itself; an arcane focus, kept in careful working order, and a deliberately burned scrap of spellwork recovered from the undead handler's effects. </p><p> The border remains intact for now, but something is listening. </p>"
         },
         {
@@ -171,6 +208,7 @@
           "id": "campaign3.2",
           "title": "Event: Quiet Threads",
           "date": "February 6",
+          "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
           "summary_html": "<p>Fellows gather by candle and firelight in the evening to delve into the stacks within the Fellowship's library, seeking answers and information on the artifacts recovered from the skirmish in the Ghostlands.<br><br>The dedicated research brings only limited new understanding, and raises even more questions about who is behind the worrying affair, and how it all connects. </p>"
         }
       ]
@@ -188,6 +226,12 @@
       "title": "Event: January Ascension",
       "subtitle": "January 24",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship convenes in the ruined sanctum beneath the guild hall, a place once at the center of the Fellowship's daily life, and hold an induction ceremony, known as the Ascension, to formally admit new members to the order. Among those inducted in the rare mass-oath swearing are: <li>Alen'dris Sunblossom</li> <li>Allithndria Lightstriker</li> <li>Ashadarie Lightreign</li> <li>Bellatorriel Riel</li> <li>Calcydo</li> <li>Gwaeloth Songwood</li> <li>Haldarin Autumnveil</li> <li>Jendral Rosepath</li> <li>Jeshacinin Evertrail</li> <li>Kynseria Vel'dinariel</li> <li>Papilio Havenfire</li> <li>Tal'theas Sunfeather</li> <li>Thalena Thori'zaram</li>\n",
       "order": 46
     },
@@ -204,6 +248,12 @@
       "title": "Event: Fellow's Soirée",
       "subtitle": "January 22",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship gathers with guests from abroad to celebrate life and free spirit, holding a soiree within the order's halls. In attendance: <li>Ansinosth Summerbough</li><li>Gwaeloth Songwood</li><li>Baroness Belorastra A. Dragonlight</li><li>Haldarin Autumnveil</li><li>Em'thela Silversun</li><li>Gwaeloth Songwood</li><li>Y'lothin Kar'Storas</li><li>Alen'dris Sunblossom</li><li>Calcydo</li><li>Dalentheus Ombrelune</li><li>Arcanist Silanna Leyspire</li><li>Magistrix Laelisel Goldsong</li><li>Kynseria Vel'dinariel</li><li>Jeshacinin Evertrail</li><li>Velara Clarke</li><li>Roxalynn Windsong</li><li>Sorrien Kalos</li><li>Tulindi De Coeur-Errant</li>\n",
       "order": 44
     },
@@ -212,6 +262,7 @@
       "title": "Story: A Perfect Blade",
       "subtitle": "by Haldarin Autumnveil",
       "date": "January 20",
+      "map": { "id": "easternkingdoms_map", "x": 12484, "y": 6401 },
       "summary_html": "<p><strong>CLANG. CLANG. CLANG.</strong></p>\n\n<p>Haldarin kept the hot piece of metal in place with iron tongs. While his hammer expertly guided the lump into a new shape over an anvil. Arcane runes ignited along its edges with every white-knuckled hammer blow. Thereby drip feeding trace amounts of magic into the material being labored over.</p>\n\n<p><strong>CLANG. CLANG. CLANG.</strong></p>\n\n<p>Once the metal began to cool, it was held inside a nearby forge to preserve its malleability. An enchanted bellow independently maintained the desired temperature. When the metal made contact with the hearth, purple and gold flame erupted forth. More of a magical, rather than natural, reaction due to the material’s special properties.</p>\n\n<p>A normal blacksmith might have recoiled from the sudden and powerful outburst of heat. Or at the very least better insulate themselves from harm in advance. Arm protection would’ve been especially desirable at that moment. And goggles to protect the eyes from any flying debris. Or from metallic fragments as a result of hammering. However, he no longer had any eyes to keep safe. And his skin, warped into a sort of scaled hide by demonic corruption, remained unbothered by the warmth.</p>\n\n<p>The metal, now practically glowing orange, was repositioned onto the anvil. Where Haldarin resumed the banging of his hammer. Most might’ve deemed what he was doing to be tedious. Punishing. Exhausting. And yet not for a moment did he ever slow down.</p>\n\n<p>For Haldarin, this was all a unique form of meditation. A way for him to detach from the world by focusing solely on the work. Even as the whispers licked at the edges of his mind. A malevolent presence that’d been with him ever since he absorbed it all those years ago at the Black Temple.</p>\n\n<p>It didn’t like whenever he set himself into performing anything it deemed pointlessly monotonous. And it disapproved of the material he’d chosen to use for this latest commission. Namely a batch of Sunwell-infused iron ore from Quel’Danas which he’d processed into steel.</p>\n\n<p>He recalled how difficult it was to obtain. And the tingle it left whilst being handled with his bare hands. Surprisingly it did not hurt or burn as he’d feared, but he nevertheless understood it was not something to ever be used for his own personal purposes. As if doing so was ever worth serious consideration.</p>\n\n<p>Another thing he noticed is how hard it is to work with. It required many more additional passes for processing, both hammering and folding, to remove its carbon impurities. At the time he wondered to himself why that is. A question to be answered later, perhaps. For now, his focus had to above all else remain fixed upon the work.</p>\n\n<p><strong>CLANG. CLANG. CLANG.</strong></p>\n\n<p>Even with his heightened stamina and heat tolerance, this was demanding toil. The metal, as previously mentioned, was more demanding to work with than anticipated. Yet he still welcomed it as he persevered through the rough labor next to a sweltering furnace. By now the voice was also finally quiet. Ever since the Legion’s defeat it had thankfully become less active, more docile. Especially during these moments when he was able to maintain his focus.</p>\n\n<p>“Good morning, Haldarin!” For a second, Haldarin thought the voice had returned. Instead, it was somebody he considered marginally less annoying. “Do you need more? I hope not because you’ll just bankrupt yourself.” Josara is a well-traveled sin’dorei merchant with what some would call a gift for gab. She is a necessity when operating this kind of business. Because there was always a need for somebody who could reliably acquire less common crafting materials. Like processed ore which needs to be blessed at the sin’dorei’s most holiest site. Josara also happened to be unnervingly good at sneaking up on people.</p>\n\n<p>“No.” Haldarin replied, then returned to his work. He wasn’t trying to be rude. Really. This metal was in fact incredibly expensive. And if he allowed it to cool it would become useless. He couldn’t allow that for multiple reasons.</p>\n\n<p>“Uh-huh. .. I’ve personally never had somebody request so much of it before. It’s not usually the type of thing people need when I’m involved, if you catch my drift. And I definitely wouldn’t have imagined a big and mean looking Illidari to need it.” Josara pondered amidst getting seated at the edge of the store’s counter. “I mean, obviously it’s a commission. Which means some Light-kisser approached you to make something for them. Did the horns not send them screaming in the other direction or what?”</p>\n\n<p>The hammer came to a sudden stop, then an exhale. Josara tensed up the moment his golden half-mask came to point toward her. “Relax! I’m just thinking out loud.” She stressed with both hands held up. “Why are you really hovering around me, Josara?” He replied after feeding the orange-yellow steel back into the yet burning forge.</p>\n\n<p>“Right, so. .. Um. Hey, is Kori here?” Josara was wearing an all too large smile following the question. Haldarin assumed that whatever the two of them were up to, it was no good. “She is hunting.”</p>\n\n<p>He actually wasn’t sure where she had gone off to. It was more of just an educated guess. As this is a commission he felt necessary to do on his own. His answer elicited a skeptical look from Josara.</p>\n\n<p>“Hunting? You do both enjoy killing demons.” The merchant twiddled her thumbs while Haldarin resumed pounding his hammer. Every so often tapping it against the anvil itself every three strikes. “I’m surprised you didn’t join her.”</p>\n\n<p>“This is a priority.” Haldarin answered, with the lump by now starting to look very much like a sword. Once this was done, the pattern welding process would begin. To provide the blade’s surface with a kind of hued water pattern at completion.</p>\n\n<p>“Normally I’d start digging for more. Normally! I was just stopping by, though. There’s a shipment I still need to deliver.” The skinny sin’dorei got off the counter and began making her way to the exit. “The next time I’m around I want answers, Hald!”</p>\n\n<p>“Give me a discount on next month’s coal delivery.” Haldarin’s statement got a quick laugh from his talkative guest. “HA! And I want a Sunstrider on the throne. Let’s see who gets what they want first.”</p>\n\n<p>With that, Josara took her leave. Continuing with her colorful commentary the whole way. He could even hear her talking outside despite the lack of audience. An impressive feat if taking into consideration all of the smithy’s ambient noise. There was a part of him which genuinely found her somewhat endearing. A small part, but a growing one.</p>\n\n<p>After a little bit longer, the blade was held up for inspection via his prongs. It was still glowing from the heat. There was a little shaping left to do. Afterwards would come the runic etchings. And then, last but not least, the final installation of a handle that had already been completed the day before.</p>\n\n<p>Everything so far was going to plan. Haldarin hoped it would remain that way. And if not, he would start all over again without complaint. He’s sure Josara would welcome the additional business.</p>\n\n<p>Because Kynseria’s commission was too important and it had to be done exactly right. Nothing short of perfection would in his mind be enough. Especially if she was planning to actually use what he’s crafting in combat. And besides, she deserved nothing less.</p>",
       "order": 43
     },    
@@ -251,6 +302,12 @@
           "id": "campaign2.1",
           "title": "Event: Puzzle Box of Kel'shunar Starfall",
           "date": "January 18 & 20",
+          "map": {
+            "id": "easternkingdoms_map",
+            "x": 12520,
+            "y": 6396,
+            "icon": "event"
+            },
           "summary_html": "<p>Members of the Fellowship gather to delve into the mysterious locked seal sitting atop an ancient elven chest, one once belonging to the Kel'shunar Starfall, an early founding member of the Kingdom of Quel'Thalas who was exiled from Kalimdor. Faeylli Nuth'danil, Ansinosth Summerbough, Tal'theas Sunfeather, Gwaeloth Songwood, Thalendir Dawncrest, and Ashadarie Lightreign gather through the  night and work to break several magical sealed bound by riddles, each associated with various conceptional understandings of the schools of magic, and on the second day manage to unlock the container and recover an ancient elven tome.</p>"
         },
         {
@@ -264,6 +321,12 @@
           "id": "campaign2.3",
           "title": "Event: The Key to the Page",
           "date": "February 10",
+          "map": {
+            "id": "easternkingdoms_map",
+            "x": 12520,
+            "y": 6396,
+            "icon": "event"
+            },
           "summary_html": "<p>Master Sorcerer Ansinosth Summerbough and Magistrix Pheonixheart delve deeper into the mystery of the Truesilver Tome of Kel'sunar Starfall, piecing together research compiled by Arcanist Silanni Leyspire. Together, they discern a likely purpose of the truesilver tome: its contents were not the mapping of leylines, but rather of certain camps left behind by the sorcerer and his followers thousands of years ago. Deciphering entries and passages from Kel'shunar's journals, drawn out of the archives, the pair manage to determine the location of several camps, and begin to match the locations to the existing patterns found in Kel'shunar's truesilver tome. What lies at these locations, however, remains a mystery.</p>"
         }
       ]
@@ -273,6 +336,12 @@
       "title": "Event: Ghostlands: Gorehaunt",
       "subtitle": "January 16",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 11981,
+        "y": 6751,
+        "icon": "event"
+        },
       "summary_html": "\n The Fellowship responds quickly to reports of a long-since-missing Scourge abomination, Gorehaunt, emerges in southern Quel'Thalas. One of the Scourge's most terrible flesh abominations used during the Fall of Quel'Thalas, it vanished after the fighting and has since eluded the kingdom's defenders. <p>Now in sight once more, and seemingly on a mission to use the corrupted artifact embedded at its core--the Heart of the Bough--to spread sickness throughout the woodlands, the elves rush to eliminate the threat. <p>Joining forces with the Sin'dorei Blood Knights, Farstriders, and the Magisters of Silvermoon, Fellows Alen'dris Sunblossom, Kynseria Vel'dinariel, Lady Thalena Thori'zaram, Gwaeloth Songwood, Jeshacinin Evertrail, Velara Clarke, Sable Than'rune, and Ansinosth Summerbough deploy and make a stand at the Elrendar River crossing where they battle against Gorehaunt. In the end, after a long winded battle, they manage to fell the abomination and destroy the corrupted heart buried within.\n",
       "order": 38
     },
@@ -281,6 +350,12 @@
       "title": "Event: Magical Mystery",
       "subtitle": "January 10",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n A disturbance within the Fellowship's sanctum prompts its members to investigate and resolve the matter swiftly, before things spiral out of hand. Responding swiftly, Master Sorcerer Ansinosth Summerbough, Gwaeloth Songwood, Tal'theas Sunfeather, Jeshacinin Thekiel, and Kynseria Vel'dinariel uncover the truth that a collection of tomes-recently transferred to the sanctum from Magistry Sanctums within Silvermoon City-in fact contained a trio of unruly novice mages who had been punished by means of hexing; their instructor, Master Semnalor, transformed them into the same text books the novices had so foolishly disregarded. While such punishments-including Polymorphing-are not atypical, in this particular case of hexing the punishment was rendered just before the death of the Magister, leaving the novices trapped with no knowledge of their whereabouts. The three novice mages, Haydal'an, Kelvath, and Sen, are successfully rescued and counseled through the rude awakening of the past twenty years of their lives, which they missed.\n",
       "order": 37
     },
@@ -297,6 +372,12 @@
       "title": "Event: Fellow's Soirée",
       "subtitle": "January 8",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12520,
+        "y": 6396,
+        "icon": "event"
+        },
       "summary_html": "\n To celebrate the new year and new horizons, the Fellowship hosts a soirée within its sanctum-once the estate of Ansinosth Summerbough-with guests from from and wide.\n",
       "order": 35
     },
@@ -305,6 +386,12 @@
       "title": "Event: Arcane Anomaly",
       "subtitle": "September 26",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 11388,
+        "y": 1850,
+        "icon": "event"
+        },
       "summary_html": "\n Fellows of the order-including High Sorcerer Aelendan Shatterstar, Haverstead Brightspear, Quely Phoenixheaert, Kindrith Windstalker, Hal'sonas Windreaver, Talis Lightbrook, and Soryn Cloudspire-respond to an anomaly spiraling out of control to the west of the Sunwell Plateau. Joining forces with members of the Magisters, the Fellowship's members identify a clot impacting the ley lines, which they purge and nulify the aberrant anomalies spawning off of it. The occurance, though handled, raises questions about what could have caused a clot in the ley lines.\n            ",
       "order": 34
     },
@@ -313,6 +400,12 @@
       "title": "Event: Spectral Sabotage",
       "subtitle": "September 15",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 11171,
+        "y": 6799,
+        "icon": "event"
+        },
       "summary_html": "\n Fellows of the order-including Magister Vileon Stormwrath, Dkakiavis, Alindriel, Merivis, Priestess Menadrael Embermourn, Kalandoril, Greymourn, and Kodestre-pursue a group of outsiders through the Ghostlands and into Goldenmist Village wherein they discover an unusual barrier.</p><p>Investigating further to discern the nature of the barrier and its connection, they uncover its illusionary origins and manage to breach it, only to find the slain Magister Sunstrife, as well as a portal to the plaguelands through which the outsiders escaped.</p><p>Now on the trial of the murderers, the Fellows continue to pursue leads.\n            ",
       "order": 33
     },
@@ -321,6 +414,7 @@
       "title": "Event: Missing Mistmaker",
       "subtitle": "September 11",
       "date": "c. Year 42",
+      "map": { "id": "easternkingdoms_map", "x": 11516, "y": 7496,"icon": "event" },
       "summary_html": "\n On behest of the Magistry of Silvermoon, Magister Vileon Stormwrath leads a party of Fellowship members-including Priestess Menadrael Embermourn, Soryn Cloudspire, and Hesparius Greymourn-to recover an artifact known as the Mistmaker, which had been stolen. Encountering bandits disguised as Sunfury renegades working in concert with a tribe of local naga, the fellows intervened before any exchange could be completed, slaying the naga and ensuring the capture of the bandits.\n            ",
       "order": 32
     },
@@ -329,6 +423,12 @@
       "title": "Event: Construct Deconstruction",
       "subtitle": "September 4",
       "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 11963,
+        "y": 5151,
+        "icon": "event"
+        },
       "summary_html": "\n To better prepare for future tasks and ventures, Magister Vileon Stormwrath leads several fellows of the order in tactical exercises and practice just outside of Silvermoon, including Hespir Everwyern, Zanrolia Sprenlen, Llorial Solcrest, Falthuron Evermist, Menadrael Embermourn, Hesparius Greymourn, Soryn Cloudspire, Lamplighter Kharyym, and Alindriel Brightward. \n            ",
       "order": 31
     },
@@ -337,6 +437,7 @@
       "title": "Event: Necrotic Nightcall",
       "subtitle": "August 25",
       "date": "c. Year 42",
+      "map": { "id": "easternkingdoms_map", "x": 11620, "y": 7884, "icon": "event" },
       "summary_html": "\n Following the arrival of word that several Farstriders were murdered in the Ghostlands and that foul magic may have been at play, several members of the Fellowship, and their allies, venture out into the southern woodlands in the dark of night and pursue the trail to the Sanctum of the Moon. There, the fellows encounter shrouded figures working necromantic magics and attempting to open a portal to summon forth the death. <br><br> Andrys Blackthorn, Menadrael Embermourn, Hesparius Greymourn, and Magister Vileon Stormwrath battle the sinister cultists and undead, though are unable to prevent the escape of one as a monstrous Abomination is summoned through the portal. <br><br> Given the gruesome nature of the Farstriders' deaths, it is concluded that the Abomination was responsible, and while it was slain in the battle, the cult's leader remains at large.\n            ",
       "order": 30
     },
@@ -360,18 +461,21 @@
           "id": "campaign1.1",
           "title": "Event: The Two Vaults",
           "date": "September 6th",
+          "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520, "icon": "campaign" },
           "summary_html": "<p>The Fellowship and its allies pursue an investigation into a potential traitor within the magistry, and the breaches at arcane vaults deep in the Eversong Woods. Andrys Blackthorn, Soryn Cloudspire, Selindel of Gilderhollow, Lady Menadrael Embermourn, Kodesetre, Hesparius Greymourn, Alen'dris Sunwalker, Lady Thalena Thori'zaram, Lady Zanrolia Sprenlen, Lamplighter Kharyym, Knight-Lord Caledeth Bloodthorn, Falthuron Evermist, and Hal'sonas Windreaver venture deep into one of the vaults, and after a painstaking effort to purify shattered soul fragments found at the wrecked vault, they uncover the truth of a demonic threat-one of the Nathrezim has found their way into Quel'Thalas.</p>"
         },
         {
           "id": "campaign1.2",
           "title": "Event: The Third Vault",
           "date": "September 7th",
+          "map": { "id": "easternkingdoms_map", "x": 12754, "y": 7520, "icon": "campaign" },
           "summary_html": "<p>Following the revelations the day prior, the Elrendar Fellowship makes preparations to respond to the dire threat, but is urgently summoned following another disturbance at the Sala'dashal vaults in southern Eversong Woods.</p>"
         },
         {
           "id": "campaign1.3",
           "title": "Event: The Handoff",
           "date": "September 15th",
+          "map": { "id": "easternkingdoms_map", "x": 12466, "y": 4190, "icon": "campaign" },
           "summary_html": "<p>With the disturbance investigated and determined to be a substantial lead in the case of the traitor, the Fellowship dispatches some of its members to draw out the traitor with a trap, exposing them, and eliminating the threat.</p>"
         }
       ]
@@ -389,6 +493,7 @@
       "title": "Lore: Emergence of the Fellowship",
       "subtitle": "Guild History",
       "date": "c. Years 40-42",
+      "map": { "id": "easternkingdoms_map", "x": 12520, "y": 6396, "icon": "lore" },
       "summary_html": "\nWith tensions still at an all time high following the unfathomable bloodshed of the Fourth War, surviving members of the reforged Fellowship convene a gathering and elect to step out from\nobscurity and embrace a more public role in guiding the future of elven kind. Some of the last remaining neutral-leaning forces of Thalassian kind, the leading members of the cohort begin to\nreach out to both the Sin'dorei, the Quel'dorei, and the Ren'dorei, aiming to begin building more open lines of communication and securing open visitation privileges for the other members of\nthe cohort.\n<br/>\n<br/>\nAs the conflict on the Dragon Isles raged, the Fellowship set its focus to shoring up holdings across Quel'Thalas, and renewed its efforts to rebuild throughout the southern landscape where \nmany vaults and sanctums had once stood. Even with animosity still ripe between the factions, the Fellowship manages to keep peace within its own ranks.\n      ",
       "order": 26
     },
@@ -405,6 +510,7 @@
       "title": "Lore: Fourth War",
       "subtitle": "Expansion: Battle for Azeroth",
       "date": "c. Years 33–34",
+      "map": { "id": "easternkingdoms_map", "x": 7476, "y": 10776, "icon": "lore" },
       "summary_html": "\n Horde Warchief Sylvanas Windrunner launches a devastating first strike against the Alliance in response to a failed assassination attempt against her during the conflict against the Legion, burning the World Tree Teldrassil to a husk and perpetuating a genocide against the Kaldorei living within it. With the world once again plunged into a chaotic and bloody war, the Sin'dorei are pitted against Quel'dorei and Ren'dorei in open conflict, alongside the rest of the Alliance and Horde. <br><br> The war proves to be one of the most bloody in history since the War of the Ancients, with entire cities and townships razed to the ground and populations put to death enmass. As had occured years prior, the Horde once again splinters under internal pressure as infighting shatters the faction's unity, leading to another pact of desperation with the Alliance in an effort to overthrow the warmongering Banshee Queen, Sylvanas Windrunner. <br><br> The war culiminates in the second Siege of Orgrimmar, which ends with the Banshee Queen's defection and flight. Despite the end of the conflict, and a serious effort at forming a lasting truce, hostilities between the elven people prove themselves too deep to mend. \n      ",
       "order": 24
     },
@@ -454,6 +560,7 @@
       "title": "Lore: Reformation of the Fellowship",
       "subtitle": "Guild History",
       "date": "c. Year 27-Present",
+      "map": { "id": "easternkingdoms_map", "x": 12520, "y": 6396, "icon": "lore" },
       "summary_html": "\n With the escalation of hostilities and conflict across the world, surviving members of the Order try desperately to bring a halt to the conflict between the branches of Thalassian elves, to no avail. Despite this, numerous surviving magisters, mages, arcanists, warlocks, scryers, priests, and other magically-inclined individuals flock to the ranks of the Order, helping to reestablish it and, at least as best as can be achieved, help to mediate the conflict between elven kin.  \n      ",
       "order": 18
     },
@@ -486,6 +593,7 @@
       "title": "Lore: Rise of the Sin'dorei",
       "subtitle": "Game: Warcraft III",
       "date": "c. Years 21-22",
+      "map": { "id": "easternkingdoms_map", "x": 7464, "y": 12448, "icon": "lore"  },
       "summary_html": "\n Prince Kael'thas Sunstrider leads the Sin'dorei in pursuit of aid from the human kingdoms, only to face persecution and inprisonment by the xenophobic survivors of the fall of Lordaeron. Forced to make desperate alliances, the Prince joins forces with the naga sea witch Lady Vash'j and her master, Lord Illidan Stormrage. Through Illidan, the Sin'dorei learn to consume fel energy as a substitute for the arcane, something which drives a wedge amongst the survivors. <br><br> Grand Magister Rommath-at the behest of Regent Lord Lor'themar Theron, who rules in Prince Kael'thas' stead-expels the dissidents who refuse to embrace the new elven identity, leading to a schism between those calling themselves Sin'dorei, and those who cling to the ideals of the Quel'dorei who ruled before the fall. The crackdowns and exile lead to a flight of elves to the human realms, as well as parallel enlistments to the Outlands under Prince Kael'thas' forces who delve further into the darker practices. <br><br> Through this division, the Elrendar Fellowship remains impartial, focusing instead on regathering its strength and preserving and securing the dangerous magical knowledge from its vauilts now in the hands of the Scourge.\n",
       "order": 14
     },
@@ -494,6 +602,15 @@
       "title": "Lore: Fall of Quel’Thalas (Third War)",
       "subtitle": "Game: Warcraft III",
       "date": "c. Years 20-22",
+      "map": [
+      { "id": "easternkingdoms_map", "x": 11936, "y": 8440, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 7442, "y": 11232, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 7340, "y": 12590, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 9128, "y": 11476, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 10940, "y": 9376, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 12135, "y": 2268, "icon": "lore"  }
+      ],
       "summary_html": "\n Following the corruption plaguing of Lordaeron, the fallen Prince Arthas Menethil leads an army of the dead through the Greenwood, breaches the Elfgates of Quel'Thalas, and plunges the kingdom into darkness. Some ninety percent of the elven populace of the kingdom is either slain and left to rot, or raised into undeath. As further insult, Prince Arthas defiles the Sunwell as a means to raise a powerful servant of the Scourge into undeath as a Lich, leaving the powerful font of magic tainted. <br><br> Silvermoon is devastated; Ranger-General Sylvanas and Grand Magister Belo’vir Salonar, and King Anasterian Sunstrider are all slain, and the Ranger-General is raised into undeath as a Banshee. Some survivors scatter, and others struggle to regroup. The Sunwell’s loss, and its eventual future renewal, reshapes Thalassian destiny. Elven Prince Kael'thas Sunstrider elects to destroy the Sunwell to prevent the corruption of the surviving people, and proclaims a new identity for his people-thus comes the birth of the <em>Sin'dorei</em>, the Children of Blood.\n          ",
       "order": 13
     },
@@ -502,6 +619,7 @@
       "title": "Lore: The Alliance Expedition",
       "subtitle": "Game: Warcraft II",
       "date": "c. Year 8",
+      "map": { "id": "easternkingdoms_map", "x": 10768, "y": 24200, "icon": "lore"  },
       "summary_html": "\n Following yet another incursion by the Horde into Azeroth through a reopened Dark Portal, Farstrider Ranger-Captain Alleria Windrunner joins the human General Turalyon, the dwarven thane Kurdran Wildhammer, the Kirin Tori archmage Khadgar, and the human Trollbane descendant Commander Danath Trollbane in forming the Sons of Lothar, also known as the Alliance Expedition. <br><br> The allied forces, calling themselves the Sons of Lothar in honor of the fallen war hero, pursue the Horde through the Dark Portal into the ruins of Draenor with the intent to end the Horde once and for all. Despite their victories against the orcish Horde there, their Expedition faces disaster as the world is torn asunder by the opening of countless portals, damning countless soldiers to the abyss, and resulting in the presumed loss of the Expedition, and both General Turalyon and Ranger-Captain Alleria Windrunner. <br><br>  years the Expedition is presumed lost beyond the now-decimated Dark Portal. \n      ",
       "order": 12
     },
@@ -510,6 +628,21 @@
       "title": "Lore: First & Second Wars",
       "subtitle": "Game: Warcraft I & II",
       "date": "c. Years 0–7",
+      "map": [
+      { "id": "easternkingdoms_map", "x": 10758, "y": 24197, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 10789, "y": 22865, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 11892, "y": 9092, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 8800, "y": 20552, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 8800, "y": 20552, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 9862, "y": 16048, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 11560, "y": 16448, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 12040, "y": 15868, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 12774, "y": 16306, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 9686, "y": 12590, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 7754, "y": 13752, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 7470, "y": 10968, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 5216, "y": 16296, "icon": "lore" }
+      ],
       "summary_html": "\n Groomed and corrupted by the Burning Legion, the orcs of Draeneor force open the Dark Portal and storm into Azeroth; the human nation of Stormwind falls, and the human descendants of the ancient Arathi king summon the pact made between humanity and the Quel'dorei during the Troll Wars. <br><br> A Grand Alliance is formed, and humanity and elvenkind stand side by side against the savagery of the Horde; the Elrendar Fellowship takes an active role in fighting against the Horde, and many of its users begin to study the magic used by the orcish warlocks, including voidmancy, necromancy, and felmancy. Research tied to these dark schools is carefully stored and secured far from the reach of the common magi. <br><br> During the Second War, the barbaric fel Horde enslaves the red Dragonflight and, with its Amani allies, burns much of Quel’Thalas. Silvermoon endures a brutal siege before Alliance counteroffensives drives back the invaders, and ultimately the Horde is broken at Blackrock Mountain. The Dark Portal is destroyed, and the orcs interned within prison camps; despite the hard won victory, the long scars in Thalassian forests and memory remain.\n          ",
       "order": 11
     },
@@ -518,6 +651,7 @@
       "title": "Lore: Vindel Arkhan'alah",
       "subtitle": "Guild History",
       "date": "c. Year -975",
+      "map": { "id": "easternkingdoms_map", "x": 13364, "y": 6440, "icon": "lore"   },
       "summary_html": "\n Varen Starbreeze, architect and visioanry behind the Fellowship's arcane spire known as Vindel Arkhan'alah, is slain when Amani trolls assault the tower, seeking to reclaim the grounds as their own. Numerous magi are slain during the assault, and the Fellowship is forced to withdraw in the face of overwhelming numbers. Before they're able to regroup and reclaim the spire, Vindel Arkhan'alah is destroyed by the Amani.<br><br>As the spire's leey anchors are shattered during the collapse of the tower, a devastating explosion occurs within the underground sanctum which disintigrates all those in the vicinity, leaving no trolls alive to claim victory.<br><br>The leylines which had once been redirected and channeled through the spire's underground sanctum spasm and revert to their historical bearings, disempowering numerous arcane sanctums throughout the kingdom and dealing a staggering blow to the Fellowship which lost not just a score of its powerful magi, but also a major place of study and experimentation.\n          ",
       "order": 10
     },
@@ -526,6 +660,7 @@
       "title": "Lore: Vindel Arkhan'alah",
       "subtitle": "Guild History",
       "date": "c. Year -1,540",
+      "map": { "id": "easternkingdoms_map", "x": 13364, "y": 6440, "icon": "lore"   },
       "summary_html": "\n Varen Starbreeze works with several other members of the Fellowship to construct Vindel Arkhan'alah, an arcane spire in eastern Quel'Thalas, deep in the mountains bordering Zul'Aman.<br><br>The arcane spire, built on the surface, is used to divert leylines passing through and beneath Zul'Aman, redirecting them towards the Sunwell and other Quel'dorei arcane sanctums in an effort to further strengthen the kingdom's influence.<br><br>The spire becomes a thriving beacon of arcane power that draws the attention of magi from all across the kingdom, who come to study within the sanctum built under ground where it benefits from the extraordinarily high concentrations of raw ley energy being channeled through.<br><br>The sanctum becomes one of several key holdings for the Elrendar Fellowship.\n          ",
       "order": 9
     },
@@ -534,6 +669,7 @@
       "title": "Event: Anomaly at Windrunner Village",
       "subtitle": "Guild History",
       "date": "c. Year -2,300s",
+      "map": { "id": "easternkingdoms_map", "x": 10902, "y": 7486, "icon": "lore" },
       "summary_html": "\n Founding member Tayan'adara Autumbloom responds to aid from Windrunner Village in southern Quel'Thalas where an arcane anomaly is reported to be threatening the township. Upon arriving, she discovers the anomaly to in fact be an unstable void entity, and battles against it before banishing the entity's remnants. The anomaly's explosive demise, however, a rift into the Void itself, threatening the town. Tayan’adara Autumbloom journeys through the rift and seals it from the otherside, and is presumed dead by the Fellowship. An investigation into the disruption and anomaly is linked to the reckless experimentation and spellcasting of a lone magi who sought to draw energy from the void. The magi responsible is questioned and imprisoned by the local authorities, though Tayan'adara is not seen or heard from for thousands of years.\n",
       "order": 8
     },
@@ -542,6 +678,7 @@
       "title": "Lore: Formation of the Elrendar Fellowship",
       "subtitle": "Guild History",
       "date": "c. Year -2,680s",
+      "map": { "id": "easternkingdoms_map", "x": 11474, "y": 7224, "icon": "lore" },
       "summary_html": "\nUnderstanding that knowledge of the Highborne’s failings in the past could be forgotten due to a concerted focus on revising elven history to minimize perceived faults, a sect of elven magi within Quel’Thalas establish the <em>Elrendar Fellowship</em>, an organization designed to rotate magi to various townships and settlements throughout Quel’Thalas to share and spread knowledge, and teach restraint, in a discrete manner.<br><br>In addition to teaching the arcane in more measured and responsible ways, the cohort of magi also work to preserve defenses across Quel’Thalas, while yet another secret sub-sect begins to study dangerous magics with the intent of negating its influence should it ever be used against the High Home. Early members include Tayan’adara Autumnbloom.<br><br>The early members establish an oath to bind one another to the Fellowship and to each other, and chief of all, to their shared purpose.<br><br><em>With this vow I bind my name to the carving stone, and my hand to the eternal vigil,<br>And that I be keeper, not tyrant; blade in shadow, not hand of terror.<br><br>Where the people stand unguarded, I shall stand in their stead.<br>When ignorance seeks to enthrall, my knowledge shall liberate.<br><br>I shall temper power with discipline, desire with restraint, and judgment with mercy.<br>I will seek forbidden truths and buried knowledge—not for conquest,<br>but to raise the world from ignorance and preserve the soul of the High Home.<br><br>Should I turn my art to cruelty, my wisdom to vanity, or my silence to cowardice,<br>let the light that crowns the wise abandon me,<br>let my carved name in the stone be ground out,<br>and let my name be unmade among those who endure.</em><br><br><strong>The inductees then respond:</strong><br><em>By the glory of the children of the sun I do swear and abide.</em>\n",
       "order": 7
     },    
@@ -558,6 +695,7 @@
       "title": "Lore: Ban'dinoriel",
       "subtitle": "Ancient History",
       "date": "c. Year -6,800s",
+      "map": { "id": "easternkingdoms_map", "x": 11774, "y": 6380, "icon": "lore" },
       "summary_html": "\n Seeking to further cement their hold on the region, the newly settled Quel'dorei begin to survey the ley lines throughout the peninsula and design a powerful magical barrier known as Ban'dinoriel. Drawing power from the Sunwell itself, the Quel'dorei channel the raw energy through a series of runestones spread out across the region, all of which are tied to Thas'alah, the mother tree of Quel'thalas.\n      ",
       "order": 5
     },
@@ -566,6 +704,7 @@
       "title": "Lore: Heart of the Bough",
       "subtitle": "Ancient History",
       "date": "c. Year -6,800s",
+      "map": { "id": "easternkingdoms_map", "x": 11548, "y": 8068},
       "summary_html": "\n In the years following the creation of the Sunwell in Quel'Thalas, radiant energy from the powerful font leads to the accelerated growth of the wilds throughout the northern penninsula. One area in particular, in the far south, expands rapidly, and becomes home to a tree of tremendous height-Thas'alah, the mother tree of Quel'Thalas. Many treants and other guardians of nature migrant to this grove, and the area surrounding it becomes a haven where life flourishes. In one of the passages leading into the grove of Thas'alah, one treant in particular continues to grow and evolve, eventually becoming more akin to one of the Ancients commonly seen amongst the Kaldorei. This Ancient of nature becomes one of the foremost guardians of the mother tree, raising treants and tending to the grove to ensure its integrity and health. At the core of this Ancient lies the Heart of the Bough, an item which in later years would become a powerful, albeit corrupted artifact. The Ancient, like many in Quel'Thalas, is slain during the Scourge's invasion of Quel'Thalas in Year 20. \n      ",
       "order": 4
     },
@@ -574,6 +713,7 @@
       "title": "Lore: Exile, & The Founding of Quel'Thalas",
       "subtitle": "Ancient History",
       "date": "c. Year -6,800s",
+      "map": { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore" },
       "summary_html": "\n In the wake of the surviving Highborne's exile from Kalimdor, the elves sail east across the sea and struggle terribly during their exodus. Those who survive the journey arrive in the Old God tainted lands now known as Tirisfal—where the ancient Titan Keeper Tyr was slain in battle against one of the Old Gods' minons. Falling to madness and withering away without the arcane power of the Well of Eternity that once sustained them, the elves waste away quickly, and further fall victim to attacks by the Amani trolls. <br><br> The elves embrace their ancient identity of tied to the arcane as a way to hold back the trolls, but it isn't until they come across a stretch of land—land sacred to the Amani trolls—upon which the legendary mage Dath'remar Sunstrider forms the Sunwell with water taken from the ancient Well of Eternity. With a vast font of magic to draw from, the elves proclaim themselves <em>Quel'dorei</em>, High Elves, and begin to secure their holdings. <br><br> They fight back fiercely against the trolls, wielding powerful magic now without restraint. In a rapid but bloody war, the elves drive back the Amani and cement their hold over the northern peninsula, which they claim as their Kingdom—<em>Quel'Thalas</em>, the High Home.\n      ",
       "order": 3
     },

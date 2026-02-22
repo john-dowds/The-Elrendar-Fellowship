@@ -1,0 +1,110 @@
+[
+    {
+      "id": "elrendarfellowship",
+      "title": "Elrendar Fellowship Guild Hall",
+      "summary_html": "The holdings of the Elrendar Fellowship, nestled along the banks of the river of the same name.",
+      "severity": 4,
+      "map": { "id": "easternkingdoms_map", "x": 12505, "y": 6393 },
+      "icon": "hearth"
+    },
+    {
+      "id": "stormwind",
+        "title": "Stormwind City",
+        "summary_html": "Capital of the Alliance, and humanity on Azeroth.",
+        "map": { "id": "easternkingdoms_map", "x": 6998, "y": 21152 },
+        "icon": "tower"
+    },
+    {
+        "id": "ironforge",
+        "title": "Ironforge City",
+        "summary_html": "The capital of the Bronzebeard dwarves of the Alliance.",
+        "map": { "id": "easternkingdoms_map", "x": 8540, "y": 17620 },
+        "icon": "tower"
+    },
+    {
+        "id": "silvermoon",
+        "title": "Silvermoon City",
+        "summary_html": "The eternal capital of the elves of Quel'Thalas. Once destroyed, it has since been rebuilt to its former glory.",
+        "map": { "id": "easternkingdoms_map", "x": 12108, "y": 4700 },
+        "icon": "home"
+    },
+    {
+        "id": "sunwell",
+        "title": "Sunwell Plateau",
+        "summary_html": "The sanctuary holdings of the Sin'dorei, where historic Sunwell rests on the Isle of Quel'Danas.",
+        "map": { "id": "easternkingdoms_map", "x": 12112, "y": 2248 },
+        "icon": "tower"
+    },
+    {
+        "id": "undercity",
+        "title": "Undercity",
+        "summary_html": "The recently reclaimed capital of the Forsaken, and once capital of humanity in Lordaeron. Blight still taints its halls, but clean up is ongoing.",
+        "map": { "id": "easternkingdoms_map", "x": 7468, "y": 11216 },
+        "icon": "tower"
+    },
+    {
+        "id": "lightshope",
+        "title": "Light's Hope Chapel",
+        "summary_html": "One of the chief holdings of the Argent Crusade, and the Order of the Silver Hand.",
+        "map": { "id": "easternkingdoms_map", "x": 12788, "y": 10600 },
+        "icon": "tower"
+    },
+    {
+        "id": "menethil",
+        "title": "Menethil Harbor",
+        "summary_html": "One of the Alliance's main ports in the middle half of the continent.",
+        "map": { "id": "easternkingdoms_map", "x": 8488, "y": 16416 },
+        "icon": "tower"
+    },
+    {
+        "id": "gilneas",
+        "title": "Gilneas City",
+        "summary_html": "The recently reclaimed capital of the worgen, and the historic home of the Gilnean people.",
+        "map": { "id": "easternkingdoms_map", "x": 6216, "y": 14308 },
+        "icon": "tower"
+    },
+    {
+        "id": "stromgarde",
+        "title": "Stromgarde City",
+        "summary_html": "One of the Alliance's reclaimed holdings in the northern half of the continent; it is ruled by Danath Trollbane.",
+        "map": { "id": "easternkingdoms_map", "x": 9424, "y": 14400 },
+        "icon": "tower"
+    },
+    {
+        "id": "hammerfall",
+        "title": "Hammerfall",
+        "summary_html": "A Horde fortification that once served as an internment camp of the orcs after the Second War.",
+        "map": { "id": "easternkingdoms_map", "x": 11068, "y": 13732 },
+        "icon": "tower"
+    },
+    {
+        "id": "hearthglen",
+        "title": "Hearthglen",
+        "summary_html": "One of the chief holdings of the Argent Crusade, and the Order of the Silver Hand.",
+        "map": { "id": "easternkingdoms_map", "x": 9160, "y": 10016 },
+        "icon": "tower"
+    },
+    {
+        "id": "zulaman",
+        "title": "Zul'Aman",
+        "summary_html": "The seat of the Amani Empire, the perennial enemy of the Quel'dorei and Sin'dorei elves.",
+        "map": { "id": "easternkingdoms_map", "x": 13276, "y": 7952 },
+        "icon": "tower"
+    },
+    {
+        "id": "zulgurub",
+        "title": "Zul'Gurub",
+        "summary_html": "The seat of Gurubashi Empire, or at least what remains of it.",
+        "map": { "id": "easternkingdoms_map", "x": 8832, "y": 24216 },
+        "icon": "tower"
+    },
+    {
+        "id": "thasloren",
+        "title": "Thas'loren",
+        "summary_html": "An elven destroyer made accessible to the Fellowship to continue its work.",
+        "map": { "id": "easternkingdoms_map", "x": 10962, "y": 5726 },
+        "icon": "shipred"
+    }
+  ]
+
+

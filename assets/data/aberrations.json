@@ -1061,6 +1061,74 @@
       "description": "An incomprehensible sovereign of the deep dark—its presence bends fate, and its openings in reality become battlefields.",
       "campaignLinks": [],
       "image": "assets/art/monsters/void_god.png"
+    },
+    {
+      "id": "holy_elemental",
+      "name": "Elemental",
+      "class": "Holy Elemental",
+      "category": "Aberrations",
+      "subcategory": "Lightspawn",
+      "hp": 18,
+      "traits": [
+        {
+          "name": "Cleanse",
+          "trait": "cleanse",
+          "theme": "buffs",
+          "effect": "Removes corruption from allies."
+        },
+        {
+          "name": "Benison",
+          "trait": "empower",
+          "theme": "buffs",
+          "effect": "Increases damage, critical chance, or potency."
+        },
+        {
+          "name": "Sunbeam",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "A focused ray that sears shadow and doubt, and leaves burning nature or holy damage."
+        }
+      ],
+      "description": "A coherent flare of the Holy Light given purpose.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/light_elemental.png"
+    },
+    {
+      "id": "holy_revenant",
+      "name": "Light Revenant",
+      "class": "Revenant",
+      "category": "Aberrations",
+      "subcategory": "Lightspawn",
+      "hp": 22,
+      "traits": [
+        {
+          "name": "Radiant Strike",
+          "trait": "heavy attack",
+          "theme": "damage",
+          "effect": "A ranged or melee strike imbued with searing Light that weakens shadow foes, demons, and undead."
+        },
+        {
+          "name": "Aureole",
+          "trait": "area_blast",
+          "theme": "aoe",
+          "effect": "Radiates a halo burst, damaging nearby foes."
+        },
+        {
+          "name": "Smite",
+          "trait": "precise attack",
+          "theme": "damage",
+          "effect": "Deals radiant holy damage."
+        },
+        {
+          "name": "Warming Light",
+          "trait": "area heal",
+          "theme": "healing",
+          "effect": "Restores health to targets in an area."
+        }
+      ],
+      "description": "Lingering devotion crystallized into form.",
+      "campaignLinks": [],
+      "image": "assets/art/monsters/light_elemental.png"
     }
   ]
 }
