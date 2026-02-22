@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Elrendar Fellowship — World Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { overflow: hidden; }
+    .sigil-overlay { pointer-events: none; }
+
+    /* Map wrapper */
+    .wm-shell {
+      position: relative;
+      height: calc(100vh - 0px);
+      width: 100%;
+    }
+
+    #map {
+      position: absolute;
+      inset: 0;
+      background: #000;
+    }
+
+    /* Toolbar */
+    .wm-toolbar {
+      position: absolute;
+      top: 80px;
+      left: 40px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 210px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(10, 10, 10, 0.80);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+    }
+
+    .wm-toolbar h2 {
+      font-size: 14px;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+      opacity: 0.92;
+    }
+
+    .wm-select {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.45);
+      color: #f4f0e7;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .wm-btnrow {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .wm-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.35);
+      cursor: pointer;
+      user-select: none;
+      color: #f4f0e7;
+      font-family: inherit;
+      font-size: 13px;
+      text-align: left;
+      transition: transform .08s ease, background .12s ease, border-color .12s ease;
+    }
+
+    .wm-toggle:hover {
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.45);
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    .wm-toggle.is-on {
+      border-color: rgba(240, 214, 140, 0.55);
+      box-shadow: 0 0 0 1px rgba(240, 214, 140, 0.15) inset;
+    }
+
+    .wm-toggle img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    
+    /* Popup slide title icon */
+    .wm-slide-ico{
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      margin-right: .45rem;
+      vertical-align: middle;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,.35));
+    }
+    .wm-pop__title{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+    }
+    .wm-pop__title span{ flex:1; }
+/* Legend panel */
+    .wm-legend {
+      position: absolute;
+      left: 14px;
+      top: 80px;
+      z-index: 1000;
+      width: 340px;
+      max-width: calc(100vw - 28px);
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(10,10,10,0.90);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      transform: translateX(-110%);
+      transition: transform .16s ease;
+    }
+    .wm-legend.show {
+      transform: translateX(0);
+    }
+    .wm-legend h3 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    .wm-legend p {
+      margin: 0 0 10px 0;
+      font-size: 13px;
+      line-height: 1.35;
+      opacity: 0.92;
+    }
+    .wm-legend ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .wm-legend code {
+      font-size: 12px;
+      opacity: 0.95;
+    }
+
+    /* Coordinate HUD (Ctrl held) */
+    .wm-coord {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 999;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.75);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .12s ease, transform .12s ease;
+      pointer-events: none;
+    }
+    .wm-coord.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Toast */
+    .wm-toast {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 999;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.80);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .12s ease, transform .12s ease;
+      pointer-events: none;
+    }
+    .wm-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Leaflet tweaks: avoid tile stretching on partial edge tiles */
+    .leaflet-tile {
+      image-rendering: auto;
+    }
+
+    /* Popup styling */
+    .wm-pop__title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .wm-pop__meta {
+      opacity: 0.8;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .wm-pop__body {
+      font-size: 13px;
+      line-height: 1.35;
+      max-height: 180px;
+      overflow: auto;
+      padding-right: 6px;
+    }
+    .wm-pop__img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 8px 0;
+      border: 1px solid rgba(0,0,0,0.25);
+      background: #000;
+      display: block;
+    }
+    .wm-pop__actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .wm-btn {
+      display: inline-block;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.25);
+      text-decoration: none;
+      background: rgba(240, 214, 140, 0.20);
+      color: #111;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .wm-btn:hover {
+      filter: brightness(1.05);
+    }
+
+
+    /* Debug grid labels */
+    .wm-debug-label {
+      pointer-events: none;
+    }
+    .wm-debug-label-inner {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.70);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #f4f0e7;
+      font-size: 11px;
+      line-height: 1.2;
+      white-space: nowrap;
+      transform: translate(8px, 8px);
+    }
+
+    /* Mobile */
+    @media (max-width: 720px) {
+      .wm-toolbar {
+        width: 190px;
+      }
+      .wm-legend {
+        width: 300px;
+      }
+    }
+
+    /* Push Leaflet zoom controls below the site nav */
+.leaflet-top.leaflet-left{
+  top: 80px !important;
+  left: 0px !important;
+}
+  </style>
+</head>
+
+<body>
+
+  <nav class="menu-bar">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="#">About ▾</a>
+<ul class="dropdown-menu">
+<li><a href="about.html">At A Glance</a></li>
+<li><a href="conduct.html">Code of Conduct</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="#">Roleplay ▾</a>
+<ul class="dropdown-menu">
+<li><a href="history.html">History</a></li>
+<li><a href="gallery.html">Gallery</a></li><li>
+<li><a href="system.html">RP Guide Book</a></li>
+<li><a href="playercard.html">Character Sheet</a></li>
+<li><a href="monstersuite.html">Monster Manual</a></li>
+<li><a href="dm-assist.html">DM Event Assistant</a></li>
+<li><a href="storymap.html"> Story Mapper</a></li>
+</ul>
+</li>
+<li><a href="members.html">Members</a></li>
+<li><a href="worldmap.html">Guild Map</a></li>
+<li><a href="apply.html">Apply</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="#">Games ▾</a>
+<ul class="dropdown-menu">
+<li><a href="phoenix-path.html">The Phoenix Path</a></li>
+<li><a href="azeroth-at-war.html">Azeroth At War</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+  <div class="wm-shell">
+    <div id="map"></div>
+
+    <!-- Toolbar -->
+    <aside class="wm-toolbar" aria-label="World map tools">
+      <div>
+        <h2>World Map</h2>
+        <select id="mapSelect" class="wm-select" aria-label="Select map region"></select>
+      </div>
+
+      <div class="wm-btnrow">
+        
+      <p style="margin:0 0 6px 0; font-size:12px; opacity:.85;">
+        <b>Persistent</b> markers are always on.
+      </p>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="campaign" aria-pressed="true">
+        <img src="assets/art/icon_story.png" alt="Campaign" />
+        <span>Campaign</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="pve" aria-pressed="true">
+        <img src="assets/art/icon_pve.png" alt="PVE" />
+        <span>PVE</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="event" aria-pressed="true">
+        <img src="assets/art/icon_event.png" alt="Event" />
+        <span>Event</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="lore" aria-pressed="true">
+        <img src="assets/art/icon_lore.png" alt="Lore" />
+        <span>Lore</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="story" aria-pressed="true">
+        <img src="assets/art/icon_paper.png" alt="Story" />
+        <span>Story</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="images" aria-pressed="true">
+        <img src="assets/art/icon_camera.png" alt="Images" />
+        <span>Images</span>
+      </button>
+
+      <button class="wm-toggle" type="button" data-toggle-filter="current" aria-pressed="true">
+        <img src="assets/art/portrait_icon_skull.png" alt="Current" />
+        <span>Current</span>
+      </button>
+
+      <button class="wm-toggle" id="btnDebugGrid" type="button">
+        <img src="assets/art/icon_question.png" alt="Debug" />
+        <span>Debug Grid</span>
+      </button>
+
+      <button class="wm-toggle" id="btnHelp" type="button">
+        <img src="assets/art/icon_help.png" alt="Help" />
+        <span>Help (Legend)</span>
+      </button>
+
+      </div>
+    </aside>
+
+    <!-- Legend -->
+    <section class="wm-legend" id="legendPanel" aria-label="Map legend">
+      <h3>Legend & Controls</h3>
+      <p>
+        This map uses a DeepZoom tile pyramid, so zooming loads higher-detail tiles automatically.
+      </p>
+      <ul>
+        <li><b>Pan:</b> click and drag</li>
+        <li><b>Zoom:</b> mouse wheel / trackpad</li>
+        <li><b>Toggle markers:</b> use the left toolbar</li>
+        <li><b>Coordinates:</b> hold <code>Ctrl</code> to display <code>x,y</code> under your cursor</li>
+        <li><b>Copy coords:</b> while holding <code>Ctrl</code>, click the map to copy a snippet you can paste elsewhere.</li>
+      </ul>
+      <p style="margin-top:10px;">
+        <b>Note:</b> markers only appear for entries that have a map field.
+      </p>
+    </section>
+
+    <!-- Coordinate HUD -->
+    <div class="wm-coord" id="coordHUD"><span id="coordText">x:0 y:0</span></div>
+
+    <!-- Toast -->
+    <div class="wm-toast" id="toast"></div>
+  </div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet DeepZoom plugin -->
+  <script src="https://unpkg.com/leaflet-deepzoom@latest/leaflet-deepzoom.js"></script>
+
+  <!-- Worldmap logic -->
+  <script src="assets/worldmap/worldmap.js"></script>
+</body>
+</html>
