@@ -231,6 +231,15 @@
 }
 
 </style>
+
+<style id="history-focus-style">
+  .focus-highlight{
+    outline: 2px solid rgba(240, 214, 140, 0.75);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.35), 0 0 18px rgba(240, 214, 140, 0.15);
+    border-radius: 10px;
+  }
+</style>
+
 </head>
 <body>
   <img class="sigil-overlay" src="assets/art/crest2.png" alt="Elven Sigil"/>
@@ -262,6 +271,7 @@
         </ul>
       </li>
       <li><a href="members.html">Members</a></li>
+      <li><a href="worldmap.html">Guild Map</a></li>
       <li><a href="apply.html">Apply</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">Games ▾</a>
@@ -1064,5 +1074,41 @@ if (dateLbl) dateLbl.textContent = 'Canon Year';
 </script>
 <script type="module" src="assets/js/auth-ui.js"></script>
   <script type="module" src="assets/js/auth-ui.js?v=3"></script>
+
+<script id="history-focus-script">
+  (function(){
+    function applyFocus(){
+      try{
+        const params = new URLSearchParams(location.search);
+        const focusId = params.get('focus');
+        if (!focusId) return;
+
+        // Expand parent if needed (child ids are parent--child)
+        if (focusId.includes('--')){
+          const parentId = focusId.split('--')[0];
+          const parentBtn = document.querySelector('.tree button[data-target="' + CSS.escape(parentId) + '"]');
+          const ul = parentBtn ? parentBtn.parentElement.querySelector('ul.child-wrap') : null;
+          if (ul) ul.style.display = '';
+        }
+
+        const target = document.getElementById(focusId);
+        if (target){
+          target.classList.add('focus-highlight');
+          try { target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' }); } catch {}
+        }
+
+        const btn = document.querySelector('.tree button[data-target="' + CSS.escape(focusId) + '"]');
+        if (btn){
+          document.querySelectorAll('.tree button[aria-current="true"]').forEach(b => b.removeAttribute('aria-current'));
+          btn.setAttribute('aria-current', 'true');
+        }
+      }catch(e){}
+    }
+
+    // wait for the history DOM to be constructed
+    window.addEventListener('load', () => setTimeout(applyFocus, 120));
+  })();
+</script>
+
 </body>
 </html>
