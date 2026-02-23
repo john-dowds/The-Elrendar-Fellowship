@@ -143,14 +143,14 @@
           "id": "campaign4.2",
           "title": "Event: Twilight Interrogation",
           "date": "February 11",
-          "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385, "icon": "campaign"},
+          "map": { "id": "easternkingdoms_map", "x": 12505, "y": 6393, "icon": "campaign"},
           "summary_html": "<p>Jeshacinin Evertrail and Thalendir Dawncrestcoordinates the interrogation of captured Portal Keeper Sylas, a Sin'dorei magister once in service to Rommath, who has turned to the Twilight Cult as one of Xal'atath's followers.<br><br>Through the drawn out questioning, the group is able to discern the mage's involve in a wider, organized effort to excavate and pilfer the bones of long-dead dragons, transporting them to locations concealed beyond several void rifts. Beyond that, the interrogation reveals the witnessed execution of various magisters and other servants of the High Home, though ultimately the portal keeper's greatest contribution is having been witness to the presence of Ethereals and other entities of the void which were beginning to amass.</p>"
         },
         {
           "id": "campaign4.3",
           "title": "Event: The Void Rift",
           "date": "February 22",
-          "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385, "icon": "campaign"},
+          "map": { "id": "easternkingdoms_map", "x": 12505, "y": 6393, "icon": "campaign"},
           "summary_html": "<p>Elodi Solaris, Ansinosth Summerbough, Sable Than'rune, Jeshacinin Evertrail, Divine Chaniste Skyguard, Norvina Black, and Haldarin Autumnveil stage an incursion back into the void rift where Portal Keeper Sylas had been fought and captured, and narrowly survive the destruction of the rift as they dig into its secrets. The group discovers that the Portal Keeper had been preparing to attend a masquerade, presumably with other cultists, in Silvermoon City. Research was also discovered tied to the Black Dragonflight's efforts to corrupt and create Twilight dragons. Lastly, the group determines for sure that the twilight cultists are recruiting from Silvermoon's university. </p>"
         }
       ]
