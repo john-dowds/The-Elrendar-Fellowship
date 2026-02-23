@@ -7,19 +7,25 @@
     /* ===================== Config ===================== */
   
     const MAPS = [
-      { id: 'easternkingdoms_map', name: 'Eastern Kingdoms', dzi: 'assets/worldmap/elrendar_map.dzi', enabled: true },
-      { id: 'kalimdor_map', name: 'Kalimdor', dzi: '', enabled: false },
-      { id: 'brokenisles_map', name: 'Broken Isles', dzi: '', enabled: false },
-      { id: 'dragonisles_map', name: 'Dragon Isles', dzi: '', enabled: false },
-      { id: 'outland_map', name: 'Outland', dzi: '', enabled: false },
-      { id: 'draenor_map', name: 'Draenor', dzi: '', enabled: false },
-      { id: 'shadowlands_map', name: 'Shadowlands', dzi: '', enabled: false },
-      { id: 'khazalgar_map', name: 'Khaz Algar', dzi: '', enabled: false },
-      { id: 'northrend_map', name: 'Northrend', dzi: '', enabled: false },
-      { id: 'kultiras_map', name: 'Kul Tiras', dzi: '', enabled: false },
-      { id: 'zandalar_map', name: 'Zandalar', dzi: '', enabled: false },
-      { id: 'pandaria_map', name: 'Pandaria', dzi: '', enabled: false },
-      { id: 'argus_map', name: 'Argus', dzi: '', enabled: false }
+      { id: 'easternkingdoms_map', name: 'Eastern Kingdoms', dzi: 'assets/worldmap/EasternKingdoms.dzi', enabled: true },
+      { id: 'kalimdor_map', name: 'Kalimdor', dzi: 'assets/worldmap/Kalimdor.dzi', enabled: true },
+      { id: 'outland_map', name: 'Outland', dzi: 'assets/worldmap/Outland.dzi', enabled: true },
+      { id: 'northrend_map', name: 'Northrend', dzi: 'assets/worldmap/Northrend.dzi', enabled: true },
+      { id: 'pandaria_map', name: 'Pandaria', dzi: 'assets/worldmap/Pandaria.dzi', enabled: false },
+      { id: 'draenor_map', name: 'Draenor', dzi: 'assets/worldmap/Draenor.dzi', enabled: true },
+      { id: 'brokenisles_map', name: 'Broken Isles', dzi: 'assets/worldmap/BrokenIsles.dzi', enabled: true },
+      { id: 'telogrus_map', name: 'Telogrus', dzi: 'assets/worldmap/Telogrus.dzi', enabled: true },
+      { id: 'kultiras_map', name: 'Kul Tiras', dzi: 'assets/worldmap/KulTiras.dzi', enabled: true },
+      { id: 'zandalar_map', name: 'Zandalar', dzi: 'assets/worldmap/Zandalar.dzi', enabled: true },
+      { id: 'nazjatar_map', name: 'Nazjatar', dzi: 'assets/worldmap/Nazjatar.dzi', enabled: true },
+      { id: 'shadowlands_map', name: 'Shadowlands', dzi: 'assets/worldmap/Shadowlands.dzi', enabled: true },
+      { id: 'dragonisles_map', name: 'Dragon Isles', dzi: 'assets/worldmap/DragonIsles.dzi', enabled: true },
+      { id: 'khazalgar_map', name: 'Khaz Algar', dzi: 'assets/worldmap/KhazAlgar.dzi', enabled: false },
+      { id: 'karesh_map', name: 'Karesh', dzi: 'assets/worldmap/Karesh.dzi', enabled: true },
+      { id: 'founderspoint_map', name: 'Founders Point', dzi: 'assets/worldmap/FoundersPoint.dzi', enabled: true },
+      { id: 'razorwindshores_map', name: 'Razorwind Shores', dzi: 'assets/worldmap/RazorwindShores.dzi', enabled: true },
+      { id: 'harandar_map', name: 'Harandar', dzi: 'assets/worldmap/Harandar.dzi', enabled: true },
+      { id: 'voidstorm_map', name: 'Voidstorm', dzi: 'assets/worldmap/Voidstorm.dzi', enabled: false },
     ];
   
     // All icon keys referenced in data (history/map.icon, threats.json, etc.)
@@ -53,12 +59,14 @@
       legionship:   'assets/art/icon_legionship.png',
       legionportal: 'assets/art/icon_legionportal.png',
       skull:        'assets/art/portrait_icon_skull.png',
-      book:         'assets/art/portrait_icon_book.png',
-      vendor:       'assets/art/portrait_icon_vendor.png',
-      tavern:       'assets/art/portrait_icon_tavern.png',
-      herb:         'assets/art/portrait_icon_herb.png',
-      grave:        'assets/art/portrait_icon_grave.png',
-      blacksmith:   'assets/art/portrait_icon_blacksmith.png',
+      book:         'assets/art/icon_book.png',
+      vendor:       'assets/art/icon_vendor.png',
+      tavern:       'assets/art/icon_tavern.png',
+      herb:         'assets/art/icon_herb.png',
+      grave:        'assets/art/icon_grave.png',
+      blacksmith:   'assets/art/icon_blacksmith.png',
+      blade:        'assets/art/icon_blade.png',
+      healer:       'assets/art/icon_healer.png',
   
       fallback: 'assets/art/icon_question.png'
     };
@@ -494,7 +502,7 @@
         const list = Array.isArray(thr) ? thr : [];
   
         const PERSISTENT_ICON_KEYS = new Set(['home','hearth','tower']);
-        const CURRENT_ICON_KEYS = new Set(['shipred','shipblue','airship','legionship','legionportal','skull']);
+        const CURRENT_ICON_KEYS = new Set(['shipred','shipblue','airship','legionship','legionportal','skull','blacksmith','vendor','tavern','book','herb','grave','blade','healer']);
   
         threatItems = list.map(it => {
           const rawIcon = normalizeIconKey(it.map?.icon || it.icon || it.type || it.tag);
