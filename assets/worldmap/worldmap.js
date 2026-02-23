@@ -53,6 +53,12 @@
       legionship:   'assets/art/icon_legionship.png',
       legionportal: 'assets/art/icon_legionportal.png',
       skull:        'assets/art/portrait_icon_skull.png',
+      book:         'assets/art/portrait_icon_book.png',
+      vendor:       'assets/art/portrait_icon_vendor.png',
+      tavern:       'assets/art/portrait_icon_tavern.png',
+      herb:         'assets/art/portrait_icon_herb.png',
+      grave:        'assets/art/portrait_icon_grave.png',
+      blacksmith:   'assets/art/portrait_icon_blacksmith.png',
   
       fallback: 'assets/art/icon_question.png'
     };
