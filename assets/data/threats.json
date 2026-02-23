@@ -104,7 +104,75 @@
         "summary_html": "An elven destroyer made accessible to the Fellowship to continue its work.",
         "map": { "id": "easternkingdoms_map", "x": 10962, "y": 5726 },
         "icon": "shipred"
+    },
+    {
+        "id": "guildhall",
+        "title": "Elrendar Fellowship Guild Hall",
+        "summary_html": "The holdings of the Elrendar Fellowship, nestled along the banks of the river of the same name.",        
+        "map": { "id": "razorwindshores_map", "x": 4783, "y": 3756 },
+        "icon": "hearth"
+    },
+    {
+        "id": "blacksmith",
+        "title": "Autumnveil Forge",
+        "summary_html": "The forge and smithy of Haldarin Autumnveil, providing services to the Fellowship.",        
+        "map": { "id": "razorwindshores_map", "x": 4580, "y": 3874 },
+        "icon": "blacksmith"
+    },
+    {
+        "id": "training",
+        "title": "Training Grounds",
+        "summary_html": "A training grounds, armory, and jail for dangerous persons captured by the Fellowship and held for a short time. Maintained by the Blood Knights, the Fellowship works hand in hand to ensure its effectively utilized.",        
+        "map": { "id": "razorwindshores_map", "x": 3055, "y": 4033 },
+        "icon": "blade"
+    },
+    {
+        "id": "healer",
+        "title": "Medical Clinic",
+        "summary_html": "The medical clinic, maintained by Priestess Kynseria Vel'dinariel and the other healers of the Fellowship and used for all manner of treatments.",        
+        "map": { "id": "razorwindshores_map", "x": 4643, "y": 3437 },
+        "icon": "healer"
+    },
+    {
+        "id": "vault",
+        "title": "Relic Vault",
+        "summary_html": "A relic vault maintained by Blood Knight Jeshacinin Evertrail, where the Fellowship has begun to store many power and dangerous relics and artifacts.",        
+        "map": { "id": "razorwindshores_map", "x": 4232, "y": 3796 },
+        "icon": "tower"
+    },
+    {
+        "id": "jewels",
+        "title": "Jendral's Gem Shop",
+        "summary_html": "A gem smithing and jeweler's shop, maintained by the artisan Jendral Rosepath.",        
+        "map": { "id": "razorwindshores_map", "x": 4361, "y": 4140 },
+        "icon": "vendor"
+    },
+    {
+        "id": "apothecary",
+        "title": "Lightstrike Apothecary",
+        "summary_html": "An apothecary's shop maintained by Allithndria Lightstriker, a fellow of the order.",        
+        "map": { "id": "razorwindshores_map", "x": 4321, "y": 4016 },
+        "icon": "herb"
+    },
+    {
+        "id": "greenhouse",
+        "title": "Greenhouse & Tinctures",
+        "summary_html": "A greenhouse and herbalist shop maintained by Lark and Finch.",        
+        "map": { "id": "razorwindshores_map", "x": 4598, "y": 3974 },
+        "icon": "herb"
+    },
+    {
+        "id": "ballroom",
+        "title": "Event Hall",
+        "summary_html": "A large, multifunctional event hall.",        
+        "map": { "id": "razorwindshores_map", "x": 3132, "y": 4131 },
+        "icon": "tavern"
+    },
+    {
+        "id": "tavern",
+        "title": "Hearth's Home Tavern",
+        "summary_html": "A large tavern nestled in the woods near the guild hall.",        
+        "map": { "id": "razorwindshores_map", "x": 4367, "y": 3612 },
+        "icon": "tavern"
     }
   ]
-
-
