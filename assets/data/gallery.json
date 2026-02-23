@@ -1403,5 +1403,25 @@
     "caption": "Fellows of the order delve into the void rift where Portal Keeper Sylas had been fought previously, and uncover startling truths about the rising tides of darkness. Narrowly escaping with their lives, the fellows prepare their next steps to battle back the shadows.",
     "album": "Events",
     "tags": ["members", "events", "Norvina Black", "Sable Than'rune", "Ansinosth Summerbough", "Haldarin Autumnveil","Elodi Solaris","Jeshacinin Evertrail","Quely Phoenixheart","Divine Chaniste Skyguard"]
+  },
+  {
+    "id": "img146",
+    "src": "assets/gallery/thevoidrift_009.png",
+    "thumb": "",
+    "title": "The Void Rift",
+    "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385 },
+    "caption": "Fellows of the order delve into the void rift where Portal Keeper Sylas had been fought previously, and uncover startling truths about the rising tides of darkness. Narrowly escaping with their lives, the fellows prepare their next steps to battle back the shadows.",
+    "album": "Events",
+    "tags": ["members", "events", "Norvina Black", "Sable Than'rune", "Ansinosth Summerbough", "Haldarin Autumnveil","Elodi Solaris","Jeshacinin Evertrail","Quely Phoenixheart","Divine Chaniste Skyguard"]
+  },
+  {
+    "id": "img147",
+    "src": "assets/gallery/thevoidrift_010.png",
+    "thumb": "",
+    "title": "The Void Rift",
+    "map": { "id": "easternkingdoms_map", "x": 12501, "y": 6385 },
+    "caption": "Fellows of the order delve into the void rift where Portal Keeper Sylas had been fought previously, and uncover startling truths about the rising tides of darkness. Narrowly escaping with their lives, the fellows prepare their next steps to battle back the shadows.",
+    "album": "Events",
+    "tags": ["members", "events", "Norvina Black", "Sable Than'rune", "Ansinosth Summerbough", "Haldarin Autumnveil","Elodi Solaris","Jeshacinin Evertrail","Quely Phoenixheart","Divine Chaniste Skyguard"]
   }
 ]
