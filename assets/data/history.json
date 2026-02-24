@@ -152,6 +152,20 @@
           "date": "February 22",
           "map": { "id": "easternkingdoms_map", "x": 12505, "y": 6393, "icon": "campaign"},
           "summary_html": "<p>Elodi Solaris, Ansinosth Summerbough, Sable Than'rune, Jeshacinin Evertrail, Divine Chaniste Skyguard, Norvina Black, and Haldarin Autumnveil stage an incursion back into the void rift where Portal Keeper Sylas had been fought and captured, and narrowly survive the destruction of the rift as they dig into its secrets. The group discovers that the Portal Keeper had been preparing to attend a masquerade, presumably with other cultists, in Silvermoon City. Research was also discovered tied to the Black Dragonflight's efforts to corrupt and create Twilight dragons. Lastly, the group determines for sure that the twilight cultists are recruiting from Silvermoon's university. </p>"
+        },
+        {
+          "id": "campaign4.4",
+          "title": "Event: Masquerade",
+          "date": "February 24",
+          "map": { "id": "easternkingdoms_map", "x": 12296, "y": 4591, "icon": "campaign"},
+          "summary_html": "<p>The Fellowship infiltrates a high society masquerade ball where their investigation has indicated cultists may be gathering in secret. With a chance to oust the cultists' identities, the Fellowship dons disguises and delves deep into the crowds, only to face dire odds when their identities are exposed. </p>"
+        },
+        {
+          "id": "campaign4.5",
+          "title": "Event: As Midnight Falls",
+          "date": "February 28",
+          "map": { "id": "easternkingdoms_map", "x": 12409, "y": 4820, "icon": "campaign"},
+          "summary_html": "<p>Elodi Solaris, Ansinosth Summerbough, Sable Than'rune, Jeshacinin Evertrail, Divine Chaniste Skyguard, Norvina Black, and Haldarin Autumnveil stage an incursion back into the void rift where Portal Keeper Sylas had been fought and captured, and narrowly survive the destruction of the rift as they dig into its secrets. The group discovers that the Portal Keeper had been preparing to attend a masquerade, presumably with other cultists, in Silvermoon City. Research was also discovered tied to the Black Dragonflight's efforts to corrupt and create Twilight dragons. Lastly, the group determines for sure that the twilight cultists are recruiting from Silvermoon's university. </p>"
         }
       ]
     },
@@ -608,8 +622,8 @@
       "subtitle": "Expansion: Classic WoW",
       "date": "c. Years 22-26",
       "map": [
-        { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore"},
-        { "id": "easternkingdoms_map", "x": 12135, "y": 2268, "icon": "lore"  },
+        { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"},
+        { "id": "easternkingdoms_map", "x": 12112, "y": 2248, "icon": "lore"  },
         { "id": "northrend_map", "x": 8512, "y": 5698, "icon": "lore"},
         { "id": "outland_map", "x": 9664, "y": 2760, "icon": "lore"  },
         { "id": "outland_map", "x": 7816, "y": 7912, "icon": "lore"  },
@@ -617,7 +631,6 @@
         { "id": "outland_map", "x": 4264, "y": 5216, "icon": "lore"  },
         { "id": "outland_map", "x": 9920, "y": 5984, "icon": "lore"  },
         { "id": "outland_map", "x": 5696, "y": 7540, "icon": "lore"   }
-
       ],
       "summary_html": "\n Prince Kael’thas sworn loyalty to Illidan Stormrage opens new avenues for the elven recovery; Silvermoon City is rebuilt through a show of tremendous magical might, and the elves begin to claw back control over the Kingdom inch by inch; the Sin’dorei Sunfury forces subdivisions (Sunfury, Sunhawks, Eclipsion, Firewing, Illidari, etc.) proliferate; fel magic becomes a substitute for lost Sunwell energies for many, while others refuse it. <br><br> In this time, Prince Kael'thas leads the Sunfury forces in following Illidan Stormrage back to Azeroth to confront the growing power of the Scourge in Northrend, only to fail. Numerous elves are slain, including Lana'thel-wielder of the legendary blade Quel'delar-who is raised into undeath by the Lich King to serve as Blood Queen of the San'layn, vampiric undead elves. <br><br> Following their defeat, Illidan and Kael's Sunfury army retreats to the Outlands where they work to secure their control over the shattered world. At some point during these years, Prince Kael'thas Sunstrider begins to fall deeper into a madness that would eventually lead him to accept a bargain with the demon lord Kil'Jaeden, the Deceiver.\n      ",
       "order": 15
@@ -628,7 +641,7 @@
       "subtitle": "Game: Warcraft III",
       "date": "c. Years 21-22",
       "map": [
-        { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore"},
+        { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"},
         { "id": "easternkingdoms_map", "x": 7464, "y": 12448, "icon": "lore"  },
         { "id": "outland_map", "x": 7816, "y": 7912, "icon": "lore"  },
         { "id": "outland_map", "x": 10960, "y": 9248, "icon": "lore"  },
@@ -648,8 +661,8 @@
       { "id": "easternkingdoms_map", "x": 7340, "y": 12590, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 9128, "y": 11476, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 10940, "y": 9376, "icon": "lore"  },
-      { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore"  },
-      { "id": "easternkingdoms_map", "x": 12135, "y": 2268, "icon": "lore"  }
+      { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 12112, "y": 2248, "icon": "lore"  }
       ],
       "summary_html": "\n Following the corruption plaguing of Lordaeron, the fallen Prince Arthas Menethil leads an army of the dead through the Greenwood, breaches the Elfgates of Quel'Thalas, and plunges the kingdom into darkness. Some ninety percent of the elven populace of the kingdom is either slain and left to rot, or raised into undeath. As further insult, Prince Arthas defiles the Sunwell as a means to raise a powerful servant of the Scourge into undeath as a Lich, leaving the powerful font of magic tainted. <br><br> Silvermoon is devastated; Ranger-General Sylvanas and Grand Magister Belo’vir Salonar, and King Anasterian Sunstrider are all slain, and the Ranger-General is raised into undeath as a Banshee. Some survivors scatter, and others struggle to regroup. The Sunwell’s loss, and its eventual future renewal, reshapes Thalassian destiny. Elven Prince Kael'thas Sunstrider elects to destroy the Sunwell to prevent the corruption of the surviving people, and proclaims a new identity for his people-thus comes the birth of the <em>Sin'dorei</em>, the Children of Blood.\n          ",
       "order": 13
@@ -760,7 +773,7 @@
       "title": "Lore: Exile, & The Founding of Quel'Thalas",
       "subtitle": "Ancient History",
       "date": "c. Year -6,800s",
-      "map": { "id": "easternkingdoms_map", "x": 12116, "y": 4735, "icon": "lore" },
+      "map": { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore" },
       "summary_html": "\n In the wake of the surviving Highborne's exile from Kalimdor, the elves sail east across the sea and struggle terribly during their exodus. Those who survive the journey arrive in the Old God tainted lands now known as Tirisfal—where the ancient Titan Keeper Tyr was slain in battle against one of the Old Gods' minons. Falling to madness and withering away without the arcane power of the Well of Eternity that once sustained them, the elves waste away quickly, and further fall victim to attacks by the Amani trolls. <br><br> The elves embrace their ancient identity of tied to the arcane as a way to hold back the trolls, but it isn't until they come across a stretch of land—land sacred to the Amani trolls—upon which the legendary mage Dath'remar Sunstrider forms the Sunwell with water taken from the ancient Well of Eternity. With a vast font of magic to draw from, the elves proclaim themselves <em>Quel'dorei</em>, High Elves, and begin to secure their holdings. <br><br> They fight back fiercely against the trolls, wielding powerful magic now without restraint. In a rapid but bloody war, the elves drive back the Amani and cement their hold over the northern peninsula, which they claim as their Kingdom—<em>Quel'Thalas</em>, the High Home.\n      ",
       "order": 3
     },

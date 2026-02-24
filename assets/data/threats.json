@@ -116,7 +116,7 @@
         "id": "blacksmith",
         "title": "Autumnveil Forge",
         "summary_html": "The forge and smithy of Haldarin Autumnveil, providing services to the Fellowship.",        
-        "map": { "id": "razorwindshores_map", "x": 4580, "y": 3874 },
+        "map": { "id": "razorwindshores_map", "x": 4809, "y": 3617 },
         "icon": "blacksmith"
     },
     {
@@ -136,43 +136,149 @@
     {
         "id": "vault",
         "title": "Relic Vault",
-        "summary_html": "A relic vault maintained by Blood Knight Jeshacinin Evertrail, where the Fellowship has begun to store many power and dangerous relics and artifacts.",        
-        "map": { "id": "razorwindshores_map", "x": 4232, "y": 3796 },
+        "summary_html": "A relic vault maintained by Blood Knight Tal'theas Sunfeather, where the Fellowship has begun to store many power and dangerous relics and artifacts.",        
+        "map": { "id": "razorwindshores_map", "x": 4959, "y": 3473 },
         "icon": "tower"
     },
     {
         "id": "jewels",
         "title": "Jendral's Gem Shop",
         "summary_html": "A gem smithing and jeweler's shop, maintained by the artisan Jendral Rosepath.",        
-        "map": { "id": "razorwindshores_map", "x": 4361, "y": 4140 },
+        "map": { "id": "razorwindshores_map", "x": 3119, "y": 4140 },
         "icon": "vendor"
     },
     {
         "id": "apothecary",
         "title": "Lightstrike Apothecary",
         "summary_html": "An apothecary's shop maintained by Allithndria Lightstriker, a fellow of the order.",        
-        "map": { "id": "razorwindshores_map", "x": 4321, "y": 4016 },
+        "map": { "id": "razorwindshores_map", "x": 4292, "y": 4020  },
         "icon": "herb"
     },
     {
         "id": "greenhouse",
         "title": "Greenhouse & Tinctures",
         "summary_html": "A greenhouse and herbalist shop maintained by Lark and Finch.",        
-        "map": { "id": "razorwindshores_map", "x": 4598, "y": 3974 },
+        "map": { "id": "razorwindshores_map", "x": 4651, "y": 4087 },
         "icon": "herb"
     },
     {
         "id": "ballroom",
         "title": "Event Hall",
         "summary_html": "A large, multifunctional event hall.",        
-        "map": { "id": "razorwindshores_map", "x": 3132, "y": 4131 },
+        "map": { "id": "razorwindshores_map", "x": 3165, "y": 3773 },
         "icon": "tavern"
     },
     {
         "id": "tavern",
         "title": "Hearth's Home Tavern",
         "summary_html": "A large tavern nestled in the woods near the guild hall.",        
-        "map": { "id": "razorwindshores_map", "x": 4367, "y": 3612 },
+        "map": { "id": "razorwindshores_map", "x": 3441, "y": 3827 },
         "icon": "tavern"
+    },
+    {
+        "id": "inn",
+        "title": "Breaktusk Hearth",
+        "summary_html": "A large tavern nestled in the woods near the guild hall, maintained by Bel'thar Breaktusk.",        
+        "map": { "id": "razorwindshores_map", "x": 3497, "y": 5156 },
+        "icon": "tavern"
+    },
+    {
+        "id": "stairofdestiny",
+        "title": "The Stair of Destiny",
+        "summary_html": "The Outland facing side of the Dark Portal, a massive gateway linking Azeroth to both the Outlands, and Draenor.",        
+        "map": { "id": "outland_map", "x": 10026, "y": 5985 },
+        "icon": "raid"
+    },
+    {
+        "id": "stairofdestiny",
+        "title": "The Stair of Destiny",
+        "summary_html": "The Outland facing side of the Dark Portal, a massive gateway linking Azeroth to both the Outlands, and Draenor.",        
+        "map": { "id": "outland_map", "x": 10760, "y": 24221 },
+        "icon": "raid"
+    },
+    {
+        "id": "calcydo",
+        "title": "Calcydo's Home",
+        "summary_html": "A home belonging to fellow Calcydo.",        
+        "map": { "id": "razorwindshores_map", "x": 4395, "y": 3602 },
+        "icon": "home"
+    },
+    {
+        "id": "syrin",
+        "title": "Syrin's Home",
+        "summary_html": "A home belonging to fellow Syrin.",        
+        "map": { "id": "razorwindshores_map", "x": 4527, "y": 3769 },
+        "icon": "home"
+    },
+    {
+        "id": "silanna",
+        "title": "Silanna's Home",
+        "summary_html": "A home belonging to fellow Silanna Leybinder.",        
+        "map": { "id": "razorwindshores_map", "x": 4382, "y": 3820 },
+        "icon": "home"
+    },
+    {
+        "id": "tulindi",
+        "title": "Tulindi's Home",
+        "summary_html": "A home belonging to fellow Tulindi de Coeur-Errant.",        
+        "map": { "id": "razorwindshores_map", "x": 4936, "y": 3967 },
+        "icon": "home"
+    },
+    {
+        "id": "venymir",
+        "title": "Venymir's Home",
+        "summary_html": "A home belonging to fellow Venymir Stormwalker.",        
+        "map": { "id": "razorwindshores_map", "x": 4779, "y": 4065 },
+        "icon": "home"
+    },
+    {
+        "id": "alendris",
+        "title": "Alen'dris's Home",
+        "summary_html": "A home belonging to fellow Alen'dris Sunblossom.",        
+        "map": { "id": "razorwindshores_map", "x": 4743, "y": 4350 },
+        "icon": "home"
+    },
+    {
+        "id": "laelisel",
+        "title": "Laelisel's Home",
+        "summary_html": "A home belonging to fellow Laelisel Goldsong.",        
+        "map": { "id": "razorwindshores_map", "x": 4326, "y": 4122 },
+        "icon": "home"
+    },
+    {
+        "id": "glorandal",
+        "title": "Glor'andal's Home",
+        "summary_html": "A home belonging to fellow Glor'andal Druindar.",        
+        "map": { "id": "razorwindshores_map", "x": 4064, "y": 4461 },
+        "icon": "home"
+    },
+    {
+        "id": "jeshacinin",
+        "title": "Jeshacinin's Home",
+        "summary_html": "A home belonging to fellow Jeshacinin Evertrail.",        
+        "map": { "id": "razorwindshores_map", "x": 4327, "y": 4906 },
+        "icon": "home"
+    },
+    {
+        "id": "ashadarie",
+        "title": "Ashadarie's Home",
+        "summary_html": "A home belonging to fellow Ashadarie Dawncrest.",        
+        "map": { "id": "razorwindshores_map", "x": 4183, "y": 5314 },
+        "icon": "home"
+    },
+    {
+        "id": "onitheril",
+        "title": "Onitheril's Home",
+        "summary_html": "A home belonging to fellow Onitheril.",        
+        "map": { "id": "razorwindshores_map", "x": 3628, "y": 4503 },
+        "icon": "home"
+    },
+    {
+        "id": "portal",
+        "title": "Portal Gate",
+        "summary_html": "A portal gate located near one of Quel'Thalas' powerful runestones.",        
+        "map": { "id": "razorwindshores_map", "x": 3913, "y": 3632 },
+        "icon": "portalblue"
     }
   ]
+
