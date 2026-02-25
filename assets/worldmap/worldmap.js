@@ -7,25 +7,29 @@
     /* ===================== Config ===================== */
   
     const MAPS = [
-      { id: 'easternkingdoms_map',    name: 'Eastern Kingdoms',     dzi: 'assets/worldmap/EasternKingdoms.dzi',    enabled: true },
-      { id: 'kalimdor_map',    name: 'Kalimdor',     dzi: 'assets/worldmap/Kalimdor.dzi',    enabled: true },
-      { id: 'outland_map',     name: 'Outland',      dzi: 'assets/worldmap/Outland.dzi',     enabled: true },
-      { id: 'northrend_map',   name: 'Northrend',    dzi: 'assets/worldmap/Northrend.dzi',   enabled: true },
-      { id: 'pandaria_map',    name: 'Pandaria',     dzi: 'assets/worldmap/Pandaria.dzi',    enabled: true },
-      { id: 'draenor_map',     name: 'Draenor',      dzi: 'assets/worldmap/Draenor.dzi',     enabled: true },
       { id: 'brokenisles_map', name: 'Broken Isles', dzi: 'assets/worldmap/BrokenIsles.dzi', enabled: true },
-      { id: 'kultiras_map',    name: 'Kul Tiras',    dzi: 'assets/worldmap/KulTiras.dzi',    enabled: true },
-      { id: 'zandalar_map',    name: 'Zandalar',     dzi: 'assets/worldmap/Zandalar.dzi',    enabled: true },
-      { id: 'telogrus_map',    name: 'Telogrus',     dzi: 'assets/worldmap/Telogrus.dzi',    enabled: true },
-      { id: 'shadowlands_map', name: 'Shadowlands',  dzi: 'assets/worldmap/Shadowlands.dzi', enabled: true },
+      { id: 'dorn_map',   name: 'Dorn',   dzi: 'assets/worldmap/Dorn.dzi',   enabled: true },
+      { id: 'draenor_map',     name: 'Draenor',      dzi: 'assets/worldmap/Draenor.dzi',     enabled: true },
       { id: 'dragonisles_map',    name: 'Dragon Isles',     dzi: 'assets/worldmap/DragonIsles.dzi',    enabled: true },
-      { id: 'southseas_map', name: 'South Seas',  dzi: 'assets/worldmap/SouthSeas.dzi', enabled: true },
+      { id: 'easternkingdoms_map',    name: 'Eastern Kingdoms',     dzi: 'assets/worldmap/EasternKingdoms.dzi',    enabled: true },
+      { id: 'founderspoint_map',   name: 'Founders Point',   dzi: 'assets/worldmap/FoundersPoint.dzi',   enabled: true },
+      { id: 'harandar_map',    name: 'Harandar',     dzi: 'assets/worldmap/Harandar.dzi',    enabled: true },
+      { id: 'kalimdor_map',    name: 'Kalimdor',     dzi: 'assets/worldmap/Kalimdor.dzi',    enabled: true },
       { id: 'karesh_map',    name: 'Karesh',     dzi: 'assets/worldmap/Karesh.dzi',    enabled: true },
       { id: 'khazalgar_map',   name: 'Khaz Algar',   dzi: 'assets/worldmap/KhazAlgar.dzi',   enabled: true },
-      { id: 'harandar_map',    name: 'Harandar',     dzi: 'assets/worldmap/Harandar.dzi',    enabled: true },
-      { id: 'voidstorm_map',   name: 'Voidstorm',    dzi: 'assets/worldmap/Voidstorm.dzi',   enabled: true },
+      { id: 'kultiras_map',    name: 'Kul Tiras',    dzi: 'assets/worldmap/KulTiras.dzi',    enabled: true },
+      { id: 'kultirasbrokenisles_map',    name: 'Kul Tiras & Broken Isles',    dzi: 'assets/worldmap/KulTirasBrokenIsles.dzi',    enabled: true },
+      { id: 'northrend_map',   name: 'Northrend',    dzi: 'assets/worldmap/Northrend.dzi',   enabled: true },
+      { id: 'outland_map',     name: 'Outland',      dzi: 'assets/worldmap/Outland.dzi',     enabled: true },
+      { id: 'pandaria_map',    name: 'Pandaria',     dzi: 'assets/worldmap/Pandaria.dzi',    enabled: true },
       { id: 'razorwindshores_map',   name: 'Elrendar Shores Neighborhood',   dzi: 'assets/worldmap/RazorwindShores.dzi',   enabled: true },
-      { id: 'founderspoint_map',   name: 'Founders Point',   dzi: 'assets/worldmap/FoundersPoint.dzi',   enabled: true },
+      { id: 'shadowlands_map', name: 'Shadowlands',  dzi: 'assets/worldmap/Shadowlands.dzi', enabled: true },
+      { id: 'southseas_map', name: 'South Seas',  dzi: 'assets/worldmap/SouthSeas.dzi', enabled: true },
+      { id: 'telogrus_map',    name: 'Telogrus',     dzi: 'assets/worldmap/Telogrus.dzi',    enabled: true },
+      { id: 'zandalar_map',    name: 'Zandalar',     dzi: 'assets/worldmap/Zandalar.dzi',    enabled: true },
+      { id: 'voidstorm_map',   name: 'Voidstorm',    dzi: 'assets/worldmap/Voidstorm.dzi',   enabled: true },
+
+
     ];
   
     // All icon keys referenced in data (history/map.icon, threats.json, etc.)
