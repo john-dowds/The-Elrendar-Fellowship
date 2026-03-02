@@ -24,8 +24,12 @@
     #map {
       position: absolute;
       inset: 0;
-      background: #000;
+      background: #081D28;
     }
+
+    .leaflet-container {
+  background: #081D28;
+}
 
     /* Toolbar */
     .wm-toolbar {
@@ -290,6 +294,33 @@
   top: 80px !important;
   left: 0px !important;
 }
+
+.wm-label {
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'EB Garamond', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: opacity 0.25s ease;
+}
+
+.wm-label.ocean {
+  font-size: 38px;
+  color: rgba(220, 235, 240, 0.18);
+  font-weight: 600;
+}
+
+.wm-label.continent {
+  font-size: 44px;
+  color: rgba(240, 214, 140, 0.75);
+  text-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+.wm-label.region {
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
   </style>
 </head>
 
@@ -435,5 +466,4 @@
   <script src="https://unpkg.com/leaflet-deepzoom@latest/leaflet-deepzoom.js"></script>
 
   <!-- Worldmap logic -->
-  <script src="assets/worldmap/worldmap.js?v=2026022535_1"></script></body>
-</html>
+  <script src="assets/worldmap/worldmap.js?v=851a78ca"></script></html>

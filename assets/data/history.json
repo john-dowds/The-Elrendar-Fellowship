@@ -158,13 +158,13 @@
           "title": "Event: Masquerade",
           "date": "February 24",
           "map": { "id": "easternkingdoms_map", "x": 12296, "y": 4591, "icon": "campaign"},
-          "summary_html": "<p>The Fellowship infiltrates a high society masquerade ball where their investigation has indicated cultists may be gathering in secret. With a chance to oust the cultists' identities, the Fellowship dons disguises and delves deep into the crowds, only to face dire odds when their identities are exposed. </p>"
+          "summary_html": "<p>The Fellowship infiltrates a high society masquerade ball where their investigation has indicated cultists may be gathering in secret. With a chance to oust the cultists' identities, Chaniste Skyguard, Kynseria Vel'dinariel, Sable Than'rune, Norvina Black, Caledeth Bloodthorn, Quely Phoenixheart, Papilio Havenfire, Bellator Riel, Elodi Solaris, and Tal'theas Sunfeather don disguises and delve deep into the crowds, only to face dire odds when their identities are exposed after suspicions arise. Realizing all too late that where they anticipated only a few cultists to be present, the party was exclusively attended by members of the Twilight Cult. The group winds up separating and following different leads, with Kynseria Vel'dinariel and Norvina Black discovering an undercroft beneath the city streets where the cultists are working to reanimate the corrupted bones stolen from the Highlands. Fighting breaks out in the undercroft and the ballroom as the Fellowship breaks its cover and launches an assault to prevent the cult from completing its rituals, though as the midnight hour approaches, they learn that that the cult's work with the dragon bones is only the beginning: Quel'Thalas itself is falling under attack.</p>"
         },
         {
           "id": "campaign4.5",
           "title": "Event: As Midnight Falls",
           "date": "February 28",
-          "map": { "id": "easternkingdoms_map", "x": 12409, "y": 4820, "icon": "campaign"},
+          "map": { "id": "easternkingdoms_map", "x": 12296, "y": 4591, "icon": "campaign"},
           "summary_html": "<p>Elodi Solaris, Ansinosth Summerbough, Sable Than'rune, Jeshacinin Evertrail, Divine Chaniste Skyguard, Norvina Black, and Haldarin Autumnveil stage an incursion back into the void rift where Portal Keeper Sylas had been fought and captured, and narrowly survive the destruction of the rift as they dig into its secrets. The group discovers that the Portal Keeper had been preparing to attend a masquerade, presumably with other cultists, in Silvermoon City. Research was also discovered tied to the Black Dragonflight's efforts to corrupt and create Twilight dragons. Lastly, the group determines for sure that the twilight cultists are recruiting from Silvermoon's university. </p>"
         }
       ]
@@ -196,6 +196,8 @@
       "title": "Event: The Missing Ring",
       "subtitle": "January 28",
       "date": "c. Year 42",
+      "map": { "id": "dorn_map", "x": 2120, "y": 3840 },
+
       "summary_html": "\n The Fellowship, under the direction of Tal'theas Sunfeather, journey to the ruins of Dalaran on the Isle of Dorn to pursue a missing ring of the Silver Covenant, one which has now drawn the attention of sinister Twilight cultists. Joined by Hespir Everwyern, Sorrien Kalos, Jeshacinin Evertrail, Kynsteria Vel'dinariel, Velara Clark, Dalentheus Ombrelune, and Arcanist Silanna Leyspire, the Fellowship breaches the shattered ruins and recovers the artifact. \n",
       "order": 49
     },
@@ -467,7 +469,7 @@
       "title": "Lore: Fall of Dalaran & the Void War",
       "subtitle": "'Expansion: The War Within'",
       "date": "c. Years 41-42",
-      "map": { "id": "karesh_map", "x": 5328, "y": 4784, "icon": "lore" },
+      "map": [{ "id": "karesh_map", "x": 5328, "y": 4784, "icon": "lore" },{ "id": "dorn_map", "x": 1800, "y": 3048, "icon": "lore" },{ "id": "khazalgar_map", "x": 6074, "y": 10226, "icon": "lore" }],
       "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives with the aid of the Dark Heart, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand in the process ignites a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors commit their numbers to the cause of driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. <br><br>Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. \n            ",
       "order": 29
     },
@@ -532,7 +534,23 @@
       "title": "Lore: Fourth War",
       "subtitle": "Expansion: Battle for Azeroth",
       "date": "c. Years 33–34",
-      "map": { "id": "easternkingdoms_map", "x": 7476, "y": 10776, "icon": "lore" },
+      "map": [
+        { "id": "easternkingdoms_map", "x": 7470, "y": 10968, "icon": "lore" }, 
+        {"id": "kultirasbrokenisles_map", "x": 12956, "y": 21268, "icon": "lore"},
+        {"id": "kultirasbrokenisles_map", "x": 17344, "y": 17296, "icon": "lore"},
+        {"id": "kultirasbrokenisles_map", "x": 7296, "y": 19216, "icon": "lore"},
+        {"id": "kultirasbrokenisles_map", "x": 13424, "y": 1792, "icon": "lore"},
+        {"id": "kultirasbrokenisles_map", "x": 17600, "y": 5792, "icon": "lore"},
+        {"id": "kultiras_map", "x": 8768, "y": 6720, "icon": "lore"},
+        {"id": "kultiras_map", "x": 13040, "y": 2744, "icon": "lore"},
+        {"id": "kultiras_map", "x": 3200, "y": 4624, "icon": "lore"},
+        {"id": "southseas_map", "x": 10080, "y": 15840, "icon": "lore"},
+        {"id": "southseas_map", "x": 4800, "y": 14080, "icon": "lore"},
+        {"id": "southseas_map", "x": 15616, "y": 24928, "icon": "lore"}, 
+        {"id": "kalimdor_map", "x": 16592, "y": 18208, "icon": "lore"},
+        {"id": "kalimdor_map", "x": 19392, "y": 20128, "icon": "lore"},
+        {"id": "easternkingdoms_map", "x": 9570, "y": 13826, "icon": "lore"}
+      ],
       "summary_html": "\n Horde Warchief Sylvanas Windrunner launches a devastating first strike against the Alliance in response to a failed assassination attempt against her during the conflict against the Legion, burning the World Tree Teldrassil to a husk and perpetuating a genocide against the Kaldorei living within it. With the world once again plunged into a chaotic and bloody war, the Sin'dorei are pitted against Quel'dorei and Ren'dorei in open conflict, alongside the rest of the Alliance and Horde. <br><br> The war proves to be one of the most bloody in history since the War of the Ancients, with entire cities and townships razed to the ground and populations put to death enmass. As had occured years prior, the Horde once again splinters under internal pressure as infighting shatters the faction's unity, leading to another pact of desperation with the Alliance in an effort to overthrow the warmongering Banshee Queen, Sylvanas Windrunner. <br><br> The war culiminates in the second Siege of Orgrimmar, which ends with the Banshee Queen's defection and flight. Despite the end of the conflict, and a serious effort at forming a lasting truce, hostilities between the elven people prove themselves too deep to mend. \n      ",
       "order": 24
     },
@@ -541,6 +559,10 @@
       "title": "Lore: Rise of the Ren'dorei",
       "subtitle": "Expansion: Legion",
       "date": "c. Year 32",
+      "map": [      
+        {"id": "telogrus_map", "x": 387, "y": 519, "icon": "lore"}
+    ],
+      
       "summary_html": "\n During the final year of the conflict against the Burning Legion, numerous Sin'dorei under the leadership of Magister Umbric seek out the forbidden research of an elven necromancer-and traitor to the Kingdom-Dar'Khan Drathir, in a bid to better arm themselves against the enemies of the kingdom. This proves to be a dire calamity that nearly corrupts the ambitious elves. <br><br> Tayan’adara Autumnbloom, one of the earliest members of the Fellowship who was presumed lost beyond a void rift ages prior, emerges at last, having sensed the corruption of the elves like a beacon amongst the cosmos. Arriving to aid them, she is caught up in their transformation. <br><br> Through the intervention of the void-touched Ranger-Captain Alleria Windrunner and her mentor, the Locus Walker, these elves are saved and taught to control the dark powers they had embraced, transforming them into the <em>Ren'dorei</em>, or Children of the Void. For their seeming betrayal of the edicts of the Regent Lord, the Ren'dorei are exiled from Quel'Thalas by the Sin'dorei, and are driven to seek shelter amongst the Alliance under the leadership of Magister Umbric and Ranger-Captain Alleria Windrunner. \n      ",
       "order": 23
     },
@@ -549,6 +571,20 @@
       "title": "Lore: Return of the Burning Legion",
       "subtitle": "Expansion: Legion",
       "date": "c. Year 32-33",
+      "map": [      
+        {"id": "brokenisles_map", "x": 7080, "y": 6864, "icon": "lore"},
+        {"id": "brokenisles_map", "x": 8779, "y": 8469, "icon": "legionportal"},
+        {"id": "kultirasbrokenisles_map", "x": 7336, "y": 9032, "icon": "legionportal"},
+        { "id": "brokenisles_map", "x": 4856, "y": 4288, "icon": "raid" },
+        {"id": "kultirasbrokenisles_map", "x": 3632, "y": 4984, "icon": "raid"},
+        { "id": "brokenisles_map", "x": 4968, "y": 7968, "icon": "dungeon" },
+        { "id": "brokenisles_map", "x": 10060, "y": 5564, "icon": "lore" },
+        { "id": "kultirasbrokenisles_map", "x": 8570, "y": 5909, "icon": "lore" },
+        { "id": "kultirasbrokenisles_map", "x": 3496, "y": 8408, "icon": "dungeon" },
+        
+        { "id": "brokenisles_map", "x": 7138, "y": 4376, "icon": "lore" },
+        { "id": "brokenisles_map", "x": 6744, "y": 11336, "icon": "lore" }
+    ],
       "summary_html": "\n The Burning Legion launches its third invasion of Azeroth, this time through a portal opened within the depths of the Tomb of Sargeras. The chaotic onset of the war plunges Azeroth into Chaos, leading both the Sunreavers and Silver Covenant, along with the Quel'dorei and Sin'dorei populations to fully commit to a war footing. During the conflict, the ancient Highborne elves of Suramar-now known as the <em>Shal'dorei</em>, or Children of Night. <br><br> During the conflict, the defenders of Azeroth defeat Kil'jaeden the Deceiver-would be despoiler of the Sunwell during the conflict against Prince Kael'thas Sunstrider years prior-and later invade the world of Argus, home to the Burning Legion. There, the elven forces are reunited with Ranger-Captain Alleria Windrunner and her husband, the human General Turalyon, both who had vanished beyond the Dark Portal with the Alliance Expedition over twenty years prior. Strengthened by the forces of the Army of the Light, of which Turalyon and Alleria are a part, the allied forces bring an end to the Burning Legion once and for all.  \n      ",
       "order": 22
     },
@@ -570,9 +606,22 @@
     },
     {
       "id": "cataclysm-mop",
-      "title": "Lore: Purge of Dalaran",
+      "title": "Lore: The Cataclysm, and the Purge of Dalaran",
       "subtitle": "Expansion: Cataclysm & Mists of Pandaria",
       "date": "c. Years 27-31",
+      "map": [
+      {"id": "southseas_map", "x": 15136, "y": 6784, "icon": "lore"},
+      {"id": "southseas_map", "x": 13008, "y": 19168, "icon": "lore"},
+      {"id": "southseas_map", "x": 15616, "y": 24928, "icon": "lore"},
+      {"id": "kalimdor_map", "x": 12624, "y": 9056, "icon": "lore"},
+      {"id": "kalimdor_map", "x": 13056, "y": 7664, "icon": "alliancetree"},
+      {"id": "kalimdor_map", "x": 12192, "y": 14048, "icon": "lore"},
+      {"id": "kalimdor_map", "x": 11168, "y": 22560, "icon": "lore"},
+      {"id": "easternkingdoms_map", "x": 11780, "y": 17540, "icon": "raid"},
+      {"id": "easternkingdoms_map", "x": 11045, "y": 16768, "icon": "lore"},
+      {"id": "easternkingdoms_map", "x": 6184, "y": 14384, "icon": "lore"},
+      {"id": "easternkingdoms_map", "x": 7860, "y": 25228, "icon": "lore"}
+    ],
       "summary_html": "\n All out war between the Horde and Alliance engulfs the world, even admist the ongoing crisis of the reemergence of the once-warder of the earth, the black dragon aspect now known as Deathwing. <br> <br> Chaos and destruction rage across the world, and the elven tribes are thrust against one another in open conflict. After two years of bloody fighting, Deathwing is slain, but the conflict between the Horde and Alliance only deepens. During the third year of the conflict, the Kirin Tor enact a purge of the Sin'dorei from the city under the command of Lady Jaina Proudmoore and Silver Covenant Ranger-General Vereesa Windrunner following the Sunreaver's use of then-neutral Dalaran to infiltrate an Alliance city and steal a powerful artifact known as the Divine Bell. The purge is a watershed moment for the elven people, shattering any hope of reconcillation between the tribes and sparking a deep running blood feud that persists even to this day. <br><br> After four long years of war, the Horde splinters under the pressure of civil strife, and both the Sunreavers and Silver Covenant form a rare, unified front to overthrow the Horde Warchief Garrosh Hellscream. Despite the show of unity, animosity lingers. The Horde and Alliance secure a tenuous armistice, but no lasting peace. Throughout the entirety of the conflict, the Elrendar Fellowship officially maintains a neutral stance, though some of its individual members are drawn into the fighting, fueling a tense atmosphere within the cohort's ranks. <br><br> Despite this, open bloodshed amongst members is avoided, and the surviving leadership begin to face serious doubts about the viability of the Fellowship's longevity given the seemingly insurmountable tension. \n      ",
       "order": 19
     },
@@ -596,7 +645,9 @@
         { "id": "northrend_map", "x": 10176, "y": 6216, "icon": "lore"},
         { "id": "northrend_map", "x": 4216, "y": 8064, "icon": "lore"},
         { "id": "easternkingdoms_map", "x": 13088, "y": 10460, "icon": "lore" },
-        { "id": "northrend_map", "x": 11840, "y": 3008, "icon": "lore" }
+        { "id": "northrend_map", "x": 11840, "y": 3008, "icon": "lore" },
+        { "id": "northrend_map", "x": 11728, "y": 7960, "icon": "raid"},
+        { "id": "northrend_map", "x": 3808, "y": 7808, "icon": "raid"}
       ],
       "summary_html": "\n The azure dragons of Azeroth launch a war against magic users the world over after the crazed blue aspect Malygos declares mortals unfit to wield the magics his flight was given dominion over. This dire conflict leads the Magistry of Silvermoon to seek amends with the Kirin Tor which imprisoned and persecuted the elves years prior. Magister Aethas Sunreaver, once an archmage of the Kirin Tor, advocates and secures the admission of the Sin'dorei into Dalaran as a new order-the <em>Sunreavers</em>-which is starkly opposed by the surviving Quel'dorei of Dalaran who promptly assemble a new order in opposition, the <em>Silver Covenant</em>. Despite the tension between the Horde and Alliance forces, the Kirin Tor manages to establish itself as a neutral force able to mediate their contributions. <br> <br> Soon after the outbreak of the Nexus War, the Lich King launches an assault upon the mortal cities across the globe, seeking to snuff out the living once and for all. Both the Horde, Alliance, and Kirin Tor launch a full on invasion of Northrend to confront the Lich King, aided by the Argent Crusade-formed of the Argent Dawn and Order of the Silver Hand-and the recently liberated death knights who form a new cohort called the Ebon Blade. <br><br> The war in Northrend exacts a bloody toll from the defenders of Azeroth, and though both Malygos and the Lich King are slain, it comes at the cost of renewed conflict between the Alliance and Horde as internal betrayals spiral and a brutal massacre claims the lives of scores of valiant heroes from both sides. The conflict between the Horde and Alliance persists even after the death of Prince Arthas-the despoiler of Quel'Thalas. A new Lich King is seated to control the remaining undead and prevent further calamity.  \n      ",
       "order": 17
@@ -607,11 +658,11 @@
       "subtitle": "Expansion: The Burning Crusade",
       "date": "c. Years 25-26",
       "map": [
-        { "id": "outland_map", "x": 9664, "y": 2760, "icon": "lore"  },
-        { "id": "outland_map", "x": 7816, "y": 7912, "icon": "lore"  },
-        { "id": "outland_map", "x": 10960, "y": 9248, "icon": "lore"  },
-        { "id": "outland_map", "x": 4264, "y": 5216, "icon": "lore"  },
-        { "id": "outland_map", "x": 9920, "y": 5984, "icon": "lore"  }
+        { "id": "outland_map", "x": 10624, "y": 3088, "icon": "raid"   },
+        { "id": "outland_map", "x":  8816, "y": 8270, "icon": "lore"  },
+        { "id": "outland_map", "x": 11772, "y": 9456, "icon": "lore"   },
+        { "id": "outland_map", "x": 5248, "y": 5504, "icon": "raid"   },
+        { "id": "outland_map", "x": 10776, "y": 6266, "icon": "lore"  }
       ],
       "summary_html": "\n Following Illidan Stormrage's ever expanding occupation of the Outlands, the Burning Legion lures the defenders of Azeroth into storming through the Dark Portal and confronting Illidan, casting the Sin'dorei into a state of chaos as their ranks-now in service to the Horde through a pact secured by Regent Lord Lor'themar Theron-are pitted against the increasingly volatile and unstable forces of Prince Kael'thas' Sunfury armies. <br><br> Civil war breaks throughout the surviving elven diaspora, leading to an ultimate confrontation in the Netherstorm, and then the Isle of Quel'Danas, where Prince Kael'thas-now driven to madness through consumption of fel magic-is confronted and finally slain after he tries to summon a demon lord through the Sunwell. <br><br> The final confrontation on the Isle of Quel'Danas marks the second time in a decade that an outside force has stormed the Sunwell Plateau and assaulted the well, though this time the corrupted, broken well is reborn through the willing sacrifice of a naaru. \n ",
       "order": 16
@@ -625,12 +676,10 @@
         { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"},
         { "id": "easternkingdoms_map", "x": 12112, "y": 2248, "icon": "lore"  },
         { "id": "northrend_map", "x": 8512, "y": 5698, "icon": "lore"},
-        { "id": "outland_map", "x": 9664, "y": 2760, "icon": "lore"  },
-        { "id": "outland_map", "x": 7816, "y": 7912, "icon": "lore"  },
-        { "id": "outland_map", "x": 10960, "y": 9248, "icon": "lore"  },
-        { "id": "outland_map", "x": 4264, "y": 5216, "icon": "lore"  },
-        { "id": "outland_map", "x": 9920, "y": 5984, "icon": "lore"  },
-        { "id": "outland_map", "x": 5696, "y": 7540, "icon": "lore"   }
+        { "id": "outland_map", "x": 10776, "y": 6266, "icon": "lore"},
+        { "id": "outland_map", "x": 11772, "y": 9456, "icon": "lore" },
+        { "id": "outland_map", "x": 7176, "y": 9256, "icon": "lore" },
+        { "id": "outland_map", "x": 6656, "y": 7824, "icon": "lore" }
       ],
       "summary_html": "\n Prince Kael’thas sworn loyalty to Illidan Stormrage opens new avenues for the elven recovery; Silvermoon City is rebuilt through a show of tremendous magical might, and the elves begin to claw back control over the Kingdom inch by inch; the Sin’dorei Sunfury forces subdivisions (Sunfury, Sunhawks, Eclipsion, Firewing, Illidari, etc.) proliferate; fel magic becomes a substitute for lost Sunwell energies for many, while others refuse it. <br><br> In this time, Prince Kael'thas leads the Sunfury forces in following Illidan Stormrage back to Azeroth to confront the growing power of the Scourge in Northrend, only to fail. Numerous elves are slain, including Lana'thel-wielder of the legendary blade Quel'delar-who is raised into undeath by the Lich King to serve as Blood Queen of the San'layn, vampiric undead elves. <br><br> Following their defeat, Illidan and Kael's Sunfury army retreats to the Outlands where they work to secure their control over the shattered world. At some point during these years, Prince Kael'thas Sunstrider begins to fall deeper into a madness that would eventually lead him to accept a bargain with the demon lord Kil'Jaeden, the Deceiver.\n      ",
       "order": 15
@@ -642,9 +691,9 @@
       "date": "c. Years 21-22",
       "map": [
         { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"},
-        { "id": "easternkingdoms_map", "x": 7464, "y": 12448, "icon": "lore"  },
-        { "id": "outland_map", "x": 7816, "y": 7912, "icon": "lore"  },
-        { "id": "outland_map", "x": 10960, "y": 9248, "icon": "lore"  },
+        { "id": "easternkingdoms_map", "x": 7340, "y": 12590, "icon": "lore"  },
+        { "id": "outland_map", "x":  8816, "y": 8270, "icon": "lore"  },
+        { "id": "outland_map", "x": 11772, "y": 9456, "icon": "lore"   },
         { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"}
       ],
       "summary_html": "\n Prince Kael'thas Sunstrider leads the Sin'dorei in pursuit of aid from the human kingdoms, only to face persecution and inprisonment by the xenophobic survivors of the fall of Lordaeron. Forced to make desperate alliances, the Prince joins forces with the naga sea witch Lady Vash'j and her master, Lord Illidan Stormrage. Through Illidan, the Sin'dorei learn to consume fel energy as a substitute for the arcane, something which drives a wedge amongst the survivors. <br><br> Grand Magister Rommath-at the behest of Regent Lord Lor'themar Theron, who rules in Prince Kael'thas' stead-expels the dissidents who refuse to embrace the new elven identity, leading to a schism between those calling themselves Sin'dorei, and those who cling to the ideals of the Quel'dorei who ruled before the fall. The crackdowns and exile lead to a flight of elves to the human realms, as well as parallel enlistments to the Outlands under Prince Kael'thas' forces who delve further into the darker practices. <br><br> Through this division, the Elrendar Fellowship remains impartial, focusing instead on regathering its strength and preserving and securing the dangerous magical knowledge from its vauilts now in the hands of the Scourge.\n",
@@ -657,10 +706,10 @@
       "date": "c. Years 20-22",
       "map": [
       { "id": "easternkingdoms_map", "x": 11936, "y": 8440, "icon": "lore"  },
-      { "id": "easternkingdoms_map", "x": 7442, "y": 11232, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 7470, "y": 10968, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 7340, "y": 12590, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 9128, "y": 11476, "icon": "lore"  },
-      { "id": "easternkingdoms_map", "x": 10940, "y": 9376, "icon": "lore"  },
+      { "id": "easternkingdoms_map", "x": 10940, "y": 9376, "icon": "skull"  },
       { "id": "easternkingdoms_map", "x": 12108, "y": 4700, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 12112, "y": 2248, "icon": "lore"  }
       ],
@@ -673,11 +722,10 @@
       "subtitle": "Game: Warcraft II",
       "date": "c. Year 8",
       "map": [
-        { "id": "easternkingdoms_map", "x": 10768, "y": 24200, "icon": "lore"  },
-        { "id": "outland_map", "x": 9920, "y": 5984, "icon": "lore"  },
-        { "id": "outland_map", "x": 6140, "y": 8972, "icon": "lore"},
-        { "id": "outland_map", "x": 10960, "y": 9248, "icon": "lore"  },
-        { "id": "outland_map", "x": 11392, "y": 5888, "icon": "lore" }
+        { "id": "easternkingdoms_map", "x": 10732, "y": 24093, "icon": "lore"  },
+        { "id": "outland_map", "x": 10776, "y": 6266, "icon": "lore"  },
+        { "id": "outland_map", "x": 11772, "y": 9456 },
+        { "id": "outland_map", "x": 7152, "y": 9248, "icon": "lore"   }
       ],
       "summary_html": "\n Following yet another incursion by the Horde into Azeroth through a reopened Dark Portal, Farstrider Ranger-Captain Alleria Windrunner joins the human General Turalyon, the dwarven thane Kurdran Wildhammer, the Kirin Tori archmage Khadgar, and the human Trollbane descendant Commander Danath Trollbane in forming the Sons of Lothar, also known as the Alliance Expedition. <br><br> The allied forces, calling themselves the Sons of Lothar in honor of the fallen war hero, pursue the Horde through the Dark Portal into the ruins of Draenor with the intent to end the Horde once and for all. Despite their victories against the orcish Horde there, their Expedition faces disaster as the world is torn asunder by the opening of countless portals, damning countless soldiers to the abyss, and resulting in the presumed loss of the Expedition, and both General Turalyon and Ranger-Captain Alleria Windrunner. <br><br>  years the Expedition is presumed lost beyond the now-decimated Dark Portal. \n      ",
       "order": 12
@@ -688,10 +736,9 @@
       "subtitle": "Game: Warcraft I & II",
       "date": "c. Years 0–7",
       "map": [
-      { "id": "easternkingdoms_map", "x": 10758, "y": 24197, "icon": "lore" },
+      { "id": "easternkingdoms_map", "x": 10732, "y": 24093, "icon": "lore"  },
       { "id": "easternkingdoms_map", "x": 10789, "y": 22865, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 11892, "y": 9092, "icon": "lore" },
-      { "id": "easternkingdoms_map", "x": 8800, "y": 20552, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 8800, "y": 20552, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 9862, "y": 16048, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 11560, "y": 16448, "icon": "lore" },
@@ -701,7 +748,7 @@
       { "id": "easternkingdoms_map", "x": 7754, "y": 13752, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 7470, "y": 10968, "icon": "lore" },
       { "id": "easternkingdoms_map", "x": 5216, "y": 16296, "icon": "lore" },
-      { "id": "outland_map", "x": 9920, "y": 5984, "icon": "lore"  }
+      { "id": "outland_map", "x": 10776, "y": 6266, "icon": "lore"  }
       ],
       "summary_html": "\n Groomed and corrupted by the Burning Legion, the orcs of Draeneor force open the Dark Portal and storm into Azeroth; the human nation of Stormwind falls, and the human descendants of the ancient Arathi king summon the pact made between humanity and the Quel'dorei during the Troll Wars. <br><br> A Grand Alliance is formed, and humanity and elvenkind stand side by side against the savagery of the Horde; the Elrendar Fellowship takes an active role in fighting against the Horde, and many of its users begin to study the magic used by the orcish warlocks, including voidmancy, necromancy, and felmancy. Research tied to these dark schools is carefully stored and secured far from the reach of the common magi. <br><br> During the Second War, the barbaric fel Horde enslaves the red Dragonflight and, with its Amani allies, burns much of Quel’Thalas. Silvermoon endures a brutal siege before Alliance counteroffensives drives back the invaders, and ultimately the Horde is broken at Blackrock Mountain. The Dark Portal is destroyed, and the orcs interned within prison camps; despite the hard won victory, the long scars in Thalassian forests and memory remain.\n          ",
       "order": 11

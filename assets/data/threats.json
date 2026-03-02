@@ -12,91 +12,211 @@
         "title": "Stormwind City",
         "summary_html": "Capital of the Alliance, and humanity on Azeroth.",
         "map": { "id": "easternkingdoms_map", "x": 6998, "y": 21152 },
-        "icon": "tower"
+        "icon": "alliancefort"
     },
     {
+        "id": "gnomeregan",
+          "title": "Gnomeregan",
+          "summary_html": "Capital of the gnomes on Azeroth.",
+          "map": { "id": "easternkingdoms_map", "x": 7076, "y": 17777 },
+          "icon": "alliancefort"
+      },
+    {
+        "id": "thundertotem",
+          "title": "Thunder Totem",
+          "summary_html": "Capital of the Highmountain Tauren, located deep in the mountains of the Broken Isles.",
+          "map": { "id": "brokenisles_map", "x": 6852, "y": 4084 },
+          "icon": "hordefort"
+      },
+      {
+        "id": "thundertotemshared",
+          "title": "Thunder Totem",
+          "summary_html": "Capital of the Highmountain Tauren, located deep in the mountains of the Broken Isles.",
+          "map": { "id": "kultirasbrokenisles_map", "x": 5436, "y": 4535 },
+          "icon": "hordefort"
+      },
+    {
+        "id": "exodar",
+          "title": "The Exodar",
+          "summary_html": "Capital of the Draenei exiles on Azeroth.",
+          "map": { "id": "kalimdor_map", "x": 3488, "y": 7936 },
+          "icon": "alliancefort"
+      },
+    {
+        "id": "orgrimmar",
+        "title": "Orgrimmar",
+        "summary_html": "Capital of the Horde, and the orcs on Azeroth.",
+        "map": { "id": "kalimdor_map", "x": 14072, "y": 11112 },
+        "icon": "hordefort"
+     },
+     {
+        "id": "thunderbluff",
+        "title": "Thunderbluff",
+        "summary_html": "The capital of the tauren of the Horde.",
+        "map": { "id": "kalimdor_map", "x": 9888, "y": 13984 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "ahnqiraj",
+        "title": "Ahn'Qiraj",
+        "summary_html": "A stronghold of the qiraji, servants of the Old Gods and the Black Empire.",
+        "map": { "id": "kalimdor_map", "x": 8424, "y": 20564 },
+        "icon": "skull"
+    },
+    {
+        "id": "gadgetzan",
+        "title": "Gadgetzan",
+        "summary_html": "A goblin town under the rule of the Steamwheedle Cartel.",
+        "map": { "id": "kalimdor_map", "x": 13520, "y": 19664 },
+        "icon": "neutraltower"
+    },
+    {
+        "id": "bloodhoofvillage",
+        "title": "Bloodhoof Village",
+        "summary_html": "A small township of the tauren in Mulgore.",
+        "map": { "id": "kalimdor_map", "x": 10216, "y": 15012 },
+        "icon": "hordetower"
+    },
+
+    {
+        "id": "mereldar",
+        "title": "Mereldar",
+        "summary_html": "The main foothold of the Arathi in Hallowfall.",
+        "map": { "id": "khazalgar_map", "x": 5338, "y": 5166 },
+        "icon": "neutraltower"
+    },
+    {
+        "id": "wyrmresttower",
+        "title": "Wyrmrest Tower",
+        "summary_html": "An ancient titan structure, home to the Wyrmrest Accord during its governance throughout the war against the Scourge.",
+        "map": { "id": "northrend_map", "x": 10248, "y": 8116 },
+        "icon": "neutraltower"
+    },
+    {
+        "id": "wintergrasp",
+        "title": "Wintergrasp Fortress",
+        "summary_html": "An ancient titan stronghold which has since become a hotbed of conflict between the Horde and Alliance.",
+        "map": { "id": "northrend_map", "x": 7952, "y": 6960 },
+        "icon": "neutralswords"
+    },
+
+    
+    {
+        "id": "argenttournament",
+        "title": "Argent Tournament Grounds",
+        "summary_html": "The neutral tournament grounds of the Argent Crusade, a place where both the Horde, Alliance, and Ebon Blade joined forces with the Crusade for the final march on Icecrown.",
+        "map": { "id": "northrend_map", "x": 9748, "y": 3356 },
+        "icon": "neutraltower"
+    },
+
+   
+    
+    {
+        "id": "darnassus",
+        "title": "Darnassus",
+        "summary_html": "Once the capital of the Kaldorei on Kalimdor, it was sacked and burned to a husk by the Horde.",
+        "map": { "id": "kalimdor_map", "x": 7632, "y": 3312 },
+        "icon": "alliancefort"
+    },
+     {
         "id": "ironforge",
         "title": "Ironforge City",
         "summary_html": "The capital of the Bronzebeard dwarves of the Alliance.",
         "map": { "id": "easternkingdoms_map", "x": 8540, "y": 17620 },
-        "icon": "tower"
+        "icon": "alliancefort"
     },
     {
         "id": "silvermoon",
         "title": "Silvermoon City",
         "summary_html": "The eternal capital of the elves of Quel'Thalas. Once destroyed, it has since been rebuilt to its former glory.",
         "map": { "id": "easternkingdoms_map", "x": 12108, "y": 4700 },
-        "icon": "home"
+        "icon": "hordefort"
     },
+    {
+        "id": "thalassianuniversity",
+        "title": "Thalassian University",
+        "summary_html": "The grand university of the Thalassian Magisterium, based in Silvermoon City. The school is one of the premier magical institutions on Azeroth, and often considered the only proper rival of the Kirin Tor's Dalaran before its destruction. ",
+        "map": { "id": "easternkingdoms_map", "x": 11929, "y": 4469 },
+        "icon": "book"
+    },
+    
     {
         "id": "sunwell",
         "title": "Sunwell Plateau",
         "summary_html": "The sanctuary holdings of the Sin'dorei, where historic Sunwell rests on the Isle of Quel'Danas.",
         "map": { "id": "easternkingdoms_map", "x": 12112, "y": 2248 },
-        "icon": "tower"
+        "icon": "hordetower"
     },
     {
         "id": "undercity",
         "title": "Undercity",
         "summary_html": "The recently reclaimed capital of the Forsaken, and once capital of humanity in Lordaeron. Blight still taints its halls, but clean up is ongoing.",
         "map": { "id": "easternkingdoms_map", "x": 7468, "y": 11216 },
-        "icon": "tower"
+        "icon": "hordefort"
     },
     {
         "id": "lightshope",
         "title": "Light's Hope Chapel",
         "summary_html": "One of the chief holdings of the Argent Crusade, and the Order of the Silver Hand.",
         "map": { "id": "easternkingdoms_map", "x": 12788, "y": 10600 },
-        "icon": "tower"
+        "icon": "neutraltower"
     },
     {
         "id": "menethil",
         "title": "Menethil Harbor",
         "summary_html": "One of the Alliance's main ports in the middle half of the continent.",
         "map": { "id": "easternkingdoms_map", "x": 8488, "y": 16416 },
-        "icon": "tower"
+        "icon": "alliancetower"
     },
     {
         "id": "gilneas",
         "title": "Gilneas City",
         "summary_html": "The recently reclaimed capital of the worgen, and the historic home of the Gilnean people.",
         "map": { "id": "easternkingdoms_map", "x": 6216, "y": 14308 },
-        "icon": "tower"
+        "icon": "alliancefort"
     },
     {
         "id": "stromgarde",
         "title": "Stromgarde City",
         "summary_html": "One of the Alliance's reclaimed holdings in the northern half of the continent; it is ruled by Danath Trollbane.",
         "map": { "id": "easternkingdoms_map", "x": 9424, "y": 14400 },
-        "icon": "tower"
+        "icon": "alliancetower"
     },
     {
         "id": "hammerfall",
         "title": "Hammerfall",
         "summary_html": "A Horde fortification that once served as an internment camp of the orcs after the Second War.",
         "map": { "id": "easternkingdoms_map", "x": 11068, "y": 13732 },
-        "icon": "tower"
+        "icon": "hordetower"
     },
+    {
+        "id": "grimbatol",
+        "title": "Grim Batol",
+        "summary_html": "Once the mighty kingdom of the Wildhammer Dwarves, the Second War saw its vast halls cursed with shadows, and it has since fallen into the hands of many evils.",
+        "map": { "id": "easternkingdoms_map", "x": 10978, "y": 16685 },
+        "icon": "dungeon"
+    },
+    
     {
         "id": "hearthglen",
         "title": "Hearthglen",
         "summary_html": "One of the chief holdings of the Argent Crusade, and the Order of the Silver Hand.",
         "map": { "id": "easternkingdoms_map", "x": 9160, "y": 10016 },
-        "icon": "tower"
+        "icon": "neutraltower"
     },
     {
         "id": "zulaman",
         "title": "Zul'Aman",
         "summary_html": "The seat of the Amani Empire, the perennial enemy of the Quel'dorei and Sin'dorei elves.",
         "map": { "id": "easternkingdoms_map", "x": 13276, "y": 7952 },
-        "icon": "tower"
+        "icon": "raid"
     },
     {
         "id": "zulgurub",
         "title": "Zul'Gurub",
         "summary_html": "The seat of Gurubashi Empire, or at least what remains of it.",
         "map": { "id": "easternkingdoms_map", "x": 8832, "y": 24216 },
-        "icon": "tower"
+        "icon": "raid"
     },
     {
         "id": "thasloren",
@@ -138,7 +258,7 @@
         "title": "Relic Vault",
         "summary_html": "A relic vault maintained by Blood Knight Tal'theas Sunfeather, where the Fellowship has begun to store many power and dangerous relics and artifacts.",        
         "map": { "id": "razorwindshores_map", "x": 4959, "y": 3473 },
-        "icon": "tower"
+        "icon": "neutraltower"
     },
     {
         "id": "jewels",
@@ -183,18 +303,61 @@
         "icon": "tavern"
     },
     {
-        "id": "stairofdestiny",
+        "id": "darkportal",
+        "title": "The Dark Portal",
+        "summary_html": "The Dark Portal was built to open the way for the orcs to invade Azeroth, and it has since been opened a closed a half dozen times, heralding doom and chaos with each new awakening.",        
+        "map": { "id": "easternkingdoms_map", "x": 10762, "y": 24222 },
+        "icon": "legionportal"
+    },
+    {
+        "id": "darkportaldraenor",
         "title": "The Stair of Destiny",
-        "summary_html": "The Outland facing side of the Dark Portal, a massive gateway linking Azeroth to both the Outlands, and Draenor.",        
-        "map": { "id": "outland_map", "x": 10026, "y": 5985 },
+        "summary_html": "The great gateway built by enslaved Draenei, the orcs intended to invade new worlds through it, Azeroth first before all others.",        
+        "map": { "id": "draenor_map", "x": 13488, "y": 8620 },
+        "icon": "legionportal"
+    },
+    {
+        "id": "blackrockfoundry",
+        "title": "Blackrock Foundry",
+        "summary_html": "A massive foundry and fortress that serves as the seat of power for the Blackrock Orc clan on Draenor.",        
+        "map": { "id": "draenor_map", "x": 10328, "y": 4724 },
         "icon": "raid"
     },
+    {
+        "id": "highmaul",
+        "title": "Highmaul Fortress",
+        "summary_html": "One of the last remaining ogre strongholds on Draenor, Highmaul is the seat of the Imperator's power and from where the ogres wage war against any who oppose their power.",        
+        "map": { "id": "draenor_map", "x": 3972, "y": 9068 },
+        "icon": "raid"
+    },
+    {
+        "id": "oshugun",
+        "title": "Oshu'gun",
+        "summary_html": "The crashed interdimensional ship known as the Genedar, it collided with the ground some two hundred years before the opening of the Dark Portal when the Draenei arrived on Draenor. It is revered by the orcs as a holy mountain within much many of their ancestors' spirits now reside.",        
+        "map": { "id": "draenor_map", "x": 4856, "y": 10184 },
+        "icon": "healer"
+    },
+    {
+        "id": "ashran",
+        "title": "Ashran",
+        "summary_html": "An island east of the Dark Portal heavily fought over by the Horde and Alliance and ogres alike, this would have been the home of Deathwing the Destroyer had he arrived in this timeline, but in his absence it has simply become a hotly contested battleground.",        
+        "map": { "id": "draenor_map", "x": 15408, "y": 8192 },
+        "icon": "neutralswords"
+    },
+    {
+        "id": "shadowmooncrypts",
+        "title": "Shadowmoon Crypts",
+        "summary_html": "The burial grounds of the Shadowmoon orc clan on Draenor, saturated with dark void magic.",        
+        "map": { "id": "draenor_map", "x": 11100, "y": 11768 },
+        "icon": "healer"
+    },
+    
     {
         "id": "stairofdestiny",
         "title": "The Stair of Destiny",
         "summary_html": "The Outland facing side of the Dark Portal, a massive gateway linking Azeroth to both the Outlands, and Draenor.",        
-        "map": { "id": "outland_map", "x": 10760, "y": 24221 },
-        "icon": "raid"
+        "map": { "id": "outland_map", "x": 10972, "y": 6280 },
+        "icon": "legionportal"
     },
     {
         "id": "calcydo",
@@ -279,6 +442,858 @@
         "summary_html": "A portal gate located near one of Quel'Thalas' powerful runestones.",        
         "map": { "id": "razorwindshores_map", "x": 3913, "y": 3632 },
         "icon": "portalblue"
+    },
+    {
+        "id": "scholomance",
+        "title": "Scholomance",
+        "summary_html": "A long standing stronghold of the undead, these halls have served as a regional seat of power for the Scourge.",        
+        "map": { "id": "easternkingdoms_map", "x": 10132, "y": 11674 },
+        "icon": "skull"
+    },
+    {
+        "id": "suramar",
+        "title": "Suramar City",
+        "summary_html": "Capital city of the Shal'dorei, highborne elves who survived the Sundering by sealing their city away under a magical dome.",        
+        "map": { "id": "brokenisles_map", "x": 7520, "y": 7220 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "suramarshared",
+        "title": "Suramar City",
+        "summary_html": "Capital city of the Shal'dorei, highborne elves who survived the Sundering by sealing their city away under a magical dome.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 6104, "y": 7640 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "dalaranlegion",
+        "title": "Dalaran",
+        "summary_html": "During the Burning Legion's third invasion, the Kirin Tor teleported the city of Dalaran over the Broken Isles.",        
+        "map": { "id": "brokenisles_map", "x": 6752, "y": 8844 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "dalaranlegionshared",
+        "title": "Dalaran",
+        "summary_html": "During the Burning Legion's third invasion, the Kirin Tor teleported the city of Dalaran over the Broken Isles.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 5360, "y": 9408 },
+        "icon": "neutralfort"
+    },
+
+    {
+        "id": "dalarannorthrend",
+        "title": "Dalaran",
+        "summary_html": "During the Nexus War and the campaigns against the Scourge, the Kirin Tor teleported the city of Dalaran over Northrend.",        
+        "map": { "id": "northrend_map", "x": 9700, "y": 5972 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "dorn",
+        "title": "City of Dornogal",
+        "summary_html": "Capital of the isle of Dorn, where the Earthen govern the security of the Coreway leading to Azeroth's heart.",        
+        "map": { "id": "dorn_map", "x": 3376, "y": 2776 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "oribos",
+        "title": "Oribos",
+        "summary_html": "The central conduit for all souls entering the Shadowlands, Oribos has become an interdimensional waygate in recent times.",        
+        "map": { "id": "shadowlands_map", "x": 7964, "y": 9956 },
+        "icon": "healer"
+    },
+    {
+        "id": "warsong",
+        "title": "Warsong Hold",
+        "summary_html": "The Horde's's main foothold in Northrend during the war against the Lich King.",        
+        "map": { "id": "northrend_map", "x": 4548, "y": 8752 },
+        "icon": "hordetower"
+    },
+    {
+        "id": "valiance",
+        "title": "Valiance Keep",
+        "summary_html": "The Alliance's main foothold in Northrend during the war against the Lich King.",        
+        "map": { "id": "northrend_map", "x": 5444, "y": 9356 },
+        "icon": "alliancetower"
+    },
+    {
+        "id": "vengeance",
+        "title": "Vengeance Landing",
+        "summary_html": "The Horde's's secondary foothold in Northrend during the war against the Lich King.",        
+        "map": { "id": "northrend_map", "x": 16416, "y": 9660 },
+        "icon": "hordetower"
+    },
+    {
+        "id": "valgarde",
+        "title": "Valgarde Keep",
+        "summary_html": "The Alliance's secondary foothold in Northrend during the war against the Lich King.",        
+        "map": { "id": "northrend_map", "x": 15236, "y": 10936 },
+        "icon": "alliancetower"
+    },
+    {
+        "id": "utgarde",
+        "title": "Utgarde Keep",
+        "summary_html": "One of several main holdings of the vrykul in Northrend, taken over by the San'layn during the Lich King's rise to power.",        
+        "map": { "id": "northrend_map", "x": 15284, "y": 10344 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "ulduar",
+        "title": "Ulduar",
+        "summary_html": "The mighty Titan city of Ulduar, it is one of the Titan Keeper's greatest bastions of power on Azeroth, and was also the prison of Yogg'saron, one of the Old Gods who once ruled Azeroth.",        
+        "map": { "id": "northrend_map", "x": 11588, "y": 2476 },
+        "icon": "raid"
+    },
+    {
+        "id": "amirdrassil",
+        "title": "Amirdrassil",
+        "summary_html": "The newest world tree, planted and grown by the dragons on their home isle; it is intended as a replacement for Teldrassil, which was burned by the Horde, but few Kaldorei truly believe it is their new home.",        
+        "map": { "id": "dragonisles_map", "x": 3136, "y": 11264 },
+        "icon": "alliancefort"
+    },
+    {
+        "id": "vodrassil",
+        "title": "Vordrassil",
+        "summary_html": "Once one of the mighty World Trees, it was felled after falling to the corruption of the Old Gods.",        
+        "map": { "id": "northrend_map", "x": 14040, "y": 7632 },
+        "icon": "neutraltree"
+    },
+
+    {
+        "id": "moltencay",
+        "title": "Molten Cay",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "southseas_map", "x": 5364, "y": 14300 },
+        "icon": "map"
+    },
+    {
+        "id": "verdantwilds",
+        "title": "Verdant Wilds",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "southseas_map", "x": 10848, "y": 15472 },
+        "icon": "map"
+    },
+    {
+        "id": "lostisle",
+        "title": "The Lost Isle",
+        "summary_html": "An uncharted island in the South Seas, near Kezan.",        
+        "map": { "id": "southseas_map", "x": 11240, "y": 19072 },
+        "icon": "map"
+    },
+    {
+        "id": "kezan",
+        "title": "Kezan",
+        "summary_html": "An isle in the South Seas, once home to the Bilgewater Cartel goblins before the eruption of the island's volcano.",        
+        "map": { "id": "southseas_map", "x": 16048, "y": 23456 },
+        "icon": "map"
+    },
+    {
+        "id": "maelstrom",
+        "title": "The Maelstrom",
+        "summary_html": "A violent, churning maw which stands as a permanent reminder of the terrible Sundering which shattered Azeroth's main landmass.",        
+        "map": { "id": "southseas_map", "x": 16944, "y": 5344 },
+        "icon": "map"
+    },
+    {
+        "id": "mechagonshared",
+        "title": "Mechagon",
+        "summary_html": "An island off the coast of the Kul Tiran mainland, it is home to the mechagnomes who have since joined forces with the Alliance.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 6448, "y": 18848 },
+        "icon": "map"
+    },
+    {
+        "id": "kultirasshared",
+        "title": "Kul Tiras",
+        "summary_html": "The Kul Tiran mainland, home to the human nation of the same name; it has long been the preeminent naval power on Azeroth.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 14576, "y": 21024 },
+        "icon": "map"
+    },
+
+    
+    {
+        "id": "boralusshared",
+        "title": "Boralus",
+        "summary_html": "The capital city of the Kul Tiran kingdom, long since under the rule of the Proudmoore family.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 12668, "y": 21390 },
+        "icon": "alliancefort"
+    },
+    {
+        "id": "boralus",
+        "title": "Boralus",
+        "summary_html": "The capital city of the Kul Tiran kingdom, long since under the rule of the Proudmoore family.",        
+        "map": { "id": "kultiras_map", "x": 8488, "y": 6820 },
+        "icon": "alliancefort"
+    },
+    {
+        "id": "brokenislesshared",
+        "title": "The Broken Isles",
+        "summary_html": "A chain of islands once central to the ancient Kaldorei Empire, since the Sundering it has since come to the attention of the Burning Legion.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 9024, "y": 8496 },
+        "icon": "map"
+    },
+    {
+        "id": "jorundallshared",
+        "title": "Jorundall",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 13104, "y": 1288 },
+        "icon": "map"
+    },
+    {
+        "id": "havenwoodshared",
+        "title": "Havenwood",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 17696, "y": 6544 },
+        "icon": "map"
+    },
+    {
+        "id": "crestfallshared",
+        "title": "Crestfall",
+        "summary_html": "An island off the coast of the Kul Tiran mainland, it has been a battleground between the Horde and Alliance for decades.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 17138, "y": 17724 },
+        "icon": "map"
+    },
+    {
+        "id": "tolbaradshared",
+        "title": "Tol Barad",
+        "summary_html": "An island fortress of the human kingdoms in the east, it has been a battleground between the Horde and Alliance for decades.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 20464, "y": 12368 },
+        "icon": "neutralswords"
+    },
+    {
+        "id": "crestfall",
+        "title": "Crestfall",
+        "summary_html": "An island off the coast of the Kul Tiran mainland, it has been a battleground between the Horde and Alliance for decades.",        
+        "map": { "id": "kultiras_map", "x": 13768, "y": 3120 },
+        "icon": "map"
+    },
+    {
+        "id": "mechagon",
+        "title": "Mechagon",
+        "summary_html": "An island off the coast of the Kul Tiran mainland, it is home to the mechagnomes who have since joined forces with the Alliance.",        
+        "map": { "id": "kultiras_map", "x": 2328, "y": 4280 },
+        "icon": "map"
+    },
+    {
+        "id": "kultiras",
+        "title": "Kul Tiras",
+        "summary_html": "The Kul Tiran mainland, home to the human nation of the same name; it has long been the preeminent naval power on Azeroth.",        
+        "map": { "id": "kultiras_map", "x": 10352, "y": 6208 },
+        "icon": "map"
+    },
+    {
+        "id": "shattrath",
+        "title": "Shattrath City",
+        "summary_html": "Once a gleaming capital of the Draenei's civilization on Draenor, the city was sacked and burned by the Horde, and has since been claimed by refugees and wanderers, and of all beings-the naaru.",        
+        "map": { "id": "outland_map", "x": 6656, "y": 7824 }, 
+        "icon": "neutralfort"
+    },
+    {
+        "id": "honorhold",
+        "title": "Honor Hold",
+        "summary_html": "An Alliance stronghold built during the Alliance Expedition's forray through the Dark Portal. It survived twenty years after the destruction of the planet, providing much needed shelter to the survivors.",        
+        "map": { "id": "outland_map", "x": 9308, "y": 6732 },
+        "icon": "alliancetower"
+    },
+    {
+        "id": "thrallmar",
+        "title": "Thrallmar",
+        "summary_html": "A Horde stronghold built by the Horde during its charge through the Dark Portal to the Outlands, during its conflict against the Burning Legion.",        
+        "map": { "id": "outland_map", "x": 9331, "y": 5907 },
+        "icon": "hordetower"
+    },
+    {
+        "id": "hellfirecitadeloutland",
+        "title": "Hellfire Citadel",
+        "summary_html": "A crumbling stronghold of the Horde before its invasion of Azeroth, it has had many masters, but none of them who intended to do good with the power it afforded.",        
+        "map": { "id": "outland_map", "x": 8928, "y": 6338 },
+        "icon": "skull"
+    },
+    {
+        "id": "hellfirecitadeldraenor",
+        "title": "Hellfire Citadel",
+        "summary_html": "A crumbling stronghold of the Horde before its invasion of Azeroth, it has had many masters, but none of them who intended to do good with the power it afforded.",        
+        "map": { "id": "draenor_map", "x": 11526, "y": 8762 },
+        "icon": "skull"
+    },
+    
+    
+    {
+        "id": "shattrathdraenor",
+        "title": "Shattrath City",
+        "summary_html": "The gleaming capital of the Draenei's civilization on Draenor, the Iron Horde attempted to destroy the city, but failed.",        
+        "map": { "id": "draenor_map", "x": 7723, "y": 9392 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "auchindoundraenor",
+        "title": "Auchindoun",
+        "summary_html": "The grand mausoleum of the Draenei, the soul priests tend to the honored dead and preserve their memory. ",        
+        "map": { "id": "draenor_map", "x": 8400, "y": 11033 },
+        "icon": "healer"
+    },
+    {
+        "id": "auchindounoutland",
+        "title": "Auchindoun",
+        "summary_html": "Once the grand mausoleum of the Draenei, the soul priests who tended to the honored dead here have become twisted, and haunt the ruins. The structure was destroyed by the Shadow Council during the Alliance's initial surge through the Dark Portal during the Alliance Expedition. ",        
+        "map": { "id": "outland_map", "x": 7152, "y": 9275 },
+        "icon": "healer"
+    },
+    
+    {
+        "id": "karabor",
+        "title": "Temple of Karabor",
+        "summary_html": "One of the holiest places on Draenor for the Draenei who built it, the temple at Karabor is the mighty spirit of their civilization, and from where the Prophet Velen led his people.",        
+        "map": { "id": "draenor_map", "x": 13676, "y": 11972 },
+        "icon": "alliancefort"
+    },
+    {
+        "id": "bladespire",
+        "title": "Bladespire Citadel",
+        "summary_html": "Once a seat of power for the ogres of Draenor, the Horde aided the Frostwolf clan in claiming the mighty fortress.",        
+        "map": { "id": "draenor_map", "x": 5612, "y": 6022 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "karazhan",
+        "title": "Karazhan, Tower of the Guardian",
+        "summary_html": "Built by the Guardian Aegwynn, it has since stood as a seat for the Guardian of Azeroth, though it brought ruin upon the world under the reign of Medivh.",        
+        "map": { "id": "easternkingdoms_map", "x": 9584, "y": 23440 },
+        "icon": "raid"
+    },
+    
+    {
+        "id": "dragonmawport",
+        "title": "Dragonmaw Port",
+        "summary_html": "A seat of power for the Horde in the Twilight Highlands, established by Warchief Garrosh Hellscream and Dragonmaw Warlord Zaela.",        
+        "map": { "id": "easternkingdoms_map", "x": 13832, "y": 16648 },
+        "icon": "hordetower"
+    },
+    {
+        "id": "bootybay",
+        "title": "Booty Bay",
+        "summary_html": "A trading port in the southern Eastern Kingdoms ruled by the Steamwheedle goblin cartel.",        
+        "map": { "id": "easternkingdoms_map", "x": 7246, "y": 26628 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "bloodsailfleet",
+        "title": "Bloodsail Bucaneers Fleet",
+        "summary_html": "A known anchorage for the many ships of the Bloodsail Bucaneers, a fierce gang of pirate marauders roaming the seas of Azeroth.",        
+        "map": { "id": "easternkingdoms_map", "x": 7364, "y": 27160 },
+        "icon": "shipred"
+    },
+
+    {
+        "id": "highbank",
+        "title": "Highbank",
+        "summary_html": "A seat of power for the Alliance in the Twilight Highlands, established during the ongoing conflict with the Horde.",        
+        "map": { "id": "easternkingdoms_map", "x": 14089, "y": 17414 },
+        "icon": "alliancetower"
+    },
+    
+    {
+        "id": "strandoftheancients",
+        "title": "Strand of the Ancients",
+        "summary_html": "The site of ancient Titan ruins over which the Horde and Alliance have long fought for the high ground.",        
+        "map": { "id": "northrend_map", "x": 10618, "y": 11030 },
+        "icon": "neutralswords"
+    },
+    {
+        "id": "isleofconquest",
+        "title": "Isle of Conquest",
+        "summary_html": "An island off the coast of Northrend where the Horde and Alliance have long battled for dominance over resources.",        
+        "map": { "id": "northrend_map", "x": 2570, "y": 4156 },
+        "icon": "neutralswords"
+    },
+    {
+        "id": "northrend",
+        "title": "Northrend",
+        "summary_html": "The frozen crown of the world, Northrend is a land of danger and despair, with the influence of the Old Gods, the Scourge, and many other powers at play.",        
+        "map": { "id": "northrend_map", "x": 6992, "y": 9712 },
+        "icon": "map"
+    },
+    {
+        "id": "isleofdorn",
+        "title": "Isle of Dorn",
+        "summary_html": "The Isle of Dorn is the crown of Khaz Algar, a region of Azeroth home to the Earthen, keepers of the Titans' creations. The capital city of Dornogal sits in the shadow of the nearby mountain.",        
+        "map": { "id": "dorn_map", "x": 4744, "y": 5168 },
+        "icon": "map"
+    },
+    {
+        "id": "forbiddenreach",
+        "title": "Forbidden Reach",
+        "summary_html": "An island off the coast of the Dragon Isles, where the vaults of the Dracthyr, creations of Neltharion, reside.",        
+        "map": { "id": "dragonisles_map", "x": 15104, "y": 4192 },
+        "icon": "map"
+    },
+    {
+        "id": "dragonisles",
+        "title": "Dragon Isles",
+        "summary_html": "An island long shrouded from the world by dense mist, it's awakened since the wounding of the world during the final battle against the Burning Legion.",        
+        "map": { "id": "dragonisles_map", "x": 4832, "y": 7456 },
+        "icon": "map"
+    },
+    {
+        "id": "tolbarad",
+        "title": "Tol Barad",
+        "summary_html": "An island fortress of the human kingdoms in the east, it has been a battleground between the Horde and Alliance for decades.",        
+        "map": { "id": "easternkingdoms_map", "x": 3496, "y": 15000 }, 
+        "icon": "neutralswords"
+    },
+    {
+        "id": "kargath",
+        "title": "Kargath",
+        "summary_html": "A Horde outpost located in the barren wastes known as the Badlands.",        
+        "map": { "id": "easternkingdoms_map", "x": 10036, "y": 19266 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "thelsamar",
+        "title": "Thelsamar",
+        "summary_html": "A dwarven outpost located on the shores of Loch Modan.",        
+        "map": { "id": "easternkingdoms_map", "x": 10546, "y": 17932 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "blackrockmountain",
+        "title": "Blackrock Mountain",
+        "summary_html": "Once a Dark Iron mountain fortress, the Second War saw the invasion of the orcish Horde, and the upper spires were captured and used as a final holdout till long after the war's end. In Shadowforge City far below ground, the Dark Irons still hold sway.",        
+        "map": { "id": "easternkingdoms_map", "x": 8734, "y": 20078 }, 
+        "icon": "neutralfort"
+    },
+    {
+        "id": "shadowforge",
+        "title": "Shadowforge City",
+        "summary_html": "The capital city of the Dark Iron dwarves, buried far below lava scorced landscape of Searing Gorge.",        
+        "map": { "id": "easternkingdoms_map", "x": 8462, "y": 19964 }, 
+        "icon": "alliancefort"
+    },
+    {
+        "id": "lakeshire",
+        "title": "Lakeshire",
+        "summary_html": "An Alliance township on the lake shores of the Redridge Mountains.",        
+        "map": { "id": "easternkingdoms_map", "x": 9784, "y": 21676 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "darkshire",
+        "title": "Darkshire",
+        "summary_html": "An Alliance township nestled in the depths of Duskwood, once known as Brightwood.",        
+        "map": { "id": "easternkingdoms_map", "x": 8848, "y": 22928 }, 
+        "icon": "alliancetower"
+    },    
+    {
+        "id": "sentinelhill",
+        "title": "Sentinel Hill",
+        "summary_html": "An Alliance township settled on the central heights of Westfall.",        
+        "map": { "id": "easternkingdoms_map", "x": 6648, "y": 22904 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "gromgol",
+        "title": "Grom'gol",
+        "summary_html": "A Horde settlement on the western coasts of Stranglethorn Vale.",        
+        "map": { "id": "easternkingdoms_map", "x": 7492, "y": 24688 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "marshtidewatch",
+        "title": "Marshtide Watch",
+        "summary_html": "An Alliance settlement deep within the swampy Black Morass, near the Sunken Temple of the Gurubashi.",        
+        "map": { "id": "easternkingdoms_map", "x": 11332, "y": 22528 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "stonard",
+        "title": "Stonard",
+        "summary_html": "A Horde settlement deep within the swampy Black Morass, near the Sunken Temple of the Gurubashi",        
+        "map": { "id": "easternkingdoms_map", "x": 11332, "y": 22528 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "nethergarde",
+        "title": "Nethergarde Keep",
+        "summary_html": "An Alliance fortress initially constructed to keep watch over the Dark Portal.",        
+        "map": { "id": "easternkingdoms_map", "x": 10983, "y": 23349 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "orkilonhold",
+        "title": "Orkil'on Hold",
+        "summary_html": "A Horde fortress built to counter the Alliance's influence within the Blasted Lands near the Dark Portal.",        
+        "map": { "id": "easternkingdoms_map", "x": 10287, "y": 23273 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "tarrenmill",
+        "title": "Tarren Mill",
+        "summary_html": "A Horde outpost built upon the ruins of an Alliance township destroyed during the Third War.",        
+        "map": { "id": "easternkingdoms_map", "x": 8544, "y": 12828 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "brill",
+        "title": "Brill",
+        "summary_html": "A Horde township razed during the Alliance's assault on the Undercity following the Horde's destruction of Teldrassil.",        
+        "map": { "id": "easternkingdoms_map", "x": 7410, "y": 10610 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "goldenmistvillage",
+        "title": "Goldenmist Village",
+        "summary_html": "An elven township on the shores of the Elrendar River.",        
+        "map": { "id": "easternkingdoms_map", "x": 11174, "y": 6739 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "tranquillien",
+        "title": "Tranquillien",
+        "summary_html": "An elven township south of the Elrendar River.",        
+        "map": { "id": "easternkingdoms_map", "x": 11916, "y": 7146 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "suncrownvillage",
+        "title": "Suncrown Village",
+        "summary_html": "An elven township on the shores of the Elrendar River.",        
+        "map": { "id": "easternkingdoms_map", "x": 12498, "y": 6620 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "fairbreezevillage",
+        "title": "Fairbreeze Village",
+        "summary_html": "An elven village east of Sunsail Anchorage.",        
+        "map": { "id": "easternkingdoms_map", "x": 11590, "y": 5843 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "falthrienacademy",
+        "title": "Falthrien Academy",
+        "summary_html": "A prestigeous academy of the arcane arts within Quel'Thalas.",        
+        "map": { "id": "easternkingdoms_map", "x": 11022, "y": 4177 }, 
+        "icon": "book"
+    },
+    {
+        "id": "sunsailanchorage",
+        "title": "Sunsail Anchorage",
+        "summary_html": "A prominent anchorage at the mouth of the northern branch of the Elrendar River in Quel'Thalas.",        
+        "map": { "id": "easternkingdoms_map", "x": 11104, "y": 5796 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "dawnstarvillage",
+        "title": "Dawnstar Village",
+        "summary_html": "A prominent settlement just north of the Sunwell Plateau.",        
+        "map": { "id": "easternkingdoms_map", "x": 11754, "y": 1870 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "windrunnervillage",
+        "title": "Windrunner Village",
+        "summary_html": "A prominent settlement along the western coast of southern Quel'Thalas.",        
+        "map": { "id": "easternkingdoms_map", "x": 11754, "y": 1870 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "magistersterrace",
+        "title": "Magisters Terrace",
+        "summary_html": "A prestigeous enclave and repository of arcane knowledge, and the prime dominion of Quel'Thalas' magistry.",        
+        "map": { "id": "easternkingdoms_map", "x": 12536, "y": 1755 }, 
+        "icon": "healer"
+    },
+    {
+        "id": "thoriumpoint",
+        "title": "Thorium Point",
+        "summary_html": "A neutral outpost governed by the Thorium Brotherhood of the Dark Iron dwarves.",        
+        "map": { "id": "easternkingdoms_map", "x": 8812, "y": 19048 }, 
+        "icon": "neutraltower"
+    },
+    
+    
+    {
+        "id": "greymanewall",
+        "title": "Greymane Wall Gate",
+        "summary_html": "The shattered gateway leading into the human kingdom of Gilneas, home to the noble worgen.",        
+        "map": { "id": "easternkingdoms_map", "x": 6176, "y": 13566 }, 
+        "icon": "neutraltower"
+    },
+    
+    {
+        "id": "refugepoint",
+        "title": "Refuge Point",
+        "summary_html": "An Alliance outpost guarding the entrance to the Arathi Basin",        
+        "map": { "id": "easternkingdoms_map", "x": 10104, "y": 13998 }, 
+        "icon": "alliancetower"
+    },
+    
+    
+    
+    {
+        "id": "havenwoodshared",
+        "title": "Havenwood",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "easternkingdoms_map", "x": 600, "y": 8352 }, 
+        "icon": "map"
+    },
+
+    {
+        "id": "astranaar",
+        "title": "Astranaar",
+        "summary_html": "A Kaldorei settlement nestled deep in the forests of Ashenvale. ",        
+        "map": { "id": "kalimdor_map", "x": 10232, "y": 10216 }, 
+        "icon": "alliancetower"
+    },
+    {
+        "id": "feathermoonstronghold",
+        "title": "New Feathermoon Stronghold",
+        "summary_html": "A Kaldorei stronghold on the western coast of Kalimdor. ",        
+        "map": { "id": "kalimdor_map", "x": 7742, "y": 17031 }, 
+        "icon": "alliancetower"
+    },
+
+    {
+        "id": "eldrethalas",
+        "title": "Eldre'thalas",
+        "summary_html": "An ancient, ruined Kaldorei stronghold once home to the Shendralar. ",        
+        "map": { "id": "kalimdor_map", "x": 8596, "y": 16921 }, 
+        "icon": "neutraltower"
+    },
+    {
+        "id": "crossroads",
+        "title": "Crossroads",
+        "summary_html": "A Horde outpost in the central barrens of Kalimdor. ",        
+        "map": { "id": "kalimdor_map", "x": 12388, "y": 13184 }, 
+        "icon": "hordetower"
+    },
+    {
+        "id": "theramore",
+        "title": "Ruins of Theramore",
+        "summary_html": "The ruins of Theramore City, which was bombed into non-existence by the Horde. ",        
+        "map": { "id": "kalimdor_map", "x": 14164, "y": 16416 }, 
+        "icon": "neutraltower"
+    },
+    {
+        "id": "easternkingdoms",
+        "title": "Eastern Kingdoms",
+        "summary_html": "The eastern most continental landmass of Azeroth, home to dwarves, elves, gnomes, humans, and the undead, among other creatures. ",        
+        "map": { "id": "easternkingdoms_map", "x": 8336, "y": 8064 },
+        "icon": "map"
+    },
+    {
+        "id": "teldrassil",
+        "title": "Teldrassil",
+        "summary_html": "A world tree initially planted without the blessing of the dragon aspects, Teldrassil became a home for the Kaldorei people in the wake of the Third War, until it was destroyed by the Horde.",        
+        "map": { "id": "kalimdor_map", "x": 6528, "y": 2544 }, 
+        "icon": "alliancetree"
+    },
+    {
+        "id": "draeneiisles",
+        "title": "Azuremyst & Bloodmyst Isles",
+        "summary_html": "The eastern most continental landmass of Azeroth, home to dwarves, elves, gnomes, humans, and the undead, among other creatures. ",        
+        "map": { "id": "kalimdor_map", "x": 5040, "y": 6448 }, 
+        "icon": "map"
+    },
+    {
+        "id": "moltencay",
+        "title": "Molten Cay",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "kalimdor_map", "x": 17424, "y": 18368 },
+        "icon": "map"
+    },
+    {
+        "id": "verdantwilds",
+        "title": "Verdant Wilds",
+        "summary_html": "An island off the coast of Kalimdor, in the South Seas.",        
+        "map": { "id": "kalimdor_map", "x": 20544, "y": 20576 }, 
+        "icon": "map"
+    },
+    {
+        "id": "snowblossomvillage",
+        "title": "Snowblossom Village",
+        "summary_html": "An island off the northern coast of Pandaria, home to the eponymous Snowblossom Village.",        
+        "map": { "id": "pandaria_map", "x": 12304, "y": 3144 }, 
+        "icon": "map"
+    },
+    {
+        "id": "timelessisle",
+        "title": "Timeless Isle",
+        "summary_html": "An island off the eastern coast of Pandaria, where the Ancient Celestials held court during the conflict between the Horde and Alliance.",        
+        "map": { "id": "pandaria_map", "x": 13232, "y": 9576 },
+        "icon": "map"
+    },
+    {
+        "id": "rottingmire",
+        "title": "Rotting Mire",
+        "summary_html": "An island off the southeastern coast of Pandaria, where the Horde and Alliance have battled for control over resources.",        
+        "map": { "id": "pandaria_map", "x": 10856, "y": 11184 },
+        "icon": "map"
+    },
+    {
+        "id": "pandaria",
+        "title": "Pandaria",
+        "summary_html": "The Pandaren mainland, which was shrouded in mist for some ten thousand years since the Sundering of Azeroth.",        
+        "map": { "id": "pandaria_map", "x": 7200, "y": 10816 },
+        "icon": "map"
+    },
+    {
+        "id": "isleofthunder",
+        "title": "Isle of Thunder",
+        "summary_html": "An island off the northern coast of Pandaria where Le'shen, the Thunder King, ruled for an age.",        
+        "map": { "id": "pandaria_map", "x": 5736, "y": 1600 },
+        "icon": "map"
+    },
+    {
+        "id": "Isle of Giants",
+        "title": "Isle of Giants",
+        "summary_html": "An island off the northern coast of Pandaria where the skeletons of giant beasts paint pictures of life before the Sundering of Azeroth.",        
+        "map": { "id": "pandaria_map", "x": 6696, "y": 2944 },
+        "icon": "map"
+    },
+    {
+        "id": "zandalar",
+        "title": "Zandalar",
+        "summary_html": "The island home and last remaining bastion of the Zandalari Empire, a nation of trolls that ruled long before the Sundering of Azeroth.",        
+        "map": { "id": "zandalar_map", "x": 5120, "y": 12256 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "dazaralor",
+        "title": "Dazar'alor",
+        "summary_html": "Dazar'alor, the capital of the Zandalari Empire, has long stood as a shining example of the olden days when trolls ruled Azeroth.",        
+        "map": { "id": "zandalar_map", "x": 6268, "y": 10384 },
+        "icon": "hordefort"
+    },
+    {
+        "id": "icecrowncitadel",
+        "title": "Icecrown Citadel",
+        "summary_html": "The Scourge's true seat of power, a massive fortress built up around Frozen Throne's glacier. From here, the Lich King sought to dominant the world.",        
+        "map": { "id": "northrend_map", "x": 8588, "y": 6082 },
+        "icon": "raid"
+    },
+    {
+        "id": "neltharionslair",
+        "title": "Neltharion's Lair",
+        "summary_html": "Once a vast underground cavern that served as home to Neltharion, once the Earth Warder turned Destroyer.",        
+        "map": { "id": "brokenisles_map", "x": 7281, "y": 4456 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "neltharionslairshared",
+        "title": "Neltharion's Lair",
+        "summary_html": "Once a vast underground cavern that served as home to Neltharion, once the Earth Warder turned Destroyer.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 5861, "y": 4903 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "blackrookdungeonshared",
+        "title": "Blackrook Hold Crypts",
+        "summary_html": "The entrance to the crypts of the Blackrook Hold, where forces of the Horde and Alliance stormed the tower to throw back the occupying Legion forces.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 2435, "y": 5489 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "blackrookdungeon",
+        "title": "Blackrook Hold Crypts",
+        "summary_html": "The entrance to the crypts of the Blackrook Hold, where forces of the Horde and Alliance stormed the tower to throw back the occupying Legion forces.",        
+        "map": { "id": "brokenisles_map", "x": 3844, "y": 5038 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "helheimseagate",
+        "title": "Sea Gate to Helheim",
+        "summary_html": "A sea gate through which the Naglfar, the ship of the dead helmed by the kvaldir, ferries captured souls of slain vrykul to Helheim, the dominion of Helya.",        
+        "map": { "id": "brokenisles_map", "x": 9186, "y": 4404 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "helheimseagateshared",
+        "title": "Sea Gate to Helheim",
+        "summary_html": "A sea gate through which the Naglfar, the ship of the dead helmed by the kvaldir, ferries captured souls of slain vrykul to Helheim, the dominion of Helya.",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 7779, "y": 4859 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "hallsofvalorshared",
+        "title": "Halls of Valor",
+        "summary_html": "A massive gateway leading through ",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 8726, "y": 6060 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "helheimshared",
+        "title": "Helheim",
+        "summary_html": "The main gateway leading down into the realm of Helheim, the dominion of the fallen Keeper Helya, now a sorceress in service to death itself. ",        
+        "map": { "id": "kultirasbrokenisles_map", "x": 8849, "y": 4982 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "hallsofvalor",
+        "title": "Halls of Valor",
+        "summary_html": "A massive gateway leading through ",        
+        "map": { "id": "brokenisles_map", "x": 10141, "y": 5621 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "helheim",
+        "title": "Helheim",
+        "summary_html": "The main gateway leading down into the realm of Helheim, the dominion of the fallen Keeper Helya, now a sorceress in service to death itself. ",        
+        "map": { "id": "brokenisles_map", "x": 10268, "y": 4546 },
+        "icon": "dungeon"
+    },
+    {
+        "id": "valdrakken",
+        "title": "Valdrakken",
+        "summary_html": "The recently reclaimed seat of the Dragon Aspects, and capital for all dragons on Azeroth. ",        
+        "map": { "id": "dragonisles_map", "x": 11184, "y": 9228 },
+        "icon": "neutralfort"
+    },
+    {
+        "id": "rootsteldrassil",
+        "title": "Roots of Teldrassil",
+        "summary_html": "The charred roots of Teldrassil, one of the world trees, which stretch deep into the realm of Harandar.",
+        "map": { "id": "harandar_map", "x": 3464, "y": 2872 },
+        "icon": "neutraltree"
+    },
+    {
+        "id": "rootsshaladrassil",
+        "title": "Roots of Shaladrassil",
+        "summary_html": "The recovering roots of Shaladrassil, one of the world trees, which stretch deep into the realm of Harandar.",
+        "map": { "id": "harandar_map", "x": 2824, "y": 4784 },
+        "icon": "neutraltree"
+    },
+    {
+        "id": "rootsnordrassil",
+        "title": "Roots of Nordrassil",
+        "summary_html": "The thriving roots of Nordrassil, one of the world trees, which stretch deep into the realm of Harandar.",
+        "map": { "id": "harandar_map", "x": 5660, "y": 2922 },
+        "icon": "neutraltree"
+    },
+    {
+        "id": "rootsamirdrassil",
+        "title": "Roots of Amirdrassil",
+        "summary_html": "The blossoming roots of Amirdrassil, one of the world trees, which stretch deep into the realm of Harandar.",
+        "map": { "id": "harandar_map", "x": 5748, "y": 4026 },
+        "icon": "neutraltree"
+    },
+    {
+        "id": "riftofaln",
+        "title": "The Rift of Aln",
+        "summary_html": "The rift of Aln, a sacred and mystical realm that has been affected by the Nightmare in recent years.",
+        "map": { "id": "harandar_map", "x": 5236, "y": 4820 },
+        "icon": "healer"
+    },
+    {
+        "id": "slayersrise",
+        "title": "Slayer's Rise",
+        "summary_html": "A blood stained battleground fought over by both the Horde and Alliance, and also the violent and wild forces of the void.",
+        "map": { "id": "voidstorm_map", "x": 4632, "y": 2504 },
+        "icon": "neutralswords"
+    },
+    {
+        "id": "voidspire",
+        "title": "The Voidspire",
+        "summary_html": "The seat of Xal'atath's power in the Voidstorm.",
+        "map": { "id": "voidstorm_map", "x": 4928, "y": 4114 },
+        "icon": "skull"
     }
   ]
 
+  

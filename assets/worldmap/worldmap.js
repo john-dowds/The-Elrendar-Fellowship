@@ -55,6 +55,9 @@
       home:     'assets/art/icon_home.png',
       hearth:   'assets/art/icon_hearth.png',
       tower:    'assets/art/icon_tower.png',
+      alliancefort: 'assets/art/icon_alliancefort.png',
+      hordefort:'assets/art/icon_hordefort.png',
+      neutralfort:'assets/art/icon_neutralfort.png',
   
       // current (toggle category) - stored in threats.json
       shipred:      'assets/art/icon_shipred.png',
@@ -82,7 +85,31 @@
       doorleft:        'assets/art/icon_door_left.png',
       gear:        'assets/art/icon_gear.png',
       map:        'assets/art/icon_map.png',
-  
+      alliancebanner: 'assets/art/icon_alliancebanner.png',
+      alliancegear: 'assets/art/icon_alliancegear.png',
+      alliancehelmet: 'assets/art/icon_alliancehelmet.png',
+      alliancemine: 'assets/art/icon_alliancemine.png',
+      allianceshield: 'assets/art/icon_allianceshield.png',
+      allianceswords: 'assets/art/icon_allianceswords.png',
+      alliancetower: 'assets/art/icon_alliancetower.png',
+      alliancetree: 'assets/art/icon_alliancetree.png',
+      hordebanner: 'assets/art/icon_hordebanner.png',
+      hordegear: 'assets/art/icon_hordegear.png',
+      hordehelmet: 'assets/art/icon_hordehelmet.png',
+      hordemine: 'assets/art/icon_hordemine.png',
+      hordeshield: 'assets/art/icon_hordeshield.png',
+      hordeswords: 'assets/art/icon_hordeswords.png',
+      hordetower: 'assets/art/icon_hordetower.png',
+      hordetree: 'assets/art/icon_hordetree.png',
+      neutralbanner: 'assets/art/icon_neutralbanner.png',
+      neutralgear: 'assets/art/icon_neutralgear.png',
+      neutralhelmet: 'assets/art/icon_neutralhelmet.png',
+      neutralmine: 'assets/art/icon_neutralmine.png',
+      neutralshield: 'assets/art/icon_neutralshield.png',
+      neutralswords: 'assets/art/icon_neutralswords.png',
+      neutraltower: 'assets/art/icon_neutraltower.png',
+      neutraltree: 'assets/art/icon_neutraltree.png',
+
       fallback: 'assets/art/icon_question.png'
     };
   
@@ -118,6 +145,7 @@
     ];
     const PRIORITY_INDEX = Object.fromEntries(PRIORITY.map((k,i)=>[k,i]));
   
+    
     /* ===================== DOM ===================== */
   
     const elMap       = document.getElementById('map');
@@ -914,7 +942,7 @@ threatItems  = threatItems.flatMap(expandByMapPoints);
       const copySnippetAt = async (latlng) => {
         if (!latlng) return;
         const p = latLngToPixel(latlng);
-        const snippet = `"map": { "id": "${activeMapId}", "x": ${p.x}, "y": ${p.y} }`;
+        const snippet = `"x": ${p.x}, "y": ${p.y}`;
         try {
           await navigator.clipboard.writeText(snippet);
           toast('Copied coordinate snippet');
