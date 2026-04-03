@@ -92,6 +92,43 @@
       ]
     },
     {
+      "id": "event020",
+      "title": "Event: The Dire Council",
+      "subtitle": "April 30",
+      "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 12486,
+        "y": 6396,
+        "icon": "campaign"
+        },
+      "summary_html": "\n With the line held on Quel'Danas, the Fellowship urgently convenes to discuss the multitude of threats arrayed against the High Home, and begins to forge a path forwards on how to best render aid.\n",
+      "order": 57
+    },
+    {
+      "id": "event019",
+      "title": "Event: Battle for Quel'Danas",
+      "subtitle": "Expansion: Midnight",
+      "date": "c. Year 42",
+      "map": {
+        "id": "easternkingdoms_map",
+        "x": 11914,
+        "y": 2226,
+        "icon": "skull"
+        },
+      "summary_html": "\n In the wake of the chaotic battle in Silvermoon City's streets, the Fellowship's exhausted forces hastily redeploy to the Isle of Quel'Danas to defend the Sunwell Plateau against the Devouring Host's invasion.\n",
+      "order": 56
+    },
+    {
+      "id": "midnight",
+      "title": "Lore: The Third Invasion of Quel'Thalas",
+      "subtitle": "'Expansion: Midnight'",
+      "date": "c. Years 42",
+      "map": [{ "id": "easternkingdoms_map", "x": 11757, "y": 2228, "icon": "lore" },{ "id": "easternkingdoms_map", "x": 13968, "y": 7952, "icon": "lore" },{ "id": "harandar_map", "x": 6089, "y": 4224, "icon": "lore" },{ "id": "voidstorm_map", "x": 4684, "y": 4352, "icon": "lore" }],
+      "summary_html": "\n With untold power now in her hands, Xal'atath turns her focus towards Quel'Thalas, intending to corrupt and turn the Sunwell into a font of void power through which she can take control of Azeroth's world soul, a something she intends to claim as a prize.\n            ",
+      "order": 55
+    },
+    {
       "id": "event018",
       "title": "Event: Fellow's Soirée",
       "subtitle": "February 19",
@@ -470,7 +507,7 @@
       "subtitle": "'Expansion: The War Within'",
       "date": "c. Years 41-42",
       "map": [{ "id": "karesh_map", "x": 5328, "y": 4784, "icon": "lore" },{ "id": "dorn_map", "x": 1800, "y": 3048, "icon": "lore" },{ "id": "khazalgar_map", "x": 6074, "y": 10226, "icon": "lore" }],
-      "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives with the aid of the Dark Heart, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand in the process ignites a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors commit their numbers to the cause of driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. <br><br>Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. \n            ",
+      "summary_html": "\n The void entity known as Xal'atath, once Harbinger of the Void Lord Dimensius, launches a bold assault on Dalaran after luring the mages and their allies to the isle of Dornogal, \nan ancient Titan stronghold beyond mortal reach for ages. Springing her trap once the magi-led coalition arrives with the aid of the Dark Heart, Xal'atath destroys the city of Dalaran, stranding the survivors, \nand in the process ignites a fierce conflict between the defenders of Azeroth and the void itself. During the fighting, the descendants of the ancient Arathi bloodline are discovered deep beneath\nthe earth in the vast caverns below the isle, and the half elven holy warriors commit their numbers to the cause of driving back Xal'atath and her nerubian \narmies. \n<br/>\n<br/>\nDespite the victories achieved against the sinister forces at work on the Isle of Dornogal and the caverns below, a call from the Locus-Walker, mentor to Ranger-Captain Alleria Windrunner,\nsummons the defenders of Azeroth to K'aresh, once home to the Ethereals. It is learned that a sect of the Ethereals known as the Shadowguard under the leadership of a resurrected Nexus-King Salhadaar,\nare working to resurrect the void lord Dimensius, the All Devouring. Facing limited options and certain doom should the void lord's return not be halted, the defenders of Azeroth\nforge a pact with Xal'atath and coordinate their efforts alongside the Locus-Walker and his allies to halt the rebirth of Dimensius. <br><br>Despite their success, Xal'atath is able to escape to\nplaces unknown, and now with a fraction of the decimated void lord's essence for her own consumption and use. A scant few members of the Elrendar Fellowship are counted among the forces who journey to K'aresh, their intent being to pursue further knowledge of the void with the aim of countering the danger posed by void corrupted entities. After a prolongued conflict on the shattered world of K'aresh, the defenders of Azeroth are able to defeat Dimensius with the aid of Xal'atath, only to be, predictably, betrayed. Absconding with the power of the defeated void lord, Xal'atath manages to escape capture or defeat, and sets her focus on the world of Azeroth.\n            ",
       "order": 29
     },
     {

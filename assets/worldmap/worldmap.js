@@ -7,11 +7,12 @@
     /* ===================== Config ===================== */
   
     const MAPS = [
+     /*  { id: 'azeroth_map', name: 'Azeroth', dzi: 'assets/worldmap/Azeroth.dzi', enabled: true },*/
+      { id: 'easternkingdoms_map',    name: 'Eastern Kingdoms',     dzi: 'assets/worldmap/EasternKingdoms.dzi',    enabled: true },
       { id: 'brokenisles_map', name: 'Broken Isles', dzi: 'assets/worldmap/BrokenIsles.dzi', enabled: true },
       { id: 'dorn_map',   name: 'Dorn',   dzi: 'assets/worldmap/Dorn.dzi',   enabled: true },
       { id: 'draenor_map',     name: 'Draenor',      dzi: 'assets/worldmap/Draenor.dzi',     enabled: true },
       { id: 'dragonisles_map',    name: 'Dragon Isles',     dzi: 'assets/worldmap/DragonIsles.dzi',    enabled: true },
-      { id: 'easternkingdoms_map',    name: 'Eastern Kingdoms',     dzi: 'assets/worldmap/EasternKingdoms.dzi',    enabled: true },
       { id: 'founderspoint_map',   name: 'Founders Point',   dzi: 'assets/worldmap/FoundersPoint.dzi',   enabled: true },
       { id: 'harandar_map',    name: 'Harandar',     dzi: 'assets/worldmap/Harandar.dzi',    enabled: true },
       { id: 'kalimdor_map',    name: 'Kalimdor',     dzi: 'assets/worldmap/Kalimdor.dzi',    enabled: true },

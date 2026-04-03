@@ -1,0 +1,59 @@
+[
+    {
+      "text": "South Seas",
+      "mapId": "southseas_map",
+      "x": 12960, "y": 15008,
+      "type": "ocean",
+      "zoom": {"min": 0,"max": 8}
+    },
+  
+    {
+      "text": "Kalimdor",
+      "mapId": "kalimdor_map",
+      "x": 8000,
+      "y": 9000,
+      "type": "continent",
+      "zoom": {
+        "min": 0,
+        "max": 3
+      }
+    },
+  
+    {
+        "text": "Kezan",
+        "mapId": "southseas_map",
+        "x": 15440, "y": 25816,
+        "type": "continent",
+        "zoom": { "min": 1, "max": 2 }
+      },
+      {
+        "text": "Lost Isle",
+        "mapId": "southseas_map",
+        "x": 12964, "y": 17656,
+        "type": "continent",
+        "zoom": { "min": 1, "max": 2 }
+      },
+      {
+        "text": "Verdant Wilds",
+        "mapId": "southseas_map",
+        "x": 9848, "y": 15204,
+        "type": "continent",
+        "zoom": { "min": 1.5, "max": 2.5 }
+      },
+      {
+        "text": "Molten Cay",
+        "mapId": "southseas_map",
+        "x": 9848, "y": 15204,
+        "type": "continent",
+        "zoom": { "min": 1.5, "max": 2.5 }
+      },
+      {
+        "text": "Kalimdor",
+        "mapId": "kalimdor_map",
+        "x": 8000, "y": 9000,
+        "type": "continent",
+        "zoom": { "min": 0, "max": 4 }
+      }
+  ]
+
+  
