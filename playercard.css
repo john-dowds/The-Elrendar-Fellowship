@@ -109,7 +109,7 @@
   }
   
   /* Main center */
-  .pc-main{ grid-area: main; display: grid; gap: .9rem; }
+  .pc-main{ grid-area: main; display: grid; gap: .75rem; }
   
   .pc-name-panel{
     padding: .7rem 1rem;
@@ -129,16 +129,20 @@
   /* Mid row: dice / hp / state */
   .pc-midrow{
     display: grid;
-    grid-template-columns: 210px 1fr 170px;
-    gap: .9rem;
-    align-items: center;
+    grid-template-columns: 210px 1fr;
+    grid-template-rows: auto auto;
+    gap: .75rem;
+    align-items: stretch;
   }
   
   .pc-dice-panel{
+    grid-row: 1 / span 2;
     display: grid;
-    gap: .5rem;
+    gap: .45rem;
     justify-items: center;
+    align-content: start;
     text-align: center;
+    padding: .75rem .9rem;
   }
   
   .pc-dice-btn{
@@ -211,39 +215,50 @@
   }
   
   /* HP */
+  .pc-topstats{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 180px);
+    gap: .75rem;
+    align-items: stretch;
+  }
+
   .pc-hp-panel{
     display: grid;
     justify-items: center;
-    padding: .9rem 1rem;
+    align-content: center;
+    padding: .55rem .8rem;
+    min-height: 110px;
   }
   
   .pc-hp-wrap{
     display: flex;
     align-items: center;
-    gap: .9rem;
+    gap: .7rem;
   }
   
   .pc-hp-val{
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 900;
     min-width: 3ch;
     text-align: center;
   }
   
   .pc-hp-nudge{
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     border-radius: 999px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0;
   }
   
   /* State */
   .pc-state-panel{
     display: grid;
-    gap: .5rem;
+    gap: .35rem;
     justify-items: center;
-    padding: .9rem 1rem;
+    align-content: center;
+    padding: .55rem .8rem;
+    min-height: 110px;
   }
   .pc-state-label{
     font-weight: 900;
@@ -252,12 +267,12 @@
   
   /* Class */
   .pc-class-panel{
-    padding: .85rem 1rem;
+    padding: .7rem .9rem;
   }
   
   /* Stance */
   .pc-stance-panel{
-    padding: .95rem 1rem 1rem;
+    padding: .75rem .9rem .85rem;
   }
   
   .pc-mini-table{
@@ -295,7 +310,7 @@
     margin-left: .25rem;
   }
   
-  .pc-right{ grid-area: right; display: grid; gap: 1rem; }
+  .pc-right{ grid-area: right; display: grid; gap: .75rem; align-self: stretch; }
   
   .pc-profiles-panel .pc-profiles-header{
     display: flex;
@@ -317,34 +332,337 @@
     margin: .4rem 0 .25rem;
   }
   
-  .pc-portrait-frame{
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 14px;
-    border: 2px solid rgba(252,229,205,.22);
-    background: rgba(0,0,0,.35);
-    overflow: hidden;
+  .pc-players-panel{
     display: grid;
-    place-items: center;
-    text-align: center;
+    grid-template-rows: auto 1fr;
+    gap: .7rem;
+    min-height: 0;
+    padding-bottom: .85rem;
   }
-  #pcPortraitImg{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
+
+  .pc-players-head{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap:.6rem;
   }
-  .pc-portrait-placeholder{
-    padding: 1.25rem;
-    font-size: 1.4rem;
+
+  .pc-players-count{
+    min-width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(252,229,205,.22);
+    background: rgba(0,0,0,.35);
+    display:grid;
+    place-items:center;
+    font-weight: 1000;
+  }
+
+  .pc-players-scroll{
+    max-height: 530px;
+    overflow:auto;
+    border: 1px solid rgba(252,229,205,.12);
+    border-radius: 12px;
+    background: rgba(0,0,0,.22);
+    padding: .6rem .6rem 1.2rem;
+  }
+
+  /* Right column tightening */
+.pc-right{
+  grid-area: right;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.pc-profiles-panel{
+  padding: .75rem .9rem .8rem;
+}
+
+.pc-profiles-panel .pc-field{
+  margin-bottom: .55rem;
+}
+
+.pc-profiles-actions{
+  display: flex;
+  gap: .45rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin: .3rem 0 .25rem;
+  flex-wrap: wrap;
+}
+
+.pc-profiles-actions .pc-btn{
+  padding: .45rem .8rem;
+}
+
+#pcLiveTurn,
+#pcSessionMsg,
+#pcProfileMsg{
+  margin-top: .25rem;
+}
+
+/* New players panel */
+.pc-players-panel{
+  padding: .75rem .9rem .9rem;
+  min-height: 0;
+}
+
+.pc-player-sidebar{
+  height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: .2rem;
+  min-width: 0;
+}
+
+/* DM-style player chips */
+.player-chip{
+  border: 1px solid rgba(252,229,205,.22);
+  border-radius: 14px;
+  padding: .55rem .6rem;
+  background: rgba(0,0,0,.35);
+  display: grid;
+  gap: .4rem;
+  margin-bottom: .55rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.p-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: .6rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.p-row-left{
+  min-width: 0;
+  flex: 1 1 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 900;
+}
+
+.p-row-right{
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: right;
+  font-weight: 1000;
+}
+
+.p-stance{
+  opacity:.95;
+  font-weight: 900;
+  min-width: 0;
+  flex: 1 1 120px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.p-traitbar{
+  display:flex;
+  gap:.35rem;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.p-traitchip{
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+  text-align:center;
+  border: 1px solid rgba(252,229,205,.22);
+  border-radius: 999px;
+  padding: .2rem .45rem;
+  background: rgba(0,0,0,.35);
+  cursor: help;
+  font-weight: 1000;
+  user-select:none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.p-roll{
+  font-weight: 1100;
+  min-width: 0;
+  flex: 1 1 130px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.p-roll .bang{
+  color: #ffd37a;
+  margin-left: .25rem;
+  font-weight: 1200;
+}
+
+details.p-history{
+  border-top: 1px solid rgba(252,229,205,.12);
+  padding-top: .45rem;
+  margin-top: .1rem;
+}
+
+details.p-history summary{
+  cursor:pointer;
+  font-weight: 1000;
+  opacity:.92;
+  list-style: none;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+details.p-history summary::-webkit-details-marker{
+  display:none;
+}
+
+.p-hist-list{
+  margin: .45rem 0 0;
+  padding-left: 1.1rem;
+  opacity:.95;
+  font-size: .92rem;
+  line-height: 1.25;
+}
+
+/* optional scrollbar polish */
+.pc-player-sidebar::-webkit-scrollbar{
+  width: 10px;
+}
+.pc-player-sidebar::-webkit-scrollbar-track{
+  background: rgba(0,0,0,.2);
+  border-radius: 999px;
+}
+.pc-player-sidebar::-webkit-scrollbar-thumb{
+  background: rgba(252,229,205,.28);
+  border-radius: 999px;
+}
+
+  .pc-player-chip{
+    border: 1px solid rgba(252,229,205,.22);
+    border-radius: 14px;
+    padding: .55rem .6rem;
+    background: rgba(0,0,0,.35);
+    display:grid;
+    gap:.4rem;
+    margin-bottom: .55rem;
+  }
+
+  .pc-player-row{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: .6rem;
+  }
+
+  .pc-player-left{
+    min-width: 0;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 900;
-    line-height: 1.15;
-    opacity: .95;
   }
-  
+
+  .pc-player-right{
+    white-space: nowrap;
+    font-weight: 1000;
+  }
+
+  .pc-player-stance{
+    opacity:.95;
+    font-weight: 900;
+  }
+
+  .pc-player-traitbar{
+    display:flex;
+    gap:.35rem;
+    justify-content: space-between;
+  }
+
+  .pc-player-traitchip{
+    flex: 1 1 0;
+    text-align:center;
+    border: 1px solid rgba(252,229,205,.22);
+    border-radius: 999px;
+    padding: .2rem .45rem;
+    background: rgba(0,0,0,.35);
+    cursor: help;
+    font-weight: 1000;
+    user-select:none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pc-player-roll{
+    font-weight: 1100;
+  }
+
+  .pc-player-roll .bang{
+    color: #ffd37a;
+    margin-left: .25rem;
+    font-weight: 1200;
+  }
+
+  details.pc-player-history{
+    border-top: 1px solid rgba(252,229,205,.12);
+    padding-top: .45rem;
+    margin-top: .1rem;
+  }
+
+  details.pc-player-history summary{
+    cursor:pointer;
+    font-weight: 1000;
+    opacity:.92;
+    list-style: none;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+
+  .player-chip .status-chip{
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: center;
+}
+
+.p-history,
+.p-hist-list,
+.p-hist-list li{
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.p-hist-list li{
+  white-space: normal;
+}
+
+  details.pc-player-history summary::-webkit-details-marker{ display:none; }
+
+  .pc-player-hist-list{
+    margin: .45rem 0 0;
+    padding-left: 1.1rem;
+    opacity:.95;
+    font-size: .92rem;
+    line-height: 1.25;
+  }
+
   .pc-enemies{ grid-area: enemies; }
   .pc-enemy-row{
     display: grid;
@@ -542,6 +860,13 @@
     }
     .pc-midrow{
       grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+    .pc-dice-panel{
+      grid-row: auto;
+    }
+    .pc-topstats{
+      grid-template-columns: 1fr 1fr;
     }
     .pc-enemy-card--boss{
       grid-column: 1 / -1;
@@ -606,4 +931,13 @@
 .pc-enemy-state.status-chip{
   font-size: .85rem;
   padding: .15rem .55rem;
+}
+
+@media (max-width: 640px){
+  .pc-topstats{
+    grid-template-columns: 1fr;
+  }
+  .pc-players-scroll{
+    max-height: 360px;
+  }
 }

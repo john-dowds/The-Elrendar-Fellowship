@@ -54,14 +54,18 @@ import { FirebaseAdapter } from "./assets/js/firebase-sync.js";
       // Portrait
       portraitImg: document.getElementById('pcPortraitImg'),
       portraitPh: document.getElementById('pcPortraitPlaceholder'),
+
+      // NEW: live players sidebar (read-only)
+      playerSidebar: document.getElementById('pcPlayerSidebar'),
+      playerCount: document.getElementById('pcPlayerCount'),
     };
   
     /* Data */
     const CLASS_NOTES = {
-      magi: 'Mages & Healers — +2 dmg/heal on hits • +3 Combat & Perception',
-      assassin: 'Assassins & Rangers — +3 Combat • +2 Environment & Perception',
-      aggressive: 'Aggressive Fighters — +2 dmg on hits • +3 Combat & Grapple',
-      thief: 'Thief & Mercenary — +2 dmg on hits • +3 Charisma & Perception'
+      magi: '+2 dmg/heal on hits • +3 Combat & Perception',
+      assassin: '+3 Combat • +2 Environment & Perception',
+      aggressive: '+2 dmg on hits • +3 Combat & Grapple',
+      thief: '+2 dmg on hits • +3 Charisma & Perception'
     };
   
     // Roll bonuses by class + roll type (used by the d6 roller)
@@ -234,17 +238,17 @@ import { FirebaseAdapter } from "./assets/js/firebase-sync.js";
     
     let currentTurn = 1;
 
-function loadLiveRolls(){
-  const raw = localStorage.getItem(LS_LIVE_ROLLS);
-  const arr = safeJson(raw, []);
-  return Array.isArray(arr) ? arr : [];
-}
-function saveLiveRolls(arr){
-  localStorage.setItem(LS_LIVE_ROLLS, JSON.stringify(arr || []));
-}
-function clearLiveRolls(){
-  localStorage.removeItem(LS_LIVE_ROLLS);
-}
+    function loadLiveRolls(){
+      const raw = localStorage.getItem(LS_LIVE_ROLLS);
+      const arr = safeJson(raw, []);
+      return Array.isArray(arr) ? arr : [];
+    }
+    function saveLiveRolls(arr){
+      localStorage.setItem(LS_LIVE_ROLLS, JSON.stringify(arr || []));
+    }
+    function clearLiveRolls(){
+      localStorage.removeItem(LS_LIVE_ROLLS);
+    }
 
     function buildPlayerPayload(){
       const snap = snapshotCard();
@@ -259,6 +263,99 @@ function clearLiveRolls(){
         rolls: loadLiveRolls(),  
       };
     }
+
+    // NEW: read-only live player sidebar renderer
+function renderPlayersSidebar(players){
+  if (!el.playerSidebar) return;
+
+  el.playerSidebar.innerHTML = '';
+
+  const arr = players ? Object.values(players).filter(Boolean) : [];
+  if (el.playerCount) el.playerCount.textContent = String(arr.length);
+
+  if (!arr.length){
+    const empty = document.createElement('div');
+    empty.className = 'pc-muted';
+    empty.innerHTML = getLiveEvent().eventId
+      ? 'No players connected yet.'
+      : 'Join a live session to populate the players panel.';
+    el.playerSidebar.appendChild(empty);
+    return;
+  }
+
+  arr.forEach(p => {
+    const hp = Math.max(0, Math.round(Number(p.hp) || 0));
+    const maxHP = Math.max(1, Math.round(Number(p.maxHP) || 15));
+    const stance = (p.stance || '—');
+    const stateText = (p.state || 'Active');
+
+
+    const rolls = Array.isArray(p.rolls) ? p.rolls : [];
+    const latest = rolls.length ? rolls[0] : null;
+    const latestTurn = latest?.turn ?? null;
+    const latestValue = (latest && (latest.r ?? latest.value ?? latest.roll)) ?? '';
+
+    let multiThisTurn = false;
+    if (latestTurn != null){
+      const count = rolls.filter(x => (x.turn ?? null) === latestTurn).length;
+      multiThisTurn = count > 1;
+    }
+
+    const byTurn = new Map();
+    rolls.forEach(x => {
+      const t = x.turn ?? null;
+      const v = (x.r ?? x.value ?? x.roll);
+      if (t == null || v == null) return;
+      if (!byTurn.has(t)) byTurn.set(t, []);
+      byTurn.get(t).push(v);
+    });
+
+    const sortedTurns = Array.from(byTurn.keys()).sort((a,b)=>b-a).slice(0,5);
+    const historyLines = sortedTurns.map(tn => {
+      const vals = byTurn.get(tn) || [];
+      return { tn, vals };
+    });
+
+    const chip = document.createElement('div');
+    chip.className = 'player-chip';
+chip.innerHTML = `
+  <div class="p-row">
+    <div class="p-row-left" title="${escapeHtmlAttr(p.name || 'Player')}">${escapeHtml(p.name || 'Player')}</div>
+    <div class="p-row-right">${hp}/${maxHP}</div>
+  </div>
+
+  <div class="p-row">
+    <div class="p-stance">Stance: ${escapeHtml(stance)}</div>
+    <div class="status-chip ${statusClass(stateText)}">${escapeHtml(stateText)}</div>
+  </div>
+
+  <div class="p-row">
+    <div class="p-roll">Roll: <strong>${(latestValue === '' || Number.isNaN(Number(latestValue))) ? '—' : escapeHtml(String(latestValue))}</strong>${multiThisTurn ? '<span class="bang">!</span>' : ''}</div>
+    <div style="opacity:.75; font-weight:900;">${(latestTurn != null) ? `Turn ${latestTurn}` : ''}</div>
+  </div>
+
+  <details class="p-history">
+    <summary>Roll History (last 5 turns)</summary>
+    <ul class="p-hist-list">
+      ${
+        historyLines.length
+          ? historyLines.map(h => {
+              const seq = h.vals.map(v => String(v)).join(', ');
+              return `<li>Turn ${h.tn}: ${escapeHtml(seq)}</li>`;
+            }).join('')
+          : `<li>—</li>`
+      }
+    </ul>
+  </details>
+`;
+
+    el.playerSidebar.appendChild(chip);
+  });
+
+  const spacer = document.createElement('div');
+  spacer.style.height = '18px';
+  el.playerSidebar.appendChild(spacer);
+}
     
     function renderRollToggles(){
       const perks = getSelectedPerks();
@@ -320,8 +417,8 @@ function clearLiveRolls(){
     }
   
     function rollDice(){
-        const base = 1 + Math.floor(Math.random() * 20);
-        const mods = computeRollMods();
+      const base = 1 + Math.floor(Math.random() * 20);
+      const mods = computeRollMods();
       const total = base + mods.total;
   
       el.rollNum.textContent = String(total);
@@ -339,6 +436,7 @@ function clearLiveRolls(){
       const data = loadCard();
       data.lastRoll = { r: total, base, mods, at: Date.now(), type: el.rollType.value };
       persistCard(data);
+
       // Live session roll stream (supports multiple rolls per turn)
       const rolls = loadLiveRolls();
       rolls.unshift({
@@ -359,7 +457,6 @@ function clearLiveRolls(){
       const keep = [];
       turnsDesc.forEach(t => keep.push(...(byTurn.get(t) || [])));
       saveLiveRolls(keep);
-
     }
   
     /* Profiles (local placeholder) */
@@ -382,6 +479,7 @@ function clearLiveRolls(){
   
     function setPortrait(url){
       const u = (url || '').trim();
+      if (!el.portraitImg || !el.portraitPh) return;
       if (!u){
         el.portraitImg.style.display = 'none';
         el.portraitImg.src = '';
@@ -447,7 +545,7 @@ function clearLiveRolls(){
         hp: Number(el.hpVal.textContent) || 15,
         state: (el.state.textContent || 'Active').trim(),
         rollType: el.rollType.value || 'combat',
-        portraitUrl: el.portraitImg.style.display === 'block' ? (el.portraitImg.src || '') : '',
+        portraitUrl: (el.portraitImg && el.portraitImg.style.display === 'block') ? (el.portraitImg.src || '') : '',
       };
     }
   
@@ -542,12 +640,12 @@ function clearLiveRolls(){
       list = list.filter(m => (m.isActive !== false));
     
       // Pick boss (highest HP) ONCE, then remove it from the regular list
-let boss = list.slice().sort((a,b) => (Number(b.maxHP)||0) - (Number(a.maxHP)||0))[0] || null;
+      let boss = list.slice().sort((a,b) => (Number(b.maxHP)||0) - (Number(a.maxHP)||0))[0] || null;
 
-if (boss){
-  // remove boss from regular list so it can't appear twice
-  list = list.filter(m => m.id !== boss.id);
-}
+      if (boss){
+        // remove boss from regular list so it can't appear twice
+        list = list.filter(m => m.id !== boss.id);
+      }
 
       // Helper to compute current hp from maxHP + turns
       const curHp = (m) => {
@@ -662,265 +760,280 @@ if (boss){
             ul.appendChild(li);
           });
         }
-        
       }
     }
     
 
-/* Boot */
-function boot(){
-  buildPerkOptions();
+    /* Boot */
+    function boot(){
+      buildPerkOptions();
 
-  // First render
-  renderProfileSelect();
-  renderStance();
-if (!getLiveEvent().eventId) renderEnemiesFromLocal();
+      // First render
+      renderProfileSelect();
+      renderStance();
+      if (!getLiveEvent().eventId) renderEnemiesFromLocal();
 
-  const sync = new FirebaseAdapter();
-  let offMonsters = null;
+      const sync = new FirebaseAdapter();
+      let offMonsters = null;
+      let offPlayers = null;
 
-  function publishNow(){
-    const { eventId, playerId } = getLiveEvent();
-    if (!eventId || !playerId) return;
-    sync.publishPlayer(eventId, playerId, buildPlayerPayload());
-  }
-
-  // Load saved card state
-  const d = loadCard();
-
-  el.name.value = d.name || '';
-  el.cls.value = d.cls || '';
-  el.perk1.value = d.perk1 || '';
-  el.perk2.value = d.perk2 || '';
-  el.perk3.value = d.perk3 || '';
-  el.stance.value = d.stance || 'Balanced';
-  el.rollType.value = d.rollType || 'combat';
-  setHP(d.hp ?? 15);
-
-  const st = d.state || 'Active';
-  el.state.textContent = st;
-  el.state.className = 'status-chip ' + statusClass(st);
-
-  el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
-  applyPerkDesc(el.perk1, el.perk1Desc);
-  applyPerkDesc(el.perk2, el.perk2Desc);
-  applyPerkDesc(el.perk3, el.perk3Desc);
-  renderStance();
-
-  setPortrait(d.portraitUrl || '');
-
-  // Restore last roll if present
-  if (d.lastRoll && typeof d.lastRoll === 'object'){
-    el.rollNum.textContent = String(d.lastRoll.r ?? '—');
-    el.rollBreak.textContent = `Last: ${d.lastRoll.type || ''} • ${new Date(d.lastRoll.at || Date.now()).toLocaleTimeString()}`;
-  }
-
-  renderRollToggles();
-
-  /* Join/Leave Session (live) */
-  if (el.joinSession){
-    function updateJoinButton(){
-      const pin = getSessionPin();
-      el.joinSession.textContent = pin ? 'Leave Session' : 'Join Session';
-    }
-
-    async function joinWithPin(pin){
-      // join event and store event/player ids for publishing
-      const { eventId, playerId } = await sync.joinEvent(pin);
-      setLiveEvent(eventId, playerId);
-
-      // subscribe to monsters for future enemy feed wiring
-      if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
-      offMonsters = sync.subscribeMonsters(eventId, (monsters) => {
-        if (!monsters) return;
-      
-        // keep player in sync with DM's canonical turn
-        const t = Number(monsters?._meta?.turn);
-        if (Number.isFinite(t) && t >= 1) currentTurn = t;
-        renderLiveTurn();
-      
-        // render enemy feed from DM monsters
-        renderEnemiesFromMonsters(monsters);
-      });
-      
-
-      // publish initial snapshot
-      publishNow();
-    }
-
-    function leaveSession(){
-      if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
-      clearLiveEvent();
-      clearSessionPin();
-      clearLiveRolls();
-      renderSessionMsg('Left session.');
-      updateJoinButton();
-      renderSessionStatus();
-      renderLiveTurn();
-    }
-
-    el.joinSession.addEventListener('click', async () => {
-      const currentPin = getSessionPin();
-
-      // LEAVE
-      if (currentPin){
-        if (!confirm(`Leave session ${currentPin}?`)) return;
-        leaveSession();
-        return;
+      function publishNow(){
+        const { eventId, playerId } = getLiveEvent();
+        if (!eventId || !playerId) return;
+        sync.publishPlayer(eventId, playerId, buildPlayerPayload());
       }
 
-      // JOIN
-      const pin = prompt('Enter DM Event PIN (5 digits):', '');
-      if (pin == null) return;
+      // Load saved card state
+      const d = loadCard();
 
-      const clean = String(pin).trim();
-      if (!/^\d{5}$/.test(clean)){
-        renderSessionMsg('PIN must be 5 digits.');
-        return;
+      el.name.value = d.name || '';
+      el.cls.value = d.cls || '';
+      el.perk1.value = d.perk1 || '';
+      el.perk2.value = d.perk2 || '';
+      el.perk3.value = d.perk3 || '';
+      el.stance.value = d.stance || 'Balanced';
+      el.rollType.value = d.rollType || 'combat';
+      setHP(d.hp ?? 15);
+
+      const st = d.state || 'Active';
+      el.state.textContent = st;
+      el.state.className = 'status-chip ' + statusClass(st);
+
+      el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+      applyPerkDesc(el.perk1, el.perk1Desc);
+      applyPerkDesc(el.perk2, el.perk2Desc);
+      applyPerkDesc(el.perk3, el.perk3Desc);
+      renderStance();
+
+      setPortrait(d.portraitUrl || '');
+
+      // Restore last roll if present
+      if (d.lastRoll && typeof d.lastRoll === 'object'){
+        el.rollNum.textContent = String(d.lastRoll.r ?? '—');
+        el.rollBreak.textContent = `Last: ${d.lastRoll.type || ''} • ${new Date(d.lastRoll.at || Date.now()).toLocaleTimeString()}`;
       }
 
-      try{
-        setSessionPin(clean);
-        await joinWithPin(clean);
-        renderSessionMsg('Joined session.');
-      }catch(e){
-        // rollback pin if join fails
-        clearSessionPin();
-        clearLiveEvent();
-        renderSessionMsg('Could not join session.');
-      }
+      renderRollToggles();
 
-      updateJoinButton();
-      renderSessionStatus();
-      renderLiveTurn();
-    });
+      /* Join/Leave Session (live) */
+      if (el.joinSession){
+        function updateJoinButton(){
+          const pin = getSessionPin();
+          el.joinSession.textContent = pin ? 'Leave Session' : 'Join Session';
+        }
 
-    // initial state on load (auto rejoin if pin exists)
-    (async () => {
-      updateJoinButton();
-      renderSessionStatus();
-      renderLiveTurn();
+        async function joinWithPin(pin){
+          // join event and store event/player ids for publishing
+          const { eventId, playerId } = await sync.joinEvent(pin);
+          setLiveEvent(eventId, playerId);
 
-      const pin = getSessionPin();
-      if (pin && /^\d{5}$/.test(pin)){
-        try{
-          await joinWithPin(pin);
-        }catch{
-          // stale pin
-          clearSessionPin();
+          // subscribe to monsters for future enemy feed wiring
+          if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
+          offMonsters = sync.subscribeMonsters(eventId, (monsters) => {
+            if (!monsters) return;
+          
+            // keep player in sync with DM's canonical turn
+            const t = Number(monsters?._meta?.turn);
+            if (Number.isFinite(t) && t >= 1) currentTurn = t;
+            renderLiveTurn();
+          
+            // render enemy feed from DM monsters
+            renderEnemiesFromMonsters(monsters);
+          });
+
+          // NEW: subscribe to players for read-only live sidebar
+          if (offPlayers) { try { offPlayers(); } catch {} offPlayers = null; }
+          offPlayers = sync.subscribePlayers(eventId, (players) => {
+            renderPlayersSidebar(players || null);
+          });
+          
+          // publish initial snapshot
+          publishNow();
+        }
+
+        function leaveSession(){
+          if (offMonsters) { try { offMonsters(); } catch {} offMonsters = null; }
+          if (offPlayers)  { try { offPlayers(); } catch {} offPlayers = null; }
           clearLiveEvent();
+          clearSessionPin();
+          clearLiveRolls();
+          renderPlayersSidebar(null);
+          renderSessionMsg('Left session.');
           updateJoinButton();
           renderSessionStatus();
           renderLiveTurn();
         }
+
+        el.joinSession.addEventListener('click', async () => {
+          const currentPin = getSessionPin();
+
+          // LEAVE
+          if (currentPin){
+            if (!confirm(`Leave session ${currentPin}?`)) return;
+            leaveSession();
+            return;
+          }
+
+          // JOIN
+          const pin = prompt('Enter DM Event PIN (5 digits):', '');
+          if (pin == null) return;
+
+          const clean = String(pin).trim();
+          if (!/^\d{5}$/.test(clean)){
+            renderSessionMsg('PIN must be 5 digits.');
+            return;
+          }
+
+          try{
+            setSessionPin(clean);
+            await joinWithPin(clean);
+            renderSessionMsg('Joined session.');
+          }catch(e){
+            // rollback pin if join fails
+            clearSessionPin();
+            clearLiveEvent();
+            renderSessionMsg('Could not join session.');
+          }
+
+          updateJoinButton();
+          renderSessionStatus();
+          renderLiveTurn();
+        });
+
+        // initial state on load (auto rejoin if pin exists)
+        (async () => {
+          updateJoinButton();
+          renderSessionStatus();
+          renderLiveTurn();
+
+          const pin = getSessionPin();
+          if (pin && /^\d{5}$/.test(pin)){
+            try{
+              await joinWithPin(pin);
+            }catch{
+              // stale pin
+              clearSessionPin();
+              clearLiveEvent();
+              updateJoinButton();
+              renderSessionStatus();
+              renderLiveTurn();
+              renderPlayersSidebar(null);
+            }
+          } else {
+            renderPlayersSidebar(null);
+          }
+        })();
       }
-    })();
+
+      /* Events */
+      el.cls.addEventListener('change', () => {
+        el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
+        renderRollToggles();
+        publishNow();
+      });
+
+      [el.perk1, el.perk2, el.perk3].forEach((sel, idx) => {
+        sel.addEventListener('change', () => {
+          if (idx === 0) applyPerkDesc(el.perk1, el.perk1Desc);
+          if (idx === 1) applyPerkDesc(el.perk2, el.perk2Desc);
+          if (idx === 2) applyPerkDesc(el.perk3, el.perk3Desc);
+          renderRollToggles();
+          publishNow();
+        });
+      });
+
+      el.stance.addEventListener('change', () => {
+        renderStance();
+        publishNow();
+      });
+
+      el.rollType.addEventListener('change', () => {
+        renderRollToggles();
+        publishNow();
+      });
+
+      el.rollBtn.addEventListener('click', () => {
+        rollDice();
+        publishNow();
+      });
+
+      el.toggleList.addEventListener('change', () => {
+        // no-op; included to ensure computeRollMods sees checkboxes; user triggers roll anyway
+      });
+
+      el.hpMinus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) - 1); publishNow(); });
+      el.hpPlus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) + 1); publishNow(); });
+      el.state.addEventListener('click', () => { cycleState(); publishNow(); });
+
+      // publish name on blur (avoids spamming while typing)
+      el.name.addEventListener('blur', publishNow);
+
+      el.saveCard.addEventListener('click', () => saveCard('Saved.'));
+      el.resetCard.addEventListener('click', resetCard);
+
+      // Profiles
+      el.profileSelect.addEventListener('change', () => {
+        const id = el.profileSelect.value || '';
+        if (!id) return;
+        const profiles = loadProfiles();
+        const p = profiles.find(x => x.id === id);
+        applyProfile(p);
+        el.profileMsg.textContent = p ? `Imported: ${p.name || 'Profile'}` : '';
+        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+
+        publishNow();
+      });
+
+      el.saveProfile.addEventListener('click', () => {
+        const nm = (el.name.value || '').trim();
+        const label = nm || prompt('Profile name:', 'New Profile');
+        if (!label) return;
+
+        const profiles = loadProfiles();
+        const snap = snapshotCard();
+        const id = newId();
+
+        profiles.push({
+          id,
+          name: label,
+          ...snap,
+          portraitUrl: snap.portraitUrl || '' 
+        });
+
+        saveProfiles(profiles);
+        renderProfileSelect();
+        el.profileSelect.value = id;
+
+        el.profileMsg.textContent = 'Saved profile.';
+        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+      });
+
+      el.deleteProfile.addEventListener('click', () => {
+        const id = el.profileSelect.value || '';
+        if (!id) return;
+        if (!confirm('Delete this saved profile?')) return;
+        const profiles = loadProfiles().filter(p => p.id !== id);
+        saveProfiles(profiles);
+        renderProfileSelect();
+        el.profileMsg.textContent = 'Deleted profile.';
+        setTimeout(()=> (el.profileMsg.textContent=''), 1400);
+      });
+
+      // If enemies are updated by something else (later: DM Assist), refresh on focus
+      window.addEventListener('focus', () => {
+        const { eventId } = getLiveEvent();
+        if (!eventId) renderEnemiesFromLocal();
+      });
+    }
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    // If focus is NOT inside a textarea, block it
+    if (e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      e.stopPropagation();
+    }
   }
+});
+    boot();
 
-  /* Events */
-  el.cls.addEventListener('change', () => {
-    el.clsNote.textContent = CLASS_NOTES[el.cls.value] || '';
-    renderRollToggles();
-    publishNow();
-  });
-
-  [el.perk1, el.perk2, el.perk3].forEach((sel, idx) => {
-    sel.addEventListener('change', () => {
-      if (idx === 0) applyPerkDesc(el.perk1, el.perk1Desc);
-      if (idx === 1) applyPerkDesc(el.perk2, el.perk2Desc);
-      if (idx === 2) applyPerkDesc(el.perk3, el.perk3Desc);
-      renderRollToggles();
-      publishNow();
-    });
-  });
-
-  el.stance.addEventListener('change', () => {
-    renderStance();
-    publishNow();
-  });
-
-  el.rollType.addEventListener('change', () => {
-    renderRollToggles();
-    publishNow();
-  });
-
-  el.rollBtn.addEventListener('click', () => {
-    rollDice();
-    publishNow();
-  });
-
-  
-  el.toggleList.addEventListener('change', () => {
-    // no-op; included to ensure computeRollMods sees checkboxes; user triggers roll anyway
-  });
-
-  el.hpMinus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) - 1); publishNow(); });
-  el.hpPlus.addEventListener('click', () => { setHP(Number(el.hpVal.textContent) + 1); publishNow(); });
-  el.state.addEventListener('click', () => { cycleState(); publishNow(); });
-
-  // publish name on blur (avoids spamming while typing)
-  el.name.addEventListener('blur', publishNow);
-
-  el.saveCard.addEventListener('click', () => saveCard('Saved.'));
-  el.resetCard.addEventListener('click', resetCard);
-
-  // Profiles
-  el.profileSelect.addEventListener('change', () => {
-    const id = el.profileSelect.value || '';
-    if (!id) return;
-    const profiles = loadProfiles();
-    const p = profiles.find(x => x.id === id);
-    applyProfile(p);
-    el.profileMsg.textContent = p ? `Imported: ${p.name || 'Profile'}` : '';
-    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-
-    publishNow();
-  });
-
-  el.saveProfile.addEventListener('click', () => {
-    const nm = (el.name.value || '').trim();
-    const label = nm || prompt('Profile name:', 'New Profile');
-    if (!label) return;
-
-    const profiles = loadProfiles();
-    const snap = snapshotCard();
-    const id = newId();
-
-    profiles.push({
-      id,
-      name: label,
-      ...snap,
-      portraitUrl: snap.portraitUrl || '' 
-    });
-
-    saveProfiles(profiles);
-    renderProfileSelect();
-    el.profileSelect.value = id;
-
-    el.profileMsg.textContent = 'Saved profile.';
-    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-  });
-
-  el.deleteProfile.addEventListener('click', () => {
-    const id = el.profileSelect.value || '';
-    if (!id) return;
-    if (!confirm('Delete this saved profile?')) return;
-    const profiles = loadProfiles().filter(p => p.id !== id);
-    saveProfiles(profiles);
-    renderProfileSelect();
-    el.profileMsg.textContent = 'Deleted profile.';
-    setTimeout(()=> (el.profileMsg.textContent=''), 1400);
-  });
-
-  // If enemies are updated by something else (later: DM Assist), refresh on focus
-  window.addEventListener('focus', () => {
-    const { eventId } = getLiveEvent();
-    if (!eventId) renderEnemiesFromLocal();
-  });
-  }
-
-
-boot();
-
-  })();
-  
+})();

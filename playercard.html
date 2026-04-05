@@ -94,10 +94,10 @@
           <input id="pcName" class="pc-name-input" type="text" placeholder="Character name" />
         </div>
 
-        <!-- HP + DICE + STATE row -->
-        <div class="pc-midrow" aria-label="HP and Dice">
+        <!-- DICE + HP/STATE + CLASS cluster -->
+        <div class="pc-midrow" aria-label="Dice, Health, State, and Class">
 
-          <!-- Dice roller (left wing) -->
+          <!-- Dice roller (left; spans two rows) -->
           <div class="pc-panel pc-dice-panel">
             <button id="pcRollBtn" class="pc-dice-btn" type="button" aria-label="Roll d20">🎲</button>
 
@@ -123,38 +123,36 @@
             </div>
           </div>
 
-          <!-- HP center -->
-          <div class="pc-panel pc-hp-panel">
-            <h1 class="pc-mini-header">Health</h1>
-            <div class="pc-hp-wrap">
-              <button id="pcHPMinus" class="pc-btn pc-hp-nudge" type="button">−</button>
-              <div class="pc-hp-val" id="pcHPVal">15</div>
-              <button id="pcHPPlus" class="pc-btn pc-hp-nudge" type="button">+</button>
+          <div class="pc-topstats">
+            <div class="pc-panel pc-hp-panel">
+              <h1 class="pc-mini-header">Health</h1>
+              <div class="pc-hp-wrap">
+                <button id="pcHPMinus" class="pc-btn pc-hp-nudge" type="button">−</button>
+                <div class="pc-hp-val" id="pcHPVal">15</div>
+                <button id="pcHPPlus" class="pc-btn pc-hp-nudge" type="button">+</button>
+              </div>
+            </div>
+
+            <div class="pc-panel pc-state-panel">
+              <h1 class="pc-mini-header">State</h1>
+              <button id="pcStateChip" class="status-chip status-active" type="button">Active</button>
             </div>
           </div>
 
-          <!-- State chip (right wing) -->
-          <div class="pc-panel pc-state-panel">
-            <h1 class="pc-mini-header">State</h1>
-            <button id="pcStateChip" class="status-chip status-active" type="button">Active</button>
+          <div class="pc-panel pc-class-panel">
+            <div class="pc-field">
+              <label for="pcClass">Class</label>
+              <select id="pcClass">
+                <option value="">— Select —</option>
+                <option value="magi">Mages & Casters</option>
+                <option value="assassin">Rogues & Rangers</option>
+                <option value="aggressive">Frontline Fighters</option>
+                <option value="thief">Thieves & Mercenaries</option>
+              </select>
+              <div class="pc-muted" id="pcClassNote"></div>
+            </div>
           </div>
-          
 
-        </div>
-
-        <!-- CLASS row (centered under HP) -->
-        <div class="pc-panel pc-class-panel">
-          <div class="pc-field">
-            <label for="pcClass">Class</label>
-            <select id="pcClass">
-              <option value="">— Select —</option>
-              <option value="magi">Mages &amp; Healers — +2 dmg/heal on hits • +3 Combat &amp; Perception</option>
-              <option value="assassin">Assassins &amp; Rangers — +3 Combat • +2 Environment &amp; Perception</option>
-              <option value="aggressive">Aggressive Fighters — +2 dmg on hits • +3 Combat &amp; Grapple</option>
-              <option value="thief">Thief &amp; Mercenary — +2 dmg on hits • +3 Charisma &amp; Perception</option>
-            </select>
-            <div class="pc-muted" id="pcClassNote"></div>
-          </div>
         </div>
 
         <!-- STANCE block -->
@@ -196,45 +194,47 @@
 
       </section>
 
-      <!-- RIGHT: Profiles + portrait -->
-      <aside class="pc-right" aria-label="Profiles and Portrait">
-        <div class="pc-panel pc-profiles-panel">
-          <div class="pc-profiles-header">
-            <div class="pc-profiles-title">Profiles</div>
-          </div>
+<!-- RIGHT: Profiles + live players -->
+<aside class="pc-right" aria-label="Profiles and Players">
 
-          <div class="pc-field">
-            <label for="pcProfileSelect">Import Profile</label>
-            <select id="pcProfileSelect"></select>
-          </div>
+  <div class="pc-panel pc-profiles-panel">
+    <div class="pc-profiles-header">
+      <div class="pc-profiles-title">Profiles</div>
+    </div>
 
-          <div class="pc-profiles-actions">
-            <button id="pcSaveProfile" class="pc-btn" type="button">Save as Profile</button>
-            <button id="pcDeleteProfile" class="pc-btn pc-btn--ghost" type="button">Delete</button>          
-            <button id="pcJoinSession" class="pc-btn pc-btn--ghost" type="button">
-              Join Session
-            </button>            
-          </div>
-          <div class="pc-muted" id="pcLiveTurn" hidden>
-            Turn: <strong><span id="pcLiveTurnNum">1</span></strong>
-          </div>
-          
-          <div class="pc-muted" id="pcSessionMsg"></div>
-          <div class="pc-muted" id="pcProfileMsg"></div>
-          
+    <div class="pc-field">
+      <label for="pcProfileSelect">Import Profile</label>
+      <select id="pcProfileSelect"></select>
+    </div>
 
-          <div class="pc-muted" id="pcProfileMsg"></div>
-        </div>
+    <div class="pc-profiles-actions">
+      <button id="pcSaveProfile" class="pc-btn" type="button">Save as Profile</button>
+      <button id="pcDeleteProfile" class="pc-btn pc-btn--ghost" type="button">Delete</button>
+      <button id="pcJoinSession" class="pc-btn pc-btn--ghost" type="button">Join Session</button>
+    </div>
 
-        <div class="pc-panel pc-portrait-panel" aria-label="Portrait">
-          <div class="pc-portrait-frame">
-            <img id="pcPortraitImg" alt="" />
-            <div id="pcPortraitPlaceholder" class="pc-portrait-placeholder">
-              Character portrait<br/>if available
-            </div>
-          </div>
-        </div>
-      </aside>
+    <div class="pc-muted" id="pcLiveTurn" hidden>
+      Turn: <strong><span id="pcLiveTurnNum">1</span></strong>
+    </div>
+
+    <div class="pc-muted" id="pcSessionMsg"></div>
+    <div class="pc-muted" id="pcProfileMsg"></div>
+  </div>
+
+  <div class="pc-panel pc-players-panel" aria-label="Players in Session">
+    <div class="pc-profiles-header">
+      <div class="pc-profiles-title">Players in Session (<span id="pcPlayerCount">0</span>)</div>
+    </div>
+
+    <div id="pcPlayerSidebar" class="pc-player-sidebar"></div>
+  </div>
+
+  <!-- legacy portrait nodes kept hidden so older JS never breaks -->
+  <div style="display:none;">
+    <img id="pcPortraitImg" alt="" />
+    <div id="pcPortraitPlaceholder"></div>
+  </div>
+</aside>
 
       <!-- BOTTOM: Enemy feed -->
       <section class="pc-enemies" aria-label="Enemy Live Feed (Placeholder)">
